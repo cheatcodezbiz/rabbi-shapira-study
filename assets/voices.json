@@ -1,0 +1,36 @@
+{
+  "defaults": {
+    "zh": "zh-TW-HsiaoChenNeural",
+    "en": "en-US-AriaNeural"
+  },
+  "groups": [
+    {
+      "label": "中文 / Chinese",
+      "voices": [
+        { "id": "zh-TW-HsiaoChenNeural",          "name": "HsiaoChen 曉臻", "gender": "Female", "locale": "zh-TW",          "localeLabel": "繁體中文 (台灣)" },
+        { "id": "zh-TW-HsiaoYuNeural",            "name": "HsiaoYu 曉雨",   "gender": "Female", "locale": "zh-TW",          "localeLabel": "繁體中文 (台灣)" },
+        { "id": "zh-TW-YunJheNeural",             "name": "YunJhe 雲哲",    "gender": "Male",   "locale": "zh-TW",          "localeLabel": "繁體中文 (台灣)" },
+        { "id": "zh-HK-HiuMaanNeural",            "name": "HiuMaan 曉曼",   "gender": "Female", "locale": "zh-HK",          "localeLabel": "粵語 (香港)" },
+        { "id": "zh-HK-HiuGaaiNeural",            "name": "HiuGaai 曉佳",   "gender": "Female", "locale": "zh-HK",          "localeLabel": "粵語 (香港)" },
+        { "id": "zh-HK-WanLungNeural",            "name": "WanLung 雲龍",   "gender": "Male",   "locale": "zh-HK",          "localeLabel": "粵語 (香港)" },
+        { "id": "zh-CN-XiaoxiaoNeural",           "name": "Xiaoxiao 晓晓",  "gender": "Female", "locale": "zh-CN",          "localeLabel": "简体中文 (大陆)" },
+        { "id": "zh-CN-XiaoyiNeural",             "name": "Xiaoyi 晓伊",    "gender": "Female", "locale": "zh-CN",          "localeLabel": "简体中文 (大陆)" },
+        { "id": "zh-CN-YunjianNeural",            "name": "Yunjian 云健",   "gender": "Male",   "locale": "zh-CN",          "localeLabel": "简体中文 (大陆)" },
+        { "id": "zh-CN-YunxiNeural",              "name": "Yunxi 云希",     "gender": "Male",   "locale": "zh-CN",          "localeLabel": "简体中文 (大陆)" },
+        { "id": "zh-CN-YunxiaNeural",             "name": "Yunxia 云夏",    "gender": "Male",   "locale": "zh-CN",          "localeLabel": "简体中文 (大陆)" },
+        { "id": "zh-CN-YunyangNeural",            "name": "Yunyang 云扬",   "gender": "Male",   "locale": "zh-CN",          "localeLabel": "简体中文 (大陆)" },
+        { "id": "zh-CN-liaoning-XiaobeiNeural",   "name": "Xiaobei 晓北",   "gender": "Female", "locale": "zh-CN-liaoning", "localeLabel": "東北官話 (Northeast)" },
+        { "id": "zh-CN-shaanxi-XiaoniNeural",     "name": "Xiaoni 晓妮",    "gender": "Female", "locale": "zh-CN-shaanxi",  "localeLabel": "中原官話 (Zhongyuan)" }
+      ]
+    },
+    {
+      "label": "English",
+      "voices": [
+        { "id": "en-US-AriaNeural",  "name": "Aria",  "gender": "Female", "locale": "en-US", "localeLabel": "English (US)" },
+        { "id": "en-GB-SoniaNeural", "name": "Sonia", "gender": "Female", "locale": "en-GB", "localeLabel": "English (UK)" },
+        { "id": "en-US-GuyNeural",   "name": "Guy",   "gender": "Male",   "locale": "en-US", "localeLabel": "English (US)" },
+        { "id": "en-GB-RyanNeural",  "name": "Ryan",  "gender": "Male",   "locale": "en-GB", "localeLabel": "English (UK)" }
+      ]
+    }
+  ]
+}

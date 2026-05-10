@@ -142,6 +142,91 @@
   transition: background 0.15s; white-space: nowrap;
 }
 .tts-popup-btn:hover { background: #9b7d20; }
+
+/* Settings (⚙) button + panel */
+.tts-btn-settings { font-size: 1rem; }
+#tts-settings {
+  position: fixed; bottom: 5rem; right: 1.5rem;
+  background: #1a2744; color: white;
+  border: 1px solid rgba(212,175,90,0.45);
+  border-radius: 14px;
+  padding: 1rem 1rem 0.85rem;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+  z-index: 999;
+  font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif;
+  font-size: 0.78rem;
+  width: 320px;
+  max-height: 70vh;
+  overflow-y: auto;
+  transform: translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.18s, opacity 0.18s;
+}
+#tts-settings.tts-settings-visible {
+  transform: translateY(0); opacity: 1; pointer-events: auto;
+}
+#tts-settings h4 {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin: 0.6rem 0 0.4rem;
+}
+#tts-settings h4:first-child { margin-top: 0; }
+.tts-speed-row {
+  display: flex; gap: 0.3rem; flex-wrap: wrap;
+}
+.tts-speed-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid transparent;
+  color: white;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px; cursor: pointer;
+  font-family: inherit; font-size: 0.74rem; font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+  flex: 1 1 0; min-width: 0;
+}
+.tts-speed-btn:hover { background: rgba(212,175,90,0.25); }
+.tts-speed-btn.tts-active {
+  background: #b8952a; border-color: #d4af5a; color: white;
+}
+.tts-voice-section { margin-top: 0.2rem; }
+.tts-voice-locale-group { margin-bottom: 0.4rem; }
+.tts-voice-locale-label {
+  font-size: 0.66rem; color: rgba(255,255,255,0.45);
+  padding: 0.3rem 0 0.15rem 0.2rem;
+  letter-spacing: 0.04em;
+}
+.tts-voice-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 6px; cursor: pointer;
+  transition: background 0.12s;
+}
+.tts-voice-row:hover { background: rgba(255,255,255,0.06); }
+.tts-voice-row.tts-active {
+  background: rgba(212,175,90,0.18);
+  outline: 1px solid rgba(212,175,90,0.45);
+}
+.tts-voice-radio {
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  flex-shrink: 0; position: relative;
+}
+.tts-voice-row.tts-active .tts-voice-radio {
+  border-color: #d4af5a;
+}
+.tts-voice-row.tts-active .tts-voice-radio::after {
+  content: ''; position: absolute; inset: 2px;
+  background: #d4af5a; border-radius: 50%;
+}
+.tts-voice-name { flex: 1; font-size: 0.78rem; }
+.tts-voice-gender {
+  font-size: 0.7rem; color: rgba(255,255,255,0.55);
+}
+@media (max-width: 768px) {
+  #tts-settings { left: 0.8rem; right: 0.8rem; bottom: 4.5rem; width: auto; }
+}
 `;
     var style = document.createElement('style');
     style.id = 'tts-injected-styles';
@@ -165,22 +250,39 @@
         '<button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>' +
         '<button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>' +
         '<span class="tts-status" id="tts-status">— / —</span>' +
-        '<button id="tts-hd" class="tts-btn-icon tts-btn-hd" aria-label="Toggle HD voice" title="HD voice (Google Gemini · 中文 + English)">HD</button>' +
+        '<button id="tts-settings-btn" class="tts-btn-icon tts-btn-settings" aria-label="Voice & speed settings" title="語音與速度 / Voice & speed">⚙</button>' +
         '<button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>';
       document.body.appendChild(player);
     } else {
-      // Existing player — make sure HD button is present (insert before stop)
-      if (!document.getElementById('tts-hd')) {
-        var stop = document.getElementById('tts-stop');
-        var hd = document.createElement('button');
-        hd.id = 'tts-hd';
-        hd.className = 'tts-btn-icon tts-btn-hd';
-        hd.setAttribute('aria-label', 'Toggle HD voice');
-        hd.title = 'HD voice (Google Gemini · 中文 + English)';
-        hd.textContent = 'HD';
-        if (stop) stop.parentNode.insertBefore(hd, stop);
-        else player.appendChild(hd);
+      // Existing player — make sure settings button is present (insert before stop)
+      if (!document.getElementById('tts-settings-btn')) {
+        var stopBtn = document.getElementById('tts-stop');
+        var settingsBtn = document.createElement('button');
+        settingsBtn.id = 'tts-settings-btn';
+        settingsBtn.className = 'tts-btn-icon tts-btn-settings';
+        settingsBtn.setAttribute('aria-label', 'Voice & speed settings');
+        settingsBtn.title = '語音與速度 / Voice & speed';
+        settingsBtn.textContent = '⚙';
+        if (stopBtn) stopBtn.parentNode.insertBefore(settingsBtn, stopBtn);
+        else player.appendChild(settingsBtn);
       }
+      // Hide the legacy HD button if it exists from older markup — settings panel supersedes it
+      var legacyHD = document.getElementById('tts-hd');
+      if (legacyHD) legacyHD.style.display = 'none';
+    }
+    if (!document.getElementById('tts-settings')) {
+      var panel = document.createElement('div');
+      panel.id = 'tts-settings';
+      panel.setAttribute('role', 'dialog');
+      panel.setAttribute('aria-label', 'Voice and speed settings');
+      panel.innerHTML =
+        '<h4>速度 / Speed</h4>' +
+        '<div class="tts-speed-row" id="tts-speed-row"></div>' +
+        '<h4>語音 — 中文 / Chinese voice</h4>' +
+        '<div class="tts-voice-section" id="tts-voice-section-zh">Loading…</div>' +
+        '<h4>語音 — English voice</h4>' +
+        '<div class="tts-voice-section" id="tts-voice-section-en">Loading…</div>';
+      document.body.appendChild(panel);
     }
     if (!document.getElementById('tts-toast')) {
       var toast = document.createElement('div');
@@ -262,6 +364,36 @@
   // network synthesis cost, instant on iPhone, fully offline-cacheable.
   var staticManifest = null;        // null until probed; false if no manifest
   var staticManifestPromise = null; // in-flight probe
+
+  // ── User settings (persisted) ──────────────────────────
+  // Voice + speed survive page navigation via localStorage.
+  var EDGE_PROXY  = '/api/edge-tts';
+  var DEFAULT_PLAYBACK_RATE = 1.0;
+  var SPEEDS = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
+
+  var voicesCatalog = null;          // loaded from /assets/voices.json
+  var voicesPromise = null;
+  var settings = {
+    speed:   DEFAULT_PLAYBACK_RATE,
+    voiceZh: null,                   // null means "use catalog default"
+    voiceEn: null,
+  };
+  try {
+    var raw = localStorage.getItem('tts-settings');
+    if (raw) {
+      var parsed = JSON.parse(raw);
+      if (typeof parsed.speed === 'number' && SPEEDS.indexOf(parsed.speed) >= 0) settings.speed = parsed.speed;
+      if (typeof parsed.voiceZh === 'string') settings.voiceZh = parsed.voiceZh;
+      if (typeof parsed.voiceEn === 'string') settings.voiceEn = parsed.voiceEn;
+    }
+  } catch (e) {}
+  function persistSettings() {
+    try { localStorage.setItem('tts-settings', JSON.stringify(settings)); } catch (e) {}
+  }
+
+  // Live edge-tts proxy cache: "voice:rate:lang:idx" -> blobUrl
+  var edgeCache = new Map();
+  var EDGE_CACHE_MAX = 8;
   var audioUnlocked = false;     // iOS audio is locked until first user-gesture play()
 
   // 1-byte silent WAV — the smallest valid file we can use to "warm up"
@@ -490,6 +622,203 @@
     hdCache.clear();
   }
 
+  // ── Voice + speed settings ────────────────────────────
+  function loadVoicesCatalog() {
+    if (voicesCatalog) return Promise.resolve(voicesCatalog);
+    if (voicesPromise) return voicesPromise;
+    voicesPromise = fetch('/assets/voices.json', { cache: 'force-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { voicesCatalog = j; return j; })
+      .catch(function () { voicesCatalog = null; return null; });
+    return voicesPromise;
+  }
+
+  function getDefaultVoice(lang) {
+    return voicesCatalog && voicesCatalog.defaults && voicesCatalog.defaults[lang];
+  }
+  function getActiveVoice(lang) {
+    var picked = lang === 'zh' ? settings.voiceZh : settings.voiceEn;
+    return picked || getDefaultVoice(lang);
+  }
+  function rateAsPercent() {
+    // edge-tts rate format: "+25%", "-10%". audio.playbackRate 1.5 ⇒ +50%.
+    var pct = Math.round((settings.speed - 1) * 100);
+    return (pct >= 0 ? '+' : '') + pct + '%';
+  }
+
+  function applySpeed() {
+    if (audioEl) {
+      try { audioEl.preservesPitch = true; } catch (e) {}
+      try { audioEl.mozPreservesPitch = true; } catch (e) {}
+      audioEl.playbackRate = settings.speed;
+    }
+    // Web Speech path doesn't run after switching mid-utterance, but keep current
+    // utterance in sync where possible.
+    if (currentUtterance) {
+      try { currentUtterance.rate = Math.max(0.1, Math.min(10, settings.speed)); } catch (e) {}
+    }
+  }
+
+  function renderSettingsPanel() {
+    var speedRow = document.getElementById('tts-speed-row');
+    if (speedRow) {
+      speedRow.innerHTML = '';
+      SPEEDS.forEach(function (s) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tts-speed-btn' + (s === settings.speed ? ' tts-active' : '');
+        btn.textContent = (s === 1 ? '1×' : s + '×');
+        btn.addEventListener('click', function () {
+          settings.speed = s;
+          persistSettings();
+          renderSettingsPanel();
+          applySpeed();
+        });
+        speedRow.appendChild(btn);
+      });
+    }
+
+    if (!voicesCatalog || !voicesCatalog.groups) return;
+
+    function renderVoiceList(containerId, langKey) {
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      var group = voicesCatalog.groups.find(function (g) {
+        return g.voices.some(function (v) { return v.id.toLowerCase().indexOf(langKey) === 0; });
+      });
+      // For 'zh', the group is the Chinese one; for 'en' the English one. Use locale prefix match.
+      var voicesList = (group ? group.voices : []).filter(function (v) {
+        return v.locale.toLowerCase().indexOf(langKey) === 0;
+      });
+      var defaultId = getDefaultVoice(langKey);
+      var activeId  = getActiveVoice(langKey);
+
+      // Sub-group by locale label so picker is scannable
+      var byLocale = {};
+      var localeOrder = [];
+      voicesList.forEach(function (v) {
+        if (!byLocale[v.locale]) { byLocale[v.locale] = { label: v.localeLabel, voices: [] }; localeOrder.push(v.locale); }
+        byLocale[v.locale].voices.push(v);
+      });
+
+      localeOrder.forEach(function (loc) {
+        var grp = document.createElement('div');
+        grp.className = 'tts-voice-locale-group';
+        var lbl = document.createElement('div');
+        lbl.className = 'tts-voice-locale-label';
+        lbl.textContent = byLocale[loc].label;
+        grp.appendChild(lbl);
+        byLocale[loc].voices.forEach(function (v) {
+          var row = document.createElement('div');
+          row.className = 'tts-voice-row' + (v.id === activeId ? ' tts-active' : '');
+          row.setAttribute('role', 'radio');
+          row.setAttribute('aria-checked', v.id === activeId ? 'true' : 'false');
+          row.tabIndex = 0;
+          row.innerHTML =
+            '<span class="tts-voice-radio"></span>' +
+            '<span class="tts-voice-name">' + v.name + (v.id === defaultId ? ' <span style="color:rgba(212,175,90,0.85);font-size:0.7rem">· default</span>' : '') + '</span>' +
+            '<span class="tts-voice-gender">' + (v.gender === 'Female' ? '♀' : '♂') + '</span>';
+          var pick = function () {
+            if (langKey === 'zh') settings.voiceZh = v.id;
+            else                  settings.voiceEn = v.id;
+            persistSettings();
+            renderSettingsPanel();
+            // If we're currently playing in this language, restart current segment with the new voice.
+            if (isPlaying && getLang() === langKey) {
+              var idx = currentIndex;
+              playToken++;
+              synth.cancel(); if (audioEl) { try { audioEl.pause(); } catch (e) {} }
+              setTimeout(function () { speakSegment(idx); }, 80);
+            }
+          };
+          row.addEventListener('click', pick);
+          row.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+          });
+          grp.appendChild(row);
+        });
+        container.appendChild(grp);
+      });
+    }
+    renderVoiceList('tts-voice-section-zh', 'zh');
+    renderVoiceList('tts-voice-section-en', 'en');
+  }
+
+  function openSettings() {
+    loadVoicesCatalog().then(renderSettingsPanel);
+    var panel = document.getElementById('tts-settings');
+    if (panel) panel.classList.add('tts-settings-visible');
+  }
+  function closeSettings() {
+    var panel = document.getElementById('tts-settings');
+    if (panel) panel.classList.remove('tts-settings-visible');
+  }
+  function toggleSettings() {
+    var panel = document.getElementById('tts-settings');
+    if (!panel) return;
+    if (panel.classList.contains('tts-settings-visible')) closeSettings();
+    else openSettings();
+  }
+
+  // ── Edge-TTS live proxy (for non-default voices) ──────
+  function edgeCacheKey(voice, rate, lang, idx) { return voice + '|' + rate + '|' + lang + ':' + idx; }
+  async function edgeAudioFor(index, lang, voice) {
+    var rate = rateAsPercent();
+    var key  = edgeCacheKey(voice, rate, lang, index);
+    if (edgeCache.has(key)) return edgeCache.get(key);
+    segments = getSegments();
+    if (index < 0 || index >= segments.length) return null;
+    var text = getSegmentText(segments[index], lang);
+    if (!text) return null;
+    var resp = await fetch(EDGE_PROXY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: text, voice: voice, rate: '+0%' }),  // speed is applied client-side via playbackRate
+    });
+    if (!resp.ok) {
+      var detail = await resp.text();
+      throw new Error('edge ' + resp.status + ': ' + detail.slice(0, 200));
+    }
+    var blob = await resp.blob();
+    var url  = URL.createObjectURL(blob);
+    edgeCache.set(key, url);
+    while (edgeCache.size > EDGE_CACHE_MAX) {
+      var oldKey = edgeCache.keys().next().value;
+      try { URL.revokeObjectURL(edgeCache.get(oldKey)); } catch (e) {}
+      edgeCache.delete(oldKey);
+    }
+    return url;
+  }
+  function clearEdgeCache() {
+    edgeCache.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} });
+    edgeCache.clear();
+  }
+
+  function speakViaEdgeProxy(index, lang, voice) {
+    activeBackend = 'hd';
+    var token = ++playToken;
+    synth.cancel(); stopKeepAlive();
+    isPlaying = true; isPaused = false;
+    setPlayPauseIcon(true); showPlayer();
+    setStatus('… ' + (index + 1) + ' / ' + segments.length);
+    edgeAudioFor(index, lang, voice).then(function (url) {
+      if (token !== playToken) return;
+      if (!url) { speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang); return; }
+      audioEl.src = url;
+      applySpeed();
+      var p = audioEl.play();
+      if (p && p.catch) p.catch(function (e) { console.warn('[edge] play failed:', e); });
+      updateStatus();
+      if (index + 1 < segments.length) edgeAudioFor(index + 1, lang, voice).catch(function () {});
+    }).catch(function (err) {
+      if (token !== playToken) return;
+      console.warn('[edge] failed:', err);
+      showToast('語音合成失敗 — 切回系統語音 / Voice failed — fallback to system voice', 3000);
+      speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang);
+    });
+  }
+
   // ── Speaker dispatch ──────────────────────────────────
   // Priority:
   //   1. Pre-rendered static MP3 (Edge TTS) — best quality, instant, free
@@ -509,14 +838,23 @@
     highlight(index);
     updateStatus();
 
-    // Probe static manifest the first time, then dispatch.
-    loadStaticManifest().then(function () {
-      if (shouldUseStatic(lang)) {
+    // Probe static manifest + voices catalog, then dispatch by user's voice choice.
+    Promise.all([loadStaticManifest(), loadVoicesCatalog()]).then(function () {
+      var chosen   = getActiveVoice(lang);              // user's pick or default
+      var manifestVoice = staticManifest && staticManifest[lang] && staticManifest[lang].voice;
+
+      // 1. Pre-rendered static MP3 wins iff the user is on the default voice
+      //    (i.e. the same voice the static files were rendered with).
+      if (chosen && chosen === manifestVoice && shouldUseStatic(lang)) {
         var url = staticUrlFor(index, lang);
         if (url) { speakViaStatic(index, url, lang); return; }
       }
-      if (shouldUseHD()) speakViaHD(index, text, lang);
-      else speakViaWebSpeech(index, text, lang);
+      // 2. Otherwise: live edge-tts synthesis with the chosen voice.
+      if (chosen) { speakViaEdgeProxy(index, lang, chosen); return; }
+      // 3. Last resort: legacy Gemini HD path (still wired for emergencies)…
+      if (shouldUseHD()) { speakViaHD(index, text, lang); return; }
+      // 4. …or the OS Web Speech voice.
+      speakViaWebSpeech(index, text, lang);
     });
   }
 
@@ -531,6 +869,7 @@
     setPlayPauseIcon(true); showPlayer();
     if (audioEl) {
       audioEl.src = url;
+      applySpeed();                          // playbackRate must be set after src
       var p = audioEl.play();
       if (p && p.catch) p.catch(function (e) {
         console.warn('[static] play failed, falling back:', e);
@@ -550,7 +889,8 @@
     var voice = getVoiceForLang(lang);
     if (voice) { utter.voice = voice; utter.lang = voice.lang; }
     else utter.lang = lang === 'zh' ? 'zh-TW' : 'en-US';
-    utter.rate = 1.0; utter.pitch = 1.0; utter.volume = 1.0;
+    utter.rate = Math.max(0.1, Math.min(10, settings.speed));
+    utter.pitch = 1.0; utter.volume = 1.0;
     utter.onend = function () {
       if (token !== playToken) return;
       if (currentUtterance !== utter) return;
@@ -645,9 +985,11 @@
       try { audioEl.removeAttribute('src'); audioEl.load(); } catch (e) {}
     }
     clearHDCache();
+    clearEdgeCache();
     isPlaying = false; isPaused = false;
     currentUtterance = null; currentIndex = -1; activeBackend = null;
     clearHighlight(); updateStatus(); setPlayPauseIcon(true); hidePlayer();
+    closeSettings();
   }
 
   // HD button toggle
@@ -679,6 +1021,24 @@
     }
   }
   if (btnHD) btnHD.addEventListener('click', toggleHD);
+
+  // Settings (⚙) button + outside-click close
+  var btnSettings = document.getElementById('tts-settings-btn');
+  var settingsPanel = document.getElementById('tts-settings');
+  if (btnSettings) {
+    btnSettings.addEventListener('click', function (e) {
+      e.stopPropagation();
+      unlockAudio();          // priming the audio element while we have a user gesture
+      toggleSettings();
+    });
+  }
+  document.addEventListener('click', function (e) {
+    if (!settingsPanel || !settingsPanel.classList.contains('tts-settings-visible')) return;
+    if (settingsPanel.contains(e.target) || (btnSettings && btnSettings.contains(e.target))) return;
+    closeSettings();
+  });
+  // Pre-load voices catalog on first load so the panel opens with no flash
+  loadVoicesCatalog();
 
   // React to <html data-lang> changes from setLang()
   new MutationObserver(refreshHDButtonForLang)
