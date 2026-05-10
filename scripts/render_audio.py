@@ -2,23 +2,31 @@
 
 Microsoft's Edge "Read Aloud" Neural voices (Xiaoxiao, HsiaoChen, Aria, etc.)
 are broadcaster-quality and exposed for free via the unofficial edge-tts API.
-We render each article paragraph once, ship the MP3s as static assets, and
-the player just <audio src="…">s them — no runtime API calls, no rate limits,
-no key management, instant playback on iPhone.
+We render each article paragraph once into one MP3 per (voice, language) pair,
+ship them as static assets, and the player just <audio src="…">s them — no
+runtime API calls, no rate limits, no key management, instant playback.
+
+Multi-voice: pre-render *several* voices per language so users can pick from
+the player's settings panel. Each voice goes into its own subfolder:
+
+    assets/audio/<slug>/
+        manifest.json
+        zh/zh-TW-HsiaoChenNeural/0.mp3
+        zh/zh-TW-HsiaoChenNeural/1.mp3 …
+        zh/zh-CN-XiaoxiaoNeural/0.mp3 …
+        en/en-US-AriaNeural/0.mp3 …
+        en/en-GB-SoniaNeural/0.mp3 …
 
 Usage:
-    python scripts/render_audio.py                              # all articles
+    python scripts/render_audio.py
     python scripts/render_audio.py article-messiah-birthing-iran.html
-    python scripts/render_audio.py --force                      # re-render all
-    python scripts/render_audio.py --voice-zh zh-TW-YunJheNeural  # male voice
+    python scripts/render_audio.py --force   # ignore cache, re-render everything
+    python scripts/render_audio.py \\
+        --voices-zh zh-TW-HsiaoChenNeural,zh-TW-YunJheNeural \\
+        --voices-en en-US-AriaNeural,en-US-GuyNeural
 
-Output:
-    assets/audio/<slug>/manifest.json   { slug, zh: {…}, en: {…} }
-    assets/audio/<slug>/zh/<index>.mp3
-    assets/audio/<slug>/en/<index>.mp3
-
-Run again later — already-rendered paragraphs are skipped via SHA-256 of
-(voice, text). Only changed paragraphs get re-synthesized.
+Hashes per (voice, text) are stored in manifest.json — re-runs only
+re-render paragraphs that actually changed.
 """
 
 from __future__ import annotations
@@ -37,15 +45,23 @@ import edge_tts
 REPO_ROOT  = Path(__file__).resolve().parent.parent
 AUDIO_ROOT = REPO_ROOT / "assets" / "audio"
 
-# Default voices — both are Edge "Neural" tier (broadcaster quality).
-# zh-TW because the article uses Traditional Chinese; HsiaoChen is warm/expressive.
-# Aria is the friendliest US English voice in the Edge catalog.
-DEFAULT_VOICES = {
-    "zh": "zh-TW-HsiaoChenNeural",
-    "en": "en-US-AriaNeural",
+# Default voice lists. The first voice in each list is the "default" played by
+# the Listen button before the user opens the picker.
+DEFAULT_VOICES: dict[str, list[dict[str, str]]] = {
+    "zh": [
+        {"id": "zh-TW-HsiaoChenNeural", "name": "HsiaoChen 曉臻", "gender": "Female", "locale": "zh-TW", "localeLabel": "繁體中文 (台灣)"},
+        {"id": "zh-TW-YunJheNeural",    "name": "YunJhe 雲哲",    "gender": "Male",   "locale": "zh-TW", "localeLabel": "繁體中文 (台灣)"},
+        {"id": "zh-CN-XiaoxiaoNeural",  "name": "Xiaoxiao 晓晓",  "gender": "Female", "locale": "zh-CN", "localeLabel": "简体中文 (大陆)"},
+        {"id": "zh-CN-YunxiNeural",     "name": "Yunxi 云希",     "gender": "Male",   "locale": "zh-CN", "localeLabel": "简体中文 (大陆)"},
+    ],
+    "en": [
+        {"id": "en-US-AriaNeural",  "name": "Aria",  "gender": "Female", "locale": "en-US", "localeLabel": "English (US)"},
+        {"id": "en-US-GuyNeural",   "name": "Guy",   "gender": "Male",   "locale": "en-US", "localeLabel": "English (US)"},
+        {"id": "en-GB-SoniaNeural", "name": "Sonia", "gender": "Female", "locale": "en-GB", "localeLabel": "English (UK)"},
+        {"id": "en-GB-RyanNeural",  "name": "Ryan",  "gender": "Male",   "locale": "en-GB", "localeLabel": "English (UK)"},
+    ],
 }
 
-# Microsoft will rate-limit if we hammer it; 4 in flight is comfortable.
 CONCURRENCY = 4
 
 
@@ -54,13 +70,6 @@ def slugify(html_path: Path) -> str:
 
 
 def extract_segments(html_text: str) -> list[dict[str, str]]:
-    """Pull bilingual paragraphs out of the article body.
-
-    Mirrors tts.js's segment selector: top-level p / h2 / h3 / blockquote
-    inside .article-prose. Each element should contain a <span class="zh">
-    and a <span class="en">; we fall back to the element's full textContent
-    if a language span is missing.
-    """
     soup = BeautifulSoup(html_text, "html.parser")
     prose = soup.find(class_="article-prose")
     if prose is None:
@@ -86,10 +95,26 @@ async def render_one(text: str, voice: str, out_path: Path) -> None:
     await com.save(str(out_path))
 
 
-async def render_article(slug: str, segments: list[dict[str, str]], voices: dict[str, str], force: bool) -> None:
+def voice_meta_lookup(default_list: list[dict[str, str]], voice_id: str) -> dict[str, str]:
+    for v in default_list:
+        if v["id"] == voice_id:
+            return v
+    # User passed a voice id that isn't in our default catalog — invent meta.
+    parts = voice_id.split("-")
+    return {
+        "id": voice_id,
+        "name": parts[-1].replace("Neural", ""),
+        "gender": "Unknown",
+        "locale": "-".join(parts[:2]) if len(parts) >= 2 else voice_id,
+        "localeLabel": "-".join(parts[:2]) if len(parts) >= 2 else voice_id,
+    }
+
+
+async def render_article(slug: str, segments: list[dict[str, str]], voices: dict[str, list[dict]], force: bool) -> None:
     out_dir = AUDIO_ROOT / slug
     manifest_path = out_dir / "manifest.json"
 
+    # Old manifest, if any, lets us skip already-rendered files.
     existing: dict = {}
     if manifest_path.exists() and not force:
         try:
@@ -97,56 +122,82 @@ async def render_article(slug: str, segments: list[dict[str, str]], voices: dict
         except Exception:
             pass
 
+    # Build the new manifest skeleton.
     new_manifest: dict = {
         "slug": slug,
         "segments": len(segments),
     }
-    for lang in ("zh", "en"):
+    for lang, voice_list in voices.items():
         new_manifest[lang] = {
-            "voice": voices[lang],
+            "default": voice_list[0]["id"] if voice_list else None,
             "count": len(segments),
-            "hashes": [text_hash(seg[lang], voices[lang]) for seg in segments],
+            "voices": [
+                {
+                    **v,
+                    "hashes": [text_hash(seg[lang], v["id"]) for seg in segments],
+                }
+                for v in voice_list
+            ],
         }
 
     sem = asyncio.Semaphore(CONCURRENCY)
     tasks: list = []
+    skipped = 0
 
-    for lang in ("zh", "en"):
-        voice = voices[lang]
-        existing_hashes = existing.get(lang, {}).get("hashes", []) if isinstance(existing.get(lang), dict) else []
-        for i, seg in enumerate(segments):
-            text = seg[lang]
-            if not text:
-                continue
-            out_path = out_dir / lang / f"{i}.mp3"
-            wanted = new_manifest[lang]["hashes"][i]
-            cached = existing_hashes[i] if i < len(existing_hashes) else None
-            if cached == wanted and out_path.exists():
-                continue  # cache hit
+    for lang, voice_list in voices.items():
+        for v in voice_list:
+            voice_id = v["id"]
+            wanted_hashes = [text_hash(seg[lang], voice_id) for seg in segments]
 
-            print(f"  [{lang}] {i+1:>3}/{len(segments)}  ({len(text):>4} chars)  → {out_path.relative_to(REPO_ROOT)}")
+            # Look up existing hashes for the same voice in the old manifest.
+            existing_voices = (existing.get(lang) or {}).get("voices") or []
+            existing_hashes = []
+            for ev in existing_voices:
+                if ev.get("id") == voice_id:
+                    existing_hashes = ev.get("hashes") or []
+                    break
 
-            async def task(text=text, voice=voice, out_path=out_path):
-                async with sem:
-                    await render_one(text, voice, out_path)
+            for i, seg in enumerate(segments):
+                text = seg[lang]
+                if not text:
+                    continue
+                out_path = out_dir / lang / voice_id / f"{i}.mp3"
+                wanted = wanted_hashes[i]
+                cached = existing_hashes[i] if i < len(existing_hashes) else None
+                if cached == wanted and out_path.exists():
+                    skipped += 1
+                    continue
 
-            tasks.append(task())
+                print(f"  [{lang}/{voice_id}] {i+1:>3}/{len(segments)}  ({len(text):>4} chars)")
+
+                async def task(text=text, voice_id=voice_id, out_path=out_path):
+                    async with sem:
+                        await render_one(text, voice_id, out_path)
+
+                tasks.append(task())
 
     if tasks:
         await asyncio.gather(*tasks)
-    else:
-        print("  (all segments cached — nothing to render)")
+    if skipped:
+        print(f"  (skipped {skipped} cached files)")
 
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(new_manifest, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"  ✅ wrote {manifest_path.relative_to(REPO_ROOT)}\n")
+    print(f"  wrote {manifest_path.relative_to(REPO_ROOT)}\n")
+
+
+def parse_voice_list(s: str | None, defaults: list[dict[str, str]]) -> list[dict[str, str]]:
+    if not s:
+        return defaults
+    ids = [v.strip() for v in s.split(",") if v.strip()]
+    return [voice_meta_lookup(defaults, vid) for vid in ids]
 
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("htmls", nargs="*", help="article HTML files (default: article-*.html + study-*.html)")
-    p.add_argument("--voice-zh", default=DEFAULT_VOICES["zh"])
-    p.add_argument("--voice-en", default=DEFAULT_VOICES["en"])
+    p.add_argument("--voices-zh", default=None, help="comma-separated zh voice ids (overrides defaults)")
+    p.add_argument("--voices-en", default=None, help="comma-separated en voice ids (overrides defaults)")
     p.add_argument("--force", action="store_true", help="re-render even if hash matches existing manifest")
     args = p.parse_args()
 
@@ -159,20 +210,26 @@ def main() -> None:
         print("no article-*.html / study-*.html found in repo root", file=sys.stderr)
         sys.exit(1)
 
-    voices = {"zh": args.voice_zh, "en": args.voice_en}
+    voices = {
+        "zh": parse_voice_list(args.voices_zh, DEFAULT_VOICES["zh"]),
+        "en": parse_voice_list(args.voices_en, DEFAULT_VOICES["en"]),
+    }
+
+    print(f"voices: zh={[v['id'] for v in voices['zh']]}")
+    print(f"        en={[v['id'] for v in voices['en']]}\n")
 
     for html_path in html_paths:
         if not html_path.exists():
-            print(f"⚠ skipping (not found): {html_path}", file=sys.stderr)
+            print(f"skipping (not found): {html_path}", file=sys.stderr)
             continue
         slug = slugify(html_path)
-        print(f"📄 {html_path.name}  →  /assets/audio/{slug}/")
+        print(f"== {html_path.name}  ->  /assets/audio/{slug}/")
         try:
             segments = extract_segments(html_path.read_text(encoding="utf-8-sig"))
         except ValueError as e:
             print(f"   skipping: {e}", file=sys.stderr)
             continue
-        print(f"   {len(segments)} segments  ·  zh={voices['zh']}  ·  en={voices['en']}")
+        print(f"   {len(segments)} segments x {len(voices['zh']) + len(voices['en'])} voices")
         asyncio.run(render_article(slug, segments, voices, args.force))
 
 

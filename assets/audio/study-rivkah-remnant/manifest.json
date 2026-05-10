@@ -2,25 +2,127 @@
   "slug": "study-rivkah-remnant",
   "segments": 5,
   "zh": {
-    "voice": "zh-TW-HsiaoChenNeural",
+    "default": "zh-TW-HsiaoChenNeural",
     "count": 5,
-    "hashes": [
-      "c5685f4829266de1",
-      "2e8d1fc672022efc",
-      "3115f49d6842ffae",
-      "c29693c4f5ec189f",
-      "a95db82cbea792d2"
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "c5685f4829266de1",
+          "2e8d1fc672022efc",
+          "3115f49d6842ffae",
+          "c29693c4f5ec189f",
+          "a95db82cbea792d2"
+        ]
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "3cef730d0514f0cb",
+          "90bbeea9ded316e7",
+          "e04055062877d52a",
+          "6ebecd6498999682",
+          "91c17336d2ab1b26"
+        ]
+      },
+      {
+        "id": "zh-CN-XiaoxiaoNeural",
+        "name": "Xiaoxiao 晓晓",
+        "gender": "Female",
+        "locale": "zh-CN",
+        "localeLabel": "简体中文 (大陆)",
+        "hashes": [
+          "55d8f31e722e3816",
+          "2a7131a9ba03937b",
+          "1b9cc981c314a755",
+          "8b1a19f63b5f3096",
+          "9690572b2835ee8d"
+        ]
+      },
+      {
+        "id": "zh-CN-YunxiNeural",
+        "name": "Yunxi 云希",
+        "gender": "Male",
+        "locale": "zh-CN",
+        "localeLabel": "简体中文 (大陆)",
+        "hashes": [
+          "8e4c915dd973e90d",
+          "aa07093300564ac1",
+          "34afebfc7ce51001",
+          "f64a38da2094128d",
+          "bcd8b9baa93df84b"
+        ]
+      }
     ]
   },
   "en": {
-    "voice": "en-US-AriaNeural",
+    "default": "en-US-AriaNeural",
     "count": 5,
-    "hashes": [
-      "ed99331c5d7d7b9d",
-      "f6829b9ae6119c19",
-      "d71629dbc7e13d64",
-      "2e245a2a411bbad1",
-      "cedcef43019e0c06"
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "ed99331c5d7d7b9d",
+          "f6829b9ae6119c19",
+          "d71629dbc7e13d64",
+          "2e245a2a411bbad1",
+          "cedcef43019e0c06"
+        ]
+      },
+      {
+        "id": "en-US-GuyNeural",
+        "name": "Guy",
+        "gender": "Male",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "b2d8c81314df6296",
+          "d110a0d7e827fc9d",
+          "b1727ea8d45a3026",
+          "c5b14a38fdfc4392",
+          "6c1996af1d61c8d3"
+        ]
+      },
+      {
+        "id": "en-GB-SoniaNeural",
+        "name": "Sonia",
+        "gender": "Female",
+        "locale": "en-GB",
+        "localeLabel": "English (UK)",
+        "hashes": [
+          "68ad90f526fdf80a",
+          "313deba3f8ac8814",
+          "b45893e588c5b6b2",
+          "a9900d19f12162cd",
+          "4d17a445f9aaaf37"
+        ]
+      },
+      {
+        "id": "en-GB-RyanNeural",
+        "name": "Ryan",
+        "gender": "Male",
+        "locale": "en-GB",
+        "localeLabel": "English (UK)",
+        "hashes": [
+          "6083a964b06316d7",
+          "426dbe871104f38a",
+          "60c2ce110cd7065d",
+          "9aadf7584a94d86b",
+          "6c53305ecfae0a7c"
+        ]
+      }
     ]
   }
 }

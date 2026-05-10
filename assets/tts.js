@@ -428,13 +428,26 @@
       .catch(function () { staticManifest = false; return false; });
     return staticManifestPromise;
   }
-  function staticUrlFor(index, lang) {
+  // Per-voice URL: assets/audio/<slug>/<lang>/<voiceId>/<idx>.mp3.
+  // Falls back to default voice in this language if voice id isn't pre-rendered.
+  function staticUrlFor(index, lang, voiceId) {
     if (!staticManifest || !staticManifest[lang]) return null;
     if (index < 0 || index >= staticManifest[lang].count) return null;
-    return '/assets/audio/' + getSlug() + '/' + lang + '/' + index + '.mp3';
+    var voices = staticManifest[lang].voices || [];
+    var match = voices.find(function (v) { return v.id === voiceId; });
+    if (!match) match = voices.find(function (v) { return v.id === staticManifest[lang].default; });
+    if (!match) return null;
+    return '/assets/audio/' + getSlug() + '/' + lang + '/' + match.id + '/' + index + '.mp3';
   }
   function shouldUseStatic(lang) {
     return !!(staticManifest && staticManifest[lang] && staticManifest[lang].count > 0);
+  }
+  function manifestVoicesFor(lang) {
+    if (!staticManifest || !staticManifest[lang] || !staticManifest[lang].voices) return [];
+    return staticManifest[lang].voices;
+  }
+  function manifestDefault(lang) {
+    return staticManifest && staticManifest[lang] && staticManifest[lang].default;
   }
 
   // Must be invoked synchronously inside a user-gesture handler.
@@ -625,22 +638,16 @@
   }
 
   // ── Voice + speed settings ────────────────────────────
-  function loadVoicesCatalog() {
-    if (voicesCatalog) return Promise.resolve(voicesCatalog);
-    if (voicesPromise) return voicesPromise;
-    voicesPromise = fetch('/assets/voices.json', { cache: 'force-cache' })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { voicesCatalog = j; return j; })
-      .catch(function () { voicesCatalog = null; return null; });
-    return voicesPromise;
-  }
-
-  function getDefaultVoice(lang) {
-    return voicesCatalog && voicesCatalog.defaults && voicesCatalog.defaults[lang];
-  }
+  // The voice catalog now comes directly from the article's audio manifest
+  // (so the picker only ever shows voices that are actually pre-rendered for
+  // this page — no broken options). Loading a manifest is already handled by
+  // loadStaticManifest() below.
+  function getDefaultVoice(lang) { return manifestDefault(lang); }
   function getActiveVoice(lang) {
     var picked = lang === 'zh' ? settings.voiceZh : settings.voiceEn;
-    return picked || getDefaultVoice(lang);
+    var available = manifestVoicesFor(lang).map(function (v) { return v.id; });
+    if (picked && available.indexOf(picked) >= 0) return picked;
+    return getDefaultVoice(lang);
   }
   function rateAsPercent() {
     // edge-tts rate format: "+25%", "-10%". audio.playbackRate 1.5 ⇒ +50%.
@@ -680,19 +687,17 @@
       });
     }
 
-    if (!voicesCatalog || !voicesCatalog.groups) return;
+    if (!staticManifest) return;
 
     function renderVoiceList(containerId, langKey) {
       var container = document.getElementById(containerId);
       if (!container) return;
       container.innerHTML = '';
-      var group = voicesCatalog.groups.find(function (g) {
-        return g.voices.some(function (v) { return v.id.toLowerCase().indexOf(langKey) === 0; });
-      });
-      // For 'zh', the group is the Chinese one; for 'en' the English one. Use locale prefix match.
-      var voicesList = (group ? group.voices : []).filter(function (v) {
-        return v.locale.toLowerCase().indexOf(langKey) === 0;
-      });
+      var voicesList = manifestVoicesFor(langKey);
+      if (!voicesList.length) {
+        container.innerHTML = '<div class="tts-voice-locale-label">(no pre-rendered voices)</div>';
+        return;
+      }
       var defaultId = getDefaultVoice(langKey);
       var activeId  = getActiveVoice(langKey);
 
@@ -748,7 +753,7 @@
   }
 
   function openSettings() {
-    loadVoicesCatalog().then(renderSettingsPanel);
+    loadStaticManifest().then(renderSettingsPanel);
     var panel = document.getElementById('tts-settings');
     if (panel) panel.classList.add('tts-settings-visible');
   }
@@ -840,22 +845,19 @@
     highlight(index);
     updateStatus();
 
-    // Probe static manifest + voices catalog, then dispatch by user's voice choice.
-    Promise.all([loadStaticManifest(), loadVoicesCatalog()]).then(function () {
-      var chosen   = getActiveVoice(lang);              // user's pick or default
-      var manifestVoice = staticManifest && staticManifest[lang] && staticManifest[lang].voice;
-
-      // 1. Pre-rendered static MP3 wins iff the user is on the default voice
-      //    (i.e. the same voice the static files were rendered with).
-      if (chosen && chosen === manifestVoice && shouldUseStatic(lang)) {
-        var url = staticUrlFor(index, lang);
+    // Pre-rendered static MP3s for this article (multiple voices per language).
+    // The picker only shows voices that are pre-rendered, so any choice the
+    // user makes resolves to a valid static URL. Microsoft blocks Chinese
+    // text from anonymous Vercel IPs, so live edge-tts is no longer wired
+    // here — pre-rendering at build-time is the reliable path.
+    loadStaticManifest().then(function () {
+      var chosen = getActiveVoice(lang);
+      if (chosen && shouldUseStatic(lang)) {
+        var url = staticUrlFor(index, lang, chosen);
         if (url) { speakViaStatic(index, url, lang); return; }
       }
-      // 2. Otherwise: live edge-tts synthesis with the chosen voice.
-      if (chosen) { speakViaEdgeProxy(index, lang, chosen); return; }
-      // 3. Last resort: legacy Gemini HD path (still wired for emergencies)…
+      // Last-resort fallbacks: legacy HD (Gemini), then OS Web Speech.
       if (shouldUseHD()) { speakViaHD(index, text, lang); return; }
-      // 4. …or the OS Web Speech voice.
       speakViaWebSpeech(index, text, lang);
     });
   }
@@ -1039,8 +1041,8 @@
     if (settingsPanel.contains(e.target) || (btnSettings && btnSettings.contains(e.target))) return;
     closeSettings();
   });
-  // Pre-load voices catalog on first load so the panel opens with no flash
-  loadVoicesCatalog();
+  // Pre-fetch the audio manifest so the picker opens without a flash.
+  loadStaticManifest();
 
   // React to <html data-lang> changes from setLang()
   new MutationObserver(refreshHDButtonForLang)
