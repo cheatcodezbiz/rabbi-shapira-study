@@ -418,11 +418,18 @@
     return p || 'index';
   }
 
+  // Bump this when the manifest *schema* changes — appended to the fetch URL
+  // so any browser cache (memory, disk, service-worker, even iOS Safari's
+  // aggressive disk cache) gets invalidated for the new format.
+  var MANIFEST_SCHEMA_VERSION = 4;
   function loadStaticManifest() {
     if (staticManifest !== null) return Promise.resolve(staticManifest);
     if (staticManifestPromise) return staticManifestPromise;
-    var url = '/assets/audio/' + getSlug() + '/manifest.json';
-    staticManifestPromise = fetch(url, { cache: 'force-cache' })
+    var url = '/assets/audio/' + getSlug() + '/manifest.json?v=' + MANIFEST_SCHEMA_VERSION;
+    // `cache: 'no-cache'` forces revalidation (etag round-trip) without
+    // disabling the cache entirely — Vercel returns 304 if unchanged so
+    // there's no extra bandwidth cost on hot reloads.
+    staticManifestPromise = fetch(url, { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : false; })
       .then(function (m) { staticManifest = m || false; return staticManifest; })
       .catch(function () { staticManifest = false; return false; });
