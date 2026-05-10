@@ -89,18 +89,10 @@ export default async function handler(req, res) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text }] }],
-          // We're narrating already-rendered, on-page content (e.g. religious /
-          // theological prose). Default Gemini safety thresholds false-positive
-          // on this kind of vocabulary, so disable them for narration. This is
-          // appropriate because the model is not generating new content — only
-          // synthesizing speech from text the user is already reading.
-          safetySettings: [
-            { category: 'HARM_CATEGORY_HARASSMENT',        threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_HATE_SPEECH',       threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_CIVIC_INTEGRITY',   threshold: 'BLOCK_NONE' },
-          ],
+          // NOTE: Gemini TTS models reject `safetySettings` (returns 500
+          // INTERNAL). The TTS filter is built-in and non-configurable.
+          // 2.5 doesn't false-positive on the article's vocabulary so we
+          // don't need overrides anyway.
           generationConfig: {
             responseModalities: ['AUDIO'],
             speechConfig: {
