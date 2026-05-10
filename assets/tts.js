@@ -44,6 +44,16 @@
 .article-prose blockquote.tts-current-segment {
   background: linear-gradient(135deg, rgba(212,175,90,0.18), #f2ece0);
 }
+/* Karaoke-style word highlight (only present when per-word timings exist) */
+.tts-word {
+  transition: background-color 0.18s ease, color 0.18s ease;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+.tts-word-active {
+  color: #b8952a;
+  background: rgba(184, 149, 42, 0.22);
+}
 /* Floating player */
 #tts-player {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
@@ -567,6 +577,153 @@
       audioEl.muted = false;
       audioUnlocked = true;
     }
+  }
+
+  // ── Karaoke-style word highlight ───────────────────────
+  // When a segment's MP3 is played AND a sibling timings.json exists (rendered
+  // by `python scripts/render_audio.py --with-timings`), we wrap each word in
+  // the visible language span and toggle a gold class as audioEl.currentTime
+  // advances. Old articles (no timings) play without highlights — silent
+  // graceful no-op.
+  var timingsCache = new Map();   // url -> {duration, words}
+  var activeSegEl = null;          // segment element currently word-wrapped
+  var activeSegLang = null;        // lang the wrap was built for
+  var activeWords = null;          // [{text, offset, start, end}, ...]
+  var activeWordIndex = -1;        // index in activeWords currently highlighted
+
+  function timingsUrlFor(mp3Url) {
+    return mp3Url.replace(/\.mp3(\?.*)?$/, '.json$1');
+  }
+
+  function fetchTimings(jsonUrl) {
+    if (timingsCache.has(jsonUrl)) return Promise.resolve(timingsCache.get(jsonUrl));
+    var p = fetch(jsonUrl).then(function (r) {
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function (data) {
+      var ws = data && Array.isArray(data.words) ? data.words : null;
+      timingsCache.set(jsonUrl, ws);
+      return ws;
+    }).catch(function () {
+      timingsCache.set(jsonUrl, null);
+      return null;
+    });
+    timingsCache.set(jsonUrl, p); // dedupe in-flight requests
+    return p;
+  }
+
+  // Manifest helper — does the active voice (for this language) have
+  // per-word timings rendered?
+  function activeVoiceHasTimings(lang) {
+    if (!staticManifest || !staticManifest[lang] || !staticManifest[lang].voices) return false;
+    var activeId = getActiveVoice(lang);
+    var match = staticManifest[lang].voices.find(function (v) { return v.id === activeId; });
+    if (!match) match = staticManifest[lang].voices.find(function (v) { return v.id === staticManifest[lang].default; });
+    return !!(match && match.withTimings);
+  }
+
+  function escapeHtmlForKaraoke(s) {
+    return s.replace(/[&<>"']/g, function (c) {
+      return c === '&' ? '&amp;'
+           : c === '<' ? '&lt;'
+           : c === '>' ? '&gt;'
+           : c === '"' ? '&quot;'
+                       : '&#39;';
+    });
+  }
+
+  function wrapWordsInSegment(segEl, lang, words) {
+    var langSpan = segEl.querySelector('span.' + lang);
+    if (!langSpan) return false;
+    var fullText = langSpan.textContent;
+    if (!fullText) return false;
+    var html = '';
+    var lastEnd = 0;
+    var wrappedAny = false;
+    for (var i = 0; i < words.length; i++) {
+      var w = words[i];
+      if (typeof w.offset !== 'number' || w.offset < 0) continue;
+      var start = w.offset;
+      var end = start + (w.text || '').length;
+      if (start < lastEnd) continue; // overlap protection
+      if (end > fullText.length) continue;
+      // Verify the source text at this offset matches what was synthesized.
+      // If not, the offset mapping is stale (HTML changed since render) —
+      // skip the wrap so we don't show garbled words.
+      if (fullText.slice(start, end) !== w.text) continue;
+      if (start > lastEnd) html += escapeHtmlForKaraoke(fullText.slice(lastEnd, start));
+      html += '<span class="tts-word" data-i="' + i + '">' + escapeHtmlForKaraoke(w.text) + '</span>';
+      lastEnd = end;
+      wrappedAny = true;
+    }
+    if (!wrappedAny) return false;
+    if (lastEnd < fullText.length) html += escapeHtmlForKaraoke(fullText.slice(lastEnd));
+    langSpan.innerHTML = html;
+    return true;
+  }
+
+  function unwrapSegment() {
+    if (!activeSegEl) return;
+    if (activeSegLang) {
+      var langSpan = activeSegEl.querySelector('span.' + activeSegLang);
+      if (langSpan && langSpan.querySelector('.tts-word')) {
+        // Assigning textContent collapses children back to a single text node.
+        langSpan.textContent = langSpan.textContent;
+      }
+    }
+    activeSegEl = null;
+    activeSegLang = null;
+    activeWords = null;
+    activeWordIndex = -1;
+  }
+
+  function findWordIndexForTime(t) {
+    if (!activeWords) return -1;
+    // Words are in increasing start order; advance from last index for O(1)
+    // amortized cost. If currentTime jumped backward (rare), scan from 0.
+    var startFrom = activeWordIndex >= 0 ? activeWordIndex : 0;
+    if (startFrom < activeWords.length && t < activeWords[startFrom].start) startFrom = 0;
+    for (var i = startFrom; i < activeWords.length; i++) {
+      var w = activeWords[i];
+      if (w.offset < 0) continue;
+      if (t >= w.start && t < w.end) return i;
+      if (t < w.start) return -1;
+    }
+    return -1;
+  }
+
+  function tickWordHighlight() {
+    if (!activeWords || !activeSegEl || !audioEl) return;
+    var t = audioEl.currentTime;
+    var nextIdx = findWordIndexForTime(t);
+    if (nextIdx === activeWordIndex) return;
+    if (activeWordIndex >= 0) {
+      var prev = activeSegEl.querySelector('.tts-word[data-i="' + activeWordIndex + '"]');
+      if (prev) prev.classList.remove('tts-word-active');
+    }
+    activeWordIndex = nextIdx;
+    if (nextIdx >= 0) {
+      var cur = activeSegEl.querySelector('.tts-word[data-i="' + nextIdx + '"]');
+      if (cur) cur.classList.add('tts-word-active');
+    }
+  }
+
+  function startKaraoke(segEl, lang, mp3Url, expectedToken) {
+    if (!segEl || !lang || !mp3Url) return;
+    if (!activeVoiceHasTimings(lang)) return;
+    var jsonUrl = timingsUrlFor(mp3Url);
+    fetchTimings(jsonUrl).then(function (words) {
+      if (expectedToken !== playToken) return; // segment changed while fetching
+      if (!words || !words.length) return;
+      // Replace any previously-wrapped segment first.
+      unwrapSegment();
+      if (!wrapWordsInSegment(segEl, lang, words)) return;
+      activeSegEl = segEl;
+      activeSegLang = lang;
+      activeWords = words;
+      activeWordIndex = -1;
+      tickWordHighlight();
+    });
   }
 
   // ── Voice selection ────────────────────────────────────
@@ -1099,8 +1256,11 @@
     activeBackend = 'hd';                    // reuse the audio-element backend state
     var token = ++playToken;
     synth.cancel(); stopKeepAlive();
+    unwrapSegment();                         // clear any previous segment's word wrapping
     isPlaying = true; isPaused = false;
     setPlayPauseIcon(true); showPlayer();
+    // Kick off karaoke wrap (no-op when timings aren't available for this voice).
+    startKaraoke(segments[index], lang, url, token);
     if (audioEl) {
       audioEl.src = url;
       applySpeed();                          // playbackRate must be set after src
@@ -1213,6 +1373,9 @@
       if (activeBackend !== 'hd') return;
       console.warn('[audio] element error', audioEl.error);
     });
+    // Karaoke: drive word highlight from the audio element's clock.
+    audioEl.addEventListener('timeupdate', tickWordHighlight);
+    audioEl.addEventListener('seeked', tickWordHighlight);
   }
 
   function play() {
@@ -1245,6 +1408,7 @@
     }
     clearHDCache();
     clearEdgeCache();
+    unwrapSegment();
     isPlaying = false; isPaused = false;
     currentUtterance = null; currentIndex = -1; activeBackend = null;
     clearHighlight(); updateStatus(); setPlayPauseIcon(true); hidePlayer();

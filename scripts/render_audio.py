@@ -95,6 +95,50 @@ async def render_one(text: str, voice: str, out_path: Path) -> None:
     await com.save(str(out_path))
 
 
+async def render_one_with_timings(text: str, voice: str, mp3_path: Path, json_path: Path) -> None:
+    """Render audio AND capture word-level boundaries for karaoke highlighting.
+
+    Edge TTS yields {type: 'WordBoundary', offset, duration, text} events
+    interleaved with audio chunks. Offsets/durations are in 100-ns units.
+    """
+    mp3_path.parent.mkdir(parents=True, exist_ok=True)
+    com = edge_tts.Communicate(text, voice, boundary="WordBoundary")
+    audio_chunks: list[bytes] = []
+    raw_boundaries: list[dict] = []
+    async for chunk in com.stream():
+        if chunk["type"] == "audio":
+            audio_chunks.append(chunk["data"])
+        elif chunk["type"] == "WordBoundary":
+            raw_boundaries.append(chunk)
+    mp3_path.write_bytes(b"".join(audio_chunks))
+
+    # Map each spoken word back to its character offset in the source text.
+    # Edge TTS doesn't include text_offset directly, so we walk the source
+    # forward, finding each word's next occurrence.
+    words: list[dict] = []
+    pos = 0
+    for b in raw_boundaries:
+        word_text = b["text"]
+        idx = text.find(word_text, pos)
+        if idx < 0:
+            # Fallback: search from start (unusual — Edge TTS speaks in order)
+            idx = text.find(word_text, 0)
+        words.append({
+            "text": word_text,
+            "offset": idx,  # -1 means "could not locate in source"
+            "start": round(b["offset"] / 10_000_000, 3),
+            "end": round((b["offset"] + b["duration"]) / 10_000_000, 3),
+        })
+        if idx >= 0:
+            pos = idx + len(word_text)
+
+    duration = words[-1]["end"] if words else 0.0
+    json_path.write_text(
+        json.dumps({"duration": duration, "words": words}, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+
+
 def voice_meta_lookup(default_list: list[dict[str, str]], voice_id: str) -> dict[str, str]:
     for v in default_list:
         if v["id"] == voice_id:
@@ -110,7 +154,7 @@ def voice_meta_lookup(default_list: list[dict[str, str]], voice_id: str) -> dict
     }
 
 
-async def render_article(slug: str, segments: list[dict[str, str]], voices: dict[str, list[dict]], force: bool) -> None:
+async def render_article(slug: str, segments: list[dict[str, str]], voices: dict[str, list[dict]], force: bool, with_timings: bool) -> None:
     out_dir = AUDIO_ROOT / slug
     manifest_path = out_dir / "manifest.json"
 
@@ -122,7 +166,9 @@ async def render_article(slug: str, segments: list[dict[str, str]], voices: dict
         except Exception:
             pass
 
-    # Build the new manifest skeleton.
+    # Build the new manifest skeleton. Each voice carries `withTimings` so the
+    # client knows whether to fetch the per-segment timings JSON for karaoke
+    # highlighting (true only for runs that used --with-timings).
     new_manifest: dict = {
         "slug": slug,
         "segments": len(segments),
@@ -135,6 +181,7 @@ async def render_article(slug: str, segments: list[dict[str, str]], voices: dict
                 {
                     **v,
                     "hashes": [text_hash(seg[lang], v["id"]) for seg in segments],
+                    "withTimings": with_timings,
                 }
                 for v in voice_list
             ],
@@ -152,27 +199,41 @@ async def render_article(slug: str, segments: list[dict[str, str]], voices: dict
             # Look up existing hashes for the same voice in the old manifest.
             existing_voices = (existing.get(lang) or {}).get("voices") or []
             existing_hashes = []
+            existing_with_timings = False
             for ev in existing_voices:
                 if ev.get("id") == voice_id:
                     existing_hashes = ev.get("hashes") or []
+                    existing_with_timings = bool(ev.get("withTimings"))
                     break
 
             for i, seg in enumerate(segments):
                 text = seg[lang]
                 if not text:
                     continue
-                out_path = out_dir / lang / voice_id / f"{i}.mp3"
+                out_path  = out_dir / lang / voice_id / f"{i}.mp3"
+                json_path = out_dir / lang / voice_id / f"{i}.json"
                 wanted = wanted_hashes[i]
                 cached = existing_hashes[i] if i < len(existing_hashes) else None
-                if cached == wanted and out_path.exists():
+                # Skip only if (a) hash matches, (b) MP3 exists, and (c) if
+                # this run wants timings, the timings JSON also already exists
+                # (i.e. previous run also had --with-timings).
+                if (
+                    cached == wanted
+                    and out_path.exists()
+                    and (not with_timings or (existing_with_timings and json_path.exists()))
+                ):
                     skipped += 1
                     continue
 
-                print(f"  [{lang}/{voice_id}] {i+1:>3}/{len(segments)}  ({len(text):>4} chars)")
+                tag = "+t" if with_timings else "  "
+                print(f"  [{lang}/{voice_id}]{tag} {i+1:>3}/{len(segments)}  ({len(text):>4} chars)")
 
-                async def task(text=text, voice_id=voice_id, out_path=out_path):
+                async def task(text=text, voice_id=voice_id, out_path=out_path, json_path=json_path):
                     async with sem:
-                        await render_one(text, voice_id, out_path)
+                        if with_timings:
+                            await render_one_with_timings(text, voice_id, out_path, json_path)
+                        else:
+                            await render_one(text, voice_id, out_path)
 
                 tasks.append(task())
 
@@ -199,6 +260,7 @@ def main() -> None:
     p.add_argument("--voices-zh", default=None, help="comma-separated zh voice ids (overrides defaults)")
     p.add_argument("--voices-en", default=None, help="comma-separated en voice ids (overrides defaults)")
     p.add_argument("--force", action="store_true", help="re-render even if hash matches existing manifest")
+    p.add_argument("--with-timings", action="store_true", help="capture per-word timings into <idx>.json next to each MP3 (for karaoke-style highlighting)")
     args = p.parse_args()
 
     if args.htmls:
@@ -230,7 +292,7 @@ def main() -> None:
             print(f"   skipping: {e}", file=sys.stderr)
             continue
         print(f"   {len(segments)} segments x {len(voices['zh']) + len(voices['en'])} voices")
-        asyncio.run(render_article(slug, segments, voices, args.force))
+        asyncio.run(render_article(slug, segments, voices, args.force, args.with_timings))
 
 
 if __name__ == "__main__":
