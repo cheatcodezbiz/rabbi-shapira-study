@@ -670,6 +670,13 @@
     .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
     .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
     .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-cover-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .book-cover.has-cover-image .book-title-overlay { display: none; }
     .book-spine {
       position: absolute; left: 0; top: 0; bottom: 0;
       width: 7px; background: var(--gold);
@@ -1712,8 +1719,9 @@
         </div>
       </div>
       <div class="book-card">
-        <div class="book-cover bc2">
+        <div class="book-cover bc2 has-cover-image">
           <div class="book-spine"></div>
+          <img src="assets/remnant.jpg" alt="The Rivkah Remnant — Rabbi Dr. Itzhak Shapira" class="book-cover-img">
           <div class="book-title-overlay">
             <span class="btitle zh">《利百加的余民》</span>
             <span class="btitle en">The Rivkah Remnant</span>
@@ -1812,6 +1820,22 @@
 </div>
 
 <script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
   function setLang(lang) {
     if (window.__ttsStop) window.__ttsStop();
     document.documentElement.setAttribute('data-lang', lang);
@@ -1819,6 +1843,7 @@
     document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
     // Close mobile menu on language switch
     document.getElementById('nav-links').classList.remove('open');
     document.getElementById('hamburger').classList.remove('open');
@@ -1842,7 +1867,11 @@
   // Restore language preference on load
   (function() {
     var saved = localStorage.getItem('preferred-lang');
-    if (saved && saved !== 'zh') setLang(saved);
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
   })();
 </script>
 

@@ -1920,6 +1920,22 @@
 </div>
 
 <script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
   function setLang(lang) {
     if (window.__ttsStop) window.__ttsStop();
     document.documentElement.setAttribute('data-lang', lang);
@@ -1927,6 +1943,7 @@
     document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
     // Close mobile menu on language switch
     document.getElementById('nav-links').classList.remove('open');
     document.getElementById('hamburger').classList.remove('open');
@@ -1950,7 +1967,11 @@
   // Restore language preference on load
   (function() {
     var saved = localStorage.getItem('preferred-lang');
-    if (saved && saved !== 'zh') setLang(saved);
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
   })();
 </script>
 
