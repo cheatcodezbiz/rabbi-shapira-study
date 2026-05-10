@@ -895,6 +895,84 @@
     .article-prose strong { color: var(--navy); font-weight: 600; }
     .article-prose em { color: var(--ink); }
 
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
     .article-rule {
       border: none; height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
@@ -1283,166 +1361,498 @@
   </div>
 
   <div class="article-prose">
-
     <p class="article-lead">
-      <span class="zh">在登上飞往以色列航班的数小时前，沙皮拉博士拉比录制了这支沉重的视频——他将前往应许之地，展开一段代祷与守望的时节。他打开《出埃及记》的第一章，将其与从伊朗德黑兰传出的最新头条相互对照。他在那里所看见的令人震动：今天我们所见证的伊朗街头暴动，竟以暗码的形式，被写入了一段三千五百年前的希伯来经文之中——而它们所昭示的，是犹太拉比所称的「弥赛亚的诞生」(הולדת המשיח)。</span>
-      <span class="en">In a sober video recorded just hours before he boarded a plane for Israel — for what he describes as a season of intercession and prayer — Rabbi Dr. Itzhak Shapira opens the first chapter of the Book of Exodus and reads it against the headlines pouring out of Iran. What he finds there is unsettling: the very rebellions we are watching unfold in Tehran are, in his reading, written in coded form into a 3,500-year-old Hebrew text. They signal nothing less than what the rabbis call <em>the birthing of Mashiach</em> — the Messiah being born to the world.</span>
+      <span class="zh">这份指南不是要替你「读完」沙皮拉拉比的《利百加余民》，而是要陪你认真地读它。这是一本由犹太弥赛亚拉比写给当代世界的书——他向教会和会堂同时发出挑战，用米德拉什（犹太释经法）打开《创世记》中利百加的故事，将其呈现为「末后日子的余民」之预言模型。如果你是一位爱犹太人的基督徒——并且想真正听懂一位犹太拉比在说什么、并以诚恳的提问深入理解他的观点——这份学习指南就是为你而设的。</span>
+      <span class="en">This guide is not a shortcut around Rabbi Shapira's <em>The Rivkah Remnant</em> — it is a companion for reading it carefully. The book is written by a Messianic Jewish rabbi who challenges <em>both</em> the Church and the Synagogue, opening the Genesis narrative of Rebekah through Midrash (the Jewish art of interpretation) to present her as the prophetic prototype of the end-times remnant. If you are a Christian who loves the Jewish people — and you want to honestly hear what a rabbi is saying, and ask the kind of questions that make you understand his viewpoint more deeply — this guide is for you.</span>
     </p>
 
     <p>
-      <span class="zh">这是一个份量极重的声明，沙皮拉拉比的论证也甚为谨慎。他并非引用个人异象或私人预言，而是按照犹太智者近两千年来所运用的米大示（Midrash）与塔木德（Talmud）解经传统，逐节研读本周的妥拉段落——《Shemot 段落》，即《出埃及记》的开篇。本文尝试一步步地走过他的论证，在合适之处加以省思，并提出这个问题：<strong>对于爱以色列的基督徒而言，这意味着什么？</strong></span>
-      <span class="en">This is a substantial claim, and Rabbi Shapira makes it carefully. He is not appealing to a personal vision or a private prophecy. He is reading the Torah portion of the week — <em>Parashat Shemot</em>, the opening of Exodus — through the same midrashic and Talmudic methods Jewish sages have used for nearly two thousand years. What follows is an attempt to walk through his argument step by step, to test it where testing is appropriate, and to ask: <strong>what does this mean for Christians who love Israel?</strong></span>
-    </p>
-
-    <h2><span class="zh">一、一段古老的塔木德预言</span><span class="en">I. An Ancient Talmudic Forecast</span></h2>
-
-    <p>
-      <span class="zh">论证始于今日的新闻，却根植于塔木德——《Yoma 篇 10a》。在那里，智者们论及末日之前将要兴起并衰落的四大帝国：</span>
-      <span class="en">The argument begins not with the news, but with a line from the Talmud — <em>Yoma 10a</em>. There, the sages discuss the four kingdoms that will rise and fall before the end:</span>
+      <span class="zh">本指南共 <strong>八堂课</strong>，每一堂围绕拉比书中的一个核心教导。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, each centered on a core teaching from the book. Every lesson follows the same five-part rhythm:</span>
     </p>
 
     <blockquote>
-      <span class="zh">「波斯（Persia）注定要落入罗马（Rome）的手中。」<cite>——《塔木德 · Yoma 10a》</cite></span>
-      <span class="en">"Persia is destined to fall into the hands of Rome." <cite>— Talmud, Yoma 10a</cite></span>
+      <span class="zh">
+        <strong>① 拉比说什么</strong>—— 用拉比自己的语境概述他的论点；<br/>
+        <strong>② 关键经文</strong>—— 拉比引用的圣经依据；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，连接两个传统；<br/>
+        <strong>④ 基督徒视角</strong>—— 福音派 / 教会传统如何接收这一教导；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 可与拉比一起继续追问的问题，不是反驳，而是更深的对话。
+      </span>
+      <span class="en">
+        <strong>① What the Rabbi Says</strong> — his argument in his own frame;<br/>
+        <strong>② Key Scripture</strong> — the biblical text he is reading;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that bridges the two traditions;<br/>
+        <strong>④ A Christian Lens</strong> — how Evangelical / Church tradition receives the teaching;<br/>
+        <strong>⑤ Honest Questions</strong> — questions to keep asking the rabbi — not to refute, but to go deeper.
+      </span>
     </blockquote>
-
-    <p>
-      <span class="zh">在古代拉比的地理观中，<strong>「波斯」</strong>所指即今日的<strong>伊朗</strong>；而<strong>「罗马」</strong>——或以更具神学性的名称<strong>「以东」(Edom)</strong>——则是指各时代的西方强权。对于第一个千年的拉比而言，罗马指的是罗马帝国以及后来的基督教世界；而对于今日的沙皮拉拉比，「罗马／以东」可合理地包括美国以及更广泛的西方联盟。换言之，塔木德预言：<strong>末日的最后一个征兆之一，将是波斯政权的崩溃，并落入西方的势力范围。</strong></span>
-      <span class="en">In ancient rabbinic geography, <em>Persia</em> is the territory we today call <strong>Iran</strong>, and <em>Rome</em> — or in its more theological name, <em>Edom</em> — is the great Western power of any given age. For the rabbis of the first millennium, Rome meant the Roman Empire and later Christendom. For Rabbi Shapira, applied to our day, "Rome / Edom" can plausibly include the United States and the broader Western alliance. The Talmud, in other words, predicted that one of the <strong>final signs</strong> of the end of days would be the collapse of the Persian regime into the orbit of the West.</span>
-    </p>
-
-    <p>
-      <span class="zh">无论你接受塔木德为权威经典，或仅仅视之为一份冷静的古代见证，这个预言都令人深思。今日伊朗政权的崩塌，按此解读，并非单纯的地缘政治事件——而是一个<strong>记号</strong>。</span>
-      <span class="en">Whether one accepts the Talmud as authoritative or simply as a sober ancient witness, the prediction is striking. The collapse of Iran's current regime is, on this reading, not merely geopolitics. It is a <strong>marker</strong>.</span>
-    </p>
-
-    <h2><span class="zh">二、本周妥拉段落中的密码</span><span class="en">II. The Code in This Week's Torah Portion</span></h2>
-
-    <p>
-      <span class="zh">沙皮拉拉比将其解读锚定于《出埃及记》第一章——希伯来名为「Shemot」(שְׁמוֹת)，意为「众名」。经文以一波压迫的浪潮揭开序幕：法老开始惧怕以色列人的繁衍，于是他召见两位希伯来收生婆：</span>
-      <span class="en">Rabbi Shapira anchors his reading in the very first chapter of Exodus — <em>Shemot</em> (שְׁמוֹת), meaning "Names." It opens with a rising tide of oppression: Pharaoh has begun to fear the multiplication of Israel, and so he turns to two Hebrew midwives:</span>
-    </p>
-
-    <blockquote>
-      <span class="zh">「埃及王对希伯来的收生婆——一名施弗拉，一名普阿——说话。」<cite>——出埃及记 1:15</cite></span>
-      <span class="en">"And the king of Egypt spoke to the Hebrew midwives, of whom the name of one was Shifra, and the name of the second was Pua." <cite>— Exodus 1:15</cite></span>
-    </blockquote>
-
-    <p>
-      <span class="zh">两位妇人。两个名字。两个看似次要的人物，却撑起了一场庞大的圣经戏剧。然而拉比们始终将这两位收生婆视为神学份量极重的关键：因为<strong>正是她们的决定，使摩西得以存活</strong>。没有施弗拉与普阿，便没有摩西；没有摩西，便没有出埃及；没有出埃及，便没有以色列。</span>
-      <span class="en">Two women. Two names. Two seemingly minor figures in a vast biblical drama. And yet the rabbis have always read these two midwives as enormous theological weight-bearers, because <strong>their decision was the decision that allowed Moses to live</strong>. Without Shifra and Pua, no Moses; without Moses, no Exodus; without Exodus, no Israel.</span>
-    </p>
-
-    <p>
-      <span class="zh">有一个经典解读认为施弗拉与普阿即是约基别（摩西的母亲）与米利暗（他的姊姊）；但还有一个并行的米大示传统——也是沙皮拉拉比所引用的——将施弗拉与普阿读为<strong>「列国中义人的余民」</strong>：是敬畏神、拒绝为腐败政权服务的外邦收生婆。无论采用哪一种解读，经文的教导都是一致的：<strong>对不公权柄的圣洁反抗，正是拯救者诞生的土壤。</strong></span>
-      <span class="en">There is a classical reading in which Shifra and Pua are Yocheved (Moses's mother) and Miriam (his sister). But there is a parallel midrashic tradition — and this is the one Rabbi Shapira draws on — that reads Shifra and Pua as standing for <strong>the righteous remnant of the nations</strong>: Gentile midwives who feared God and refused to serve a corrupt regime. Whichever reading one prefers, the lesson of the text is the same: <strong>a moment of holy disobedience against unjust authority becomes the soil out of which the deliverer is born.</strong></span>
-    </p>
-
-    <h2><span class="zh">三、普阿名字中的数值密码（Gematria）</span><span class="en">III. The Gematria of Pua</span></h2>
-
-    <p>
-      <span class="zh">在此，沙皮拉拉比运用了 <strong>「Gematria」</strong>——犹太人解读希伯来字母数值的传统技艺。他指出：「普阿」(פּוּעָה) 这个名字的数值总和为 <strong>161</strong>——而这正是希伯来短语<strong>「Beit David」（בית דוד）</strong>，即<strong>「大卫家」</strong>的数值。</span>
-      <span class="en">Here Rabbi Shapira draws on <em>gematria</em>, the Jewish discipline of reading the numerical value of Hebrew letters. The name <em>Pua</em> (פּוּעָה), he explains, sums to <strong>161</strong> — the same numerical value as the phrase <strong>"Beit David"</strong> (בית דוד), the <strong>House of David</strong>.</span>
-    </p>
-
-    <p>
-      <span class="zh">其含义令人震动。<strong>普阿的名字本身就编码了大卫王朝</strong>——根据犹太与基督教的共同传统，弥赛亚正是出自这一王室血脉。她对法老的反抗——她圣洁地拒绝杀害希伯来男婴——历史上保存了那条血脉，最终诞生了摩西，并在预言中指向「大卫之子」。</span>
-      <span class="en">The implication is electric. <strong>Pua's name itself encodes the Davidic dynasty</strong> — the royal line out of which, according to both Jewish and Christian tradition, the Messiah comes. Her <em>rebellion</em> against Pharaoh — her holy refusal to murder the Hebrew baby boys — is what historically allowed the survival of the line that would lead, eventually, to Moses, and prophetically, to the Son of David.</span>
-    </p>
-
-    <p>
-      <span class="zh">对于基督徒读者，这带来特殊的冲击。<strong>「Mashiach Ben David」——「大卫之子弥赛亚」——是新约反复用以称呼拿撒勒人耶书亚（Yeshua）的称号。</strong> 马太福音以这句话开卷：「亚伯拉罕的后裔，大卫的子孙，耶稣基督的家谱。」沙皮拉拉比所指出的，正是：<strong>《出埃及记》第一章中那两位收生婆之一的名字本身，就编码了基督徒所声明耶稣身为弥赛亚的这个称号。</strong></span>
-      <span class="en">For Christian readers, this hits with particular force. <strong><em>Mashiach Ben David</em> — Messiah, son of David — is the title the New Testament uses repeatedly for Yeshua of Nazareth.</strong> Matthew opens his gospel with: "The book of the genealogy of Jesus Christ, the son of David, the son of Abraham." The very name of one of the two midwives in Exodus 1, on Rabbi Shapira's reading, <strong>encodes the title that Christians confess about Jesus.</strong></span>
-    </p>
-
-    <h2><span class="zh">四、隐藏在「敬畏」中的「伊朗」</span><span class="en">IV. The Hidden Word "Iran"</span></h2>
-
-    <p>
-      <span class="zh">沙皮拉拉比走得更远。他转向接下来的一节经文——其中圣经说，那两位收生婆<strong>「敬畏神」</strong>，拒绝了法老的命令。希伯来文中表达「敬畏」的字（在《出埃及记》1:17 的形式中）是<strong>「vatira'ena」(וַתִּירֶאןָ)</strong>。他指出：在这个字里面，<strong>藏着「伊朗」(איראן) 的辅音</strong>。</span>
-      <span class="en">Rabbi Shapira goes further. He turns to the next verse, where Scripture says that the midwives <strong>feared God</strong> and refused Pharaoh's order. The Hebrew word for "feared" — in the form of Exodus 1:17 — is <em>vatira'ena</em> (וַתִּירֶאןָ). And inside this word, he claims, lie the encoded consonants of <strong>"Iran"</strong> (איראן).</span>
-    </p>
-
-    <p>
-      <span class="zh">这是一种字面解读吗？不是——也不应如此呈现。这是 <strong>「Drash」</strong>——犹太解经中的「讲道层次」，它寻找的是隐藏的模式与共鸣，而非经文的字面意思（<strong>Peshat</strong>）。这是一种类似于基督教「预表式解读」(typological reading) 的方法。重点并不是说，妥拉真的拼出了「伊朗」这个字；重点是：<strong>对于一个从字词「形式」中寻找意义的传统而言，这个描述收生婆神圣敬畏的字，其辅音与我们今日所见、那个正在反抗其腐败政权的国家之名，发生共鸣——这一点本身就极具意涵。</strong></span>
-      <span class="en">Is this a literal reading? No — and it should not be presented as one. This is <em>drash</em>, the homiletical layer of Jewish interpretation, which looks for hidden patterns and resonances rather than plain meaning (<em>peshat</em>). It is the rabbinic equivalent of a typological reading. The point is not that the Torah literally spells "Iran"; the point is that <strong>for a tradition that finds meaning in the form of words, it is striking that the word describing the midwives' holy fear should resonate, in its consonants, with the modern name of the very nation now in revolt against its own corrupt regime.</strong></span>
-    </p>
-
-    <p>
-      <span class="zh">沙皮拉拉比所指出的模式是这样的：那段描述「对暴政的圣洁反抗」（一场催生救赎者的反抗）的希伯来经文，同时编码了今日我们所看见、正在革命中的那个国家的名字。而其中那位最关键的收生婆——普阿——的名字，则编码了「大卫家」。所以，按他的解读，公式是：</span>
-      <span class="en">The pattern Rabbi Shapira finds is this: the same Hebrew passage that describes a holy rebellion <em>against tyranny</em> — a rebellion that births the deliverer — also encodes the name of the nation we are watching rebel today. And the name of the midwife whose rebellion mattered most, <em>Pua</em>, encodes the <em>House of David</em>. So the equation, in his reading, is:</span>
-    </p>
-
-    <blockquote class="equation">
-      <span class="zh">伊朗反抗其政权  →  普阿反抗法老  →  大卫之子弥赛亚的诞生</span>
-      <span class="en">Iran rebelling against its regime → Pua rebelling against Pharaoh → the birthing of the Davidic Messiah</span>
-    </blockquote>
-
-    <h2><span class="zh">五、对于爱以色列的基督徒，这意味着什么？</span><span class="en">V. What This Means for Christians Who Love Israel</span></h2>
-
-    <p>
-      <span class="zh">即使我们撇开那些较具推测性的数值对应，沙皮拉拉比所指出的<strong>神学模式</strong>，也值得每一位相信亚伯拉罕、以撒、雅各的神的基督徒认真省察。</span>
-      <span class="en">Even setting aside the more speculative gematria, the <strong>theological pattern</strong> Rabbi Shapira is pointing to deserves careful attention from Christians who believe in the God of Abraham, Isaac, and Jacob.</span>
-    </p>
-
-    <p>
-      <span class="zh"><strong>首先</strong>，它将当代事件置于圣经末世论的框架之中。伊朗——以其领导人自己的话来说——将自己定位为现代以色列国最主要的敌人。其飞弹瞄准耶路撒冷；其代理人在多条边界上环绕以色列；近半个世纪以来，「以色列必亡」的口号从其讲坛上不绝于耳。<strong>这个政权的崩溃并非历史的旁支故事</strong>——根据古代拉比与每日新闻的双重见证，<strong>这是一场连希伯来经文本身都已预想的事件。</strong></span>
-      <span class="en"><strong>First</strong>, it situates current events within the framework of biblical eschatology. Iran has positioned itself — by its own leaders' words — as the principal modern enemy of the State of Israel. Its missiles are aimed at Jerusalem; its proxies surround Israel on multiple borders. For nearly half a century, "Death to Israel" has been chanted from its podiums. <strong>The collapse of that regime is not a side story.</strong> It is, on the testimony of both ancient rabbis and the daily news, an event the Hebrew Scriptures themselves contemplated.</span>
-    </p>
-
-    <p>
-      <span class="zh"><strong>其次</strong>，它将基督教的末世论带回它的希伯来根源。长久以来，基督教圈子里的末世教导，与孕育它的犹太经文脱节。然而，<strong>新约本身就充满了直接源于拉比传统的弥赛亚范畴</strong>：「大卫之子」、<strong>「弥赛亚的产难」</strong>（马太福音 24:8 的希腊文 <em>odinōn</em>，正是希伯来文 <em>chevlei Mashiach</em>——「弥赛亚之痛」这个拉比概念的翻译）、「余民」、「被掳者的归回」。沙皮拉拉比并非在引入陌生的范畴——<strong>他在恢复早期教会本就熟悉的范畴。</strong></span>
-      <span class="en"><strong>Second</strong>, it returns Christian eschatology to its Hebrew roots. For too long, end-times teaching in Christian circles has been disconnected from the Jewish texts that gave it birth. Yet <strong>the New Testament itself is saturated with messianic categories drawn directly from rabbinic tradition</strong>: the <em>Son of David</em>, the <strong>birth pangs of Messiah</strong> (Matthew 24:8 — <em>odinōn</em>, the Greek for <em>birth pangs</em>, is the New Testament rendering of the rabbinic concept of <em>chevlei Mashiach</em>, "the birth pangs of the Messiah"), the <em>remnant</em>, the <em>gathering of the exiles</em>. Rabbi Shapira is not introducing foreign categories. <strong>He is restoring categories the early church already knew.</strong></span>
-    </p>
-
-    <p>
-      <span class="zh"><strong>第三</strong>，它重新定位了外邦基督徒的角色。沙皮拉拉比所引用的那一个米大示传统，将施弗拉与普阿读为<strong>「列国中的人」</strong>——她们是敬畏以色列之神的外邦妇女，拒绝为腐败的权柄效力，而她们的忠诚成为了拯救者诞生的关键工具。<strong>今日为以色列祷告的基督徒、拒绝当代道德妥协的基督徒、为生命与犹太民族挺身而出的基督徒——他们不是这个故事的旁观者。他们站在施弗拉与普阿的谱系之中。</strong></span>
-      <span class="en"><strong>Third</strong>, it reframes the role of Gentile Christians. Shifra and Pua, in the midrashic reading Rabbi Shapira is using, are <em>of the nations</em>. They are Gentile women who feared the God of Israel and refused to serve a corrupt power, and their faithfulness was instrumental in the birthing of the deliverer. <strong>Christian believers who pray for Israel, who refuse the moral compromises of their own age, who stand for life and for the Jewish people, are not bystanders in this story. They stand in the line of Shifra and Pua.</strong></span>
-    </p>
-
-    <h2><span class="zh">六、关于分辨</span><span class="en">VI. A Word on Discernment</span></h2>
-
-    <p>
-      <span class="zh">如果本文呈现沙皮拉拉比的解读时，仿佛其中每一个细节都无可置疑，那将既不公平于他、也无益于读者。事实并非如此。<strong>Gematria 与 Drash 是解经的艺术，而非数学的证明</strong>。明智的读者——犹太人或基督徒——对其中某些字音的对应，会给出不同的权重评估。塔木德关于波斯落入罗马之手的那句话是真实且古老的；而在 <em>vatira'ena</em> 一字中发现「伊朗」，则是一种讲道式的修辞。</span>
-      <span class="en">It would be unfair to Rabbi Shapira and unhelpful to readers if this article presented his reading as if every detail were beyond question. It is not. <em>Gematria</em> and <em>drash</em> are interpretive arts, not mathematical proofs. Reasonable readers — Jewish and Christian — will weigh some of the verbal coincidences differently. The Talmudic line about Persia falling to Rome is real and ancient; the discovery of "Iran" inside <em>vatira'ena</em> is a homiletical flourish.</span>
-    </p>
-
-    <p>
-      <span class="zh">但这个更大的模式——即希伯来圣经的神将祂的旨意编织进人类历史的织物之中、妥拉跨越千年仍在发声、义人对不公权柄的反抗正是救赎被诞生的时刻——<strong>这个模式是圣经的，而非推测。它在《出埃及记》中。它在福音书中。它是十字架的模式。</strong></span>
-      <span class="en">But the larger pattern — that the God of the Hebrew Scriptures has woven His purposes into the fabric of human history, that the Torah speaks across millennia, that the rebellion of the righteous against unjust power is the very moment in which deliverance is born — <strong>this pattern is biblical, not speculative. It is in Exodus. It is in the Gospels. It is the pattern of the cross.</strong></span>
-    </p>
-
-    <h2><span class="zh">七、诞生仍在继续</span><span class="en">VII. The Birthing Continues</span></h2>
-
-    <p>
-      <span class="zh">沙皮拉拉比以一段任何基督徒读者都能受用的劝勉作为结束——无论他们接受他解经方法到何种程度：</span>
-      <span class="en">Rabbi Shapira closes with a charge that any Christian reader can take to heart, regardless of how much of his interpretive method they accept:</span>
-    </p>
-
-    <blockquote class="closing-quote">
-      <span class="zh"><strong>「大卫之子弥赛亚，正在此刻被诞生于这个世界。预备你自己。Am Yisrael Chai——以色列的子民万岁！」</strong></span>
-      <span class="en"><strong>"Mashiach Ben David is being born to the world right now. Get yourself ready. Am Yisrael Chai."</strong></span>
-    </blockquote>
-
-    <p>
-      <span class="zh">对于犹太听众而言，这是千年来的渴望。对于基督徒听众而言，这个语言则格外铿锵有力：<strong>「Mashiach Ben David」——大卫之子弥赛亚——正是拿撒勒的耶书亚</strong>，是基督徒早已声明为弥赛亚的那一位。犹太人对「诞生」——对弥赛亚时代破晓——的盼望，在启示录的呼喊中找到了基督教的回响：「<strong>主耶稣啊，我愿你来！</strong>」</span>
-      <span class="en">For a Jewish audience, this is the longing of millennia. For a Christian audience, the language is striking: <strong><em>Mashiach Ben David</em> is Yeshua of Nazareth</strong>, the One Christians already confess as Messiah. The Jewish hope of a <em>birthing</em> — the messianic age dawning — finds its Christian echo in the cry of Revelation: "<strong>Even so, come, Lord Jesus.</strong>"</span>
-    </p>
-
-    <p>
-      <span class="zh">无论德黑兰的暴动本身是否就是那一刻，这个呼召是基督徒一向所熟知的：<strong>为耶路撒冷的平安祈祷，警醒时兆，预备那位即将到来的王。</strong></span>
-      <span class="en">Whether or not the riots in Tehran are themselves the moment, the call is one Christians have always known: <strong>pray for the peace of Jerusalem, watch the times, and be ready for the King who is coming.</strong></span>
-    </p>
 
     <hr class="article-rule" />
 
-    <p class="article-attribution">
-      <span class="zh"><em>本文研习基于沙皮拉拉比博士视频〈先知守望：弥赛亚的诞生与伊朗的陷落〉(Ahavat Ammi 事工)，并参照《塔木德 Yoma 10a》、《出埃及记》第一章，以及拉比的弥赛亚传统。</em></span>
-      <span class="en"><em>A study based on Rabbi Dr. Itzhak Shapira's "Prophecy Watch: The Birthing of Messiah and the Fall of Iran" (Ahavat Ammi Ministries), with reference to Talmud Yoma 10a, Exodus chapter 1, and the rabbinic messianic tradition.</em></span>
-    </p>
+    <!-- ─────────────  LESSON 1  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">为什么基督徒要读一位拉比？</span>
+        <span class="en">Why Should a Christian Read a Rabbi?</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">沙皮拉拉比在序言（由麦基翁牧师执笔）中讲述一个故事：一对犹太朋友受邀在他的教会唱诗，礼拜结束后，一位会众居高临下地问他们：「你接受耶稣作你个人的救主了吗？」拉比由此提出本书的核心论点——<strong>会堂与教会都辜负了寻索之人</strong>。教会失去了它的犹太根基；会堂则把寻求基督的犹太人推为外人。「我的弟兄们，这就是我们迫切需要这本书的原因。两个群体都负有责任。」</span>
+        <span class="en">In his foreword Pastor Matt McKeown tells of inviting his Jewish friends to play music at his church — only for a man at the back to corner them with the question, "Have you accepted Jesus as your personal Lord and Savior?" From this story Rabbi Shapira launches the book's central claim: <strong>both the Synagogue and the Church have failed the seeker</strong>. The Church has been cut off from its Jewish root; the Synagogue treats Jews who seek Yeshua as outsiders. "My brothers and sisters, this is why we urgently need this book. Both communities bear responsibility."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我的子民因无知识而灭亡。」</span>
+        <span class="en">"My people are destroyed for lack of knowledge."</span>
+        <cite>《何西阿书》4:6 · Hosea 4:6</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שׁוּבוּ · Shuvu</strong>——「回归」、「回转」。这也是拉比所创办的「犹太回归经学院」(Yeshivat Shuvu) 的名字。在希伯来语里，「回转」与「悔改」(teshuvah, תשובה) 是同一个词根。基督徒所熟悉的「悔改」(metanoia) 在原始的犹太语境里，从来不只是情绪上的懊悔，而是<strong>「回到原本应该站立的位置」</strong>。</span>
+        <span class="en"><strong>שׁוּבוּ · Shuvu</strong> — "Return." It is also the name Rabbi Shapira gave his yeshiva, <em>Yeshivat Shuvu</em>. In Hebrew, "return" shares its root with <em>teshuvah</em> (תשובה) — repentance. The Christian word <em>metanoia</em>, in its original Jewish setting, is never merely emotional remorse — it is <strong>"returning to the place where you were always supposed to stand."</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">使徒保罗本人就是法利赛人门下的拉比，他在罗马书 11 章用「橄榄树」的比喻警告外邦信徒：<strong>「你不是托住根，乃是根托住你。」</strong>沙皮拉拉比所说的「教会失去犹太根」并不是指基督徒要去归化犹太教，而是指——你所信的那位耶稣（Yeshua），祂的祷文、祂的安息日、祂引用的经文，全都来自希伯来世界。要听懂祂，就必须学会听祂母语的回声。</span>
+        <span class="en">The apostle Paul was himself a rabbi trained at the feet of Gamaliel. In Romans 11 he warns Gentile believers using the olive-tree metaphor: <strong>"You do not support the root, but the root supports you."</strong> When Rabbi Shapira speaks of "the Church losing its Jewish root," he is not asking Christians to convert to Judaism. He is saying that the Yeshua you trust — His prayers, His Sabbath, the Scriptures He quoted — all came out of a Hebrew world. To hear Him fully, you have to learn to hear the echo of His mother tongue.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果拉比说「教会失去了犹太根」，那么我自己的教会是把这「根」补回来了，还是仍然在切断？我从哪里可以分辨？</span><span class="en">If the rabbi claims "the Church has lost its Jewish root," is my own church reattaching to that root — or still cutting it off? How would I tell the difference?</span></li>
+        <li><span class="zh">在那位会众身上，我看到的是「传福音」，还是某种我也曾经做过的事？我能否用拉比所示的优雅来回应别人？</span><span class="en">In the man at the back of the church, was I seeing "evangelism" — or something I have done myself? Could I respond with the grace the rabbi's friends showed?</span></li>
+        <li><span class="zh">我读《新约》时，是否已经习惯于把它当作「基督教书」？如果它本是<strong>犹太人写给犹太人的</strong>，我会读出什么不同？</span><span class="en">When I read the New Testament, do I read it as "the Christian book"? If it is in fact <strong>Jewish writers writing to a Jewish audience</strong>, what changes?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 2  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">先知预言的根基——五项解读原则</span>
+        <span class="en">The Foundations of Prophecy — Five Reading Principles</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">在写预言性的书之前，拉比先用半本书的篇幅给我们「立规矩」。他援引迈蒙尼德 (Rambam) 的教导——「凡试图算尽末日的，都将受咒诅」——并提出读预言的五项原则：(1) <strong>字面意思 (peshat)</strong> 永远是基础；(2) 妥拉中的事件具有<strong>循环重演</strong>性，先父们所走的路是后代的「预言镜子」；(3) 预言的应验取决于<strong>人的回应</strong>，不是注定不可改变；(4) 必须用<strong>整本经文</strong>读经文，不可断章；(5) 任何与摩西相矛盾的预言都不成立。预言不是「未来的剧本」，而是<strong>给人选择的呼召</strong>。</span>
+        <span class="en">Before writing a prophetic book, the rabbi spends almost half the volume teaching us how to read one. He cites Maimonides — "Cursed are those who calculate the end" — and lays out five principles: (1) the <strong>plain meaning (peshat)</strong> is always the foundation; (2) Torah events <strong>cycle</strong> — the steps of the patriarchs are a "prophetic mirror" for later generations; (3) the fulfilment of prophecy depends on <strong>human response</strong>, not fixed fate; (4) Scripture must be read with <strong>Scripture</strong>, never in isolation; (5) any prophecy that contradicts Moses cannot stand. Prophecy is not "a script of the future" — it is <strong>a call requiring a choice</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「以色列中再也没有出现过像摩西一样的先知，他是我主面对面所拣选的。」</span>
+        <span class="en">"And there has not arisen in Israel a prophet like Moses, whom the LORD knew face to face."</span>
+        <cite>《申命记》34:10 · Deuteronomy 34:10</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>פַּרְדֵּ"ס · PaRDeS</strong>——犹太释经的四层。<strong>P</strong>shat（字面）、<strong>R</strong>emez（暗示）、<strong>D</strong>rash（讲道）、<strong>S</strong>od（奥秘）。注意：每一层都从字面 (peshat) 开始，没有人可以跳过字面直奔奥秘。这恰好抑制了基督徒和犹太人共同的诱惑——把经文当作占卜末日的密码本。</span>
+        <span class="en"><strong>פַּרְדֵּ"ס · PaRDeS</strong> — the four layers of Jewish interpretation: <strong>P</strong>shat (plain), <strong>R</strong>emez (hint), <strong>D</strong>rash (homily), <strong>S</strong>od (mystery). Note the order: every reading begins at <em>peshat</em>. No one is permitted to leap to mystery without first standing on the plain. This single rule disciplines a temptation common to Christians and Jews alike — treating Scripture as a cipher for the end times.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">许多福音派基督徒读《启示录》或但以理书时，已经默认采用「<em>预言 = 注定的剧本</em>」的读法。拉比的第三条原则——<strong>预言取决于人的回应</strong>——会让你停顿。这与《约拿书》尼尼微的悔改完全吻合：神宣告四十天就要倾覆这城，结果人悔改了，神就「<em>后悔</em>不降所说的灾」。这并非神改变心意，而是<em>预言原本就把人放在方程式里</em>。</span>
+        <span class="en">Many evangelical readers of Revelation or Daniel default to a "<em>prophecy = fixed script</em>" reading. The rabbi's third principle — <strong>prophecy depends on human response</strong> — should give you pause. It fits perfectly with the book of Jonah: God announces forty days to overthrow Nineveh, the people repent, and "God relented from the disaster He had said He would do." This is not God changing His mind. It is <em>prophecy that always had the human response inside the equation</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我对末世的理解，多少来自「字面释经 (peshat)」，多少来自<em>电影、小说和讲台上的图表</em>？</span><span class="en">How much of my end-times framework comes from <em>peshat</em> — and how much from films, novels, and pulpit charts?</span></li>
+        <li><span class="zh">如果预言会因人的回应而调整，这是否意味着信徒今天的祷告与悔改可以<strong>真正改变</strong>未来？这令我觉得不安还是被授权？</span><span class="en">If prophecy moves with human response, does that mean a believer's prayer and repentance today can <strong>actually shape</strong> what comes? Does that unsettle me, or empower me?</span></li>
+        <li><span class="zh">拉比要求所有预言必须与摩西一致——耶稣自己说「<em>摩西指着我所写的话</em>」。我读摩西五经够多吗？</span><span class="en">The rabbi insists all prophecy must agree with Moses. Yeshua Himself said, "<em>Moses wrote of me</em>." Have I read the five books of Moses enough to test it?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 3  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">两位弥赛亚——约瑟之子与大卫之子</span>
+        <span class="en">The Two Messiahs — Ben Yosef and Ben David</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">这是<strong>本书最让基督徒震动</strong>的一章。拉比说，犹太传统从《塔木德》开始就承认<strong>两位弥赛亚</strong>的存在：<em>约瑟之子弥赛亚 (Mashiach ben Yosef)</em>——受苦、被拒绝、为以色列死；以及<em>大卫之子弥赛亚 (Mashiach ben David)</em>——得胜、登宝座、复兴万国。沙皮拉拉比的论证是：拿撒勒人耶稣<strong>恰好以「约瑟之子」的身份显现</strong>——被自己的兄弟们卖掉、下到外邦人之地、最后才显露身份——而<strong>祂还要再来</strong>，那一次是以「大卫之子」的身份。两位弥赛亚不是两个人，而是同一位的两次显现。</span>
+        <span class="en">This is the chapter that <strong>most unsettles Christian readers</strong>. The rabbi argues that Jewish tradition — going back to the Talmud — has long recognized <strong>two Messiahs</strong>: <em>Mashiach ben Yosef</em> (the Suffering One — rejected, dying for Israel) and <em>Mashiach ben David</em> (the Reigning One — enthroned, restoring the nations). Shapira's claim: Yeshua of Nazareth came <strong>precisely as Ben Yosef</strong> — sold by His brothers, descending into Gentile lands, only revealing His identity at the end — and He <strong>will come again</strong>, this time as Ben David. The Two Messiahs are not two people. They are one Person, in two appearances.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他们必仰望我，就是他们所扎的；必为我悲哀，如丧独生子……」</span>
+        <span class="en">"They will look on Me, the One they have pierced, and they will mourn for Him as one mourns for an only child…"</span>
+        <cite>《撒迦利亚书》12:10 · Zechariah 12:10</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מָשִׁיחַ בֶּן יוֹסֵף · Mashiach ben Yosef</strong>。这个词最早出现在<em>《巴比伦塔木德》Sukkah 52a</em>——比基督教成型早。它不是基督徒「发明」给自己用的辩护，而是<em>犹太教自己内部</em>的一条线。沙皮拉拉比是说：当我们指着耶稣是受苦的弥赛亚时，我们不是在用基督教反对犹太教——我们在用犹太教自己的语言，说出犹太教自己的盼望。</span>
+        <span class="en"><strong>מָשִׁיחַ בֶּן יוֹסֵף · Mashiach ben Yosef</strong>. The phrase appears in the <em>Babylonian Talmud, Sukkah 52a</em> — older than the formation of Christianity. It is not a Christian invention pressed back onto Jewish texts in self-defense; it is <em>a thread internal to Judaism itself</em>. What Shapira is saying is this: when we point to Yeshua as the suffering Messiah, we are not using Christianity against Judaism — we are speaking <strong>Judaism's own language to name Judaism's own hope</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督教以《使徒信经》定下「祂被钉、死、葬、复活、升天、还要再来」——这本身就<strong>暗含两次显现</strong>。但许多基督徒只熟悉<em>第一次</em>受苦的耶稣，对那位骑白马的<em>得胜君王</em>反而陌生。拉比的「两位弥赛亚」框架不是要否定耶稣，而是邀请基督徒——<strong>认真预备「第二次」</strong>。一位犹太拉比在告诉你，他正在等候王回来。</span>
+        <span class="en">The Christian creeds already confess two appearances — "He suffered… was buried… and shall come again." But many Christians know the suffering Jesus far better than the returning King on the white horse. The rabbi's "Two Messiahs" framework does not deny Yeshua — it invites Christians to <strong>take the second appearance seriously</strong>. A Jewish rabbi is telling you he is waiting for the King to come back.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果两千年前的犹太拉比们已经在期待<em>两位</em>弥赛亚，为什么主流犹太教今天不接受耶稣是其中之一？拉比对此本身有解释吗？（提示：他写道「以色列要先被洁净」。）</span><span class="en">If rabbis two thousand years ago already expected <em>two</em> messianic appearances, why does mainstream Judaism today not accept Yeshua as one of them? Does the rabbi himself address this? (Hint: he writes that Israel must first be refined.)</span></li>
+        <li><span class="zh">我所相信的耶稣，是「<em>已经来过</em>那位救赎主」，还是「<em>还要再来</em>那位君王」？两者我都同等地预备好了吗？</span><span class="en">Is the Jesus I trust mostly "the Savior who already came" or also "the King who is coming back"? Am I equally ready for both?</span></li>
+        <li><span class="zh">如果犹太人正在期待<em>大卫之子弥赛亚</em>，而我正在期待<em>主再来</em>——那我们其实在<em>等同一位</em>。我能从这个共同的盼望开始一段对话吗？</span><span class="en">If Jews are waiting for Mashiach ben David, and I am waiting for the second coming — we are <em>waiting for the same Person</em>. Could that shared longing be the starting point of a conversation?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 4  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">基督教内被连根拔起的余民</span>
+        <span class="en">The Uprooted Remnant Within Christianity</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">拉比毫不留情地写道：今天<strong>基督教内部正在打一场战争</strong>——一边是渴望回到犹太根基的人，另一边是抓着「空洞的旧根基」不放的体制。拉比并不要基督徒变成犹太人。他相信「以扫」——基督教世界——本身要经历<strong>tikkun（修正）</strong>，并从其中产生一群「得胜的余民」。这是雅各（犹太人）整体丰满的关键。简单地把所有基督徒归为一类是危险的。</span>
+        <span class="en">The rabbi writes bluntly: a battle is being fought <strong>inside Christianity itself</strong> — between those longing to return to the Jewish root and an institution clinging to "an empty old foundation." He is not asking Christians to become Jews. He believes "Esau" — the Christian world — itself must undergo <strong>tikkun (correction)</strong>, and that out of it will rise a victorious remnant. This is decisive for the fullness of "Jacob" — the Jewish people. To lump all Christians together, he warns, is dangerous.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「就是现今的时候，也是这样，照着拣选的恩典，还有所留的余数。」</span>
+        <span class="en">"So too at the present time there is a remnant chosen by grace."</span>
+        <cite>《罗马书》11:5 · Romans 11:5</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>תִּקּוּן · Tikkun</strong>——「修正」、「修复」。在犹太神秘传统中，世界因堕落而破碎，每一个人的呼召是参与<em>tikkun olam</em>「修复世界」。拉比把它用在以扫身上：以扫不是要被毁灭，而是要被<strong>修正</strong>。这与基督徒所讲的「拯救」不同——它强调的不是<em>免除审判</em>，而是<em>被还原到原本的呼召</em>。</span>
+        <span class="en"><strong>תִּקּוּן · Tikkun</strong> — "rectification," "repair." In Jewish mystical tradition the world is broken at the fall, and every soul is called to <em>tikkun olam</em> — repair of the world. The rabbi applies it to Esau: Esau is not to be destroyed but to be <strong>rectified</strong>. This is a different accent from the Christian word <em>salvation</em> — it focuses less on <em>escape from judgment</em> and more on <em>restoration to original calling</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">福音派常以「教会 vs. 世界」为框架。但拉比给我们一个更细微的图景：<strong>教会内部本身有真假之分</strong>。这与耶稣自己讲的麦子与稗子比喻一致（《马太福音》13章）。拉比并不在指责基督徒——他在邀请那些愿意听的基督徒「认领」自己的余民身份。这是一封拉比写给「教会内寻求者」的情书——只是写得不像情书。</span>
+        <span class="en">Evangelical Christians often think in terms of "Church vs. World." The rabbi gives a sharper picture: <strong>there is a true and a false within the Church itself</strong>. This is fully in line with Yeshua's own parable of the wheat and tares (Matthew 13). The rabbi is not condemning Christians — he is inviting those willing to listen to claim their identity as part of the remnant. It is a love letter to "seekers inside the Church" — written in the voice of a rabbi who refuses to flatter.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我自己的教会传统里，什么是「真根」、什么是「空洞的旧根基」？我能不带防御地分辨吗？</span><span class="en">In my own church tradition, which parts are "the true root" and which are "the empty old foundation"? Can I tell the difference without becoming defensive?</span></li>
+        <li><span class="zh">如果以扫的呼召不是「被毁灭」而是「被修正」，那我对那些和我神学不一致的基督徒——会不会带上更多耐心？</span><span class="en">If Esau's calling is not "destruction" but "rectification," does that change how patient I am with Christians whose theology I disagree with?</span></li>
+        <li><span class="zh">作为基督徒，我有没有为以色列祷告——不只是「让他们得救」，而是「让以色列丰满」？这两个祷告是同一个吗？</span><span class="en">Have I ever prayed for Israel — not only "may they be saved," but "may Israel come to fullness"? Are those the same prayer, or different?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 5  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">利百加——预备好的新妇</span>
+        <span class="en">Rivkah — The Prototype Bride</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">本书的核心比喻在这里。<em>《创世记》24章</em>——亚伯拉罕的仆人去远方，为以撒带回新妇利百加。拉比读出整段经文的预言性：<strong>以撒 = 犹太民族</strong>；<strong>仆人 = 圣灵</strong>；<strong>利百加 = 从列国出来、归入以色列家的余民</strong>。利百加的故事不是结婚的浪漫故事；它是「<em>外邦人如何被预备、如何快步走向以色列，最终生出弥赛亚</em>」的预言性蓝图。</span>
+        <span class="en">Here is the book's central metaphor. In <em>Genesis 24</em>, Abraham's servant travels far to bring back a bride — Rivkah — for Isaac. The rabbi reads the whole passage prophetically: <strong>Isaac = the Jewish people</strong>; <strong>the servant = the Spirit</strong>; <strong>Rivkah = the remnant out of the nations who joins the household of Israel</strong>. Her story is not a romance. It is a prophetic blueprint of <em>how the Gentile is prepared, how she hurries toward Israel, and how through that union the Messiah is born</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这少女美丽动人，是一位从未有男人亲近的处女 (betulah)。她下到泉水边，取满罐子，然后上来。」</span>
+        <span class="en">"The young woman was very beautiful, a virgin (<em>betulah</em>) — no man had ever lain with her. She went down to the spring, filled her jar, and came up."</span>
+        <cite>《创世记》24:16 · Genesis 24:16</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>בְּתוּלָה / עַלְמָה · betulah / alma</strong>。利百加同时被称为这两个词——<em>betulah</em>「处女」和 <em>alma</em>「年轻女子」。基督徒会立刻想到：这正是《以赛亚书》7:14 中那个充满争议的词——「必有 <em>alma</em>怀孕生子」。拉比在此指出：利百加是后来弥赛亚<em>处女降生</em>的预言性原型。她生雅各，雅各生约瑟——而耶稣被称为<em>约瑟之子</em>，由处女所生。这并非偶然。</span>
+        <span class="en"><strong>בְּתוּלָה / עַלְמָה · betulah / alma</strong>. Rivkah is called by both words — <em>betulah</em>, "virgin," and <em>alma</em>, "young woman." Any Christian will immediately recall the contested word in Isaiah 7:14: "Behold, the <em>alma</em> shall conceive." The rabbi's point: Rivkah is the prophetic prototype of the later virgin who bears the Messiah. Through her come Jacob, then Joseph — and Yeshua is called the "son of Joseph," born of a virgin. This is not accidental.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒一向视利百加是「忠信的妻」，但极少把她读为「<strong>从外邦出来、归入以色列、生出弥赛亚的预言新妇</strong>」。这把基督徒所熟悉的「<em>羔羊的婚筵</em>」（《启示录》19）放回了希伯来圣经的根上——新妇并非凭空出现，她有一位预表她的「祖母」叫利百加。</span>
+        <span class="en">Christians have always honored Rivkah as a faithful wife. They have rarely read her as <strong>the prophetic bride who comes out from the nations, joins Israel, and brings forth Messiah</strong>. This grounds the Christian image of "the wedding of the Lamb" (Revelation 19) back into the Hebrew Scriptures — the Bride does not appear from nowhere; she has a "grandmother" named Rivkah.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果作为外邦基督徒，我的「<em>身份原型</em>」是利百加，那我从今天起应该如何活——更像她、更像谁？</span><span class="en">If my <em>identity-prototype</em> as a Gentile believer is Rivkah, how should I live differently today — more like her, more like whom?</span></li>
+        <li><span class="zh">利百加是被仆人「<em>带</em>」回去的——她不是自己跑过去的。在我的属灵生命里，我让圣灵「带」我到我以为自己永远不会去的地方了吗？</span><span class="en">Rivkah was <em>brought</em> by the servant — she did not arrive on her own. In my spiritual life, am I letting the Spirit lead me to places I would never have chosen?</span></li>
+        <li><span class="zh">基督教传统经常争论<em>alma</em>是否真的是「处女」。读了拉比对利百加的解读后，我会怎样回应那些说「<em>alma</em>只是『年轻女子』」的人？</span><span class="en">Christian tradition has long argued whether <em>alma</em> truly means "virgin." After reading the rabbi on Rivkah, how would I now respond to someone who says "<em>alma</em> simply means 'young woman'"?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 6  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">「我们必要行，我们必要听」</span>
+        <span class="en">"We Will Do, We Will Hear"</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">当亚伯拉罕的仆人问利百加「你愿不愿意走？」她不是说「让我考虑一下」。她说<strong>「我们必要行」</strong>。在《出埃及记》24:7，整个以色列在西奈山下也说出同一句话——<em>na'aseh v'nishma</em>，「<strong>我们必要行，我们必要听</strong>」。注意这个顺序：<strong>先行动，后听见</strong>。这与现代基督教中「<em>先把所有问题都搞清楚再委身</em>」的习惯刚好相反。利百加之所以能成为余民的原型，是因为她<strong>放弃了自己十二个月的「适应期」</strong>——立刻就走。</span>
+        <span class="en">When Abraham's servant asks Rivkah, "Will you go?" she does not say "Let me think." She says <strong>"I will go."</strong> At Sinai in Exodus 24:7 all Israel says the same words — <em>na'aseh v'nishma</em>, "<strong>We will do, and we will hear.</strong>" Note the order: <strong>act first, then understand</strong>. This is the opposite of the modern Christian instinct to "<em>resolve all my questions before committing</em>." Rivkah becomes the remnant prototype precisely because she <strong>gives up her customary twelve months of adjustment</strong> — and goes at once.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「凡耶和华所吩咐的，我们都必行，都必听从。」</span>
+        <span class="en">"All that the LORD has spoken we will do, and we will hear."</span>
+        <cite>《出埃及记》24:7 · Exodus 24:7</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>נַעֲשֶׂה וְנִשְׁמָע · Na'aseh v'nishma</strong>——「我们必要行，我们必要听」。在拉比传统中，<em>nishma</em>不仅是「听」，也是「明白」、「领会」。所以这句话的意思是：「我们先去做，做着做着就懂了。」这条原则与希腊—西方思维（<em>先理解再行动</em>）截然相反，是希伯来式信心的核心。</span>
+        <span class="en"><strong>נַעֲשֶׂה וְנִשְׁמָע · Na'aseh v'nishma</strong> — "We will do, and we will hear." In rabbinic tradition <em>nishma</em> means not only "hear" but "understand," "grasp." The phrase therefore means: "We will act, and the understanding will come as we act." This principle — opposite to the Greek-Western "<em>understand first, act second</em>" — is at the heart of Hebraic faith.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">耶稣的呼召几乎全部是这种顺序——<strong>「来跟从我」</strong>，而不是「先听完登山宝训再决定要不要跟随」。彼得在水面上行走，是「<em>先迈步，再质疑</em>」。希伯来书 11 章的信心英雄们都是「<em>因着信，亚伯拉罕……出去的时候，还不知往哪里去</em>」。利百加是这条线索的开端。<strong>na'aseh v'nishma 不是反智，而是属灵的次序</strong>。</span>
+        <span class="en">Yeshua's call is almost always in this order — <strong>"Follow Me"</strong>, not "Listen to the Sermon on the Mount and decide whether you'd like to come along." Peter walks on water by stepping <em>before</em> doubting. Hebrews 11 commends Abraham who "<em>went out, not knowing where he was going</em>." Rivkah stands at the head of this line. <strong><em>Na'aseh v'nishma</em> is not anti-intellectual — it is a spiritual sequence</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我自己生命中，是否有一件事，神已经清楚地呼召我「做」——而我却用「我还没明白」当作不动手的理由？</span><span class="en">Is there something in my life God has clearly called me to <em>do</em> — that I have postponed under the cover of "I haven't fully understood yet"?</span></li>
+        <li><span class="zh">如果作为利百加余民的呼召意味着「<em>放弃我的十二个月适应期</em>」，对我来说，那个「适应期」具体是什么？</span><span class="en">If the call of Rivkah's remnant means "<em>giving up my twelve-month adjustment period</em>" — what, in my case, is that adjustment period?</span></li>
+        <li><span class="zh">na'aseh v'nishma 与「先因信称义」是否冲突？拉比是否在讲一个不同的层次？</span><span class="en">Does <em>na'aseh v'nishma</em> conflict with "justification by faith first"? Or is the rabbi speaking on a different layer altogether?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 7  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">从骆驼上摔下——面纱落下的时刻</span>
+        <span class="en">Falling from the Camel — The Veil Drops</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">利百加的旅程在快要见到以撒时出现一个奇怪的小细节：她<strong>从骆驼上摔了下来</strong>，然后蒙起面纱。米德拉什让这一刻爆炸开来：<em>骆驼</em>（gamal）在希伯来传统里是「兼具洁净与不洁特征」的动物——它有一项洁净的标记（反刍）但没有另一项（分蹄）。利百加从骆驼上摔下，象征她<strong>放下「混合的身份」</strong>。蒙面纱代表谦卑、专注，准备好与新郎相会。这是从「<em>列国之女</em>」到「<em>余民之母</em>」的转折点。</span>
+        <span class="en">Just before meeting Isaac, Rivkah's journey hits an oddly specific moment — she <strong>falls from the camel</strong>, and then covers herself with a veil. Midrash explodes this scene: the <em>camel</em> (<em>gamal</em>) in Hebrew tradition is a creature of "mixed signs" — possessing one mark of cleanness (chewing the cud) but missing the other (split hoof). Rivkah's fall represents her <strong>laying down a mixed identity</strong>. Veiling herself signifies humility, focus, readiness for the bridegroom. This is the turning point from "<em>daughter of the nations</em>" to "<em>mother of the remnant</em>."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「利百加举目看见以撒，就从骆驼上下来，问那仆人：『这田间走来迎接我们的是谁？』……利百加就拿帕子蒙上脸。」</span>
+        <span class="en">"Rivkah lifted her eyes, and when she saw Isaac, she dismounted from the camel… and she took her veil and covered herself."</span>
+        <cite>《创世记》24:64-65 · Genesis 24:64-65</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>גָּמָל · gamal</strong>——骆驼。和这个词同根的<em>g-m-l</em>意为「断奶」、「成熟」。米德拉什的智慧是：从骆驼上「摔下」就是「<em>断奶</em>」——告别仍带有混合本质的旧身份。基督徒会立刻想到保罗的话：「<em>既作了人，就把孩子的事丢弃了。</em>」（林前13:11）</span>
+        <span class="en"><strong>גָּמָל · gamal</strong> — camel. The same root <em>g-m-l</em> means "to wean," "to mature." The Midrashic insight: "falling" from the camel is being <em>weaned</em> — released from an old identity still carrying mixed traces. Christians will hear Paul: "<em>When I became a man, I gave up childish things</em>" (1 Cor 13:11).</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">在基督教文化里，许多新信徒带着「<em>混合的</em>」属灵习惯——一半是福音，一半是民俗、商业、政治。利百加的「摔下」不是说外邦的一切都是污秽，而是说<strong>真正的相遇要求脱去混合</strong>。当她将要见到那位为她而来的人时，她蒙起面纱——这不是隐藏，而是<em>专注</em>。基督徒所等候的，与利百加预备见的，是同一位。</span>
+        <span class="en">Many Christians come to faith carrying "<em>mixed</em>" spiritual habits — half gospel, half folk culture, half commerce, half politics. Rivkah's fall does not mean everything Gentile is unclean. It means <strong>the real meeting requires shedding the mixture</strong>. When she is about to meet the one who came for her, she veils herself — not to hide, but to <em>focus</em>. The One Christians wait for and the One Rivkah was about to meet are the same Person.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我属灵生命里，有没有「<em>混合的骆驼</em>」——看上去虔诚却仍混杂着我尚未承认的东西？</span><span class="en">Are there "<em>mixed camels</em>" in my spiritual life — things that look devout but still carry mixtures I have not named?</span></li>
+        <li><span class="zh">利百加蒙面纱不是为了隐藏，而是为了「<em>专注</em>」。我是否能区分这两种动机——逃避与专注？</span><span class="en">Rivkah veils not to hide but to <em>focus</em>. Can I tell the difference between these two motives — avoidance and focus?</span></li>
+        <li><span class="zh">如果我每一天都是「即将与新郎相见」的那一天，我会先放下什么？</span><span class="en">If today I were on the brink of meeting the Bridegroom, what would I let go of first?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 8  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">今天加入余民</span>
+        <span class="en">Joining the Remnant Today</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">本书在尾声引《出埃及记》39-40章——会幕被造好后，零散的部件抬到摩西面前，但<strong>没有人能把它立起来</strong>，因为板子太重。摩西说：「人怎么能立起它？」神回答：「你尽你的力量。」拉什解释：会幕<em>看起来</em>是摩西立起来的，<strong>实际上是会幕自己立起来的</strong>。这是拉比留给我们的最后一幅图：余民的工作不是靠人完成的，但人必须<strong>先伸出手</strong>。神并不要求完美，祂要求<em>真实地伸手</em>。</span>
+        <span class="en">The book closes by citing Exodus 39-40 — when the parts of the Mishkan are brought to Moses, <strong>no one can raise it</strong>, the boards are too heavy. Moses asks God, "How can a man raise this?" God answers, "<em>Put your strength to it</em>." Rashi explains: it <em>appeared</em> Moses raised the tabernacle — but <strong>in truth the tabernacle raised itself</strong>. This is the rabbi's closing image: the work of the remnant is not done by human strength alone — but a human must <strong>put out his hand first</strong>. God does not demand perfection. He demands <em>that you genuinely reach</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「要恶恶好善，在城门口秉公行义；或者耶和华万军之上帝向约瑟的余民施恩。」</span>
+        <span class="en">"Hate evil, love good, and establish justice in the gate; perhaps the LORD God of Hosts will be gracious to the remnant of Joseph."</span>
+        <cite>《阿摩司书》5:15 · Amos 5:15</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שְׁאֵרִית · Sh'erit</strong>——「余民」。在希伯来圣经中这个词从不指<em>失败者剩下的</em>——它是<strong>种子</strong>，是「专门为下一代留下的精华」。沙皮拉拉比想留给读者的最后一句话是：你不必是大多数；你只需要是<em>真正的</em>那一点。</span>
+        <span class="en"><strong>שְׁאֵרִית · Sh'erit</strong> — "remnant." In the Hebrew Scriptures the word never carries the sense of "what is left over from defeat." It is <strong>seed</strong> — the deliberately preserved essence kept for the next generation. The rabbi's final word to the reader is this: you do not have to be the majority. You only have to be the <em>real</em> few.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">耶稣讲过一个很相似的图景——「<em>不要怕，你们这小群</em>」（路12:32）。基督教在数字增长的诱惑里太久了。拉比的「余民」并不在数<em>谁多</em>——它在数<em>谁真</em>。这与新约里「<em>窄门</em>」「<em>少数</em>」「<em>余种</em>」的语言完全一致。如果你读完这本书后觉得自己<strong>站在两个传统之间</strong>，既不被会堂完全接纳、也不被教会完全理解——拉比的回答是：你<em>本来就该</em>站在那里。利百加的脚步就是在两个家中间。</span>
+        <span class="en">Yeshua said something almost identical: "<em>Fear not, little flock</em>" (Luke 12:32). Christianity has lived too long under the temptation of numerical growth. The rabbi's "remnant" is not counting <em>who is many</em> — it is counting <em>who is true</em>. This aligns precisely with the New Testament's language of the "<em>narrow gate</em>," the "<em>few</em>," the "<em>seed</em>." If after reading this book you feel you stand <strong>between the two traditions</strong> — not fully received by the Synagogue, not fully understood by the Church — the rabbi's answer is: you were <em>meant</em> to stand there. Rivkah's steps are between two houses.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">读完这八堂课，我对一位犹太拉比的看法有没有改变？我对自己作为基督徒的身份呢？</span><span class="en">Having walked through these eight lessons, has my sense of who a Jewish rabbi is shifted? What about my sense of who I am as a Christian?</span></li>
+        <li><span class="zh">如果我「<em>伸出手</em>」，神就让会幕自己立起来——那我今天能伸出的<strong>那一只手</strong>是什么？</span><span class="en">If God will raise the tabernacle when I "<em>put out my hand</em>" — what is the <strong>one hand</strong> I can put out today?</span></li>
+        <li><span class="zh">我是否愿意带着这本书继续——不只是读完，还是<em>与一位拉比、一位犹太朋友、一位牧师</em>谈论它？</span><span class="en">Am I willing to carry this book further — not just to read it, but to <em>discuss it with a rabbi, a Jewish friend, or a pastor</em>?</span></li>
+      </ul>
+    </div>
+
+    <hr class="article-rule" />
+
+    <h2>
+      <span class="zh">同行祝福</span>
+      <span class="en">A Blessing for the Road</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华向你仰脸，赐你平安。」<br/><br/>愿你做了，听见了；摔下了，蒙脸了；走完了远路，进入了家。<br/><br/>愿你在两个传统之间不孤单——因为利百加曾走过这条路，而那位预备好的新郎正在田间走出来迎接。</span>
+      <span class="en">"The LORD lift up His countenance upon you, and give you peace."<br/><br/>May you do, and hear. May you fall, and be veiled. May you finish the long road, and enter the house.<br/><br/>May you not feel alone between the two traditions — for Rivkah has walked this road, and the Bridegroom is already coming out into the field to meet you.</span>
+    </blockquote>
 
     <div class="article-cta-block">
-      <a href="https://www.youtube.com/watch?v=vsu5vWKq-9k" target="_blank" rel="noopener" class="cta-watch-video">
-        ▶ <span class="zh">观看完整视频教导</span><span class="en">Watch the Full Teaching</span>
+      <a href="https://ahavatammi.org" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《利百加余民》原书</span><span class="en">Get the Book — The Rivkah Remnant</span>
       </a>
     </div>
 

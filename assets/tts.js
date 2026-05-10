@@ -194,6 +194,12 @@
       var audio = document.createElement('audio');
       audio.id = 'tts-audio';
       audio.preload = 'auto';
+      // iOS Safari refuses to play unless the element exists in the DOM
+      // BEFORE the user gesture, has playsinline (else it tries fullscreen),
+      // and uses crossorigin=anonymous so blob: URLs work.
+      audio.setAttribute('playsinline', '');
+      audio.setAttribute('webkit-playsinline', '');
+      audio.crossOrigin = 'anonymous';
       audio.style.display = 'none';
       document.body.appendChild(audio);
     }
@@ -249,8 +255,46 @@
   var hdCache      = new Map(); // "lang:idx" -> { url, blob }
   var HD_CACHE_MAX = 8;
   var toastTimer   = null;
+  var audioUnlocked = false;     // iOS audio is locked until first user-gesture play()
+
+  // 1-byte silent WAV — the smallest valid file we can use to "warm up"
+  // the <audio> element inside a user-gesture callback so iOS Safari will
+  // let us call .play() later from an async callback.
+  var SILENT_WAV_DATA_URL =
+    'data:audio/wav;base64,UklGRkQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YSAAAAAAAA' +
+    'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
 
   function getLang() { return document.documentElement.getAttribute('data-lang') || 'zh'; }
+
+  // Must be invoked synchronously inside a user-gesture handler.
+  // After this runs successfully, audioEl.play() works from any async context
+  // for the rest of the page session — that's how iOS Safari treats it.
+  function unlockAudio() {
+    if (audioUnlocked || !audioEl) return;
+    try {
+      audioEl.muted = true;            // play() succeeds even on locked iOS when muted
+      audioEl.src   = SILENT_WAV_DATA_URL;
+      var p = audioEl.play();
+      if (p && typeof p.then === 'function') {
+        p.then(function () {
+          try { audioEl.pause(); } catch (e) {}
+          try { audioEl.currentTime = 0; } catch (e) {}
+          audioEl.muted = false;
+          audioUnlocked = true;
+        }).catch(function () {
+          // Even if the silent prime failed, mark unlocked so we don't keep retrying
+          audioEl.muted = false;
+          audioUnlocked = true;
+        });
+      } else {
+        audioEl.muted = false;
+        audioUnlocked = true;
+      }
+    } catch (e) {
+      audioEl.muted = false;
+      audioUnlocked = true;
+    }
+  }
 
   function getVoiceForLang(lang) {
     var voices = synth.getVoices();
@@ -341,22 +385,35 @@
     if (hdProbing) return hdProbing;
     setHDState('loading');
     showToast('正在連線 HD 語音 (Gemini)... / Connecting HD voice (Gemini)...');
+
+    // 12 s timeout — Gemini cold-start + free-tier 429 wait can take a while.
+    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
+
     hdProbing = fetch(TTS_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: '你好', lang: 'zh', voice: GEMINI_VOICE.zh })
+      body: JSON.stringify({ text: '你好', lang: 'zh', voice: GEMINI_VOICE.zh }),
+      signal: ctrl ? ctrl.signal : undefined,
     }).then(function (r) {
+      clearTimeout(timer);
       hdProbing = false;
-      if (!r.ok) return r.text().then(function (t) { throw new Error('probe ' + r.status + ': ' + t.slice(0, 200)); });
+      if (!r.ok) return r.text().then(function (t) { throw new Error('HTTP ' + r.status + ': ' + t.slice(0, 200)); });
       hdReady = true;
       setHDState(hdEnabled ? 'on' : 'off');
-      showToast('HD 語音已就緒 (中文 + English) / HD voice ready', 2400);
+      showToast('✓ HD 語音已就緒 (Gemini Kore) / HD voice ready', 2400);
       return true;
     }).catch(function (err) {
+      clearTimeout(timer);
       console.error('[HD] probe failed:', err);
       hdProbing = false; hdAvailable = false; hdEnabled = false;
       setHDState('disabled');
-      showToast('HD 語音無法連線 — 使用系統語音 / HD voice unreachable — using system voice', 3200);
+      var reason = String(err && err.message || err).slice(0, 90);
+      // Common cases get friendlier messages
+      if (/abort|timeout/i.test(reason))           reason = 'timeout (12s)';
+      else if (/429/.test(reason))                 reason = 'rate limit (free tier 10/min)';
+      else if (/Failed to fetch|NetworkError/i.test(reason)) reason = 'network blocked';
+      showToast('✕ HD 失敗 (' + reason + ') — 使用系統語音 / HD failed — using system voice', 4500);
       throw err;
     });
     return hdProbing;
@@ -526,9 +583,14 @@
 
   // HD button toggle
   function toggleHD() {
+    // CRITICAL for iOS: must be called synchronously inside the user-gesture
+    // handler so the audio element is "unlocked" for later async play().
+    unlockAudio();
+
     if (!hdAvailable || hdProbing) return;
     if (!hdReady) {
       hdEnabled = true;
+      setHDState('loading');                    // immediate visual feedback
       probeHD().then(function () {
         if (isPlaying) {
           var idx = currentIndex; playToken++;
@@ -540,6 +602,7 @@
     }
     hdEnabled = !hdEnabled;
     setHDState(hdEnabled ? 'on' : 'off');
+    showToast(hdEnabled ? 'HD ON (Gemini)' : 'HD OFF (system voice)', 1800);
     if (isPlaying) {
       var idx = currentIndex; playToken++;
       synth.cancel(); if (audioEl) { try { audioEl.pause(); } catch (e) {} }
@@ -563,7 +626,14 @@
   }
 
   // Wire controls
-  if (btnLaunch)    btnLaunch.addEventListener('click', function () { stop(); setTimeout(function () { speakSegment(0); }, 80); });
+  if (btnLaunch) {
+    btnLaunch.addEventListener('click', function () {
+      // Unlock audio inside the user gesture so HD can later play() from async.
+      unlockAudio();
+      stop();
+      setTimeout(function () { speakSegment(0); }, 80);
+    });
+  }
   if (btnPlayPause) btnPlayPause.addEventListener('click', togglePlayPause);
   if (btnPrev)      btnPrev.addEventListener('click', prev);
   if (btnNext)      btnNext.addEventListener('click', next);

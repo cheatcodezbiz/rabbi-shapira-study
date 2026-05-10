@@ -71,6 +71,20 @@ GitHub Pages can host the static HTML, but the `/api/tts` function won't run
 there. The HD button gracefully falls back to the browser's Web Speech voice
 when the proxy is unreachable.
 
+## iPhone / iPad note
+
+iOS Safari has two quirks that affect TTS on this site:
+
+1. **The default Chinese voice (Tingting / Mei-Jia "Compact") sounds robotic.**
+   To get a much better non-HD voice without using Gemini, install the Enhanced
+   voice in **Settings → Accessibility → Spoken Content → Voices → Chinese →
+   tap a voice → Download**. Look for *(Enhanced)* or *(Premium)* — Tingting
+   Enhanced is dramatically better than the shipped default.
+2. **Audio playback can only start in response to a user tap.** The HD button
+   primes the audio element synchronously inside the tap so subsequent
+   server-fetched audio plays correctly. If you don't tap something first,
+   iOS silently blocks the audio (this is expected behaviour, not a bug).
+
 ## Rate limits / cost
 
 The proxy uses `gemini-2.5-flash-preview-tts` by default. On the **free tier**
