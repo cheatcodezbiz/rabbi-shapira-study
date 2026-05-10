@@ -18,3 +18,5 @@ _img_data.txt
 Thumbs.db
 *.log
 tmp_probe/
+
+.vercel

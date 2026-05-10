@@ -7,7 +7,10 @@ export const config = {
   maxDuration: 60,
 };
 
-const GEMINI_MODEL = 'gemini-3.1-flash-tts-preview';
+// Default to 2.5 Flash Preview TTS — the 3.1 preview currently false-positives
+// on benign Chinese as PROHIBITED_CONTENT and ignores safetySettings overrides.
+// Override via GEMINI_TTS_MODEL env var when 3.1 is fixed.
+const GEMINI_MODEL = process.env.GEMINI_TTS_MODEL || 'gemini-2.5-flash-preview-tts';
 
 // Sensible defaults per language. Voices work cross-language; these were
 // chosen for narrative reading: Kore is a firm female voice that handles
@@ -86,6 +89,18 @@ export default async function handler(req, res) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text }] }],
+          // We're narrating already-rendered, on-page content (e.g. religious /
+          // theological prose). Default Gemini safety thresholds false-positive
+          // on this kind of vocabulary, so disable them for narration. This is
+          // appropriate because the model is not generating new content — only
+          // synthesizing speech from text the user is already reading.
+          safetySettings: [
+            { category: 'HARM_CATEGORY_HARASSMENT',        threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_HATE_SPEECH',       threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+            { category: 'HARM_CATEGORY_CIVIC_INTEGRITY',   threshold: 'BLOCK_NONE' },
+          ],
           generationConfig: {
             responseModalities: ['AUDIO'],
             speechConfig: {
@@ -105,7 +120,14 @@ export default async function handler(req, res) {
     const data = await upstream.json();
     const part = data.candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
     if (!part) {
-      return res.status(502).json({ error: 'No audio in Gemini response' });
+      const blockReason = data.promptFeedback?.blockReason;
+      const finishReason = data.candidates?.[0]?.finishReason;
+      console.error('[tts] no audio. block=', blockReason, 'finish=', finishReason, 'snippet=', text.slice(0, 80));
+      return res.status(502).json({
+        error: 'No audio in Gemini response',
+        blockReason,
+        finishReason,
+      });
     }
 
     const pcm  = Buffer.from(part.inlineData.data, 'base64');
