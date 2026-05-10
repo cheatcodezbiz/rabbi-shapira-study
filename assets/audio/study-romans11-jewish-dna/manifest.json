@@ -1,0 +1,136 @@
+{
+  "slug": "study-romans11-jewish-dna",
+  "segments": 5,
+  "zh": {
+    "default": "zh-TW-HsiaoChenNeural",
+    "count": 5,
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "065a3ed54db9b8e6",
+          "2e8d1fc672022efc",
+          "3115f49d6842ffae",
+          "c29693c4f5ec189f",
+          "f5b176d9c2b7e1da"
+        ],
+        "withTimings": true
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "87058a27b62ac660",
+          "90bbeea9ded316e7",
+          "e04055062877d52a",
+          "6ebecd6498999682",
+          "40afabafbd261337"
+        ],
+        "withTimings": true
+      },
+      {
+        "id": "zh-CN-XiaoxiaoNeural",
+        "name": "Xiaoxiao 晓晓",
+        "gender": "Female",
+        "locale": "zh-CN",
+        "localeLabel": "简体中文 (大陆)",
+        "hashes": [
+          "22cb86f0013f6e6a",
+          "2a7131a9ba03937b",
+          "1b9cc981c314a755",
+          "8b1a19f63b5f3096",
+          "867f0531436970e1"
+        ],
+        "withTimings": true
+      },
+      {
+        "id": "zh-CN-YunxiNeural",
+        "name": "Yunxi 云希",
+        "gender": "Male",
+        "locale": "zh-CN",
+        "localeLabel": "简体中文 (大陆)",
+        "hashes": [
+          "aba3e3f064c0a704",
+          "aa07093300564ac1",
+          "34afebfc7ce51001",
+          "f64a38da2094128d",
+          "04e9795a613c79a0"
+        ],
+        "withTimings": true
+      }
+    ]
+  },
+  "en": {
+    "default": "en-US-AriaNeural",
+    "count": 5,
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "b8eda312dc1a733d",
+          "f6829b9ae6119c19",
+          "d71629dbc7e13d64",
+          "2e245a2a411bbad1",
+          "ebd12ef9bc7bde1b"
+        ],
+        "withTimings": true
+      },
+      {
+        "id": "en-US-GuyNeural",
+        "name": "Guy",
+        "gender": "Male",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "1acaa3a2d6ce3303",
+          "d110a0d7e827fc9d",
+          "b1727ea8d45a3026",
+          "c5b14a38fdfc4392",
+          "d74da374a8fcb139"
+        ],
+        "withTimings": true
+      },
+      {
+        "id": "en-GB-SoniaNeural",
+        "name": "Sonia",
+        "gender": "Female",
+        "locale": "en-GB",
+        "localeLabel": "English (UK)",
+        "hashes": [
+          "c74f577c9449e2ff",
+          "313deba3f8ac8814",
+          "b45893e588c5b6b2",
+          "a9900d19f12162cd",
+          "90f16e179bc46341"
+        ],
+        "withTimings": true
+      },
+      {
+        "id": "en-GB-RyanNeural",
+        "name": "Ryan",
+        "gender": "Male",
+        "locale": "en-GB",
+        "localeLabel": "English (UK)",
+        "hashes": [
+          "5b0edb8d682adeb1",
+          "426dbe871104f38a",
+          "60c2ce110cd7065d",
+          "9aadf7584a94d86b",
+          "692672d19fb0102e"
+        ],
+        "withTimings": true
+      }
+    ]
+  }
+}
