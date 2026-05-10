@@ -9,6 +9,10 @@
 # Node
 node_modules/
 
+# Python
+__pycache__/
+*.pyc
+
 # Local scratchpads — anything prefixed with _ is working material, not site content
 _*.txt
 

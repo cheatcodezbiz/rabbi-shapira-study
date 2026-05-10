@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>「史詩狂怒」與《以賽亞書》二十六章的密碼 — 妥拉之光</title>
+  <meta name="description" content="“Operation Epic Fury” and the Code of Isaiah 26 — A teaching by Rabbi Dr. Itzhak Shapira (Ahavat Ammi Ministries)" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-epic-fury-isaiah26.jpg" alt="“Operation Epic Fury” and the Code of Isaiah 26" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">拉比沙皮拉教导 · 全球预言观察</span><span class="en">Rabbi Shapira Teaching · Global Prophecy Watch</span></span>
+      <h1 class="article-title">
+        <span class="zh">「史詩狂怒」與《以賽亞書》二十六章的密碼</span>
+        <span class="en">“Operation Epic Fury” and the Code of Isaiah 26</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">美軍的「史詩狂怒」(Operation Epic Fury) 是巧合嗎？沙皮拉拉比指出：希伯來文「狂怒」(<em>Zaam</em>, זעם) 正是先知以賽亞用來描述末世災難的字。整段以賽亞書 26:20-21 — 拉什、Malbim、Radak 三位大師都把它讀作「歌革與瑪各之戰」。</span>
+        <span class="en">Is the US codename “Operation Epic Fury” a coincidence? Rabbi Shapira shows that the Hebrew word <em>Zaam</em> (זעם, “fury”) is the exact term Isaiah uses for the end-time tribulation — and Rashi, Malbim, and the Radak all read Isaiah 26:20–21 as the war of Gog and Magog.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">沙皮拉拉比博士 · Ahavat Ammi 事工</span>
+        <span class="en">Rabbi Dr. Itzhak Shapira · Ahavat Ammi Ministries</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 11</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 14 分钟阅读</span><span class="en">~14 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=PspfK45EDrM" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">观看原始视频 (23:01)</span><span class="en">Watch Original (23:01)</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh"><strong>美軍替最近一輪空襲伊朗的行動取了一個聖經式的代號：「史詩狂怒」(Operation Epic Fury)。</strong>在希伯來文裡，「狂怒」這個字是 <em>Zaam</em>（זעם）——同樣的字，三千年前先知以賽亞用它來描述末世將要傾倒的審判。「我的百姓啊，你們要來進入內室，關上門，<strong>隱藏片時</strong>，等到忿怒過去。」(以賽亞書 26:20)沙皮拉拉比指出：當以色列數百萬人此刻正躲在 <em>Mamad</em>（ממ"ד，加固避彈房）裡誦讀這節經文，而美軍正以「狂怒」之名介入時，一個被密碼化的字幕，正在我們眼前展開。</span>
+      <span class="en"><strong>The US military gave its latest round of strikes on Iran a biblical-sounding codename: “Operation Epic Fury.”</strong> In Hebrew, the word for “fury” is <em>Zaam</em> (זעם) — the very word the prophet Isaiah used three millennia ago to describe the judgment that would be poured out at the end of days. <em>“Come, my people, enter your chambers, and shut your doors behind you; <strong>hide yourselves for a little while</strong> until the fury has passed by.”</em> (Isaiah 26:20). Rabbi Shapira's claim: while millions of Israelis sit in their <em>Mamad</em> (ממ"ד, fortified safe-rooms) reading this very verse, and while the United States moves under the name “Fury,” a coded prophetic caption is being written across our news feeds.</span>
+    </p>
+
+    <h2><span class="zh">一、什麼是「史詩狂怒」行動？</span><span class="en">I. What is “Operation Epic Fury”?</span></h2>
+    <p>
+      <span class="zh">美軍與聯軍在這一輪對伊朗的軍事行動中，將其中一個關鍵階段命名為「Operation Epic Fury」。在拉比沙皮拉錄製這段教導時，以色列已遭受 19,500 次以上的攻擊、80,000 多次空襲警報、伊朗方向發射的飛彈超過 1,300 枚、黎巴嫩方向超過 3,800 枚。德黑蘭的領導人公開談論「世界大戰」、「第三次世界大戰」。在這個背景下，<em>美軍選用 Fury 這個字</em>，並非沒有重量。</span>
+      <span class="en">In its latest round of operations against Iran, the US-led coalition codenamed one critical phase “Operation Epic Fury.” When Rabbi Shapira recorded this teaching, Israel had absorbed more than 19,500 attacks, more than 80,000 air-raid alarms, more than 1,300 missiles from Iran and 3,800 from Lebanon. Tehran's leaders were openly speaking of “world war” and “World War III.” In that context, <em>the US choice of the word “Fury”</em> is not weightless.</span>
+    </p>
+
+    <h2><span class="zh">二、以賽亞書 26:20 ── 「進入你的內室，隱藏片時」</span><span class="en">II. Isaiah 26:20 — “Enter Your Chambers, Hide for a Little While”</span></h2>
+    <p>
+      <span class="zh">拉比沙皮拉所引述的核心經文是以賽亞書 26:20——一段在以色列當下處境中讀來令人脊背發涼的經文：</span>
+      <span class="en">The text Rabbi Shapira anchors on is Isaiah 26:20 — a verse that, read against Israel's current reality, lands with a chill:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我的百姓啊，你們要來進入內室，關上門，<strong>隱藏片時，等到忿怒過去</strong>。因為耶和華從祂的居所出來，要刑罰地上居民的罪孽。地也必露出其中的血，不再掩蓋被殺的人。」<cite>——以賽亞書 26:20-21</cite></span>
+      <span class="en">“Come, my people, enter your chambers, and shut your doors behind you; <strong>hide yourselves for a little while until the fury has passed by</strong>. For behold, the LORD is coming out from His place to punish the inhabitants of the earth for their iniquity, and the earth will disclose the blood shed on it and will no longer cover its slain.”<cite>— Isaiah 26:20-21</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">「內室」(<em>Heder</em>，חדר) 是希伯來文中的一個普通字，但在這段經文裡，它變成了一個末世的避難所。今天，以色列的「Heder」就是 <em>Mamad</em>——以色列法律規定每個新建建築都必須有的加固房間。當警報響起時，數百萬人在幾秒鐘之內進入 <em>Mamad</em>，關上鋼門，「隱藏片時」。</span>
+      <span class="en">“Chamber” (<em>Heder</em>, חדר) is an ordinary Hebrew noun — but in this passage it becomes an eschatological shelter. Today, Israel's <em>Heder</em> is the <em>Mamad</em> — the reinforced safe-room that Israeli building code requires in every new structure. When the sirens go off, millions enter the <em>Mamad</em> within seconds, close the steel door, and <em>“hide for a little while.”</em></span>
+    </p>
+
+    <h2><span class="zh">三、Zaam ── 那個被密碼化的字</span><span class="en">III. <em>Zaam</em> — The Encoded Word</span></h2>
+    <p>
+      <span class="zh">以賽亞書 26:20「忿怒」這個字，在希伯來文是 <strong><em>Zaam</em>（זעם）</strong>——意思是「忿怒、烈怒、猛烈的怒」。這正是「Operation Epic Fury」中 Fury 的對應詞。換句話說：<strong>美軍替這場行動取的代號，剛好就是先知用來描述末世審判的同一個字</strong>。</span>
+      <span class="en">The word for “fury” in Isaiah 26:20 is <strong><em>Zaam</em> (זעם)</strong> — “fury,” “fierce wrath,” “raging anger.” It is the exact Hebrew equivalent of the “Fury” in “Operation Epic Fury.” Put plainly: <strong>the US chose, as the codename for this operation, the very word the prophet uses to describe the end-time judgment</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh">這對於拉比傳統意味著什麼？拉比們認為神在歷史中常常透過<strong>言語的對應</strong>說話——一個地名、一個代號、一個被選中的字，可以是天上對人間語句的呼應。沙皮拉拉比並不是在說美國國防部讀過希伯來聖經才取了這個名字；他是在說：<em>那個替他們取名的、那位坐在天上的、祂讀過。</em></span>
+      <span class="en">What does this mean in the rabbinic tradition? The rabbis read God as speaking through <strong>verbal correspondence</strong> in history — a place name, a codename, a chosen word can be heaven's reply to a human sentence. Rabbi Shapira is not claiming that the Pentagon read Hebrew scripture before naming this operation. He is claiming that the One who named the Pentagon's namers — <em>He read it</em>.</span>
+    </p>
+
+    <h2><span class="zh">四、三位拉比大師的見證 ── Malbim、Radak、Rashi</span><span class="en">IV. Three Sages Agree — Malbim, Radak, and Rashi</span></h2>
+    <p>
+      <span class="zh">如果這節經文只是被沙皮拉拉比一個人讀作末世，我們有理由保留。但事實是：<strong>三位猶太歷史中最重要的解經家——Malbim（19世紀）、Radak（13世紀）、Rashi（11世紀）——都把以賽亞書 26:20 直接讀為「歌革與瑪各之戰」(Gog u'Magog) 的時刻。</strong></span>
+      <span class="en">If only Rabbi Shapira read this verse as an end-time text, we'd have reason to be cautious. But the fact is: <strong>three of the most important commentators in Jewish history — the Malbim (19th c.), the Radak (13th c.), and Rashi (11th c.) — all read Isaiah 26:20 as the moment of the war of Gog and Magog (<em>Gog u'Magog</em>)</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>Malbim</strong> 把這節讀為一個比喻：「進入內室」就是<em>進入悔改 (<em>Teshuvah</em>，תשובה) 與善行裡</em>，藉此在末世災難來臨之前躲避其鋒。「內室」對他來說，主要是<em>靈魂的內室</em>。</span>
+      <span class="en"><strong>Malbim</strong> reads the verse metaphorically: “entering the chamber” means <em>entering into <em>Teshuvah</em> (תשובה, repentance) and good deeds</em>, sheltering oneself by them before the disaster arrives. For him the chamber is primarily the <em>chamber of the soul</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>Radak（Rabbi David Kimchi，1160–1235）</strong>更為直接：他明確指出，這段經文所描述的就是<em>歌革與瑪各的短暫戰爭</em>，義人因悔改與善行得以脫離。</span>
+      <span class="en"><strong>The Radak (Rabbi David Kimchi, 1160–1235)</strong> is more direct: he says outright that this passage describes <em>the brief war of Gog and Magog</em>, from which the righteous escape through repentance and good deeds.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>Rashi（11世紀，猶太傳統中最權威的解經家）</strong>把「內室」讀為兩重：第一是<em>會堂與妥拉學習之所</em>，第二是<em>「你心中的內室」</em>——靈魂深處的省思之地。當神出去懲罰列國時，以色列的角色是進入內室、研習妥拉、行善、佈施。</span>
+      <span class="en"><strong>Rashi (11th c., the most authoritative commentator in Jewish tradition)</strong> reads “chambers” on two levels: first, <em>the synagogues and houses of Torah study</em>; second, <em>“the chambers of your heart”</em> — the inner places of the soul. When God goes out to punish the nations, Israel's job is to enter the chambers, study Torah, do good deeds, and give charity.</span>
+    </p>
+
+    <h2><span class="zh">五、以賽亞書 26:21 ── 神親自走出祂的居所</span><span class="en">V. Isaiah 26:21 — God Himself Comes Out from His Place</span></h2>
+    <p>
+      <span class="zh">「忿怒過去」之後接著什麼？以賽亞接著說：「<strong>耶和華從祂的居所出來，要刑罰地上居民的罪孽。</strong>」這裡的關鍵字是<em>「祂自己」</em>。神不再透過天使、不再透過自然災害、不再透過代理人——<strong>祂親自走出祂的居所</strong>。</span>
+      <span class="en">What comes after the fury passes? Isaiah continues: <strong>“The LORD is coming out from His place to punish the inhabitants of the earth for their iniquity.”</strong> The hinge word is <em>“Himself.”</em> No longer through angels, no longer through natural disasters, no longer through proxies — <strong>God Himself walks out of His place</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh">Radak 把第 21 節中的「地必露出其中的血」與另一個希伯來字連起來：<strong><em>Hamas</em>（חמס，「暴力」、「流人血」）</strong>。是的，這就是今天那個哈瑪斯所用的同一個字根。Radak 指出：所有未曾被算帳的無辜之血——尤其是被恐怖主義屠殺的猶太人之血——將在這一天被神親自討回。</span>
+      <span class="en">The Radak links the “earth disclosing the blood shed on it” in v. 21 to another Hebrew word: <strong><em>Hamas</em> (חמס, “violence,” “bloodshed”)</strong>. Yes — the same root that names today's Hamas. The Radak says: every drop of innocent blood that has never been accounted for — especially Jewish blood spilled by terror — will be repaid by God Himself on that day.</span>
+    </p>
+
+    <h2><span class="zh">六、與出埃及記 11:4 的連結 ── 「我約在半夜出去」</span><span class="en">VI. Connection to Exodus 11:4 — “About Midnight I Will Go Out”</span></h2>
+    <p>
+      <span class="zh">拉比們把以賽亞書 26:21（「神從祂的居所出來」）連到出埃及記 11:4（「我約在半夜出去走遍埃及」）。這兩節經文用的是<strong>同一個動作</strong>——神「走出去」。在出埃及，這個「走出去」帶來了「擊殺長子」(<em>Makkat Bechorot</em>，מכת בכורות)，是埃及被擊潰的最後一擊。</span>
+      <span class="en">The rabbis link Isaiah 26:21 (“God comes out from His place”) to Exodus 11:4 (“About midnight I will go out throughout Egypt”). Both texts use the <strong>same action</strong> — God “goes out.” In Exodus, this “going out” brought <em>Makkat Bechorot</em> (מכת בכורות, the plague of the firstborn) — the final blow that broke Egypt.</span>
+    </p>
+
+    <p>
+      <span class="zh"><em>Lekach Tov</em>（《Lekach Tov 米大示》）進一步把這個「神親自出去」的場景與撒迦利亞 14:3、哈巴谷 3:13、以賽亞 42:13 連在一起——所有這些經文都描述<strong>神親自出戰、為祂的百姓爭戰</strong>。今天當以色列被四面圍攻、當「Operation Epic Fury」在新聞頭條上展開時，這幅圖景正在被打開。</span>
+      <span class="en">The <em>Lekach Tov</em> Midrash ties this scene of God personally going out to Zechariah 14:3, Habakkuk 3:13, and Isaiah 42:13 — all of which describe <strong>God Himself going to war on behalf of His people</strong>. Today, with Israel surrounded on every front and “Operation Epic Fury” in the headlines, the rabbis say: this picture is opening before our eyes.</span>
+    </p>
+
+    <h2><span class="zh">七、Heder 的字母 ── 從 Hesed 到 Din</span><span class="en">VII. The Letters of <em>Heder</em> — From <em>Hesed</em> to <em>Din</em></span></h2>
+    <p>
+      <span class="zh">拉比沙皮拉分享了一個 2020 年神給他的個人啟示。「內室」的希伯來字 <em>Heder</em>（חדר）由三個字母組成：<strong>Het（ח）、Dalet（ד）、Resh（ר）</strong>。每個字母都帶著一個神學的層次：</span>
+      <span class="en">Rabbi Shapira shares a personal revelation he received in 2020. The Hebrew word for “chamber,” <em>Heder</em> (חדר), is built from three letters: <strong>Het (ח), Dalet (ד), Resh (ר)</strong>. Each letter carries a theological layer:</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>Het（ח）</strong>對應 <em>Hesed</em>（חסד，「慈愛」）——神向以色列、向世界所顯的恩典。<strong>Dalet（ד）</strong>對應 <em>Din</em>（דין，「審判」）——當慈愛被拒絕、當血債堆積時，所必然臨到的審判。「<em>Heder</em>」這個字，就是從「Hesed」(慈愛) 過渡到「Din」(審判) 的那個門檻。沙皮拉拉比說：今天我們站在這個門檻上。</span>
+      <span class="en"><strong>Het (ח)</strong> corresponds to <em>Hesed</em> (חסד, “lovingkindness”) — God's mercy toward Israel and the world. <strong>Dalet (ד)</strong> corresponds to <em>Din</em> (דין, “judgement”) — the inevitable judgement when mercy has been rejected and the debt of blood has piled up. The word <em>Heder</em> is itself the threshold from <em>Hesed</em> to <em>Din</em>. Rabbi Shapira's claim: today we are standing on that threshold.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>Resh（ר）</strong>則指向最終的方向：<em>Rachamim</em>（רחמים，「憐憫」）或 <em>Refuah</em>（רפואה，「醫治」）——審判之後神回轉的憐憫與醫治。換言之：「Heder」這個字本身教我們末世的順序——<em>慈愛 → 審判 → 回轉的憐憫</em>。</span>
+      <span class="en"><strong>Resh (ר)</strong> points to the final direction: <em>Rachamim</em> (רחמים, “mercy”) or <em>Refuah</em> (רפואה, “healing”) — the mercy and healing God returns to after judgement. In other words: the word <em>Heder</em> itself teaches us the end-time sequence — <em>mercy → judgement → returning mercy</em>.</span>
+    </p>
+
+    <h2><span class="zh">八、對基督徒的意義</span><span class="en">VIII. What This Means for Christians</span></h2>
+    <p>
+      <span class="zh"><strong>第一</strong>，這段教導再一次挑戰「災前被提」(pre-tribulation Rapture) 的末世圖景。如果以賽亞書 26:20 在這個時刻正在被應驗——神的百姓<em>進入內室、隱藏片時</em>——那麼神並沒有把祂的百姓搬走，祂讓他們<em>進入加固房間</em>，與祂同在「內室」中度過忿怒的日子。對基督徒而言，這意味著：我們不是被許諾「一場躲開的災難」，而是被許諾「在災難中神親自的同在」。</span>
+      <span class="en"><strong>First</strong>, this teaching once again challenges the pre-tribulation Rapture picture. If Isaiah 26:20 is being fulfilled in this hour — God's people <em>entering chambers, hiding for a little while</em> — then God does not remove His people. He sends them <em>into the safe-room</em>, to weather the days of fury with Him in the chamber. For Christians, this means: we are not promised <em>an escape from tribulation</em>; we are promised <em>God's own presence in tribulation</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第二</strong>，它把「悔改」(<em>Teshuvah</em>) 與「妥拉」(<em>Torah</em>) 帶回末世論的中心。Malbim、Rashi 都告訴我們，「進入內室」的具體做法是：<em>悔改、研讀神的話、行善、佈施</em>。對華人基督徒來說——尤其是在一個越來越複雜、越來越要妥協的時代——這個呼召就是：在內室中持守、不被外面的喧囂帶走。</span>
+      <span class="en"><strong>Second</strong>, it returns <em>Teshuvah</em> (repentance) and <em>Torah</em> to the centre of eschatology. Both Malbim and Rashi tell us that the concrete practice of “entering the chamber” is: <em>repent, study God's word, do good, give charity</em>. For Chinese Christians — especially in an age that is more morally tangled and more tempting to compromise — the call is to keep in the chamber and refuse to be swept along by the noise outside.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第三</strong>，「神親自走出祂的居所」這個畫面，把一個經常被基督徒淡化的真理放回中心：<em>神是審判者</em>，不只是慈愛者。十字架本身就是神審判的最高彰顯——只是落在祂自己的兒子身上。當以賽亞說「地必露出其中的血」時，他在告訴我們：那位曾為人類流血的神，也記得人類所流的血——並必親自為之討回。</span>
+      <span class="en"><strong>Third</strong>, the image of God “coming out from His place” returns to centre stage a truth Christians often soften: <em>God is Judge</em>, not only Lover. The cross itself was the highest expression of God's judgement — only it fell on His own Son. When Isaiah says “the earth will disclose the blood shed on it,” he is telling us: the God who once shed His own blood for humanity also remembers the blood humanity has shed — and He will personally come for it.</span>
+    </p>
+
+    <h2><span class="zh">九、關於分辨</span><span class="en">IX. A Word on Discernment</span></h2>
+    <p>
+      <span class="zh">把美軍代號「Operation Epic Fury」與希伯來文 <em>Zaam</em> 對應的這個觀察，明顯是一種<em>Drash</em>——它依賴於兩種不同語言之間的字義巧合。我們應該誠實地說：聖經並沒有「字面預言」美軍會用 Fury 這個名字。</span>
+      <span class="en">The mapping of the US codename “Operation Epic Fury” onto the Hebrew <em>Zaam</em> is, plainly, <em>drash</em> — it depends on a verbal coincidence between two languages. To be honest: the prophet did not “literally predict” the Pentagon's choice of name.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>但</strong>我們<em>不</em>能說：「以賽亞書 26:20-21 不是末世經文」。Malbim、Radak、Rashi 三位都明確讀它為「歌革與瑪各」。這是猶太傳統一千年來的共識。把這節經文放在當代「全球地緣政治大震盪」的背景中讀，並不是穿鑿附會，而是回到拉比們本來就讀它的方式。</span>
+      <span class="en"><strong>But</strong> we <em>cannot</em> say: “Isaiah 26:20–21 is not an end-time text.” Malbim, the Radak, and Rashi all explicitly read it as Gog and Magog. That is the consensus of a thousand years of Jewish tradition. Reading this verse against the backdrop of contemporary global upheaval is not <em>strained</em> — it is the reading the rabbis themselves gave it.</span>
+    </p>
+
+    <h2><span class="zh">十、結語 ── 進入內室</span><span class="en">X. Closing — Enter the Chamber</span></h2>
+    <p>
+      <span class="zh">拉比沙皮拉的呼籲對華人基督徒同樣有效。在這個 <em>Heder</em>——這個從慈愛走向審判的門檻——上，我們的功課是：</span>
+      <span class="en">Rabbi Shapira's call lands on Chinese Christians too. On this <em>Heder</em> — this threshold from mercy to judgement — our work is:</span>
+    </p>
+
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「進入內室。研習妥拉。行善佈施。為神的百姓禱告。守住信仰，直到忿怒和擊殺長子之災過去。然後懇求憐憫。」</strong></span>
+      <span class="en"><strong>“Enter the chamber. Study Torah. Do good and give charity. Pray for God's people. Hold the faith, until the fury and the plague of the firstborn pass by. Then plead for mercy.”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+
+</body>
+</html>
