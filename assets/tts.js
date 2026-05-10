@@ -502,6 +502,62 @@
     return text.replace(/\s+/g, ' ').trim();
   }
 
+  // Length under the same whitespace-collapsing rule used by getSegmentText —
+  // so an offset we compute here matches the offset inside the audio's text.
+  function normalizedLen(s) { return s.replace(/\s+/g, ' ').replace(/^\s+/, '').length; }
+
+  // Cross-browser caret-from-point. Safari & Chrome ship caretRangeFromPoint;
+  // Firefox ships caretPositionFromPoint; we wrap whichever exists.
+  function caretRangeAt(x, y) {
+    if (document.caretRangeFromPoint) return document.caretRangeFromPoint(x, y);
+    if (document.caretPositionFromPoint) {
+      var p = document.caretPositionFromPoint(x, y);
+      if (!p) return null;
+      var r = document.createRange();
+      r.setStart(p.offsetNode, p.offset);
+      r.setEnd(p.offsetNode, p.offset);
+      return r;
+    }
+    return null;
+  }
+
+  // Char offset within the segment's audio-text where a Range begins.
+  // Works for both a tap (caret range, collapsed) and a real selection.
+  function offsetFromRange(seg, lang, range) {
+    if (!range) return 0;
+    var span = seg.querySelector('span.' + lang) || seg;
+    var startNode   = range.startContainer;
+    var startOffset = range.startOffset;
+    if (!span.contains(startNode)) {
+      // Range starts outside the visible-language span; if the END is inside, use that.
+      if (!span.contains(range.endContainer)) return 0;
+      startNode = range.endContainer;
+      startOffset = range.endOffset;
+    }
+    var prefix = document.createRange();
+    prefix.setStart(span, 0);
+    prefix.setEnd(startNode, startOffset);
+    return normalizedLen(prefix.toString());
+  }
+
+  // Round a tap offset back to the start of the word it landed in.
+  // - Whitespace boundary for Latin scripts (English, transliterated Hebrew, etc.)
+  // - Exact char for CJK / Hebrew / Arabic where every char is its own "word"
+  function roundToWordStart(text, offset) {
+    if (offset <= 0) return 0;
+    if (offset > text.length) offset = text.length;
+    // Walk back to nearest whitespace.
+    var i = offset;
+    while (i > 0 && !/\s/.test(text.charAt(i - 1))) i--;
+    if (i > 0) return i;
+    // No whitespace before the offset — for CJK / Hebrew / Arabic / Japanese kana,
+    // every character is a word, so use the tap offset directly. For Latin with
+    // no leading whitespace, fall back to start of paragraph.
+    var ch = text.charAt(offset > 0 ? offset - 1 : 0);
+    if (/[㐀-鿿぀-ヿ֐-׿؀-ۿ]/.test(ch)) return offset;
+    return 0;
+  }
+
   function setStatus(t) { if (statusEl) statusEl.textContent = t; }
   function updateStatus() {
     var total = segments.length;
@@ -862,6 +918,33 @@
     });
   }
 
+  // Mid-paragraph entry point. The pre-rendered MP3 is paragraph-level (no
+  // word-timestamps to seek into), so for a non-zero offset we synthesize the
+  // truncated tail live. When this segment ends, the existing onend chain
+  // moves to the next FULL segment normally — so only the first segment
+  // after a tap loses the static-MP3 quality.
+  function speakFromOffset(index, charOffset) {
+    segments = getSegments();
+    if (index < 0 || index >= segments.length) { stop(); return; }
+    if (!charOffset || charOffset <= 0) { speakSegment(index); return; }
+    var lang = getLang();
+    var fullText = getSegmentText(segments[index], lang);
+    if (!fullText) {
+      if (index + 1 < segments.length) speakSegment(index + 1); else stop();
+      return;
+    }
+    var tail = fullText.slice(charOffset).replace(/^\s+/, '');
+    if (!tail) {
+      if (index + 1 < segments.length) speakSegment(index + 1); else stop();
+      return;
+    }
+    currentIndex = index;
+    highlight(index);
+    updateStatus();
+    if (shouldUseHD()) { speakViaHD(index, tail, lang); return; }
+    speakViaWebSpeech(index, tail, lang);
+  }
+
   // Direct <audio src="…mp3"> playback. Same plumbing as HD (uses audioEl) but
   // no fetch round-trip — the URL is a static file Vercel serves with edge
   // caching, so playback starts in <50 ms even on iPhone.
@@ -1084,9 +1167,16 @@
     segments = getSegments();
     return segments.indexOf(seg);
   }
+  // Char offset (within the segment's normalized text) where playback
+  // should start. Set by handleProseTap / handleSelection when the user
+  // picks a word; reset to 0 by hidePopup. Lets "Start from here" begin
+  // mid-paragraph at the actual tapped word, not at the paragraph head.
+  var pendingCharOffset = 0;
+
   function hidePopup() {
     if (popup) popup.classList.remove('tts-popup-visible');
     pendingSelIndex = -1;
+    pendingCharOffset = 0;
   }
   function positionPopup(rect, segIndex) {
     if (!popup) return;
@@ -1123,6 +1213,12 @@
     if (segIndex < 0) { hidePopup(); return; }
     var rect = range.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) { hidePopup(); return; }
+    // Use the selection's START offset so "Start from here" begins at the
+    // first selected word, not at the head of the paragraph.
+    var lang = getLang();
+    var fullText = getSegmentText(segments[segIndex], lang);
+    var rawOffset = offsetFromRange(segments[segIndex], lang, range);
+    pendingCharOffset = roundToWordStart(fullText, rawOffset);
     positionPopup(rect, segIndex);
   }
   document.addEventListener('mouseup', function () { setTimeout(handleSelection, 10); });
@@ -1154,6 +1250,14 @@
     segments = getSegments();
     var segIndex = segments.indexOf(seg);
     if (segIndex < 0) return;
+    // Resolve the tap to an exact character offset within the segment, then
+    // round back to the start of that word. Falls back to 0 (paragraph start)
+    // if the platform doesn't support caret-from-point.
+    var lang = getLang();
+    var caret = caretRangeAt(e.clientX, e.clientY);
+    var offset = caret ? offsetFromRange(seg, lang, caret) : 0;
+    var fullText = getSegmentText(seg, lang);
+    pendingCharOffset = roundToWordStart(fullText, offset);
     // Show the popup at the tap point. positionPopup() centers horizontally
     // on rect.left + rect.width/2 and anchors the top to rect.bottom, so a
     // zero-width point at (clientX, clientY) gives us a tooltip exactly there.
@@ -1170,10 +1274,11 @@
     btnSelPlay.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
       var idx = pendingSelIndex;
+      var off = pendingCharOffset;
       hidePopup();
       var sel = window.getSelection();
       if (sel && sel.removeAllRanges) sel.removeAllRanges();
-      if (idx >= 0) { stop(); setTimeout(function () { speakSegment(idx); }, 80); }
+      if (idx >= 0) { stop(); setTimeout(function () { speakFromOffset(idx, off); }, 80); }
     });
   }
 
