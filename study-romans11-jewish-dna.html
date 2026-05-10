@@ -164,29 +164,15 @@
       overflow: hidden;
       background: #000;
     }
-    /* DNA-themed cover: black with helix SVG, navy gradient overlay */
-    .article-cover-dna {
+    .article-cover-img {
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 40%, rgba(184,149,42,0.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 75% 70%, rgba(212,175,90,0.10) 0%, transparent 60%),
-        linear-gradient(135deg, #000 0%, #0a0e1a 50%, #0d1729 100%);
-    }
-    .dna-helix {
-      position: absolute;
-      left: 6%; top: 50%;
-      transform: translateY(-50%);
-      width: 240px; height: 360px;
-      opacity: 0.55;
-      pointer-events: none;
-    }
-    .dna-helix svg { width: 100%; height: 100%; }
-    @media (max-width: 768px) {
-      .dna-helix { left: -8%; width: 180px; height: 260px; opacity: 0.32; }
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
     }
     .article-cover-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,23,41,0.92) 0%, rgba(13,23,41,0.4) 55%, rgba(13,23,41,0.15) 100%);
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
     }
     .article-cover-text {
       position: absolute; left: 0; right: 0; bottom: 0;
@@ -698,41 +684,7 @@
 <article class="article-feature" id="featured-article">
 
   <div class="article-cover">
-    <div class="article-cover-dna"></div>
-    <div class="dna-helix" aria-hidden="true">
-      <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="strand1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#d4af5a" stop-opacity="0.85"/>
-            <stop offset="1" stop-color="#b8952a" stop-opacity="0.45"/>
-          </linearGradient>
-          <linearGradient id="strand2" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#b8952a" stop-opacity="0.55"/>
-            <stop offset="1" stop-color="#ffffff" stop-opacity="0.45"/>
-          </linearGradient>
-        </defs>
-        <g fill="none" stroke-width="2.2" stroke-linecap="round">
-          <path d="M40 10 C 160 60, 40 110, 160 160 S 40 260, 160 310" stroke="url(#strand1)"/>
-          <path d="M160 10 C 40 60, 160 110, 40 160 S 160 260, 40 310" stroke="url(#strand2)"/>
-        </g>
-        <g stroke="#d4af5a" stroke-width="1" opacity="0.5">
-          <line x1="55" y1="35" x2="145" y2="35"/>
-          <line x1="55" y1="85" x2="145" y2="85"/>
-          <line x1="55" y1="135" x2="145" y2="135"/>
-          <line x1="55" y1="185" x2="145" y2="185"/>
-          <line x1="55" y1="235" x2="145" y2="235"/>
-          <line x1="55" y1="285" x2="145" y2="285"/>
-        </g>
-        <g fill="#d4af5a" opacity="0.85" font-family="serif" font-size="14">
-          <text x="55" y="40">א</text><text x="138" y="40">ת</text>
-          <text x="55" y="90">ב</text><text x="138" y="90">ש</text>
-          <text x="55" y="140">ג</text><text x="138" y="140">ר</text>
-          <text x="55" y="190">ד</text><text x="138" y="190">ק</text>
-          <text x="55" y="240">ה</text><text x="138" y="240">צ</text>
-          <text x="55" y="290">ו</text><text x="138" y="290">פ</text>
-        </g>
-      </svg>
-    </div>
+    <img src="assets/Romans-11.jpg" alt="The Jewish DNA of Romans 11 — Study Guide" class="article-cover-img" />
     <div class="article-cover-overlay"></div>
     <div class="article-cover-text">
       <div class="article-tag-line">
