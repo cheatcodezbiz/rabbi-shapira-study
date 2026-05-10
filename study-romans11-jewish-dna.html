@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《罗马书11章的犹太基因》研习指南 — 妥拉之光</title>
+  <meta name="description" content="A Christian's study guide to The Jewish DNA of Romans 11 by Rabbi Dr. Itzhak Shapira — eight lessons reading Rabbi Saul (the apostle Paul) through both Christian and Jewish lenses." />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: #000;
+    }
+    /* DNA-themed cover: black with helix SVG, navy gradient overlay */
+    .article-cover-dna {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(184,149,42,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 70%, rgba(212,175,90,0.10) 0%, transparent 60%),
+        linear-gradient(135deg, #000 0%, #0a0e1a 50%, #0d1729 100%);
+    }
+    .dna-helix {
+      position: absolute;
+      left: 6%; top: 50%;
+      transform: translateY(-50%);
+      width: 240px; height: 360px;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .dna-helix svg { width: 100%; height: 100%; }
+    @media (max-width: 768px) {
+      .dna-helix { left: -8%; width: 180px; height: 260px; opacity: 0.32; }
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.92) 0%, rgba(13,23,41,0.4) 55%, rgba(13,23,41,0.15) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 640px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.85;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      .wrap { padding: 0 1rem; }
+
+      .article-cover { height: 420px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <div class="article-cover-dna"></div>
+    <div class="dna-helix" aria-hidden="true">
+      <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="strand1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d4af5a" stop-opacity="0.85"/>
+            <stop offset="1" stop-color="#b8952a" stop-opacity="0.45"/>
+          </linearGradient>
+          <linearGradient id="strand2" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#b8952a" stop-opacity="0.55"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity="0.45"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="2.2" stroke-linecap="round">
+          <path d="M40 10 C 160 60, 40 110, 160 160 S 40 260, 160 310" stroke="url(#strand1)"/>
+          <path d="M160 10 C 40 60, 160 110, 40 160 S 160 260, 40 310" stroke="url(#strand2)"/>
+        </g>
+        <g stroke="#d4af5a" stroke-width="1" opacity="0.5">
+          <line x1="55" y1="35" x2="145" y2="35"/>
+          <line x1="55" y1="85" x2="145" y2="85"/>
+          <line x1="55" y1="135" x2="145" y2="135"/>
+          <line x1="55" y1="185" x2="145" y2="185"/>
+          <line x1="55" y1="235" x2="145" y2="235"/>
+          <line x1="55" y1="285" x2="145" y2="285"/>
+        </g>
+        <g fill="#d4af5a" opacity="0.85" font-family="serif" font-size="14">
+          <text x="55" y="40">א</text><text x="138" y="40">ת</text>
+          <text x="55" y="90">ב</text><text x="138" y="90">ש</text>
+          <text x="55" y="140">ג</text><text x="138" y="140">ר</text>
+          <text x="55" y="190">ד</text><text x="138" y="190">ק</text>
+          <text x="55" y="240">ה</text><text x="138" y="240">צ</text>
+          <text x="55" y="290">ו</text><text x="138" y="290">פ</text>
+        </g>
+      </svg>
+    </div>
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 著作课程</span>
+        <span class="en">Study Guide · Course on a Book</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">《罗马书11章的犹太基因》<br/>研习指南</span>
+        <span class="en">The Jewish DNA of Romans 11<br/>A Christian's Study Guide</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，从基督教与犹太教的双重视角，伴你重新认识那位「拉比扫罗」(Rabbi Shaul)——你以为你认识的「使徒保罗」。</span>
+        <span class="en">Eight lessons. A companion for Christians who love the Jewish people, walking through Rabbi Shapira's reclamation of "Rabbi Shaul" — the apostle Paul you thought you already knew.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于沙皮拉拉比博士《罗马书11章的犹太基因 · 第一卷》(2025)</span>
+        <span class="en">Based on The Jewish DNA of Romans 11, Vol. Alef by Rabbi Dr. Itzhak Shapira (2025)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 50 分钟通读</span><span class="en">~50 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://ahavatammi.org" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书</span><span class="en">Get the Book</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">本指南不是要替你「读完」沙皮拉拉比的《罗马书11章的犹太基因》，而是要陪你认真地读它。这是一本让你重新认识使徒保罗——也就是<strong>「拉比扫罗」</strong>——的书。沙皮拉拉比一开始就直接挑战了基督教与犹太教对这个人物的双重误读：教会把他变成了「<em>反妥拉</em>」的基督教创始人；正统犹太教则把他视为「<em>反犹</em>」的叛徒。这本书要还原一个被误解了两千年的犹太拉比——他的法利赛根基、他的末世论世界观、他对外邦人的爱、以及他写《罗马书》第11章时心中的核心秘密：<strong>外邦人的丰满</strong>。如果你是一位爱犹太人的基督徒，这份指南是为你而设的。</span>
+      <span class="en">This guide is not a shortcut around Rabbi Shapira's <em>The Jewish DNA of Romans 11</em> — it is a companion for reading it carefully. This is a book about meeting the apostle Paul again as <strong>"Rabbi Shaul."</strong> Rabbi Shapira opens by dismantling two opposite misreadings of this man: the Church has made him the founder of an "<em>anti-Torah</em>" religion; Orthodox Judaism has labeled him an "<em>antisemitic</em>" traitor. The book seeks to restore a Jewish rabbi who has been misread for two thousand years — his Pharisaic roots, his end-times worldview, his fierce love for the nations, and the secret at the heart of Romans 11: <strong>the fullness of the Gentiles</strong>. If you are a Christian who loves the Jewish people, this guide is for you.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，每一堂围绕拉比书中的一个核心教导。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, each centered on a core teaching from the book. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 拉比说什么</strong>—— 用拉比自己的语境概述他的论点；<br/>
+        <strong>② 关键经文</strong>—— 拉比引用的圣经依据；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，连接两个传统；<br/>
+        <strong>④ 基督徒视角</strong>—— 福音派 / 教会传统如何接收这一教导；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 可与拉比一起继续追问的问题，不是反驳，而是更深的对话。
+      </span>
+      <span class="en">
+        <strong>① What the Rabbi Says</strong> — his argument in his own frame;<br/>
+        <strong>② Key Scripture</strong> — the biblical text he is reading;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that bridges the two traditions;<br/>
+        <strong>④ A Christian Lens</strong> — how Evangelical / Church tradition receives the teaching;<br/>
+        <strong>⑤ Honest Questions</strong> — questions to keep asking the rabbi — not to refute, but to go deeper.
+      </span>
+    </blockquote>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 1  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">从马德里的教堂讲台开始——「我们不需要犹太教」</span>
+        <span class="en">It Begins in a Madrid Pulpit — "We Don't Need Judaism"</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">沙皮拉拉比讲述了发生在西班牙马德里一座<strong>建于宗教裁判所时期的教堂</strong>里的事件：一位备受尊敬的牧师在台上向欢呼的会众宣告——「<em>基督教的耶稣、犹太教的耶书亚、《古兰经》中的尔撒，都是同一位。我们基督徒只在耶稣的名下得救——我们不需要犹太教。</em>」拉比当时站在那里，仿佛回到五百年前——他成了被迫改宗的「Anusim」中的一员，眼睁睁看着那座冰冷的教堂用保罗的话<em>定罪</em>犹太人。这一刻，他做出了一个决定：他必须把保罗<strong>从基督教的手中夺回来</strong>，归还给犹太人。这不是仇恨教会，而是<em>纠正一个历史性的错误</em>。本书因此而生。</span>
+        <span class="en">Rabbi Shapira opens with an event that happened in a Madrid church <strong>built during the Inquisition</strong>: a respected pastor declared from the pulpit to a cheering congregation — "<em>The Jesus of Christianity, the Yeshua of Judaism, and the Isa of the Quran are the same person. We Christians are saved in the name of Jesus — we don't need Judaism.</em>" Standing there, the rabbi felt himself thrown back five hundred years — one of the forced converts (the <em>Anusim</em>) watching a cold cathedral use Paul's own words <em>against</em> the Jewish people. In that moment he made a decision: Paul had to be <strong>reclaimed from Christianity</strong> and returned to the Jewish people. Not as hatred toward the Church but as <em>the correction of a historic error</em>. This book was born from that moment.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你不可向<em>枝子</em>夸口；若是夸口，当知道<strong>不是你托着根，乃是根托着你</strong>。」</span>
+        <span class="en">"Do not boast over the branches. If you do, consider this: <strong>you do not support the root, but the root supports you</strong>."</span>
+        <cite>《罗马书》11:18 · Romans 11:18</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>הַשְׁקָפָה · Hashkafah</strong>——「世界观」、「立场」。这是本书的关键术语。拉比指出：你<em>不能</em>把保罗从他自身的犹太 hashkafah 中抽走，再用基督教两千年的滤镜审问他——那样得出的结论必然<em>是错的</em>。要听懂保罗，必须先承认他是<strong>一世纪法利赛拉比</strong>——他自己说：「我是 Pa'rush ben Pa'rush，法利赛人的法利赛人」（《使徒行传》23:6）。这个原则一旦被建立，整本《罗马书》就开始呼吸希伯来语的呼吸。</span>
+        <span class="en"><strong>הַשְׁקָפָה · Hashkafah</strong> — "worldview," "standpoint." This is the book's key term. The rabbi insists: you <em>cannot</em> extract Paul from his Jewish <em>hashkafah</em>, then interrogate him through two thousand years of Christian filters and expect to land on the truth. To hear Paul you must concede he is <strong>a first-century Pharisaic rabbi</strong>. He said it himself: "I am a Pa'rush ben Pa'rush — a Pharisee, son of Pharisees" (Acts 23:6). Once that principle is in place, the entire epistle to the Romans starts breathing Hebrew air.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">很多基督徒习惯把「保罗」与「彼得、约翰」并列，仿佛他们都是在<em>新宗教</em>的开端站立。但《罗马书》11:18 是<em>保罗对外邦基督徒说的</em>——明确地说：「<strong>不是你托着根</strong>」。换句话说，保罗自己<em>预先警告</em>了过去两千年里教会的姿态。马德里那位牧师的话，不仅是对犹太人的羞辱——更是对<em>保罗本人话语</em>的逆转。读这本书的第一个挑战，就是承认：<strong>历史上有大量「以保罗之名」说出的话，正是保罗本人最严厉警告过的事</strong>。</span>
+        <span class="en">Many Christians line up "Paul" beside "Peter, John" as if they all stand together at the launch of a <em>new religion</em>. But Romans 11:18 is <em>Paul speaking to Gentile Christians</em>, and he is direct: <strong>"You do not support the root."</strong> Paul, in other words, anticipated and pre-warned against exactly the posture the Church has worn for twenty centuries. The Madrid pastor's words are not only an insult to Jews — they are the reversal of <em>Paul's own words</em>. The first challenge of this book is to admit: <strong>much that has been said throughout history "in Paul's name" is precisely what Paul himself most sternly warned against</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果有一位犹太拉比说：「<em>我要把保罗从教会手中夺回来。</em>」我的<strong>第一反应</strong>是什么？是好奇，还是自卫？这个反应本身在告诉我什么？</span><span class="en">If a Jewish rabbi tells me "<em>I'm reclaiming Paul from the Church</em>" — what is my <strong>first reaction</strong>? Curiosity or defensiveness? What is that reaction telling me about myself?</span></li>
+        <li><span class="zh">在我所听过的「保罗」教导中，有多少其实是<em>保罗自己警告过</em>的——「<strong>枝子向根夸口</strong>」？我能举出具体例子吗？</span><span class="en">In all the "Paul" sermons I've heard, how much was actually <em>Paul's own warning</em> against — "<strong>branches boasting over the root</strong>"? Can I name a concrete example?</span></li>
+        <li><span class="zh">我读《罗马书》时，是把它读为「<em>基督徒写给基督徒</em>」的书，还是「<em>一位犹太拉比写给罗马教会的余民</em>」的书？这两种读法会带出怎样不同的内容？</span><span class="en">When I read Romans, am I reading it as "<em>a Christian writing to Christians</em>" or as "<em>a Jewish rabbi writing to the remnant of the Roman congregation</em>"? What changes between those two readings?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 2  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">第四次革命——外邦人的觉醒</span>
+        <span class="en">The Fourth Revolution — When the Nations Wake Up</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">沙皮拉拉比引用当代极端正统派思想家——<strong>拉比以撒·金斯伯格</strong>——一段震撼人心的米德拉什：犹太信仰史上经历过<em>三次革命</em>：(1) 犹大王子把口传妥拉<em>写下来</em>（约 1,800 年前）；(2) 迈蒙尼德时代允许妥拉学者<em>受奖学金</em>（约 1,000 年前）；(3) 一百多年前开放<em>女性的妥拉教育</em>。如今，<strong>第四次也是最后一次革命</strong>正在发生——「<em>把妥拉的光带给万国，唤醒外邦人内心的「圣洁火花」</em>」。这位拉比用的语言几乎与拉比扫罗在《罗马书》11 章中说的<strong>「外邦人的丰满」</strong>一字不差——只是相隔两千年。</span>
+        <span class="en">Rabbi Shapira cites a stunning teaching from the Chabad thinker <strong>Rabbi Yitzchak Ginsburgh</strong>: Jewish history has seen <em>three revolutions</em> — (1) Judah the Prince writing down the Oral Torah (~1,800 years ago); (2) the post-Maimonidean permission for Torah scholars to receive <em>support</em> (~1,000 years ago); (3) the opening of <em>Torah education to women</em> (~150 years ago). Now, <strong>a fourth and final revolution</strong> is breaking — "<em>to bring the light of Torah to the nations, to awaken the holy sparks within Gentiles.</em>" The wording is almost word-for-word what Rabbi Shaul called <strong>"the fullness of the Gentiles"</strong> in Romans 11 — only two thousand years later.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「<strong>雅各余剩的人</strong>必在多国民中，如从耶和华那里降下的露水，又如甘霖降在草上；他们不依赖任何人，也不寄希望于世人。」</span>
+        <span class="en">"<strong>The remnant of Jacob</strong> shall be in the midst of many peoples, like dew from the LORD, like showers on the grass — which delay not for man, nor wait for the children of mankind."</span>
+        <cite>《弥迦书》5:7 · Micah 5:7</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>הִתְעוֹרְרוּת · Hit'orerut</strong>——「觉醒」。这个词不是<em>知识上的明白</em>——它是<em>从沉睡中苏醒</em>。拉比说：今天在万国中正在发生的，是<strong>预言性的、超自然的觉醒</strong>——一群外邦人开始<em>认领自己「雅各余民」的身份</em>。他们不是因被人传讲而苏醒，而是「如露水从天而降」——拉什注释这节经文说：「<em>露水非因人而来</em>。」也就是说，圣灵正在直接<em>越过</em>许多教会的讲台，把人唤醒。</span>
+        <span class="en"><strong>הִתְעוֹרְרוּת · Hit'orerut</strong> — "awakening." Not <em>intellectual recognition</em> — it is <em>waking from sleep</em>. The rabbi says: what is happening in the nations right now is a <strong>prophetic, supernatural awakening</strong> — a body of Gentiles beginning to <em>own their identity as "the remnant of Jacob."</em> They are not waking because someone preached to them; they are waking "<em>like dew from heaven</em>." Rashi notes the dew "<em>does not come because of man</em>." The Spirit is bypassing many pulpits and waking the sleepers directly.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">「外邦人的丰满」——<em>plērōma tōn ethnōn</em>，《罗马书》11:25 的关键词——基督徒读了两千年，却很少<strong>从希伯来视角</strong>读懂。它不是「<em>满了一定数量的外邦人就轮到犹太人</em>」这种<em>计数式</em>读法。拉比让我们看见：它是<strong>列国中的余民被唤醒、认领自己在以色列家中的身份</strong>，从而触发犹太人<strong>整体</strong>的得救。这一刻，金斯伯格拉比和拉比扫罗几乎站在同一个讲台上——<em>哪怕他们彼此并不知道</em>。</span>
+        <span class="en">"The fullness of the Gentiles" — <em>plērōma tōn ethnōn</em>, the key phrase of Romans 11:25 — has been read by Christians for two thousand years, almost never <strong>from a Hebrew viewpoint</strong>. It is not a <em>numerical</em> reading: "<em>once the Gentile quota is full, it switches back to Israel.</em>" The rabbi makes us see it differently: it is the <strong>remnant within the nations being awakened to claim their identity within the household of Israel</strong> — and <em>that</em> awakening triggering Israel's <strong>collective</strong> salvation. At this moment, Rabbi Ginsburgh and Rabbi Shaul stand on almost the same platform — <em>without ever knowing each other</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果今天一位<em>极端正统派的犹太拉比</em>和拉比扫罗对「外邦人的丰满」给出了几乎一致的描述——这<strong>说明了什么</strong>？我以前是如何理解这个词的？</span><span class="en">If a contemporary <em>ultra-Orthodox rabbi</em> and the apostle Paul give almost the identical description of "the fullness of the Gentiles" — what does <strong>that</strong> tell me? How did I understand the phrase before?</span></li>
+        <li><span class="zh">我自己的<em>觉醒</em>，是被某个人「<em>说服</em>」的，还是「<em>如露水从天而降</em>」的？两者有何分别？哪一种比较接近圣经的描述？</span><span class="en">My own <em>awakening</em> — was it because someone <em>convinced</em> me, or did it come "<em>like dew from heaven</em>"? What's the difference, and which is closer to Scripture's picture?</span></li>
+        <li><span class="zh">如果<em>我自己</em>就是「雅各余民」中的一员——<strong>这意味着什么责任</strong>？我能为犹太民族今天的处境做些什么？（提示：拉比写本书前的背景，是 2023 年 10 月 7 日。）</span><span class="en">If <em>I myself</em> am part of "the remnant of Jacob" — <strong>what responsibility comes with that</strong>? What can I do, today, for the Jewish people? (Hint: the rabbi wrote this book in the aftermath of October 7, 2023.)</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 3  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">奖与罚——犹太信仰的引擎</span>
+        <span class="en">Reward and Punishment — The Engine Beneath Faith</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一章会让许多基督徒坐不住。沙皮拉拉比指出：<strong>奖与罚（Sachar Ve'Onesh）</strong>是法利赛犹太信仰的核心支柱之一——也是耶稣本人和拉比扫罗共同的世界观。许多教会教导「<em>一次得救，永远得救</em>」、「<em>恩典之外不再有审判</em>」——这<strong>不是</strong>保罗本人的立场。保罗在《罗马书》2:6 直接写道：「<strong>祂必照各人的行为报应各人</strong>」——这句话的希伯来背景是《诗篇》62:13 和《先父的伦理》。但拉比的关键澄清在这里：保罗讲的<em>不是律法主义</em>。他讲的是——<strong>每个人按各自的「起点」与「终点」之间的提升</strong>，受神的衡量。</span>
+        <span class="en">This chapter unsettles many Christian readers. Rabbi Shapira insists: <strong>Reward and Punishment (<em>Sachar Ve'Onesh</em>)</strong> is one of the foundational pillars of Pharisaic Judaism — and is the shared worldview of Yeshua Himself and Rabbi Shaul. Many churches teach "<em>once saved, always saved</em>" or "<em>under grace, no more judgment</em>" — that is <strong>not</strong> Paul's position. Paul writes plainly in Romans 2:6: "<strong>He will repay each one according to his deeds</strong>" — quoting Psalm 62 and echoing Pirkei Avot. But here is the rabbi's crucial qualification: Paul is <em>not preaching legalism</em>. He is preaching that <strong>each person is measured by the climb between his "starting point" and his "endpoint"</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「祢是大有怜悯，也是大有公义；因为<strong>祢按各人所行的报应他</strong>。」</span>
+        <span class="en">"Steadfast love belongs to You, O Lord. For You will <strong>render to a man according to his work</strong>."</span>
+        <cite>《诗篇》62:12 · Psalm 62:12（拉比扫罗在《罗马书》2:6 引用）</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שָׂכָר וָעֹנֶשׁ · Sachar Ve'Onesh</strong>——「奖赏与惩罚」。这不是「<em>律法主义</em>」的代名词；恰恰相反，它的根基是<em>上帝是可信的</em>——祂不会让义人徒然劳苦，也不会让恶人逍遥法外。<em>奖赏（sachar）</em>这个词在希伯来语里也意为「工价」——祂会<em>付清</em>祂所欠的。这与「白白称义」并不冲突——它在更深的层次上回应：「<strong>那么，被白白称义之后，我所行的还重要吗？</strong>」拉比的答案是：<em>极其</em>重要——因为奖赏的尺度是<strong>提升的幅度</strong>。</span>
+        <span class="en"><strong>שָׂכָר וָעֹנֶשׁ · Sachar Ve'Onesh</strong> — "reward and punishment." Not a synonym for <em>legalism</em>; precisely the opposite. Its foundation is that <em>God is trustworthy</em> — He will not let the righteous toil in vain, and He will not let the wicked walk free. <em>Sachar</em> in Hebrew also means "wages" — God <em>pays out</em> what He owes. This does not contradict "freely justified" — it answers a deeper question: "<strong>once I have been freely justified, does what I do still matter?</strong>" The rabbi's answer is <em>profoundly</em> yes — because the measure of reward is <strong>the distance you climbed</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">耶稣自己说：「<strong>人子要在祂父的荣耀里同祂的众使者降临，那时要照各人的行为报应各人</strong>」（《马太福音》16:27）。<strong>同一句话</strong>。保罗在《哥林多前书》3 章详细讲过——每个人在火中受验，房屋若烧毁<em>本人虽然得救</em>，仍是「<em>损失</em>」。基督徒常把「<em>因信称义</em>」与「<em>奖赏与惩罚</em>」分成两本书——但保罗自己<strong>把它们写在同一封信里</strong>。读完这一章后，你将不能再轻松地说「<em>恩典之外不再算账</em>」——因为<em>是谁</em>在算账？是同一位救你的弥赛亚。</span>
+        <span class="en">Yeshua said it Himself: "<strong>The Son of Man is going to come… and then He will repay each person according to what he has done</strong>" (Matt 16:27). <strong>Identical sentence.</strong> Paul spelled it out in 1 Corinthians 3 — each one's work is tested by fire; if the building burns, the person <em>is still saved</em>, but he <em>loses</em>. Christians often shelve "<em>justification by faith</em>" and "<em>reward and judgment</em>" in two separate books. Paul writes them <strong>in the same letter</strong>. After this chapter you can no longer comfortably say "<em>grace cancels all accounting</em>" — because the One doing the accounting is the same Messiah who saved you.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我所相信的福音，是否给「<em>奖赏与惩罚</em>」留有位置？还是我把它<strong>整章删除</strong>了——为了维持一种「<em>不必紧张</em>」的恩典？</span><span class="en">Does the gospel I believe leave room for "<em>reward and punishment</em>"? Or have I <strong>removed the whole chapter</strong> to keep a "<em>no-pressure</em>" version of grace?</span></li>
+        <li><span class="zh">如果衡量我的尺度不是<em>到达多高</em>而是<em>提升多少</em>——我对自己<strong>原本的起点</strong>有多诚实？神看见的「我」，比我看自己<em>更深</em>。</span><span class="en">If I am measured not by <em>how high I reach</em> but by <em>how far I climb</em> — how honest am I about my <strong>actual starting point</strong>? God sees "me" <em>further down</em> than I see myself.</span></li>
+        <li><span class="zh">我对「<em>每一个善行都被记录</em>」的反应，是<strong>恐惧</strong>还是<strong>感恩</strong>？这两种反应之间，哪一个更像耶稣对人说话的语气？</span><span class="en">When I hear "<em>every act is being recorded</em>," do I respond with <strong>fear</strong> or with <strong>gratitude</strong>? Which of those two is closer to the tone in which Yeshua spoke to people?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 4  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">梯子的层级——你不必跑到犹太人的位置</span>
+        <span class="en">The Ladder — You Don't Have to Climb to the Jewish Floor</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">这是<strong>本书最具解放性</strong>的一章。沙皮拉拉比说：在 Sachar Ve'Onesh 的属灵账本里，<strong>神不在「终点」数你的诫命，而在「起点」与「终点」之间数你的提升</strong>。引用《先父的伦理》：「<em>从第一级升到第五级的恶人，比从第五级升到第七级的义人，得到更大的奖赏。</em>」用一句拉比自己的话：「<strong>不是你跑到哪里，而是你<em>从哪里</em>跑出来。</strong>」这意味着——<strong>外邦人不必爬到犹太人的位置</strong>，才能得到神的丰满奖赏。每一个人都有自己的梯子。这也是为什么保罗<em>不要求</em>外邦皈依者受割礼。他不是<em>反对</em>妥拉——他是<strong>不肯把全副妥拉的轭压到一群刚刚离开偶像崇拜的人身上</strong>，以免他们摔下来跌入深渊。</span>
+        <span class="en">This is <strong>the book's most liberating</strong> chapter. Rabbi Shapira teaches: in the spiritual ledger of <em>Sachar Ve'Onesh</em>, <strong>God does not count commandments at the finish line; He counts the climb between starting point and finish line</strong>. From Pirkei Avot: "<em>The wicked man who rises from the first rung to the fifth receives greater reward than the righteous man who rises from the fifth to the seventh.</em>" In the rabbi's own words: "<strong>It is not where you arrive — it is <em>where you ran from</em></strong>." Therefore — <strong>Gentiles do not have to climb up to the Jewish floor</strong> to receive the fullness of God's reward. Each person has his own ladder. This is why Paul <em>does not require</em> Gentile converts to be circumcised. He is not <em>against</em> Torah — he refuses to <strong>load the full yoke onto people who have just stepped off the altars of idolatry</strong>, lest they slip and fall further than they were.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「<strong>宁可有人对你说：『请你上来』</strong>，强如在贵族面前叫你退下。」</span>
+        <span class="en">"<strong>It is better that someone say to you, 'Come up here,'</strong> than that you be put lower in the presence of the noble."</span>
+        <cite>《箴言》25:7 · Proverbs 25:7</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אֱמוּנָה · Emunah</strong>——「信」。这是希伯来语里<em>动态的</em>信。它的同根词是 <em>oman</em>（艺术家）和 <em>aman</em>（阿们）——一个不断<strong>实践、修炼自己手艺</strong>的人。耶利米书 5:1 说神在耶路撒冷找<em>「寻求 emunah 的人」</em>——「寻求」(<em>mevakesh</em>) 这个词本身就含着「不肯停下」的意思。所以保罗说「<em>因信称义</em>」时，他<strong>从未</strong>意指那种「<em>站着不动的接受</em>」式的信。他指的是——一种<em>艺术家式的、动态的、不停在实践中精修</em>的信。这<strong>恰恰是</strong>「梯子的提升」所需要的引擎。</span>
+        <span class="en"><strong>אֱמוּנָה · Emunah</strong> — "faith." In Hebrew it is <em>active</em>. Its cognates are <em>oman</em> (artisan) and <em>aman</em> (amen) — someone who <strong>practices and refines his craft</strong>. Jeremiah 5:1 says God searches Jerusalem for "<em>those who seek <em>emunah</em></em>" — and the verb <em>mevakesh</em> ("seeks") carries the sense of "<em>refusing to stop</em>." So when Paul says "<em>justified by faith</em>," he <strong>never</strong> means a "<em>stand-still receiving</em>" faith. He means a faith <em>like an artisan's — dynamic, refined in the doing</em>. This is <strong>exactly</strong> the engine for "climbing the ladder."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">福音派常把「因信称义」简化为「<em>同意一组命题</em>」——但希伯来语的 emunah 不是「<em>同意</em>」，是「<em>跟着走</em>」、「<em>反复在做</em>」。这恰好是雅各书 2 章——<strong>「信心若没有行为就是死的」</strong>——的根。雅各和保罗<em>从来不是对立的</em>；他们用希伯来语说的<em>是同一回事</em>——只不过保罗强调引擎，雅各强调结果。沙皮拉拉比把这个引擎称为「<em>pnimiyut</em>」——内化。任何<em>没有内化</em>的诫命遵守，都会让人成为伪君子；任何<em>没有 pnimiyut</em> 的妥拉，<em>导致死亡</em>（保罗的原话）。</span>
+        <span class="en">Evangelicals often reduce "justified by faith" to "<em>agreeing to a set of propositions</em>." But Hebrew <em>emunah</em> is not "<em>agreeing</em>"; it is "<em>walking along</em>," "<em>doing it again and again</em>." This is precisely the root of James 2 — "<strong>faith without works is dead</strong>." James and Paul <em>have never been at war</em>; speaking Hebrew, they say <em>the same thing</em> — Paul stresses the engine, James the fruit. Rabbi Shapira names this engine <em>pnimiyut</em> — internalization. Any commandment-keeping <em>without internalization</em> turns a person into a hypocrite; any Torah <em>without pnimiyut</em>, in Paul's exact words, "<em>brings death</em>."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我有没有<em>急于</em>把整副犹太妥拉的轭<strong>立刻</strong>加给自己——以为那才「更属灵」？拉比是否在劝我<strong>慢一点</strong>，先稳住第一级？</span><span class="en">Have I <em>rushed</em> to take on the full yoke of the Torah <strong>immediately</strong> — believing that's "more spiritual"? Is the rabbi telling me to <strong>slow down</strong> and steady the first rung first?</span></li>
+        <li><span class="zh">我所信的「<em>因信称义</em>」是<strong>艺术家式的 emunah</strong>，还是<strong>静止式的同意</strong>？这两者会带出怎样不同的生活？</span><span class="en">Is the "<em>justified by faith</em>" I trust an <strong>artisan's <em>emunah</em></strong>, or a <strong>still-life agreement</strong>? What different lives do those two produce?</span></li>
+        <li><span class="zh">在我的属灵成长中，有没有一项<strong>「未内化」</strong>的诫命遵守？我能诚实承认它「<em>表面对，里面空</em>」吗？</span><span class="en">In my own walk, is there a <strong>"un-internalized"</strong> piece of obedience? Can I honestly admit it is "<em>right on the outside, hollow on the inside</em>"?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 5  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">香气测试——两位弥赛亚的同一张面孔</span>
+        <span class="en">The Aroma Test — Two Messiahs, One Face</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">在《玛拉基书》3:1，「主」（Adon）忽然进入祂的圣殿——立约的使者。<strong>伊本·以斯拉的注释令基督徒震惊</strong>：「<em>这位也许就是约瑟之子弥赛亚！</em>」而《以赛亚书》11:3 描写弥赛亚审判的方式更让人不安——「<strong>他必以敬畏耶和华来感知真理：行审判不凭眼见，断是非也不凭耳闻</strong>」——希伯来语 <em>v'hericho</em>，「藉嗅觉感知」。审判不是用眼睛或耳朵——<strong>是用鼻子</strong>。保罗在《哥林多后书》2:16 描述同一图像：「<em>在这等人身上是死的香气，在那等人身上是活的香气。</em>」沙皮拉拉比指出：约瑟之子弥赛亚（受苦的）和大卫之子弥赛亚（得胜的）<em>不是两个人</em>——是同一位的两次显现。<strong>祂的两张面孔，闻你身上的同一种香气。</strong></span>
+        <span class="en">In Malachi 3:1, "the Lord" (Adon) suddenly enters His temple — the messenger of the covenant. <strong>Ibn Ezra's commentary stops Christians cold</strong>: "<em>This might be Mashiach ben Yosef!</em>" And Isaiah 11:3 describes how the Messiah judges in a way that unsettles us — "<strong>He shall not judge by what His eyes see, nor decide disputes by what His ears hear</strong>" — the Hebrew verb <em>v'hericho</em>, "by smell." Judgment is not by sight or hearing — <strong>it is by scent</strong>. Paul gives the identical image in 2 Corinthians 2:16 — "<em>to one a fragrance of death, to another a fragrance of life</em>." Rabbi Shapira insists: Mashiach ben Yosef (the Suffering One) and Mashiach ben David (the Reigning One) are <em>not two persons</em> — they are one Person, two appearances. <strong>His two faces breathe in the same fragrance from your soul.</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他必以敬畏耶和华来<strong>感知真理</strong>：行审判不凭眼见，断是非也不凭耳闻……」</span>
+        <span class="en">"And His delight shall be in the fear of the LORD. <strong>He shall not judge by what His eyes see, nor decide disputes by what His ears hear…</strong>"</span>
+        <cite>《以赛亚书》11:3 · Isaiah 11:3</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>קְלִיפּוֹת · Klipot</strong>——字面意思是「外壳」，在卡巴拉里指<em>包裹圣洁火花的</em>邪恶外皮。沙皮拉拉比借《Chomat Anakh》注释指出：<strong>每一个 klipah 都散发气味</strong>。当弥赛亚降临，祂用嗅觉<em>嗅过</em>每一个人——闻得见<em>祂自己的香气</em>的人，「<em>香气测试</em>」就过了。这并非神秘主义——它<em>恰是</em>《罗马书》8:9 的话：「<strong>人若没有基督的灵，就不是属基督的</strong>」——同一个图像。基督的「灵」、基督的「香气」、基督的「内住」——希伯来传统里其实是<em>一个</em>词的不同侧面。</span>
+        <span class="en"><strong>קְלִיפּוֹת · Klipot</strong> — literally "shells," in Kabbalah the husks that <em>encase the holy sparks</em>. Citing the <em>Chomat Anakh</em>, Rabbi Shapira notes: <strong>every klipah emits a smell</strong>. When Messiah arrives He <em>breathes</em> over every person — and the one who carries <em>His own fragrance</em> has passed the "<em>aroma test</em>." This is not mysticism — it is exactly the picture in Romans 8:9: "<strong>Anyone who does not have the Spirit of Christ does not belong to Him</strong>." The "Spirit of Christ," the "fragrance of Christ," the "indwelling of Christ" — in Hebrew tradition these are facets of <em>one</em> reality.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">《使徒信经》本来就有「<em>祂还要从那里来审判活人死人</em>」——<strong>两次显现</strong>已经写在信经里。但许多基督徒只熟悉<em>第一次</em>——受苦的耶稣；对那位<strong>用嗅觉审判万民</strong>的弥赛亚反而陌生。沙皮拉拉比帮你把<em>两张面孔</em>合回一张——<strong>就是耶稣本人</strong>。这令基督徒和正在期待大卫之子的虔诚犹太人，<em>站到了同一片田地上</em>——他们其实<em>在等同一位</em>。</span>
+        <span class="en">The creeds already confess "<em>He shall come again to judge the living and the dead</em>" — <strong>two appearances</strong> are written into the confession. But most Christians know only the <em>first</em>, the suffering Yeshua. The Messiah who <strong>judges by fragrance</strong> is far more strange to them. Rabbi Shapira helps you put the <em>two faces back together</em> — <strong>they are Yeshua Himself</strong>. This places the Christian and the devout Jew waiting for Ben David <em>standing on the same field</em>. They are, in truth, <em>waiting for the same Person</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果将来弥赛亚审判我，<em>不是</em>看我的成绩单，<em>是</em>嗅我身上的气味——<strong>我闻起来像谁</strong>？</span><span class="en">If when Messiah judges me He does not <em>read my résumé</em> but <em>breathes in my scent</em> — <strong>who do I smell like</strong>?</span></li>
+        <li><span class="zh">我的「克利夫」(klipot, 外壳) 在哪里？哪些「外壳」让我自以为是属灵的，但其实<strong>遮住了基督的香气</strong>？</span><span class="en">Where are my <em>klipot</em>? Which "shells" make me feel spiritual but actually <strong>cover up the fragrance of Christ</strong>?</span></li>
+        <li><span class="zh">如果约瑟之子弥赛亚和大卫之子弥赛亚<em>是同一位</em>——为什么犹太人和基督徒过去两千年里<strong>没能彼此认出</strong>？这令我对<em>对方传统</em>多了什么样的怜悯？</span><span class="en">If Ben Yosef and Ben David are <em>one Person</em> — why have Jews and Christians <strong>failed to recognize each other</strong> for two thousand years? What kind of compassion does that ask of me toward the <em>other tradition</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 6  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">「被弃的银子」——以色列从未被休</span>
+        <span class="en">"Discarded Silver" — Israel Was Never Divorced</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一章对基督徒而言<strong>极为重要</strong>。先知耶利米呼喊：「<em>人必称他们为『被弃的银子』，因为耶和华已经弃掉他们。</em>」（耶 6:30）但米德拉什立刻翻转了画面——「<strong>一座宫殿即使只剩一把剑，国王也不会休他的妻子</strong>」。神告诉以色列：「<em>祢以为我休了你？我把祢以圣殿（Mishkan）做<strong>抵押（Mishkun）</strong>典当了——直到日落（弥赛亚降临）。</em>」拉比·巴哈亚的解读令人惊叹：<strong>Mishkan 与 Mishkun 同源</strong>——「居所」和「典押物」共用一个根。以色列在两千年的「典当期」里，看似被弃——其实只是<em>暂时被押在当铺</em>。<em>Geulah</em>（救赎）的那一天，丈夫一定会来赎回新妇。这就是保罗在《罗马书》11:1-2 的呐喊：「<strong>难道神弃绝了祂的百姓吗？断乎没有！</strong>」</span>
+        <span class="en">This chapter is <strong>critical</strong> for Christians. Jeremiah cries: "<em>Men call them 'discarded silver,' for the LORD has rejected them.</em>" (Jer 6:30) But Midrash flips the image immediately — "<strong>A king would never divorce his wife, even if only a single sword remained in his palace.</strong>" God tells Israel: "<em>You think I have divorced you? I pawned you, with the sanctuary (Mishkan) as <strong>collateral (Mishkun)</strong> — until the sun goes down [i.e., Messiah comes].</em>" Rabbi Bahya's reading is stunning: <strong>Mishkan and Mishkun share the same root</strong> — "dwelling" and "pledge." For two thousand years Israel has appeared discarded — in truth she has been <em>collateral on deposit</em>. On the day of <em>geulah</em>, the Husband will redeem His Bride. This is exactly Paul's cry in Romans 11:1-2 — "<strong>Has God rejected His people? By no means!</strong>"</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你若拿邻舍的衣服作抵押，必在<strong>日落</strong>以先归还他。」</span>
+        <span class="en">"If you take your neighbor's cloak as a pledge, you must return it to him <strong>before the sun goes down</strong>."</span>
+        <cite>《出埃及记》22:25 · Exodus 22:25</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מִשְׁכָּן / מַשְׁכּוֹן · Mishkan / Mishkun</strong>——「圣所」和「抵押」共用同一个希伯来词根<em>שׁ-כ-ן</em>「居住」。这不是文字游戏——它是神学。神<em>暂时把祂自己的居所</em>当作抵押物典当出去——<strong>祂多么舍不得回到这地</strong>。这与约伯记 14:13 中那位等待赎回的灵魂、与《启示录》12 章那位被逼到旷野的妇人——是<em>同一幅图画</em>。以色列的「掳」从来不是「休」。</span>
+        <span class="en"><strong>מִשְׁכָּן / מַשְׁכּוֹן · Mishkan / Mishkun</strong> — "sanctuary" and "pledge" share the same Hebrew root <em>sh-k-n</em>, "to dwell." This is not a pun — it is theology. God <em>pledged His own dwelling place</em> as collateral — <strong>so painful was His longing to return</strong>. This is the same picture as the soul awaiting redemption in Job 14:13, and the woman driven into the wilderness in Revelation 12 — <em>one image</em>. Israel's exile has never been a divorce.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>替代神学（Replacement Theology）</strong>——「<em>教会取代了以色列</em>」——是这一章的直接打击对象。如果神从未休妻，<em>谁有资格替代</em>？保罗用十一章圣经预先写好答案：「<em>断乎没有</em>。」拉比指出，以色列的两个状态——<em>haktanot</em>（被压低）和<em>hagdalot</em>（被升高）——恰好对应弥赛亚自己的两次显现。<strong>以色列与弥赛亚分享同一种命运</strong>：「<em>主的仆人</em>」既是赛亚书 41 章的<em>以色列</em>，也是赛亚书 53 章的<em>受苦弥赛亚</em>。教会迫害以色列时，以为自己「成了新以色列」——<em>其实是在迫害自己的至亲</em>。</span>
+        <span class="en"><strong>Replacement Theology</strong> — "<em>the Church has replaced Israel</em>" — is what this chapter directly demolishes. If God never divorced His Bride, <em>who is qualified to replace her</em>? Paul wrote eleven chapters in advance to answer: "<em>By no means.</em>" The rabbi shows that Israel's two states — <em>haktanot</em> (lowered) and <em>hagdalot</em> (raised) — match the Messiah's own two appearances. <strong>Israel shares one destiny with the Messiah</strong>: "<em>the servant of the LORD</em>" is both <em>Israel</em> in Isaiah 41 and the <em>suffering Messiah</em> in Isaiah 53. When the Church persecuted Israel believing it had become "the new Israel" — <em>it was persecuting its own kin</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我的神学体系里，是否<strong>暗含</strong>替代神学的影子？我能不能说出三处<em>具体</em>地方——以色列被「<em>属灵化</em>」成了教会？</span><span class="en">Is replacement theology <strong>hidden</strong> somewhere in my own framework? Can I name three <em>specific</em> places where Israel has been "<em>spiritualized</em>" into the Church?</span></li>
+        <li><span class="zh">如果以色列只是被「典当」而不是被「休」——那我对今天<em>苦难中的以色列国</em>有什么<strong>圣约性的责任</strong>？我是否在为她代祷？</span><span class="en">If Israel is "pledged," not "divorced" — what is my <strong>covenantal responsibility</strong> to the <em>nation of Israel in her current pain</em>? Do I intercede for her?</span></li>
+        <li><span class="zh">「<em>日落以先归还</em>」——「日落」就是弥赛亚降临。我是<strong>渴望</strong>那个日落，还是它对我只是模糊的「<em>末世传说</em>」？</span><span class="en">"<em>Return it before sunset</em>" — sunset is Messiah's coming. Do I <strong>long</strong> for that sunset, or is it merely a vague "<em>end-times legend</em>" to me?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 7  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">外邦人的丰满——Goy 与 Nochri 之别</span>
+        <span class="en">The Fullness of the Gentiles — <em>Goy</em> vs. <em>Nochri</em></span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">本书的<strong>命脉</strong>在这一章。沙皮拉拉比指出希伯来圣经里有两个完全不同的词，常常被一并译为「外邦人」：<em>Goy</em>（国族成员、与亚伯拉罕之约可有联系的人）和 <em>Nochri</em>（外国人、与以色列圣约毫无关系的人）。<strong>以色列自己也被称为 Goy Kadosh——「圣洁的国」</strong>。所以「Goy」并非贬义。拉比扫罗以惊人的预言眼光看见：在末后的日子，会有一群<em>从 Nochri 升级为 Goy</em> 的外邦人——他们不是肉身的犹太人，但他们有「<strong>犹太基因</strong>」（hashkafah, kavanah, ahavat Yisrael, mesirut nefesh）。这就是<em>plērōma tōn ethnōn</em>——外邦人的丰满——的真正含义。它不是数字。它是<strong>身份的转化</strong>。</span>
+        <span class="en">The book's <strong>artery</strong> runs through this chapter. Rabbi Shapira shows that the Hebrew Bible uses two utterly different words, both often flattened to "Gentile": <em>Goy</em> (a national member, potentially in covenantal relation to Abraham) and <em>Nochri</em> (a foreigner, with no covenantal relation at all). <strong>Israel herself is called Goy Kadosh — "a holy nation"</strong>. <em>Goy</em> is not pejorative. Rabbi Shaul, with stunning prophetic vision, foresaw that in the latter days a body of Gentiles would <em>be lifted from Nochri to Goy</em> — not Jewish in the flesh, but carrying the "<strong>Jewish DNA</strong>" (hashkafah, kavanah, ahavat Yisrael, mesirut nefesh). <em>Plērōma tōn ethnōn</em> — the fullness of the Gentiles — is not a number. It is <strong>a transformation of identity</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「在那些日子，必有十个人从列国诸方言中出来，<strong>拉住一个犹太人的衣襟</strong>，说：『我们要与你们同去，因为我们听见神与你们同在了。』」</span>
+        <span class="en">"In those days ten men from the nations of every tongue shall <strong>take hold of the robe of a Jew</strong>, saying, 'Let us go with you, for we have heard that God is with you.'"</span>
+        <cite>《撒迦利亚书》8:23 · Zechariah 8:23</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>גּוֹי / נׇכְרִי · Goy / Nochri</strong>。19 世纪德国正统派伟大拉比<em>雅各·茨维·梅克伦堡</em>提出一个革命性的修订：晨祷里那句「<em>赞美你，没有让我成为 Goy</em>」<strong>应当改为</strong>「<em>赞美你，没有让我成为 Nochri</em>」——因为今天许多<em>外邦人是 Goy</em>，他们承认创造之主、敬畏祂的妥拉、不再拜偶像。<em>Sanhedrin 59a</em> 更进一步：「<strong>一个学习妥拉的外邦人，被视为如大祭司</strong>」。这与彼得前书 2:9——<strong>「君尊的祭司」</strong>——是<em>同一句话</em>，跨越两千年的回响。</span>
+        <span class="en"><strong>גּוֹי / נׇכְרִי · Goy / Nochri</strong>. The 19th-century German Orthodox rabbi <em>Yaakov Tzvi Mecklenberg</em> proposed a revolutionary reading of the morning blessing: instead of "<em>Blessed are You, who has not made me a Goy</em>," he insisted it should read "<em>who has not made me a Nochri</em>" — because today many <em>Gentiles are Goyim</em>, who confess the Creator, honor His Torah, and have walked away from idols. Sanhedrin 59a goes further: "<strong>A Gentile who studies Torah is considered like the High Priest.</strong>" This is the <em>identical</em> sentence as 1 Peter 2:9 — "<strong>a royal priesthood</strong>" — echoing across two thousand years.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读《罗马书》11:25 时，常把「<em>外邦人的丰满</em>」当作「<em>该轮到犹太人了，所以我们的时间用完了</em>」——一种被动的<em>计时器</em>。但希伯来视角彻底翻转：<strong>它是责任，不是计时器</strong>。我们这群从 Nochri 升级为 Goy 的外邦人，<em>使命是抓住一个犹太人的衣襟</em>——不是为了让他改宗，而是<em>与他同去耶路撒冷</em>。这条命令完全消解了基督徒和犹太人「<em>谁让谁皈依</em>」的拉锯战。撒迦利亚没有说「<em>那犹太人改宗加入我们</em>」——他说的是「<em>我们抓住他的衣襟，跟他一起走</em>」。</span>
+        <span class="en">When Christians read Romans 11:25, they often hear "<em>the fullness of the Gentiles</em>" as "<em>now it's the Jews' turn — so our time is up</em>" — a passive <em>countdown clock</em>. The Hebrew lens reverses everything: <strong>it is responsibility, not a countdown</strong>. We Gentiles who have been raised from Nochri to Goy — <em>our task is to take hold of a Jew's hem</em> — not to convert him, but <em>to walk to Jerusalem with him</em>. This command dissolves the long Christian-Jewish argument about "<em>who converts whom</em>." Zechariah does not say "<em>that Jew joins us</em>" — he says "<em>we grab his hem and go with him</em>."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我心里，<em>「外邦人的丰满」</em>是<strong>计时器</strong>，还是<strong>责任书</strong>？这两种心态对我每天的行动有什么不同？</span><span class="en">Is "<em>the fullness of the Gentiles</em>" in my mind a <strong>countdown clock</strong> or a <strong>commission</strong>? How would my daily life look different under each?</span></li>
+        <li><span class="zh">我作为基督徒——是「Nochri」还是「Goy」？我能<strong>具体地</strong>说出三件事，证明我已经从<em>外国人</em>变成了<em>圣约里的外邦人</em>吗？</span><span class="en">As a Christian — am I <em>Nochri</em> or <em>Goy</em>? Can I name three <strong>concrete</strong> ways my life shows I've moved from <em>foreigner</em> to <em>Gentile within the covenant</em>?</span></li>
+        <li><span class="zh">最后一个：<strong>我有没有真的「抓过一个犹太人的衣襟」？</strong>不是为了让他相信耶稣，而是<em>陪着他祷告、为他守一次安息日、在 10 月 7 日那种日子里和他一起哭</em>？</span><span class="en">Final question: <strong>Have I ever actually grabbed a Jewish person's hem?</strong> — not to make him a believer, but <em>to pray with him, keep one Sabbath in his honor, weep with him on a day like October 7</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 8  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">扫罗的犹太基因——今天就走进这个故事</span>
+        <span class="en">Saul's Jewish DNA — Step Into the Story Today</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 拉比说什么</span>
+        <span class="en">① What the Rabbi Says</span>
+      </h3>
+      <p>
+        <span class="zh">本书在<strong>「Sof D'var · 尾声」</strong>把所有线索收拢——拉比扫罗的「犹太基因」是什么？三件事：(1) <strong>死人复活</strong>(<em>Techiyat Hametim</em>)——这是法利赛犹太信仰的核心；扫罗为这一信仰愿意上法庭。(2) <strong>奖与罚</strong>(<em>Sachar Ve'Onesh</em>)——他相信他正活在「<em>末日</em>」(Acharit Hayamim)。(3) <strong>对自己同胞的爱</strong>——「<em>为帮助我弟兄、我骨肉之亲，我若被咒诅、与弥赛亚分离，我也愿意。</em>」（《罗马书》9:3）这一句让所有「保罗反犹」的指控彻底崩塌。一个为了犹太民族<em>愿意失去自己救恩</em>的人，不可能是反犹的。他是<strong>历史上最深爱以色列的犹太人之一</strong>——他只是<em>用了一种被两千年误读的方式</em>。这本书要做的，就是把那把误读的滤镜<em>取下来</em>。</span>
+        <span class="en">The book closes with <strong>"Sof D'var — Conclusion"</strong>, gathering every thread — what is Rabbi Shaul's "Jewish DNA"? Three things: (1) <strong>resurrection of the dead</strong> (<em>Techiyat Hametim</em>) — the core of Pharisaic faith; he was willing to stand trial for it. (2) <strong>Reward and Punishment</strong> (<em>Sachar Ve'Onesh</em>) — because he believed he was living in <em>Acharit Hayamim</em>, the End of Days. (3) <strong>Fierce love for his own people</strong> — "<em>I could wish that I myself were accursed and cut off from the Messiah, for the sake of my brothers, my kinsmen according to the flesh.</em>" (Rom 9:3) That single sentence collapses every "Paul was antisemitic" charge. A man willing to <em>lose his own salvation</em> for the sake of the Jewish people cannot have been antisemitic. He was <strong>one of history's most fiercely Israel-loving Jews</strong> — only <em>read through two thousand years of distortion</em>. This book takes that distorting lens off.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我在弥赛亚里说真话，并不谎言；有圣灵给我作见证。我是大有忧愁，心里时常伤痛；为我弟兄、我骨肉之亲，<strong>就是自己被神咒诅、与弥赛亚分离，我也愿意</strong>。」</span>
+        <span class="en">"I am speaking the truth in Messiah — I am not lying; my conscience bears me witness in the Holy Spirit — that I have great sorrow and unceasing anguish in my heart. For <strong>I could wish that I myself were accursed and cut off from Messiah for the sake of my brothers, my kinsmen according to the flesh</strong>."</span>
+        <cite>《罗马书》9:1-3 · Romans 9:1-3</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מְסִירוּת נֶפֶשׁ · Mesirut Nefesh</strong>——「献上灵魂的全部」。希伯来语里，这是犹太信仰<em>最高的美德</em>——为他人放下自己的生命。这正是<strong>弥赛亚耶稣的本质</strong>。当扫罗写下「<em>愿我自己被咒诅</em>」时——他在<strong>身体力行 mesirut nefesh</strong>。这把扫罗放回了<em>义人 Tzaddikim</em>的传统里——他不是在创立新宗教，他在<em>展现犹太教最深的脊梁</em>。</span>
+        <span class="en"><strong>מְסִירוּת נֶפֶשׁ · Mesirut Nefesh</strong> — "the giving over of one's whole soul." In Hebrew, the supreme Jewish virtue — laying down one's life for another. This is exactly the essence of <strong>Yeshua HaMashiach</strong>. When Shaul writes "<em>I would wish myself accursed</em>" — he is <strong>enacting <em>mesirut nefesh</em></strong>. This places Saul back inside the lineage of the <em>Tzaddikim</em>. He was not founding a new religion — he was <em>displaying Judaism's deepest spine</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">如果读完这八堂课，你心中开始<strong>承认</strong>——你以为认识的「保罗」其实只是<em>历史投影出的影子</em>，而真正的「拉比扫罗」是一位<em>为犹太民族焦虑到日夜伤痛的犹太弟兄</em>——那么，本书<strong>已经做完了它要做的事</strong>。沙皮拉拉比把保罗还给了犹太人，但同时也<em>把保罗还给了基督徒</em>——只是这一次，是<strong>真正的他</strong>，不是教会两千年来制造出的那个滤镜版本。剩下的事，是你的：<em>带着这个新发现的「拉比扫罗」，回到你自己的圣经，回到你自己的会堂，回到你身边的犹太朋友身边</em>。</span>
+        <span class="en">If after these eight lessons you begin to <strong>concede</strong> — that the "Paul" you thought you knew was a <em>shadow projected by history</em>, and the real "Rabbi Shaul" was a <em>Jewish brother sleepless with grief over his own people</em> — then this book has <strong>done what it set out to do</strong>. Rabbi Shapira has given Paul back to the Jews, and at the same time he has <em>given Paul back to the Christians</em> — only this time, the <strong>real one</strong>, not the filtered version manufactured by two thousand years of Church tradition. What remains is yours: <em>carry this newly-discovered "Rabbi Shaul" back to your Bible, back to your assembly, back to the Jewish friend at your side</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">读完这八堂课，我对「<em>使徒保罗</em>」的看法有没有改变？我能<strong>具体说出</strong>三处变化吗？</span><span class="en">After these eight lessons, has my picture of "<em>the apostle Paul</em>" shifted? Can I name three <strong>specific</strong> changes?</span></li>
+        <li><span class="zh">如果保罗对自己的犹太同胞有<strong>「愿被咒诅以救他们」</strong>的爱——而我作为他的属灵后裔，我对犹太民族有<em>哪一种爱</em>？是<em>怀念上的爱</em>，还是<em>付代价的爱</em>？</span><span class="en">If Paul carried a love for his Jewish people that said <strong>"let me be accursed to save them"</strong> — and I am his spiritual descendant — what kind of love do I have? <em>Sentimental</em> love, or <em>costly</em> love?</span></li>
+        <li><span class="zh">我是否愿意带着这本书继续——不只是读完，更是<em>与一位拉比、一位犹太朋友、一位牧师</em>面对面谈论它？「外邦人的丰满」不是发生在<em>历史</em>里——是发生在<em>我们这一代</em>。</span><span class="en">Am I willing to carry this book further — not just to finish reading, but to <em>discuss it face-to-face with a rabbi, a Jewish friend, a pastor</em>? "The fullness of the Gentiles" is not happening in <em>history</em> — it is happening in <em>this generation</em>.</span></li>
+      </ul>
+    </div>
+
+    <hr class="article-rule" />
+
+    <h2>
+      <span class="zh">同行祝福</span>
+      <span class="en">A Blessing for the Road</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「<em>愿耶和华向你仰脸，赐你平安。</em>」<br/><br/>愿你认识那位真正的拉比扫罗——不是教会曾告诉你的「保罗」，也不是反传教士曾告诉你的「叛徒」，<br/>而是一位<strong>哀痛中的弟兄、燃烧中的法利赛人</strong>，他爱以色列爱到<em>愿被咒诅</em>。<br/><br/>愿你做那一个抓住衣襟的外邦人，愿你身上散发出基督的香气——好让以色列在<em>嗅觉测试</em>中，认出她的弟兄站在田间走来迎接她。</span>
+      <span class="en">"<em>The LORD lift up His countenance upon you, and give you peace.</em>"<br/><br/>May you meet the real Rabbi Shaul — not the "Paul" the Church described, nor the "traitor" the counter-missionaries described,<br/>but a <strong>brother in mourning, a Pharisee on fire</strong>, who loved Israel enough to be <em>accursed</em> for her sake.<br/><br/>May you be the one who grabs a Jewish hem; may you carry the fragrance of Messiah — so that on the day of the <em>aroma test</em>, Israel will recognize her own brother walking out into the field to meet her.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://ahavatammi.org" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《罗马书11章的犹太基因》原书</span><span class="en">Get the Book — The Jewish DNA of Romans 11</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="study-romans11-jewish-dna.html"><span class="zh">罗马书11章的犹太基因</span><span class="en">Jewish DNA of Romans 11</span></a></li>
+          <li><a href="study-rivkah-remnant.html"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+
+</body>
+</html>
