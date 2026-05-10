@@ -71,6 +71,16 @@ GitHub Pages can host the static HTML, but the `/api/tts` function won't run
 there. The HD button gracefully falls back to the browser's Web Speech voice
 when the proxy is unreachable.
 
+## Rate limits / cost
+
+The proxy uses `gemini-2.5-flash-preview-tts` by default. On the **free tier**
+that's `10 requests/minute, 1500 requests/day` (one request per article
+paragraph). The proxy retries 429s automatically using the wait hint Gemini
+returns, so a single user reading sequentially is fine, but a full bilingual
+article read can hit the cap. For a public site, enable **billing** on the
+Google Cloud project tied to the API key — paid tier raises the per-minute
+cap to 1000 and is pay-as-you-go.
+
 ## Voices
 
 Default voices are picked per language and can be overridden by passing a

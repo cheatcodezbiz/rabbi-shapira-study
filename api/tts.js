@@ -81,32 +81,61 @@ export default async function handler(req, res) {
   const lang  = body.lang === 'en' ? 'en' : 'zh';
   const voice = (body.voice || DEFAULT_VOICES[lang]).toString();
 
-  try {
-    const upstream = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
-      {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text }] }],
-          // NOTE: Gemini TTS models reject `safetySettings` (returns 500
-          // INTERNAL). The TTS filter is built-in and non-configurable.
-          // 2.5 doesn't false-positive on the article's vocabulary so we
-          // don't need overrides anyway.
-          generationConfig: {
-            responseModalities: ['AUDIO'],
-            speechConfig: {
-              voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } },
-            },
-          },
-        }),
-      }
-    );
+  // NOTE: Gemini TTS models reject `safetySettings` (returns 500 INTERNAL).
+  // The TTS filter is built-in and non-configurable. 2.5 doesn't
+  // false-positive on the article's religious vocabulary so we don't need
+  // overrides anyway.
+  const upstreamBody = JSON.stringify({
+    contents: [{ parts: [{ text }] }],
+    generationConfig: {
+      responseModalities: ['AUDIO'],
+      speechConfig: {
+        voiceConfig: { prebuiltVoiceConfig: { voiceName: voice } },
+      },
+    },
+  });
+  const upstreamUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`;
 
+  // Retry transient 429 (free-tier rate limit, 10 req/min) and 5xx INTERNAL.
+  // Free tier is hit easily during a full article read — Gemini tells us
+  // how long to wait in the error body, so honour that.
+  async function callOnce() {
+    return fetch(upstreamUrl, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    upstreamBody,
+    });
+  }
+  function parseRetryDelaySec(detail) {
+    const m = /retry in ([\d.]+)s/i.exec(detail) || /Retry-After[:\s]*([\d.]+)/i.exec(detail);
+    return m ? Math.min(15, parseFloat(m[1])) : null;
+  }
+
+  let upstream, lastDetail = '';
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    upstream = await callOnce();
+    if (upstream.ok) break;
+    lastDetail = (await upstream.text()).slice(0, 800);
+    const status = upstream.status;
+    if (attempt === 3) break;
+    if (status === 429) {
+      const wait = parseRetryDelaySec(lastDetail) ?? 5;
+      console.warn('[tts] 429 — waiting', wait, 's then retry');
+      await new Promise((r) => setTimeout(r, (wait + 0.4) * 1000));
+      continue;
+    }
+    if (status >= 500 && status < 600) {
+      console.warn('[tts] 5xx — retry attempt', attempt + 1, status);
+      await new Promise((r) => setTimeout(r, 600 * attempt));
+      continue;
+    }
+    break; // non-retryable client error
+  }
+
+  try {
     if (!upstream.ok) {
-      const detail = (await upstream.text()).slice(0, 800);
-      console.error('[tts] upstream error', upstream.status, detail);
-      return res.status(upstream.status).json({ error: 'Gemini API error', detail });
+      console.error('[tts] upstream error after retries', upstream.status, lastDetail);
+      return res.status(upstream.status).json({ error: 'Gemini API error', detail: lastDetail });
     }
 
     const data = await upstream.json();
