@@ -1,0 +1,20 @@
+# Secrets — must never be committed
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel/
+
+# Node
+node_modules/
+
+# Local image data scratchpad (200KB of base64 — not part of the live site)
+_img_data.txt
+
+# Editor / OS / tooling
+.claude/
+.DS_Store
+Thumbs.db
+*.log
+tmp_probe/

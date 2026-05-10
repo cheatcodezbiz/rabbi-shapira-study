@@ -1,0 +1,11 @@
+{
+  "name": "rabbi-shapira-study",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bilingual study site for Rabbi Dr. Itzhak Shapira's Torah teachings, with Gemini TTS playback.",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}

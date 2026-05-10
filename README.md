@@ -1,0 +1,88 @@
+# 妥拉之光研習網站 · Rabbi Shapira Study
+
+Bilingual (Traditional Chinese / English) study site for the Torah teachings of
+**Rabbi Dr. Itzhak Shapira** — Ahavat Ammi Ministries.
+
+The site is a single-file static site with a small Vercel serverless function
+that proxies **Google Gemini 3.1 Flash TTS** for high-quality bilingual audio
+playback.
+
+## Features
+
+- 📖 Side-by-side bilingual articles (Traditional Chinese / English)
+- 🔊 **Two-tier TTS player** with floating controls
+  - **Default**: in-browser Web Speech API (free, instant, OS voices)
+  - **HD**: Google Gemini 3.1 Flash TTS via a tiny Vercel function
+    (`gemini-3.1-flash-tts-preview`, supports both Mandarin and English)
+- 🖱️ **"Read from here"** popup — select any text and start playback at that paragraph
+- 🌐 Language toggle (繁中 / EN) preserved across visits
+
+## Architecture
+
+```
+Browser ──► /api/tts (Vercel serverless, Node.js)
+                │
+                ▼
+           Gemini API   (key lives in env, never in browser)
+                │
+                ▼
+           Audio (PCM)  → wrapped in WAV → returned to browser
+```
+
+The function in [`api/tts.js`](api/tts.js) accepts `{ text, lang, voice }` and
+returns a `Cache-Control: public, max-age=86400` `audio/wav` so the same
+paragraph is paid for once and then served from browser cache.
+
+## Local development
+
+Prerequisites: Node 18+ and the [Vercel CLI](https://vercel.com/docs/cli)
+(`npm i -g vercel`).
+
+```bash
+# 1. install
+npm install -g vercel
+
+# 2. set up your local secret
+cp .env.example .env
+# edit .env and paste your Gemini API key
+
+# 3. run with the serverless function
+vercel dev
+# opens http://localhost:3000
+```
+
+Get a free Gemini API key at <https://aistudio.google.com/apikey>.
+
+> Without a key, the HD button is hidden and the site still works using the
+> browser's built-in voices.
+
+## Deploy to Vercel
+
+```bash
+vercel link              # one-time: link the directory to a Vercel project
+vercel env add GEMINI_API_KEY production
+# paste your key when prompted
+vercel --prod
+```
+
+## Deploy to GitHub Pages (static only, no HD voice)
+
+GitHub Pages can host the static HTML, but the `/api/tts` function won't run
+there. The HD button gracefully falls back to the browser's Web Speech voice
+when the proxy is unreachable.
+
+## Voices
+
+Default voices are picked per language and can be overridden by passing a
+`voice` field in the POST body. Both languages support the full Gemini voice
+catalog (Kore, Aoede, Puck, Charon, Zephyr, Fenrir, Leda, Orus, …).
+
+| Language | Default voice |
+|----------|---------------|
+| 中文 (zh) | `Kore`        |
+| English  | `Aoede`       |
+
+## License
+
+Site code: MIT. Article content: © 2026 Ahavat Ammi Ministries — used with
+permission for educational/devotional purposes.
