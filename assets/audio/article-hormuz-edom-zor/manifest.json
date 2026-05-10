@@ -40,7 +40,7 @@
           "ccb59cb84f4d113b",
           "d51d42a1b3f2a0dd"
         ],
-        "withTimings": false
+        "withTimings": true
       },
       {
         "id": "zh-TW-YunJheNeural",
@@ -77,7 +77,7 @@
           "de1f4a6906f10b60",
           "79bf1cc40221d87a"
         ],
-        "withTimings": false
+        "withTimings": true
       },
       {
         "id": "zh-CN-XiaoxiaoNeural",
@@ -114,7 +114,7 @@
           "ab1a6a9c14fbeb17",
           "ea1fcc041208ff49"
         ],
-        "withTimings": false
+        "withTimings": true
       },
       {
         "id": "zh-CN-YunxiNeural",
@@ -151,7 +151,7 @@
           "73234e055ea92515",
           "86ec3e50a4487e73"
         ],
-        "withTimings": false
+        "withTimings": true
       }
     ]
   },
@@ -194,7 +194,7 @@
           "960de69ab46463df",
           "394b5fa79470b28c"
         ],
-        "withTimings": false
+        "withTimings": true
       },
       {
         "id": "en-US-GuyNeural",
@@ -231,7 +231,7 @@
           "ab1de326393a5aa3",
           "c1c189abb02b9bb1"
         ],
-        "withTimings": false
+        "withTimings": true
       },
       {
         "id": "en-GB-SoniaNeural",
@@ -268,7 +268,7 @@
           "b0fd46cb29fa99b9",
           "d8136e1775b08da1"
         ],
-        "withTimings": false
+        "withTimings": true
       },
       {
         "id": "en-GB-RyanNeural",
@@ -305,7 +305,7 @@
           "e71a4e5627685621",
           "c47e1f6393fe865f"
         ],
-        "withTimings": false
+        "withTimings": true
       }
     ]
   }
