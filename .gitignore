@@ -9,8 +9,8 @@
 # Node
 node_modules/
 
-# Local image data scratchpad (200KB of base64 — not part of the live site)
-_img_data.txt
+# Local scratchpads — anything prefixed with _ is working material, not site content
+_*.txt
 
 # Editor / OS / tooling
 .claude/
