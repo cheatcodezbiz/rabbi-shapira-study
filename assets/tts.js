@@ -433,11 +433,17 @@
   function staticUrlFor(index, lang, voiceId) {
     if (!staticManifest || !staticManifest[lang]) return null;
     if (index < 0 || index >= staticManifest[lang].count) return null;
-    var voices = staticManifest[lang].voices || [];
-    var match = voices.find(function (v) { return v.id === voiceId; });
-    if (!match) match = voices.find(function (v) { return v.id === staticManifest[lang].default; });
-    if (!match) return null;
-    return '/assets/audio/' + getSlug() + '/' + lang + '/' + match.id + '/' + index + '.mp3';
+    // New manifest (multi-voice): per-voice subfolders, listed in `voices`.
+    var voices = staticManifest[lang].voices;
+    if (Array.isArray(voices) && voices.length) {
+      var match = voices.find(function (v) { return v.id === voiceId; });
+      if (!match) match = voices.find(function (v) { return v.id === staticManifest[lang].default; });
+      if (!match) match = voices[0];
+      return '/assets/audio/' + getSlug() + '/' + lang + '/' + match.id + '/' + index + '.mp3';
+    }
+    // Old manifest (single voice, flat layout) — falls through gracefully so
+    // any cached older HTML still gets audio without 404ing on a missing file.
+    return '/assets/audio/' + getSlug() + '/' + lang + '/' + index + '.mp3';
   }
   function shouldUseStatic(lang) {
     return !!(staticManifest && staticManifest[lang] && staticManifest[lang].count > 0);
