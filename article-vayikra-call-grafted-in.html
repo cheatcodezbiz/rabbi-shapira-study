@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vayikra ── 那個微小的 Aleph 與基督徒的呼召 — 妥拉之光</title>
+  <meta name="description" content="<em>Vayikra</em> — The Tiny <em>Aleph</em> and the Call to Christians — A teaching by Rabbi Dr. Itzhak Shapira (Ahavat Ammi Ministries)" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-vayikra-call-grafted-in.jpg" alt="<em>Vayikra</em> — The Tiny <em>Aleph</em> and the Call to Christians" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">拉比沙皮拉教导 · 致基督徒的呼召</span><span class="en">Rabbi Shapira Teaching · A Call to Christians</span></span>
+      <h1 class="article-title">
+        <span class="zh">Vayikra ── 那個微小的 Aleph 與基督徒的呼召</span>
+        <span class="en"><em>Vayikra</em> — The Tiny <em>Aleph</em> and the Call to Christians</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">與爱我民國際 (Ahavat Ammi) 的麥基翁牧師同站，沙皮拉拉比博士論證：今天教會內部正在進行一場「我民信仰之爭」(<em>Milchemet Emunah</em>)，外邦基督徒正被神親自呼召——藉由那個寫得格外微小的希伯來字母 <em>Aleph</em>。</span>
+        <span class="en">Standing with Pastor Matt McKeon of Ahavat Ammi International, Rabbi Dr. Shapira argues that a “war of faith” (<em>Milchemet Emunah</em>) is now under way <em>inside</em> the Church — and that Gentile Christians are being personally summoned by God through the curiously small Hebrew letter <em>Aleph</em>.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">沙皮拉拉比博士 · Ahavat Ammi 事工</span>
+        <span class="en">Rabbi Dr. Itzhak Shapira · Ahavat Ammi Ministries</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 11</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 14 分钟阅读</span><span class="en">~14 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=NIWisZHY9pc" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">观看原始视频 (25:44)</span><span class="en">Watch Original (25:44)</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">妥拉的第三卷書名叫 <em>Vayikra</em>（וַיִּקְרָא，「祂呼喚」）。在古老的羊皮卷上，這個字最後一個字母 <em>Aleph</em>（א）<strong>被刻意寫得異常微小</strong>——猶太傳統說，這是摩西自己的謙卑。在沙皮拉拉比看來，這個微小的 Aleph 不只是古代抄寫的細節：它是一個發給今日所有基督徒的<em>個人呼召</em>。在一個反猶聲浪重新席捲西方教會、自稱基督徒的人公開散播「血祭誣告」與「以色列種族滅絕」謊言的時代，拉比與麥基翁牧師同聲指出：<strong>真正的基督徒此刻必須謙卑站起來，作為「彌賽亞的弟兄」與祂的百姓並肩。</strong></span>
+      <span class="en">The third book of the Torah is called <em>Vayikra</em> (וַיִּקְרָא, “And He called”). On the ancient scroll, the final letter of this word — the <em>Aleph</em> (א) — <strong>is deliberately written unusually small</strong>. Jewish tradition teaches: that miniature letter is Moses' own humility. For Rabbi Shapira, that tiny <em>Aleph</em> is more than a scribal detail. It is a <em>personal summons</em> issued today to every Christian. In an age when antisemitism is sweeping back into the Western Church and self-styled Christian voices are openly trafficking in blood libel and “Israel-genocide” lies, the rabbi and Pastor McKeon name what is happening together: <strong>the genuine Christian must stand up, in humility, as the “brother of the Messiah,” shoulder to shoulder with His people.</strong></span>
+    </p>
+
+    <h2><span class="zh">一、「我民信仰之爭」── 教會內部的屬靈戰爭</span><span class="en">I. <em>Milchemet Emunah</em> — A War of Faith Inside the Church</span></h2>
+    <p>
+      <span class="zh">中東有一場肉眼可見的戰爭——飛彈、砲火、警報。但拉比沙皮拉指出：在這場「物理戰爭」之外，教會內部正在進行一場<strong>看不見的戰爭</strong>，希伯來文叫 <em>Milchemet Emunah</em>（מלחמת אמונה，「信仰之戰」）。爭點是什麼？<em>基督徒究竟要不要與以色列同站？</em></span>
+      <span class="en">There is a visible war in the Middle East — missiles, artillery, sirens. But Rabbi Shapira points out: behind that physical war, an <strong>invisible war</strong> is being waged <em>inside the Church</em>. Hebrew calls it <em>Milchemet Emunah</em> (מלחמת אמונה, “war of faith”). The question at stake: <em>will Christians stand with Israel, or not?</em></span>
+    </p>
+
+    <p>
+      <span class="zh">證據觸目驚心：自稱基督徒的網紅與牧者開始散播「血祭誣告」(blood libel)、宣稱「以色列在加薩犯下種族滅絕」、傳播「阿什肯納茲猶太人不是真猶太人」這類陰謀論。耶書亞 (Yeshua) 在馬太福音 25 章所說的「分別綿羊與山羊」此刻正以一種我們未曾預料的方式，發生在教會自身內部。</span>
+      <span class="en">The evidence is stark: self-styled Christian influencers and pastors are now spreading <em>blood libel</em>, the “Israel-genocide” narrative about Gaza, and conspiracy theories like “Ashkenazi Jews aren't real Jews.” The “separation of sheep and goats” Yeshua spoke of in Matthew 25 is unfolding right now — in a way we did not expect — <em>inside the Church itself</em>.</span>
+    </p>
+
+    <h2><span class="zh">二、Vayikra 與 Vayikar ── 神聖呼召 vs 偶然遇見</span><span class="en">II. <em>Vayikra</em> vs <em>Vayikar</em> — Holy Call vs Chance Encounter</span></h2>
+    <p>
+      <span class="zh">希伯來文裡有兩個非常相近、但意義截然不同的字。<strong><em>Vayikra</em>（וַיִּקְרָא）</strong>意思是「祂呼喚」——這是一個有意的、神聖的、親密的召喚。<strong><em>Vayikar</em>（וַיִּקָּר）</strong>則是「祂偶然遇見」——一個沒有計劃、沒有親密度的偶然碰面。</span>
+      <span class="en">Hebrew has two words that look almost identical and mean radically different things. <strong><em>Vayikra</em> (וַיִּקְרָא)</strong> means “He called” — an intentional, holy, intimate summons. <strong><em>Vayikar</em> (וַיִּקָּר)</strong> means “He happened upon” — an unplanned, impersonal encounter.</span>
+    </p>
+
+    <p>
+      <span class="zh"><em>Vayikar</em> 是民數記 23 章中神對待先知巴蘭 (Balaam) 的方式——巴蘭是一個被雇來咒詛以色列的先知，神「偶然遇見」他、糾正他，但並沒有與他建立親密關係。<em>Vayikra</em> 則是神對摩西的方式——「主從會幕中呼喚 (<em>Vayikra</em>) 摩西」（利未記 1:1）——這是一個面對面、有名有姓的、邀請進入聖殿核心的召喚。</span>
+      <span class="en"><em>Vayikar</em> is the way God meets the false-prophet Balaam in Numbers 23 — Balaam was hired to curse Israel; God “happened upon” him to correct him, but with no intimacy. <em>Vayikra</em> is the way God meets Moses — “The LORD called (<em>Vayikra</em>) Moses out of the tent of meeting” (Leviticus 1:1) — a face-to-face, name-by-name summons into the holy of holies.</span>
+    </p>
+
+    <p>
+      <span class="zh">拉比沙皮拉的應用尖銳：今天，神不是「<em>Vayikar</em>」地對待愛祂的外邦基督徒——祂是 <strong><em>Vayikra</em></strong>。祂在<em>呼喚你的名</em>。問題只是：你是否聽見？</span>
+      <span class="en">Rabbi Shapira's application is sharp: today, God is not <em>Vayikar</em>-ing the Gentile believers who love Him. He is <strong><em>Vayikra</em></strong>-ing them. He is <em>calling you by name</em>. The only question: do you hear?</span>
+    </p>
+
+    <h2><span class="zh">三、那個微小的 Aleph ── 摩西的謙卑</span><span class="en">III. The Tiny <em>Aleph</em> — Moses' Humility</span></h2>
+    <p>
+      <span class="zh">在猶太抄經傳統中，每一卷妥拉羊皮卷上，<em>Vayikra</em> 這個字的最後一個字母——<strong><em>Aleph</em>（א）</strong>——必須被寫得明顯比其他字母小。為什麼？拉比傳統有兩個解釋，都指向「謙卑」：</span>
+      <span class="en">In the Jewish scribal tradition, on every Torah scroll the final letter of <em>Vayikra</em> — the <strong><em>Aleph</em> (א)</strong> — must be written noticeably smaller than the surrounding letters. Why? The rabbinic tradition gives two explanations, both pointing to humility:</span>
+    </p>
+
+    <p>
+      <span class="zh">（1）摩西不願寫「神<em>呼喚</em>了我」(<em>Vayikra</em>) 這樣顯赫的字眼，他想寫「神<em>偶然遇見</em>了我」(<em>Vayikar</em>)，把自己降到巴蘭的層次。神堅持要寫 <em>Vayikra</em>，但允許摩西把那個 <em>Aleph</em> 寫得很小——作為謙卑的記號。</span>
+      <span class="en">(1) Moses did not want to write that God “<em>called</em> me” (<em>Vayikra</em>) — such an honoured form. He wanted to write “He <em>happened upon</em> me” (<em>Vayikar</em>) — lowering himself to Balaam's level. God insisted on <em>Vayikra</em>, but allowed Moses to make that <em>Aleph</em> tiny — as a mark of humility.</span>
+    </p>
+
+    <p>
+      <span class="zh">（2）神親密呼喚的聲音是<em>低沉、隱密、需要彎下身才能聽見</em>的。微小的 <em>Aleph</em> 是這個「需要彎身才能聽見的呼喚」的視覺記號。</span>
+      <span class="en">(2) The voice of God's intimate calling is <em>quiet, hidden, requires you to bend low to hear it</em>. The miniature <em>Aleph</em> is the visual sign of a summons you have to stoop to receive.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「外邦基督徒，你正被神呼喚——但呼喚的形式像那個微小的 Aleph：謙卑、隱密、需要你彎下身。不要對以色列誇口，不要把猶太人看作『沒接受耶書亞所以渺小』。彎下身。聽。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“Gentile Christian, you are being called by God — but the call comes in the shape of that tiny <em>Aleph</em>: humble, hidden, requiring you to stoop. Do not boast over Israel. Do not view the Jewish people as ‘small’ because they have not accepted Yeshua. Stoop. Listen.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <h2><span class="zh">四、馬太福音 25:40 中「我的弟兄」究竟是誰？</span><span class="en">IV. Who Are “My Brothers” in Matthew 25:40?</span></h2>
+    <p>
+      <span class="zh">馬太福音 25 章中，耶書亞描述末日的審判：「<strong>我實在告訴你們，這些事你們既做在我這弟兄中一個最小的身上，就是做在我身上了。</strong>」(馬太福音 25:40) 多數西方解經把「我這弟兄中一個最小的」泛指為「窮人」、「邊緣人」。但拉比沙皮拉指出：耶書亞作為一位猶太拉比，當祂用「我的弟兄」這個詞時，<strong>祂指的是祂血肉的同胞——猶太人</strong>。</span>
+      <span class="en">In Matthew 25, Yeshua describes the final judgement: <strong>“Truly I tell you, whatever you did for one of the least of these brothers of mine, you did for me.”</strong> (Matt 25:40) Most Western readings take “the least of these my brothers” to mean simply “the poor,” “the marginalised.” But Rabbi Shapira observes: Yeshua was a Jewish rabbi, and when a Jewish rabbi says “my brothers,” <strong>He means His own flesh-and-blood — the Jewish people</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh">這個讀法並不削弱「服事貧窮人」的教導——它把這段經文先放回它的字面背景：神在末日要根據人們<em>如何對待祂的猶太弟兄</em>來分別綿羊與山羊。為以色列禱告、為猶太人挺身、在反猶聲浪中發聲——這些不是「政治選擇」，按耶書亞的話，這是<strong>對祂自己</strong>的對待方式。</span>
+      <span class="en">This reading does not weaken the teaching of serving the poor — it restores the verse to its first, plain context: at the end, God will divide the sheep from the goats by <em>how they treated His Jewish brothers</em>. Praying for Israel, standing up for the Jewish people, speaking out against antisemitism — these are not “political choices.” In Yeshua's own words, they are how you treat <strong>Him</strong>.</span>
+    </p>
+
+    <h2><span class="zh">五、羅馬書 11:18 ── 「不要向舊枝誇口」</span><span class="en">V. Romans 11:18 — “Do Not Boast Against the Natural Branches”</span></h2>
+    <p>
+      <span class="zh">保羅在羅馬書 11 章用橄欖樹的比喻：以色列是天然的橄欖樹，外邦信徒是「<em>被接上去</em>」(<em>grafted in</em>) 的野橄欖枝。然後他發出警告：「<strong>你不要向舊枝誇口；若是誇口，當知道不是你托著根，乃是根托著你。</strong>」(羅馬書 11:18)</span>
+      <span class="en">Paul, in Romans 11, uses the olive-tree image: Israel is the natural olive tree; Gentile believers are wild branches <em>grafted in</em>. Then he issues a warning: <strong>“Do not boast over the branches. If you do, consider this: you do not support the root, but the root supports you.”</strong> (Romans 11:18)</span>
+    </p>
+
+    <p>
+      <span class="zh">麥基翁牧師強調這一點：今天許多教會偷偷地、有時公開地把這個次序顛倒了——彷彿教會是「真以色列」，而猶太人是「被切斷的舊枝」。這是<em>誇口</em>。這是反猶主義的神學形式。它違背使徒行傳所傳的彌賽亞信仰——那個信仰中，外邦人<em>被接上以色列</em>，而不是相反。</span>
+      <span class="en">Pastor McKeon presses the point: many churches today have quietly — and sometimes loudly — inverted this order, as if the Church were “the true Israel” and the Jewish people the “severed old branches.” This is <em>boasting</em>. This is the theological form of antisemitism. It contradicts the Messianic faith of Acts itself, in which Gentiles are <em>grafted into Israel</em>, never the other way around.</span>
+    </p>
+
+    <h2><span class="zh">六、走進以色列的力量</span><span class="en">VI. The Power of Walking on the Land Itself</span></h2>
+    <p>
+      <span class="zh">兩位拉比與牧師都注意到：許多最尖銳地批評以色列的人，<em>從未去過以色列</em>。他們的判斷建立在媒體片段、社交平台短片與意識形態框架之上，而不是建立在親身踏上那片土地的經驗上。</span>
+      <span class="en">Both the rabbi and the pastor observe: many of the loudest critics of Israel <em>have never been there</em>. Their judgements are built on media clips, social-platform shorts, and ideological frames — not on personal experience of standing on that ground.</span>
+    </p>
+
+    <p>
+      <span class="zh">親自走進耶路撒冷、走進耶書亞所走過的加利利、走進西牆腳下，會徹底改變一個基督徒讀聖經的方式。這不只是觀光——對華人基督徒而言，這是<em>朝聖</em>，也是當代信仰最缺乏的功課之一。</span>
+      <span class="en">Walking through Jerusalem yourself, walking the Galilee Yeshua walked, standing at the foot of the Western Wall — these change the way a Christian reads the Bible, completely. This is not tourism. For the Chinese Christian, it is <em>pilgrimage</em> — and one of the most neglected disciplines of contemporary faith.</span>
+    </p>
+
+    <h2><span class="zh">七、彌賽亞回來時 ── 一個猶太國度</span><span class="en">VII. When Messiah Returns — A Jewish Kingdom</span></h2>
+    <p>
+      <span class="zh">拉比沙皮拉指出一個許多基督徒沒有正面思考的事實：當彌賽亞回來時，祂要建立一個<strong>猶太國度</strong>——耶路撒冷有一位<strong>猶太王</strong>，坐在<strong>大衛的寶座</strong>上。這不是次要的細節，這是新約反覆預言的核心圖景（路加福音 1:32-33；啟示錄 22:16；撒迦利亞書 14；以西結書 40-48）。</span>
+      <span class="en">Rabbi Shapira raises a point many Christians have never squarely faced: when Messiah returns, He will establish a <strong>Jewish kingdom</strong> — a <strong>Jewish King</strong> in Jerusalem on <strong>David's throne</strong>. This is not a side detail. It is the recurring core picture of the New Testament itself (Luke 1:32–33; Revelation 22:16; Zechariah 14; Ezekiel 40–48).</span>
+    </p>
+
+    <p>
+      <span class="zh">那一刻來臨時，那些把耶書亞重新塑造成「西方版本」的基督徒會驚訝——他們會發現新婦的妝飾是猶太的、聖殿的祭儀是猶太的、君王是猶太的。今天這場「我民信仰之爭」的部分意義，就是讓基督徒在那一刻來臨之前，先<em>學會看見</em>這個事實。</span>
+      <span class="en">When that moment arrives, Christians who have re-cast Yeshua in a Western image will be startled to discover that the bride's adornment is Jewish, the temple liturgy is Jewish, the King is Jewish. Part of the meaning of today's <em>Milchemet Emunah</em> is to teach Christians, before that moment arrives, to <em>learn to see</em> this.</span>
+    </p>
+
+    <h2><span class="zh">八、對基督徒的呼召 ── 回到使徒行傳的信仰</span><span class="en">VIII. The Call to Christians — Return to the Faith of Acts</span></h2>
+    <p>
+      <span class="zh">拉比與麥基翁牧師的呼召不是「成為猶太人」，而是<em>回到使徒行傳所描述的彌賽亞信仰</em>——一個猶太人與外邦人在彌賽亞裡合一的信仰，一個耶書亞自己日復一日所實踐的猶太信仰。</span>
+      <span class="en">The rabbi's and the pastor's call is not “become Jewish.” It is <em>return to the Messianic faith described in Acts</em> — a faith of Jews and Gentiles united in Messiah, a Jewish faith that Yeshua Himself practised day in and day out.</span>
+    </p>
+
+    <p>
+      <span class="zh">具體而言：學一點希伯來文。讀一讀拉什 (Rashi) 對某段經文的解讀。理解一個猶太節日的內在含義。明白「橄欖樹」的比喻並非裝飾，而是末世論的核心。對華人基督徒來說，這個學習不必是學術性的——它可以從「為以色列禱告、買一本好的猶太背景聖經、跟隨一兩位真正能教導希伯來根源的老師」這樣簡單的步驟開始。</span>
+      <span class="en">Concretely: learn a little Hebrew. Read what Rashi says on a passage. Understand the inner meaning of one Jewish feast. Grasp that the “olive tree” of Romans 11 is not decoration but the core of eschatology. For Chinese Christians this study need not be academic — it can begin from steps as simple as <em>praying for Israel, buying a good Hebrew-roots study Bible, following one or two genuine Hebrew-root teachers</em>.</span>
+    </p>
+
+    <h2><span class="zh">九、關於分辨</span><span class="en">IX. A Word on Discernment</span></h2>
+    <p>
+      <span class="zh">把馬太福音 25:40 的「我的弟兄」嚴格限定為「猶太人」是一個<em>解經選擇</em>——它有古代教父與一些當代學者的支持，但並不是所有基督徒解經家都同意。一個更穩妥的讀法是：「我的弟兄」<strong>首先</strong>指猶太人（按字面），<strong>並且擴展</strong>包括所有屬於彌賽亞的人。兩個層次都成立，後者不取消前者。</span>
+      <span class="en">Restricting “my brothers” in Matthew 25:40 strictly to “Jewish people” is an <em>interpretive choice</em> — it has support from some ancient Fathers and some contemporary scholars, but not all Christian commentators agree. A safer reading is: “my brothers” <strong>first</strong> means the Jewish people (the plain Jewish sense), <strong>and extends</strong> to include all who belong to Messiah. Both layers stand; the second does not erase the first.</span>
+    </p>
+
+    <p>
+      <span class="zh">同樣，「不要向舊枝誇口」（羅 11:18）是聖經明文，不是解經。任何把教會抬到「真以色列」、把猶太人壓到「被切斷者」的神學，都直接違反這節經文。這不是<em>Drash</em>——這是<em>P'shat</em>。</span>
+      <span class="en">Equally, “do not boast over the branches” (Rom 11:18) is plain text, not interpretation. Any theology that raises the Church to “the true Israel” and pushes Jewish people down to “the severed branches” directly contradicts this verse. That is not <em>drash</em> — it is <em>p'shat</em>.</span>
+    </p>
+
+    <h2><span class="zh">十、結語 ── 彎下身，聽那個呼召</span><span class="en">X. Closing — Stoop, and Hear the Call</span></h2>
+    <p>
+      <span class="zh">妥拉抄寫員在每一卷羊皮卷上，都把那個 <em>Aleph</em> 寫得格外微小——三千年來，沒有人改變這個傳統。它在那裡等著你彎下身去看。</span>
+      <span class="en">Every Torah scribe, on every scroll, writes that <em>Aleph</em> deliberately small — three thousand years and no one has changed it. It is waiting there for you to stoop and see.</span>
+    </p>
+
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「外邦基督徒——你被呼召了。不是被『偶然遇見』，是被親密呼喚。彎下身。聽見。回到使徒行傳的信仰，與彌賽亞的弟兄們同站。」</strong></span>
+      <span class="en"><strong>“Gentile Christian — you are called. Not <em>happened upon</em>; <em>summoned</em>, by name. Stoop. Hear. Return to the faith of Acts, and stand beside the brothers of the Messiah.”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+
+</body>
+</html>

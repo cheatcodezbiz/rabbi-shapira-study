@@ -422,6 +422,54 @@
   // so any browser cache (memory, disk, service-worker, even iOS Safari's
   // aggressive disk cache) gets invalidated for the new format.
   var MANIFEST_SCHEMA_VERSION = 4;
+
+  // segmentHash[lang][voiceId] = [hex16, …, …]  — one entry per current segment,
+  // in document order. Computed once after the manifest loads, by hashing the
+  // *visible* page text with the same algorithm scripts/render_audio.py uses
+  // (sha256(voice + "\0" + text).hex()[:16]). staticUrlFor() compares each
+  // entry to the manifest's stored hash and refuses to return a URL on
+  // mismatch — preventing stale MP3s from being played as if they were the
+  // current segment, which used to happen when the HTML was edited but the
+  // audio wasn't re-rendered.
+  var segmentHash = { zh: {}, en: {} };
+
+  function audioTextHash(voice, text) {
+    if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+      return Promise.resolve(null); // platform too old — verification will be skipped
+    }
+    var enc = new TextEncoder().encode(voice + '\0' + text);
+    return crypto.subtle.digest('SHA-256', enc).then(function (buf) {
+      var bytes = new Uint8Array(buf);
+      var hex = '';
+      for (var i = 0; i < 8; i++) {
+        var s = bytes[i].toString(16);
+        hex += s.length < 2 ? '0' + s : s;
+      }
+      return hex;
+    });
+  }
+
+  function precomputeSegmentHashes() {
+    if (!staticManifest) return Promise.resolve();
+    segments = getSegments();
+    var jobs = [];
+    ['zh', 'en'].forEach(function (lang) {
+      var info = staticManifest[lang];
+      if (!info || !Array.isArray(info.voices)) return;
+      info.voices.forEach(function (v) {
+        segmentHash[lang][v.id] = new Array(segments.length);
+        segments.forEach(function (seg, idx) {
+          var text = getSegmentText(seg, lang);
+          if (!text) { segmentHash[lang][v.id][idx] = ''; return; }
+          jobs.push(audioTextHash(v.id, text).then(function (h) {
+            segmentHash[lang][v.id][idx] = h || '';
+          }));
+        });
+      });
+    });
+    return Promise.all(jobs);
+  }
+
   function loadStaticManifest() {
     if (staticManifest !== null) return Promise.resolve(staticManifest);
     if (staticManifestPromise) return staticManifestPromise;
@@ -431,12 +479,22 @@
     // there's no extra bandwidth cost on hot reloads.
     staticManifestPromise = fetch(url, { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : false; })
-      .then(function (m) { staticManifest = m || false; return staticManifest; })
+      .then(function (m) {
+        staticManifest = m || false;
+        if (!staticManifest) return false;
+        // Hash every current segment for every voice in the manifest, so
+        // staticUrlFor() can do a synchronous match check on each call.
+        return precomputeSegmentHashes().then(function () { return staticManifest; });
+      })
       .catch(function () { staticManifest = false; return false; });
     return staticManifestPromise;
   }
   // Per-voice URL: assets/audio/<slug>/<lang>/<voiceId>/<idx>.mp3.
   // Falls back to default voice in this language if voice id isn't pre-rendered.
+  // Returns null when the manifest's hash for this segment+voice doesn't match
+  // the current page text — that means the audio is stale (HTML edited after
+  // last render). The caller falls back to live synthesis instead of playing
+  // the wrong paragraph.
   function staticUrlFor(index, lang, voiceId) {
     if (!staticManifest || !staticManifest[lang]) return null;
     if (index < 0 || index >= staticManifest[lang].count) return null;
@@ -446,6 +504,24 @@
       var match = voices.find(function (v) { return v.id === voiceId; });
       if (!match) match = voices.find(function (v) { return v.id === staticManifest[lang].default; });
       if (!match) match = voices[0];
+      // Hash check: if the manifest carries per-voice hashes, every served URL
+      // must agree. Missing/empty entries are treated as "no verification" so
+      // an old manifest without hashes still works.
+      if (Array.isArray(match.hashes)) {
+        var expected = match.hashes[index];
+        var actual   = segmentHash[lang] && segmentHash[lang][match.id] && segmentHash[lang][match.id][index];
+        if (expected && (!actual || expected !== actual)) {
+          if (!window.__ttsHashWarn) {
+            window.__ttsHashWarn = {};
+          }
+          var key = lang + '/' + match.id + '/' + index;
+          if (!window.__ttsHashWarn[key]) {
+            window.__ttsHashWarn[key] = true;
+            console.warn('[tts] static audio hash mismatch — falling back to live for ' + key + ' (page text edited since render)');
+          }
+          return null;
+        }
+      }
       return '/assets/audio/' + getSlug() + '/' + lang + '/' + match.id + '/' + index + '.mp3';
     }
     // Old manifest (single voice, flat layout) — falls through gracefully so
