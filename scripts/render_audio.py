@@ -81,7 +81,11 @@ def extract_segments(html_text: str) -> list[dict[str, str]]:
     if prose is None:
         raise ValueError("no <… class='article-prose'> in this HTML")
     out: list[dict[str, str]] = []
-    for el in prose.find_all(["p", "h2", "h3", "blockquote"], recursive=False):
+    # Match the JS player's segment selector (assets/tts.js: `'p, h2, h3, blockquote'`)
+    # — descendant traversal so content nested inside wrappers like
+    # <div class="lesson-block"> isn't skipped. This was the cause of study
+    # guides only getting 5 of 85 segments rendered.
+    for el in prose.find_all(["p", "h2", "h3", "blockquote"]):
         zh_span = el.find("span", class_="zh")
         en_span = el.find("span", class_="en")
         zh_text = " ".join((zh_span.get_text() if zh_span else el.get_text()).split()).strip()
