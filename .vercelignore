@@ -1,0 +1,15 @@
+# Source material for article generation — not needed at runtime
+sources/
+
+# Build / generation scripts — not invoked at runtime
+scripts/
+
+# Local scratch & tooling
+tmp_probe/
+.claude/
+_*.txt
+*.log
+
+# Python build artefacts
+__pycache__/
+*.pyc
