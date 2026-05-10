@@ -977,11 +977,14 @@
     });
   }
 
-  // Mid-paragraph entry point. The pre-rendered MP3 is paragraph-level (no
-  // word-timestamps to seek into), so for a non-zero offset we synthesize the
-  // truncated tail live. When this segment ends, the existing onend chain
-  // moves to the next FULL segment normally — so only the first segment
-  // after a tap loses the static-MP3 quality.
+  // Mid-paragraph entry point. Pre-rendered MP3s are paragraph-level (no
+  // word-timestamps to seek into), so to play just the tail we'd need a live
+  // synth. Priority:
+  //   1. Pre-rendered static MP3 — voice stays consistent. We accept a
+  //      paragraph-restart over a jarring voice change (the user complained
+  //      about "robot voice on jumping sections" — this was the cause).
+  //   2. Live HD (Gemini) — if the user has explicitly enabled it.
+  //   3. Web Speech (system voice) — last resort.
   function speakFromOffset(index, charOffset) {
     segments = getSegments();
     if (index < 0 || index >= segments.length) { stop(); return; }
@@ -997,11 +1000,20 @@
       if (index + 1 < segments.length) speakSegment(index + 1); else stop();
       return;
     }
-    currentIndex = index;
-    highlight(index);
-    updateStatus();
-    if (shouldUseHD()) { speakViaHD(index, tail, lang); return; }
-    speakViaWebSpeech(index, tail, lang);
+    // Prefer the pre-rendered MP3 from paragraph start over a backend swap.
+    // Resolve the manifest first so the static-availability check is accurate.
+    loadStaticManifest().then(function () {
+      var chosen = getActiveVoice(lang);
+      if (chosen && shouldUseStatic(lang)) {
+        var url = staticUrlFor(index, lang, chosen);
+        if (url) { speakViaStatic(index, url, lang); return; }
+      }
+      currentIndex = index;
+      highlight(index);
+      updateStatus();
+      if (shouldUseHD()) { speakViaHD(index, tail, lang); return; }
+      speakViaWebSpeech(index, tail, lang);
+    });
   }
 
   // Direct <audio src="…mp3"> playback. Same plumbing as HD (uses audioEl) but
@@ -1018,8 +1030,28 @@
       applySpeed();                          // playbackRate must be set after src
       var p = audioEl.play();
       if (p && p.catch) p.catch(function (e) {
-        console.warn('[static] play failed, falling back:', e);
-        if (token === playToken) speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang);
+        // AbortError fires whenever src changes mid-load (i.e. the user hit
+        // Next, or the previous segment ended and we moved to the next) — that
+        // is normal, not a real failure. Silently bail; the new request is
+        // already in flight.
+        if (token !== playToken) return;
+        if (e && (e.name === 'AbortError' || e.code === 20)) return;
+        // NotAllowedError on iOS means the audio element lost its
+        // user-gesture unlock (can happen after backgrounding / focus loss).
+        // Try once more after a short delay — falling back to WebSpeech now
+        // would land us on the buzzy compact voice the user explicitly hates.
+        console.warn('[static] play failed, retrying:', e);
+        setTimeout(function () {
+          if (token !== playToken) return;
+          if (audioEl.src.indexOf(url) === -1) audioEl.src = url;
+          var p2 = audioEl.play();
+          if (p2 && p2.catch) p2.catch(function (e2) {
+            if (token !== playToken) return;
+            if (e2 && (e2.name === 'AbortError' || e2.code === 20)) return;
+            console.warn('[static] retry failed, falling back:', e2);
+            speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang);
+          });
+        }, 140);
       });
     }
     updateStatus();
@@ -1339,6 +1371,10 @@
   if (btnSelPlay) {
     btnSelPlay.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
+      // CRITICAL on iOS: unlock the audio element synchronously inside this
+      // user gesture. Without this, the first audioEl.play() from speakViaStatic
+      // rejects with NotAllowedError and we fall back to the buzzy WebSpeech.
+      unlockAudio();
       var idx = pendingSelIndex;
       var off = pendingCharOffset;
       hidePopup();
