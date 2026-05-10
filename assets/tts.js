@@ -309,7 +309,7 @@
       var popup = document.createElement('div');
       popup.id = 'tts-selection-popup';
       popup.setAttribute('role', 'tooltip');
-      popup.innerHTML = '<button id="tts-selection-play" class="tts-popup-btn">▶ <span class="zh">從這裡朗讀</span><span class="en">Read from here</span></button>';
+      popup.innerHTML = '<button id="tts-selection-play" class="tts-popup-btn">▶ <span class="zh">从这里开始</span><span class="en">Start from here</span></button>';
       document.body.appendChild(popup);
     }
   }
@@ -319,7 +319,9 @@
   // Behaviour
   // ══════════════════════════════════════════════════════
   var synth = window.speechSynthesis;
-  var SEGMENT_SELECTOR = ':scope > p, :scope > h2, :scope > h3, :scope > blockquote';
+  // Descendant selector — matches segments at any depth, so wrappers like
+  // <div class="lesson-block"> don't hide content from the narrator.
+  var SEGMENT_SELECTOR = 'p, h2, h3, blockquote';
   function getSegments() { return Array.from(prose.querySelectorAll(SEGMENT_SELECTOR)); }
   var segments = getSegments();
 
@@ -1097,10 +1099,22 @@
     popup.style.left = x + 'px';
     popup.style.top  = y + 'px';
   }
+  // Set whenever the popup is shown via a paragraph tap (not a text-selection).
+  // Used to suppress the selection handlers below — which otherwise fire on
+  // the very next mouseup / selectionchange and would close the freshly-tapped
+  // popup before the user can reach it.
+  var tapShownAt = 0;
+
   function handleSelection() {
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed || sel.rangeCount === 0) { hidePopup(); return; }
-    if (!sel.toString().trim()) { hidePopup(); return; }
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0) {
+      if (Date.now() - tapShownAt > 200) hidePopup();
+      return;
+    }
+    if (!sel.toString().trim()) {
+      if (Date.now() - tapShownAt > 200) hidePopup();
+      return;
+    }
     var range = sel.getRangeAt(0);
     var segIndex = findSegmentForNode(sel.anchorNode);
     if (segIndex < 0) segIndex = findSegmentForNode(sel.focusNode);
@@ -1115,8 +1129,36 @@
   });
   document.addEventListener('selectionchange', function () {
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed) hidePopup();
+    if (!sel || sel.isCollapsed) {
+      if (Date.now() - tapShownAt > 200) hidePopup();
+    }
   });
+
+  // ── Tap-to-narrate ────────────────────────────────────
+  // On mobile and desktop, tapping inside a narratable segment shows the
+  // popup near the tap so the user can start narration from that point —
+  // no text selection required. The use case: a reader 20 minutes into a
+  // long study guide leaves and comes back, scrolls to where they left
+  // off, taps, and resumes from there.
+  function handleProseTap(e) {
+    // Defer to text-selection: if the user is highlighting, handleSelection() owns this.
+    var sel = window.getSelection();
+    if (sel && !sel.isCollapsed && sel.toString().trim()) return;
+    // Let interactive children handle their own clicks.
+    if (e.target.closest && e.target.closest('a, button, input, textarea, select, label, summary')) return;
+    // Find the segment that was tapped.
+    var seg = e.target.closest && e.target.closest('p, h2, h3, blockquote');
+    if (!seg || !prose.contains(seg)) return;
+    segments = getSegments();
+    var segIndex = segments.indexOf(seg);
+    if (segIndex < 0) return;
+    // Show the popup at the tap point. positionPopup() centers horizontally
+    // on rect.left + rect.width/2 and anchors the top to rect.bottom, so a
+    // zero-width point at (clientX, clientY) gives us a tooltip exactly there.
+    positionPopup({ left: e.clientX, width: 0, bottom: e.clientY }, segIndex);
+    tapShownAt = Date.now();
+  }
+  prose.addEventListener('click', handleProseTap);
   document.addEventListener('mousedown', function (e) {
     if (popup && !popup.contains(e.target)) hidePopup();
   });
