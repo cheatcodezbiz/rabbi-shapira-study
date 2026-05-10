@@ -255,6 +255,13 @@
   var hdCache      = new Map(); // "lang:idx" -> { url, blob }
   var HD_CACHE_MAX = 8;
   var toastTimer   = null;
+
+  // Pre-rendered static audio (Edge TTS, served from /assets/audio/<slug>/).
+  // Loaded lazily once on first playback. If a manifest exists for this page
+  // we use it as the *default* — much higher quality than Web Speech, no
+  // network synthesis cost, instant on iPhone, fully offline-cacheable.
+  var staticManifest = null;        // null until probed; false if no manifest
+  var staticManifestPromise = null; // in-flight probe
   var audioUnlocked = false;     // iOS audio is locked until first user-gesture play()
 
   // 1-byte silent WAV — the smallest valid file we can use to "warm up"
@@ -265,6 +272,36 @@
     'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
 
   function getLang() { return document.documentElement.getAttribute('data-lang') || 'zh'; }
+
+  // Derive an audio slug from the page URL.
+  //   /article-messiah-birthing-iran        -> 'article-messiah-birthing-iran'
+  //   /article-messiah-birthing-iran.html   -> 'article-messiah-birthing-iran'
+  //   /                                     -> 'index'
+  function getSlug() {
+    var meta = document.querySelector('meta[name="audio-slug"]');
+    if (meta && meta.content) return meta.content;
+    var p = location.pathname.replace(/^\/+|\/+$/g, '').replace(/\.html?$/i, '');
+    return p || 'index';
+  }
+
+  function loadStaticManifest() {
+    if (staticManifest !== null) return Promise.resolve(staticManifest);
+    if (staticManifestPromise) return staticManifestPromise;
+    var url = '/assets/audio/' + getSlug() + '/manifest.json';
+    staticManifestPromise = fetch(url, { cache: 'force-cache' })
+      .then(function (r) { return r.ok ? r.json() : false; })
+      .then(function (m) { staticManifest = m || false; return staticManifest; })
+      .catch(function () { staticManifest = false; return false; });
+    return staticManifestPromise;
+  }
+  function staticUrlFor(index, lang) {
+    if (!staticManifest || !staticManifest[lang]) return null;
+    if (index < 0 || index >= staticManifest[lang].count) return null;
+    return '/assets/audio/' + getSlug() + '/' + lang + '/' + index + '.mp3';
+  }
+  function shouldUseStatic(lang) {
+    return !!(staticManifest && staticManifest[lang] && staticManifest[lang].count > 0);
+  }
 
   // Must be invoked synchronously inside a user-gesture handler.
   // After this runs successfully, audioEl.play() works from any async context
@@ -454,6 +491,10 @@
   }
 
   // ── Speaker dispatch ──────────────────────────────────
+  // Priority:
+  //   1. Pre-rendered static MP3 (Edge TTS) — best quality, instant, free
+  //   2. HD button enabled? → live Gemini synthesis
+  //   3. Web Speech (OS voice)
   function speakSegment(index) {
     segments = getSegments();
     if (index < 0 || index >= segments.length) { stop(); return; }
@@ -467,8 +508,36 @@
     currentIndex = index;
     highlight(index);
     updateStatus();
-    if (shouldUseHD()) speakViaHD(index, text, lang);
-    else speakViaWebSpeech(index, text, lang);
+
+    // Probe static manifest the first time, then dispatch.
+    loadStaticManifest().then(function () {
+      if (shouldUseStatic(lang)) {
+        var url = staticUrlFor(index, lang);
+        if (url) { speakViaStatic(index, url, lang); return; }
+      }
+      if (shouldUseHD()) speakViaHD(index, text, lang);
+      else speakViaWebSpeech(index, text, lang);
+    });
+  }
+
+  // Direct <audio src="…mp3"> playback. Same plumbing as HD (uses audioEl) but
+  // no fetch round-trip — the URL is a static file Vercel serves with edge
+  // caching, so playback starts in <50 ms even on iPhone.
+  function speakViaStatic(index, url, lang) {
+    activeBackend = 'hd';                    // reuse the audio-element backend state
+    var token = ++playToken;
+    synth.cancel(); stopKeepAlive();
+    isPlaying = true; isPaused = false;
+    setPlayPauseIcon(true); showPlayer();
+    if (audioEl) {
+      audioEl.src = url;
+      var p = audioEl.play();
+      if (p && p.catch) p.catch(function (e) {
+        console.warn('[static] play failed, falling back:', e);
+        if (token === playToken) speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang);
+      });
+    }
+    updateStatus();
   }
 
   function speakViaWebSpeech(index, text, lang) {

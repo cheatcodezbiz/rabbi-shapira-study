@@ -1,0 +1,26 @@
+{
+  "slug": "study-rivkah-remnant",
+  "segments": 5,
+  "zh": {
+    "voice": "zh-TW-HsiaoChenNeural",
+    "count": 5,
+    "hashes": [
+      "c5685f4829266de1",
+      "2e8d1fc672022efc",
+      "3115f49d6842ffae",
+      "c29693c4f5ec189f",
+      "a95db82cbea792d2"
+    ]
+  },
+  "en": {
+    "voice": "en-US-AriaNeural",
+    "count": 5,
+    "hashes": [
+      "ed99331c5d7d7b9d",
+      "f6829b9ae6119c19",
+      "d71629dbc7e13d64",
+      "2e245a2a411bbad1",
+      "cedcef43019e0c06"
+    ]
+  }
+}
