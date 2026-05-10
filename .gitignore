@@ -12,6 +12,12 @@ node_modules/
 # Local scratchpads — anything prefixed with _ is working material, not site content
 _*.txt
 
+# YouTube source dumps — audio is large + ephemeral. We keep transcripts/analyses
+# only because they're tiny and useful as the basis for the article. The audio
+# itself can be re-downloaded with: python scripts/yt_to_article.py <id>
+sources/**/audio.*
+sources/**/thumb.jpg
+
 # Editor / OS / tooling
 .claude/
 .DS_Store
