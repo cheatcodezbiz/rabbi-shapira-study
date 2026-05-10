@@ -35,6 +35,7 @@ import argparse
 import asyncio
 import hashlib
 import json
+import random
 import sys
 from pathlib import Path
 
@@ -62,7 +63,12 @@ DEFAULT_VOICES: dict[str, list[dict[str, str]]] = {
     ],
 }
 
-CONCURRENCY = 4
+CONCURRENCY = 2
+
+# Microsoft's Edge TTS WebSocket endpoint occasionally returns 503 / handshake
+# errors under load. Retry transient failures a few times with exponential
+# backoff so a long render doesn't bail in the middle.
+MAX_ATTEMPTS = 4
 
 
 def slugify(html_path: Path) -> str:
@@ -89,10 +95,32 @@ def text_hash(text: str, voice: str) -> str:
     return hashlib.sha256((voice + "\0" + text).encode("utf-8")).hexdigest()[:16]
 
 
+async def _with_retries(coro_factory, label: str):
+    """Run an async factory with bounded retries on transient errors."""
+    last: Exception | None = None
+    for attempt in range(MAX_ATTEMPTS):
+        try:
+            return await coro_factory()
+        except Exception as e:  # WSServerHandshakeError, TimeoutError, etc.
+            last = e
+            if attempt == MAX_ATTEMPTS - 1:
+                break
+            # Exponential backoff with jitter — Edge TTS rate limits clear quickly.
+            wait = (2 ** attempt) + random.uniform(0, 0.6)
+            print(f"     retry {attempt + 1}/{MAX_ATTEMPTS - 1} for {label} ({type(e).__name__}); sleep {wait:.1f}s")
+            await asyncio.sleep(wait)
+    assert last is not None
+    raise last
+
+
 async def render_one(text: str, voice: str, out_path: Path) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    com = edge_tts.Communicate(text, voice)
-    await com.save(str(out_path))
+
+    async def _do() -> None:
+        com = edge_tts.Communicate(text, voice)
+        await com.save(str(out_path))
+
+    await _with_retries(_do, f"{voice}/{out_path.stem}")
 
 
 async def render_one_with_timings(text: str, voice: str, mp3_path: Path, json_path: Path) -> None:
@@ -102,41 +130,45 @@ async def render_one_with_timings(text: str, voice: str, mp3_path: Path, json_pa
     interleaved with audio chunks. Offsets/durations are in 100-ns units.
     """
     mp3_path.parent.mkdir(parents=True, exist_ok=True)
-    com = edge_tts.Communicate(text, voice, boundary="WordBoundary")
-    audio_chunks: list[bytes] = []
-    raw_boundaries: list[dict] = []
-    async for chunk in com.stream():
-        if chunk["type"] == "audio":
-            audio_chunks.append(chunk["data"])
-        elif chunk["type"] == "WordBoundary":
-            raw_boundaries.append(chunk)
-    mp3_path.write_bytes(b"".join(audio_chunks))
 
-    # Map each spoken word back to its character offset in the source text.
-    # Edge TTS doesn't include text_offset directly, so we walk the source
-    # forward, finding each word's next occurrence.
-    words: list[dict] = []
-    pos = 0
-    for b in raw_boundaries:
-        word_text = b["text"]
-        idx = text.find(word_text, pos)
-        if idx < 0:
-            # Fallback: search from start (unusual — Edge TTS speaks in order)
-            idx = text.find(word_text, 0)
-        words.append({
-            "text": word_text,
-            "offset": idx,  # -1 means "could not locate in source"
-            "start": round(b["offset"] / 10_000_000, 3),
-            "end": round((b["offset"] + b["duration"]) / 10_000_000, 3),
-        })
-        if idx >= 0:
-            pos = idx + len(word_text)
+    async def _do() -> None:
+        com = edge_tts.Communicate(text, voice, boundary="WordBoundary")
+        audio_chunks: list[bytes] = []
+        raw_boundaries: list[dict] = []
+        async for chunk in com.stream():
+            if chunk["type"] == "audio":
+                audio_chunks.append(chunk["data"])
+            elif chunk["type"] == "WordBoundary":
+                raw_boundaries.append(chunk)
+        mp3_path.write_bytes(b"".join(audio_chunks))
 
-    duration = words[-1]["end"] if words else 0.0
-    json_path.write_text(
-        json.dumps({"duration": duration, "words": words}, ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
+        # Map each spoken word back to its character offset in the source text.
+        # Edge TTS doesn't include text_offset directly, so we walk the source
+        # forward, finding each word's next occurrence.
+        words: list[dict] = []
+        pos = 0
+        for b in raw_boundaries:
+            word_text = b["text"]
+            idx = text.find(word_text, pos)
+            if idx < 0:
+                # Fallback: search from start (unusual — Edge TTS speaks in order)
+                idx = text.find(word_text, 0)
+            words.append({
+                "text": word_text,
+                "offset": idx,  # -1 means "could not locate in source"
+                "start": round(b["offset"] / 10_000_000, 3),
+                "end": round((b["offset"] + b["duration"]) / 10_000_000, 3),
+            })
+            if idx >= 0:
+                pos = idx + len(word_text)
+
+        duration = words[-1]["end"] if words else 0.0
+        json_path.write_text(
+            json.dumps({"duration": duration, "words": words}, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8",
+        )
+
+    await _with_retries(_do, f"{voice}/{mp3_path.stem}")
 
 
 def voice_meta_lookup(default_list: list[dict[str, str]], voice_id: str) -> dict[str, str]:
@@ -199,11 +231,9 @@ async def render_article(slug: str, segments: list[dict[str, str]], voices: dict
             # Look up existing hashes for the same voice in the old manifest.
             existing_voices = (existing.get(lang) or {}).get("voices") or []
             existing_hashes = []
-            existing_with_timings = False
             for ev in existing_voices:
                 if ev.get("id") == voice_id:
                     existing_hashes = ev.get("hashes") or []
-                    existing_with_timings = bool(ev.get("withTimings"))
                     break
 
             for i, seg in enumerate(segments):
@@ -214,13 +244,14 @@ async def render_article(slug: str, segments: list[dict[str, str]], voices: dict
                 json_path = out_dir / lang / voice_id / f"{i}.json"
                 wanted = wanted_hashes[i]
                 cached = existing_hashes[i] if i < len(existing_hashes) else None
-                # Skip only if (a) hash matches, (b) MP3 exists, and (c) if
-                # this run wants timings, the timings JSON also already exists
-                # (i.e. previous run also had --with-timings).
+                # Skip only if (a) hash matches, (b) MP3 exists, and (c) when
+                # rendering with timings, the per-segment JSON also exists.
+                # File-level checks (vs. a manifest flag) let us resume mid-run
+                # after a transient Microsoft Edge TTS rate-limit failure.
                 if (
                     cached == wanted
                     and out_path.exists()
-                    and (not with_timings or (existing_with_timings and json_path.exists()))
+                    and (not with_timings or json_path.exists())
                 ):
                     skipped += 1
                     continue
