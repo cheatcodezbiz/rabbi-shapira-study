@@ -766,6 +766,35 @@
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
     }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
     .article-cover-text {
       position: absolute; left: 0; right: 0; bottom: 0;
       padding: 2.8rem 2rem 2.4rem;
@@ -1244,6 +1273,8 @@
   <div class="article-cover">
     <img src="assets/images/article-vayikra-call-grafted-in.jpg" alt="<em>Vayikra</em> — The Tiny <em>Aleph</em> and the Call to Christians" />
     <div class="article-cover-overlay"></div>
+    <a href="article-epic-fury-isaiah26.html" class="article-cover-nav prev" aria-label="Previous article"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></a>
+    <a href="article-messiah-birthing-iran.html" class="article-cover-nav next" aria-label="Next article"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
     <div class="article-cover-text">
       <span class="article-chip"><span class="zh">拉比沙皮拉教导 · 致基督徒的呼召</span><span class="en">Rabbi Shapira Teaching · A Call to Christians</span></span>
       <h1 class="article-title">
