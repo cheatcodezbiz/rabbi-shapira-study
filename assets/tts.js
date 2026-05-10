@@ -493,20 +493,66 @@
     }
   }
 
-  function getVoiceForLang(lang) {
+  // ── Voice selection ────────────────────────────────────
+  // Pick the best installed voice for a language and CACHE it across utterances.
+  // iOS Safari reorders synth.getVoices() over time — especially after navigation,
+  // visibility changes, or focus loss — and can silently revert to the compact
+  // "buzzy" defaults (Mei-Jia / Tingting / Sin-ji) mid-playback. Caching the
+  // chosen voice for the session keeps the voice stable; the cache is only
+  // refreshed on `voiceschanged` when nothing is currently playing.
+  var voiceCache = { zh: null, en: null };
+
+  function langScoreFor(v, langPrefixes) {
+    var l = (v.lang || '').toLowerCase();
+    for (var i = 0; i < langPrefixes.length; i++) {
+      if (l === langPrefixes[i]) return (langPrefixes.length - i) * 4;
+      if (l.indexOf(langPrefixes[i]) === 0) return (langPrefixes.length - i) * 2;
+    }
+    return -1; // doesn't match the requested language
+  }
+
+  function qualityScoreFor(v) {
+    var n = (v.name || '').toLowerCase();
+    var s = 0;
+    if (/\bsiri\b/.test(n)) s += 100;
+    if (/(premium|enhanced|neural|hd voice|high quality)/.test(n)) s += 80;
+    if (/(yu-shu|li-mu|nan-bo|kang-kang|yue|ya-ling)/.test(n)) s += 60;
+    // iOS compact voices — the "buzzy" defaults the user is complaining about
+    if (/^(tingting|mei-jia|sin-ji)$/.test(n.trim())) s -= 50;
+    if (!v.default) s += 1;
+    return s;
+  }
+
+  function pickBestVoice(lang) {
     var voices = synth.getVoices();
     if (!voices.length) return null;
-    var prefer = lang === 'zh'
-      ? ['zh-tw', 'zh-hk', 'cmn-hant-tw', 'zh-cn', 'cmn-hans-cn', 'zh']
+    var langPrefixes = lang === 'zh'
+      ? ['zh-tw', 'zh-hk', 'cmn-hant', 'zh-cn', 'cmn-hans', 'zh']
       : ['en-us', 'en-gb', 'en-au', 'en'];
-    for (var i = 0; i < prefer.length; i++) {
-      var p = prefer[i];
-      var exact = voices.find(function (v) { return v.lang.toLowerCase() === p; });
-      if (exact) return exact;
-      var prefix = voices.find(function (v) { return v.lang.toLowerCase().indexOf(p) === 0; });
-      if (prefix) return prefix;
+    var best = null, bestScore = -Infinity;
+    for (var i = 0; i < voices.length; i++) {
+      var v = voices[i];
+      var ls = langScoreFor(v, langPrefixes);
+      if (ls < 0) continue;
+      var total = ls + qualityScoreFor(v);
+      if (total > bestScore) { best = v; bestScore = total; }
     }
-    return voices[0] || null;
+    return best || voices[0] || null;
+  }
+
+  function getVoiceForLang(lang) {
+    var voices = synth.getVoices();
+    var cached = voiceCache[lang];
+    if (cached && voices.indexOf(cached) !== -1) return cached;
+    var picked = pickBestVoice(lang);
+    if (picked) voiceCache[lang] = picked;
+    return picked;
+  }
+
+  function refreshVoiceCacheIfIdle() {
+    if (isPlaying) return; // don't churn the voice mid-playback
+    voiceCache.zh = pickBestVoice('zh');
+    voiceCache.en = pickBestVoice('en');
   }
 
   function getSegmentText(seg, lang) {
@@ -1006,6 +1052,11 @@
     setPlayPauseIcon(true); showPlayer(); startKeepAlive();
     setTimeout(function () {
       if (token !== playToken) return;
+      // iOS Safari can drop utter.voice after synth.cancel(); re-assert it right
+      // before speak() to keep the chosen voice instead of falling back to the
+      // system default.
+      var fresh = getVoiceForLang(lang);
+      if (fresh) { utter.voice = fresh; utter.lang = fresh.lang; }
       try { synth.speak(utter); } catch (err) { console.warn('[TTS] speak failed:', err); }
     }, 60);
   }
@@ -1148,10 +1199,12 @@
   // Expose stop for setLang()
   window.__ttsStop = stop;
 
-  // Warm voice list
+  // Warm voice list and prime cache; refresh on voiceschanged but only when
+  // idle, so we don't switch voices in the middle of a playback session.
   synth.getVoices();
+  refreshVoiceCacheIfIdle();
   if (typeof synth.addEventListener === 'function') {
-    synth.addEventListener('voiceschanged', function () { /* voices ready */ });
+    synth.addEventListener('voiceschanged', refreshVoiceCacheIfIdle);
   }
 
   // Wire controls
