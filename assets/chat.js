@@ -24,8 +24,19 @@
 
   // ─── Config ─────────────────────────────────────────────────────────
   var API_PATH = '/api/chat';
+  var TTS_API_PATH = '/api/tts';
   var HISTORY_KEY = 'lot-chat-history-v1';
   var MAX_HISTORY_TURNS = 8;             // pairs of user+assistant kept
+
+  // Gemini prebuilt voices used for the speak-aloud button on bot replies.
+  // Charon = mature, informative male — handles Mandarin + English well.
+  // Override via window.LOT_TTS_VOICES = { zh: '...', en: '...' } in a
+  // <script> before chat.js if you want to change the defaults.
+  // Other male options worth trying: Orus, Fenrir, Algenib, Iapetus.
+  var TTS_VOICES = (window.LOT_TTS_VOICES) || {
+    zh: 'Charon',
+    en: 'Charon'
+  };
 
   var I18N = {
     zh: {
@@ -226,6 +237,13 @@
     background: #b03030; color: white; border-color: #b03030;
     animation: lot-speak-pulse 1.5s ease-in-out infinite;
   }
+  .lot-speak-btn.lot-loading {
+    background: rgba(184,149,42,0.18);
+    color: #b8952a;
+    cursor: progress;
+  }
+  .lot-speak-btn .lot-spin { animation: lot-spin 0.9s linear infinite; transform-origin: 50% 50%; }
+  @keyframes lot-spin { to { transform: rotate(360deg); } }
   @keyframes lot-speak-pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(176,48,48,0.4); }
     50%      { box-shadow: 0 0 0 6px rgba(176,48,48,0); }
@@ -594,7 +612,7 @@
     return { wrap: wrap, bubble: bubble, sourcesEl: srcEl, speakBtn: speakBtn };
   }
 
-  // ─── TTS — Web Speech API ──────────────────────────────────────────
+  // ─── TTS — Edge TTS (server-side Microsoft Read Aloud voices) ───────
 
   var SPEAK_ICON =
     '<svg viewBox="0 0 24 24" aria-hidden="true">' +
@@ -604,13 +622,17 @@
     '<svg viewBox="0 0 24 24" aria-hidden="true">' +
       '<rect x="6" y="6" width="12" height="12" rx="2"/>' +
     '</svg>';
+  // Spinning dotted ring shown while the server is synthesising the MP3.
+  var LOADING_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" class="lot-spin">' +
+      '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="14 8"/>' +
+    '</svg>';
 
+  // One audio element + one in-flight request controller, shared across messages.
+  var ttsAudio = null;
+  var ttsController = null;
+  var ttsCurrentUrl = null;
   var currentSpeakBtn = null;
-
-  function ttsSupported() {
-    return typeof window.speechSynthesis !== 'undefined' &&
-           typeof window.SpeechSynthesisUtterance !== 'undefined';
-  }
 
   function ttsTextFromBubble(bubble) {
     // Strip citation tags and pull plain text for natural speech.
@@ -619,58 +641,90 @@
     return (clone.innerText || clone.textContent || '').replace(/\s+/g, ' ').trim();
   }
 
-  function pickVoice(forLang) {
-    var voices = window.speechSynthesis.getVoices() || [];
-    if (!voices.length) return null;
-    var prefix = forLang === 'zh' ? 'zh' : 'en';
-    // Pick a sensible default: prefer non-novelty voices in the right locale.
-    var match = voices.find(function (v) { return v.lang && v.lang.toLowerCase().indexOf(prefix) === 0 && v.default; })
-             || voices.find(function (v) { return v.lang && v.lang.toLowerCase().indexOf(prefix) === 0; });
-    return match || null;
+  function resetSpeakBtn(btn) {
+    if (!btn) return;
+    btn.classList.remove('lot-speaking', 'lot-loading');
+    btn.innerHTML = SPEAK_ICON;
+    btn.title = t().speak;
   }
 
   function stopSpeaking() {
-    try { window.speechSynthesis.cancel(); } catch (_) {}
-    if (currentSpeakBtn) {
-      currentSpeakBtn.classList.remove('lot-speaking');
-      currentSpeakBtn.innerHTML = SPEAK_ICON;
-      currentSpeakBtn.title = t().speak;
-      currentSpeakBtn = null;
+    if (ttsController) {
+      try { ttsController.abort(); } catch (_) {}
+      ttsController = null;
     }
+    if (ttsAudio) {
+      try { ttsAudio.pause(); } catch (_) {}
+      try { ttsAudio.src = ''; } catch (_) {}
+      ttsAudio = null;
+    }
+    if (ttsCurrentUrl) {
+      try { URL.revokeObjectURL(ttsCurrentUrl); } catch (_) {}
+      ttsCurrentUrl = null;
+    }
+    resetSpeakBtn(currentSpeakBtn);
+    currentSpeakBtn = null;
   }
   window.__lotChatStopSpeaking = stopSpeaking;
 
   function speak(text, btn) {
-    if (!ttsSupported() || !text) return;
-    // Toggle: if this button is the active one, just stop.
-    if (currentSpeakBtn === btn && window.speechSynthesis.speaking) {
+    if (!text) return;
+    // Toggle: clicking the active button stops playback.
+    if (currentSpeakBtn === btn && (ttsAudio || ttsController)) {
       stopSpeaking();
       return;
     }
     stopSpeaking();
-    var u = new SpeechSynthesisUtterance(text);
+
     var L = lang();
-    u.lang = L === 'zh' ? 'zh-CN' : 'en-US';
-    var voice = pickVoice(L);
-    if (voice) u.voice = voice;
-    u.rate = 1.0;
-    u.pitch = 1.0;
-    u.volume = 1.0;
-    u.onend = function () {
-      if (currentSpeakBtn === btn) {
-        btn.classList.remove('lot-speaking');
-        btn.innerHTML = SPEAK_ICON;
-        btn.title = t().speak;
-        currentSpeakBtn = null;
-      }
-    };
-    u.onerror = u.onend;
+    var voice = TTS_VOICES[L] || TTS_VOICES.zh;
+    // Edge TTS caps a single request at ~4000 chars; we cap to 3800 for
+    // safety. Replies are normally well under this.
+    var clipped = text.length > 3800 ? text.slice(0, 3800) + '…' : text;
+
     currentSpeakBtn = btn;
-    btn.classList.add('lot-speaking');
-    btn.innerHTML = STOP_ICON;
-    btn.title = t().stopSpeak;
-    try { window.speechSynthesis.speak(u); }
-    catch (_) { stopSpeaking(); }
+    btn.classList.add('lot-loading');
+    btn.innerHTML = LOADING_ICON;
+    btn.title = t().speak + '…';
+
+    var controller = new AbortController();
+    ttsController = controller;
+
+    fetch(TTS_API_PATH, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'audio/mpeg' },
+      body: JSON.stringify({ text: clipped, voice: voice, rate: '+0%' }),
+      signal: controller.signal
+    })
+      .then(function (r) {
+        if (!r.ok) throw new Error('TTS HTTP ' + r.status);
+        return r.blob();
+      })
+      .then(function (blob) {
+        // Bail out if the user clicked Stop while we were waiting.
+        if (controller.signal.aborted) return;
+        var url = URL.createObjectURL(blob);
+        ttsCurrentUrl = url;
+        var audio = new Audio(url);
+        ttsAudio = audio;
+        audio.onended = function () {
+          if (currentSpeakBtn === btn) stopSpeaking();
+        };
+        audio.onerror = audio.onended;
+        btn.classList.remove('lot-loading');
+        btn.classList.add('lot-speaking');
+        btn.innerHTML = STOP_ICON;
+        btn.title = t().stopSpeak;
+        audio.play().catch(function (err) {
+          console.warn('[chat] audio play blocked:', err);
+          stopSpeaking();
+        });
+      })
+      .catch(function (err) {
+        if (err && err.name === 'AbortError') return;
+        console.warn('[chat] tts error:', err);
+        stopSpeaking();
+      });
   }
 
   function makeSpeakBtn(getText) {
@@ -680,10 +734,6 @@
     btn.title = t().speak;
     btn.setAttribute('aria-label', t().speak);
     btn.innerHTML = SPEAK_ICON;
-    if (!ttsSupported()) {
-      btn.style.display = 'none';
-      return btn;
-    }
     btn.addEventListener('click', function () {
       var text = getText();
       speak(text, btn);
@@ -691,11 +741,6 @@
     return btn;
   }
 
-  // Warm up the voices list — some browsers (Safari) populate it lazily.
-  if (ttsSupported()) {
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = function () { /* noop, just triggers caching */ };
-  }
   // Stop speaking if the panel is closed or the page is hidden.
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) stopSpeaking();
