@@ -1,0 +1,6 @@
+# Dependencies for build_index.py — the RAG indexer.
+# These are dev-time only; they do not need to be in api/requirements.txt
+# (which is bundled into the Vercel lambda).
+beautifulsoup4>=4.12
+requests>=2.31
+pinecone>=5.0

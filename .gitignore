@@ -29,4 +29,7 @@ Thumbs.db
 *.log
 tmp_probe/
 
+# RAG indexer state — local-only hash ledger (chatbot)
+.rag-state/
+
 .vercel
