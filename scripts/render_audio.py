@@ -99,17 +99,31 @@ def text_hash(text: str, voice: str) -> str:
     return hashlib.sha256((voice + "\0" + text).encode("utf-8")).hexdigest()[:16]
 
 
+PER_CALL_TIMEOUT_SEC = 180  # Edge TTS websocket can hang — kill after 3 min.
+
+
 async def _with_retries(coro_factory, label: str):
-    """Run an async factory with bounded retries on transient errors."""
+    """Run an async factory with bounded retries + per-call timeout.
+
+    Edge TTS occasionally hangs on a stalled websocket after a 429 — no
+    progress, no error. Wrap each attempt in asyncio.wait_for so the
+    retry loop can recover instead of locking up indefinitely.
+    """
     last: Exception | None = None
     for attempt in range(MAX_ATTEMPTS):
         try:
-            return await coro_factory()
-        except Exception as e:  # WSServerHandshakeError, TimeoutError, etc.
+            return await asyncio.wait_for(coro_factory(), timeout=PER_CALL_TIMEOUT_SEC)
+        except asyncio.TimeoutError as e:
             last = e
             if attempt == MAX_ATTEMPTS - 1:
                 break
-            # Exponential backoff with jitter — Edge TTS rate limits clear quickly.
+            wait = (2 ** attempt) + random.uniform(0, 0.6)
+            print(f"     timeout (>{PER_CALL_TIMEOUT_SEC}s) for {label} (attempt {attempt + 1}/{MAX_ATTEMPTS}); sleep {wait:.1f}s")
+            await asyncio.sleep(wait)
+        except Exception as e:  # WSServerHandshakeError, ConnectionError, etc.
+            last = e
+            if attempt == MAX_ATTEMPTS - 1:
+                break
             wait = (2 ** attempt) + random.uniform(0, 0.6)
             print(f"     retry {attempt + 1}/{MAX_ATTEMPTS - 1} for {label} ({type(e).__name__}); sleep {wait:.1f}s")
             await asyncio.sleep(wait)
