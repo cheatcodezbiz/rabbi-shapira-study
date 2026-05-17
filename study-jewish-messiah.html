@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《耶稣不是蓝眼睛》研习指南 · Jesus Didn't Have Blue Eyes — Study Guide · 妥拉之光</title>
+  <meta name="description" content="A Christian's study guide to Jesus Didn't Have Blue Eyes by Derek Leman — eight bilingual lessons reclaiming the Jewish Messiah and reading the Gospels through Hebrew eyes." />
+  <meta name="audio-slug" content="study-jewish-messiah" />
+  <meta property="og:title" content="Jesus Didn't Have Blue Eyes — A Christian's Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons walking through Derek Leman's Jesus Didn't Have Blue Eyes — reclaiming the Jewish Messiah for Christian readers." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="Jesus Didn't Have Blue Eyes — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 著作课程 · 2026 · 5 · 17</span>
+        <span class="en">Study Guide · Course on a Book · 2026 · 5 · 17</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">《耶稣不是蓝眼睛》<br/>研习指南</span>
+        <span class="en">Jesus Didn't Have Blue Eyes<br/>A Christian's Study Guide</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，伴你重新认识那位说亚兰语、守安息日、在加利利长大的犹太弥赛亚——耶稣 (Yeshua)。</span>
+        <span class="en">Eight lessons walking through Derek Leman's reclamation of the Jewish Messiah — meeting again the rabbi from Galilee who spoke Aramaic, kept the Sabbath, and called us to Himself in His own Hebrew tongue.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于莱曼 (Derek Leman)《耶稣不是蓝眼睛——重新得着我们的犹太弥赛亚》(Mt. Olive Press, 2004)</span>
+        <span class="en">Based on Jesus Didn't Have Blue Eyes — Reclaiming Our Jewish Messiah by Derek Leman (Mt. Olive Press, 2004)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 45 分钟通读</span><span class="en">~45 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://mtolivepress.com" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书</span><span class="en">Get the Book</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">这份指南不是要替你「读完」莱曼 (Derek Leman) 的《耶稣不是蓝眼睛》，而是陪你认真地读它。莱曼是一位非犹太裔的弥赛亚犹太教教师、Hope of David 弥赛亚会众的属灵领袖、Mt. Olive Press 出版社的创办人——他在书中坦言：「我们大多数人脑海里那位温柔、被驯化、带着金发的耶稣，不是历史上的那一位。」他要带我们回去——回到那位真正的、加利利的、说亚兰语的拉比、那位会怒视圣殿、会与撒玛利亚妇人对话、会在最后的逾越节亲手擘开无酵饼的犹太人。这是写给爱耶稣、却隐隐觉得「我可能从未真正认识祂」的基督徒的一本书。</span>
+      <span class="en">This guide is not a shortcut around Derek Leman's <em>Jesus Didn't Have Blue Eyes</em> — it is a companion for reading it carefully. Leman, a non-Jewish believer who serves as the spiritual leader of Hope of David Messianic Fellowship and runs Mt. Olive Press, writes with a tender directness: "The Jesus most of us picture — gentle, blond, domesticated — is not the Jesus of history." He calls us back to the real rabbi from Galilee, the one who spoke Aramaic, who overturned tables, who reasoned with a Samaritan woman, who broke matzah at his final Passover. This is a book for the Christian who loves Jesus and quietly suspects he may never have truly met him.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，每一堂围绕书中一组章节的核心论点。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, each centered on a cluster of chapters and the argument they carry. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 作者说什么</strong>—— 用莱曼自己的语境概述他的论点；<br/>
+        <strong>② 关键经文</strong>—— 他引用的圣经依据；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，连接两个传统；<br/>
+        <strong>④ 基督徒视角</strong>—— 教会传统如何接收这一教导；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 可以与作者一起继续追问的问题，不是反驳，而是更深的对话。
+      </span>
+      <span class="en">
+        <strong>① What the Author Says</strong> — Leman's argument in his own frame;<br/>
+        <strong>② Key Scripture</strong> — the biblical text he is reading;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that bridges the two traditions;<br/>
+        <strong>④ A Christian Lens</strong> — how Evangelical / Church tradition receives the teaching;<br/>
+        <strong>⑤ Honest Questions</strong> — questions to keep asking the author — not to refute, but to go deeper.
+      </span>
+    </blockquote>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 1  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">认识耶稣——那位犹太人</span>
+        <span class="en">Knowing Jesus, the Jewish Man</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">作者莱曼以自己为开场：作为美国南方深处一位刚信主的大学生，他第一次翻开新约时，竟然以为耶稣是罗马天主教徒——因为他从小看到的「圣母玛利亚」总穿着修女袍，「使徒们」头上都顶着光环。读到《马太福音》第一节「亚伯拉罕的子孙、大卫的子孙耶稣基督的家谱」时，他才震惊地发现：耶稣是犹太人。一晚上，他与五百位浸信会会友在教会体育馆里吃逾越节家宴，被辣根呛得满脸通红——他写道：「那一刻全场五百位非犹太基督徒，跨越了二十个世纪，第一次<em>触摸到</em>了那位真正的耶稣。」莱曼的核心论点很简单：你不可能完整地认识耶稣，除非你认识祂所属的那个民族、那段历史、那种语言。</span>
+        <span class="en">Leman opens with himself. A brand-new believer at college in the deep South, he flips open the New Testament for the first time and genuinely assumes Jesus was a Roman Catholic — Mary always looked like a nun in the paintings, the disciples wore halos. Then he reads Matthew 1:1 — "the genealogy of Jesus Christ, the son of David, the son of Abraham" — and is stopped cold. Jesus was Jewish. Years later he stands in a church gymnasium watching five hundred Gentile Baptists turn red in the face from horseradish at a Passover Seder: "Suddenly that crowd of five hundred churchgoers felt a connection across the centuries to the real Jesus." His thesis is plain: you cannot fully know Jesus until you know the people, the history, and the language he came from.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「亚伯拉罕的子孙、大卫的子孙、耶稣基督的家谱。」</span>
+        <span class="en">"The book of the genealogy of Jesus Christ, the son of David, the son of Abraham."</span>
+        <cite>《马太福音》1:1 · Matthew 1:1</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>יֵשׁוּעַ · Yeshua</strong>——这是耶稣在家中、在会堂、在加利利街上被呼唤的真实名字。<em>Yeshua</em> 是 <em>Yehoshua</em>（约书亚）的简称，意为「耶和华是拯救」。当那夜马利亚抱起新生婴儿时，她说的不是「Jesus」（这是从希腊语 Iēsous 经拉丁语再到英语的三层转写），她说的是 <em>Yeshua</em>。每次我们用希腊语化的「Jesus」来呼唤祂，都已隔了两层文化。重新学会用希伯来语呼唤祂的名字，是认识祂为犹太人的最简单的第一步。</span>
+        <span class="en"><strong>יֵשׁוּעַ · Yeshua</strong> — the name his mother actually called him, the name he was called in the synagogue and on the streets of Galilee. <em>Yeshua</em> is the short form of <em>Yehoshua</em> (Joshua) and means "The LORD is salvation." When Miriam lifted the newborn that night, she did not say "Jesus" — a name that has passed from Greek <em>Iēsous</em> through Latin into English. She said <em>Yeshua</em>. To say his name in Hebrew is the simplest first step into recognizing him as a Jew.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">许多基督徒并未否认耶稣是犹太人——但这个事实在我们的属灵生活里被处理得像「百科条目」，而非「祷告的语境」。莱曼提醒：使徒们花了四卷福音书的篇幅，专门描述耶稣<strong>地上的生活</strong>（而非仅仅是复活后的形像），这本身就是他们想要传递的：你不能跳过那个加利利的犹太人，直接去拥抱那位坐在宝座上荣耀的主。早期教会曾与一种叫做「幻影说 (Doceticism)」的异端搏斗——它教导耶稣从未真正成为人。今天我们换了形式：我们以为自己相信祂是人，但我们想像中的那个「人」却没有民族、没有方言、没有犹太母亲。这本身就是另一种幻影。</span>
+        <span class="en">Most Christians do not deny that Jesus was Jewish — but the fact sits in our spiritual life as an encyclopedia entry, not as a praying context. Leman notes that the apostles wrote not one but four Gospels specifically about Jesus' <strong>earthly life</strong> — not just his risen glory. That is itself the apostolic message: you cannot bypass the Galilean Jew and rush straight to the enthroned Lord. The early Church fought a heresy called Docetism — the belief that Jesus only seemed human. We have a quieter version today: we say we believe he was human, but the human we picture has no ethnicity, no mother tongue, no Jewish mother. That, too, is its own kind of Docetism.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">当我祷告呼求耶稣时，我脑海中浮现的那张脸，是什么样的？它更像中世纪欧洲的画像，还是更像一位中东犹太拉比？这二者，差别在哪里？</span><span class="en">When I pray to Jesus, what face actually forms in my mind? Does it look more like a medieval European painting, or more like a Middle Eastern Jewish rabbi? Why does that difference matter?</span></li>
+        <li><span class="zh">莱曼说他从前以为「新约是基督教的书」。我读新约时，是否也曾默认它是写给「我们」（基督徒）的？如果它<strong>原本是犹太人写给犹太人</strong>的，我读起来会怎样不同？</span><span class="en">Leman admits that as a new believer he assumed the New Testament was "the Christian book." When I read it, do I also assume it was written for "us" (Christians)? If in fact it is <strong>Jewish writers writing to a Jewish audience</strong>, what changes?</span></li>
+        <li><span class="zh">如果耶稣在地上每一天都活着犹太人的生活——守安息日、过节期、读《妥拉》——那么忽略这一面来认识祂，是否就像只听一首歌的歌词、却从未听过它的旋律？</span><span class="en">If Jesus lived every day on earth as a Jew — keeping Sabbath, celebrating the feasts, reading Torah — is ignoring that side of him a bit like reading the lyrics of a song without ever hearing the melody?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 2  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">蓝眼睛的耶稣——西方化是如何发生的</span>
+        <span class="en">The Westernized Jesus — How It Happened</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">本书的标题来自一个真实的场景。一位弥赛亚犹太音乐人在演唱会中途停下来问：「你们见过耶稣画像吗——金发的？」全场会心一笑。莱曼追溯了图像史：罗马时期的地下墓穴里，耶稣被画成无须的希腊牧羊少年——「带托加（toga）的奥菲斯」，弹着竖琴；圣彼得大教堂下方的三世纪马赛克把耶稣画成驾着战车、头顶太阳光芒的太阳神<em>阿波罗</em>；到了文艺复兴，耶稣变成欧洲人。莱曼的诊断是：「过去两千年里，教会以耶稣是犹太人为耻」——所以画家们替祂换了一张脸，「以便更好地推销给一个拒绝犹太人的世界」。基督徒因此付出了沉重的代价——我们继承了一位<strong>没有民族的耶稣</strong>，于是也读不出福音书里那位有民族的耶稣的张力。</span>
+        <span class="en">The book's title comes from a real moment: a Messianic Jewish musician pauses mid-concert and asks, "Ever seen a painting of Jesus with blond hair?" Leman traces the image: in third-century catacombs Jesus appears beardless as a Greek shepherd-boy — Orpheus in a toga, lyre in hand; under St. Peter's Basilica a mosaic shows him driving the sun-chariot with rays bursting from his head — the sun god <em>Apollo</em>. By the Renaissance he is fully European. Leman's diagnosis is blunt: "For the past 2,000 years, the church has been embarrassed that Jesus is Jewish." The painters gave him another face "to better market him to a pagan world that disliked the Jews." The price Christians pay: we have inherited a Jesus with <strong>no ethnicity</strong>, and we therefore miss the friction of the actual Jewish Jesus in the Gospel pages.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「及至时候满足，神就差遣他的儿子，为女子所生，且生在律法以下。」</span>
+        <span class="en">"But when the fullness of time had come, God sent his Son, born of a woman, born under the law."</span>
+        <cite>《加拉太书》4:4 · Galatians 4:4</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>תּוֹרָה · Torah</strong>——通常被译作「律法」，但莱曼指出，<em>Torah</em> 的真正词根是 <em>yarah</em>「教导、指示」。它的字面意思是「<strong>教导</strong>」，不是「规则手册」。当保罗说耶稣「生在律法以下」时，他不是说耶稣陷在一堆规则里，而是说耶稣<em>从小被神的教导浸润长大</em>——祂的母亲带祂上耶路撒冷过节，祂的父亲教祂木匠手艺，会堂里祂学习读希伯来文圣经。把 <em>Torah</em> 译成「教导」，整个耶稣的童年瞬间变得温暖、有色彩。</span>
+        <span class="en"><strong>תּוֹרָה · Torah</strong> — usually translated "Law," but Leman notes that the true root is <em>yarah</em>, "to teach, to instruct." <em>Torah</em> literally means <strong>"teaching"</strong>, not "rule book." When Paul says Jesus was "born under the law," he does not mean Jesus was caged in regulations — he means Jesus grew up <em>steeped in the teaching of God</em>: a mother who took him up to Jerusalem at the feasts, a father who taught him a trade, a synagogue where he learned to read the Hebrew Scriptures. Translate <em>Torah</em> as "teaching," and the childhood of Jesus suddenly glows.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">路加是新约里<strong>唯一</strong>的外邦作者，却恰恰是他最仔细地记下了耶稣婴儿期的犹太礼仪——第八日的割礼、马利亚在圣殿的洁净、献上一对斑鸠（因为他们家境贫寒，献不起羊羔）。莱曼提醒：「正是这位外邦人，竭尽所能地写出一个犹太式的故事。」如果连路加都觉得耶稣的犹太背景不可省略——那今天的基督徒大概也无法跳过它。耶稣的婴儿期不是欧洲教堂里穿绣花长袍的圣婴，而是一个出生在牲口槽中、被裹在撕开的布条里、由一对穷困年轻的犹太夫妇带去圣殿献上两只小鸟的婴儿。「<em>万王之王</em>选择被这样地献上。」</span>
+        <span class="en">Luke is the <strong>only Gentile</strong> writer in the New Testament — and yet he is the most careful to record the Jewish ceremonies of Jesus' infancy: circumcision on the eighth day, Mary's purification at the Temple, the offering of two doves (because the family was too poor for a lamb). Leman observes: "Luke the Gentile went out of his way to write a Jewish story." If even Luke felt the Jewish setting was non-negotiable, today's Christian probably cannot skip it either. The infant Jesus was not the embroidered cathedral icon — he was an actual baby in a feeding trough, wrapped in torn strips of cloth, carried up to the Temple by a poor young Jewish couple offering two small birds. "The King of kings chose to be presented like that."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果三世纪的基督徒愿意把耶稣画成奥菲斯或阿波罗，以便让外邦人「接受」祂——那今天我自己对耶稣的描述里，有没有为了让人「接受」而修剪掉的东西？</span><span class="en">If third-century Christians repainted Jesus as Orpheus or Apollo to make him "acceptable" to a pagan audience, are there ways I have edited Jesus to make him "acceptable" — to my friends, my culture, myself?</span></li>
+        <li><span class="zh">把「律法」改读为「教导」，这一个翻译上的小调整，是否改变了我对旧约的整体态度？我是否一直把摩西五经当作「负担」而非「父母的智慧」？</span><span class="en">Just by re-translating "Law" as "Teaching," does my attitude toward the Old Testament shift? Have I been treating the five books of Moses as "a burden" rather than "a Father's instruction"?</span></li>
+        <li><span class="zh">耶稣的婴儿期里包含贫穷、流离、和献上两只小鸟。这与我每年圣诞节庆祝的<em>形像</em>有多大差距？这差距告诉我什么？</span><span class="en">The actual infancy of Jesus involves poverty, displacement, and two small birds. How far is that from the <em>image</em> I celebrate every Christmas — and what does that distance tell me?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 3  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">旷野中的约翰与加利利的拉比</span>
+        <span class="en">John in the Wilderness, the Rabbi from Galilee</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">莱曼在第四章用「门徒安得烈的眼睛」重述施洗约翰的旷野场景——肩头扛着水袋的他听见约翰指着河对岸一个人说：「<strong>看哪，神的羔羊，除去世人罪孽的！</strong>」第五章则把当时的耶稣放回祂时代的<strong>三个犹太角色</strong>之间：(1) <em>Hasid</em>「敬虔的圣人」——像「画圈者霍尼」(Honi the Circle Drawer) 和 Hanina ben Dosa，以代祷之力行神迹；(2) <em>Nabi</em>「先知」——像以利亚以利沙；(3) <em>Rabbi</em>「拉比」——像希列、迦玛列。莱曼写道：「耶稣同时<em>像</em>这三者，又<em>超越</em>这三者。」群众用这三个范畴试图认识祂，但每一个都装不下祂——因为祂还有第四个身份正在浮现：<em>Mashiach</em>「弥赛亚」。</span>
+        <span class="en">In Chapter 4 Leman retells the Jordan scene through "Andrew's eyes" — water-skins on his shoulders, he hears John point across the river and cry, "<strong>Behold, the Lamb of God, who takes away the sin of the world!</strong>" In Chapter 5 he places Jesus back among the <strong>three Jewish categories</strong> of his day: (1) <em>Hasid</em> — the charismatic Holy Man, like Honi the Circle Drawer and Hanina ben Dosa, whose miracles flowed from intimacy with God; (2) <em>Nabi</em> — Prophet, like Elijah; (3) <em>Rabbi</em> — Torah-teacher with disciples, like Hillel and Gamaliel. Leman writes: "Jesus was <em>like</em> each of these — and <em>more than</em> each of these." The crowds reached for these categories, and not one held him, because a fourth identity was rising into view: <em>Mashiach</em> — Messiah.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「次日，约翰看见耶稣来到他那里，就说：『看哪，神的羔羊，除去世人罪孽的！』」</span>
+        <span class="en">"The next day John saw Jesus coming toward him, and said, 'Behold, the Lamb of God, who takes away the sin of the world!'"</span>
+        <cite>《约翰福音》1:29 · John 1:29</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>רַבִּי · Rabbi</strong>，字面意为「<em>我的伟大者</em>」、「<em>我的师傅</em>」。它不是一个职称，而是一个<strong>关系性的呼唤</strong>——使用这个词，等于公开承认：你是我的老师，我愿做你的学生 (<em>talmid</em>)。安得烈第一次见耶稣时说的不是「主」也不是「基督」，而是<strong>「拉比，你在哪里住？」</strong> 拿但业说的是「拉比，你是神的儿子，你是以色列的王！」（约1:38, 1:49）这是当时人能拿出的<em>最高尊敬</em>。莱曼提醒：耶稣不仅<em>是</em>拉比，祂还<em>认认真真地学习过</em>——路加说祂「智慧和身量并神和人喜爱他的心，都一齐增长」（路2:52）——祂不是用神性「自动知道」一切，而是像每一个犹太孩子一样在会堂里学习。</span>
+        <span class="en"><strong>רַבִּי · Rabbi</strong> literally means "<em>my great one</em>," "<em>my master-teacher</em>." It is not a job title but a <strong>relational confession</strong> — to use the word is to say openly, "You are my teacher and I will be your student (<em>talmid</em>)." Andrew's first words to Jesus are not "Lord" or "Christ" but <strong>"Rabbi, where are you staying?"</strong> Nathanael says, "Rabbi, you are the Son of God, the King of Israel!" (John 1:38, 1:49). This was the highest respect their world could give. Leman is careful to note: Jesus did not merely "play" rabbi by divine omniscience — Luke writes that he "increased in wisdom" (Luke 2:52). Like every other Jewish boy, he learned in the synagogue.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">许多基督徒习惯叫耶稣「主」、「救主」、「神的儿子」——这些都对，且必要。但福音书里耶稣的门徒最常对祂说的称呼，是「拉比」。这并不削弱祂的神性——反而提醒我们：作门徒（<em>talmid</em>）不只是「信靠」一位救主，更是<strong>认认真真地拜一位老师为师</strong>，跟着祂的脚步走路、模仿祂的祷告、学习祂的方式。莱曼引用拉比传统中的一句话：「<em>愿你身上沾满你拉比的尘土</em>。」——意思是你跟着祂走得那样近，以至于祂踢起的尘土沾在你身上。这是「跟从我」最希伯来式的画面。</span>
+        <span class="en">Most Christians instinctively call Jesus "Lord," "Savior," "Son of God" — all true, all necessary. But the word Jesus' disciples most often use to address him in the Gospels is "Rabbi." This does not weaken his divinity — it reminds us that discipleship (<em>talmidut</em>) is not only trusting a Savior but <strong>actually taking on a Master-Teacher</strong>, walking in his footsteps, copying his prayers, learning his ways. There is a saying preserved in rabbinic tradition: "<em>May you be covered in the dust of your rabbi</em>" — may you follow him so closely that the dust his sandals kick up settles on you. That is the most Hebraic picture of what "Follow me" means.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果安得烈先把耶稣称为「拉比」（老师），而不是「主」——这是否提醒我，认识耶稣的第一步是<em>愿意做学生</em>？我今天还在<strong>学</strong>祂，还是只在<strong>谈论</strong>祂？</span><span class="en">If Andrew first called Jesus "Rabbi" (teacher) rather than "Lord" — does that nudge me to see that the first step of knowing Jesus is <em>being willing to be a student</em>? Am I still <strong>learning</strong> from him today, or mostly <strong>talking about</strong> him?</span></li>
+        <li><span class="zh">「愿你身上沾满你拉比的尘土」——我跟随耶稣得这么近吗？还是我离得够远，确保<em>祂的尘土沾不到我</em>？</span><span class="en">"May you be covered in the dust of your rabbi." Am I following Jesus that closely? Or am I far enough back that <em>his dust does not actually land on me</em>?</span></li>
+        <li><span class="zh">施洗约翰为耶稣命名时用的是「神的羔羊」——一个<em>祭物</em>的形象。这个画面是否曾让我深感震动，还是已经磨钝成熟悉的术语？</span><span class="en">John named Jesus "the Lamb of God" — the image of a <em>sacrifice</em>. Has this image ever shaken me, or has it dulled into familiar terminology?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 4  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">圣殿前的怒火与弥赛亚的两条线索</span>
+        <span class="en">The Cleansing of the Temple, the Two Strands of Messiah</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">第六章莱曼带我们走进逾越节的耶路撒冷——常住人口六十万的城市瞬间膨胀到三百万。耶稣穿过外邦人院 (Court of the Gentiles)，亲手编起小绳子，掀翻兑换银钱者的桌子，赶出待宰的羊羔。「<strong>把这些拿出去！不要将我父的殿当作买卖的地方！</strong>」（约2:16）作者提醒我们：「这位被绣花长袍画师画成温柔模样的耶稣，那一刻是<em>狂怒的</em>」——但祂的怒火不是失控，而是先知性的（就像耶利米、玛拉基预言的「主必忽然进入祂的殿」）。第七章莱曼正面回应那个让犹太人不接受耶稣的最大问题：「<strong>如果耶稣是弥赛亚，世界为什么没有和平？</strong>」他答道：圣经里关于弥赛亚的预言<strong>原本就有两条线</strong>——一条是受苦的仆人（赛53），一条是登基的君王（赛11）。古代拉比们试图用「<em>两位弥赛亚——约瑟之子与大卫之子</em>」来解释这个矛盾。基督徒的答案更简单也更深刻：<strong>同一位弥赛亚，两次显现</strong>——第一次受苦而死、复活，第二次回来作王。</span>
+        <span class="en">In Chapter 6 Leman walks us into Jerusalem at Passover — a city whose normal 600,000 swells to three million. Jesus crosses into the Court of the Gentiles, knots a small whip with his own hands, overturns the moneychangers' tables, and drives out the lambs penned for sale. "<strong>Take these out of here! Stop turning my Father's house into a market!</strong>" (John 2:16). Leman insists: "The Jesus the embroidered icons softened was, in that moment, <em>furious</em>" — but his fury was not loss of control; it was prophetic (exactly the "the Lord will suddenly come to his Temple" that Jeremiah and Malachi foretold). Chapter 7 then faces the largest Jewish objection head-on: "<strong>If Jesus is the Messiah, why is there no world peace?</strong>" His answer: the prophets always carried <strong>two strands</strong> — the Suffering Servant (Isa 53) <em>and</em> the reigning King (Isa 11). Some ancient rabbis tried to resolve this with "<em>two Messiahs — Ben Yosef and Ben David</em>." The Christian answer is simpler and deeper: <strong>one Messiah, two appearances</strong> — first to suffer, die, rise; second to return as King.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他诚然担当我们的忧患，背负我们的痛苦……哪知他为我们的过犯受害，为我们的罪孽压伤。」</span>
+        <span class="en">"Surely he has borne our griefs and carried our sorrows… he was pierced for our transgressions; he was crushed for our iniquities."</span>
+        <cite>《以赛亚书》53:4-5 · Isaiah 53:4-5</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מָשִׁיחַ · Mashiach</strong>——「<em>受膏者</em>」。希腊文译作 <em>Christos</em>（基督）。莱曼回忆童年困惑：「我以为『基督』是耶稣的姓氏。」——其实「基督」是头衔，等同于「弥赛亚」。它的根来自古以色列加冕仪式——把香膏倒在君王的头上，<em>设立他为神所立的王</em>。受膏礼在圣经里属于三种人：君王、祭司、先知。莱曼指出：「<em>耶稣同时是这三者</em>。」当我们说「耶稣基督」时，其实每一次都在重申同一句宣告：<strong>耶稣是神所设立的王、祭司、先知。</strong></span>
+        <span class="en"><strong>מָשִׁיחַ · Mashiach</strong> — "<em>the Anointed One</em>." The Greek translation is <em>Christos</em> (Christ). Leman remembers his childhood confusion: "I thought 'Christ' was Jesus' last name." It is a title, equivalent to Messiah, rooted in the coronation ceremony of ancient Israel — fragrant oil poured over the king's head, <em>installing him as God's appointed ruler</em>. In Scripture three offices are anointed: king, priest, prophet. Leman observes: "<em>Jesus is all three at once</em>." Every time we say "Jesus Christ," we repeat the same confession: <strong>Jesus is the King, Priest, and Prophet appointed by God.</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">使徒信经里的两组短语——「<em>曾受难……复活、升天、坐在父的右边</em>」与「<em>将来必从那里降临，审判活人死人</em>」——其实就是希伯来圣经那「两条线索」的归结。基督徒已经默认了第一次显现是受苦的弥赛亚，但有时对祂作王再来的预备显得敷衍。莱曼提醒：「我们和犹太朋友其实在<em>等同一位君王</em>。」耶稣在圣殿翻桌子时的怒火，今天<em>仍然</em>是真实的怒火——祂仍恨任何把祷告的殿变成买卖之地的事，包括在<em>我们自己的</em>教会里。把「基督徒和犹太人都在期待<em>那位将要来的王</em>」当作起点，可以让对话变得更诚实。</span>
+        <span class="en">The two halves of the Apostles' Creed — "<em>suffered, died, rose, ascended</em>" and "<em>will come again to judge the living and the dead</em>" — are exactly the two strands of Hebrew prophecy folded into Christian confession. Christians already assume the first appearance was the Suffering Messiah; we are sometimes lazier about preparing for his return as King. Leman observes: "We and our Jewish friends are <em>waiting for the same King</em>." The fury of Jesus in the Temple is <em>still</em> real fury — he still hates the turning of his Father's house of prayer into a marketplace, including in <em>our own</em> churches. Beginning with "we both wait for the coming King" makes for a more honest conversation than beginning with debate.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">把桌子翻倒在地的那位耶稣，与我每天祷告的那位耶稣，是同一位吗？还是我已经悄悄把祂温柔化、安全化？</span><span class="en">Is the Jesus who flipped tables the same Jesus I pray to every day — or have I quietly tamed him into something safer?</span></li>
+        <li><span class="zh">我对「耶稣再来」是真有盼望，还是只是一句信经里念过的话？如果今天就传来祂回来的消息，我会先做什么？</span><span class="en">Do I actually long for Jesus' return, or is it just a creedal line I recite? If word reached me today that he was coming back this evening, what would I do first?</span></li>
+        <li><span class="zh">如果犹太朋友说：「弥赛亚来了，世界为什么还这么乱？」——我能否用<em>两条线索</em>来回答，而不是用辩论压过他？</span><span class="en">If a Jewish friend asks, "If Messiah has come, why is the world still such a mess?" — can I answer with the <em>two strands</em>, rather than with an argument designed to win?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 5  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">回到约旦河——人子的秘密</span>
+        <span class="en">Back to the Jordan — The Secret of the Son of Man</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">第八章莱曼让我们随安得烈回到约旦河——耶稣开始与约翰平行施洗，但很快人潮转向耶稣。「<strong>祂必兴旺，我必衰微。</strong>」（约3:30）第九章正面解开两个最让人困惑的称谓：<strong>人子 (Son of Man)</strong> 和<strong>神子 (Son of God)</strong>。莱曼用一个有趣的比喻：一位 CEO 想看公司真实状况，假扮成收发室的新人入职。所有人都不知道他是谁，但「<em>他超群的能力与领袖气质，迟早会从那件邮务员制服中显出来</em>」。耶稣就是这样——「<em>祂在地上的身份是被面纱遮蔽的；但祂的本质透过言语和行动显露出来。</em>」「人子」这个词同时有两层含义：(1) 一个<em>普通人</em>（民23:19）；(2) <em>但以理书 7 章</em>那位驾着天云而来、得着「权柄、荣耀、国度，使各方、各国、各族的人都事奉祂」的<em>超人弥赛亚</em>。耶稣故意用这个含糊的词——好让<em>愿意看见的人</em>看见，让<em>不愿意的人</em>错过。这就是「弥赛亚的秘密」。</span>
+        <span class="en">In Chapter 8 Leman walks us back to the Jordan with Andrew — Jesus is now baptizing parallel to John, but the crowds are turning to Jesus. "<strong>He must increase; I must decrease.</strong>" (John 3:30). Chapter 9 then untangles the two most puzzling titles in the Gospels: <strong>Son of Man</strong> and <strong>Son of God</strong>. Leman draws a memorable picture: a CEO who wants to see what is really going on in his company hires himself on as a mailroom clerk. No one knows who he is, but "<em>his superior knowledge and natural leadership begin to shine through the uniform</em>." Jesus, says Leman, walked the earth that way — "<em>his identity was veiled, but his nature showed through in actions and words.</em>" The phrase "Son of Man" carries two meanings at once: (1) <em>just a man</em> (Num 23:19); (2) <em>the cloud-riding superhuman figure</em> of Daniel 7, to whom is given "dominion and glory and a kingdom, that all peoples should serve him." Jesus chose this ambiguous title deliberately — to be heard by <em>those willing to see</em> and missed by those who weren't. This is the "Messianic Secret."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我在夜间的异象中观看，见有一位像人子的，驾着天云而来……得了权柄、荣耀、国度，使各方、各国、各族的人都事奉他。」</span>
+        <span class="en">"In my vision at night I looked, and there before me was one like a son of man, coming with the clouds of heaven… He was given authority, glory and sovereign power; all peoples, nations and men of every language worshiped him."</span>
+        <cite>《但以理书》7:13-14 · Daniel 7:13-14</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>בֶּן אָדָם · Ben Adam</strong>——「<em>人子</em>」，字面意思是「亚当之子」。在以西结书中，神七十次以此称呼先知——意在提醒「你只是一个人」。但在但以理书 7 章里，这个词的意义倒转：那位<em>「像人子的」</em>从天而来，得着<em>神才能拥有</em>的权柄。耶稣自指为「人子」时，<strong>这两个意思祂都在用</strong>——「我是一个人」、「我又是那一位将要驾云而来的」。莱曼指出：耶稣最爱用的自称<em>不是</em>「神子」（这个词大多是别人或鬼魔用在祂身上的），而是「<em>人子</em>」。这是耶稣自己挑选的、最希伯来式的、双关性的、谦卑而又庄严的自称。</span>
+        <span class="en"><strong>בֶּן אָדָם · Ben Adam</strong> — "Son of Man," literally "son of Adam." In Ezekiel, God uses the phrase about seventy times to address the prophet — a reminder, "You are only human." But in Daniel 7 the meaning inverts: the <em>"one like a son of man"</em> comes from heaven and receives authority that <em>only God</em> can hold. When Jesus calls himself "Son of Man," <strong>he is doing both at once</strong> — "I am a man" and "I am the One who is coming on the clouds." Leman points out that Jesus' favorite self-designation is <em>not</em> "Son of God" (a title used mostly by others, or by demons), but "<em>Son of Man</em>" — the most Hebraic, deliberately double-edged, humble-yet-majestic self-naming.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒已经熟悉「神子」这一表达，但很少留意耶稣<strong>自己更偏爱的称呼是「人子」</strong>。这有一个深刻的牧养含义：耶稣总是先以「人」的方式接近你——祂走过你的疲倦、你的眼泪、你被人误解的时刻——然后才在某一个静默的瞬间，让你猛然意识到，眼前这位与你同行的人，原来就是<em>驾云而来的那一位</em>。门徒们经过了三年才看见——以马忤斯路上那位陌生人，「擘饼」的那一刻，眼睛才豁然开朗。莱曼劝勉读者：「<em>让别人看出来，胜过自己宣告</em>」——耶稣自己也宁愿活出真理，让人逐步认出，而不是用响亮的口号去说服人。</span>
+        <span class="en">Christians are well-versed in "Son of God" — but seldom pause to notice that Jesus' <strong>own preferred self-naming was "Son of Man."</strong> The pastoral consequence is profound: Jesus always approaches you first as a <em>human</em> — walking through your fatigue, your tears, your misunderstood moments — and only then, in some quiet instant, breaks through with the recognition that this companion is the One coming on the clouds. The disciples needed three years to see it. The Emmaus stranger was not recognized until the breaking of bread. Leman urges readers to imitate this pattern: "<em>Let others see, rather than constantly announce.</em>" Jesus himself preferred to live the truth and be recognized, rather than to win arguments.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果耶稣最爱用「人子」称呼自己——这是否暗示着，我作基督徒最大的见证，可能不是用嘴说出来的标签，而是<em>让我的为人</em>慢慢透出那一位的本质？</span><span class="en">If Jesus' favorite self-naming was "Son of Man," does that hint that my greatest witness as a Christian might not be the labels I say aloud, but <em>the way I live</em> that slowly reveals the One I belong to?</span></li>
+        <li><span class="zh">耶稣对许多人「严严的嘱咐不要告诉人」。我们今天的福音派文化常常把「<em>大声宣告</em>」视为属灵成熟的标志。这两者如何调和？</span><span class="en">Jesus repeatedly commanded people not to tell. Our modern evangelical culture often treats "<em>bold proclamation</em>" as the measure of spiritual maturity. How do we reconcile the two?</span></li>
+        <li><span class="zh">如果耶稣的身份在地上是「带着面纱的」——那么在我自己的生命里，是否也有一些事，神正在用「面纱」遮盖，等到时机成熟才显明？我是否能耐心等候？</span><span class="en">If Jesus' identity on earth was "veiled," are there things in my own life God is currently keeping behind a veil — waiting for the right moment to reveal? Can I wait patiently?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 6  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">井边的撒玛利亚妇人与三派的冲突</span>
+        <span class="en">The Samaritan Woman, and the Three Parties</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">第十章莱曼仍以安得烈的角度记述：正午烈日下，他们累得不堪，井边站着一位撒玛利亚妇人——「半种、异端」。所有门徒都不愿走近，耶稣却对她说：<strong>「请你给我水喝。」</strong>整段对话里，她跟祂辩论敬拜的地方、引出她五任婚姻的尴尬、最终问到弥赛亚。耶稣的回答让安得烈震撼：<strong>「这和你说话的就是祂。」</strong>——莱曼指出：祂对许多犹太人嘱咐「不要告诉别人」，<em>却把弥赛亚的身份首先公开告诉一位撒玛利亚妇人</em>。第十一章描绘耶稣周围的三大犹太派别：(1) <strong>法利赛人</strong>——把家变成「圣殿」，用细密的口传律法应对污秽时代；(2) <strong>撒都该人</strong>——掌握圣殿权力但与罗马妥协，不信复活；(3) <strong>爱色尼人</strong>——彻底退出，撤入旷野（昆兰群体），等待两位弥赛亚。耶稣<strong>哪一派都不属</strong>——祂的呼召是<em>悔改、回转、活出从内而外的义</em>，对每一派都「不合标准」。</span>
+        <span class="en">In Chapter 10 Leman keeps Andrew's eyes — they are exhausted under a noon sun, and a Samaritan woman stands at the well — "half-breed, heretic." None of the disciples wants to go near her. Jesus says, <strong>"Give me a drink."</strong> She argues with him about worship locations, he uncovers her five marriages, she ends with the question of Messiah. And Jesus' reply stuns Andrew: <strong>"I who speak to you am he."</strong> Leman observes: Jesus told dozens of Jews not to tell anyone — and yet <em>he openly disclosed his messianic identity first to a Samaritan woman</em>. Chapter 11 sketches the three Jewish parties around Jesus: (1) <strong>Pharisees</strong> — who turned the home into a temple and the private life into a priestly one; (2) <strong>Sadducees</strong> — who held Temple power but compromised with Rome and denied resurrection; (3) <strong>Essenes</strong> — who withdrew to the desert (the Qumran community) waiting for two Messiahs. Jesus <strong>belonged to none</strong>. His call was <em>repentance, return, righteousness from the inside out</em> — and he fit no party's measuring stick.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「妇人对祂说：『我知道弥赛亚（就是那称为基督的）要来；他来了，必将一切的事都告诉我们。』耶稣说：『这和你说话的就是祂。』」</span>
+        <span class="en">"The woman said to him, 'I know that Messiah is coming. When he comes, he will explain everything to us.' Then Jesus declared, 'I, the one speaking to you — I am he.'"</span>
+        <cite>《约翰福音》4:25-26 · John 4:25-26</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>תְּשׁוּבָה · Teshuvah</strong>——「<em>回转</em>」、「<em>悔改</em>」。耶稣的核心信息是「<strong>天国近了，你们要悔改</strong>」。希腊文 <em>metanoia</em> 是「改变心意」，但希伯来 <em>teshuvah</em> 更深——它的词根 <em>shuv</em>「转身」与「<em>回家</em>」同源。<em>Teshuvah</em> 不只是情绪上的懊悔，而是<strong>方向上整个人的转身回家</strong>。这正是耶稣不属于法利赛人、撒都该人、爱色尼人的原因——这三派都在<em>外在的形式</em>上下功夫（家中律法、圣殿仪式、旷野苦修），而耶稣呼召的是<em>心的回家</em>。</span>
+        <span class="en"><strong>תְּשׁוּבָה · Teshuvah</strong> — "<em>return</em>," "<em>repentance</em>." Jesus' opening line was "<strong>Repent, for the kingdom of heaven is near.</strong>" The Greek <em>metanoia</em> means "change of mind," but Hebrew <em>teshuvah</em> goes deeper — its root <em>shuv</em>, "to turn," is the same root as "<em>to come home</em>." <em>Teshuvah</em> is not emotional remorse — it is <strong>the whole person turning and walking home</strong>. This is exactly why Jesus belonged to none of the three parties — Pharisees worked on the home, Sadducees on the Temple, Essenes on the wilderness, but Jesus called for <em>the heart to come home</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">莱曼为基督徒画出一幅惊人的对照镜子：一位「<em>法利赛式</em>」的基督徒注重家中敬虔、私下祷告、远离世俗影响；一位「<em>撒都该式</em>」的基督徒看重崇拜礼仪和体制，对外界妥协较多；一位「<em>爱色尼式</em>」的基督徒批判主流教会，靠家庭教会和分离主义维生。这三种都有合理之处，但<strong>三种都不是耶稣的样子</strong>。耶稣的样子是「<em>到人群里去，把爱实际地活出来</em>」——服事孩童、长者、残障人，<em>边走边修</em>，像那好撒玛利亚人「<em>去照样行</em>」。还有：耶稣对那位撒玛利亚妇人不带任何上对下的姿态——祂请她给祂水喝。这告诉我们关于传福音的方式：<strong>先承认自己的需要，再分享真理</strong>，比反过来更有力。</span>
+        <span class="en">Leman holds up a startling mirror to Christians: a "<em>Pharisaic</em>" Christian focuses on home piety, private prayer, separation from worldly influence; a "<em>Sadducean</em>" Christian focuses on liturgy and institution and is more comfortable with cultural compromise; an "<em>Essene</em>" Christian critiques the mainstream church and retreats into a small home fellowship. Each has something true — but <strong>none looks like Jesus</strong>. Jesus' shape is "<em>go out among people and demonstrate love practically</em>" — serving children, the elderly, the disabled, repairing as he goes, like the Good Samaritan whose ending was "<em>go and do likewise</em>." And note: Jesus made no condescending move toward the Samaritan woman — he <em>asked her for water</em>. This teaches a way of witness: <strong>confess your own need first, then share the truth</strong> — that order is far more powerful than the reverse.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在三种「<em>基督徒类型</em>」（法利赛式、撒都该式、爱色尼式）里，我最像哪一个？我能否承认这其中也有「<em>不像耶稣</em>」的成分？</span><span class="en">Of the three Christian "types" Leman sketches (Pharisaic, Sadducean, Essene), which am I most like? Can I admit that even my dominant pattern has parts that are <em>not yet like Jesus</em>?</span></li>
+        <li><span class="zh">在我的生活中，谁是那位「<em>撒玛利亚妇人</em>」——别人都会绕开、而圣灵感动我要主动开口问「<em>能给我水喝吗</em>」的那一位？</span><span class="en">Who, in my life, is the "Samaritan woman" — the person everyone else avoids, but whom the Spirit nudges me to approach with "<em>could you give me a drink?</em>"</span></li>
+        <li><span class="zh">耶稣的「<em>teshuvah</em>」呼召是「心的回家」。我所谓的悔改，多少是<em>情绪上的懊悔</em>，多少是<em>方向上的转身</em>？</span><span class="en">Jesus' call to <em>teshuvah</em> is "the heart's coming home." How much of my repentance is <em>emotional remorse</em>, and how much is <em>an actual change of direction</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 7  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">最后的逾越节与第三日的复活</span>
+        <span class="en">The Last Passover, the Third Day</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">第十二章莱曼让安得烈牵着自己的羔羊，走进逾越节那天的圣殿——二十五万人排队等候宰杀，数百位祭司同时工作，利未人合唱「<em>哈利路诗篇</em>」(113-118 篇)。安得烈亲手用刀划开羔羊的喉咙，看着血流入祭司手中的银盘里。当晚他回到楼上的「<em>最后晚餐</em>」（其实是「<em>逾越节家宴</em>」<em>Seder</em>），耶稣<strong>不是按西方画里那样坐在长桌前</strong>——他们斜倚在垫子上。耶稣举起第三杯（「<em>救赎之杯</em>」），说出从未有人说过的话：<strong>「这杯是我用血所立的新约。」</strong> 第十三章则把焦点放在最让基督徒以为「理所当然」、却最不被外邦文化理解的事——<strong>身体的复活</strong>。莱曼引一位<em>正统派</em>犹太学者 Pinchas Lapide 的话——他不信耶稣是弥赛亚，却<strong>承认耶稣的复活是真实历史事件</strong>，因为「<em>除了犹太人，没有一个古代文化相信身体复活</em>」。希腊人信「<em>灵魂解脱</em>」，东方信「<em>轮回</em>」，唯独以色列的圣经说「<em>你的死人要复活，尸首要兴起</em>」（赛26:19）。耶稣的复活只能从希伯来的世界观里被理解。</span>
+        <span class="en">In Chapter 12 Leman walks Andrew up to the Temple at Passover — 250,000 people queued up to slaughter lambs, hundreds of priests at work, Levite choirs chanting the <em>Hallel</em> Psalms (113-118). Andrew slits his lamb's throat with his own hand and watches the blood caught in a silver basin. That evening he reclines (not sits — the Western image of a long table is wrong) at the upper room for the <em>Seder</em>. Jesus lifts the third cup, the <em>Cup of Redemption</em>, and speaks words no Jew had ever said: <strong>"This cup is the new covenant in my blood."</strong> Chapter 13 then turns to what Christians assume is "obvious" but no Gentile culture could have invented — <strong>bodily resurrection</strong>. Leman cites <em>Orthodox</em> Jewish scholar Pinchas Lapide, who does <em>not</em> accept that Jesus is Messiah but <strong>does accept his resurrection as a historical event</strong>, simply because "<em>only Jewish people in the ancient world believed in bodily resurrection</em>." Greeks believed in the soul's escape; Eastern religions in reincarnation; only the Hebrew Bible says "<em>Your dead shall live; their bodies shall rise</em>" (Isa 26:19). The resurrection of Yeshua is intelligible only inside a Jewish worldview.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「饭后也照样拿起杯来，说：『这杯是用我血所立的新约，是为你们流出来的。』」</span>
+        <span class="en">"In the same way, after the supper he took the cup, saying, 'This cup is the new covenant in my blood, which is poured out for you.'"</span>
+        <cite>《路加福音》22:20 · Luke 22:20</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>פֶּסַח · Pesach</strong>——「<em>逾越</em>」，亦是「<em>逾越节</em>」之名。其词根 <em>pasach</em> 意为「跨过、跳过」，回到出埃及的那夜——天使因羔羊之血「<strong>越过</strong>」以色列家。莱曼指出一个常被基督徒忽略的细节：保罗说「<em>基督已经成了我们逾越节的羔羊</em>」（林前5:7），而 Pinchas Lapide 提醒「<em>第三日</em>」在希伯来圣经里反复出现——亚伯拉罕第三日抬眼看见献以撒之处（创22:4）、约瑟第三日释放弟兄（创42:18）、约拿第三日从鱼腹中被吐出来、何西阿应许「第三日<em>他必使我们兴起</em>」（何6:2）。耶稣的复活精准地落在<em>初熟节</em> (Bikkurim) 那一天——大祭司挥摇头一捆大麦的日子。保罗说耶稣是「<strong>睡了之人初熟的果子</strong>」（林前15:20）。每一个细节都嵌在希伯来年历里。</span>
+        <span class="en"><strong>פֶּסַח · Pesach</strong> — "<em>Passover</em>." The root <em>pasach</em> means "to pass over, to skip" — the night the angel "<strong>passed over</strong>" the Israelite homes because of the lamb's blood. Leman highlights a detail Christians often miss: Paul writes "<em>Messiah our Passover lamb has been sacrificed</em>" (1 Cor 5:7), and Pinchas Lapide reminds us that "<em>the third day</em>" runs all through the Hebrew Bible — Abraham lifts his eyes on the third day (Gen 22:4), Joseph releases his brothers on the third day (Gen 42:18), Jonah is delivered on the third day, Hosea promises "<em>on the third day he will raise us up</em>" (Hosea 6:2). Jesus' resurrection falls precisely on <em>Bikkurim</em> — the Feast of Firstfruits, the day the high priest waves the first sheaf of barley. Paul calls Jesus "<strong>the firstfruits of those who have fallen asleep</strong>" (1 Cor 15:20). Every detail is keyed to the Hebrew calendar.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒每次领圣餐时，其实是在<strong>继续耶稣那夜的逾越节家宴</strong>。莱曼提醒：第三杯不是耶稣发明的——它是<em>救赎之杯</em>，犹太人千百年来在此处都念诵神说「<strong>我必救赎你们</strong>」（出6:6）。耶稣举起这一杯说「这是我的血」时，<em>祂在告诉门徒：当神说「我必救赎你们」时，神说的就是这个意思——我自己的血</em>。还有：莱曼悲叹「<em>Easter</em>」（复活节）这名字来源于异教女神 Ishtar/Ashtoreth，而<em>初熟节</em>这个真正的希伯来名字反而被基督徒忽略。建议读者考虑：除了染色蛋和兔子，是否也能让<em>初熟节的大麦穗</em>回到基督教春日庆典的中心？</span>
+        <span class="en">Every time Christians take communion, they are <strong>continuing Jesus' Passover Seder of that night</strong>. Leman notes: the third cup was not Jesus' invention — it is the <em>Cup of Redemption</em>, the cup over which Jews for centuries had recited God's promise "<strong>I will redeem you</strong>" (Ex 6:6). When Jesus lifted it and said "this is my blood," <em>he was telling the disciples: when God said "I will redeem you," this is what he meant — my own blood</em>. Leman also laments that the English name "Easter" derives from the pagan goddess Ishtar / Ashtoreth, while the actual Hebrew name <em>Bikkurim</em> (Firstfruits) has been forgotten. He invites readers to consider letting the <em>sheaf of firstfruits barley</em> return to the heart of Christian spring celebration, alongside (or instead of) eggs and rabbits.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果我每次领圣餐时，<em>知道</em>自己正在继续那一夜的逾越节家宴——这会怎样改变我对圣餐的感受？</span><span class="en">If at every communion I <em>knew</em> I was continuing the Passover Seder of that night, how would the bread and cup feel different?</span></li>
+        <li><span class="zh">一位正统派犹太学者 (Lapide) 都承认耶稣复活是真实历史事件，却仍不相信祂是弥赛亚——这让我对「<em>信</em>」与「<em>认知</em>」的关系有何反思？</span><span class="en">An Orthodox Jewish scholar (Lapide) accepts Jesus' resurrection as historical fact yet still does not believe him to be Messiah. What does this tell me about the difference between <em>information</em> and <em>faith</em>?</span></li>
+        <li><span class="zh">我所庆祝的「复活节」与圣经里<em>初熟节</em>的图景，有多大差距？我能不能至少在今年春天，把一束麦穗放在自己的桌上？</span><span class="en">How far is my "Easter" from the biblical picture of <em>Bikkurim</em> — Firstfruits? Could I, this spring, place a single sheaf of grain on my own table?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 8  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">重新听见弥赛亚的话</span>
+        <span class="en">Hearing the Words of Messiah All Over Again</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">最后两章，莱曼把所有线索收拢在一起。他借 N.T. Wright 的归纳，把耶稣时代的犹太人最深的四个问题摆在眼前：「<em>我们是谁？</em>」「<em>我们在哪里？</em>」「<em>哪里出了错？</em>」「<em>出路是什么？</em>」——他们的答案是：「我们是被拣选的子民」、「我们仍然在某种『放逐』中」、「我们的统治者是错的（罗马与妥协的犹太人）」、「神必须再一次行动」。耶稣进入这个语境，开口第一句话便是：「<strong>天国近了，你们要悔改。</strong>」——莱曼说：「<em>当时我读到这句话时，脑海里浮现的是云朵、灯光、天使合唱——而那位站在加利利泥泞地的真耶稣，<em>意思完全不是那个</em></em>。」祂的意思是：「<em>神向亚伯拉罕承诺的所有事，开始今天兑现了。</em>」最后一章莱曼劝勉读者：再读一遍福音书——但这次<strong>用希伯来人的耳朵听</strong>。祂论圣殿、论律法、论圣城、论税吏与妓女、论门徒之路——句句都要在<em>当时的犹太语境</em>里重新发响。他援引那位仅有的明白者——某位无名的法利赛人在耶稣讲论弥赛亚筵席时高呼：「<strong>在神国里吃饭的有福了！</strong>」（路14:15）这是这本书的结语：愿你听见。</span>
+        <span class="en">Leman pulls the threads together in the last two chapters. Drawing on N.T. Wright, he names the four deepest questions of Jesus' Jewish contemporaries: "<em>Who are we?</em>" "<em>Where are we?</em>" "<em>What is wrong?</em>" "<em>What is the solution?</em>" Their answers: "We are the chosen people"; "We are in some kind of ongoing exile"; "The wrong people rule — Rome and compromised Jews"; "God must act again." Jesus stepped into this charged context and opened his ministry with one line: "<strong>The kingdom of heaven is near; repent.</strong>" — and Leman confesses: "<em>When I first read that line, my head filled with clouds and harps and angelic choirs — and the actual Jesus standing in Galilean mud, <em>meant nothing of the kind</em></em>." He meant: "<em>Every promise God ever made to Abraham begins paying out today.</em>" The final chapter is a tender exhortation: read the Gospels again — but this time, <strong>listen with Jewish ears</strong>. His words about the Temple, the Torah, the City, the tax collectors and prostitutes, the road of discipleship — each line must be heard afresh in the <em>Jewish soundscape</em> of his time. Leman ends with the one anonymous Pharisee who actually grasped what Jesus was doing at the Messianic banquets, and shouted out: "<strong>Blessed is the one who will eat at the feast in the kingdom of God!</strong>" (Luke 14:15). May we hear like that man.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「凡劳苦担重担的人，可以到我这里来，我就使你们得安息。我心里柔和谦卑，你们当负我的轭，学我的样式，这样，你们心里就必得享安息。因为我的轭是容易的，我的担子是轻省的。」</span>
+        <span class="en">"Come to me, all who are weary and heavy-laden, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls. For my yoke is easy and my burden is light."</span>
+        <cite>《马太福音》11:28-30 · Matthew 11:28-30</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שְׁמַע · Shema</strong>——「<em>听</em>」。每个犹太孩童从小就背诵的祷文以此开始：「<em>Shema Yisrael Adonai Eloheinu Adonai Echad</em>——以色列啊，你要听，耶和华我们的神是独一的主。」（申6:4）在希伯来语里，<em>shema</em>不只是耳朵的听见，更是<strong>带着回应的听</strong>——「<em>听</em>」与「<em>遵行</em>」是同一个词。耶稣最常的开场白「<em>有耳可听的，就应当听</em>」其实就是回到这条<em>Shema</em>的脊柱上。本书的标题虽是「<em>耶稣不是蓝眼睛</em>」，但它真正的呼召是：<strong>耶稣的耳朵听过 Shema，祂的舌头说过 Shema——你愿不愿意也这样听祂？</strong></span>
+        <span class="en"><strong>שְׁמַע · Shema</strong> — "<em>Hear</em>." Every Jewish child grows up reciting the prayer that opens with this word: "<em>Shema Yisrael Adonai Eloheinu Adonai Echad</em> — Hear, O Israel, the LORD our God, the LORD is one." (Deut 6:4). In Hebrew, <em>shema</em> is not just the ear's reception — it is <strong>listening that obeys</strong>; "to hear" and "to do" share a single semantic field. Jesus' most frequent refrain — "<em>He who has ears to hear, let him hear</em>" — sits squarely on the spine of the <em>Shema</em>. The book's title is "<em>Jesus Didn't Have Blue Eyes</em>" — but the deeper call is this: <strong>Jesus' ears heard the Shema; his tongue spoke the Shema. Will you listen to him in the same way?</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">读完这本书，许多基督徒会经历两种感觉：第一种是悲伤——「我从前以为自己认识耶稣，现在才发现我认识的只是<em>祂的轮廓</em>。」第二种是兴奋——「但祂还在那里，整本福音书还在那里，我可以重新读、重新听、重新跟随。」莱曼并不要求基督徒守犹太节期、用希伯来文祷告，也不要求改变神学体系。他的请求很温柔：「<em>不要再加一层欧洲滤镜在祂上面。</em>」让那位拿撒勒的犹太人——那位会发怒、会哭泣、会与撒玛利亚妇人对话、会在最后晚餐时洗门徒脚的耶稣——<strong>重新坐在你心中那把椅子上</strong>。这就是「重新听见祂的话」。</span>
+        <span class="en">By the end of this book, many Christians experience two emotions in quick succession. First, sadness: "I thought I knew Jesus, and I have only known an <em>outline</em>." Second, excitement: "But he is still there. The whole Gospel is still there. I can read again, hear again, follow again." Leman does not require Christians to observe the feasts, pray in Hebrew, or overhaul their theology. His request is tender: "<em>Just remove the extra layer of European varnish</em>." Let the Jewish carpenter from Nazareth — the one who got angry, who wept, who sat down with a Samaritan woman, who knelt to wash his disciples' feet — <strong>retake the chair at the center of your heart</strong>. That is what it means to "hear his words all over again."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">读完这八堂课，我心中的耶稣形象变了吗？变在哪里？如果改变了，我愿意把这个改变带进我下一次的祷告吗？</span><span class="en">Has my mental picture of Jesus changed across these eight lessons? Where? And if so, am I willing to carry that changed picture into my very next prayer?</span></li>
+        <li><span class="zh">如果「<em>Shema</em>」的意思是「听得带着回应」——莱曼整本书说的，我<em>真听见</em>了哪一句？我会带哪一句进入下个月的生活？</span><span class="en">If <em>Shema</em> means "listening that obeys" — which single sentence from Leman's whole book have I <em>actually heard</em>? Which one will I carry into the next month of my life?</span></li>
+        <li><span class="zh">我愿不愿意为我所在的<strong>那间教会</strong>祷告——求神也让她「<em>重新听见</em>」那位犹太弥赛亚？这是否也是为「以色列的丰满」祷告的一种方式？</span><span class="en">Am I willing to pray for <strong>my own local church</strong> — that she too would "<em>hear again</em>" the Jewish Messiah? Could this be one way of praying for "the fullness of Israel"?</span></li>
+      </ul>
+    </div>
+
+    <hr class="article-rule" />
+
+    <h2>
+      <span class="zh">同行祝福</span>
+      <span class="en">A Blessing for the Road</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华向你仰脸，赐你平安。」<br/><br/>愿你听见了 Shema，也行出来；<br/>愿你不再被金发蓝眼的画像所遮蔽——而看见那位真正的拿撒勒人耶稣 (Yeshua)：<br/>祂以人子的身份走过你的尘土，又以神子的荣耀坐在父的右边。<br/><br/>祂第一次以受苦的羔羊来过，<br/>祂第二次必以得胜的君王再来——<br/>愿你两次都预备好。</span>
+      <span class="en">"The LORD lift up his countenance upon you, and give you peace."<br/><br/>May you hear the Shema and walk it out.<br/>May the blond, blue-eyed icons no longer block your sight — and may you see the actual Yeshua of Nazareth:<br/>the Son of Man who walked your dust, the Son of God who sits at the Father's right hand.<br/><br/>He came once as the Suffering Lamb.<br/>He will come again as the Reigning King.<br/>May you be ready for both.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://mtolivepress.com" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《耶稣不是蓝眼睛》原书 · Mt. Olive Press</span><span class="en">Get the Book — Jesus Didn't Have Blue Eyes · Mt. Olive Press</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>
