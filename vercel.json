@@ -3,12 +3,13 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "functions": {
-    "api/edge-tts.py": {
-      "excludeFiles": "assets/audio/**"
-    },
     "api/chat.py": {
       "excludeFiles": "assets/audio/**",
       "maxDuration": 60
+    },
+    "api/tts.py": {
+      "excludeFiles": "assets/audio/**",
+      "maxDuration": 30
     }
   }
 }
