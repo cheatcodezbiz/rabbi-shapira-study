@@ -1,1 +1,4 @@
 edge-tts==7.2.8
+# Chatbot RAG endpoint (api/chat.py) ─────────────────────
+requests>=2.31
+pinecone>=5.0

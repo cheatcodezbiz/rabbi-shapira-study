@@ -5,6 +5,10 @@
   "functions": {
     "api/edge-tts.py": {
       "excludeFiles": "assets/audio/**"
+    },
+    "api/chat.py": {
+      "excludeFiles": "assets/audio/**",
+      "maxDuration": 60
     }
   }
 }
