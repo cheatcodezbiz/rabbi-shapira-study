@@ -213,13 +213,19 @@ def stream_openrouter(messages: list[dict]):
     with requests.post(OPENROUTER_URL, headers=headers, json=body, stream=True, timeout=120) as r:
         r.raise_for_status()
         # OpenRouter's SSE stream sends `Content-Type: text/event-stream`
-        # with no `charset=` parameter. Per RFC 2616, `requests` then falls
-        # back to ISO-8859-1, which mangles every CJK / Hebrew byte before
-        # we ever see the JSON. Force UTF-8 so multi-byte tokens decode
-        # correctly.
-        r.encoding = "utf-8"
-        for raw in r.iter_lines(decode_unicode=True):
-            if not raw or not raw.startswith("data:"):
+        # with no `charset=` parameter. Per RFC 2616 + RFC 7231, `requests`
+        # falls back to ISO-8859-1 for text/* with no charset, which mangles
+        # every CJK / Hebrew byte. Bypass requests' decoder entirely:
+        # iterate raw bytes and decode each line as UTF-8 ourselves.
+        for raw_bytes in r.iter_lines(decode_unicode=False):
+            if not raw_bytes:
+                continue
+            try:
+                raw = raw_bytes.decode("utf-8")
+            except UnicodeDecodeError:
+                # Last-resort fallback so a single bad byte can't kill the stream.
+                raw = raw_bytes.decode("utf-8", errors="replace")
+            if not raw.startswith("data:"):
                 continue
             payload = raw[5:].strip()
             if payload == "[DONE]":
