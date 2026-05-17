@@ -38,6 +38,8 @@
       typing:       '拉比正在思考…',
       sources:      '出处',
       clear:        '清空对话',
+      speak:        '朗读',
+      stopSpeak:    '停止朗读',
       empty: [
         '你好！我是基于沙皮拉拉比著作的学习伙伴。',
         '你可以问我任何关于网站文章、研习指南或拉比观点的问题。',
@@ -58,6 +60,8 @@
       typing:       'Thinking…',
       sources:      'Sources',
       clear:        'Clear chat',
+      speak:        'Read aloud',
+      stopSpeak:    'Stop reading',
       empty: [
         'Shalom! I\'m a study partner grounded in Rabbi Shapira\'s teachings on this site.',
         'Ask me anything about the articles, study guides, or the rabbi\'s positions.',
@@ -198,6 +202,33 @@
     color: #2a2218;
     border: 1px solid #e0d8c8;
     border-bottom-left-radius: 4px;
+    position: relative;
+  }
+  .lot-msg-asst { position: relative; }
+  .lot-speak-btn {
+    background: rgba(184,149,42,0.12);
+    color: #b8952a;
+    border: 1px solid rgba(184,149,42,0.32);
+    cursor: pointer;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-top: 0.4rem;
+    align-self: flex-start;
+    transition: background 0.15s, color 0.15s, transform 0.12s;
+    flex-shrink: 0;
+    padding: 0;
+    line-height: 1;
+  }
+  .lot-speak-btn:hover { background: #b8952a; color: white; transform: scale(1.05); }
+  .lot-speak-btn svg { width: 14px; height: 14px; fill: currentColor; display: block; }
+  .lot-speak-btn.lot-speaking {
+    background: #b03030; color: white; border-color: #b03030;
+    animation: lot-speak-pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes lot-speak-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(176,48,48,0.4); }
+    50%      { box-shadow: 0 0 0 6px rgba(176,48,48,0); }
   }
   .lot-msg-bubble strong { color: #1a2744; font-weight: 600; }
   .lot-msg-bubble em { font-style: italic; }
@@ -445,6 +476,7 @@
   function closePanel() {
     panel.classList.remove('lot-open');
     bubble.classList.remove('lot-hidden');
+    if (window.__lotChatStopSpeaking) window.__lotChatStopSpeaking();
   }
   function autosize() {
     input.style.height = 'auto';
@@ -469,6 +501,7 @@
   }
   function clearChat() {
     if (currentController) currentController.abort();
+    if (window.__lotChatStopSpeaking) window.__lotChatStopSpeaking();
     localStorage.removeItem(HISTORY_KEY);
     sourcesByMsg = {};
     renderHistory();
@@ -541,16 +574,132 @@
     bubble.innerHTML = renderMessageHtml(text || '', sources);
     wrap.appendChild(bubble);
     var srcEl = null;
-    if (role === 'assistant' && sources && sources.length) {
-      srcEl = document.createElement('div');
-      srcEl.className = 'lot-sources';
-      srcEl.innerHTML = renderSources(sources);
-      wrap.appendChild(srcEl);
+    var speakBtn = null;
+    if (role === 'assistant') {
+      // Attach a speaker button — wires into the Web Speech API.
+      speakBtn = makeSpeakBtn(function () {
+        return ttsTextFromBubble(bubble);
+      }, speakBtn);
+      // We store the ref so toggleSpeak can find it; also attach after sources.
+      if (sources && sources.length) {
+        srcEl = document.createElement('div');
+        srcEl.className = 'lot-sources';
+        srcEl.innerHTML = renderSources(sources);
+        wrap.appendChild(srcEl);
+      }
+      wrap.appendChild(speakBtn);
     }
     body.appendChild(wrap);
     if (scroll !== false) scrollToBottom();
-    return { wrap: wrap, bubble: bubble, sourcesEl: srcEl };
+    return { wrap: wrap, bubble: bubble, sourcesEl: srcEl, speakBtn: speakBtn };
   }
+
+  // ─── TTS — Web Speech API ──────────────────────────────────────────
+
+  var SPEAK_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2A4.5 4.5 0 0 0 14 7.97v8.05a4.5 4.5 0 0 0 2.5-4.02zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06A9 9 0 0 0 14 3.23z"/>' +
+    '</svg>';
+  var STOP_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '<rect x="6" y="6" width="12" height="12" rx="2"/>' +
+    '</svg>';
+
+  var currentSpeakBtn = null;
+
+  function ttsSupported() {
+    return typeof window.speechSynthesis !== 'undefined' &&
+           typeof window.SpeechSynthesisUtterance !== 'undefined';
+  }
+
+  function ttsTextFromBubble(bubble) {
+    // Strip citation tags and pull plain text for natural speech.
+    var clone = bubble.cloneNode(true);
+    clone.querySelectorAll('.lot-cite').forEach(function (c) { c.remove(); });
+    return (clone.innerText || clone.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function pickVoice(forLang) {
+    var voices = window.speechSynthesis.getVoices() || [];
+    if (!voices.length) return null;
+    var prefix = forLang === 'zh' ? 'zh' : 'en';
+    // Pick a sensible default: prefer non-novelty voices in the right locale.
+    var match = voices.find(function (v) { return v.lang && v.lang.toLowerCase().indexOf(prefix) === 0 && v.default; })
+             || voices.find(function (v) { return v.lang && v.lang.toLowerCase().indexOf(prefix) === 0; });
+    return match || null;
+  }
+
+  function stopSpeaking() {
+    try { window.speechSynthesis.cancel(); } catch (_) {}
+    if (currentSpeakBtn) {
+      currentSpeakBtn.classList.remove('lot-speaking');
+      currentSpeakBtn.innerHTML = SPEAK_ICON;
+      currentSpeakBtn.title = t().speak;
+      currentSpeakBtn = null;
+    }
+  }
+  window.__lotChatStopSpeaking = stopSpeaking;
+
+  function speak(text, btn) {
+    if (!ttsSupported() || !text) return;
+    // Toggle: if this button is the active one, just stop.
+    if (currentSpeakBtn === btn && window.speechSynthesis.speaking) {
+      stopSpeaking();
+      return;
+    }
+    stopSpeaking();
+    var u = new SpeechSynthesisUtterance(text);
+    var L = lang();
+    u.lang = L === 'zh' ? 'zh-CN' : 'en-US';
+    var voice = pickVoice(L);
+    if (voice) u.voice = voice;
+    u.rate = 1.0;
+    u.pitch = 1.0;
+    u.volume = 1.0;
+    u.onend = function () {
+      if (currentSpeakBtn === btn) {
+        btn.classList.remove('lot-speaking');
+        btn.innerHTML = SPEAK_ICON;
+        btn.title = t().speak;
+        currentSpeakBtn = null;
+      }
+    };
+    u.onerror = u.onend;
+    currentSpeakBtn = btn;
+    btn.classList.add('lot-speaking');
+    btn.innerHTML = STOP_ICON;
+    btn.title = t().stopSpeak;
+    try { window.speechSynthesis.speak(u); }
+    catch (_) { stopSpeaking(); }
+  }
+
+  function makeSpeakBtn(getText) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'lot-speak-btn';
+    btn.title = t().speak;
+    btn.setAttribute('aria-label', t().speak);
+    btn.innerHTML = SPEAK_ICON;
+    if (!ttsSupported()) {
+      btn.style.display = 'none';
+      return btn;
+    }
+    btn.addEventListener('click', function () {
+      var text = getText();
+      speak(text, btn);
+    });
+    return btn;
+  }
+
+  // Warm up the voices list — some browsers (Safari) populate it lazily.
+  if (ttsSupported()) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = function () { /* noop, just triggers caching */ };
+  }
+  // Stop speaking if the panel is closed or the page is hidden.
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) stopSpeaking();
+  });
 
   function renderSources(sources) {
     return sources.map(function (s, i) {
