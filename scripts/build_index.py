@@ -56,7 +56,20 @@ EMBED_DIM = int(os.environ.get("EMBED_DIM", "512"))
 CHUNK_TOKENS = int(os.environ.get("CHUNK_TOKENS", "450"))
 CHUNK_OVERLAP_TOKENS = int(os.environ.get("CHUNK_OVERLAP_TOKENS", "60"))
 
+# Voyage AI rate-limit tuning. Free tier is 3 RPM / 10K TPM — set conservative
+# defaults that keep a bulk seed under both limits; override via env when you
+# add a payment method (Voyage's standard limits are 2,000 RPM / 3M TPM).
+VOYAGE_BATCH_SIZE = int(os.environ.get("VOYAGE_BATCH_SIZE", "16"))
+VOYAGE_REQUEST_SLEEP_S = float(os.environ.get("VOYAGE_REQUEST_SLEEP_S", "22"))
+
 DRY_RUN = bool(os.environ.get("DRY_RUN"))
+
+# Force UTF-8 stdout on Windows so the progress arrows / bullets don't crash
+# the script under the legacy cp1252 console.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 # Files we never index (nav-only, footers, etc.) — everything else gets walked.
 SKIP_FILES = {"404.html"}
@@ -271,19 +284,26 @@ def voyage_embed(texts: list[str], input_type: str = "document") -> list[list[fl
         raise RuntimeError("VOYAGE_API_KEY not set")
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     out: list[list[float]] = []
-    for i in range(0, len(texts), 64):
-        batch = texts[i : i + 64]
+    total_batches = (len(texts) + VOYAGE_BATCH_SIZE - 1) // VOYAGE_BATCH_SIZE
+    for bi, i in enumerate(range(0, len(texts), VOYAGE_BATCH_SIZE)):
+        batch = texts[i : i + VOYAGE_BATCH_SIZE]
         body = {
             "model": EMBED_MODEL,
             "input": batch,
             "input_type": input_type,
             "output_dimension": EMBED_DIM,
         }
-        for attempt in range(4):
+        for attempt in range(5):
             r = requests.post(VOYAGE_URL, headers=headers, json=body, timeout=60)
             if r.status_code == 200:
                 break
-            if r.status_code in (429, 500, 502, 503, 504):
+            if r.status_code == 429:
+                # Free tier rate-limit hit — back off generously.
+                wait = max(VOYAGE_REQUEST_SLEEP_S * (attempt + 1), 25)
+                print(f"  [voyage] 429 rate-limit, sleeping {wait:.0f}s (attempt {attempt + 1}/5)")
+                time.sleep(wait)
+                continue
+            if r.status_code in (500, 502, 503, 504):
                 time.sleep(2 ** attempt)
                 continue
             raise RuntimeError(f"Voyage error {r.status_code}: {r.text[:300]}")
@@ -293,6 +313,11 @@ def voyage_embed(texts: list[str], input_type: str = "document") -> list[list[fl
         # Voyage returns objects with index + embedding; preserve order.
         data.sort(key=lambda d: d["index"])
         out.extend(d["embedding"] for d in data)
+        print(f"  [voyage] batch {bi + 1}/{total_batches} embedded ({len(batch)} chunks)")
+        # Throttle between batches to stay under the free-tier 3 RPM ceiling.
+        # Skip the sleep on the very last batch.
+        if bi + 1 < total_batches and VOYAGE_REQUEST_SLEEP_S > 0:
+            time.sleep(VOYAGE_REQUEST_SLEEP_S)
     return out
 
 
@@ -383,7 +408,8 @@ def main() -> int:
 
     if DRY_RUN:
         print("[index] DRY_RUN — not contacting Voyage or Pinecone.")
-        _save_ledger(fresh_ledger)
+        # Do NOT persist the ledger in dry-run, otherwise the next real run
+        # thinks everything is already embedded and short-circuits to zero work.
         return 0
 
     if to_embed:
