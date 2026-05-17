@@ -692,8 +692,8 @@
 
     fetch(TTS_API_PATH, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'audio/mpeg' },
-      body: JSON.stringify({ text: clipped, voice: voice, rate: '+0%' }),
+      headers: { 'Content-Type': 'application/json', 'Accept': 'audio/wav' },
+      body: JSON.stringify({ text: clipped, lang: L, voice: voice }),
       signal: controller.signal
     })
       .then(function (r) {
