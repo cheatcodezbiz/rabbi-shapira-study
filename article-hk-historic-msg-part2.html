@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>外壳已在中国掰开 ── 香港历史性信息第二集 — 妥拉之光</title>
+  <meta name="description" content="The Outer Shells Have Been Cracked in China — Historic Hong Kong Message, Part 2 — A teaching by Rabbi Dr. Itzhak Shapira (Ahavat Ammi Ministries)" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-hk-historic-msg-part2.jpg" alt="The Outer Shells Have Been Cracked in China — Historic Hong Kong Message, Part 2" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">拉比沙皮拉教导 · 香港现场</span><span class="en">Rabbi Shapira Teaching · Hong Kong Live</span></span>
+      <h1 class="article-title">
+        <span class="zh">外壳已在中国掰开 ── 香港历史性信息第二集</span>
+        <span class="en">The Outer Shells Have Been Cracked in China — Historic Hong Kong Message, Part 2</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">从香港的高处开讲，拉比沙皮拉博士把罗马书十一章接上犹太历法中「树木的新年」<em>Tu B'Shvat</em>，并引入一个非常少听到的概念——<em>Acharei Aklimot</em>（在「众端」之后），宣告：「外壳现在已经在中国被掰开」，这是中国历史性的时刻。</span>
+        <span class="en">Speaking live from the heights of Hong Kong on his way into mainland China, Rabbi Dr. Shapira connects Romans 11 to <em>Tu B'Shvat</em> — the Jewish New Year of the Trees — and introduces a rarely-heard concept, <em>Acharei Aklimot</em> (“after the climaxes”), declaring: <strong>“the outer shells have been cracked open in China.”</strong> This, he says, is China's historic moment.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">沙皮拉拉比博士 · Ahavat Ammi 事工</span>
+        <span class="en">Rabbi Dr. Itzhak Shapira · Ahavat Ammi Ministries</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 17</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 16 分钟阅读</span><span class="en">~16 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=oNqIcHDmdc0" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">观看原始视频 (1:11:33)</span><span class="en">Watch Original (1:11:33)</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">「<strong>安息日平安，中国！</strong>」拉比沙皮拉博士从香港的高处开场——飞机声在背景里嗡嗡作响，镜头之外是一个挤满了人的二楼空间，因为安全考量没有公开拍摄。这是他「历史性信息」的第二集——延续昨天关于<em>罗马书十一章</em>与<em>树木的新年</em> (Tu B'Shvat, ט״ו בשבט) 的教导，他要把听众带入一个更深的概念：<em>「Acharei Aklimot」</em>（אחרי אקלימות，「在众端/众结局之后」）。这是一个不常听到的希伯来词——拉比用它来描述<em>「在所有时代的高潮一一过去之后」</em>那个最后的时刻，也就是<em>外壳被掰开</em>、果仁显露的时刻。他说：<strong>「外壳现在已经在中国被掰开。今天就相信吧！」</strong>本文是这场讲解的纵深展开：四个新年、塔木德的方法、「以色列沙拉」式的解经病、<em>Acharei Aklimot</em> 的份量、以及为何先知所言「众海岛与众民」如今正落在中国土地上。</span>
+      <span class="en"><strong>“Shabbat Shalom, China!”</strong> Rabbi Dr. Shapira opens from a rooftop in Hong Kong — the drone of aircraft humming in the background, just outside the frame a second-storey room packed past capacity, kept off-camera for safety. This is Part 2 of his “historic message” — picking up yesterday's thread that connected <em>Romans 11</em> with <em>Tu B'Shvat</em> (ט״ו בשבט), the Jewish New Year of the Trees. Tonight he is going deeper, into a Hebrew phrase most listeners have never heard: <em>Acharei Aklimot</em> (אחרי אקלימות, “after the climaxes / after the conclusions”). It is the rabbi's name for the final moment in history — the moment when every era's high tide has already crested and receded, the moment when <em>the outer shells are cracked open</em> and the kernel is revealed. He says it plainly: <strong>“The outer shells have now been cracked open in China. Believe today!”</strong> What follows is the long arc of that teaching: the four New Years, the Talmudic method, the disease of “Israeli-salad” exegesis, the weight of <em>Acharei Aklimot</em>, and why the prophet's <em>“coastlands and peoples from afar”</em> are landing today on Chinese soil.</span>
+    </p>
+
+    <h2><span class="zh">一、从香港的高处 ── 一个属灵的「上升」</span><span class="en">I. From the Heights of Hong Kong — A Spiritual <em>Aliyah</em></span></h2>
+    <p>
+      <span class="zh">拉比沙皮拉博士开场就强调一个细节：他不是在工作室里讲课，他是在<strong>香港最高处的一个屋顶上</strong>讲课，背景是飞机的声音。「你听到飞机的声音，因为我们在这个地方的最高点。」这不是随便一句寒暄——在拉比的解读里，<em>「高处」</em>是一个属灵的隐喻：神正在呼召华人「上升到更高的境界」。</span>
+      <span class="en">Rabbi Shapira opens by drawing attention to a detail: he is not teaching from a studio. He is teaching from <strong>a rooftop at the highest point in Hong Kong</strong> — aircraft passing overhead. <em>“You can hear the planes, because we are at the highest point here.”</em> This is not throwaway atmosphere. In his reading, the <em>high place</em> is a spiritual figure: God is calling the Chinese people to <em>“ascend to a higher realm.”</em></span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「这就是对中国人的呼召——要上升到更高的境界。如果你在香港，请来加入我们吧！来到中国，跟我们一起碰面吧！这是一个非常具有历史性的时代。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“This is the call to the Chinese people — ascend to a higher place. If you are in Hong Kong, please come and join us! Come to China and meet with us! This is a deeply historic time.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">希伯来文里有一个专门的词来形容这种「向上的移动」：<em>Aliyah</em>（עלייה，「上行」）。它原本是指犹太人「上行回到故土」——但在更广的属灵语境里，<em>Aliyah</em> 指任何「从低处上升到高处」、「从外院走进至圣所」的属灵移动。拉比此刻所发出的，正是这种<em>Aliyah</em> 式的邀请：从远观，到亲临；从听众，到弟兄；从外院，到内殿。</span>
+      <span class="en">Hebrew has a dedicated word for this kind of upward movement: <em>Aliyah</em> (עלייה, “ascent”). It originally describes Jews <em>going up</em> back to the Land — but in the wider spiritual sense, <em>Aliyah</em> names any movement <em>from low to high, from outer court to holy place</em>. What the rabbi issues here is exactly that kind of summons: from spectator to brother, from outer court to inner sanctuary.</span>
+    </p>
+
+    <h2><span class="zh">二、罗马书十一章 × 树木新年 ── 一座意想不到的桥</span><span class="en">II. Romans 11 × Tu B'Shvat — An Unexpected Bridge</span></h2>
+    <p>
+      <span class="zh">上一集（第一集）拉比已经为听众架起了一座桥：把<em>罗马书十一章</em>——保罗关于「外邦人被嫁接进入橄榄树」的伟大宣言——与<em>Tu B'Shvat</em>（ט״ו בשבט，「树木的新年」）这个犹太节期连起来。本集第二节，他要继续这个连结，并把听众带入一个更深的概念。</span>
+      <span class="en">In Part 1, the rabbi had already raised a bridge between two ideas: <em>Romans 11</em> — Paul's great declaration that Gentiles are <em>grafted into the olive tree</em> — and <em>Tu B'Shvat</em> (ט״ו בשבט, the Jewish New Year of the Trees). Tonight, in the second lesson, he continues that bridge and takes the listener deeper.</span>
+    </p>
+
+    <p>
+      <span class="zh">为什么罗马书十一章要在「树木新年」上展开？因为保罗用的「嫁接」(<em>engrafting</em>) 不是一个泛泛的比喻——它是一个真实的<strong>农艺动作</strong>：把一根野枝插进一棵成熟的橄榄树，让野枝从树根<em>吸取它从未有过的汁液</em>。这个动作有一个最佳的时机——希伯来传统说：<em>就是树木的新年</em>。所以当保罗写罗马书十一章的时候，他脑中的图景<strong>极有可能</strong>就是 Tu B'Shvat 的农艺图景。</span>
+      <span class="en">Why must Romans 11 open up on the New Year of the Trees? Because Paul's word — <em>engrafted</em> — is not a loose metaphor. It is a real <strong>arboricultural action</strong>: a wild branch slipped into a mature olive tree, drawing <em>a sap it never had</em> from the trunk. The graft has an optimal time — and Hebrew tradition says it is precisely on <em>Tu B'Shvat</em>. So when Paul wrote Romans 11, the image in his mind was <strong>likely</strong> the arboriculture of the New Year of the Trees.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我们昨天看到了罗马书十一章，还有树木新年的这个连结。我们今天会进入这堂课的第二节——就是这个概念叫做 Acharei Aklimot。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“Yesterday we saw the connection between Romans 11 and the New Year of the Trees. Today we will enter the second lesson — into this concept called <em>Acharei Aklimot</em>.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <h2><span class="zh">三、犹太历里的四个新年</span><span class="en">III. The Four New Years of the Jewish Calendar</span></h2>
+    <p>
+      <span class="zh">在拉比的论证开始之前，他先停下来做一个对中国信徒至关重要的更正：<strong>犹太历里不是一个新年，是四个</strong>。许多基督徒听到这句话第一反应是错愕——因为我们只知道一个新年。但这并不是拉比的私见，而是<em>米示拿 (Mishnah)</em>《Rosh Hashanah 1:1》开篇第一句话的字面教导：</span>
+      <span class="en">Before the argument can begin, the rabbi pauses to correct something crucial for the Chinese listener: <strong>the Jewish calendar does not have one New Year, it has four.</strong> Most Christians flinch on hearing this — we only know one. But this is not the rabbi's private opinion; it is the plain teaching of <em>Mishnah Rosh Hashanah 1:1</em>:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「一年中有四个新年：尼散月初一日是王和节期的新年；以禄月初一日是十一奉献牲畜的新年；提斯利月初一日是普通年、安息年、禧年、植树和蔬菜的新年；细罢特月十五日（按照沙买学派）或十五日（按照希列学派）是树木的新年。」<cite>——米示拿《Rosh Hashanah》1:1</cite></span>
+      <span class="en">“There are four New Years. On the first of Nisan — the new year for kings and for festivals. On the first of Elul — the new year for tithing animals. On the first of Tishrei — the new year for years, for Sabbatical years, for Jubilees, for planting, and for vegetables. And on the fifteenth of Shevat — the new year for trees, according to the school of Hillel.”<cite>— Mishnah Rosh Hashanah 1:1</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">为什么这件事对一个读罗马书十一章的中国信徒重要？因为<em>「嫁接的最佳时机」</em>就是这四个新年之一——<strong>细罢特月十五日（Tu B'Shvat）</strong>。先知与拉比所设的节期不是随机的——它们是<em>属灵农艺的节奏</em>。错过了节奏，嫁接的成活率会下降。</span>
+      <span class="en">Why does this matter to a Chinese believer reading Romans 11? Because the <em>optimal time for grafting</em> is precisely one of these four New Years — <strong>the 15th of Shevat, Tu B'Shvat</strong>. The festivals fixed by the prophets and rabbis are not arbitrary; they are <em>the rhythm of spiritual arboriculture</em>. Miss the rhythm and the graft does not take.</span>
+    </p>
+
+    <h2><span class="zh">四、塔木德的方法 ── 共识高于「以色列沙拉」</span><span class="en">IV. The Talmudic Method — Consensus Over “Israeli Salad”</span></h2>
+    <p>
+      <span class="zh">在介绍 Acharei Aklimot 之前，拉比要先解决一件让他无法忍受的事——某些基督徒处理经文的方式。他用一个生动的词描述这种方式：<em>「以色列沙拉」(以色列沙拉, Israeli Salad)</em>——就是把番茄、黄瓜、洋葱乱切一通的那种。每个人随手切下一片，宣告「圣灵告诉我这段经文是这样解释的」，结果一桌的解释互相矛盾，没有一个标准。</span>
+      <span class="en">Before introducing <em>Acharei Aklimot</em>, the rabbi has to clear something he cannot stand — the way certain Christians handle Scripture. He has a vivid name for it: <em>“Israeli salad”</em> — the loose chop of tomato, cucumber, and onion that fills every Israeli breakfast plate. Each person grabs a piece, declares <em>“the Holy Spirit told me this verse means…”</em>, and the table ends up with twenty contradictory readings and no standard.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「有些人在基督教的话，就是我们看到一个经文就说：『圣灵告诉我这个圣经是这样解释的。』就变成了个以色列沙拉——什么意思呢？就是有很多这个意见。你怎么知道哪一个是正确的呢？」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“In some parts of Christianity, you see a verse and you say, ‘the Holy Spirit told me this is what this verse means.’ It becomes an Israeli salad — meaning, it becomes many, many opinions. How do you know which one is right?”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">塔木德 (<em>Talmud</em>, תַּלְמוּד，「学习」) 的方法不同。塔木德由两部分组成：较早的<em>米示拿 (Mishnah</em>, מִשְׁנָה，「重述/口传律法」) 与之后的<em>革马拉 (Gemara</em>, גְּמָרָא，「完结/讨论」)。它的核心方法不是「一个拉比独断」——而是<strong>众拉比的公开辩论</strong>。一个观点被记录下来，对立的观点也被记录下来；多数意见被标识，少数意见也被保留。读者并不被允许跳过这场辩论——他必须<em>看见拉比们如何争论</em>，才能跟着他们一起追求真理。</span>
+      <span class="en">The Talmud (<em>Talmud</em>, תַּלְמוּד, “learning”) does it differently. The Talmud has two layers: the older <em>Mishnah</em> (מִשְׁנָה, “oral law restated”) and the later <em>Gemara</em> (גְּמָרָא, “completion / discussion”). Its central method is not “one rabbi pronounces.” It is <strong>open rabbinic argument</strong>. A view is recorded; its opposite is also recorded. The majority is marked; the minority is preserved. The reader is not permitted to skip the argument — he must <em>watch the rabbis dispute</em> in order to chase truth with them.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「这个就是塔木德的重要性。在我们的文化里面，在基督教的文化里面，是二元的——一个人正确，另外一个人就错误，拉比永远是正确的。是不是呢？不一定是。<strong>拉比也会错的。</strong>」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“This is the importance of the Talmud. In our culture, in Christian culture, it is dualistic — one person is right, the other is wrong, the rabbi is always right. Is that so? Not necessarily. <strong>The rabbi can also be wrong.</strong>”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <h2><span class="zh">五、Acharei Aklimot ── 「在众端之后」</span><span class="en">V. <em>Acharei Aklimot</em> — “After the Climaxes”</span></h2>
+    <p>
+      <span class="zh">终于，拉比把听众带到了今晚的核心概念：<strong><em>Acharei Aklimot</em>（אחרי אקלימות）</strong>。字面意思是「在众端之后」——希伯来文 <em>acharei</em>（אחרי，「在...之后」）+ <em>aklim</em>（אקלים，「气候/区域/极点」）的复数。这不是一个常见的希伯来词，而是拉比传统中用来描述<em>「历史所有大循环的高峰一一过去之后」</em>的那个最末的时刻。</span>
+      <span class="en">At last the rabbi brings the listener to tonight's core concept: <strong><em>Acharei Aklimot</em> (אחרי אקלימות)</strong>. Literally, “after the climaxes” — Hebrew <em>acharei</em> (אחרי, “after”) + <em>aklim</em> (אקלים, “climate / zone / climax”) in the plural. It is not a common Hebrew phrase; it is the rabbinic name for that <em>last</em> moment in history — the moment after every cycle's high tide has crested and pulled back.</span>
+    </p>
+
+    <p>
+      <span class="zh">这个概念在拉比体系中扮演什么角色？它对应着一个农艺的真相：果实成熟、坚硬的外壳裂开、内里的果仁显露——这件事不发生在春天，也不发生在盛夏，而是发生在<strong>季节的「众端之后」</strong>，在所有的高潮过去、所有的努力都已经施行、所有的等候都已经被熬过之后。「Acharei Aklimot」就是<em>「外壳掰开」的时刻</em>。</span>
+      <span class="en">What does this concept do in the rabbinic system? It names an arboricultural truth: fruit ripens, the hard outer husk cracks, the kernel inside is exposed — and this does <em>not</em> happen in spring, nor in midsummer. It happens <strong>after the climaxes of the season</strong>, after every high tide has receded, after every labour has been spent, after every waiting has been endured. <em>Acharei Aklimot</em> is the moment <em>the shells break open</em>.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「因为现在<strong>外壳已经在中国接开了</strong>。今天就相信吧！现在就是中国的历史的时刻。要升起来，并且 shine！」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“Because the <strong>outer shells have now been cracked open in China</strong>. Believe today! This is China's historic moment. Rise up, and shine!”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">「Shine」(放光) 不是一个随机的英文词——它直接呼应<em>以赛亚书 60:1</em>：「兴起，发光 (<em>Kumi Ori</em>, קומי אורי)；因为你的光已经来到，耶和华的荣耀发现照耀你。」拉比在这个 Acharei Aklimot 的时刻，向中国信徒宣告的，正是<em>以赛亚书 60</em> 的呼召。</span>
+      <span class="en"><em>Shine</em> is not a random English word — it answers <em>Isaiah 60:1</em>: “Arise, shine — <em>Kumi Ori</em> (קומי אורי) — for your light has come, and the glory of the LORD has risen upon you.” What the rabbi declares to the Chinese believer in this <em>Acharei Aklimot</em> moment <em>is</em> the call of Isaiah 60.</span>
+    </p>
+
+    <h2><span class="zh">六、「掰开外壳」── 一个深奥的图像</span><span class="en">VI. “Breaking the Shells” — A Deep Image</span></h2>
+    <p>
+      <span class="zh">「外壳被掰开」这个意象，在犹太神秘传统里有一个专门的名字：<em>Shevirat HaKelim</em>（שבירת הכלים，「器皿的破碎」）与<em>Klipot</em>（קליפות，「外壳/壳子」）。在<em>Lurianic</em> 卡巴拉的图景中，创世之初，神圣的光被注入一些「器皿」中——但这些器皿太脆弱，<strong>破裂</strong>了，火花散落在外壳之内。从那时起，万有的工程就是<em>「找回火花、掰开外壳」</em>——希伯来文叫<em>Tikkun Olam</em>（תיקון עולם，「修复世界」）。</span>
+      <span class="en">“Breaking the shells” has its own name in Jewish mysticism: <em>Shevirat HaKelim</em> (שבירת הכלים, “the shattering of the vessels”) and <em>Klipot</em> (קליפות, “shells / husks”). In the Lurianic picture, at creation the divine light was poured into vessels, but the vessels were too fragile and <strong>shattered</strong> — sparks of light scattered <em>inside</em> the husks. From that moment the whole work of history is to <em>recover the sparks and crack the shells</em> — Hebrew <em>Tikkun Olam</em> (תיקון עולם, “the mending of the world”).</span>
+    </p>
+
+    <p>
+      <span class="zh">在这个图景中，拉比沙皮拉所说的<em>「外壳已经在中国掰开了」</em>就有了非常具体的份量：在过去的几个世纪，神圣的火花<strong>被关闭在外壳里</strong>——而 Acharei Aklimot 的时刻意味着这些壳子已经裂开，里面的光开始被释放。从历史角度看，中国正经历的并不只是「灵性复兴」这种宽泛的语言；按拉比的图像，这是一场<em>属灵的「掰开」</em>——光从外壳里被释放出来。</span>
+      <span class="en">Inside this picture, the rabbi's claim that <em>“the shells have been cracked open in China”</em> takes on real weight: for centuries the holy sparks were <strong>locked inside the husks</strong> — and the <em>Acharei Aklimot</em> moment is the moment the husks split and the light begins to escape. What China is undergoing now, in this reading, is not just generic “revival” — it is a specifically Kabbalistic <em>cracking</em>, in which the locked-in light is finally released.</span>
+    </p>
+
+    <p>
+      <span class="zh">对一个华人信徒来说，这个图像的应用是直接的：你不是一个旁观历史的人，你是<em>外壳被掰开的那个内核</em>。在你之内有一颗火花——犹太人称它为<em>Nitzotz</em>（ניצוץ，「火花」）——这颗火花的释放，是整个 Tikkun Olam 的一部分。</span>
+      <span class="en">For a Chinese believer this lands directly: you are not a bystander to history. You are the kernel <em>whose shell is being cracked open</em>. Inside you is a spark — the Jewish word is <em>Nitzotz</em> (ניצוץ, “spark”) — and the release of that spark is part of the entire <em>Tikkun Olam</em>.</span>
+    </p>
+
+    <h2><span class="zh">七、即将开讲的例子 ── 以赛亚书 53 章</span><span class="en">VII. The Example Coming Next — Isaiah 53</span></h2>
+    <p>
+      <span class="zh">在课的转角处，拉比明确预告：他要用一段经文当作塔木德方法与 Acharei Aklimot 的<strong>试金石</strong>——<em>以赛亚书 53 章</em>。「你们都熟悉吧？」他扫视全场——「<em>是的</em>。」</span>
+      <span class="en">At the hinge of the lesson, the rabbi flags what is coming next: he will use a particular passage as the <strong>testing stone</strong> for both the Talmudic method and <em>Acharei Aklimot</em> — <em>Isaiah 53</em>. <em>“You are all familiar with it, right?”</em> he scans the room. <em>“Yes.”</em></span>
+    </p>
+
+    <p>
+      <span class="zh">为什么<em>以赛亚书 53 章</em>是试金石？因为这是<strong>整本希伯来圣经里最有争议的一章</strong>——基督教传统普遍读作「指向受苦的弥赛亚耶书亚」，而中世纪以后许多犹太注释家读作「指向受苦的以色列民」。拉比沙皮拉作为一位<em>弥赛亚犹太</em>的拉比——既相信耶书亚是弥赛亚、又站在塔木德的方法里——正是要在这一章上向听众展示：<strong>塔木德的「众拉比争论」方法</strong>如何能在不抹杀犹太传统的前提下，依然把以赛亚书 53 章读回到<em>那位</em>受苦的、被中国信徒所认识的、那一位。</span>
+      <span class="en">Why is <em>Isaiah 53</em> the testing stone? Because it is <strong>the most contested chapter in the entire Hebrew Bible</strong> — Christian tradition reads it as pointing to the suffering Messiah Yeshua, while many medieval-and-after Jewish commentators read it as pointing to suffering Israel. Rabbi Shapira, as a <em>Messianic Jewish</em> rabbi — who both believes Yeshua is the Messiah and stands inside the Talmudic method — is going to use this chapter to show: <strong>the Talmud's “rabbis arguing” method</strong> can recover Isaiah 53 for <em>that one</em> — the suffering one known to the Chinese believer — without erasing Jewish tradition.</span>
+    </p>
+
+    <p>
+      <span class="zh">这也是为什么本集的标题是「<strong>历史性</strong>信息」：当一个传统的拉比，在一个属灵<em>「外壳被掰开」</em>的时刻，在一个充满中国信徒的香港屋顶上，准备打开以赛亚书 53 章的时候——这不是普通的研经课。这是一个<em>历史性</em>的接缝。</span>
+      <span class="en">This is why the night is titled a <strong>“historic”</strong> message: when a traditional rabbi, at the very moment of <em>“shells being cracked,”</em> in a Hong Kong rooftop full of Chinese believers, prepares to open <em>Isaiah 53</em> — this is not an ordinary Torah lesson. It is a <em>historic seam</em>.</span>
+    </p>
+
+    <h2><span class="zh">八、对华人信徒，这意味着什么？</span><span class="en">VIII. What This Means for Chinese Believers</span></h2>
+    <p>
+      <span class="zh"><strong>第一</strong>，它把「四个新年」从一个冷僻的犹太历法知识，变成你属灵生命的<em>节奏问题</em>。如果罗马书十一章的「嫁接」要在 Tu B'Shvat 上发生——那么作为一个被嫁接的华人信徒，你不再只活在「主日」的节奏里，你的根系开始与一个<strong>更古老、更深的犹太历法</strong>同步。这不是律法主义；这是<em>回到源头的呼吸</em>。</span>
+      <span class="en"><strong>First</strong>, it changes the four New Years from a piece of obscure Jewish calendrics into a <em>question of rhythm</em> for your spiritual life. If the Romans 11 graft is to happen on <em>Tu B'Shvat</em> — then as a grafted-in Chinese believer, you no longer breathe only on the Sunday rhythm. Your roots start to synchronize with the <strong>older, deeper Jewish calendar</strong>. This is not legalism. It is <em>returning to the source's breath</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第二</strong>，「塔木德方法」给中国家庭与小组一个长远的<em>解经卫生</em>的工具。在一个「我感觉…」「圣灵告诉我…」式的解经文化里，塔木德教你<em>把对立的观点同时摊在桌上</em>、把多数与少数都标识清楚、然后<strong>一起追求真理</strong>。这不是怀疑主义——这是<em>对真理太敬重</em>，敬重到不愿草率拍板。</span>
+      <span class="en"><strong>Second</strong>, the Talmudic method gives Chinese families and small groups a long-term tool of <em>exegetical hygiene</em>. In a “I feel…” / “the Spirit told me…” culture, the Talmud teaches you to lay <em>opposing readings on the same table</em>, to mark majority and minority, and then <strong>chase the truth together</strong>. This is not scepticism — it is too much reverence for truth to settle it by gavel.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第三</strong>，<em>Acharei Aklimot</em> 是一个<em>定位</em>的工具。许多华人信徒一直以为自己活在「等候」的时代——这是一个错位的自我认知。按拉比的图像，你不再活在「等候」里——你活在<strong>「众端之后」</strong>的时代。所有的预备已经完成，外壳已经裂开，剩下的事是<em>shine</em>。</span>
+      <span class="en"><strong>Third</strong>, <em>Acharei Aklimot</em> is a tool of <em>positioning</em>. Many Chinese believers have assumed they live in an age of <em>waiting</em> — this is a misread of where they actually are. On the rabbi's picture, you do not live in the waiting any longer. You live <strong>after the climaxes</strong>. The preparations are finished. The shells have cracked. What remains is to <em>shine</em>.</span>
+    </p>
+
+    <h2><span class="zh">九、关于分辨</span><span class="en">IX. A Word on Discernment</span></h2>
+    <p>
+      <span class="zh">本文呈现拉比沙皮拉的论证，但读者应保留几处必要的分辨。<strong>第一</strong>，<em>Acharei Aklimot</em> 这个词在主流拉比文献里并不是一个广泛使用的标准术语——它更接近拉比本人为「历史末端」所量身定做的一个表达。它的图像力量是<em>真实的</em>，但读者不应误以为这是塔木德正文里的一个固定段落。这属于<em>讲道层次的解读 (drash)</em>，而非<em>字面层次的解读 (p'shat)</em>。</span>
+      <span class="en">This article presents Rabbi Shapira's argument, but the reader should hold several discernment points. <strong>First</strong>, <em>Acharei Aklimot</em> is not a widely-used standard term in mainstream rabbinic literature — it is closer to a phrase the rabbi himself has shaped to describe the “end of history.” The image-power is <em>real</em>, but the reader should not mistake this for a fixed passage of the Talmud. It is a <em>drash</em>-level reading, not <em>p'shat</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第二</strong>，「<em>外壳已经在中国掰开了</em>」是一个有力的预言性宣告——但它是一个<em>属灵的</em>宣告，不是一个可以用 GDP、教会人数、政治数据来直接验证的命题。把它当作字面命题去等候「中国的某月某日发生某事」，并不是拉比的本意。它的本意是叫华人信徒<strong>站起来、放光</strong>。</span>
+      <span class="en"><strong>Second</strong>, <em>“the shells have been cracked in China”</em> is a powerful prophetic declaration — but it is a <em>spiritual</em> declaration, not a proposition you can verify by GDP, congregation counts, or political data. Reading it as a literal “on date X event Y will occur in China” misses the rabbi's intent. The intent is to call the Chinese believer to <strong>stand up and shine</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第三</strong>，把<em>米示拿《Rosh Hashanah 1:1》</em>的「四个新年」直接读为「外邦基督徒必须按这个节奏行事」是一种把<em>解经原则</em>转化为<em>生活节奏</em>的应用——这是合理的应用，但不是字面的命令。<strong>更大的图景</strong>——华人作为被嫁接进入希伯来根的肢体、活在一个外壳裂开的时代——这个图景是<em>圣经的</em>图景，不是推测。这就是罗马书十一章的图景。</span>
+      <span class="en"><strong>Third</strong>, reading <em>Mishnah Rosh Hashanah 1:1</em>'s four New Years as a binding rhythm for the Gentile believer is an <em>application</em> of an exegetical principle, not a literal commandment. <strong>The larger picture</strong> — Chinese believers as a grafted-in body of the Hebrew root, living in an age of cracking shells — is the <em>biblical</em> picture, not speculation. It is Romans 11.</span>
+    </p>
+
+    <h2><span class="zh">十、呼召 ── 「升起来，并且 shine」</span><span class="en">X. The Call — “Arise and Shine”</span></h2>
+    <p>
+      <span class="zh">在飞机声中，拉比沙皮拉博士以一个不掩饰的呼召作结。他不是在邀请你「再思考一下」——他是在邀请你<em>当晚就站起来</em>。</span>
+      <span class="en">Above the drone of aircraft, Rabbi Dr. Shapira closes with a call he does not hide. He is not inviting you to <em>reflect further</em> — he is inviting you to <em>stand up tonight</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh">在这个 <em>Acharei Aklimot</em> 的时刻——所有的高潮已经过去，所有的预备已经完成，所有的外壳已经裂开——华人信徒被召的不是「等候更多的信号」，而是<strong>「升起来，并且 shine」</strong>。以赛亚书 60 章正是这呼召的全文：<em>「兴起，发光，因为你的光已经来到，耶和华的荣耀发现照耀你。」</em></span>
+      <span class="en">In this <em>Acharei Aklimot</em> moment — every climax behind, every preparation done, every shell already cracked — the Chinese believer is not summoned to “wait for more signs.” He is summoned to <strong>“rise and shine.”</strong> Isaiah 60 is the full text of that summons: <em>“Arise, shine, for your light has come, and the glory of the LORD has risen upon you.”</em></span>
+    </p>
+
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「今天就相信吧。现在就是中国的历史的时刻。要升起来，并且 shine。安息日平安，我们美丽的中国！」</strong></span>
+      <span class="en"><strong>“Believe today. This is China's historic moment. Arise — and shine. <em>Shabbat Shalom</em>, our beautiful China!”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=1"></script>
+
+</body>
+</html>

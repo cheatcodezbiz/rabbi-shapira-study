@@ -35,6 +35,14 @@ import sys
 import time
 from pathlib import Path
 
+# Windows console defaults to cp1252 — printing Chinese titles crashes the
+# script. Force stdout/stderr to UTF-8 so progress logging survives.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 REPO_ROOT  = Path(__file__).resolve().parent.parent
 SOURCE_ROOT = REPO_ROOT / "sources"
 
@@ -170,8 +178,14 @@ def gemini_wait_active(api_key: str, file_resource: dict, max_wait_sec: int = 18
     raise TimeoutError(f"Gemini file did not become ACTIVE within {max_wait_sec}s")
 
 
-def gemini_generate(api_key: str, model: str, contents: list, max_retries: int = 2) -> str:
-    """Single-shot generateContent call. Returns first text part."""
+def gemini_generate(api_key: str, model: str, contents: list, max_retries: int = 6) -> str:
+    """Single-shot generateContent call. Returns first text part.
+
+    Retries 6 times with progressive backoff. Critically, 429 / quota errors
+    get a much longer sleep (60–300s) since Gemini's per-minute window only
+    clears after roughly that long, and the API returns 429 with a
+    `retryDelay` hint that we honor when present.
+    """
     import urllib.request, urllib.parse
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
     body = json.dumps({
@@ -188,12 +202,35 @@ def gemini_generate(api_key: str, model: str, contents: list, max_retries: int =
             for p in parts:
                 if "text" in p: return p["text"]
             raise RuntimeError(f"no text in Gemini response: {json.dumps(d)[:400]}")
+        except urllib.error.HTTPError as e:
+            last_err = e
+            if attempt >= max_retries:
+                raise
+            # Try to read the response body for a retryDelay hint.
+            wait = 60 if e.code == 429 else 4
+            try:
+                err_body = e.read().decode("utf-8", errors="replace")
+                m = re.search(r'"retryDelay"\s*:\s*"(\d+)s?"', err_body)
+                if m:
+                    wait = max(int(m.group(1)) + 5, wait)
+                # If Gemini explicitly mentions per-minute quota, sleep through it
+                if "GenerateRequestsPerMinute" in err_body or "PerMinute" in err_body:
+                    wait = max(wait, 65)
+            except Exception:
+                pass
+            # Progressive bump on repeated 429s — Gemini's daily quota errors
+            # need much longer waits, so escalate.
+            if e.code == 429:
+                wait = max(wait, 30 * (attempt + 1))
+            print(f"     gemini {e.code} (attempt {attempt + 1}/{max_retries + 1}); sleep {wait}s", file=sys.stderr)
+            time.sleep(wait)
+            continue
         except Exception as e:
             last_err = e
-            if attempt < max_retries:
-                time.sleep(2 + 2 * attempt)
-                continue
-            raise
+            if attempt >= max_retries:
+                raise
+            time.sleep(4 + 2 * attempt)
+            continue
     raise last_err  # pragma: no cover
 
 

@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>普珥节的末世密码：歌革、玛各与隐藏的约瑟 — 妥拉之光</title>
+  <meta name="description" content="Purim's End-Time Code: Gog, Magog, and the Hidden Yosef — A teaching by Rabbi Dr. Itzhak Shapira (Ahavat Ammi Ministries)" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-purim-gog-magog-decode.jpg" alt="Purim's End-Time Code: Gog, Magog, and the Hidden Yosef" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">拉比沙皮拉教导 · 普珥节解码</span><span class="en">Rabbi Shapira Teaching · Purim Decoded</span></span>
+      <h1 class="article-title">
+        <span class="zh">普珥节的末世密码：歌革、玛各与隐藏的约瑟</span>
+        <span class="en">Purim's End-Time Code: Gog, Magog, and the Hidden Yosef</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">在术后剧痛之中，沙皮拉拉比博士打开《出埃及记》、《申命记》与《以斯帖记》中三处<em>「纪念」</em>(Zikaron, זכרון) 的连线——指向亚玛力、伊朗，以及一个隐藏在希伯来文里的名字。</span>
+        <span class="en">From the depths of post-surgery pain, Rabbi Dr. Shapira traces three appearances of the Hebrew word <em>Zikaron</em> (זכרון, “remembrance”) across Exodus, Deuteronomy and Esther — pointing to Amalek, Iran, and a name hidden inside the Hebrew text itself.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">沙皮拉拉比博士 · Ahavat Ammi 事工</span>
+        <span class="en">Rabbi Dr. Itzhak Shapira · Ahavat Ammi Ministries</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 17</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 12 分钟阅读</span><span class="en">~12 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=8H99JQESDMY" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">观看原始视频 (13:37)</span><span class="en">Watch Original (13:37)</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">这一次的视频是拉比沙皮拉极少有的处境之下录制的——刚刚在首尔经历了一场重大手术，在剧痛之中、在深夜之中，<strong>「圣灵不允许我休息」</strong>。他要在普珥节前夕释放一段他形容为<em>「震撼而令人战栗」</em>的预言：本周的妥拉份额《你要命令》(<em>Tetzaveh</em>, תצוה) 中亚伦肩上的「<em>纪念石</em>」(<em>Avnei Zikaron</em>, אבני זכרון)，申命记二十五章十七节的「<em>你要记念</em>」(<em>Zachor</em>, זכור)，和以斯帖记九章二十八节的「<em>永不被遗忘</em>」(<em>Lo Yikhleh</em>, לא יכלה)——这三处「纪念」并非巧合，它们指向同一场<strong>对亚玛力的末后决战</strong>，也指向一个被隐藏了两千五百年、即将再次显现的名字：<em>约瑟</em>。</span>
+      <span class="en">Rabbi Shapira films this teaching from an unusual place — just out of major surgery in Seoul, in pain, late at night, because as he says <strong>“the Holy Spirit will not let me rest.”</strong> On the eve of Purim he releases what he calls a <em>“shocking and trembling”</em> prophecy: the <em>memorial stones</em> (<em>Avnei Zikaron</em>, אבני זכרון) on Aaron's shoulders in this week's Torah portion <em>Tetzaveh</em> (תצוה), the command to <em>remember</em> (<em>Zachor</em>, זכור) in Deuteronomy 25:17, and the promise that Purim's days <em>shall never be forgotten</em> (<em>Lo Yikhleh</em>, לא יכלה) in Esther 9:28 — these three “rememberings” are not coincidence. They converge on one <strong>final war against Amalek</strong>, and on a name hidden inside the Hebrew text for two and a half millennia, about to be revealed again: <em>Yosef</em>.</span>
+    </p>
+
+    <h2><span class="zh">一、从手术后的深处发出的预言</span><span class="en">I. A Prophecy from the Depths of Surgery</span></h2>
+    <p>
+      <span class="zh">拉比沙皮拉开门见山地说，神的灵常常在他最痛苦、最不预期的时刻向他显明事情。这段视频的处境也是如此——他刚下手术台不久，本应休息，但圣灵不允许。他强调：这正是普珥节前夕，<em>「我们收到了最为明显的强烈暗示」</em>——针对伊朗的襲击似乎已经迫在眉睫，而拉比相信这次行动将与本周的妥拉份额《你要命令》(<em>Tetzaveh</em>) 在时间上对齐。</span>
+      <span class="en">Rabbi Shapira opens by noting that the Spirit of God often shows him things in his most painful and least-expected moments — and this teaching is one of them. He has just left the operating table, he should be resting, but the <em>Ruach HaKodesh</em> (רוח הקודש) will not let him. He emphasises: this is the eve of Purim, and <em>“we have received the clearest and strongest indications”</em> — that an attack on Iran appears imminent, and that, in his reading, it will time-align with this week's Torah portion <em>Tetzaveh</em> (תצוה, “You Shall Command”).</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我们的拉比向我们揭示了一个可怕的秘密，而我在所有这些年里读《以斯帖记》时，从未看见这一点。直到今天，就在手术之后，奥秘被揭示，要从本周的妥拉段落看起——《你要命令》。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“Our rabbis have revealed a terrible secret to us, one that I have never seen in all my years of reading the Book of Esther. Until today — right after surgery — the mystery has been opened, starting with this week's Torah portion, <em>Tetzaveh</em>.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">他请求观众只做三件事：分享、点赞、并出于对神的爱，在普珥节奉献慈善 (<em>Tzedakah</em>, צדקה) 给贫穷和有需要的人。这就是普珥节本身被命令的核心动作。</span>
+      <span class="en">He asks only three things of his audience: share, like, and out of love for God, give <em>Tzedakah</em> (צדקה, charity) to the poor and needy this Purim — which, after all, is the very mitzvah commanded for the day.</span>
+    </p>
+
+    <h2><span class="zh">二、《你要命令》的两块纪念石</span><span class="en">II. <em>Tetzaveh</em> and the Two Memorial Stones</span></h2>
+    <p>
+      <span class="zh">拉比的论证起点是出埃及记二十八章十二节——亚伦肩上的两块宝石。它们的名字在希伯来文中是 <em>Avnei Zikaron</em>（אבני זכרון，「纪念之石」）：</span>
+      <span class="en">The argument begins in Exodus 28:12 — the two stones placed on the shoulder straps of Aaron's ephod. Their Hebrew name is <em>Avnei Zikaron</em> (אבני זכרון), the “stones of remembrance”:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「要将那两块宝石安在以弗得的肩带上，作为以色列子孙的纪念石。亚伦要将他们的名字带在两肩上，作为在上帝面前的纪念。」<cite>——出埃及记 28:12</cite></span>
+      <span class="en">“You shall put the two stones on the shoulder straps of the ephod, as memorial stones for the sons of Israel. Aaron shall carry their names on his two shoulders as a memorial before God.”<cite>— Exodus 28:12</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh"><em>Zikaron</em>（זכרון，「纪念」）的词根是 <em>Zachor</em>（זכור，「记念！」）——一个旧约里反覆出现的命令式动词。拉比指出：这绝不是恰好。本周读《你要命令》的安息日同时是 <em>Shabbat Zachor</em>（שבת זכור，「纪念安息日」）——普珥节前那个<em>极其重要的安息日</em>。两条线索，<strong>同一个词根</strong>，同一个主题：<em>记念</em>。</span>
+      <span class="en"><em>Zikaron</em> (זכרון, “remembrance”) shares its root with <em>Zachor</em> (זכור, “remember!”) — the imperative verb that runs through the Hebrew Bible. This is no accident: the Sabbath on which <em>Tetzaveh</em> is read is also <em>Shabbat Zachor</em> (שבת זכור), the <em>Sabbath of Remembrance</em> — the most important Sabbath of the year before Purim. Two threads, <strong>one root</strong>, one theme: <em>remember</em>.</span>
+    </p>
+
+    <h2><span class="zh">三、紀念安息日与亚玛力人</span><span class="en">III. <em>Shabbat Zachor</em> and Amalek</span></h2>
+    <p>
+      <span class="zh">在《紀念安息日》上，会堂里要特别诵读申命记二十五章十七节——以最直接的命令开头：「<em>你要记念你们出埃及的时候，亚玛力人在路上怎样待你。</em>」希伯来文 <em>Zachor et asher</em>（זכור את אשר，「你要记念……」）。</span>
+      <span class="en">On <em>Shabbat Zachor</em>, the synagogue reads a special portion from Deuteronomy 25:17 — opening with one of the most direct imperatives in the Torah: <em>“Remember what Amalek did to you on the way as you came out of Egypt.”</em> The Hebrew is <em>Zachor et asher</em> (זכור את אשר), <em>“remember what.”</em></span>
+    </p>
+
+    <p>
+      <span class="zh">拉比们把<strong>亚伦肩上的两块「纪念石」</strong>与<strong>申命记中「纪念」亚玛力</strong>这两件事联起来——并且更进一步：他们告诉我们，在<em>先知性的日历</em>中，<em>紀念安息日</em>正是亚玛力被除灭的安息日。拉比沙皮拉立刻、谨慎地补一句：他<em>并不是</em>说这件事必然在本周发生；他是在引述拉比的教导，让我们看见这条预言性的连线。</span>
+      <span class="en">The rabbis connect Aaron's <strong>memorial stones</strong> to the command to <strong>remember Amalek</strong> — and they push further: in the <em>prophetic calendar</em>, they teach, <em>Shabbat Zachor</em> is the Sabbath of Amalek's annihilation. Rabbi Shapira immediately, carefully qualifies: he is <em>not</em> saying this will happen this week. He is showing us the line the sages drew.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我是在说这件事会在本周发生吗？请注意，我没有这样说。我只是藉此指出拉比所教导的内容。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“Am I saying this will happen this week? Note — I am not. I am simply pointing out what the rabbis teach.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <h2><span class="zh">四、三次出现的「纪念」</span><span class="en">IV. Three Witnesses of <em>Zikaron</em></span></h2>
+    <p>
+      <span class="zh">「纪念」这个词的第三次出现，跳到了《以斯帖记》第九章。普珥节的日子要「在每一代人、每一个家族、每一个省份以及每一座城市当中，被人们永远的纪念并严格的遵守」——而且：「这些纪念在他们后裔中也永不灭绝。」希伯来文中「记忆」用的是 <em>Yizkor</em>（יזכור），仍是 <em>Zachor</em> 的同一个词根。</span>
+      <span class="en">The third appearance of “remembrance” jumps forward to Esther 9. Purim's days are to be <em>“remembered and kept throughout every generation, every family, every province, every city”</em> — and <em>“their remembrance shall never be forgotten among their descendants.”</em> The Hebrew word for “memory” here is <em>Yizkor</em> (יזכור) — the same root as <em>Zachor</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh">于是我们看到三个<em>不可能是巧合</em>的同一词根：<strong>出埃及记 28:12</strong>（纪念石）、<strong>申命记 25:17</strong>（记念亚玛力）、<strong>以斯帖记 9:23 与 9:28</strong>（永远的纪念）。拉比说，<em>这绝对不是什麼巧合</em>。一条线索贯穿三本书：祭司的肩带 → 亚玛力 → 以斯帖记里的法令——而这条法令<em>尚未完全成就</em>。</span>
+      <span class="en">So we now have three appearances of the same root that <em>cannot be coincidence</em>: <strong>Exodus 28:12</strong> (the memorial stones), <strong>Deuteronomy 25:17</strong> (remember Amalek), and <strong>Esther 9:23, 28</strong> (the perpetual remembrance). One thread runs through all three: the priestly shoulder → Amalek → the Purim decree — a decree which, the rabbis insist, has <em>not yet been fully fulfilled</em>.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「拉比继续解释：在以斯帖记中的这一段非常着名的经文，谈论的是一个法令——虽然在当时已经正式颁布，但却尚未完全成就的法令。它属于那个最终将被逆转的法令的最后章节，并且它将会在对抗亚玛力人的最后一场决定性的伟大战争中被彻底扭转。而这些亚玛力人现在被人们广泛的称呼为哈曼，同时也同样被人们称呼为以扫。」<cite>——沙皮拉拉比博士（引述拉比传统）</cite></span>
+      <span class="en">“The rabbis explain: this famous passage in Esther speaks of a decree formally issued — yet not fully fulfilled. It belongs to the final chapter of a decree that will be entirely overturned, in the last decisive great war against Amalek. And Amalek today is widely called Haman — and also called Esau.”<cite>— Rabbi Dr. Itzhak Shapira (citing the rabbinic tradition)</cite></span>
+    </blockquote>
+
+    <h2><span class="zh">五、伊朗、亚玛力、哈曼、以扫——同一条线</span><span class="en">V. Iran, Amalek, Haman, Esau — One Line</span></h2>
+    <p>
+      <span class="zh">拉比把这条线再向前推一步：今日的伊朗正是这条「亚玛力—哈曼—以扫」之线的延续。理由不是政治，而是<em>波斯</em>这一地理与神学位置——以斯帖记的故事整个就发生在波斯（即今日伊朗）。当我们读到普珥节即将到来、美伊关系紧绷之际，拉比所看见的不是新闻而是回声：一场两千五百年前未完的决战，正在我们面前重演它的最后一幕。</span>
+      <span class="en">Rabbi Shapira presses one step further: today's Iran <em>is</em> the continuation of the Amalek–Haman–Esau line. The reason is not political but geographical-theological — the Book of Esther is set entirely in Persia, which is today's Iran. When he looks at the eve of Purim against the tightening US–Iran confrontation, he doesn't see a news cycle. He sees an echo: a battle two and a half millennia in the making, replaying its final scene in front of us.</span>
+    </p>
+
+    <p>
+      <span class="zh">他引以赛亚书十四章二十九节：「<em>非利士全地的人民啊，不要因为击打你们的杖已经折断了就喜乐；因为从蛇的根部必生出毒蛇，蛇所生的是火焰的飞龙。</em>」拉比的解读：在<em>紀念安息日</em>、在普珥节前夕——<strong>撒但正在诞生，敌基督正在诞生，末后的邪恶势力正在诞生</strong>。</span>
+      <span class="en">He cites Isaiah 14:29: <em>“Rejoice not, O Philistia… for from the serpent's root will come forth a viper, and its fruit will be a flying fiery serpent.”</em> The rabbinic reading: on <em>Shabbat Zachor</em>, on the eve of Purim — <strong>Satan is being born. The Antichrist is being born. The end-time forces of evil are being born.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">更具体地，拉比说：这就是<em>歌革与玛各</em>(<em>Gog u'Magog</em>, גוג ומגוג) <strong>诞生的整个过程</strong>。他立刻又一次自我克制：我不是说<em>最终篇章</em>这周末就实现；我是指出拉比所指出的那种<em>可能性</em>。</span>
+      <span class="en">More specifically, he says: this is the <em>entire process of the birth</em> of <em>Gog u'Magog</em> (גוג ומגוג, Gog and Magog). And again he restrains himself: I am not saying the <em>final chapter</em> happens this weekend. I am showing you the possibility the rabbis have indicated.</span>
+    </p>
+
+    <h2><span class="zh">六、林中野猪与字母 Ayin 的数值</span><span class="en">VI. The Boar From the Forest and the Gematria of <em>Ayin</em></span></h2>
+    <p>
+      <span class="zh">诗篇八十篇十四节：<em>「林中的野猪糟蹋他，田野的走兽吞吃他。」</em>拉比圣贤们把这一节扩展开来——大森林里的各种生物都在不断诞生，<strong>他们全都从以扫诞生、从撒但诞生、从哈曼诞生，最终从伊朗而出</strong>。</span>
+      <span class="en">Psalm 80:14: <em>“The boar from the forest ravages it, and the beasts of the field feed on it.”</em> The rabbinic sages expand this verse — every creature in the great forest is continually being born, and <strong>they all come forth from Esau, from Satan, from Haman, and ultimately from Iran</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh">希伯来文中「森林」是 <em>Ya'ar</em>（יער），诗篇中具体用的是 <em>MiYa'ar</em>（מיער，「从森林里」）。拉比说：取出其中的字母 <em>Ayin</em>（ע，数值 70）——这正是希伯来传统中代表<em>歌革与玛各</em>的数字——剩下的辅音便指向「<em>亚玛力</em>」。这不是直白的拼写还原，而是<em>「remez 与 sod」</em>（暗示与密义）的层次。它的意思是：<strong>对伊朗的战争 = 对亚玛力的战争</strong>。</span>
+      <span class="en">The Hebrew word for forest is <em>Ya'ar</em> (יער); the specific form in the psalm is <em>MiYa'ar</em> (מיער, “from the forest”). The rabbis say: take out the letter <em>Ayin</em> (ע) — whose numerical value is 70, the very number that in Hebrew tradition stands for <em>Gog and Magog</em> — and what remains points to <em>Amalek</em>. This is not a flat-spelling derivation; it is the layer of <em>remez</em> and <em>sod</em> (allusion and secret). The point: <strong>the war against Iran is the war against Amalek.</strong></span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我希望你们明白我在这里告诉你们的。因为你们将会看到，当这场战争开始时——我们就进入了彌赛亚降臨的最后倒计时。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“I hope you understand what I am telling you here. Because you will see — when this war begins, we enter the final countdown to the coming of the Messiah.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <h2><span class="zh">七、隐藏在《以斯帖记》九章二十八节里的名字</span><span class="en">VII. The Name Hidden Inside Esther 9:28</span></h2>
+    <p>
+      <span class="zh">现在是这段教导最核心、也最让拉比震动的部分。请先深呼吸——以斯帖记九章二十八节再次写到：「<em>……他们的纪念也永不会在他们的后代中被遗忘。</em>」希伯来文里「永不被遗忘」(<em>Lo Yikhleh</em>, לא יכלה) 这个词组——拉比说——<strong>其实是一个人的名字</strong>。</span>
+      <span class="en">This is the heart of the teaching, and the part that visibly moves the rabbi. Take a breath. Esther 9:28 again: <em>“…their remembrance shall never be forgotten among their descendants.”</em> The Hebrew phrase rendered “never be forgotten” (<em>Lo Yikhleh</em>, לא יכלה), the rabbi says — <strong>is in fact a person's name.</strong></span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「你知道『永不会被遗忘』这个词在希伯来语中是什么吗？真的、永远不会被遗忘——希伯来语中『永不会被遗忘』这个词，其实是一个人的名字。他从未被遗忘，也不会被遗忘。他有一个名字，因为他即将到来。当伊朗和以色列之间的冲突全面爆发时，他即将重新出现在大众的视野中，并再一次被人们记起。在这里的希伯来语中，这个词究竟代表着什么含义？也就是他那个古老的希伯来语名字、『未被遗忘』这个词——就是 Yosef。」<cite>——沙皮拉拉比博士</cite></span>
+      <span class="en">“Do you know what ‘never be forgotten’ is in Hebrew? Truly, never be forgotten. The Hebrew word for ‘never be forgotten’ is in fact a person's name. He has never been forgotten, nor will he be forgotten. He has a name, because he is about to come. When the conflict between Iran and Israel fully erupts, he is about to reappear in the public eye and be remembered once again. What does this word mean in Hebrew here — his ancient Hebrew name, the word for ‘unforgotten’? It is <em>Yosef</em>.”<cite>— Rabbi Dr. Itzhak Shapira</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh"><em>Yosef</em>（יוסף，「约瑟」）——这就是 <em>Mashiach ben Yosef</em>（משיח בן יוסף，「约瑟之子的彌赛亚」）：那位先于<em>大卫之子的彌赛亚</em>(<em>Mashiach ben David</em>)、为终末预备道路、有时受苦、要在末日决战中击碎对亚玛力之最后法令的那一位。拉比说：根据拉玛德的解释，<em>Yosef</em> 这个词正是从「约瑟」一名而出。「如果不是指我们的 Yosef，还会是谁配得是真正的 Yosef 呢？」</span>
+      <span class="en"><em>Yosef</em> (יוסף, “Joseph”) — this is <em>Mashiach ben Yosef</em> (משיח בן יוסף), the Messiah son of Joseph: the figure who in rabbinic tradition precedes <em>Mashiach ben David</em>, who prepares the way, who sometimes suffers, and who in the final battle breaks the last decree against Amalek. Citing Ramad's explanation, the rabbi notes <em>Yosef</em> here is unmistakably derived from the name Joseph. “If not pointing to <em>our</em> Yosef — then who else could the true Yosef be?”</span>
+    </p>
+
+    <p>
+      <span class="zh">对接受耶书亚 (<em>Yeshua</em>) 为彌赛亚的人，这一刻是震撼的：被刻在普珥节经文里、被刻在<em>「他们的纪念永不被遗忘」</em>这一句的<em>正中央</em>的那个名字——指向的正是那位<strong>受苦、被拒、却为以色列被重新记起</strong>的彌赛亚。拉比说：约瑟的名字与<em>即将临到我们身上的伊朗之战</em>有著极其紧密的关联。</span>
+      <span class="en">For those who confess Yeshua as Messiah, this moment is striking: the name embedded in the very <em>middle</em> of the Purim verse that promises <em>“their remembrance shall never be forgotten”</em> — points to the Messiah who is <strong>suffered, rejected, and re-remembered for Israel's sake</strong>. The name of Yosef, the rabbi says, is tightly bound to the Iran war that is about to come upon us.</span>
+    </p>
+
+    <h2><span class="zh">八、关于分辨</span><span class="en">VIII. A Word on Discernment</span></h2>
+    <p>
+      <span class="zh">如果这篇文章呈现拉比沙皮拉的论证彷彿其中每一个细节都无可置疑，那就既不公平于他、也无益于读者。事实上，他自己一再亲口说出最重要的分辨：「<em>我没有说这件事会在本周发生</em>」、「<em>我并不是说歌革和玛各的最終篇章这個周末就实现</em>」。这些是<em>drash</em>（讲道层次）与<em>sod</em>（密义层次）的解读，不是 <em>p'shat</em>（字面层次）。比如：「伊朗就是亚玛力」是一种<em>身分等同</em>，是拉比传统中常见的方法，但并非以赛亚书或申命记字面所断言。</span>
+      <span class="en">It would be unfair to Rabbi Shapira and unhelpful to readers if this article presented his argument as if every detail were beyond question. The rabbi himself states the most important qualifications out loud: <em>“I am not saying this happens this week”</em>; <em>“I am not saying that the final chapter of Gog and Magog is realised this weekend.”</em> These are <em>drash</em> (homiletical) and <em>sod</em> (mystical) readings, not <em>p'shat</em> (the plain sense). For instance: “Iran is Amalek” is a typological <em>identification</em> common in rabbinic tradition, not a flat assertion of Isaiah or Deuteronomy.</span>
+    </p>
+
+    <p>
+      <span class="zh">字母 <em>Ayin</em> 的数值 70 代表歌革与玛各这点在某些传统里成立；但从 <em>MiYa'ar</em> 一词「取出 <em>Ayin</em> 就得到 Amalek」并不是干净的字面拼写还原，而是<em>remez</em>（暗示）的层次。同样，「Lo Yikhleh = Yosef」这条线索是一种深具神学想像力的<em>drash</em>，而不是希伯来语法的直接派生。</span>
+      <span class="en">The gematria value of <em>Ayin</em> (70) as standing for Gog and Magog has traditional warrant; but the move from <em>MiYa'ar</em> to “Amalek minus Ayin” is not a clean letter-by-letter spelling derivation — it is the layer of <em>remez</em>. Likewise, the “Lo Yikhleh = Yosef” reading is a profound theological imagination at the level of <em>drash</em>, not a direct grammatical derivation.</span>
+    </p>
+
+    <p>
+      <span class="zh">但即使我们在每一个细节上都保持适度的谨慎，<em>那个更大的图景</em>——《妥拉》、《先知书》、《以斯帖记》三处之间的<em>纪念</em>主旋律是真实的；亚玛力作为以色列宿敌、且这场仇敌之争尚未完结，这是经文本身的图景；而那位<em>不会被遗忘的</em>彌赛亚必将再被记起，这是<strong>圣经本身的应许，不是推测</strong>。</span>
+      <span class="en">Yet even if we hold each individual application with appropriate caution, <em>the larger picture</em> — that a <em>Zikaron</em>-thread genuinely runs from Torah through Prophets to Esther, that Amalek is Israel's unfinished adversary, and that the <em>unforgotten</em> Messiah will yet be re-remembered — <strong>this is the picture of Scripture itself, not speculation</strong>.</span>
+    </p>
+
+    <h2><span class="zh">九、对华人基督徒的呼召</span><span class="en">IX. The Call to Chinese Believers</span></h2>
+    <p>
+      <span class="zh"><strong>第一</strong>，把普珥节当成一个真正的节日来守。这不只是一个犹太人的故事；它是<em>纪念</em>神在帘幕背后的作为——而那位看似隐藏的彌赛亚，在以斯帖记的希伯来文中，本就有一个名字。</span>
+      <span class="en"><strong>First</strong>, keep Purim as a true festival. This is not merely a Jewish story; it is the <em>remembrance</em> of God's hidden hand — and the Messiah who appears hidden in the text in fact has a name already written in the Hebrew.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第二</strong>，在伊朗议题上不可中立。拉比的论证背后，<em>不是仇恨任何一个民族</em>，而是认真对待经文反覆指认的「亚玛力—哈曼」之线。为伊朗百姓得救禱告，同时为以色列的安全守望——这两件事并不矛盾。</span>
+      <span class="en"><strong>Second</strong>, do not stay neutral on the question of Iran. The argument behind the rabbi's reading is <em>not hatred of any people</em>; it is taking seriously the “Amalek–Haman” line the Hebrew Bible itself draws. Pray for the salvation of the Iranian people, <em>and</em> stand watch for Israel's safety — these two are not contradictions.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第三</strong>，拉比沙皮拉用尽他术后的最后气力，给读者两个具体动作：<em>呼求约瑟</em>，并且<em>把慈善带给贫穷有需要的人</em>。这两件事不是象徵，是命令——一个属灵的命令，一个属物的命令。在末后的日子里，<strong>禱告和施予是义人最朴素的兵器</strong>。</span>
+      <span class="en"><strong>Third</strong>, Rabbi Shapira gives two concrete imperatives at the cost of his last breath after surgery: <em>call upon Yosef</em>, and <em>bring charity to the poor and needy</em>. These are not metaphors — they are commands, one spiritual and one material. In the last days, <strong>prayer and giving are the simplest weapons of the righteous</strong>.</span>
+    </p>
+
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「我恳请你们今天就呼求约瑟。并且出于对上帝的爱，在这个普珥节把慈善——Tzedakah——带给贫穷和有需要的人。这正是我们在普珥节被命令要做的事情。愿这个视频从我痛苦的深处，传到成千上万的人。Shalom。」</strong></span>
+      <span class="en"><strong>“I implore you: call upon <em>Yosef</em> today. And out of love for God, bring charity — <em>Tzedakah</em> — to the poor and needy this Purim. This is the very thing we are commanded to do on this day. May this video, from the depths of my pain, reach thousands upon thousands. Shalom.”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=1"></script>
+
+</body>
+</html>
