@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>犹太-基督关系 (1988) 研习指南 · Christian Jewish Relations (Winter 1988) — A Study Guide · 妥拉之光</title>
+  <meta name="description" content="A bilingual study guide to Christian Jewish Relations (Vol. 21, No. 4, Winter 1988) — eight lessons on Auschwitz, André Neher, Claude Montefiore, Oberammergau, Selly Oak, the Sigtuna statement, and the theology of dialogue after the Shoah." />
+  <meta name="audio-slug" content="study-christian-jewish-relations" />
+  <meta property="og:title" content="Christian Jewish Relations (Winter 1988) — A Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons walking through the Winter 1988 issue of Christian Jewish Relations — from Auschwitz and Oberammergau to Sigtuna and Selly Oak, reading the post-Shoah dialogue through Christian and Hebrew eyes." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="Christian Jewish Relations — Winter 1988 — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 期刊课程 · 2026 · 5 · 23</span>
+        <span class="en">Study Guide · A Course on a Journal · 2026 · 5 · 23</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">犹太-基督关系 (1988)<br/>研习指南</span>
+        <span class="en">Christian Jewish Relations<br/>Winter 1988 — A Study Guide</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，带你走进《Christian Jewish Relations》冬季号——奥斯威辛的修道院之争、内尔的先知沉默、孟特菲奥利的自由派犹太人之眼、奥伯阿玛高的受难剧、塞利欧克中心、Sigtuna 文件——以及大屠杀之后基督徒如何重新思考与犹太民族的关系。</span>
+        <span class="en">Eight bilingual lessons through the Winter 1988 issue of <em>Christian Jewish Relations</em> — the Auschwitz convent crisis, André Neher's prophetic silence, Claude Montefiore's liberal Jewish reading of Jesus, the long shadow of Oberammergau, the launch of Selly Oak, the Sigtuna statement — and how Christians began to rethink the Jewish people <em>after</em> the Shoah.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于《Christian Jewish Relations》第二十一卷第四期，1988年冬季号（伦敦：犹太事务研究所，与世界犹太大会联合出版，ISSN 0144-2902）</span>
+        <span class="en">Based on <em>Christian Jewish Relations</em>, Vol. 21, No. 4, Winter 1988 (London: Institute of Jewish Affairs in association with the World Jewish Congress, ISSN 0144-2902).</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 45 分钟通读</span><span class="en">~45 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.cambridge.org/core/journals/european-judaism" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">期刊源头</span><span class="en">Journal Source</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">一九八八年的冬天，世界还没有从二十世纪的灰烬中走出来。奥斯威辛集中营的边界上，加尔默罗会的修女们仍拒绝迁出修道院；法国的犹太哲学家安德烈·内尔（André Neher）刚在七十四岁生日当天在耶路撒冷辞世；瑞典 Sigtuna 城里，世界基督教协进会的代表正逐字斟酌一份对犹太人的<strong>「新理解」</strong>声明；伯明翰的塞利欧克学院 (Selly Oak Colleges) 即将正式设立专门的犹太-基督关系研究中心；巴伐利亚的奥伯阿玛高 (Oberammergau) 正为 1990 年那一届受难剧紧锣密鼓地修订剧本——而那剧本里仍残留着马太福音 27:25「他的血归到我们和我们的子孙身上」这一句。这份指南就是要走进这一本期刊——《Christian Jewish Relations》冬季号——把它当作大屠杀后第一代犹太-基督对话者的<strong>现场录像带</strong>来读。八堂课，每堂围绕一篇文章或一组报导。</span>
+      <span class="en">It is the winter of 1988, and the twentieth century has not yet finished burning. At the perimeter of Auschwitz, Carmelite nuns refuse to leave their convent; in Jerusalem, the French-Jewish philosopher André Neher has just died on his seventy-fourth birthday; in the Swedish town of Sigtuna, a World Council of Churches consultation is drafting a statement called <em>Towards a New Understanding</em>; in Birmingham, the Selly Oak Colleges are preparing to launch a Centre for the Study of Judaism and Jewish/Christian Relations; in Oberammergau, Bavaria, the village is revising the 1990 Passion Play — and Matthew 27:25 ("His blood be on us and on our children") is still in the script. This guide walks into the Winter 1988 issue of <em>Christian Jewish Relations</em> as if it were a field recording from the first post-Shoah generation of Jewish-Christian dialogue. Eight lessons, one per article or report cluster.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，每一堂围绕期刊中一篇文章或一组报导的核心。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, each grounded in one article or report cluster from the journal. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 作者说什么</strong>—— 用作者自己的语境概述他的论点；<br/>
+        <strong>② 关键经文（或文本）</strong>—— 他所依据的圣经或文献；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，连接两个传统；<br/>
+        <strong>④ 基督徒视角</strong>—— 教会传统如何接收或挣扎于这一议题；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 与作者继续追问的问题——不是为反驳，而是为更深的对话。
+      </span>
+      <span class="en">
+        <strong>① What the Author Says</strong> — the author's argument in his own frame;<br/>
+        <strong>② Key Scripture or Text</strong> — the biblical or documentary text being read;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that bridges the two traditions;<br/>
+        <strong>④ A Christian Lens</strong> — how the Church tradition receives or wrestles with this teaching;<br/>
+        <strong>⑤ Honest Questions</strong> — questions to keep asking the author — not to refute, but to go deeper.
+      </span>
+    </blockquote>
+
+    <hr class="article-rule" />
+
+    <!-- ═════════════  LESSON 1 — Auschwitz Carmelite Editorial  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">奥斯威辛的加尔默罗修女——一篇陷入危机的社论</span>
+        <span class="en">The Carmelites at Auschwitz: An Editorial in Crisis</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一期的社论以一句近乎绝望的句子开篇：「在我撰写此文之时，加尔默罗会的修女们仍然拒绝离开奥斯威辛 (Oświęcim)。」一九八七年二月二十二日，天主教代表与犹太团体在日内瓦达成协议：将设在集中营边界的女修道院迁走；这一协议又在一九八八年十二月二十日由犹太与天主教领袖、连同梵蒂冈代表在巴黎共同确认。可两年期限将至，修女们却仍不动。社论的语气克制却毫不让步：「<em>这间修道院必须搬走，必须在所约定的两年之内搬走</em>。」编者直言，事情已经不再仅仅是「冒犯了犹太人」那么简单——「教会自身的诚信」也悬于一线。如果承诺无法兑现，「将不会再有几个犹太人愿意信任教会，对话即使没有完全被毁，也将受到严重的损害」。</span>
+        <span class="en">The editorial opens with a sentence close to despair: "At the time of writing the Carmelite nuns are still refusing to leave Oświęcim (Auschwitz)." On 22 February 1987 a Geneva agreement between Catholic representatives and Jewish organisations had promised to move the convent off the camp's territory; on 20 December 1988 the agreement was reaffirmed in Paris by Jewish and Catholic leaders together with a Vatican representative. But the two-year deadline is closing and the nuns are not moving. The editor's tone is restrained and uncompromising: "<em>The convent must go, and it must go within the agreed two-year limit.</em>" This is no longer only about giving offence to Jews — "the integrity of the Church is at stake; unless the assurances are honoured few Jews will trust the Church and dialogue will be severely damaged if not destroyed."</span>
+      </p>
+      <p>
+        <span class="zh">同一篇社论在悲怆之外，也仔细把这一危机放进更大的脉络。编者回顾世界基督教协进会自一九五四年伊万斯顿大会以来对犹太教神学的长期反思，提到日内瓦于一九八二年「领受并推荐给众教会研习与行动」的《关于犹太-基督对话的普世性思考》(Ecumenical Considerations on Jewish-Christian Dialogue)，并预告本期会全文刊载 Sigtuna 文件。社论也欢迎诺曼·所罗门拉比（Rabbi Norman Solomon）将于一九八九年二月六日在伦敦皇家海外联盟正式启动塞利欧克 (Selly Oak) 中心；同时严厉批评「犹太人归耶稣」运动 (Jews for Jesus) 在英国大报刊登全版广告劝犹太人改信基督教——「广告本身对英国犹太人构不成严重威胁，真正受威胁的是<strong>对话</strong>本身」。这是一篇紧绷的、几乎让人窒息的开篇——它告诉我们：一九八八年的犹太-基督对话，是<em>在地雷阵中</em>的对话。</span>
+        <span class="en">Around its lament, the editorial widens the lens. It recalls that the last full-scale theological discussion of Jews and Judaism at a WCC Assembly was Evanston in 1954; that the New Delhi Assembly of 1961 had already declared that "the crucifixion should not be presented as to fasten upon the Jewish people of today responsibilities which belong to our corporate humanity" — predating the better-known Nostra Aetate §4 of 1965 by four years. It welcomes the Selly Oak launch and prints the new Sigtuna statement. And it does not flinch from naming the latest provocation — full-page newspaper advertisements by Jews for Jesus and their allies urging conversion: "The real threat is to dialogue, for the advertisements have generated suspicion towards Christians generally and undermined Jewish confidence in the possibility that there might be dialogue without conversionism." This is a tight, almost breathless opening — it tells us that Jewish-Christian dialogue in 1988 is dialogue <em>through a minefield</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这间修道院必须搬走，必须在所约定的两年之内搬走，即在一九八九年二月二十二日之前。这远远不只是对许多犹太人的冒犯，<strong>教会自身的诚信</strong>也在受考验；除非承诺被信守，否则将不会再有几个犹太人愿意信任教会，对话即使不被毁掉，也会受到严重的损害。」</span>
+        <span class="en">"The convent must go, and it must go within the agreed two-year limit, that is, by 22 February 1989. Quite apart from the offence it causes to many Jews, <strong>the integrity of the Church is at stake</strong>; unless the assurances are honoured few Jews will trust the Church and dialogue will be severely damaged if not destroyed."</span>
+        <cite>编辑社论 · Editorial · CJR vol. 21, no. 4, Winter 1988</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שׁוֹאָה · Shoah</strong>——「大灾难、彻底的毁坏」。早在《以赛亚书》10:3 与《诗篇》35:8 中已出现这一词。一九四〇年代希伯来世界开始用 <em>Shoah</em> 而非「Holocaust」（希腊语「全燔祭」）来命名纳粹大屠杀——因为「全燔祭」一词暗示一种<em>献祭</em>，仿佛那六百万犹太人是「献给神」的祭品，这是对死难者尊严的玷污。<em>Shoah</em> 则只是说出：<strong>一场无可解释的毁灭</strong>。奥斯威辛不是祭坛，是 <em>Shoah</em> 之地。一座修道院建在毁灭之地的边界上，不是为了向某种神奥献祭，而是为了埋葬<em>沉默</em>本身。这正是社论的核心：奥斯威辛是 Shoah 之处，而非 Holocaust 之处；任何宗教叙述都必须先承认这一区别。</span>
+        <span class="en"><strong>שׁוֹאָה · Shoah</strong> — "catastrophe, utter destruction." The word appears as early as Isaiah 10:3 and Psalm 35:8. From the 1940s Hebrew speakers chose <em>Shoah</em> over the Greek-derived "Holocaust" (a "burnt offering") — because "Holocaust" carries the offensive shadow of a sacrifice, as if six million Jews had been offered <em>to</em> God. <em>Shoah</em> says only this: <strong>an unexplainable destruction</strong>. Auschwitz is not an altar; it is a place of <em>Shoah</em>. A convent on its perimeter cannot turn it into a place of devotion to any God — what is buried there is silence itself. The editor's protest is theological before it is diplomatic: Auschwitz is Shoah, not Holocaust; any religious vocabulary that fails this distinction will fail the dead.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读到这一篇社论，最容易的反应是辩护：那些修女是出于敬虔、是为了亡者祷告。但这正是社论想揭破的盲点。奥斯威辛之所以是奥斯威辛，恰恰因为那里的死者绝大多数是<strong>犹太人</strong>——他们死时不是基督徒，死后也不愿被基督教的祷告「领养」。把一座加尔默罗会修道院建在这片土地的边界上，无论意图多么纯洁，都构成了一种<em>属灵的征服</em>：基督教的祈祷覆盖了犹太亡者的沉默。这一期社论的勇敢之处在于它愿意说出：「教会自身的诚信也在受考验」——也就是说，问题不是修女<em>是否冒犯了犹太人</em>，而是<strong>教会是否仍然是教会</strong>。当所做的承诺无法兑现时，圣教会就丧失了她说话的权柄。这是写给一九八八年基督徒的尖锐警告，也写给二十一世纪的基督徒：诚信不是<em>对话的副产品</em>，<strong>诚信本身就是对话</strong>。</span>
+        <span class="en">A Christian's instinct when reading this editorial is to defend the nuns — they were sincere, prayerful women, interceding for the dead. But that is the very blindness the editor is exposing. Auschwitz is Auschwitz precisely because the overwhelming majority of its dead were <strong>Jews</strong> — Jews who did not die as Christians and have no wish to be posthumously "adopted" by Christian intercession. To plant a Carmelite house on its boundary, however pure the intention, is a kind of <em>spiritual conquest</em>: Christian prayer covering the silence of the Jewish dead. The editorial's courage is in saying: "the integrity of the Church is at stake." The question is not whether the nuns gave offence — it is whether the Church is still the Church when she fails to keep her word. This is a sharp warning written for 1988, and an even sharper one for our own century: integrity is not a <em>by-product</em> of dialogue; <strong>integrity is dialogue</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">当一个基督徒「为受害者祷告」的行动反而被受害者视为<em>更深的伤害</em>时，敬虔的本能与谦卑的倾听之间，应如何调整？</span><span class="en">When a Christian act of prayerful intercession is experienced by the bereaved as <em>a further wound</em>, how do the instinct of piety and the duty of listening rearrange themselves?</span></li>
+        <li><span class="zh">教会有没有可能因为「<em>话太满</em>」而失去说话的资格？社论的论点——「教会自身的诚信」——是否同样适用于今天我所在的教会？</span><span class="en">Can a Church lose her authority to speak by speaking <em>too much</em>? Does the editorial's argument — "the integrity of the Church is at stake" — apply to my own local church today?</span></li>
+        <li><span class="zh">用「Holocaust（全燔祭）」与用「Shoah（大毁灭）」这两个词来命名同一段历史——背后的神学差别是什么？我应当跟随哪一种语言？</span><span class="en">Naming the same history "Holocaust" (burnt offering) or "Shoah" (catastrophe) — what theology is hidden in each word? Which language should I learn to use?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 2 — André Neher  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">安德烈·内尔——一位「先知式沉默」的哲学家</span>
+        <span class="en">André Neher: A Philosopher of Prophetic Silence</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一期登载了一篇短小但极重的讣告——为安德烈·内尔（André Neher, 1914-1988）而写。讣告的作者是让·阿尔佩兰（Jean Halperin）。他写道：「在过去四十年里，没有几位犹太思想家——尤其是在法语世界——像内尔那样深刻地参与了犹太-基督对话。」内尔于一九八八年十月二十二日在耶路撒冷辞世，那一天恰是他的七十四岁生日。他曾在斯特拉斯堡大学担任犹太文学与思想教授（1955-69），后做出 <em>aliyah</em> 「上行」回到以色列。讣告列出了他的英译著作清单——其中一本是《<em>From Biblical Silence to the Silence of Auschwitz</em>》（从圣经的沉默到奥斯威辛的沉默）——单是这一书名，就把内尔的整套思想浓缩出来了：他终其一生在追问：当神在最关键的时刻保持沉默，人该如何继续相信？</span>
+        <span class="en">The Winter 1988 issue carries a short but heavy obituary — for André Neher (1914-1988), written by Jean Halperin: "Few Jewish thinkers and authors, more specifically in the French-speaking part of the world, have had as strong an impact on Jewish-Christian dialogue over the last forty years as André Neher, who passed away in Jerusalem on his 74th birthday (22 October 1988)." Neher was Professor of Jewish Literature and Thought at the University of Strasbourg (1955-69) before making <em>aliyah</em> to Israel. Halperin lists the English titles — including one called <em>From Biblical Silence to the Silence of Auschwitz</em> — and that title alone compresses the whole of Neher's lifework: he spent his life asking how a Jew can keep faith when God, at the decisive moment, keeps silent.</span>
+      </p>
+      <p>
+        <span class="zh">讣告并不长，却没有客套话。Halperin 写道：「他在世界范围内的思想角色，可以与罗森茨威格（Franz Rosenzweig）、海舍尔（Abraham Joshua Heschel）、布伯（Martin Buber）相比。没有他，许多非犹太裔或基督徒哲学家根本无法把握犹太教的真正本质。」他「积极参与了从地方、国家到国际层面的多次犹太-基督交流——<em>在根本问题上从不妥协</em>」。换句话说，内尔在对话中并不柔和，他是带着<em>先知的牙齿</em>来对话的。讣告结尾那句平静而沉甸甸的话「Thus, he made the Jewish voice clearly heard.（他因此让犹太人的声音被清晰地听见了）」——是对一位刚刚离世的对话者最高的赞礼。</span>
+        <span class="en">The obituary is short and unsentimental. Halperin writes: "His intellectual role in the world at large can be compared to that of F. Rosenzweig, A. J. Heschel or Martin Buber, among others. Without him, many a lay or Christian philosopher would not have grasped or discovered the true essence of Judaism." Neher "actively participated in the Jewish-Christian dialogue in many encounters on the local, national and international level, <em>without ever compromising on the essentials</em>." That is the point: Neher came to dialogue with <em>prophetic teeth</em>. The final sentence — "Thus, he made the Jewish voice clearly heard" — is the highest praise the journal can give to a partner just lost.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他积极参与了从地方、国家到国际层面的许多犹太-基督交流——<em>在根本问题上从不妥协</em>。如此，他使犹太人的声音被清晰地听见。」</span>
+        <span class="en">"He actively participated in the Jewish-Christian dialogue in many encounters on the local, national and international level, <em>without ever compromising on the essentials</em>. Thus, he made the Jewish voice clearly heard."</span>
+        <cite>让·阿尔佩兰 · Jean Halperin · André Neher, 1914-1988</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>דְּמָמָה · Demamah</strong>——「寂静、低声、几不可闻的细微之声」。在《列王纪上》19:12 中，以利亚在何烈山的洞穴里听见的不是地震，不是火，也不是烈风——而是「<em>qol demamah daqqah</em>」「微小静默的声音」。内尔最著名的著作题为《<em>L'Exil de la Parole</em>》（话语的流亡）——他认为，奥斯威辛之后，神的话语进入了一种主动的沉默 (<em>demamah</em>) ——但这沉默不是<em>缺席</em>，而是 <em>kashrut</em> 「合宜的虚位以待」——是给受难者发声的空间。Halperin 之所以说内尔「让犹太人的声音被清晰地听见」，正是因为内尔自己学会了在神的沉默中代神说话。</span>
+        <span class="en"><strong>דְּמָמָה · Demamah</strong> — "stillness, a barely audible whisper." In 1 Kings 19:12 Elijah at Horeb does not hear God in the earthquake, the wind, or the fire — but in a <em>qol demamah daqqah</em>, "the sound of a small thin silence." Neher's signature book — <em>L'Exil de la Parole</em> (The Exile of the Word) — proposes that after Auschwitz, the word of God enters an active silence: not <em>absence</em> but a deliberate <em>kashrut</em> of withdrawal, holding space for the sufferers to speak. Halperin's eulogy — "he made the Jewish voice clearly heard" — works only because Neher himself had learned to speak <em>inside</em> God's silence.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读这一篇讣告，应该停下来问自己：我能否设想一种「神学」，把奥斯威辛<em>放在中心</em>，而不是放在脚注里？基督教传统并非没有「神的沉默」这一主题——加略山上，主耶稣自己曾大声呼喊：「我的神，我的神，为什么离弃我？」（太 27:46）——这是诗篇 22 篇的引用，是被钉者引用一篇<em>仍然在祷告</em>的诗。十架上的耶稣是<strong>第一位</strong>真正进入「神的沉默」的人。内尔之所以能成为犹太-基督对话最深的对话者之一，正是因为他在沉默的神面前从未掩饰——他逼基督徒承认：你们的十架，不是终点，而是<em>起点</em>。从拿撒勒人的呼喊，到奥斯威辛的瓦砾，是同一条沉默的线索。基督徒若不愿在这条线上和犹太人一起站着，就还没有真正开始对话。</span>
+        <span class="en">Reading this obituary, a Christian must pause: can I imagine a theology that puts Auschwitz at the <em>center</em>, not in a footnote? Christian tradition is not without the theme of divine silence — at Golgotha, Jesus himself cries: "My God, my God, why have you forsaken me?" (Matt. 27:46). It is a quotation from Psalm 22 — the crucified one quoting a Psalm <em>still praying</em>. The Jesus of the cross is the <strong>first</strong> person fully to enter the silence of God. Neher could be one of the deepest partners in Jewish-Christian dialogue precisely because he never softened the silence — he forced Christians to say: your cross is not the end of God's silence, it is the beginning. From the Nazarene's cry to the rubble of Auschwitz runs a single thread of silence. A Christian unwilling to stand with the Jew along that thread has not yet begun the dialogue.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我自己的祷告生活里，有没有那种「神回答了我」的预设？如果神<em>不</em>回答——像内尔所写的那样——我能否仍然敬拜祂？</span><span class="en">In my own prayer life, do I assume God will answer? If God <em>does not</em> answer — in the way Neher writes about — can I still worship?</span></li>
+        <li><span class="zh">十架上耶稣的呼喊（太 27:46）是不是基督徒进入<em>奥斯威辛后的神学</em>最重要的门？为什么基督徒很少把它读到底？</span><span class="en">Is Jesus' cry on the cross (Matt. 27:46) the most important gate by which Christians can enter a <em>post-Auschwitz theology</em>? Why do we so rarely read it all the way to its bottom?</span></li>
+        <li><span class="zh">内尔在对话中「在根本问题上从不妥协」。我所在的教会，在与他者对话时，常常在哪些地方<em>过早妥协</em>了？</span><span class="en">Neher in dialogue "never compromised on the essentials." Where does my own Church <em>compromise too early</em> in its conversations with others?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 3 — Claude Montefiore  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">克劳德·孟特菲奥利——一位自由派犹太人读耶稣</span>
+        <span class="en">Claude Montefiore: A Liberal Jew Reads Jesus</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">爱德华·凯斯勒（Edward Kessler）的这一篇长文，是给一位<strong>被两边都误解</strong>的人立传。克劳德·孟特菲奥利（Claude Montefiore, 1858-1938）生于英国一个解放犹太家庭：他的父亲是摩西·孟特菲奥利爵士的侄子，母亲是非教派伦敦大学学院创办人之一艾萨克·戈德史密德的女儿。他在牛津巴利奥尔学院师从本杰明·乔伊特（Benjamin Jowett），后赴柏林希伯来学院，在那里遇见一位年轻的导师所罗门·谢克特（Solomon Schechter）——一位来自罗马尼亚的哈西迪犹太人。两人差异极大，却互相敬重。孟特菲奥利后来把谢克特带回英国，谢克特在一八九二年成为剑桥大学拉比文学的首任 Reader。一九〇九年，孟特菲奥利出版两卷本《对观福音注疏》(The Synoptic Gospels)；其后《耶稣宗教教导中的若干要素》（1910）和《犹太教与圣保罗》（1914）相继问世。他是<strong>第一位</strong>系统地用犹太学者身份注疏新约的犹太人——他做的事，在当时近乎不可想象。</span>
+        <span class="en">Edward Kessler's long essay in this issue is a biography of a man <strong>misread by both sides</strong>. Claude Montefiore (1858-1938) was born into emancipated Anglo-Jewish wealth — his father a nephew of Sir Moses Montefiore, his mother a daughter of Isaac Goldsmid (a founder of non-sectarian University College London). At Balliol College, Oxford he came under the wing of Benjamin Jowett. In Berlin he was tutored by a brilliant young Romanian Hasidic scholar named Solomon Schechter, whom he persuaded to return to England with him; Schechter became Reader in Rabbinics at Cambridge in 1892. In 1909 Montefiore published the two-volume <em>The Synoptic Gospels</em>; in 1910 <em>Some Elements in the Religious Teaching of Jesus</em>; in 1914 <em>Judaism and St Paul</em>. He was <strong>the first</strong> Jew to write a systematic Jewish scholarly commentary on the New Testament — at the time an almost unimaginable act.</span>
+      </p>
+      <p>
+        <span class="zh">孟特菲奥利的核心主张可以一句话概括：「<em>是时候停止彼此用对方最差的样子互相评判，是时候彼此交换最好的部分。</em>」他对耶稣的评价之高，远超他同时代的犹太学者；他对保罗的批评，则比耶稣更尖锐——他认为保罗根本「不是拉比式的犹太人」，因为保罗的「谁能救我脱离这取死的身体？」（罗 7:24）这样的呼喊，在拉比传统里是无法想象的——拉比传统中神是「<em>挨近，以各种挨近来挨近</em>」的。凯斯勒精彩地总结：孟特菲奥利「为基督徒解释犹太人，为犹太人解释基督徒」（the interpreter par excellence of Judaism to Christians and of Christians to Jews）。以色列·赞格威尔（Israel Zangwill）戏称他为「一种古怪的混合物——半犹太、半基督」——正是这「古怪的混合」，让他成为犹太-基督对话的开山者。</span>
+        <span class="en">Montefiore's argument can be reduced to a sentence: "<em>It is time for these two religions to stop judging each other on their defects; instead they should examine each other's qualities.</em>" His estimate of Jesus was higher than that of any Jewish scholar of his day. His critique of Paul was sharper than his critique of Jesus — he held that Paul "was no rabbinic Jew," because Paul's anguished cry — "who shall deliver me from this body of death?" (Rom. 7:24) — was unthinkable in the rabbinic world, where God was "near, with every kind of nearness." Kessler's brilliant summary: Montefiore became "the interpreter par excellence of Judaism to Christians and of Christians to Jews." Israel Zangwill jokingly called him "a queer mixture, half-Jew, half-Christian" — and that queer mixture is what made him the unacknowledged founder of modern Jewish-Christian dialogue.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这律法本是叫人活的，反倒叫我死……我真是苦啊！谁能救我脱离这取死的身体呢？」</span>
+        <span class="en">"The very commandment that promised life proved to be death to me … Wretched man that I am! Who will deliver me from this body of death?"</span>
+        <cite>《罗马书》7:10, 24 · Romans 7:10, 24</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>תּוֹרָה · Torah</strong>——希伯来词根为 <em>yarah</em>「教导、指示」。把它译成「Law（律法）」是希腊语 <em>nomos</em> 在七十士译本中的产物——而<em>nomos</em> 带有罗马法的冷峻意味。凯斯勒在文中花了整整一段脚注解释这件事：「Torah 远比『律法』要宽广得多，它字面意思是<em>教导、道路、指示</em>。基督徒和犹太学者直到最近几十年才一起开始处理这个翻译问题。最妥当的解法也许就是<strong>不翻译</strong>，直接用 Torah。」孟特菲奥利对保罗的批评也建基于此：保罗笔下的「Law（律法）」已经被希腊化了——是冷的、外在的、压在人身上的法律框架；而拉比的 <em>Torah</em> 是<em>挨近</em>、是欢喜、是「以色列与神之间的纽带本身」。</span>
+        <span class="en"><strong>תּוֹרָה · Torah</strong> — Hebrew root <em>yarah</em>, "to teach, to point the way." Translating it as "Law" is a legacy of the Septuagint's choice of <em>nomos</em> — a word freighted with Roman legal coldness. Kessler devotes an entire footnote to this: "Torah means much more than 'Law'. It means literally instruction, path, way … The best solution may be just to leave it without any translation." Montefiore's critique of Paul rests on this exact point: Paul's "Law" is already a Hellenised concept — cold, external, oppressive — whereas the rabbis' <em>Torah</em> is <em>nearness</em>, joy, "the bond between Israel and God itself."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">孟特菲奥利对耶稣的高度赞美，可能让福音派基督徒同时感到欣慰和不安——欣慰的是「连一位犹太人都看到耶稣的伟大」；不安的是他<em>不接受耶稣的神性</em>。他写道：耶稣是「一位伟大、智慧的教师，但绝非神」。这正是基督徒需要诚实面对的地方：孟特菲奥利眼中那位耶稣，仍然是一位<strong>外人</strong>眼中的耶稣——但这位「外人」的眼睛，比许多内部信徒更清晰。基督徒应当问：为什么我读不到孟特菲奥利所读到的「耶稣的内在性、对外人的怜悯、对律法的先知式重新诠释」？基督徒不必为了夺得「认证」而压低对耶稣的认信，但基督徒可以学习<em>用犹太人的眼睛重新读自己手中的福音书</em>——这是孟特菲奥利留给基督教会的礼物。</span>
+        <span class="en">Montefiore's reverence for Jesus may leave the Evangelical Christian both grateful and uneasy — grateful that "even a Jew saw the greatness of Jesus," uneasy that Montefiore explicitly <em>denied Jesus' divinity</em>. He wrote that Jesus was "a great and wise teacher, but in no sense God." This is the place where Christians must be honest: Montefiore's Jesus is still the Jesus of <strong>an outsider</strong> — but an outsider who saw more clearly than many insiders. The Christian question is not "shall I lower my confession to gain his approval?" but rather, "why have I missed what he saw — Jesus' interiority, his compassion for the outcast, his prophetic re-reading of Torah?" The gift Montefiore offers the Church is the discipline of <em>reading my own Gospels with Jewish eyes</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果一位「不信耶稣神性」的犹太学者，能从《对观福音》读出基督徒漏掉的东西——这本身告诉我什么关于基督徒读经习惯的话？</span><span class="en">If a Jewish scholar who does not confess Jesus as God can still see in the Synoptic Gospels what Christians have missed — what does that tell me about my own reading habits?</span></li>
+        <li><span class="zh">孟特菲奥利说保罗「不是拉比式的犹太人」。如果他的论断有几分对，那基督教神学是否在不知不觉中<em>用了一位被希腊化的犹太人</em>来定义整个基督教？</span><span class="en">Montefiore claims Paul "was no rabbinic Jew." If there is even a partial truth here, has Christian theology unwittingly used <em>a Hellenised Jew</em> to define the whole of Christianity?</span></li>
+        <li><span class="zh">把 <em>Torah</em> 不再翻译为「律法」而保留原文，是否会改变我读《罗马书》《加拉太书》的整个语气？</span><span class="en">If I stop translating <em>Torah</em> as "Law" and just leave the Hebrew word, does the tone of Romans and Galatians change for me?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 4 — Oberammergau Passion Play  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">奥伯阿玛高——受难剧的长影</span>
+        <span class="en">Oberammergau and the Long Shadow of the Passion Play</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">约翰·凯利神父（Fr. John J. Kelley S.M.）的这篇报告是同一个故事的两面：好消息与坏消息。坏消息是——奥伯阿玛高（Oberammergau），那个巴伐利亚的五千人小村，自一六三四年以来每十年上演一次的受难剧，到一九九〇年这一届仍将在剧本中保留一节戏文：马太福音 27:25「他的血归到我们和我们的子孙身上」——这正是基督教反犹主义两千年来最常被引用、最具杀伤力的一节经文。凯利尖锐地指出：希特勒在一九三〇和一九三四年两次观赏此剧——他说他喜欢，「因为它是一件可以为他所用的艺术作品」；战争一结束，是<strong>美国的钱</strong>让村民得以恢复演出，几乎一字未改。每一届约有五十万游客涌入小村，约二十万人坐进剧场——绝大多数是英语听众，他们不懂德文，只能通过音乐和符号「接收」剧情。这是一种规模最大的「悄悄进入潜意识」的反犹教育。</span>
+        <span class="en">Fr. John J. Kelley's report is two stories at once — the good news and the bad news. The bad news first: Oberammergau, the Bavarian village of 5,000 that has performed the Passion since 1634, was about to mount its 1990 production with Matthew 27:25 — "His blood be on us and on our children" — still in the script. That single verse has been Christian antisemitism's most efficient text for two millennia. Kelley notes that Hitler attended the play twice — in 1930 and 1934 — and approved of it as "an art form which could be used to promote his cause." After the war, it was <em>American</em> money that enabled the villagers to resume performances, essentially unchanged. Half a million tourists visit each cycle; nearly half a million people watch — most of them English-speaking, unable to follow the German text, absorbing the message through music and symbol. It is the world's largest silent reinforcement of an old slander.</span>
+      </p>
+      <p>
+        <span class="zh">好消息是：改革正在发生，缓慢但真实。在 ADL（反诽谤联盟）施压下，村里于一九八六年组成了一个由九位村民加一位慕尼黑天主教圣经学者鲁道夫·佩施（Dr Rudolph Pesch）组成的修订委员会。最重要的一项成果：剧中那位虚构的反派「Rabbi Archelaeus」（拉比阿基劳斯）——这位「邪恶的拉比」原本是整出戏的「真正凶手」——终于在新版本中被<strong>去除</strong>了。同期，美国主教团于一九八八年三月通过《受难剧戏剧化评估准则》(Criteria for the Evaluation of Dramatizations of the Passion)；加拿大主教团则更进一步，从礼仪用本中<strong>删除</strong>了马太 27:25 这一节。然而凯利的论文末尾依然冷静：奥伯阿玛高的剧本里，这一节仍然存在。他亲笔致函新选出的导演 Christian Stueckl 与红衣主教，请求删除。他用一个温柔的词收尾——这场戏剧，能否变成一首「<em>和好之歌</em>」？</span>
+        <span class="en">The good news comes slowly but truly. Under pressure from the Anti-Defamation League and Catholic biblical scholars, the village in 1986 formed a text commission — nine villagers plus the Catholic biblical scholar Rudolph Pesch. The signature gain: the play's fictional villain — "Rabbi Archelaeus," the evil rabbi who has for centuries been the real "culprit" — was <strong>removed</strong> from the revision. In March 1988 the U.S. Bishops approved <em>Criteria for the Evaluation of Dramatizations of the Passion</em>. The Canadian Bishops went further, deleting Matthew 27:25 from the lectionary. But Kelley closes coolly: the verse still stands in the Oberammergau script. He has personally written to the newly elected director Christian Stueckl and to the Cardinal Archbishop of Munich, asking for it to be removed. His closing word is gentle — can the play become "a hymn of reconciliation"?</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「众百姓都回答说：『他的血归到我们和我们的子孙身上！』」</span>
+        <span class="en">"And all the people answered, 'His blood be on us and on our children!'"</span>
+        <cite>《马太福音》27:25 · Matthew 27:25</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>דָּם · Dam</strong>——「血」。在希伯来语圣经里，<em>dam</em> 是双义词：既是<strong>罪债</strong>（「血债」如该隐杀亚伯），也是<strong>救赎的代价</strong>（逾越节羔羊的血涂在门楣上）。马太 27:25「他的血归到我们」——在原文语境里，群众极可能是在用希伯来式的「<em>承担血债</em>」公式说话，是一种戏剧性的修辞，而不是字面意义上的世代咒诅。耶稣自己在最后的晚餐中说：「这是我立约的血。」（太 26:28）——他的血是<strong>救赎</strong>，不是诅咒。把这两节合起来读，就是逾越节本身的悖论：羔羊的血是<em>使死亡逾越</em>的血，而不是降临诅咒的血。两千年来基督徒读错了马太 27:25——把一节戏剧性的修辞，读成了犹太人世代承受神怒的法律根据。</span>
+        <span class="en"><strong>דָּם · Dam</strong> — "blood." In Hebrew Scripture <em>dam</em> is a double-edged word: it names both a <strong>blood-debt</strong> (Cain and Abel) and the <strong>price of redemption</strong> (the Passover lamb's blood on the lintel). The Matthew 27:25 cry — "his blood be on us" — was almost certainly, in its original setting, a Hebraic rhetorical formula for "we take responsibility," not a literal generational curse. And Jesus himself at the Last Supper says: "This is my blood of the covenant" (Matt. 26:28) — his blood as <strong>redemption</strong>, not condemnation. Read together they restate the Passover paradox: the lamb's blood passes <em>over</em> death; it does not pass it on. For two thousand years Christians misread Matthew 27:25, turning a rhetorical line into the legal foundation for collective Jewish guilt.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">凯利的整篇文章其实在追问一个简单的问题：<em>艺术如何为信仰服务，而不是出卖信仰？</em>他列出几个关键的判别问题——「艺术的意义是什么？它如何服事于信仰？发起者的意图是什么？对观众的影响又是什么？」这是给当代教会一份非常实用的良知清单。基督徒若组织复活节戏剧、若选用某些音乐、若在儿童主日学讲耶稣受难的故事——所有这些都是「迷你型奥伯阿玛高」。我们也许永远不会演出五个小时的剧，但我们每年都在用图画、卡通、歌剧、电影<em>重新讲述</em>那场受难——而每一次「重述」都是一次<strong>选择</strong>：选择强调群众的喊声，还是耶稣自己的祷告（「父啊，赦免他们，因为他们所做的，他们不晓得」路 23:34）？凯利提出的「和好之歌」（hymn of reconciliation）这一构想，是给每一场基督徒讲述受难的活动出的一道考试题。</span>
+        <span class="en">Kelley's piece, beneath its details, asks one simple thing: <em>can art serve faith without betraying it?</em> He gives a practical examination of conscience — "What is the meaning of art? How can it serve faith? What is the intention of the sponsor? What is the impact on the audience?" Every Christian who has ever staged an Easter drama, chosen a Passion hymn, or told the crucifixion story to a Sunday-school class has been running a miniature Oberammergau. We will not perform a five-hour play, but every year we <em>retell</em> the Passion in pictures, cartoons, oratorios, and films — and every retelling is a <strong>choice</strong>: do we emphasise the crowd's cry, or the prayer of Jesus himself — "Father, forgive them, for they know not what they do" (Luke 23:34)? Kelley's image of a "hymn of reconciliation" is the question every Christian Passion presentation must answer.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我自己听过、看过、参与过的耶稣受难叙述里——讲故事时<em>群众喊声</em>响亮，还是<em>耶稣自己的祷告</em>响亮？</span><span class="en">In the Passion stories I have heard, watched, or helped to tell — is the <em>crowd's cry</em> louder, or is <em>Jesus' own prayer of forgiveness</em>?</span></li>
+        <li><span class="zh">如果两千年来基督徒持续误读马太 27:25——那其他「我们一直这样读」的经文里，是否也藏着类似的盲点？</span><span class="en">If Christians misread Matthew 27:25 for two thousand years — are there other "we have always read it this way" passages hiding similar blind spots?</span></li>
+        <li><span class="zh">「<em>和好之歌</em>」能成为受难故事的主旋律吗？这要求我对耶稣的死<em>多想些什么、少想些什么</em>？</span><span class="en">Can a "hymn of reconciliation" become the keynote of the Passion narrative? What does this require me to think <em>more</em> of, and <em>less</em> of, when I contemplate Jesus' death?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 5 — Selly Oak  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">塞利欧克与新一代对话机构的诞生</span>
+        <span class="en">Selly Oak and the New Institutional Dialogue</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一期的「世界各地报导」（Reports from around the World）有三个相互连接的故事：诺曼·所罗门拉比（Rabbi Dr Norman Solomon）即将在伦敦正式启动伯明翰塞利欧克学院的犹太-基督关系研究中心；委内瑞拉首席拉比品哈斯·布伦纳（Pynchas Brener）两次前往哈瓦那并与卡斯特罗会面，营救三个家庭出境；伯明翰主教区的研习日（Diocesan Study Day）邀请前约克大主教 Lord Blanch 等讲员讨论「教导与讲道而不带反犹主义」；以及犹太-基督修会 Sisters of Sion 的国际神学反思周。这是「<strong>机构化</strong>对话」的一个清晰快照：四十年前是几个人凑在一起，现在是<em>有预算、有研究中心、有教材、有定期会议</em>的体系。</span>
+        <span class="en">The "Reports from around the World" section in this issue threads four connected stories: the imminent London launch of Rabbi Norman Solomon's Centre for the Study of Judaism and Jewish/Christian Relations at the Selly Oak Colleges, Birmingham; the Chief Rabbi of Venezuela Pynchas Brener's two trips to Havana to meet Castro and secure exit visas for three families; the Birmingham Diocesan Study Day on "teaching and preaching without antisemitism"; and a January 1989 theological reflection week at the Sisters of Sion Generalate in Rome. Taken together they are a snapshot of the <em>institutionalisation</em> of dialogue: forty years ago it was a few people in a room, now it is centres, budgets, curricula, conferences.</span>
+      </p>
+      <p>
+        <span class="zh">所罗门拉比在伦敦的就职演说，是本期最具文学品质的文字之一。他把这次启动比作一艘船下水——「我处在新船船长既荣幸又不太舒服的位置：当我环顾岸上挥手送行的妻子和情人们，我被她们的笑容和『顺风』的呼喊鼓舞——但我以前出过海。期待的兴奋之中，掺着对未知风浪的健康畏惧。」他随即举出他将面对的暗礁——「奥斯威辛尚未解决的修道院问题、瓦尔德海姆事件、世界基督教协进会声明中明显的反以色列倾向、英国国家报纸上劝皈广告的出现」——这些「<em>搅动波浪、遮蔽天上指引之星光的事件</em>」。然而他坚定：「<strong>跨宗教对话的真正本质，是处于宗教的正中心，而不是边缘；它是一个关乎『存活』而非『情怀』的问题。</strong>」</span>
+        <span class="en">Solomon's London speech is one of the most literary pieces in this issue. He casts the launch as a ship setting sail: "This puts me in the privileged but none too comfortable position of captain of a new ship about to voyage the stormy seas. As I look around me at the wives and sweethearts waving farewell on the quayside I am cheered by the smiles and calls of bon voyage. But I've put out to sea before, and the thrill of anticipation is tempered by a healthy fear of some of the perils that undoubtedly await." He names the reefs: "the still unresolved matter of the Carmelite convent at Auschwitz, the Waldheim affair, the apparent anti-Israel bias in the statements of the World Council of Churches, the appearance in our national press of conversionist advertisements targeted at Jews — such episodes churn the waves and obscure the guiding lights of heaven by which we navigate." But the destination is fixed: "<strong>Interfaith dialogue turns out to be a much more fraught endeavour … one that lies dead centre in religion, not at all at its edges, a question of survival rather than sentiment.</strong>"</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「请放下你以为跨宗教对话是一种舒适的、感性的事业的念头——是一场草坪上的茶会、一些好心人极度敏感地互相照顾、是宗教蛋糕上一层精致的糖霜。跨宗教对话其实是一件远为艰辛的事业，它<em>处于宗教的正中心，而非边缘</em>——这是一个关乎『存活』而非『情怀』的问题。」</span>
+        <span class="en">"Forget any notion you have that interfaith dialogue is a cosy or sentimental undertaking, a matter of gentleness, tea parties on the lawn, nice people being studiously sensitive to one another, a sort of delicate icing on the religious cake. Interfaith dialogue turns out to be a much more fraught endeavour than that, and one that lies <em>dead centre in religion, not at all at its edges</em>, a question of survival rather than sentiment."</span>
+        <cite>诺曼·所罗门拉比 · Rabbi Norman Solomon · Selly Oak Launch, 6 February 1989</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שָׁלוֹם · Shalom</strong>——通常被译作「平安」，但根本词义是「<strong>完整、丰满、合宜</strong>」（root <em>sh-l-m</em>）。在希伯来圣经的语境里，<em>shalom</em> 不是「没有战争」的消极状态，而是「<em>各样关系都对位</em>」的积极状态——人与神、人与人、人与自己、人与受造界。所罗门拉比所说的「跨宗教对话是关乎生存而非感性」，背后的神学正是 <em>shalom</em>：当犹太人与基督徒不站在一起，<em>shalom</em> 就缺了一块。这不是「让大家都开心」的努力，而是修补一道<em>属灵的破缝</em>。塞利欧克中心、希尔顿小屋研习日、Sisters of Sion 神学反思——都是为了把那块缺了的拼图<em>找回来</em>。</span>
+        <span class="en"><strong>שָׁלוֹם · Shalom</strong> — usually translated "peace," but its root <em>sh-l-m</em> means "<strong>wholeness, completeness, right relation</strong>." In biblical usage <em>shalom</em> is not the negative absence of war but the positive state where <em>every relation is in its place</em> — humanity and God, humanity and humanity, humanity and self, humanity and creation. Solomon's claim that interfaith dialogue is "survival, not sentiment" rests on <em>shalom</em>: when Jews and Christians do not stand together, <em>shalom</em> is short a piece. This is not an attempt to make everyone feel good — it is mending a <em>spiritual fracture</em>. Selly Oak, the Birmingham Diocesan Study Day, the Sisters of Sion reflection — each is a way of fetching back a missing piece of the wholeness.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读到 Sisters of Sion 修会的故事时尤其应该停下来。这个修会成立于十九世纪中叶，<em>原初的宗旨是「使犹太人皈依」</em>——这是历史事实。然而经过大屠杀的灰烬与以色列国的建立，她们做了一件不少修会做不到的事——她们<em>彻底重新评估</em>了自己的使命：「今天，她们毫不含糊地<strong>拒绝劝皈犹太人</strong>，并致力于传播一个更真实的犹太-犹太教形象，已成为受信任、被尊重的对话伙伴。」一个机构能够<em>悔改</em>，不是个体悔改的总和，而是另一种更深的属灵壮举。塞利欧克的设立、Sisters of Sion 的转型、加拿大主教团对马太 27:25 的删除——这些都是「<em>机构性的 teshuvah</em>」。基督徒应当为这些悔改感谢神，也应当为自己所在的机构祈求同样的勇气。</span>
+        <span class="en">Christians should slow down at the story of the Sisters of Sion. The Congregation was founded in the mid-nineteenth century with "the avowed aim of the conversion of the Jews" — that is historical fact. But after the ashes of the Shoah and the birth of Israel, the order did what few orders accomplish — they <em>radically reassessed</em> their mission: "Today it unequivocally rejects conversionism, propagates a more truthful image of Jews and Judaism, and is a trusted and respected dialogue partner." An institution capable of repentance is not the sum of individual repentances — it is a deeper spiritual feat. Selly Oak's founding, the Sisters of Sion's transformation, the Canadian Bishops' deletion of Matt. 27:25 — these are <em>institutional teshuvah</em>. Christians should give thanks for them, and pray for the same courage in their own institutions.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">所罗门拉比说，跨宗教对话是「关乎存活的问题，而非情怀」。在我自己的属灵生活里——我把对话当成<em>奢侈品</em>，还是当成<em>必需品</em>？</span><span class="en">Solomon says dialogue is "a question of survival, not sentiment." In my own spiritual life, do I treat dialogue as a <em>luxury</em>, or as a <em>necessity</em>?</span></li>
+        <li><span class="zh">一个机构（不是一个人）也可以悔改——Sisters of Sion 的例子告诉我，我所在的教会/堂会/机构，有没有<em>需要被重新审视</em>的历史立场？</span><span class="en">An institution (not only a person) can repent — Sisters of Sion is the example. Is there a historical posture of my own Church / parish / institution that needs to be <em>re-examined</em>?</span></li>
+        <li><span class="zh">所罗门拉比把岸上挥手的「妻子和情人」比作支持者——我作为支持者，是只挥手送行，还是愿意上船同行？</span><span class="en">Solomon imagines supporters as "wives and sweethearts waving from the quayside." Am I content to wave, or am I willing to come on board?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 6 — Sigtuna Affirmation  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">Sigtuna 文件——世界基督教协进会面对犹太人</span>
+        <span class="en">The Sigtuna Statement: WCC Confronts the Jews</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">马库斯·布雷布鲁克（Marcus Braybrooke）为本期撰写了对世界基督教协进会 Sigtuna 协商会议的总结。这次会议于一九八八年十月三十日至十一月四日在瑞典 Sigtuna 召开——会议时间几乎正好就在<em>水晶之夜</em>（Kristallnacht, 一九三八年十一月九-十日，纳粹对德奥犹太人发动大规模暴力的夜晚）五十周年纪念之前。「面对犹太人受难时教会的可耻沉默」是与会者非常清晰地意识到的背景。会议的目的不是产生新教义——而是评估「教会在过去四十多年里所发出的众多对犹关系文件，看是否已经形成<em>共识</em>」。最终成文的五条「广泛同意」（the mind of the Churches）极其简洁：</span>
+        <span class="en">Marcus Braybrooke's report summarises the World Council of Churches consultation at Sigtuna, Sweden, 30 October-4 November 1988 — convening just before the fiftieth anniversary of <em>Kristallnacht</em>. "Members were very conscious of the shameful silence of the Churches in the face of Jewish suffering at that time." The aim was not new doctrine but an audit — to see whether the many WCC and member-church statements of the past forty years had cohered into a <em>consensus</em>. The five "widely agreed" points — what the document calls "the mind of the Churches" — are strikingly brief:</span>
+      </p>
+      <p>
+        <span class="zh">「<strong>1.</strong> 神与犹太民族所立的约仍然有效。<br/><strong>2.</strong> 反犹主义以及一切对犹太教的『轻蔑教导』都应被弃绝。<br/><strong>3.</strong> 犹太教活生生的传统是神的礼物。<br/><strong>4.</strong> 任何强迫性的劝皈犹太人的行动，都与基督信仰不相容。<br/><strong>5.</strong> 犹太人与基督徒在世上同负见证神的公义与平安之责任。」<br/>这五点不是「一种神学」，而是「一种<em>底线共识</em>」。布雷布鲁克承认还有<strong>两个</strong>未达共识的议题：「在『传福音 / 使命』问题上，以及『约与地』的关系——特别是与以色列国的关系——上，教会之间还没有形成一致的思想。」</span>
+        <span class="en">"<strong>1.</strong> The covenant of God with the Jewish people remains valid.<br/><strong>2.</strong> Antisemitism and all forms of the teaching of contempt for Judaism are to be repudiated.<br/><strong>3.</strong> The living tradition of Judaism is a gift of God.<br/><strong>4.</strong> Coercive proselytism directed toward Jews is incompatible with Christian faith.<br/><strong>5.</strong> Jews and Christians bear a common responsibility as witnesses to God's righteousness and peace in the world."<br/>These are not a theology — they are a <em>floor</em>, a minimum consensus. Braybrooke is honest that <strong>two</strong> matters remain unresolved: "There is not yet a common mind in the Churches on the question of mission, nor on the relation of Covenant and Land, especially in relationship to the State of Israel."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「神与犹太民族所立的约<em>仍然</em>有效。」</span>
+        <span class="en">"The covenant of God with the Jewish people <em>remains</em> valid."</span>
+        <cite>Sigtuna 文件第一项共识 · First Sigtuna Affirmation · November 1988</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>בְּרִית · Brit</strong>——「约」。在希伯来圣经中，<em>brit</em> 不是法律合同的「契约」，而是<strong>血与肉的连结</strong>。亚伯拉罕之约由「劈开的祭牲」立定（创 15:9-18）；西奈山之约由「献祭与血洒」立定（出 24:8）。<em>brit</em> 的本质是<em>用血换来的连结</em>，因此它不可单方面撕毁。Sigtuna 文件第一条说「神与犹太民族的约仍然有效」——这一句的神学震动是巨大的：它直接否定了基督教史上几乎从教父时代就存在的「<em>取代神学</em>」（supersessionism）——那种主张「教会取代了以色列、新约取代了旧约」的传统。如果<em>brit</em> 是「神用自己的话<em>切开</em>立下的连结」，那它就不可能因犹太人「不信耶稣」而被取消——神不会撕毁自己的肉。</span>
+        <span class="en"><strong>בְּרִית · Brit</strong> — "covenant." In Hebrew Scripture <em>brit</em> is not a legal contract but a <strong>blood-and-flesh bond</strong>. Abraham's covenant is sealed by the cutting of animal halves (Gen. 15:9-18); Sinai's covenant by the throwing of blood (Ex. 24:8). A <em>brit</em> is <em>a bond made in blood</em>, and therefore cannot be unilaterally broken. Sigtuna's first affirmation — "the covenant of God with the Jewish people remains valid" — is a theological earthquake: it directly contradicts the <em>supersessionism</em> embedded in Christian teaching almost since the Fathers — the doctrine that "the Church replaces Israel, the New Testament replaces the Old." If <em>brit</em> is "God cutting himself open to be joined to a people," then it cannot be cancelled because the people "did not believe in Jesus." God does not tear his own flesh.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">在保罗写给罗马教会的信里，他用了三章篇幅（罗 9-11）专门处理「以色列与教会的关系」。他的结论惊心动魄：「神的恩赐和选召是没有后悔的。」（罗 11:29 <em>ametamelēta</em>——「不可撤回」）。Sigtuna 文件的第一条，本质上就是把保罗这一句话<strong>制度化</strong>地说出来。然而，基督徒应该诚实地承认：这一条至今在大多数福音派教会里，<em>没有被听见</em>。我们仍然在主日学里说「旧约的神是审判的、新约的神是慈爱的」——这正是孟特菲奥利当年就已经在驳斥的偏见；我们仍然把「以色列」当作福音中的「过渡阶段」，仿佛它的功用已尽。但若 <em>brit</em> 是神在自己肉里立的盟约——那「以色列的丰满」（罗 11:25）就不是一个可有可无的末日附录，而是<strong>福音本身的一部分</strong>。Sigtuna 文件请求基督徒重新读罗马书 9-11，并把「不可撤回」这四个字放回到心中。</span>
+        <span class="en">In Romans 9-11 Paul devotes three chapters to "Israel and the Church." His verdict is stunning: "The gifts and calling of God are irrevocable" (Rom. 11:29 <em>ametamelēta</em> — "not subject to recall"). The first Sigtuna affirmation is essentially that Pauline sentence <strong>institutionalised</strong>. But Christians must be honest: in most Evangelical pulpits the sentence has <em>not yet been heard</em>. We still teach that "the God of the Old Testament is the God of judgment, the God of the New is the God of love" — the very caricature Montefiore was already demolishing a hundred years ago; we still treat Israel as a "phase" in the Gospel, as if its function were exhausted. But if <em>brit</em> is the covenant God cut in his own flesh, then "the fullness of Israel" (Rom. 11:25) is not an optional eschatological footnote — it is <strong>part of the Gospel itself</strong>. Sigtuna asks the Church to re-read Romans 9-11 and to write the word <em>irrevocable</em> back into her heart.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果罗马书 11:29 真的说「神的恩赐和选召是不可撤回的」——那我对「神与犹太民族的约」的潜意识假设里，有没有自相矛盾的地方？</span><span class="en">If Romans 11:29 truly says God's calling is irrevocable, are there contradictions in my unspoken assumptions about "God's covenant with the Jewish people"?</span></li>
+        <li><span class="zh">Sigtuna 文件第四条：「<em>强迫性的劝皈</em>不相容于基督信仰。」——那「非强迫性的、温和的劝皈」呢？这与第三条「犹太教活生生的传统是神的礼物」之间，是不是有张力？</span><span class="en">Sigtuna's fourth point: "<em>coercive proselytism</em> is incompatible with Christian faith." What about non-coercive, gentle proselytism? Is there a tension between this and the third point that "the living tradition of Judaism is a gift of God"?</span></li>
+        <li><span class="zh">Sigtuna 在「使命」和「以色列地」上还没有共识。我自己在这两个议题上的位置是什么？我有没有勇气说出来？</span><span class="en">Sigtuna leaves "mission" and "the Land of Israel" unresolved. Where do I stand on these two? Do I have the courage to say so?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 7 — Towards a New Understanding  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">「迈向新理解」——大屠杀之后的神学</span>
+        <span class="en">"Towards a New Understanding": Theology After the Shoah</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">本期完整刊载了 Sigtuna 协商会议的核心文件——《教会与犹太民族：迈向新理解》（<em>The Churches and the Jewish People: Towards a New Understanding</em>）。这份文件的结构非常清晰：A. 前言，B. 历史回顾，C. 九条「肯定」(Affirmations)。前言开宗明义地承认「<em>蒙特里安·阿尔默罗派的修女们</em>之外」，犹太-基督关系的「特殊性常常成为历史上紧张和疏离的根源，给我们的犹太邻人带来毁灭性后果」。历史回顾追溯了从一九四八年阿姆斯特丹首届世界基督教协进会大会（「反犹主义是『一种对神和对人的罪』」），到一九六一年新德里大会（拒绝把犹太人当作集体杀基督凶手）、一九六七年布里斯托报告（六大要点）、一九八二年《普世性思考》文件，再到梵蒂冈第二届大公会议《我们时代》（Nostra Aetate IV.4）等一连串重要节点。</span>
+        <span class="en">This issue prints the full Sigtuna text — <em>The Churches and the Jewish People: Towards a New Understanding</em>. Its structure is clear: A. Preamble; B. Historical Note; C. Nine Affirmations. The Preamble confesses up front that the special relationship between Jews and Christians "has often been a source of tension and alienation in history with destructive consequences for our Jewish neighbours." The Historical Note traces the major waypoints: the WCC's First Assembly in Amsterdam (1948) declaring antisemitism "a sin against God and man"; the Third Assembly in New Delhi (1961) rejecting collective Jewish guilt for the crucifixion; the Bristol report of 1967; the 1982 <em>Ecumenical Considerations</em>; Vatican II's <em>Nostra Aetate</em> §4 (1965).</span>
+      </p>
+      <p>
+        <span class="zh">真正动人的是第三、四、五条肯定。第三条：「我们认信耶稣基督既<strong>连结</strong>我们也<strong>分隔</strong>我们犹太人与基督徒。作为一位犹太人，耶稣在祂的事工中主要向犹太人言说，肯定了犹太民族圣经的神圣权威与敬拜……祂来不是要废除、而是要成全那建基于妥拉与先知的犹太信仰生活（参太 5:17）。」第四条引用《我们时代》：「『发生于祂受难中的事，不能归咎于当时所有的犹太人，毫无分别地，也不能归咎于今日的犹太人。』我们拒绝那种把犹太人在历史中所受的苦难归因于他们对基督之死的集体共犯论的看法。」第五条之后，是一段非常罕见的<strong>认罪</strong>：「我们深感遗憾，许多基督徒违背基督的灵，把信仰的宣告当作武器对付犹太民族——这在 Shoah 中达到顶点——我们承认数世纪以来在言语和行为上对犹太人的罪。」</span>
+        <span class="en">The moving heart of the document is Affirmations 3, 4, and 5. Affirmation 3: "We recognize that Jesus Christ both <strong>binds together</strong> and <strong>divides</strong> us as Christians and Jews. As a Jew, Jesus in his ministry addressed himself primarily to Jews, affirmed the divine authority of the Scriptures and the worship of the Jewish people … He came to fulfil, not to abrogate, the Jewish life of faith based on the Torah and the Prophets (cf. Mt. 5:17)." Affirmation 4 quotes Vatican II: "'What happened in his (Jesus') passion cannot be blamed on all the Jews then living, without distinction nor upon the Jews of today' (Nostra Aetate IV.4). We reject as contrary to the will of God the view that the sufferings of Jews in history are due to any corporate complicity in the death of Christ." Then Affirmation 5 contains the most rarely-written sentences in this whole literature — a Christian <strong>confession</strong>: "We deeply regret that, contrary to the spirit of Christ, many Christians have used the claims of faith as weapons against the Jewish people, culminating in the Shoah, and we confess sins of word and deed against Jews through the centuries."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我们看见的不是一个圣约取代另一个，而是<em>两个信仰群体，各自被神呼召而存在，各自持守从神而来的恩赐，各自向神负责</em>。」</span>
+        <span class="en">"We see not one covenant displacing another, but <em>two communities of faith, each called into existence by God, each holding its respective gifts from God, and each accountable to God</em>."</span>
+        <cite>Affirmation 8 · Sigtuna Statement · 1988</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>תְּשׁוּבָה · Teshuvah</strong>——「悔改、回归、转身」。希伯来文的「悔改」不是单纯的「为罪难过」，而是<em>转身回到正确的方向</em>。Sigtuna 文件第五条肯定那一句「我们承认数世纪以来在言语和行为上对犹太人的罪」——这是一个集体性的 <em>teshuvah</em>。但 <em>teshuvah</em> 的核心不是说「对不起」，而是<strong>不再回到原来的路上</strong>。在以色列年历中，<em>Yamim Noraim</em>（敬畏之日）从 Rosh Hashanah 到 Yom Kippur 之间整整十天，被称为「<em>Aseret Yemei Teshuvah</em>」——「悔改的十日」。这十日不是哭泣的日子，而是<em>盘点与转向</em>的日子。Sigtuna 是 WCC 的一次<em>属灵 Yom Kippur</em>——但若没有接下来的<em>转身</em>，仪式就只剩下仪式。</span>
+        <span class="en"><strong>תְּשׁוּבָה · Teshuvah</strong> — "repentance, return, turning." Hebrew "repentance" is not merely "feeling sorry for sin"; it is <em>turning around and walking the other way</em>. Sigtuna's fifth affirmation — "we confess sins of word and deed against Jews through the centuries" — is a corporate <em>teshuvah</em>. But the heart of <em>teshuvah</em> is not the apology — it is <strong>not walking the old road again</strong>. In the Jewish calendar, the <em>Yamim Noraim</em> — the Days of Awe between Rosh Hashanah and Yom Kippur — are called the <em>Aseret Yemei Teshuvah</em>, "the Ten Days of Returning." They are not days of weeping but days of <em>audit and turning</em>. Sigtuna is the WCC's spiritual Yom Kippur — but without the turning that follows, the ritual remains only ritual.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读这份文件，会感到三种心情同时涌来。<strong>第一是欣慰</strong>——终于有一份正式的基督教文件，用「我们承认对犹太人的罪」这样直接的句子说话。<strong>第二是不安</strong>——这份文件在「<em>福音的普世宣告</em>」与「<em>不可强迫劝皈犹太人</em>」之间留下一片<em>未解决的灰色地带</em>。它说：「我们作为基督徒坚守对耶稣基督为主为神的信仰认信（约 20:28），坚守三一神创造、救赎、成圣之工，并坚守福音的普世宣告。」——然后下一句又说：「我们因此<em>在基督里自由地</em>作出以下肯定。」「在基督里自由」的这种语气，正是 Sigtuna 文件最关键的处理。<strong>第三是责任</strong>——若 WCC 已经走到这一步，地方堂会（包括我所在的教会）有没有跟上？讲台讲了什么？儿童主日学教材里有没有「神不再要犹太人」的隐含信息？「以色列已被取代」的歌词有没有还在唱？基督徒的<em>teshuvah</em> 不是 Sigtuna 完成的——它要在每一个堂会里，逐个动作地完成。</span>
+        <span class="en">A Christian reading this document feels three things at once. <strong>First, gratitude</strong> — that an official Christian document finally writes plain sentences like "we confess sins of word and deed against Jews." <strong>Second, unease</strong> — the document leaves an unresolved grey zone between "the universal proclamation of the gospel" and "coercive proselytism toward Jews is incompatible with Christian faith." It says: "We as Christians firmly hold to our confession of faith in Jesus Christ as Lord and God (Jn. 20:28) … and hold to the universal proclamation of the gospel. We therefore feel <em>free in Christ</em> to make the following affirmations." That phrase — "free in Christ" — is the document's most delicate hinge. <strong>Third, responsibility</strong> — if the WCC has come this far, has my parish? What does my pulpit say? Are there still hymn lines that imply "Israel has been replaced"? <em>Teshuvah</em> is not finished at Sigtuna — it must be finished, sentence by sentence, in each local congregation.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">「两个信仰群体，各自被神呼召而存在，各自向神负责」——这一句是不是隐含了一种「<em>双约神学</em>」（two-covenant theology）？我能接受它到什么程度？</span><span class="en">"Two communities of faith, each called into existence by God, each accountable to God" — does this imply a <em>two-covenant theology</em>? How far can I accept it?</span></li>
+        <li><span class="zh">Sigtuna 文件包含了集体性的认罪。我的教会、我的宗派，有没有公开承认过<em>历史上对犹太人的罪</em>？为什么没有？</span><span class="en">Sigtuna contains a corporate confession of sin. Has my own Church or denomination ever publicly confessed its historical sins against the Jewish people? Why not?</span></li>
+        <li><span class="zh"><em>Teshuvah</em> 不只是道歉，而是「<em>转身不再走那条路</em>」。在我自己的属灵生活里，对犹太民族的态度上，有没有需要<em>真的转身</em>的方向？</span><span class="en"><em>Teshuvah</em> is not apology but <em>turning</em>. In my own spiritual life, is there a direction concerning the Jewish people in which I truly need to <em>turn around</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ═════════════  LESSON 8 — Reviews as a snapshot  ═════════════ -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">读那些书评——八十年代末的一帧定格</span>
+        <span class="en">Reading the Reviews: A Late-1980s Snapshot</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">本期最后一栏「书评」（Reviews）有六篇——它们看似零散，合起来却是<strong>八十年代末犹太-基督学术领域</strong>的一帧定格。萨沙·斯特恩（Sacha Stern）评论新版《Schürer——耶稣时代犹太人的历史》：他承认这套四卷本是该领域<em>不可或缺</em>的参考书，但同时尖锐指出 Schürer 的<em>基督中心论</em>结构未被编辑触动——例如「Jesus 的名字印在每一卷封面，但全套书几乎没有讲耶稣本人」，「弥赛亚论被夸大到六十六页，而妥拉只占二十三页」，「拉比文献被分类到『咒符与魔法书』下」。诺曼·所罗门评论 Rendtorff/Henrix 编的《Die Kirchen und das Judentum》（七百四十六页德语文献汇编）：「这是一份令人印象深刻、有用的记录」。所罗门也评论了 Chaim Raphael 的《犹太版公祷书：安息日晚祷》——他赞美其安息日描述，但批评它在比较 1549 年《公祷书》时的虚浮平行。</span>
+        <span class="en">The Reviews section closes the issue — six pieces, scattered in appearance but together a snapshot of <strong>late-1980s Jewish-Christian scholarship</strong>. Sacha Stern reviews the new <em>Schürer — The History of the Jewish People in the Age of Jesus Christ</em>: he calls the four-volume set "indispensable" but cuts deep — Jesus' name is on every cover yet the work barely treats him; Messianism gets sixty-six pages but Life Under the Law gets twenty-three; rabbinic literature gets classified as "Incantations and Books of Magic." Norman Solomon reviews Rendtorff and Henrix's 746-page German anthology <em>Die Kirchen und das Judentum</em>: "an impressive and useful record." Solomon also reviews Chaim Raphael's <em>A Jewish Book of Common Prayer: The Sabbath Eve Service</em> — admiring the Sabbath chapter, critical of its strained parallels with the 1549 Book of Common Prayer.</span>
+      </p>
+      <p>
+        <span class="zh">所罗门还评论 John Edwards 的《1400-1700 年基督教欧洲中的犹太人》——他赞赏作者主张「犹太历史与基督教历史不可分割」。让·阿尔佩兰评论 WCC 自己刚出版的《教会与犹太民族的神学》：「过去四十年来教会态度的巨大变化⋯⋯让那些以为犹太-基督关系是『一个简单话题、可静态对待、能凭美好愿望化解』的人，重新思想。」最后，所罗门评论 Freda Mary Oben 写的伊迪丝·斯坦因（Edith Stein）传——这位犹太裔哲学家、加尔默罗会修女、于一九四二年在奥斯威辛遇害；一九八七年由教宗若望保禄二世册封为真福。所罗门的批评几乎是温柔的痛——「斯坦因转向基督所发现的属灵资源，<em>本来在她自己的犹太传统中也同样可以找到</em>。这本传记最令人哀伤的一面，是它揭示出斯坦因对犹太教属灵资源的几近完全的无知。」六篇书评合在一起，是一面镜子——映出那一代学者各自的<em>盲点与突破</em>。</span>
+        <span class="en">Solomon also reviews John Edwards's <em>The Jews in Christian Europe 1400-1700</em>, applauding Edwards's argument that Jewish history cannot be separated from Christian history. Jean Halperin reviews the WCC's own newly published anthology <em>The Theology of the Churches and the Jewish People</em>: "the impressive changes which have marked the attitudes of the churches in Western Europe and North America towards the Jewish people over the last forty years" forces "anyone who still believes Jewish-Christian relations are an easy topic which lends itself to a static view" to think again. Finally, Solomon reviews Freda Mary Oben's biography of Edith Stein — the Jewish philosopher, Carmelite nun, killed at Auschwitz in 1942, beatified by John Paul II in 1987. Solomon's critique is almost tender: "the spiritual resources Stein discovered in Christianity were <em>at least equally available in her own tradition</em>. One of the saddest aspects of this biography is the revelation it gives of Stein's almost total ignorance of the spiritual resources of Judaism." The six reviews together are a mirror — reflecting the blind spots and the breakthroughs of an entire scholarly generation.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这本传记最令人哀伤的一面，是它揭示出斯坦因对犹太教属灵资源的<em>几近完全的无知</em>……犹太神学家会拒绝她的答案，却能够理解她的属灵渴望——同时为她未能在妥拉的范围内实现这渴望而<em>哀伤</em>。」</span>
+        <span class="en">"One of the saddest aspects of this biography is the revelation it gives of Stein's <em>almost total ignorance of the spiritual resources of Judaism</em> … The Jewish theologian will reject her answers, but can understand her spirituality while <em>lamenting her failure to realize this within the bounds of Torah</em>."</span>
+        <cite>诺曼·所罗门 · Norman Solomon · 评 Oben《Edith Stein》</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אַחֲרֵי הַשּׁוֹאָה · Acharei ha-Shoah</strong>——「在大屠杀<em>之后</em>」。这个短语本身就是一种神学姿态。「之后」意味着<strong>世界的时间轴已经被永久地折断</strong>了：在那之前，犹太人和基督徒可以假装彼此存在的方式只是「神学差异」；在那之后，每一句关于「犹太人」的话，都必须先经过那座焚化炉的灰烬。所罗门评论 Edith Stein 时的「哀伤」，不是因为她转信基督——而是因为她<em>没有先认识自己手中的财富</em>。Stern 评论 Schürer 时的尖锐，不是要否定德国学术——而是要让所有读者意识到，<em>Acharei ha-Shoah</em>，我们再也不能毫无自觉地用十九世纪那种「犹太教是死的法律主义、基督教是活的属灵」框架来书写历史了。这一整栏书评的共同语法，就是这个希伯来短语：「<em>之后</em>。」</span>
+        <span class="en"><strong>אַחֲרֵי הַשּׁוֹאָה · Acharei ha-Shoah</strong> — "<em>after</em> the Shoah." The phrase itself is a theological posture. "After" means <strong>the timeline of the world has been permanently broken</strong>: before it, Jews and Christians could pretend their existence differed only in "theology"; after it, every sentence about "the Jew" must first pass through the ash of the ovens. Solomon's "lament" for Edith Stein is not that she converted — it is that she <em>never knew the wealth in her own hands first</em>. Stern's sharpness with Schürer is not a rejection of German scholarship — it is the insistence that <em>Acharei ha-Shoah</em>, we can no longer write history naively in the nineteenth-century frame of "dead legalistic Judaism" versus "living spiritual Christianity." The grammar of this whole Reviews section is the Hebrew phrase: "<em>After.</em>"</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一整栏书评的核心信息，可以浓缩成一句给基督徒的话：「<em>请先认识你自己手里的财富，再去给别人加东西。</em>」基督徒常常觉得自己有「福音」要带给犹太人——但 Sigtuna 文件和这些书评共同提出的悄声反问是：你认识你自己手中那本书里<em>犹太的部分</em>吗？你知道耶稣是用希伯来文/亚兰文祷告的吗？你知道「主祷文」几乎每一句都可以在第二圣殿时期的犹太祷告里找到对应吗？你知道「父啊」这个开头在犹太祷文 <em>Avinu Malkeinu</em>（我们的父，我们的王）里已经存在了千年吗？如果连<em>这些</em>都不知道，那「带福音去给犹太人」的姿态，就还像 Edith Stein 转向基督一样——<em>在不知道自己拥有什么的情况下，去寻找已经在自己屋里的宝藏</em>。这一栏书评是给所有基督徒读者的温柔提醒：先<em>回家</em>，再出门。</span>
+        <span class="en">The thread running through this whole Reviews section, distilled for Christian ears, reads like this: "<em>Know the wealth in your own hands before adding anything to anyone else's.</em>" Christians often feel they have "the Gospel" to bring to Jews — but the quiet question raised by Sigtuna and by these reviews is: do you know the <em>Jewish parts</em> of your own book? Do you know that Jesus prayed in Hebrew and Aramaic? That nearly every line of the Lord's Prayer has a counterpart in Second Temple Jewish prayer? That "Our Father" begins the <em>Avinu Malkeinu</em> ("Our Father, our King") that Jews have prayed for a thousand years? If you do not yet know <em>these</em>, then "bringing the Gospel to the Jew" is still in the same posture as Edith Stein turning to Christ — <em>searching outside the house for treasures already inside the house</em>. This Reviews section, for a Christian reader, is a tender reminder: come home first, then go out.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">所罗门为 Edith Stein 的「无知」而哀伤——我自己作为基督徒，对自己<em>圣经里的犹太一半</em>，是否也存在着相似的无知？</span><span class="en">Solomon laments Stein's "ignorance of the spiritual resources of Judaism." As a Christian, is there a similar ignorance in me regarding the <em>Jewish half of my own Bible</em>?</span></li>
+        <li><span class="zh">Stern 批评新版 Schürer 没有去除十九世纪的「Christo-centric」叙述结构。我读自己手中那本系统神学时，能不能也分辨出哪些是<em>结构性的偏见</em>，哪些是<em>真正的福音</em>？</span><span class="en">Stern criticises the new Schürer for not removing its nineteenth-century Christo-centric scaffolding. When I read my own systematic theology, can I tell which parts are <em>structural bias</em> and which are <em>the Gospel itself</em>?</span></li>
+        <li><span class="zh">如果「<em>Acharei ha-Shoah</em>」（大屠杀之后）是一切犹太-基督书写的<em>新语法</em>——那我每一次为犹太人祷告、谈论以色列、教导旧约时，是否都意识到这「之后」？</span><span class="en">If <em>Acharei ha-Shoah</em> ("after the Shoah") is now the new grammar of all Jewish-Christian writing — am I conscious of this "after" whenever I pray for the Jewish people, talk about Israel, or teach the Old Testament?</span></li>
+      </ul>
+    </div>
+
+    <hr class="article-rule" />
+
+    <h2>
+      <span class="zh">同行祝福</span>
+      <span class="en">A Blessing for the Road</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华向你仰脸，赐你平安。」<br/><br/>愿你在这八堂课之后，不再只把「犹太-基督关系」看作一门<em>历史科目</em>——<br/>而把它看作那条在你脚下、你与神之间的<strong>真实的盟约之路</strong>。<br/><br/>愿你在 Auschwitz 的沉默里听见神的 <em>demamah</em>；<br/>愿你在 Sigtuna 的「不可撤回」里听见 <em>brit</em> 的回响；<br/>愿你在 Selly Oak 的下水礼里愿意上船同行；<br/>愿你的祷告、讲道、教导、唱诗——<br/>从今往后都带着「<em>之后</em>」的意识：<em>Acharei ha-Shoah</em>。<br/><br/>愿你与那位犹太弥赛亚一同站立，<br/>也与祂所属的那个民族一同站立——<br/>因为<strong>神的恩赐和选召是没有后悔的</strong>。</span>
+      <span class="en">"The LORD lift up his countenance upon you, and give you peace."<br/><br/>After these eight lessons, may "Jewish-Christian relations" no longer be a <em>historical subject</em> for you —<br/>but the <strong>actual covenant path</strong> beneath your feet, between you and God.<br/><br/>May you hear God's <em>demamah</em> in the silence of Auschwitz;<br/>may you hear the echo of <em>brit</em> in Sigtuna's word "irrevocable";<br/>may you be willing to board the ship Solomon launched at Selly Oak;<br/>may your prayers, your sermons, your teaching, your hymns —<br/>from this day forward carry the consciousness of "after": <em>Acharei ha-Shoah</em>.<br/><br/>May you stand with the Jewish Messiah,<br/>and may you stand also with the people he belongs to —<br/>for <strong>the gifts and the calling of God are irrevocable</strong>.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://www.cambridge.org/core/journals/european-judaism" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">期刊源头 · Institute of Jewish Affairs / European Judaism</span><span class="en">Journal Source — Institute of Jewish Affairs / European Judaism</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>
