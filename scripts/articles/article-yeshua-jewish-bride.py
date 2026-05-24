@@ -1,11 +1,13 @@
-# Article 8/12 — Yeshua, the Jewish Bride, and the Reply to Christian Antisemitism
-# Source video: https://www.youtube.com/watch?v=ljf-W8RrTwQ  (14:52)
+# Article — Yeshua, the Jewish Bride, and the Reply to Christian Antisemitism
+# Source event: https://www.youtube.com/watch?v=zblE95WhMXo
+# "The Worldwide event: The Day of The Bride 5786! Milchemet HaChatunah"
+# Uploaded: 2026-05-22
 
 article = {
     "slug": "article-yeshua-jewish-bride",
-    "video_id": "ljf-W8RrTwQ",
-    "video_duration": "14:52",
-    "date": "2026 · 5 · 11",
+    "video_id": "zblE95WhMXo",
+    "video_duration": "Day of the Bride 5786",
+    "date": "2026 · 5 · 22",
     "read_min": 12,
 
     "chip_zh": "拉比沙皮拉教导 · 回应基督教反犹主义",
