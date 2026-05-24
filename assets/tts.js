@@ -44,16 +44,6 @@
 .article-prose blockquote.tts-current-segment {
   background: linear-gradient(135deg, rgba(212,175,90,0.18), #f2ece0);
 }
-/* Karaoke-style word highlight (only present when per-word timings exist) */
-.tts-word {
-  transition: background-color 0.18s ease, color 0.18s ease;
-  border-radius: 3px;
-  padding: 0 1px;
-}
-.tts-word-active {
-  color: #b8952a;
-  background: rgba(184, 149, 42, 0.22);
-}
 /* Floating player */
 #tts-player {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
@@ -152,91 +142,6 @@
   transition: background 0.15s; white-space: nowrap;
 }
 .tts-popup-btn:hover { background: #9b7d20; }
-
-/* Settings (⚙) button + panel */
-.tts-btn-settings { font-size: 1rem; }
-#tts-settings {
-  position: fixed; bottom: 5rem; right: 1.5rem;
-  background: #1a2744; color: white;
-  border: 1px solid rgba(212,175,90,0.45);
-  border-radius: 14px;
-  padding: 1rem 1rem 0.85rem;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
-  z-index: 999;
-  font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif;
-  font-size: 0.78rem;
-  width: 320px;
-  max-height: 70vh;
-  overflow-y: auto;
-  transform: translateY(8px);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.18s, opacity 0.18s;
-}
-#tts-settings.tts-settings-visible {
-  transform: translateY(0); opacity: 1; pointer-events: auto;
-}
-#tts-settings h4 {
-  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin: 0.6rem 0 0.4rem;
-}
-#tts-settings h4:first-child { margin-top: 0; }
-.tts-speed-row {
-  display: flex; gap: 0.3rem; flex-wrap: wrap;
-}
-.tts-speed-btn {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid transparent;
-  color: white;
-  padding: 0.3rem 0.55rem;
-  border-radius: 6px; cursor: pointer;
-  font-family: inherit; font-size: 0.74rem; font-weight: 600;
-  transition: background 0.15s, border-color 0.15s;
-  flex: 1 1 0; min-width: 0;
-}
-.tts-speed-btn:hover { background: rgba(212,175,90,0.25); }
-.tts-speed-btn.tts-active {
-  background: #b8952a; border-color: #d4af5a; color: white;
-}
-.tts-voice-section { margin-top: 0.2rem; }
-.tts-voice-locale-group { margin-bottom: 0.4rem; }
-.tts-voice-locale-label {
-  font-size: 0.66rem; color: rgba(255,255,255,0.45);
-  padding: 0.3rem 0 0.15rem 0.2rem;
-  letter-spacing: 0.04em;
-}
-.tts-voice-row {
-  display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.45rem 0.55rem;
-  border-radius: 6px; cursor: pointer;
-  transition: background 0.12s;
-}
-.tts-voice-row:hover { background: rgba(255,255,255,0.06); }
-.tts-voice-row.tts-active {
-  background: rgba(212,175,90,0.18);
-  outline: 1px solid rgba(212,175,90,0.45);
-}
-.tts-voice-radio {
-  width: 12px; height: 12px; border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.4);
-  flex-shrink: 0; position: relative;
-}
-.tts-voice-row.tts-active .tts-voice-radio {
-  border-color: #d4af5a;
-}
-.tts-voice-row.tts-active .tts-voice-radio::after {
-  content: ''; position: absolute; inset: 2px;
-  background: #d4af5a; border-radius: 50%;
-}
-.tts-voice-name { flex: 1; font-size: 0.78rem; }
-.tts-voice-gender {
-  font-size: 0.7rem; color: rgba(255,255,255,0.55);
-}
-@media (max-width: 768px) {
-  #tts-settings { left: 0.8rem; right: 0.8rem; bottom: 4.5rem; width: auto; }
-}
 `;
     var style = document.createElement('style');
     style.id = 'tts-injected-styles';
@@ -260,39 +165,22 @@
         '<button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>' +
         '<button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>' +
         '<span class="tts-status" id="tts-status">— / —</span>' +
-        '<button id="tts-settings-btn" class="tts-btn-icon tts-btn-settings" aria-label="Voice & speed settings" title="語音與速度 / Voice & speed">⚙</button>' +
+        '<button id="tts-hd" class="tts-btn-icon tts-btn-hd" aria-label="Toggle HD voice" title="HD voice (Google Gemini · 中文 + English)">HD</button>' +
         '<button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>';
       document.body.appendChild(player);
     } else {
-      // Existing player — make sure settings button is present (insert before stop)
-      if (!document.getElementById('tts-settings-btn')) {
-        var stopBtn = document.getElementById('tts-stop');
-        var settingsBtn = document.createElement('button');
-        settingsBtn.id = 'tts-settings-btn';
-        settingsBtn.className = 'tts-btn-icon tts-btn-settings';
-        settingsBtn.setAttribute('aria-label', 'Voice & speed settings');
-        settingsBtn.title = '語音與速度 / Voice & speed';
-        settingsBtn.textContent = '⚙';
-        if (stopBtn) stopBtn.parentNode.insertBefore(settingsBtn, stopBtn);
-        else player.appendChild(settingsBtn);
+      // Existing player — make sure HD button is present (insert before stop)
+      if (!document.getElementById('tts-hd')) {
+        var stop = document.getElementById('tts-stop');
+        var hd = document.createElement('button');
+        hd.id = 'tts-hd';
+        hd.className = 'tts-btn-icon tts-btn-hd';
+        hd.setAttribute('aria-label', 'Toggle HD voice');
+        hd.title = 'HD voice (Google Gemini · 中文 + English)';
+        hd.textContent = 'HD';
+        if (stop) stop.parentNode.insertBefore(hd, stop);
+        else player.appendChild(hd);
       }
-      // Hide the legacy HD button if it exists from older markup — settings panel supersedes it
-      var legacyHD = document.getElementById('tts-hd');
-      if (legacyHD) legacyHD.style.display = 'none';
-    }
-    if (!document.getElementById('tts-settings')) {
-      var panel = document.createElement('div');
-      panel.id = 'tts-settings';
-      panel.setAttribute('role', 'dialog');
-      panel.setAttribute('aria-label', 'Voice and speed settings');
-      panel.innerHTML =
-        '<h4>速度 / Speed</h4>' +
-        '<div class="tts-speed-row" id="tts-speed-row"></div>' +
-        '<h4>語音 — 中文 / Chinese voice</h4>' +
-        '<div class="tts-voice-section" id="tts-voice-section-zh">Loading…</div>' +
-        '<h4>語音 — English voice</h4>' +
-        '<div class="tts-voice-section" id="tts-voice-section-en">Loading…</div>';
-      document.body.appendChild(panel);
     }
     if (!document.getElementById('tts-toast')) {
       var toast = document.createElement('div');
@@ -306,12 +194,6 @@
       var audio = document.createElement('audio');
       audio.id = 'tts-audio';
       audio.preload = 'auto';
-      // iOS Safari refuses to play unless the element exists in the DOM
-      // BEFORE the user gesture, has playsinline (else it tries fullscreen),
-      // and uses crossorigin=anonymous so blob: URLs work.
-      audio.setAttribute('playsinline', '');
-      audio.setAttribute('webkit-playsinline', '');
-      audio.crossOrigin = 'anonymous';
       audio.style.display = 'none';
       document.body.appendChild(audio);
     }
@@ -319,7 +201,7 @@
       var popup = document.createElement('div');
       popup.id = 'tts-selection-popup';
       popup.setAttribute('role', 'tooltip');
-      popup.innerHTML = '<button id="tts-selection-play" class="tts-popup-btn">▶ <span class="zh">从这里开始</span><span class="en">Start from here</span></button>';
+      popup.innerHTML = '<button id="tts-selection-play" class="tts-popup-btn">▶ <span class="zh">從這裡朗讀</span><span class="en">Read from here</span></button>';
       document.body.appendChild(popup);
     }
   }
@@ -329,9 +211,7 @@
   // Behaviour
   // ══════════════════════════════════════════════════════
   var synth = window.speechSynthesis;
-  // Descendant selector — matches segments at any depth, so wrappers like
-  // <div class="lesson-block"> don't hide content from the narrator.
-  var SEGMENT_SELECTOR = 'p, h2, h3, blockquote';
+  var SEGMENT_SELECTOR = ':scope > p, :scope > h2, :scope > h3, :scope > blockquote';
   function getSegments() { return Array.from(prose.querySelectorAll(SEGMENT_SELECTOR)); }
   var segments = getSegments();
 
@@ -370,361 +250,7 @@
   var HD_CACHE_MAX = 8;
   var toastTimer   = null;
 
-  // Pre-rendered static audio (Edge TTS, served from /assets/audio/<slug>/).
-  // Loaded lazily once on first playback. If a manifest exists for this page
-  // we use it as the *default* — much higher quality than Web Speech, no
-  // network synthesis cost, instant on iPhone, fully offline-cacheable.
-  var staticManifest = null;        // null until probed; false if no manifest
-  var staticManifestPromise = null; // in-flight probe
-
-  // ── User settings (persisted) ──────────────────────────
-  // Voice + speed survive page navigation via localStorage.
-  var EDGE_PROXY  = '/api/edge-tts';
-  var DEFAULT_PLAYBACK_RATE = 1.0;
-  var SPEEDS = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
-
-  var voicesCatalog = null;          // loaded from /assets/voices.json
-  var voicesPromise = null;
-  var settings = {
-    speed:   DEFAULT_PLAYBACK_RATE,
-    voiceZh: null,                   // null means "use catalog default"
-    voiceEn: null,
-  };
-  try {
-    var raw = localStorage.getItem('tts-settings');
-    if (raw) {
-      var parsed = JSON.parse(raw);
-      if (typeof parsed.speed === 'number' && SPEEDS.indexOf(parsed.speed) >= 0) settings.speed = parsed.speed;
-      if (typeof parsed.voiceZh === 'string') settings.voiceZh = parsed.voiceZh;
-      if (typeof parsed.voiceEn === 'string') settings.voiceEn = parsed.voiceEn;
-    }
-  } catch (e) {}
-  function persistSettings() {
-    try { localStorage.setItem('tts-settings', JSON.stringify(settings)); } catch (e) {}
-  }
-
-  // Live edge-tts proxy cache: "voice:rate:lang:idx" -> blobUrl
-  var edgeCache = new Map();
-  var EDGE_CACHE_MAX = 8;
-  var audioUnlocked = false;     // iOS audio is locked until first user-gesture play()
-
-  // 1-byte silent WAV — the smallest valid file we can use to "warm up"
-  // the <audio> element inside a user-gesture callback so iOS Safari will
-  // let us call .play() later from an async callback.
-  var SILENT_WAV_DATA_URL =
-    'data:audio/wav;base64,UklGRkQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YSAAAAAAAA' +
-    'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
-
   function getLang() { return document.documentElement.getAttribute('data-lang') || 'zh'; }
-
-  // Derive an audio slug from the page URL.
-  //   /article-messiah-birthing-iran        -> 'article-messiah-birthing-iran'
-  //   /article-messiah-birthing-iran.html   -> 'article-messiah-birthing-iran'
-  //   /                                     -> 'index'
-  function getSlug() {
-    var meta = document.querySelector('meta[name="audio-slug"]');
-    if (meta && meta.content) return meta.content;
-    var p = location.pathname.replace(/^\/+|\/+$/g, '').replace(/\.html?$/i, '');
-    return p || 'index';
-  }
-
-  // Bump this when the manifest *schema* changes — appended to the fetch URL
-  // so any browser cache (memory, disk, service-worker, even iOS Safari's
-  // aggressive disk cache) gets invalidated for the new format.
-  var MANIFEST_SCHEMA_VERSION = 4;
-
-  // segmentHash[lang][voiceId] = [hex16, …, …]  — one entry per current segment,
-  // in document order. Computed once after the manifest loads, by hashing the
-  // *visible* page text with the same algorithm scripts/render_audio.py uses
-  // (sha256(voice + "\0" + text).hex()[:16]). staticUrlFor() compares each
-  // entry to the manifest's stored hash and refuses to return a URL on
-  // mismatch — preventing stale MP3s from being played as if they were the
-  // current segment, which used to happen when the HTML was edited but the
-  // audio wasn't re-rendered.
-  var segmentHash = { zh: {}, en: {} };
-
-  function audioTextHash(voice, text) {
-    if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
-      return Promise.resolve(null); // platform too old — verification will be skipped
-    }
-    var enc = new TextEncoder().encode(voice + '\0' + text);
-    return crypto.subtle.digest('SHA-256', enc).then(function (buf) {
-      var bytes = new Uint8Array(buf);
-      var hex = '';
-      for (var i = 0; i < 8; i++) {
-        var s = bytes[i].toString(16);
-        hex += s.length < 2 ? '0' + s : s;
-      }
-      return hex;
-    });
-  }
-
-  function precomputeSegmentHashes() {
-    if (!staticManifest) return Promise.resolve();
-    segments = getSegments();
-    var jobs = [];
-    ['zh', 'en'].forEach(function (lang) {
-      var info = staticManifest[lang];
-      if (!info || !Array.isArray(info.voices)) return;
-      info.voices.forEach(function (v) {
-        segmentHash[lang][v.id] = new Array(segments.length);
-        segments.forEach(function (seg, idx) {
-          var text = getSegmentText(seg, lang);
-          if (!text) { segmentHash[lang][v.id][idx] = ''; return; }
-          jobs.push(audioTextHash(v.id, text).then(function (h) {
-            segmentHash[lang][v.id][idx] = h || '';
-          }));
-        });
-      });
-    });
-    return Promise.all(jobs);
-  }
-
-  function loadStaticManifest() {
-    if (staticManifest !== null) return Promise.resolve(staticManifest);
-    if (staticManifestPromise) return staticManifestPromise;
-    var url = '/assets/audio/' + getSlug() + '/manifest.json?v=' + MANIFEST_SCHEMA_VERSION;
-    // `cache: 'no-cache'` forces revalidation (etag round-trip) without
-    // disabling the cache entirely — Vercel returns 304 if unchanged so
-    // there's no extra bandwidth cost on hot reloads.
-    staticManifestPromise = fetch(url, { cache: 'no-cache' })
-      .then(function (r) { return r.ok ? r.json() : false; })
-      .then(function (m) {
-        staticManifest = m || false;
-        if (!staticManifest) return false;
-        // Hash every current segment for every voice in the manifest, so
-        // staticUrlFor() can do a synchronous match check on each call.
-        return precomputeSegmentHashes().then(function () { return staticManifest; });
-      })
-      .catch(function () { staticManifest = false; return false; });
-    return staticManifestPromise;
-  }
-  // Per-voice URL: assets/audio/<slug>/<lang>/<voiceId>/<idx>.mp3.
-  // Falls back to default voice in this language if voice id isn't pre-rendered.
-  // Returns null when the manifest's hash for this segment+voice doesn't match
-  // the current page text — that means the audio is stale (HTML edited after
-  // last render). The caller falls back to live synthesis instead of playing
-  // the wrong paragraph.
-  function staticUrlFor(index, lang, voiceId) {
-    if (!staticManifest || !staticManifest[lang]) return null;
-    if (index < 0 || index >= staticManifest[lang].count) return null;
-    // New manifest (multi-voice): per-voice subfolders, listed in `voices`.
-    var voices = staticManifest[lang].voices;
-    if (Array.isArray(voices) && voices.length) {
-      var match = voices.find(function (v) { return v.id === voiceId; });
-      if (!match) match = voices.find(function (v) { return v.id === staticManifest[lang].default; });
-      if (!match) match = voices[0];
-      // Hash check: if the manifest carries per-voice hashes, every served URL
-      // must agree. Missing/empty entries are treated as "no verification" so
-      // an old manifest without hashes still works.
-      if (Array.isArray(match.hashes)) {
-        var expected = match.hashes[index];
-        var actual   = segmentHash[lang] && segmentHash[lang][match.id] && segmentHash[lang][match.id][index];
-        if (expected && (!actual || expected !== actual)) {
-          if (!window.__ttsHashWarn) {
-            window.__ttsHashWarn = {};
-          }
-          var key = lang + '/' + match.id + '/' + index;
-          if (!window.__ttsHashWarn[key]) {
-            window.__ttsHashWarn[key] = true;
-            console.warn('[tts] static audio hash mismatch — falling back to live for ' + key + ' (page text edited since render)');
-          }
-          return null;
-        }
-      }
-      return '/assets/audio/' + getSlug() + '/' + lang + '/' + match.id + '/' + index + '.mp3';
-    }
-    // Old manifest (single voice, flat layout) — falls through gracefully so
-    // any cached older HTML still gets audio without 404ing on a missing file.
-    return '/assets/audio/' + getSlug() + '/' + lang + '/' + index + '.mp3';
-  }
-  function shouldUseStatic(lang) {
-    return !!(staticManifest && staticManifest[lang] && staticManifest[lang].count > 0);
-  }
-  function manifestVoicesFor(lang) {
-    if (!staticManifest || !staticManifest[lang] || !staticManifest[lang].voices) return [];
-    return staticManifest[lang].voices;
-  }
-  function manifestDefault(lang) {
-    return staticManifest && staticManifest[lang] && staticManifest[lang].default;
-  }
-
-  // Must be invoked synchronously inside a user-gesture handler.
-  // After this runs successfully, audioEl.play() works from any async context
-  // for the rest of the page session — that's how iOS Safari treats it.
-  function unlockAudio() {
-    if (audioUnlocked || !audioEl) return;
-    try {
-      audioEl.muted = true;            // play() succeeds even on locked iOS when muted
-      audioEl.src   = SILENT_WAV_DATA_URL;
-      var p = audioEl.play();
-      if (p && typeof p.then === 'function') {
-        p.then(function () {
-          try { audioEl.pause(); } catch (e) {}
-          try { audioEl.currentTime = 0; } catch (e) {}
-          audioEl.muted = false;
-          audioUnlocked = true;
-        }).catch(function () {
-          // Even if the silent prime failed, mark unlocked so we don't keep retrying
-          audioEl.muted = false;
-          audioUnlocked = true;
-        });
-      } else {
-        audioEl.muted = false;
-        audioUnlocked = true;
-      }
-    } catch (e) {
-      audioEl.muted = false;
-      audioUnlocked = true;
-    }
-  }
-
-  // ── Karaoke-style word highlight ───────────────────────
-  // When a segment's MP3 is played AND a sibling timings.json exists (rendered
-  // by `python scripts/render_audio.py --with-timings`), we wrap each word in
-  // the visible language span and toggle a gold class as audioEl.currentTime
-  // advances. Old articles (no timings) play without highlights — silent
-  // graceful no-op.
-  var timingsCache = new Map();   // url -> {duration, words}
-  var activeSegEl = null;          // segment element currently word-wrapped
-  var activeSegLang = null;        // lang the wrap was built for
-  var activeWords = null;          // [{text, offset, start, end}, ...]
-  var activeWordIndex = -1;        // index in activeWords currently highlighted
-
-  function timingsUrlFor(mp3Url) {
-    return mp3Url.replace(/\.mp3(\?.*)?$/, '.json$1');
-  }
-
-  function fetchTimings(jsonUrl) {
-    if (timingsCache.has(jsonUrl)) return Promise.resolve(timingsCache.get(jsonUrl));
-    var p = fetch(jsonUrl).then(function (r) {
-      if (!r.ok) return null;
-      return r.json();
-    }).then(function (data) {
-      var ws = data && Array.isArray(data.words) ? data.words : null;
-      timingsCache.set(jsonUrl, ws);
-      return ws;
-    }).catch(function () {
-      timingsCache.set(jsonUrl, null);
-      return null;
-    });
-    timingsCache.set(jsonUrl, p); // dedupe in-flight requests
-    return p;
-  }
-
-  // Manifest helper — does the active voice (for this language) have
-  // per-word timings rendered?
-  function activeVoiceHasTimings(lang) {
-    if (!staticManifest || !staticManifest[lang] || !staticManifest[lang].voices) return false;
-    var activeId = getActiveVoice(lang);
-    var match = staticManifest[lang].voices.find(function (v) { return v.id === activeId; });
-    if (!match) match = staticManifest[lang].voices.find(function (v) { return v.id === staticManifest[lang].default; });
-    return !!(match && match.withTimings);
-  }
-
-  function escapeHtmlForKaraoke(s) {
-    return s.replace(/[&<>"']/g, function (c) {
-      return c === '&' ? '&amp;'
-           : c === '<' ? '&lt;'
-           : c === '>' ? '&gt;'
-           : c === '"' ? '&quot;'
-                       : '&#39;';
-    });
-  }
-
-  function wrapWordsInSegment(segEl, lang, words) {
-    var langSpan = segEl.querySelector('span.' + lang);
-    if (!langSpan) return false;
-    var fullText = langSpan.textContent;
-    if (!fullText) return false;
-    var html = '';
-    var lastEnd = 0;
-    var wrappedAny = false;
-    for (var i = 0; i < words.length; i++) {
-      var w = words[i];
-      if (typeof w.offset !== 'number' || w.offset < 0) continue;
-      var start = w.offset;
-      var end = start + (w.text || '').length;
-      if (start < lastEnd) continue; // overlap protection
-      if (end > fullText.length) continue;
-      // Verify the source text at this offset matches what was synthesized.
-      // If not, the offset mapping is stale (HTML changed since render) —
-      // skip the wrap so we don't show garbled words.
-      if (fullText.slice(start, end) !== w.text) continue;
-      if (start > lastEnd) html += escapeHtmlForKaraoke(fullText.slice(lastEnd, start));
-      html += '<span class="tts-word" data-i="' + i + '">' + escapeHtmlForKaraoke(w.text) + '</span>';
-      lastEnd = end;
-      wrappedAny = true;
-    }
-    if (!wrappedAny) return false;
-    if (lastEnd < fullText.length) html += escapeHtmlForKaraoke(fullText.slice(lastEnd));
-    langSpan.innerHTML = html;
-    return true;
-  }
-
-  function unwrapSegment() {
-    if (!activeSegEl) return;
-    if (activeSegLang) {
-      var langSpan = activeSegEl.querySelector('span.' + activeSegLang);
-      if (langSpan && langSpan.querySelector('.tts-word')) {
-        // Assigning textContent collapses children back to a single text node.
-        langSpan.textContent = langSpan.textContent;
-      }
-    }
-    activeSegEl = null;
-    activeSegLang = null;
-    activeWords = null;
-    activeWordIndex = -1;
-  }
-
-  function findWordIndexForTime(t) {
-    if (!activeWords) return -1;
-    // Words are in increasing start order; advance from last index for O(1)
-    // amortized cost. If currentTime jumped backward (rare), scan from 0.
-    var startFrom = activeWordIndex >= 0 ? activeWordIndex : 0;
-    if (startFrom < activeWords.length && t < activeWords[startFrom].start) startFrom = 0;
-    for (var i = startFrom; i < activeWords.length; i++) {
-      var w = activeWords[i];
-      if (w.offset < 0) continue;
-      if (t >= w.start && t < w.end) return i;
-      if (t < w.start) return -1;
-    }
-    return -1;
-  }
-
-  function tickWordHighlight() {
-    if (!activeWords || !activeSegEl || !audioEl) return;
-    var t = audioEl.currentTime;
-    var nextIdx = findWordIndexForTime(t);
-    if (nextIdx === activeWordIndex) return;
-    if (activeWordIndex >= 0) {
-      var prev = activeSegEl.querySelector('.tts-word[data-i="' + activeWordIndex + '"]');
-      if (prev) prev.classList.remove('tts-word-active');
-    }
-    activeWordIndex = nextIdx;
-    if (nextIdx >= 0) {
-      var cur = activeSegEl.querySelector('.tts-word[data-i="' + nextIdx + '"]');
-      if (cur) cur.classList.add('tts-word-active');
-    }
-  }
-
-  function startKaraoke(segEl, lang, mp3Url, expectedToken) {
-    if (!segEl || !lang || !mp3Url) return;
-    if (!activeVoiceHasTimings(lang)) return;
-    var jsonUrl = timingsUrlFor(mp3Url);
-    fetchTimings(jsonUrl).then(function (words) {
-      if (expectedToken !== playToken) return; // segment changed while fetching
-      if (!words || !words.length) return;
-      // Replace any previously-wrapped segment first.
-      unwrapSegment();
-      if (!wrapWordsInSegment(segEl, lang, words)) return;
-      activeSegEl = segEl;
-      activeSegLang = lang;
-      activeWords = words;
-      activeWordIndex = -1;
-      tickWordHighlight();
-    });
-  }
 
   // ── Voice selection ────────────────────────────────────
   // Pick the best installed voice for a language and CACHE it across utterances.
@@ -735,7 +261,7 @@
   // refreshed on `voiceschanged` when nothing is currently playing.
   var voiceCache = { zh: null, en: null };
 
-  function langScoreFor(v, langPrefixes) {
+  function langScore(v, langPrefixes) {
     var l = (v.lang || '').toLowerCase();
     for (var i = 0; i < langPrefixes.length; i++) {
       if (l === langPrefixes[i]) return (langPrefixes.length - i) * 4;
@@ -744,7 +270,7 @@
     return -1; // doesn't match the requested language
   }
 
-  function qualityScoreFor(v) {
+  function qualityScore(v) {
     var n = (v.name || '').toLowerCase();
     var s = 0;
     if (/\bsiri\b/.test(n)) s += 100;
@@ -765,9 +291,9 @@
     var best = null, bestScore = -Infinity;
     for (var i = 0; i < voices.length; i++) {
       var v = voices[i];
-      var ls = langScoreFor(v, langPrefixes);
+      var ls = langScore(v, langPrefixes);
       if (ls < 0) continue;
-      var total = ls + qualityScoreFor(v);
+      var total = ls + qualityScore(v);
       if (total > bestScore) { best = v; bestScore = total; }
     }
     return best || voices[0] || null;
@@ -792,62 +318,6 @@
     var span = seg.querySelector('span.' + lang);
     var text = span ? span.textContent : seg.textContent;
     return text.replace(/\s+/g, ' ').trim();
-  }
-
-  // Length under the same whitespace-collapsing rule used by getSegmentText —
-  // so an offset we compute here matches the offset inside the audio's text.
-  function normalizedLen(s) { return s.replace(/\s+/g, ' ').replace(/^\s+/, '').length; }
-
-  // Cross-browser caret-from-point. Safari & Chrome ship caretRangeFromPoint;
-  // Firefox ships caretPositionFromPoint; we wrap whichever exists.
-  function caretRangeAt(x, y) {
-    if (document.caretRangeFromPoint) return document.caretRangeFromPoint(x, y);
-    if (document.caretPositionFromPoint) {
-      var p = document.caretPositionFromPoint(x, y);
-      if (!p) return null;
-      var r = document.createRange();
-      r.setStart(p.offsetNode, p.offset);
-      r.setEnd(p.offsetNode, p.offset);
-      return r;
-    }
-    return null;
-  }
-
-  // Char offset within the segment's audio-text where a Range begins.
-  // Works for both a tap (caret range, collapsed) and a real selection.
-  function offsetFromRange(seg, lang, range) {
-    if (!range) return 0;
-    var span = seg.querySelector('span.' + lang) || seg;
-    var startNode   = range.startContainer;
-    var startOffset = range.startOffset;
-    if (!span.contains(startNode)) {
-      // Range starts outside the visible-language span; if the END is inside, use that.
-      if (!span.contains(range.endContainer)) return 0;
-      startNode = range.endContainer;
-      startOffset = range.endOffset;
-    }
-    var prefix = document.createRange();
-    prefix.setStart(span, 0);
-    prefix.setEnd(startNode, startOffset);
-    return normalizedLen(prefix.toString());
-  }
-
-  // Round a tap offset back to the start of the word it landed in.
-  // - Whitespace boundary for Latin scripts (English, transliterated Hebrew, etc.)
-  // - Exact char for CJK / Hebrew / Arabic where every char is its own "word"
-  function roundToWordStart(text, offset) {
-    if (offset <= 0) return 0;
-    if (offset > text.length) offset = text.length;
-    // Walk back to nearest whitespace.
-    var i = offset;
-    while (i > 0 && !/\s/.test(text.charAt(i - 1))) i--;
-    if (i > 0) return i;
-    // No whitespace before the offset — for CJK / Hebrew / Arabic / Japanese kana,
-    // every character is a word, so use the tap offset directly. For Latin with
-    // no leading whitespace, fall back to start of paragraph.
-    var ch = text.charAt(offset > 0 ? offset - 1 : 0);
-    if (/[㐀-鿿぀-ヿ֐-׿؀-ۿ]/.test(ch)) return offset;
-    return 0;
   }
 
   function setStatus(t) { if (statusEl) statusEl.textContent = t; }
@@ -917,35 +387,22 @@
     if (hdProbing) return hdProbing;
     setHDState('loading');
     showToast('正在連線 HD 語音 (Gemini)... / Connecting HD voice (Gemini)...');
-
-    // 12 s timeout — Gemini cold-start + free-tier 429 wait can take a while.
-    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
-
     hdProbing = fetch(TTS_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: '你好', lang: 'zh', voice: GEMINI_VOICE.zh }),
-      signal: ctrl ? ctrl.signal : undefined,
+      body: JSON.stringify({ text: '你好', lang: 'zh', voice: GEMINI_VOICE.zh })
     }).then(function (r) {
-      clearTimeout(timer);
       hdProbing = false;
-      if (!r.ok) return r.text().then(function (t) { throw new Error('HTTP ' + r.status + ': ' + t.slice(0, 200)); });
+      if (!r.ok) return r.text().then(function (t) { throw new Error('probe ' + r.status + ': ' + t.slice(0, 200)); });
       hdReady = true;
       setHDState(hdEnabled ? 'on' : 'off');
-      showToast('✓ HD 語音已就緒 (Gemini Kore) / HD voice ready', 2400);
+      showToast('HD 語音已就緒 (中文 + English) / HD voice ready', 2400);
       return true;
     }).catch(function (err) {
-      clearTimeout(timer);
       console.error('[HD] probe failed:', err);
       hdProbing = false; hdAvailable = false; hdEnabled = false;
       setHDState('disabled');
-      var reason = String(err && err.message || err).slice(0, 90);
-      // Common cases get friendlier messages
-      if (/abort|timeout/i.test(reason))           reason = 'timeout (12s)';
-      else if (/429/.test(reason))                 reason = 'rate limit (free tier 10/min)';
-      else if (/Failed to fetch|NetworkError/i.test(reason)) reason = 'network blocked';
-      showToast('✕ HD 失敗 (' + reason + ') — 使用系統語音 / HD failed — using system voice', 4500);
+      showToast('HD 語音無法連線 — 使用系統語音 / HD voice unreachable — using system voice', 3200);
       throw err;
     });
     return hdProbing;
@@ -985,200 +442,7 @@
     hdCache.clear();
   }
 
-  // ── Voice + speed settings ────────────────────────────
-  // The voice catalog now comes directly from the article's audio manifest
-  // (so the picker only ever shows voices that are actually pre-rendered for
-  // this page — no broken options). Loading a manifest is already handled by
-  // loadStaticManifest() below.
-  function getDefaultVoice(lang) { return manifestDefault(lang); }
-  function getActiveVoice(lang) {
-    var picked = lang === 'zh' ? settings.voiceZh : settings.voiceEn;
-    var available = manifestVoicesFor(lang).map(function (v) { return v.id; });
-    if (picked && available.indexOf(picked) >= 0) return picked;
-    return getDefaultVoice(lang);
-  }
-  function rateAsPercent() {
-    // edge-tts rate format: "+25%", "-10%". audio.playbackRate 1.5 ⇒ +50%.
-    var pct = Math.round((settings.speed - 1) * 100);
-    return (pct >= 0 ? '+' : '') + pct + '%';
-  }
-
-  function applySpeed() {
-    if (audioEl) {
-      try { audioEl.preservesPitch = true; } catch (e) {}
-      try { audioEl.mozPreservesPitch = true; } catch (e) {}
-      audioEl.playbackRate = settings.speed;
-    }
-    // Web Speech path doesn't run after switching mid-utterance, but keep current
-    // utterance in sync where possible.
-    if (currentUtterance) {
-      try { currentUtterance.rate = Math.max(0.1, Math.min(10, settings.speed)); } catch (e) {}
-    }
-  }
-
-  function renderSettingsPanel() {
-    var speedRow = document.getElementById('tts-speed-row');
-    if (speedRow) {
-      speedRow.innerHTML = '';
-      SPEEDS.forEach(function (s) {
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'tts-speed-btn' + (s === settings.speed ? ' tts-active' : '');
-        btn.textContent = (s === 1 ? '1×' : s + '×');
-        btn.addEventListener('click', function () {
-          settings.speed = s;
-          persistSettings();
-          renderSettingsPanel();
-          applySpeed();
-        });
-        speedRow.appendChild(btn);
-      });
-    }
-
-    if (!staticManifest) return;
-
-    function renderVoiceList(containerId, langKey) {
-      var container = document.getElementById(containerId);
-      if (!container) return;
-      container.innerHTML = '';
-      var voicesList = manifestVoicesFor(langKey);
-      if (!voicesList.length) {
-        container.innerHTML = '<div class="tts-voice-locale-label">(no pre-rendered voices)</div>';
-        return;
-      }
-      var defaultId = getDefaultVoice(langKey);
-      var activeId  = getActiveVoice(langKey);
-
-      // Sub-group by locale label so picker is scannable
-      var byLocale = {};
-      var localeOrder = [];
-      voicesList.forEach(function (v) {
-        if (!byLocale[v.locale]) { byLocale[v.locale] = { label: v.localeLabel, voices: [] }; localeOrder.push(v.locale); }
-        byLocale[v.locale].voices.push(v);
-      });
-
-      localeOrder.forEach(function (loc) {
-        var grp = document.createElement('div');
-        grp.className = 'tts-voice-locale-group';
-        var lbl = document.createElement('div');
-        lbl.className = 'tts-voice-locale-label';
-        lbl.textContent = byLocale[loc].label;
-        grp.appendChild(lbl);
-        byLocale[loc].voices.forEach(function (v) {
-          var row = document.createElement('div');
-          row.className = 'tts-voice-row' + (v.id === activeId ? ' tts-active' : '');
-          row.setAttribute('role', 'radio');
-          row.setAttribute('aria-checked', v.id === activeId ? 'true' : 'false');
-          row.tabIndex = 0;
-          row.innerHTML =
-            '<span class="tts-voice-radio"></span>' +
-            '<span class="tts-voice-name">' + v.name + (v.id === defaultId ? ' <span style="color:rgba(212,175,90,0.85);font-size:0.7rem">· default</span>' : '') + '</span>' +
-            '<span class="tts-voice-gender">' + (v.gender === 'Female' ? '♀' : '♂') + '</span>';
-          var pick = function () {
-            if (langKey === 'zh') settings.voiceZh = v.id;
-            else                  settings.voiceEn = v.id;
-            persistSettings();
-            renderSettingsPanel();
-            // If we're currently playing in this language, restart current segment with the new voice.
-            if (isPlaying && getLang() === langKey) {
-              var idx = currentIndex;
-              playToken++;
-              synth.cancel(); if (audioEl) { try { audioEl.pause(); } catch (e) {} }
-              setTimeout(function () { speakSegment(idx); }, 80);
-            }
-          };
-          row.addEventListener('click', pick);
-          row.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
-          });
-          grp.appendChild(row);
-        });
-        container.appendChild(grp);
-      });
-    }
-    renderVoiceList('tts-voice-section-zh', 'zh');
-    renderVoiceList('tts-voice-section-en', 'en');
-  }
-
-  function openSettings() {
-    loadStaticManifest().then(renderSettingsPanel);
-    var panel = document.getElementById('tts-settings');
-    if (panel) panel.classList.add('tts-settings-visible');
-  }
-  function closeSettings() {
-    var panel = document.getElementById('tts-settings');
-    if (panel) panel.classList.remove('tts-settings-visible');
-  }
-  function toggleSettings() {
-    var panel = document.getElementById('tts-settings');
-    if (!panel) return;
-    if (panel.classList.contains('tts-settings-visible')) closeSettings();
-    else openSettings();
-  }
-
-  // ── Edge-TTS live proxy (for non-default voices) ──────
-  function edgeCacheKey(voice, rate, lang, idx) { return voice + '|' + rate + '|' + lang + ':' + idx; }
-  async function edgeAudioFor(index, lang, voice) {
-    var rate = rateAsPercent();
-    var key  = edgeCacheKey(voice, rate, lang, index);
-    if (edgeCache.has(key)) return edgeCache.get(key);
-    segments = getSegments();
-    if (index < 0 || index >= segments.length) return null;
-    var text = getSegmentText(segments[index], lang);
-    if (!text) return null;
-    var resp = await fetch(EDGE_PROXY, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: text, voice: voice, rate: '+0%' }),  // speed is applied client-side via playbackRate
-    });
-    if (!resp.ok) {
-      var detail = await resp.text();
-      throw new Error('edge ' + resp.status + ': ' + detail.slice(0, 200));
-    }
-    var blob = await resp.blob();
-    var url  = URL.createObjectURL(blob);
-    edgeCache.set(key, url);
-    while (edgeCache.size > EDGE_CACHE_MAX) {
-      var oldKey = edgeCache.keys().next().value;
-      try { URL.revokeObjectURL(edgeCache.get(oldKey)); } catch (e) {}
-      edgeCache.delete(oldKey);
-    }
-    return url;
-  }
-  function clearEdgeCache() {
-    edgeCache.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} });
-    edgeCache.clear();
-  }
-
-  function speakViaEdgeProxy(index, lang, voice) {
-    activeBackend = 'hd';
-    var token = ++playToken;
-    synth.cancel(); stopKeepAlive();
-    isPlaying = true; isPaused = false;
-    setPlayPauseIcon(true); showPlayer();
-    setStatus('… ' + (index + 1) + ' / ' + segments.length);
-    edgeAudioFor(index, lang, voice).then(function (url) {
-      if (token !== playToken) return;
-      if (!url) { speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang); return; }
-      audioEl.src = url;
-      applySpeed();
-      var p = audioEl.play();
-      if (p && p.catch) p.catch(function (e) { console.warn('[edge] play failed:', e); });
-      updateStatus();
-      if (index + 1 < segments.length) edgeAudioFor(index + 1, lang, voice).catch(function () {});
-    }).catch(function (err) {
-      if (token !== playToken) return;
-      console.warn('[edge] failed:', err);
-      showToast('語音合成失敗 — 切回系統語音 / Voice failed — fallback to system voice', 3000);
-      speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang);
-    });
-  }
-
   // ── Speaker dispatch ──────────────────────────────────
-  // Priority:
-  //   1. Pre-rendered static MP3 (Edge TTS) — best quality, instant, free
-  //   2. HD button enabled? → live Gemini synthesis
-  //   3. Web Speech (OS voice)
   function speakSegment(index) {
     segments = getSegments();
     if (index < 0 || index >= segments.length) { stop(); return; }
@@ -1192,105 +456,8 @@
     currentIndex = index;
     highlight(index);
     updateStatus();
-
-    // Pre-rendered static MP3s for this article (multiple voices per language).
-    // The picker only shows voices that are pre-rendered, so any choice the
-    // user makes resolves to a valid static URL. Microsoft blocks Chinese
-    // text from anonymous Vercel IPs, so live edge-tts is no longer wired
-    // here — pre-rendering at build-time is the reliable path.
-    loadStaticManifest().then(function () {
-      var chosen = getActiveVoice(lang);
-      if (chosen && shouldUseStatic(lang)) {
-        var url = staticUrlFor(index, lang, chosen);
-        if (url) { speakViaStatic(index, url, lang); return; }
-      }
-      // Last-resort fallbacks: legacy HD (Gemini), then OS Web Speech.
-      if (shouldUseHD()) { speakViaHD(index, text, lang); return; }
-      speakViaWebSpeech(index, text, lang);
-    });
-  }
-
-  // Mid-paragraph entry point. Pre-rendered MP3s are paragraph-level (no
-  // word-timestamps to seek into), so to play just the tail we'd need a live
-  // synth. Priority:
-  //   1. Pre-rendered static MP3 — voice stays consistent. We accept a
-  //      paragraph-restart over a jarring voice change (the user complained
-  //      about "robot voice on jumping sections" — this was the cause).
-  //   2. Live HD (Gemini) — if the user has explicitly enabled it.
-  //   3. Web Speech (system voice) — last resort.
-  function speakFromOffset(index, charOffset) {
-    segments = getSegments();
-    if (index < 0 || index >= segments.length) { stop(); return; }
-    if (!charOffset || charOffset <= 0) { speakSegment(index); return; }
-    var lang = getLang();
-    var fullText = getSegmentText(segments[index], lang);
-    if (!fullText) {
-      if (index + 1 < segments.length) speakSegment(index + 1); else stop();
-      return;
-    }
-    var tail = fullText.slice(charOffset).replace(/^\s+/, '');
-    if (!tail) {
-      if (index + 1 < segments.length) speakSegment(index + 1); else stop();
-      return;
-    }
-    // Prefer the pre-rendered MP3 from paragraph start over a backend swap.
-    // Resolve the manifest first so the static-availability check is accurate.
-    loadStaticManifest().then(function () {
-      var chosen = getActiveVoice(lang);
-      if (chosen && shouldUseStatic(lang)) {
-        var url = staticUrlFor(index, lang, chosen);
-        if (url) { speakViaStatic(index, url, lang); return; }
-      }
-      currentIndex = index;
-      highlight(index);
-      updateStatus();
-      if (shouldUseHD()) { speakViaHD(index, tail, lang); return; }
-      speakViaWebSpeech(index, tail, lang);
-    });
-  }
-
-  // Direct <audio src="…mp3"> playback. Same plumbing as HD (uses audioEl) but
-  // no fetch round-trip — the URL is a static file Vercel serves with edge
-  // caching, so playback starts in <50 ms even on iPhone.
-  function speakViaStatic(index, url, lang) {
-    activeBackend = 'hd';                    // reuse the audio-element backend state
-    var token = ++playToken;
-    synth.cancel(); stopKeepAlive();
-    unwrapSegment();                         // clear any previous segment's word wrapping
-    isPlaying = true; isPaused = false;
-    setPlayPauseIcon(true); showPlayer();
-    // Kick off karaoke wrap (no-op when timings aren't available for this voice).
-    startKaraoke(segments[index], lang, url, token);
-    if (audioEl) {
-      audioEl.src = url;
-      applySpeed();                          // playbackRate must be set after src
-      var p = audioEl.play();
-      if (p && p.catch) p.catch(function (e) {
-        // AbortError fires whenever src changes mid-load (i.e. the user hit
-        // Next, or the previous segment ended and we moved to the next) — that
-        // is normal, not a real failure. Silently bail; the new request is
-        // already in flight.
-        if (token !== playToken) return;
-        if (e && (e.name === 'AbortError' || e.code === 20)) return;
-        // NotAllowedError on iOS means the audio element lost its
-        // user-gesture unlock (can happen after backgrounding / focus loss).
-        // Try once more after a short delay — falling back to WebSpeech now
-        // would land us on the buzzy compact voice the user explicitly hates.
-        console.warn('[static] play failed, retrying:', e);
-        setTimeout(function () {
-          if (token !== playToken) return;
-          if (audioEl.src.indexOf(url) === -1) audioEl.src = url;
-          var p2 = audioEl.play();
-          if (p2 && p2.catch) p2.catch(function (e2) {
-            if (token !== playToken) return;
-            if (e2 && (e2.name === 'AbortError' || e2.code === 20)) return;
-            console.warn('[static] retry failed, falling back:', e2);
-            speakViaWebSpeech(index, getSegmentText(segments[index], lang), lang);
-          });
-        }, 140);
-      });
-    }
-    updateStatus();
+    if (shouldUseHD()) speakViaHD(index, text, lang);
+    else speakViaWebSpeech(index, text, lang);
   }
 
   function speakViaWebSpeech(index, text, lang) {
@@ -1303,8 +470,7 @@
     var voice = getVoiceForLang(lang);
     if (voice) { utter.voice = voice; utter.lang = voice.lang; }
     else utter.lang = lang === 'zh' ? 'zh-TW' : 'en-US';
-    utter.rate = Math.max(0.1, Math.min(10, settings.speed));
-    utter.pitch = 1.0; utter.volume = 1.0;
+    utter.rate = 1.0; utter.pitch = 1.0; utter.volume = 1.0;
     utter.onend = function () {
       if (token !== playToken) return;
       if (currentUtterance !== utter) return;
@@ -1373,9 +539,6 @@
       if (activeBackend !== 'hd') return;
       console.warn('[audio] element error', audioEl.error);
     });
-    // Karaoke: drive word highlight from the audio element's clock.
-    audioEl.addEventListener('timeupdate', tickWordHighlight);
-    audioEl.addEventListener('seeked', tickWordHighlight);
   }
 
   function play() {
@@ -1407,24 +570,16 @@
       try { audioEl.removeAttribute('src'); audioEl.load(); } catch (e) {}
     }
     clearHDCache();
-    clearEdgeCache();
-    unwrapSegment();
     isPlaying = false; isPaused = false;
     currentUtterance = null; currentIndex = -1; activeBackend = null;
     clearHighlight(); updateStatus(); setPlayPauseIcon(true); hidePlayer();
-    closeSettings();
   }
 
   // HD button toggle
   function toggleHD() {
-    // CRITICAL for iOS: must be called synchronously inside the user-gesture
-    // handler so the audio element is "unlocked" for later async play().
-    unlockAudio();
-
     if (!hdAvailable || hdProbing) return;
     if (!hdReady) {
       hdEnabled = true;
-      setHDState('loading');                    // immediate visual feedback
       probeHD().then(function () {
         if (isPlaying) {
           var idx = currentIndex; playToken++;
@@ -1436,7 +591,6 @@
     }
     hdEnabled = !hdEnabled;
     setHDState(hdEnabled ? 'on' : 'off');
-    showToast(hdEnabled ? 'HD ON (Gemini)' : 'HD OFF (system voice)', 1800);
     if (isPlaying) {
       var idx = currentIndex; playToken++;
       synth.cancel(); if (audioEl) { try { audioEl.pause(); } catch (e) {} }
@@ -1444,24 +598,6 @@
     }
   }
   if (btnHD) btnHD.addEventListener('click', toggleHD);
-
-  // Settings (⚙) button + outside-click close
-  var btnSettings = document.getElementById('tts-settings-btn');
-  var settingsPanel = document.getElementById('tts-settings');
-  if (btnSettings) {
-    btnSettings.addEventListener('click', function (e) {
-      e.stopPropagation();
-      unlockAudio();          // priming the audio element while we have a user gesture
-      toggleSettings();
-    });
-  }
-  document.addEventListener('click', function (e) {
-    if (!settingsPanel || !settingsPanel.classList.contains('tts-settings-visible')) return;
-    if (settingsPanel.contains(e.target) || (btnSettings && btnSettings.contains(e.target))) return;
-    closeSettings();
-  });
-  // Pre-fetch the audio manifest so the picker opens without a flash.
-  loadStaticManifest();
 
   // React to <html data-lang> changes from setLang()
   new MutationObserver(refreshHDButtonForLang)
@@ -1480,14 +616,7 @@
   }
 
   // Wire controls
-  if (btnLaunch) {
-    btnLaunch.addEventListener('click', function () {
-      // Unlock audio inside the user gesture so HD can later play() from async.
-      unlockAudio();
-      stop();
-      setTimeout(function () { speakSegment(0); }, 80);
-    });
-  }
+  if (btnLaunch)    btnLaunch.addEventListener('click', function () { stop(); setTimeout(function () { speakSegment(0); }, 80); });
   if (btnPlayPause) btnPlayPause.addEventListener('click', togglePlayPause);
   if (btnPrev)      btnPrev.addEventListener('click', prev);
   if (btnNext)      btnNext.addEventListener('click', next);
@@ -1505,16 +634,9 @@
     segments = getSegments();
     return segments.indexOf(seg);
   }
-  // Char offset (within the segment's normalized text) where playback
-  // should start. Set by handleProseTap / handleSelection when the user
-  // picks a word; reset to 0 by hidePopup. Lets "Start from here" begin
-  // mid-paragraph at the actual tapped word, not at the paragraph head.
-  var pendingCharOffset = 0;
-
   function hidePopup() {
     if (popup) popup.classList.remove('tts-popup-visible');
     pendingSelIndex = -1;
-    pendingCharOffset = 0;
   }
   function positionPopup(rect, segIndex) {
     if (!popup) return;
@@ -1529,34 +651,16 @@
     popup.style.left = x + 'px';
     popup.style.top  = y + 'px';
   }
-  // Set whenever the popup is shown via a paragraph tap (not a text-selection).
-  // Used to suppress the selection handlers below — which otherwise fire on
-  // the very next mouseup / selectionchange and would close the freshly-tapped
-  // popup before the user can reach it.
-  var tapShownAt = 0;
-
   function handleSelection() {
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed || sel.rangeCount === 0) {
-      if (Date.now() - tapShownAt > 200) hidePopup();
-      return;
-    }
-    if (!sel.toString().trim()) {
-      if (Date.now() - tapShownAt > 200) hidePopup();
-      return;
-    }
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0) { hidePopup(); return; }
+    if (!sel.toString().trim()) { hidePopup(); return; }
     var range = sel.getRangeAt(0);
     var segIndex = findSegmentForNode(sel.anchorNode);
     if (segIndex < 0) segIndex = findSegmentForNode(sel.focusNode);
     if (segIndex < 0) { hidePopup(); return; }
     var rect = range.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) { hidePopup(); return; }
-    // Use the selection's START offset so "Start from here" begins at the
-    // first selected word, not at the head of the paragraph.
-    var lang = getLang();
-    var fullText = getSegmentText(segments[segIndex], lang);
-    var rawOffset = offsetFromRange(segments[segIndex], lang, range);
-    pendingCharOffset = roundToWordStart(fullText, rawOffset);
     positionPopup(rect, segIndex);
   }
   document.addEventListener('mouseup', function () { setTimeout(handleSelection, 10); });
@@ -1565,44 +669,8 @@
   });
   document.addEventListener('selectionchange', function () {
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed) {
-      if (Date.now() - tapShownAt > 200) hidePopup();
-    }
+    if (!sel || sel.isCollapsed) hidePopup();
   });
-
-  // ── Tap-to-narrate ────────────────────────────────────
-  // On mobile and desktop, tapping inside a narratable segment shows the
-  // popup near the tap so the user can start narration from that point —
-  // no text selection required. The use case: a reader 20 minutes into a
-  // long study guide leaves and comes back, scrolls to where they left
-  // off, taps, and resumes from there.
-  function handleProseTap(e) {
-    // Defer to text-selection: if the user is highlighting, handleSelection() owns this.
-    var sel = window.getSelection();
-    if (sel && !sel.isCollapsed && sel.toString().trim()) return;
-    // Let interactive children handle their own clicks.
-    if (e.target.closest && e.target.closest('a, button, input, textarea, select, label, summary')) return;
-    // Find the segment that was tapped.
-    var seg = e.target.closest && e.target.closest('p, h2, h3, blockquote');
-    if (!seg || !prose.contains(seg)) return;
-    segments = getSegments();
-    var segIndex = segments.indexOf(seg);
-    if (segIndex < 0) return;
-    // Resolve the tap to an exact character offset within the segment, then
-    // round back to the start of that word. Falls back to 0 (paragraph start)
-    // if the platform doesn't support caret-from-point.
-    var lang = getLang();
-    var caret = caretRangeAt(e.clientX, e.clientY);
-    var offset = caret ? offsetFromRange(seg, lang, caret) : 0;
-    var fullText = getSegmentText(seg, lang);
-    pendingCharOffset = roundToWordStart(fullText, offset);
-    // Show the popup at the tap point. positionPopup() centers horizontally
-    // on rect.left + rect.width/2 and anchors the top to rect.bottom, so a
-    // zero-width point at (clientX, clientY) gives us a tooltip exactly there.
-    positionPopup({ left: e.clientX, width: 0, bottom: e.clientY }, segIndex);
-    tapShownAt = Date.now();
-  }
-  prose.addEventListener('click', handleProseTap);
   document.addEventListener('mousedown', function (e) {
     if (popup && !popup.contains(e.target)) hidePopup();
   });
@@ -1611,16 +679,11 @@
   if (btnSelPlay) {
     btnSelPlay.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
-      // CRITICAL on iOS: unlock the audio element synchronously inside this
-      // user gesture. Without this, the first audioEl.play() from speakViaStatic
-      // rejects with NotAllowedError and we fall back to the buzzy WebSpeech.
-      unlockAudio();
       var idx = pendingSelIndex;
-      var off = pendingCharOffset;
       hidePopup();
       var sel = window.getSelection();
       if (sel && sel.removeAllRanges) sel.removeAllRanges();
-      if (idx >= 0) { stop(); setTimeout(function () { speakFromOffset(idx, off); }, 80); }
+      if (idx >= 0) { stop(); setTimeout(function () { speakSegment(idx); }, 80); }
     });
   }
 
