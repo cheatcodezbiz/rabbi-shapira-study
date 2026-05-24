@@ -141,16 +141,21 @@ _whisper_model_cache = None
 
 def _ensure_cuda_dlls() -> None:
     """Windows: pip-installed nvidia-cublas-cu12/cudnn put DLLs in package
-    bin dirs that aren't on PATH. Add them so ctranslate2 can load CUDA libs."""
+    bin dirs that aren't on PATH. Prepend to PATH AND call add_dll_directory
+    so ctranslate2 can find cublas64_12.dll / cudnn64_9.dll at lazy-load time."""
     if os.name != "nt":
         return
     import site, glob
+    bins = []
     for sp in [*site.getsitepackages(), site.getusersitepackages()]:
-        for b in glob.glob(os.path.join(sp, "nvidia", "*", "bin")):
-            try:
-                os.add_dll_directory(b)
-            except (FileNotFoundError, OSError):
-                pass
+        bins.extend(glob.glob(os.path.join(sp, "nvidia", "*", "bin")))
+    for b in bins:
+        if b not in os.environ.get("PATH", "").split(os.pathsep):
+            os.environ["PATH"] = b + os.pathsep + os.environ.get("PATH", "")
+        try:
+            os.add_dll_directory(b)
+        except (FileNotFoundError, OSError):
+            pass
 
 
 def get_whisper_model():

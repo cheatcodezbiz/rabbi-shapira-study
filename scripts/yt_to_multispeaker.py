@@ -135,18 +135,22 @@ _whisper_cache = None
 
 def _ensure_cuda_dlls() -> None:
     """Windows + pip-installed nvidia-cublas-cu12/cudnn put DLLs in the package
-    'bin' dirs but they aren't on PATH. Add them so ctranslate2 can load
-    cublas64_12.dll / cudnn64_9.dll for faster-whisper CUDA inference."""
+    'bin' dirs but they aren't on PATH. Prepend them to PATH AND call
+    os.add_dll_directory() so ctranslate2 can find cublas64_12.dll /
+    cudnn64_9.dll / nvrtc64_120_0.dll at lazy-load time. PATH is required
+    because os.add_dll_directory() alone doesn't catch the lazy load done
+    by ctranslate2 the first time .transcribe() is called."""
     if os.name != "nt":
         return
     import site, glob
-    candidates = []
+    bins = []
     for sp in [*site.getsitepackages(), site.getusersitepackages()]:
-        for b in glob.glob(os.path.join(sp, "nvidia", "*", "bin")):
-            candidates.append(b)
-    for p in candidates:
+        bins.extend(glob.glob(os.path.join(sp, "nvidia", "*", "bin")))
+    for b in bins:
+        if b not in os.environ.get("PATH", "").split(os.pathsep):
+            os.environ["PATH"] = b + os.pathsep + os.environ.get("PATH", "")
         try:
-            os.add_dll_directory(p)
+            os.add_dll_directory(b)
         except (FileNotFoundError, OSError):
             pass
 
