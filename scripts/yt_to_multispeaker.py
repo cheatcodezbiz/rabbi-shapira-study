@@ -133,9 +133,28 @@ def yt_download_audio(url: str, out_dir: Path) -> Path:
 
 _whisper_cache = None
 
+def _ensure_cuda_dlls() -> None:
+    """Windows + pip-installed nvidia-cublas-cu12/cudnn put DLLs in the package
+    'bin' dirs but they aren't on PATH. Add them so ctranslate2 can load
+    cublas64_12.dll / cudnn64_9.dll for faster-whisper CUDA inference."""
+    if os.name != "nt":
+        return
+    import site, glob
+    candidates = []
+    for sp in [*site.getsitepackages(), site.getusersitepackages()]:
+        for b in glob.glob(os.path.join(sp, "nvidia", "*", "bin")):
+            candidates.append(b)
+    for p in candidates:
+        try:
+            os.add_dll_directory(p)
+        except (FileNotFoundError, OSError):
+            pass
+
+
 def get_whisper():
     global _whisper_cache
     if _whisper_cache is None:
+        _ensure_cuda_dlls()
         from faster_whisper import WhisperModel
         import ctranslate2
         device, compute = WHISPER_DEVICE, WHISPER_COMPUTE

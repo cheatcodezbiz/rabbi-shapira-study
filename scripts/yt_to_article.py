@@ -139,10 +139,25 @@ def list_channel_videos(channel_handle: str, limit: int) -> list[str]:
 
 _whisper_model_cache = None
 
+def _ensure_cuda_dlls() -> None:
+    """Windows: pip-installed nvidia-cublas-cu12/cudnn put DLLs in package
+    bin dirs that aren't on PATH. Add them so ctranslate2 can load CUDA libs."""
+    if os.name != "nt":
+        return
+    import site, glob
+    for sp in [*site.getsitepackages(), site.getusersitepackages()]:
+        for b in glob.glob(os.path.join(sp, "nvidia", "*", "bin")):
+            try:
+                os.add_dll_directory(b)
+            except (FileNotFoundError, OSError):
+                pass
+
+
 def get_whisper_model():
     """Load (and cache) the faster-whisper model. Downloads on first run (~1.5 GB)."""
     global _whisper_model_cache
     if _whisper_model_cache is None:
+        _ensure_cuda_dlls()
         from faster_whisper import WhisperModel
         import ctranslate2
         device = WHISPER_DEVICE
