@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《拉比与异端》研习指南 · Jewish-Christian Dialogues on Scripture — Study Guide · 妥拉之光</title>
+  <meta name="description" content="A Christian's study guide to Michal Bar-Asher Siegal's Jewish-Christian Dialogues on Scripture in Late Antiquity — eight bilingual lessons on the heretic narratives of the Babylonian Talmud." />
+  <meta name="audio-slug" content="study-jewish-christian-dialogues" />
+  <meta property="og:title" content="Jewish-Christian Dialogues on Scripture — A Christian's Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons walking through Michal Bar-Asher Siegal's study of the Babylonian Talmud's heretic narratives — what the rabbis knew of their Christian neighbors, and what the formula 'Fool, look to the end of the verse' was really doing." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="Jewish-Christian Dialogues on Scripture in Late Antiquity — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 学术著作课程 · 2026 · 5 · 23</span>
+        <span class="en">Study Guide · An Academic Book · 2026 · 5 · 23</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">《拉比与异端》<br/>研习指南</span>
+        <span class="en">Jewish-Christian Dialogues<br/>on Scripture in Late Antiquity</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，走进巴比伦《塔木德》中拉比与「异端」(minim) 的对话——拉比们说的「傻瓜！请看经文的末尾」，到底在反驳谁？</span>
+        <span class="en">Eight lessons walking through the Babylonian Talmud's "heretic narratives" — the short, prickly dialogues in which a rabbi tells a minim "Fool, look to the end of the verse," and what those four words were really doing in late antiquity.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于巴尔-阿舍·西格尔 (Michal Bar-Asher Siegal)《晚期古代圣经上的犹太-基督徒对话——巴比伦塔木德的异端叙事》(剑桥大学出版社, 2019)</span>
+        <span class="en">Based on Jewish-Christian Dialogues on Scripture in Late Antiquity: Heretic Narratives of the Babylonian Talmud by Michal Bar-Asher Siegal (Cambridge University Press, 2019)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 60 分钟通读</span><span class="en">~60 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.cambridge.org/9781107195363" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书</span><span class="en">Get the Book</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">这份指南要陪伴你阅读的，不是一本福音派的灵修书，而是一部严谨的学术专著——以色列本-古里安大学高级讲师米沙尔·巴尔-阿舍·西格尔 (Michal Bar-Asher Siegal) 出版于剑桥大学出版社的《晚期古代圣经上的犹太-基督徒对话——巴比伦塔木德的异端叙事》(2019)。乍听之下，这听上去离普通基督徒很远——但这本书要解开的，是基督徒读旧约时经常会遇到的一个谜：「为什么拉比们留下了那些读起来怪怪的、近乎挑衅式的小故事？」西格尔仔细研究了《塔木德》里一类特殊的故事：拉比与某个被称作「<em>minim</em>（异端）」的人物对话，每一次都围绕一节圣经——拉比都会丢出同一句话：「<strong>傻瓜，请看经文的末尾</strong>」。她用对照早期教父著作（耶柔米、巴西流、安波罗修、奥利金、屈梭多模等）的方法，证明这些短小的故事其实是<strong>晚期古代犹太-基督徒之间的真实神学对话留下的回声</strong>。对基督徒来说，这是一份珍贵的礼物：原来在我们以为「分道扬镳」的几个世纪里，两个传统其实彼此<em>认真地听着对方</em>。</span>
+      <span class="en">The book this guide accompanies is not a devotional, but a serious academic study — Michal Bar-Asher Siegal's <em>Jewish-Christian Dialogues on Scripture in Late Antiquity: Heretic Narratives of the Babylonian Talmud</em> (Cambridge University Press, 2019). At first glance it may feel distant from ordinary Christian reading. It is not. Bar-Asher Siegal, a senior lecturer at Ben-Gurion University, takes up a puzzle every careful reader of the rabbis eventually meets: why are the Talmud's "heretic stories" so short, so prickly, so formulaic? Why does the rabbi always insult his interlocutor with the same line — "<strong>Fool, look to the end of the verse</strong>"? By holding these stories up against contemporaneous Christian writers (Jerome, Basil, Ambrose, Cyril, Origen, Chrysostom), she shows that they are echoes of <strong>real, contested late-antique conversations between Jewish and Christian readers of the same scriptures</strong>. For Christians the gift is large: in centuries we thought of as "the parting of the ways," the two traditions were in fact still listening intently to each other.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，每一堂围绕本书的一个核心论点或一段塔木德对话。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, each centered on one of the book's core arguments or a single Talmudic dialogue. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 作者说什么</strong>—— 用西格尔自己的论证概述她的论点；<br/>
+        <strong>② 关键经文</strong>—— 这堂课围绕的核心圣经经文；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来或亚兰术语，承载整段对话的张力；<br/>
+        <strong>④ 基督徒视角</strong>—— 早期教父或新约文本如何处理同一段经文；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 一基督徒能向自己提出的、不急于下结论的问题。
+      </span>
+      <span class="en">
+        <strong>① What the Author Says</strong> — Bar-Asher Siegal's argument in her own frame;<br/>
+        <strong>② Key Scripture</strong> — the verse at the center of the dialogue;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew or Aramaic term that holds the whole exchange;<br/>
+        <strong>④ A Christian Lens</strong> — how an early Church Father or New Testament writer read the same verse;<br/>
+        <strong>⑤ Honest Questions</strong> — questions a Christian reader can sit with — not rushing to resolution.
+      </span>
+    </blockquote>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 1  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">异端故事为何重要：边界塑造的话语</span>
+        <span class="en">Why Heretic Narratives Matter</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">巴尔-阿舍·西格尔以一段引文揭开全书的帷幕——四世纪尼撒的格里高利 (Gregory of Nyssa) 在《论圣灵》一开篇就讨论：到底要不要回应「异端」？他援引箴言 26:4「不要照愚昧人的愚妄话回答他」，但最终决定<em>必须</em>回应——「免得这种异端的腐疮蔓延，毁坏信仰的健全话语」。他称对手为<strong>愚妄</strong>，称他们的看法为<strong>异端</strong>。西格尔说：这不仅是基督教的现象。在<em>同一时代</em>的拉比文献中，巴比伦《塔木德》里也有一类故事——某个被称为 <em>min</em> 的人提出一个关于经文的歪曲读法，拉比回应：「<strong>傻瓜！请看经文的末尾</strong>」(שטיא שפיל לסיפיה דקרא)。这本书的中心论点是：这些短小、几乎像舞台剧的故事，<strong>并不</strong>是历史档案，记录某次真实的拉比与基督徒的辩论；它们是「<em>boundary-creating discourse</em>——边界塑造的话语」，是拉比群体用来定义「我们」与「他们」之间界线的文学工具。她借法国学者 Alain Le Boulluec 的话：异端 (heresy) 是「把<em>差异</em>转化为<em>排除</em>的方法」。这意味着：这些故事的存在，本身就是晚期古代犹太人和基督徒生活在<strong>同一个语义空间</strong>的证据。</span>
+        <span class="en">Bar-Asher Siegal opens the book with a paired epigraph. The fourth-century Cappadocian Father Gregory of Nyssa begins his treatise <em>On the Holy Spirit</em> by asking whether one should respond at all to heretics. He cites Proverbs 26:4 — "Answer not a fool according to his folly" — but concludes that the rotting sore of heresy must be confronted. He calls his opponents <strong>fools</strong>, their views <strong>heresy</strong>. Then she sets an almost mirror-image rabbinic story beside it: in the Babylonian Talmud a <em>min</em> approaches Rabbi with a twisted reading of Amos 4:13, and Rabbi snaps: "<strong>You fool, look to the end of the verse</strong>" (שטיא שפיל לסיפיה דקרא). Her central claim is that these short, almost stage-play dialogues are <strong>not</strong> historical transcripts of real Jewish-Christian debates. They are <em>boundary-creating discourse</em> — literary tools by which the rabbinic community drew the line between "us" and "them." Borrowing from Alain Le Boulluec, she observes that "heresy is a method of converting <em>difference</em> into <em>exclusion</em>." The presence of these stories is itself evidence that, in late antiquity, Jews and Christians were living in <strong>one shared semantic world</strong>.</span>
+      </p>
+      <p>
+        <span class="zh">这是一个不小的论点。十九世纪和二十世纪初的许多学者倾向于把这些 minim 故事当作「直白的历史记录」，于是辩论的焦点变成「这个 min 到底是基督徒、撒玛利亚人、撒都该人，还是诺斯底派？」西格尔细心地走过一遍学术史，并指出：在<strong>巴比伦塔木德</strong>（成书于五、六世纪）这一层，至少这本书所选的四个故事中，min 显然是在表达<strong>基督徒</strong>读经文的方式——这并不是说每一个 min 都是基督徒，而是说，这些故事的作者熟知基督徒怎样读这些经文，并故意把基督徒的解经放进 min 的口里加以反驳。她不要求我们识别哪一个具体的「正统」，她要求我们识别<em>同时代的争议</em>，并辨识拉比正在与之对话的，到底是哪一组思想。</span>
+        <span class="en">This is a large claim. Nineteenth- and early-twentieth-century scholarship often treated the <em>minim</em> stories as transparent records — debating endlessly whether the heretic was a Christian, a Samaritan, a Sadducee, a Gnostic. Bar-Asher Siegal walks carefully through the history of that debate and lands here: in the <strong>Babylonian</strong> layer (compiled fifth-sixth century), at least for the four stories she treats, the <em>min</em> is clearly voicing arguments recognizable to us today as <strong>Christian</strong>. She is not arguing that every <em>min</em> in rabbinic literature was a Christian, but that the authors of these stories knew Christian readings of these verses, and deliberately placed those readings on the heretic's tongue in order to refute them. She refuses to name a specific orthodoxy, but she does name the contemporaneous ideas the rabbis are engaging.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「不要照愚昧人的愚妄话回答他，恐怕你与他一样。」</span>
+        <span class="en">"Answer not a fool according to his folly, lest you be like him yourself."</span>
+        <cite>《箴言》26:4 · Proverbs 26:4 — quoted by Gregory of Nyssa and by Rabbi in the Talmud</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מִינִים · minim</strong>——单数为 <em>min</em>。词源不确定，但学者们普遍接受它源自圣经希伯来语中的 <em>min</em>，意为「<strong>种类、类别</strong>」（如创世记 1:11「各从其类」）。在拉比文献的语境中，它被借来指「另一种类的人」——即<strong>归不到「我们」里面的人</strong>。这个词的微妙之处正在于：它不是骂人话（如同今天我们说「异教徒」可能含怒意），而是<strong>分类的语言</strong>——把对方放到一个不同的类目里。整个的关键就在这里：当拉比说「<em>min</em>」时，他<em>不是</em>说「你错了」，而是说「你属于另一类」。这种<strong>分类</strong>本身就是边界塑造的关键举动。</span>
+        <span class="en"><strong>מִינִים · minim</strong> — singular <em>min</em>. Although the exact etymology is debated, scholars now broadly accept that the word derives from biblical Hebrew <em>min</em>, "<strong>kind, species</strong>" (as in Genesis 1:11, "after its kind"). Rabbinic usage borrowed the term to designate "a different kind" — a person who <strong>does not belong to "us."</strong> What is subtle here is that this is not primarily an insult (the way "heretic" can sound to us today); it is the <strong>language of classification</strong>. The whole hinge is just this: when a rabbi says "<em>min</em>" he is not saying "you are wrong"; he is saying "you belong to a different category." And it is precisely this classifying act that builds the boundary.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">对基督徒读者而言，这一章是一面镜子。我们读到尼撒的格里高利写《论圣灵》时怒气冲冲地反驳「圣灵被造论」（Pneumatomachoi），我们容易站在「正统」这一边，赞赏他的智慧与勇气。但西格尔的工作让我们看到：<em>就在同一些十年里，几个城市之外</em>，巴比伦的拉比们也在做<strong>完全相似的事</strong>——他们写故事，戏剧化、讽刺、用极尖锐的语言，把对方贴上「<em>min</em>（异类）」「<em>shoteh</em>（傻瓜）」的标签，以此画出他们群体的边界。我们不需要因此把双方等量齐观，但我们应该谦卑：<strong>「正统」与「异端」从来不是天上掉下来的范畴，而是历史中两个紧张的群体彼此使用的标签</strong>。这并不削弱真理本身——它只削弱了我们对「我永远站对了一边」的轻率自信。新约里，保罗也用过同样的语言——「<em>无知的加拉太人</em>」「<em>那些割肉的犬</em>」——这些都是同一类边界话语。读西格尔的书，让基督徒重新认识到：<strong>真理的争夺，永远是有伤痕的</strong>。</span>
+        <span class="en">For a Christian reader, this chapter is a mirror. When we read Gregory of Nyssa firing back at the Pneumatomachoi (those who denied the Spirit's divinity), we naturally take the side of "orthodoxy" and admire his courage. Bar-Asher Siegal's work lets us see that <em>in the very same decades, a few cities away</em>, the Babylonian rabbis were doing <strong>something strikingly similar</strong> — composing stories, deploying satire, branding their opponents with the labels <em>min</em> (other kind) and <em>shoteh</em> (fool), all in order to define their own community's edge. We do not have to flatten the two sides into moral equivalence, but we should be humbled. <strong>"Orthodoxy" and "heresy" are not categories that fell from heaven; they are labels two pressured communities used against one another in history.</strong> This need not diminish the truth itself; it should diminish the easy confidence that "I have always stood on the right side." Paul too used this kind of language — "<em>foolish Galatians</em>"; "<em>those mutilators of the flesh</em>." Reading Bar-Asher Siegal teaches Christians that the contest for truth has always been a wounded one.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果「异端」是一种「<em>把差异转化为排除</em>」的话语方式，那么在我自己的属灵生活里，有哪些场合，我用「他们是异端」这个标签代替了一次<em>认真的对话</em>？</span><span class="en">If "heresy" is a discourse of "<em>converting difference into exclusion</em>," where in my own spiritual life have I used the label "they are heretics" as a substitute for a <em>genuine conversation</em>?</span></li>
+        <li><span class="zh">明白拉比们也用过同样的边界话语，我对早期教会的「正统辩护」会更同情，还是更批判？又或者，两者都更深？</span><span class="en">Knowing that the rabbis used the same kind of boundary discourse — am I now more sympathetic to early Christian orthodoxy, or more critical of it? Or, more honestly, more of both?</span></li>
+        <li><span class="zh">如果我能听见两千年前那场对话的<em>双方</em>，而不只是教会一边——我对耶稣、对保罗、对早期教会的理解，会有哪一点改变？</span><span class="en">If I could hear <em>both sides</em> of that ancient conversation — not only the Church's voice — what would change in how I understand Jesus, Paul, and the early Church?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 2  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">「傻瓜，请看经文的末尾」——一个公式的内在含义</span>
+        <span class="en">"Fool, Look to the End of the Verse"</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">本书第二章是这一切的「钥匙章」——它解释了「<em>傻瓜！</em>」（希伯来语 <em>shoteh</em> שׁוֹטֶה；亚兰语 <em>shatya</em> שַׁטְיָא）这个词，为何在拉比文学的所有侮辱用语中如此特殊。西格尔做了大量的语义学考据：在第二圣殿时期文献、新约和教父著作中，「愚昧人」(fool) 几乎从来不是单纯的智商侮辱，它<strong>专指一个人「未能正确理解经文」</strong>。耶稣在《马太福音》5:22 警告：「凡骂弟兄是『拉加』(<em>raka</em>)、是『魔利』(<em>mōre</em>) 的，难免地狱的火」——而这两个词的语义场正好对应希伯来的 <em>reka</em>（「空虚」）与 <em>shoteh</em>（「傻瓜」）。在「死海古卷」与昆兰文献中，<em>reka</em> 用以斥责那些<strong>歪曲律法解释</strong>的人；耶稣在登山宝训里把这两个侮辱并列，恰好对应一种<strong>对圣经的错读</strong>。所以西格尔的洞见是：当拉比对 min 说「<em>shatya</em>！」时，他不是说「你笨」——他是说「你<strong>对圣经的领悟是空的</strong>」。</span>
+        <span class="en">Chapter 2 is the key that opens the rest of the book. Bar-Asher Siegal asks why the word "<em>fool</em>" (Hebrew <em>shoteh</em> שׁוֹטֶה; Aramaic <em>shatya</em> שַׁטְיָא) is so loaded in rabbinic invective. Through careful semantic excavation across Second Temple literature, the New Testament, and the Church Fathers, she shows that "fool" almost never means simply "intellectually slow." It carries a more specific charge: <strong>this person has failed to read scripture rightly</strong>. In Matthew 5:22, Jesus warns: "whoever says 'Raka' (<em>raka</em> = empty), or 'Mōre' (fool) is liable to the fire of Gehenna" — and these two terms map directly onto Hebrew <em>reka</em> (empty) and <em>shoteh</em> (fool). In the Dead Sea Scrolls, <em>reka</em> is used to denounce those who <strong>distort the interpretation of Torah</strong>. Jesus' antithesis in the Sermon on the Mount puts these two insults side by side precisely because they are about <strong>misreading scripture</strong>. The insight is sharp: when a rabbi calls a <em>min</em> "<em>shatya</em>!" he is not calling him stupid — he is saying "<strong>your reading of the verse is empty</strong>."</span>
+      </p>
+      <p>
+        <span class="zh">这个公式的另一半同样重要：「<em>请看经文的末尾</em>」(שפיל לסיפיה דקרא, <em>shafil lesifei de-qara</em>)。<em>shafil</em> 字面意思是「<em>俯身向下看</em>」——一种身体姿态——它暗示对方<strong>太骄傲，懒得读完整节</strong>。拉比的反击是：你只盯着前半节经文便急着下结论；如果你低下头去看完整节，你就会看到自己错在哪里。西格尔在书中说：这是一种「<strong>文学武器</strong>」——它把对手的论点反转为<strong>失败的阅读</strong>。这一公式不仅出现于本书研究的四个故事，也出现在 b. Sukkah 52b 等其他场合，构成了一个独特的「<em>mini-corpus</em>（小型文集）」。<strong>每一次，min 都被设计为「读得不全」的角色——他<em>只读了开头</em>。这本身就是一种讽刺：基督徒被刻画成只取经文一半就跳到结论的人</strong>。</span>
+        <span class="en">The other half of the formula matters just as much: "<em>look to the end of the verse</em>" (שפיל לסיפיה דקרא, <em>shafil lesifei de-qara</em>). The verb <em>shafil</em> literally means "<em>bend down and look</em>" — a bodily posture — and implies the opponent has been too proud or too lazy to read all the way through. The rabbi's counter-thrust says: <em>you have stopped at the first half of the verse; bend down, finish reading, and you will see your error</em>. Bar-Asher Siegal calls this a <strong>literary weapon</strong> that inverts the opponent's argument into a <strong>failed reading</strong>. This formula appears not only in the four stories she analyzes but also in passages like b. Sukkah 52b, forming a distinct <em>mini-corpus</em>. <strong>Every time, the <em>min</em> is staged as the figure who has read incompletely — who has stopped at the opening. That is itself a satire: the Christian is being painted as the one who reads only half a verse before rushing to a conclusion.</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「只是我告诉你们，凡向弟兄动怒的，难免受审判。凡骂弟兄是『拉加』的，难免公会的审断；凡骂弟兄是『魔利』（傻瓜）的，难免地狱的火。」</span>
+        <span class="en">"But I say to you that everyone who is angry with his brother will be liable to judgment; whoever insults his brother will be liable to the council; and whoever says, 'You fool!' will be liable to the hell of fire."</span>
+        <cite>《马太福音》5:22 · Matthew 5:22</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שׁוֹטֶה · shoteh</strong>（亚兰语：<em>shatya</em> שַׁטְיָא）——「傻瓜」。但这个词不仅仅意为「智商不高」，它的语义核心是「<strong>无法承担、无法领会</strong>」——所以在拉比律法中，<em>shoteh</em> 与未成年人、聋哑人列在一起，是<em>不能作证、不能写离婚书</em>的人。把它用在解经辩论的脉络里，意思就很尖锐了：「你不仅没读懂，而且你<em>根本没有能力</em>读懂」。这是一种<strong>资格的剥夺</strong>。它的反义词不是「智慧的」，而是「<em>not empty</em>——不空虚的」，即「<strong>充实</strong>的、<strong>能读懂经文的</strong>」。西格尔的一个绝妙的英语对仗：<em>Fool</em> vs <em>Full</em>——「空」对「满」。</span>
+        <span class="en"><strong>שׁוֹטֶה · shoteh</strong> (Aramaic <em>shatya</em> שַׁטְיָא) — "fool." But it does not merely mean "low-intelligence." Its semantic core is "<strong>incompetent, incapable of bearing</strong>" — which is why in rabbinic halakhah a <em>shoteh</em> is grouped with the minor and the deaf-mute as one who <em>cannot bear witness, cannot write a bill of divorce</em>. Placed inside a debate about scripture, the charge becomes razor-sharp: "<em>You have not merely misread — you are constitutionally incapable of reading</em>." It is a <strong>disqualification</strong>. Its antonym is not "wise"; it is "<em>not empty</em>" — i.e., "<strong>full, able to grasp the text</strong>." Bar-Asher Siegal coins the brilliant English pairing: <em>Fool</em> vs <em>Full</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">耶稣在登山宝训里说：「凡骂弟兄是『魔利』（傻瓜）的，难免地狱的火。」西格尔的洞见让我们重新看这一句话：原来耶稣不是在禁止<em>所有的</em>侮辱性语言，他特别指出的是一种<strong>专门用来贬低对方在经文领悟上的资格</strong>的语言——那种「你根本不懂圣经」的姿态。这正是早期教父们用拉丁文 <em>insulsus</em>（无味的、傻的）、希腊文 <em>moros</em>（傻瓜）来骂对方异端时所用的同一种武器。耶稣禁止的——按西格尔的研究——不是单纯的「骂人」，而是<strong>一种把对手清除出『能读圣经的人』之列的语言暴力</strong>。这对当代教会的争论是个挑战：当我们说「他们根本不懂福音」，我们正是在用耶稣警告过的那种语言。</span>
+        <span class="en">Jesus, in the Sermon on the Mount, says: "whoever says 'fool' will be liable to the hell of fire." Bar-Asher Siegal's work casts a fresh light on this verse. Jesus is not banning <em>all</em> harsh speech; he is targeting a particular kind of language — language designed to <strong>disqualify someone from the company of those who can read scripture</strong>, the "you don't even understand the Bible" posture. This is the same weapon the early Fathers used in Latin (<em>insulsus</em> = senseless) and Greek (<em>mōros</em> = fool) when slashing at their opponents. What Jesus forbids, on this reading, is not the use of strong words, but the <strong>verbal exile of another person from the community of competent readers</strong>. That is a challenge for the contemporary Church: every time we say "they don't understand the gospel," we may be using the very language Jesus warned against.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果「傻瓜」的真正含义是「<em>你无资格读懂经文</em>」——那么我私下里对哪些人——别的宗派、别的教会、别的拉比——用过这种语言？</span><span class="en">If "fool" really means "<em>you are not qualified to read scripture</em>" — toward whom (another denomination, another church, another rabbi) have I, in my heart, used that kind of language?</span></li>
+        <li><span class="zh">「请看经文的末尾」假设：<em>对方只读了一半就跑了</em>。我自己在读圣经时，有没有那种「读了一半就下结论」的倾向？哪一节经文我最常引用——而它的下半节我从未读过？</span><span class="en">"Look to the end of the verse" assumes: <em>the other person only read half and ran</em>. In my own reading, am I ever guilty of that? Which verse do I quote most often — and have I read its second half?</span></li>
+        <li><span class="zh">耶稣在马太福音 5:22 用了希伯来与亚兰双语侮辱（<em>raka</em>、<em>mōre</em>）。这是不是暗示祂自己曾被人这样骂过？祂是<em>从经验里</em>禁止这件事的吗？</span><span class="en">Jesus uses both an Aramaic insult (<em>raka</em>) and a Greek one (<em>mōre</em>) in Matthew 5:22. Could that suggest he himself had been called these names? Did he forbid this <em>from experience</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 3  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">「他造山，又造风」——阿摩司书 4:13 与圣灵之争</span>
+        <span class="en">Forming the Mountains and Creating the Wind — Amos 4:13</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">巴比伦塔木德 <em>Hullin</em> 87a 记载了本书最长、最有戏剧张力的一段对话。一位 min 走近罗马犹太教领袖<strong>拉比 (Rabbi)</strong>，挑战说：「造山的不造风，造风的不造山——因为经上写：『那创山、造风者』(阿摩司书 4:13)。」这听上去像「<em>两位创造主</em>」的暗示——一种基督教或诺斯底式的二元论。拉比回应：「<strong>属世的傻瓜，请看经文的末尾</strong>——『万军之耶和华是他的名』！」min 暴怒：「<em>你叫我傻瓜？！</em>」他请求三天时间想反驳。拉比这三天斋戒——为了让对方<em>找不出答案</em>。三天后 min 没回来——别的 min 来报告说：「<em>好消息——你的敌人没找到答案，跳楼自杀了</em>。」拉比与第二个 min 坐下吃饭，问他要四十个金币还是「祝福之杯」（饭后祝祷的酒杯）。第二个 min 选了杯子，<em>bat kol</em>（神的回声）从天上宣告：「祝福之杯值四十金币。」</span>
+        <span class="en">The longest and most theatrical of all the heretic stories appears at <em>b. Hullin</em> 87a. A <em>min</em> approaches <strong>Rabbi</strong> (Judah the Patriarch) with: "He who formed the mountains did not create the wind, and he who created the wind did not form the mountains — for it is written, 'For lo, He who forms the mountains and creates the wind' (Amos 4:13)." The implication is <em>two creators</em> — a Marcionite, Gnostic, or proto-Trinitarian flavor depending on the angle. Rabbi shoots back: "<strong>You worldly fool — look to the end of the verse — 'the LORD of hosts is His name!'</strong>" The <em>min</em> erupts: "<em>You called me a fool?!</em>" He demands three days to compose a rejoinder. Rabbi spends those three days fasting, that the man might find no answer. Three days later, instead of the <em>min</em>, a second <em>min</em> arrives with "<em>good news — your enemy found no answer, climbed to the roof, fell, and died</em>." Rabbi sits to dine with him, and offers him a choice: forty gold coins or the cup of the blessing recited after meals? The second <em>min</em> chooses the cup, and a <em>bat kol</em> (heavenly voice) declares: "The cup of the blessing is worth forty gold coins."</span>
+      </p>
+      <p>
+        <span class="zh">西格尔的论证大胆而精彩：这个故事每一根线都<strong>戏仿基督教的复活叙事</strong>——三天的斋戒（耶稣三天复活之前的间隔）、「好消息」(<em>besorah</em>，正是「<em>福音</em> εὐαγγέλιον」)、引用诗篇 69:22「他们拿苦胆给我当食物，我渴了，他们拿醋给我喝」（受难叙事的核心经文）、敌人「跳下来」（与耶稣升天 / 又一个层次的<em>下降</em>形成的反讽）、最后「祝福之杯」（<em>kos shel berakhah</em> 与基督教的「圣餐的杯」 <em>poterion tes eulogias</em>，林前 10:16）的微妙呼应。然后，<strong>阿摩司书 4:13 在四世纪基督教神学中是一个炸弹</strong>——「圣灵反对派」(<em>Pneumatomachoi</em>) 用这节经文证明圣灵是<em>被造</em>的（「<em>造</em> 风/灵」）；亚他那修、巴西流、屈梭多模、安波罗修都不得不长篇大论地驳斥这种读法。拉比的故事是对<em>这一场基督教内部争论</em>的旁观与讽刺：它不需要解决谁对谁错——它只需要让听众看见，<strong>异端在这节经文上栽倒</strong>，并且，这场「失败」恰好与基督的「失败」叙事在结构上彼此映照。</span>
+        <span class="en">Bar-Asher Siegal's reading is bold and elegant: every thread of the story <strong>parodies the Christian resurrection narrative</strong>. The three-day fast (the three-day interval before Jesus' resurrection); the phrase "<em>good news</em>" (<em>besorah</em> = εὐαγγέλιον, "the gospel"); the citation of Psalm 69:22 ("They gave me poison for food, and for my thirst vinegar to drink" — a passion-narrative cornerstone); the enemy who "falls" from a height (in inverted echo of Jesus' ascent); and the closing "<em>cup of the blessing</em>" (<em>kos shel berakhah</em>, mirroring 1 Corinthians 10:16's <em>poterion tēs eulogias</em>). Moreover, <strong>Amos 4:13 was a theological landmine in the fourth century</strong>: the Pneumatomachoi ("Spirit-fighters") cited this verse to prove that the Holy Spirit was a <em>creature</em> ("He <em>creates</em> wind/spirit"). Athanasius, Basil of Caesarea, Cyril of Alexandria, and Ambrose all wrote at length to defuse the proof-text. The Talmudic story watches that intra-Christian fight from the side and turns it into satire: it does not need to settle who is right inside Christianity — it only needs the audience to see that <strong>the heretic stumbles on this verse</strong>, and that his "fall" stands in structural irony to the Christian narrative of resurrection.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「那创山、造风、将心意指示人、使晨光变为幽暗、脚踏在地之高处的——他的名是耶和华万军之神。」</span>
+        <span class="en">"For behold, He who forms the mountains and creates the wind, and declares to man what is his thought, who makes the morning darkness, and treads on the high places of the earth — the LORD, the God of hosts, is His name."</span>
+        <cite>《阿摩司书》4:13 · Amos 4:13</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>רוּחַ · ru'aḥ</strong>——「风、灵、气息」。希伯来语的这一个词，在希腊语的《七十士译本》里被译作 <em>pneuma</em>，而 <em>pneuma</em> 既可以指「风」，也可以指「灵」(参约 3:8「<em>风</em>随着意思吹，你听见声音，却不晓得从哪里来」)。<strong>四世纪的基督徒争论几乎完全建立在这一个翻译上</strong>：希伯来语原文里 <em>ru'aḥ</em> 在没有冠词或修饰语时指「风」，但希腊翻译把它笼统化为 <em>pneuma</em>，让「圣灵被造论」者得以借此节经文宣称圣灵是受造的。亚他那修和巴西流不得不论证：阿摩司这里讲的是「自然的风」，不是「圣灵」。汉森 (Richard Hanson) 评论：「如果亚他那修能直接读希伯来文，他一句话就能把这个论证驳倒。」拉比们不需要读希腊文——他们直接读希伯来，<em>ru'aḥ</em> 之争对他们而言连争点都不算。</span>
+        <span class="en"><strong>רוּחַ · ru'aḥ</strong> — "wind, spirit, breath." The single Hebrew word becomes <em>pneuma</em> in the Septuagint, and <em>pneuma</em> means both "wind" and "spirit" (cf. John 3:8: "<em>the wind</em> blows where it wills"). <strong>The entire fourth-century Christian fight pivots on this translation</strong>: in unmarked Hebrew, <em>ru'aḥ</em> in this verse means "wind" — but the Greek flattens it to <em>pneuma</em>, opening the door to the Pneumatomachian argument that "the Spirit is created." Athanasius and Basil had to argue that what Amos meant here was "ordinary wind." Richard Hanson observed: "Had Athanasius been able to appeal to the original Hebrew, he could have blown this proof sky-high in a sentence." The rabbis, of course, did not need Greek — they read the Hebrew directly. The fight over <em>ru'aḥ</em> was not even a fight for them.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一章对基督徒最沉重的礼物，是让我们看见：早期教会关于<strong>三位一体、圣灵</strong>的神学争辩，并非在真空中进行，而是<strong>有犹太人在听</strong>。拉比们听见了基督徒内部为阿摩司书 4:13 争得头破血流，他们的反应是：「让我们写一个故事，让 min 因为读不全这节经文而<em>跳楼自杀</em>。」这听起来残忍，但它反映了一个深刻的真相：在公元三、四世纪，犹太人不是「等待福音的失落民族」，他们是<strong>同时代的另一个解经传统</strong>——并且他们自己确信，他们读得比对面的基督徒更准。基督徒不必因此放弃三一神学的真理——但我们应该<strong>承认</strong>：这套神学的诞生过程，是在<em>对话与争辩</em>中长出来的，包括与拉比们的隐形对话。基督教神学不是从一个真空的「<em>圣经</em>」里突然冒出来的，它生在<em>有人为它争吵的世界</em>。每一次我们诵念<em>使徒信经</em>或<em>尼西亚信经</em>，我们都在重复一场被拉比们在远处目睹的辩论。</span>
+        <span class="en">The heaviest gift this chapter gives a Christian reader is the realization that early Church arguments about <strong>the Trinity and the Holy Spirit</strong> did not happen in a vacuum — <strong>Jews were listening</strong>. The rabbis heard Christians battle each other bloody over Amos 4:13, and their response was: "Let us write a story in which the <em>min</em>, having misread this verse, climbs to the roof and <em>falls</em>." That can sound cruel, but it points to a deeper truth: in the third and fourth centuries, Jews were not "the people who failed to receive the Gospel." They were <strong>the other contemporary tradition reading the same scriptures</strong> — and they were confident they read better than the Christians across the wall. Christians need not surrender Trinitarian truth — but we should <strong>concede</strong> that this theology was forged in <em>argument</em>, including unseen argument with the rabbis. Christian doctrine did not erupt out of a vacuum-sealed Bible; it grew in a world where others were contesting it. Every time we recite the Nicene Creed, we are repeating a debate the rabbis watched from across the room.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果犹太拉比在四世纪用一个戏剧化的故事来「赢得」阿摩司书 4:13 的解经——那拉比自己心里，是不是也<em>知道</em>这是一场被基督徒首先点燃的辩论？这场辩论本身，是否证明了犹太-基督徒共享一个<em>正在燃烧的属灵宇宙</em>？</span><span class="en">If the rabbis dramatized a winning answer to Amos 4:13 in the fourth century — did they themselves <em>know</em> this was a fight Christians had ignited first? Doesn't the very existence of this debate prove that Jews and Christians shared a <em>burning spiritual universe</em>?</span></li>
+        <li><span class="zh">基督徒花了几个世纪才把圣灵的神性写进信经。今天，我对圣灵的<em>个体经验</em>，对应的是教会神学定义中的哪一面？是「与圣父同等的神」？还是「住在我里面的引导者」？两者是否在我心里和谐？</span><span class="en">It took the Church centuries to articulate the Spirit's divinity in the Creed. Today, my own <em>experience</em> of the Holy Spirit — does it line up with "co-equal God with the Father," or with "the Indwelling Guide"? Are these in harmony in my heart?</span></li>
+        <li><span class="zh">如果我和一位犹太朋友谈到圣灵，西格尔的研究告诉我：他/她可能比我所以为的，<em>更了解</em>这场辩论的历史。我会不会变得更愿意倾听他/她的观点？</span><span class="en">If I were to talk about the Holy Spirit with a Jewish friend, Bar-Asher Siegal's work tells me they may know <em>far more</em> of this debate's history than I had assumed. Would I be willing to listen more carefully now?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 4  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">「不怀孕、不生养的，你要欢呼」——以赛亚书 54:1 与保罗的寓意</span>
+        <span class="en">The Barren One Who Bore More — Isaiah 54:1</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">巴比伦塔木德 <em>Berakhot</em> 10a：一位 min 对女学者贝鲁莉亚 (Beruriah) 说：「经上写『不怀孕、不生养的，你要欢呼』（赛 54:1）——既然她没生孩子，她欢呼什么？」贝鲁莉亚回答：「<strong>傻瓜，请看经文的末尾</strong>——『因为没有丈夫的，比有丈夫的儿女更多』。但其实，<em>以色列会众</em>就像那不生养的女人——她不生产，正<em>因为她不生养像你这种归地狱的孩子</em>！」乍看是一句精准的反击，但西格尔指出：故事的真正剑锋藏在保罗书信里。<strong>保罗在加拉太书 4:21-31 引用了同一节以赛亚书 54:1</strong>，把它用作他寓意解经的核心：撒拉象征「天上的耶路撒冷」（自由、应许、灵），夏甲象征「现在的耶路撒冷」（奴役、肉体）——而以赛亚书 54:1「不怀孕的，你要欢呼」被保罗读为：<em>外邦教会，那原本被认作「不生养的」</em>，要欢呼，因她在基督里所生的儿女，<strong>多过</strong>那肉体的以色列。</span>
+        <span class="en"><em>b. Berakhot</em> 10a: a <em>min</em> says to Beruriah, the famous female scholar: "It is written, 'Rejoice, O barren one who bore no child' (Isa 54:1). Since she did not bear children, why should she rejoice?" Beruriah replies: "<strong>Fool, look to the end of the verse</strong> — 'For the children of the desolate shall be more than the children of the espoused.' But really, <em>the community of Israel</em> is like a barren woman — she does not bear, <em>precisely because she has not borne children for Gehenna, like you</em>!" The surface reading is a clean knockout. But Bar-Asher Siegal shows the deeper edge: <strong>Paul cited this same verse in Galatians 4:21–31</strong>, at the heart of his allegory. Sarah figures the heavenly Jerusalem (free, promise, Spirit); Hagar figures the present Jerusalem (slavery, flesh) — and Isaiah 54:1 ("Rejoice, O barren") is read as: <em>the Gentile Church</em>, the one who was called "barren," will rejoice, because the children she bears <strong>outnumber</strong> those of fleshly Israel.</span>
+      </p>
+      <p>
+        <span class="zh">西格尔（与她丈夫共同合作的语言学研究）指出：保罗用希腊语写作时，看似仅仅依赖《七十士译本》——但他的整套寓意解经，恰恰依赖一个<strong>希伯来词的双关</strong>，即「<em>be'ulah</em> בְּעוּלָה」——七十士译本译为「<em>有丈夫的</em>」(τῆς ἐχούσης τὸν ἄνδρα)，但晚期希伯来语中这个词有更具体的含义：「<em>性行为发生过</em>的女人」。保罗在加拉太书 4:23 强调以撒「不是按肉体生」(κατὰ σάρκα = 通过肉体的途径)，<strong>反义</strong>对应「<em>be'ulah</em>」——<em>不是通过性行为生的</em>。这意味着保罗自己在阅读以赛亚书时，<strong>读的是希伯来或亚兰的传统</strong>——他的「以撒不是肉体生」实际上是早期犹太人对撒拉年老怀孕的一种解读：以撒由<em>圣灵</em>而生（参斐洛、《创世记拉巴》47:2），是一个<em>非肉体的</em>奇迹诞生。然后，这个解释延伸到一个更大的论点：撒拉是以色列<em>非肉体诞生</em>的母亲；同样地，福音派教会的诞生也是<em>非肉体的</em>。</span>
+        <span class="en">Bar-Asher Siegal (in joint linguistic work with her husband Elitzur Bar-Asher Siegal) shows that Paul, even though he writes in Greek, seems to be relying not on the Septuagint alone but on a <strong>Hebrew pun</strong> in the word "<em>be'ulah</em>" בְּעוּלָה. The Septuagint renders it generically as "she who has a husband" (τῆς ἐχούσης τὸν ἄνδρα), but in later Hebrew this word carries a sharper meaning: "<em>a woman who has had intercourse</em>." Paul's emphatic phrase in Galatians 4:23 — Isaac "<em>was not born according to the flesh</em>" (κατὰ σάρκα = by means of bodily intercourse) — fits perfectly against "<em>be'ulah</em>" as its opposite. This suggests that Paul is reading Isaiah through a <strong>Hebrew interpretive tradition</strong> in which Isaac is born not by intercourse but by the Spirit (cf. Philo, <em>On the Cherubim</em> 13.45; <em>Genesis Rabbah</em> 47:2). Then the deeper claim: Sarah is the mother of an Israel born <em>not by flesh</em>; analogously, the Gentile Church is born <em>not by flesh</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你这不怀孕、不生养的，要歌唱；你这未曾经过产难的，要发声欢呼；因为没有丈夫的，比有丈夫的儿女更多——这是耶和华说的。」</span>
+        <span class="en">"Rejoice, O barren one who bore no child, burst into song and shout, you who have not been in labor. For the children of the desolate are more than the children of the espoused, says the LORD."</span>
+        <cite>《以赛亚书》54:1 · Isaiah 54:1 — quoted in Galatians 4:27</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>בְּעוּלָה · be'ulah</strong>——字面意思是「被占有的、有夫之妇」，但在晚期希伯来语中常被理解为「已经发生过性行为的女人」。这是这一节经文中最微妙的一个词，也是<strong>整个犹太-基督徒辩论的核心</strong>。如果你把 <em>be'ulah</em> 仅仅理解为「有丈夫」，那么以赛亚书 54:1 就只是关于<em>家庭多寡</em>的对比；但如果你按晚期希伯来语理解为「<em>已经发生过性行为</em>」——那么这节经文就被读成<em>肉体的途径 vs 非肉体的途径</em>的对照——而保罗正是踩在这个对照上。贝鲁莉亚为何痛斥这个 min？因为她<strong>听出了</strong>对方的潜台词：他在用保罗的寓意来挑衅她，即「<em>外邦教会比犹太人会众生得多</em>」。贝鲁莉亚的回答是把同一个比喻翻转：<strong>是的，我们不生养——但我们不生养你这种归地狱的孩子</strong>。</span>
+        <span class="en"><strong>בְּעוּלָה · be'ulah</strong> — literally "the possessed one, the married woman," but in later Hebrew often understood as "<em>a woman who has had intercourse</em>." This is the most loaded word in the verse — and the hinge of the entire Jewish-Christian dispute. If <em>be'ulah</em> simply means "married woman," then Isa 54:1 is about <em>family size</em>; but if it means "<em>one who has had intercourse</em>," then the verse contrasts <em>flesh</em> and <em>not-flesh</em> — and Paul builds his allegory on exactly that contrast. Why does Beruriah lash out at the <em>min</em>? Because she <strong>hears</strong> what he is implying: he is using Paul's allegory to taunt her — "<em>the Gentile Church bears more children than the synagogue does</em>." Beruriah flips the metaphor: <strong>yes, we are barren — barren of children for Gehenna like you.</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一章对基督徒的冲击在于：<strong>加拉太书 4 不是一段中立的神学</strong>。它是一段<em>论战</em>——而拉比们听见了。两千年来，基督徒读加拉太书 4 时，常把它当作纯粹的预表论（夏甲-撒拉=旧约-新约）；但<em>另一边</em>的拉比却读出了：「保罗在说<strong>我们生的孩子归地狱</strong>。」当贝鲁莉亚回答「我们不生养像你这种归地狱的孩子」时，她正在<strong>把保罗的寓意原句返回</strong>给基督徒。这一刻，圣经成为<em>战场</em>。基督徒应该听见这种回声，并谦卑地承认：保罗的寓意虽然出于真实的属灵洞察，但<em>它对接收方造成了伤口</em>。这并不要求我们放弃保罗的神学；它要求我们<strong>带着伤口的觉察</strong>去读保罗的神学——尤其在面对今天的犹太弟兄姐妹时。哥林多前书 13:12 说，「我们如今仿佛对着镜子观看，糊糊涂涂」——也许我们读保罗的方式，正是这个「糊糊涂涂」的镜子的一面。</span>
+        <span class="en">The blow this chapter lands on a Christian reader: <strong>Galatians 4 is not neutral theology</strong>. It is <em>polemic</em> — and the rabbis heard it. Christians have read Galatians 4 as straightforward typology (Hagar/Sarah = Old/New); but on <em>the other side</em>, the rabbis hear: "<em>Paul is saying our children are for Gehenna.</em>" When Beruriah retorts, "we don't bear children for Gehenna like you," she is <strong>throwing Paul's allegory back at him</strong>. In that moment scripture becomes a <em>battlefield</em>. Christians need to hear this echo and admit, humbly, that Paul's allegory — however genuine its spiritual insight — <em>wounded the people receiving it</em>. This does not require us to abandon Paul's theology; it asks us to read it with <strong>awareness of the wound</strong>, especially when we are sitting across from Jewish brothers and sisters today. "Now we see in a mirror, dimly" (1 Cor 13:12) — perhaps the dimness of our mirror is, in part, that we have heard only one side of this conversation.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我读加拉太书 4 时，是否曾真正<em>意识</em>到，保罗在这里把肉体的以色列描绘为「奴役」与「肉体」？这一段如果<em>另一群人在听</em>，会是什么感受？</span><span class="en">When I read Galatians 4, have I ever truly noticed that Paul is painting fleshly Israel as "slavery" and "flesh"? If <em>another community were listening</em>, how would that passage feel?</span></li>
+        <li><span class="zh">贝鲁莉亚是一位女学者——这本身在拉比传统中是罕见的。一个女人能这样回击男性 min 的挑战，对我对「拉比传统」中的女性形象，有何修正？</span><span class="en">Beruriah is a female scholar — itself rare in rabbinic tradition. A woman scholar who outwits a male <em>min</em> in a dialogue on Isaiah — how does this revise my picture of women in the rabbinic world?</span></li>
+        <li><span class="zh">如果保罗本人能听到贝鲁莉亚的回答，他会说什么？他会修正他在加拉太书 4 的语气吗？这是一个无法回答的问题——但它本身值得在心中保留。</span><span class="en">If Paul himself could have heard Beruriah's reply — what might he have said? Would he have softened the tone of Galatians 4? This question cannot be answered — but it is worth holding in the heart.</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 5  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">「他们中最好的也像荆棘」——弥迦书 7:4 与「以色列被弃」</span>
+        <span class="en">The Best of Them is Like a Brier — Micah 7:4</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">巴比伦塔木德 <em>'Eruvin</em> 101a：一位 min 走近<strong>拉比·约书亚·本·哈拿尼亚</strong>，引用弥迦书 7:4 嘲讽：「<em>你是一根荆棘</em>——因为经上说：『他们中最好的也像荆棘』」（בוטם כחדק）。约书亚回应：「<strong>傻瓜，请看经文的末尾</strong>——『最正直的，也像（或：比）荆棘篱笆（还差）』。那么『他们中最好的像荆棘』是什么意思？<strong>正如荆棘保护葡萄园的缺口，我们中间最好的人保护我们</strong>。」然后他补一句：「另一种解读——『他们中最好的像荆棘 (חדק)』——他们将<em>压碎</em> (להדק) 万民于地狱，正如弥迦书 4:13 说：『锡安的女子啊，起来踹谷……你必打碎多国的民』。」</span>
+        <span class="en"><em>b. 'Eruvin</em> 101a: a <em>min</em> approaches <strong>R. Joshua b. Ḥananiah</strong> and cites Micah 7:4 as an insult: "<em>You are a brier</em>, for it is written, 'The best of them is like a brier'" (בוטם כחדק). Joshua replies: "<strong>Fool, look to the end of the verse</strong> — 'The most upright is [worse] than a thorn hedge.' What then is meant by 'the best of them is like a brier'? <strong>Just as briers protect a gap in a grove, so the best among us protect us.</strong>" He adds: "Another interpretation: 'the best of them like a brier (חדק)' — they will <em>crush</em> (להדק) the nations of the world in Gehenna, as Micah 4:13 says: 'Arise and thresh, O daughter of Zion … you shall crush many peoples.'"</span>
+      </p>
+      <p>
+        <span class="zh">西格尔指出一个奇怪的逻辑漏洞：通常在 minim 故事里，「看经文的末尾」会<em>翻转</em>前半句的意思——但在这里，弥迦书 7:4 的下半句「最正直的，也像荆棘篱笆（还差）」恰好<em>加强</em>了前半句的负面意思，根本没有翻转。这意味着拉比·约书亚的反击在<em>表面</em>逻辑上不成立——所以一定有<strong>更深的层次</strong>在运作。这个更深的层次就是：<em>耶柔米</em>、<em>亚历山大的西里尔</em>、<em>摩普绥提亚的西奥多</em> 都把弥迦书 7:4 用作<strong>替代神学 (supersessionism)</strong> 的核心证据——「连以色列里最好的，也只是荆棘——这证明神已经弃绝了以色列，将祂的爱给了教会」。基督教解经家进一步把希腊文版本（其中弥迦 7:4 涉及一只<em>蛀虫</em> σής——「蛀虫吞噬一切」）解读为：神<em>用蛀虫</em>吃尽以色列的「美好」。拉比·约书亚的回应是双层颠覆：（1）「你说我是荆棘？很好——<strong>荆棘正是用来保护葡萄园的</strong>」；（2）「<em>荆棘</em> (חדק) 与<em>压碎</em> (להדק) 同根——以色列的『最好的』将<strong>压碎万民于末日</strong>」。</span>
+        <span class="en">Bar-Asher Siegal notices a logical quirk: in most <em>minim</em> stories, "look to the end of the verse" <em>reverses</em> the meaning of the first half — but here, the second half of Micah 7:4 ("the most upright is worse than a thorn hedge") only <em>intensifies</em> the negative sense of the first. So R. Joshua's surface rebuttal does not actually do the logical work. Something <strong>deeper</strong> must be in play. That deeper layer: <em>Jerome</em>, <em>Cyril of Alexandria</em>, and <em>Theodore of Mopsuestia</em> all used Micah 7:4 as a core proof-text for <strong>supersessionism</strong> — "even the best in Israel is only a brier — proof that God has rejected Israel and given his love to the Church." Christian exegetes leaned especially on the Septuagint's strange version (which speaks of a <em>moth</em>, σής, devouring everything) to argue: God uses the moth to consume Israel's "best." R. Joshua's reply is a double subversion: (1) "you call me a brier? — <strong>a brier is precisely what protects the vineyard</strong>"; (2) the same Hebrew root חדק = להדק — "and the 'best of them' will <strong>crush the nations of the world in Gehenna</strong>."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他们中最好的也像荆棘；最正直的，也像荆棘篱笆（还差）。你的守望者所说的日子、你的责罚已经临到——他们必扰乱不安。」</span>
+        <span class="en">"The best of them is like a brier; the most upright [is worse] than a thorn hedge. The day God visits you has come, the day your watchmen sounded the alarm; now is the time of your confusion."</span>
+        <cite>《弥迦书》7:4 · Micah 7:4</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>חֵדֶק · ḥedek</strong>（荆棘）与 <strong>הָדַק · hadak</strong>（压碎、磨碎）。这两个词在希伯来语中是<em>同辅音不同元音</em>的近亲。在拉比的解经里，<em>חדק</em>（荆棘）通过中介音变（喉音 ה 与 ח 的常见交替）被读作 <em>הדק</em>（压碎）——这是一种典型的<strong>米德拉什解经技巧</strong>，利用辅音的相似性，把一个词的负面联想（被荆棘刺）<em>翻转</em>为它对敌人的破坏力（压碎万民）。这种解经方式对希腊化的基督徒解经家是陌生的——他们读 LXX 的希腊文，根本不知道 ḥedek 与 hadak 在希伯来里这么近。所以拉比·约书亚的第二个反击，是从希伯来语<strong>独有的可能性</strong>中长出来的——这本身就是一种声明：<em>我们用希伯来原文，你们用希腊翻译；这场争夺，希伯来人有主场优势</em>。</span>
+        <span class="en"><strong>חֵדֶק · ḥedek</strong> (brier) and <strong>הָדַק · hadak</strong> (to crush, to pulverize). These two words share the same consonantal frame in Hebrew (with the well-known phonetic interchange between guttural ה and ח). The rabbinic midrash exploits exactly this: <em>חדק</em> (brier) heard as <em>הדק</em> (crush) — a classic <strong>midrashic technique</strong> turning a negative association (pricked by briers) into a weapon against the enemy (crushing the nations). This kind of reading is invisible to Hellenistic Christian exegetes reading the Greek LXX — they have no idea how close <em>ḥedek</em> and <em>hadak</em> are in Hebrew. R. Joshua's second rejoinder grows out of a <strong>uniquely Hebrew possibility</strong> — and this is itself a declaration: <em>we read the original; you read a translation; in this contest the Hebrew side has the home-field advantage.</em></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒该如何应对「<em>替代神学</em>」这个沉重的话题？西格尔的研究没有回答这个神学问题——但它逼着我们诚实地承认：<strong>耶柔米、西里尔、西奥多用弥迦书 7:4 论证「神弃绝了以色列」——而以色列<em>听见了</em>，并写了一个故事来回应</strong>。拉比·约书亚的回应不是用神学辩论，而是用<em>米德拉什的诗意</em>：「我是荆棘？很好——<em>荆棘保护葡萄园</em>。」这是一种深刻的属灵姿态：<em>把对手的侮辱当作神祝福的隐喻接收过来</em>。对基督徒而言，这一章温柔地提醒我们：罗马书 11 章保罗最郑重的警告是「<em>外邦人哪，不要自高，要惧怕</em>」——因为「橄榄树的根托着你」(罗 11:18)。当我们以「最好的以色列也像荆棘」这种语气想问题时，我们就是保罗警告过的那种<em>自高的外邦人</em>。拉比·约书亚的回应——「<em>荆棘保护葡萄园</em>」——其实是一种邀请：让我们重新尊重<em>那根</em>，而不是嘲笑它。</span>
+        <span class="en">How should a Christian reckon with the long shadow of <em>supersessionism</em>? Bar-Asher Siegal does not answer that theological question — but she forces us to admit: <strong>Jerome, Cyril, and Theodore used Micah 7:4 to argue "God has rejected Israel" — and Israel <em>heard</em>, and wrote a story in reply.</strong> R. Joshua's reply is not theological debate but the <em>poetry of midrash</em>: "You call me a brier? Very well — <em>briers protect the vineyard</em>." This is a profound spiritual gesture: <em>receiving an insult as a hidden blessing</em>. For Christians, this chapter is a gentle reminder of Paul's most serious warning in Romans 11: "<em>do not be arrogant, but fear</em>" — for "the root supports you, not you the root" (Rom 11:18). Every time we speak as though "the best of Israel is a brier," we are the kind of arrogant Gentile Paul warned against. R. Joshua's response — "<em>briers protect the vineyard</em>" — is, in fact, an invitation: to honor the root again instead of mocking it.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">「替代神学」在我自己的教会传统中以什么形态存在？我有没有<em>听过</em>它，<em>说过</em>它，<em>默默接受</em>过它？</span><span class="en">In what form does supersessionism live in my own church tradition? Have I <em>heard</em> it, <em>spoken</em> it, <em>quietly accepted</em> it?</span></li>
+        <li><span class="zh">拉比·约书亚把「<em>你是荆棘</em>」的侮辱重读为「<em>荆棘保护葡萄园</em>」。当生命中有人用恶意的话攻击我时，我有没有这种<em>把负面的话语翻转为神之祝福</em>的属灵能力？</span><span class="en">R. Joshua takes the insult "<em>you are a brier</em>" and turns it into "<em>briers protect the vineyard</em>." When someone speaks maliciously about me, do I have the spiritual reflex to <em>turn negative speech into a hidden blessing of God</em>?</span></li>
+        <li><span class="zh">罗马书 11:18 「不是你托着根，乃是根托着你」——我是否真的相信，<em>犹太民族今天仍然托着我的信仰</em>？这个相信，会如何改变我祷告时对以色列的态度？</span><span class="en">Romans 11:18: "the root supports you, not you the root." Do I actually believe that <em>the Jewish people today still bear the root of my faith</em>? How would believing this change the way I pray for Israel?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 6  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">「他已从他们脱离」——何西阿书 5:6 与「神已脱鞋」</span>
+        <span class="en">He Has Drawn Off from Them — Hosea 5:6</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">巴比伦塔木德 <em>Yevamot</em> 102b：一位 min 对拉班·加马列尔 (Rabban Gamliel) 说：「你们是一群被主人<em>脱鞋</em>了的民——因为经上写：『他们要带着羊群牛群去寻求耶和华，却寻不见，他已<em>脱离</em> (חלץ) 他们』」（何 5:6）。这个 min 在玩一个精彩的希伯来语双关：「脱离」(<em>halaṣ</em>) 这个动词，正是申命记 25:9 描写<strong>「脱鞋礼」(<em>Ḥaliṣah</em>)</strong> 时所用的关键动词——当一个犹太人拒绝娶他兄弟的寡妇时，寡妇会脱掉他的鞋，吐唾沫在他脸上，宣告他是「<em>脱鞋之家</em>」(申 25:10)。min 借这个双关说：「神已经对以色列<em>履行脱鞋礼</em>——你们这群妻子已经被祂正式拒绝了。」加马列尔的回应：「<strong>傻瓜！经上写的是『他已从他们脱离』，不是『他向他们脱离』。在脱鞋礼的法律里，如果是<em>夫家</em>替<em>寡妇</em>脱鞋，这个礼根本无效。</strong>」</span>
+        <span class="en"><em>b. Yevamot</em> 102b: a <em>min</em> says to Rabban Gamliel: "You are a people whose Master has performed <em>Ḥaliṣah</em> on you — for it is written, 'With their flocks and herds they shall go to seek the LORD, but they shall not find him; he has <em>drawn off</em> (חלץ) from them'" (Hos 5:6). The <em>min</em> is playing a precise Hebrew pun: the verb "drawn off" (<em>halaṣ</em>) is the technical term in Deuteronomy 25:9 for <strong>the "Ḥaliṣah" ceremony</strong> — when a Jewish man refuses to marry his deceased brother's widow, she removes his sandal, spits in his face, and declares him "the house of the unsandaled" (Deut 25:10). The <em>min</em> bends the pun toward an accusation: "God has performed <em>Ḥaliṣah</em> on Israel — you, his wife, have been formally rejected." Gamliel's reply: "<strong>Fool! Scripture says 'he has drawn off <em>from</em> them,' not 'he has drawn off <em>for</em> them.' Under levirate law, if the husband's family removes the <em>widow's</em> sandal, the ceremony is invalid.</strong>"</span>
+      </p>
+      <p>
+        <span class="zh">这是本书中最技术性、也最深奥的一个故事——但西格尔的方法依然奏效：她证明<strong>「神已脱鞋」这一图像在早期基督徒著作中非常普遍</strong>。耶柔米、安波罗修、阿奎莱的克罗马提乌斯 (Chromatius of Aquileia) 都用<em>脱鞋</em>这一意象描绘<strong>从旧约到新约的过渡</strong>——摩西、约书亚、施洗约翰都被命令脱鞋（出 3:5; 书 5:15; 太 3:11），象征他们<strong>不是新郎</strong>；只有耶稣是教会的新郎，他没有脱鞋。约 1:27 施洗约翰说：「我就是给他解鞋带也不配。」耶柔米和安波罗修明确地说：约翰之所以不解耶稣的鞋带，是因为<em>这正是「脱鞋礼」的动作</em>——「免得他的家被称为<em>脱鞋之家</em>」。换句话说：<strong>基督徒利用「脱鞋」的图像，论证「以色列已经被神弃绝，因为她是『脱鞋之家』」</strong>。然后，min 把这个论证浓缩成一句话，扔给加马列尔；加马列尔用律法的精度反驳：「按律法，<em>是寡妇</em>脱<em>兄弟</em>的鞋，不是反过来——所以你的论证从一开始就<em>违法</em>。」</span>
+        <span class="en">This is the book's most technical and most subtle story — but Bar-Asher Siegal's method holds: she shows that <strong>the "God has performed Ḥaliṣah" image is very widespread in early Christian writing</strong>. Jerome, Ambrose, and Chromatius of Aquileia all use the <em>removed sandal</em> as a figure for the <strong>transition from Old to New Testament</strong>. Moses, Joshua, and John the Baptist are each commanded to remove sandals (Exod 3:5; Josh 5:15; Matt 3:11) — a sign that <strong>they are not the Bridegroom</strong>. Only Jesus is the Bridegroom of the Church; he keeps his sandals. John 1:27 — "the strap of whose sandal I am not worthy to untie" — is read by Jerome and Ambrose as a deliberate inversion of <em>Ḥaliṣah</em>: "lest the house of the Forerunner be called <em>the house of the unsandaled</em>." That is: <strong>Christian writers used the sandal-removal image to argue that Israel has been divinely rejected, that she is "the house of the unsandaled."</strong> The <em>min</em> compresses this entire argument into one line. Gamliel pulverizes it with halakhic precision: under the law, <em>the widow</em> removes <em>the brother-in-law's</em> sandal, not the reverse — so the very logic is procedurally <em>void</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他们必带着羊群牛群去寻求耶和华，却寻不见；他已经从他们脱离 (חלץ) 了。」</span>
+        <span class="en">"With their flocks and herds they shall go to seek the LORD, but they shall not find him; he has drawn off (חלץ) from them."</span>
+        <cite>《何西阿书》5:6 · Hosea 5:6</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>חליצה · Ḥaliṣah</strong>（脱鞋礼）。词根是 <em>ḥ-l-ṣ</em>「<em>脱去、除下</em>」。在《申命记》25:5-10 描写的「<em>叔娶寡嫂</em>」(yibbum) 制度里，如果一个男人不愿娶他兄弟的寡妇，<em>她</em>必须脱掉<em>他</em>的一只鞋（不是反过来！）——这就是 <em>Ḥaliṣah</em>。在何西阿书 5:6，<em>halaṣ</em> 这个动词破天荒地用作不及物动词（圣经中唯一一次），意为「<em>抽身离开</em>」。min 想把它读回去对应<em>Ḥaliṣah</em>的及物用法；加马列尔的反击是：你不能这样读，因为律法的程序在这里被你<strong>颠倒</strong>了——你的解经<em>违反了你自己引用的那条律法的内在结构</em>。这是西格尔最精彩的洞察之一：拉比的反驳不是「你的释经不对」，而是「<strong>你的释经在律法上不成立</strong>」——这是用律法的精度，把比喻的过度伸展折断。</span>
+        <span class="en"><strong>חליצה · Ḥaliṣah</strong> (the sandal-removal ceremony). The root is <em>ḥ-l-ṣ</em>, "to draw off, to remove." In Deuteronomy 25:5–10's levirate-marriage law, if a man refuses to marry his deceased brother's widow, <em>she</em> removes <em>his</em> sandal (not the other way around) — this is <em>Ḥaliṣah</em>. In Hosea 5:6, the verb <em>halaṣ</em> is used intransitively (the only such instance in the Hebrew Bible), meaning "he has withdrawn." The <em>min</em> wants to read it back into the transitive sense of <em>Ḥaliṣah</em>. Gamliel's rebuttal: you cannot, because the legal procedure here has been <strong>reversed</strong> — your reading <em>violates the internal logic of the very law you invoked</em>. This is one of Bar-Asher Siegal's most exquisite observations: the rabbi's reply is not "your exegesis is wrong" but "<strong>your exegesis is halakhically invalid</strong>" — using legal precision to snap a stretched metaphor.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读约翰福音 1:27 时，几乎从未想过：施洗约翰说「我不配为他解鞋带」这句话，<strong>可能</strong>正是在引用<em>Ḥaliṣah</em> 的图像。耶柔米与安波罗修明确这样读：约翰承认<em>耶稣是新郎</em>，约翰自己不是。这是非常美丽的神学——但当它转向「<em>所以以色列被弃绝</em>」时，它就变成了对另一个群体的伤口。本节的拉比加马列尔的回应教我们一件事：<strong>「以色列被弃绝」这一论证，按照律法本身的逻辑，根本不成立</strong>——因为这等于说，<em>夫家替寡妇脱了鞋</em>，而那在律法上是<em>无效</em>的。基督徒可以从这个反击中学到：当我们读约 1:27 时，应该感受它对耶稣的尊崇；但当我们走得太远，把这个尊崇用作<em>排斥犹太人</em>的论据时，就连那拉比都从墓中起来反驳我们——<em>而且他用的是律法本身</em>。罗马书 11:1：「神弃绝了他的百姓吗？断乎没有！」——保罗自己已经回答过这个问题。</span>
+        <span class="en">Christians reading John 1:27 almost never realize that John the Baptist's "I am not worthy to untie the strap of his sandal" <strong>may itself be an allusion to <em>Ḥaliṣah</em></strong>. Jerome and Ambrose read it precisely this way: John concedes that <em>Jesus is the Bridegroom</em>; John himself is not. That is beautiful theology — but when it gets pulled the next step ("<em>therefore Israel is rejected</em>"), it becomes a wound in another community. R. Gamliel's reply teaches us one thing: <strong>the "Israel-has-been-divorced" argument is, by the law's own internal logic, halakhically void</strong> — because it amounts to saying that <em>the husband's family removed the widow's sandal</em>, which is procedurally invalid. Christians can learn from this rebuttal: when we read John 1:27, we should feel its honor of Jesus; but when we extend that honor into a wedge against the Jewish people, even a long-dead rabbi rises from the grave to refute us — <em>and he refutes us with the Torah itself</em>. Romans 11:1 — "Has God rejected his people? By no means!" — Paul has already answered.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">「替代神学」的更精确名字也许是「<em>分离神学</em>」：神已经把以色列与教会分开了。这种神学在我心里有多深？读完这一章，它松动了吗？</span><span class="en">The more accurate name for "replacement theology" might be "<em>separation theology</em>": God has divorced Israel and married the Church. How deeply does that theology run in me? Has reading this chapter loosened it at all?</span></li>
+        <li><span class="zh">加马列尔的反驳让我学到：<em>哪怕在最受刺激的时候</em>，他都没有放下律法的精度。我自己在被攻击时，是滑入情绪化反击，还是仍能用<em>真理的精确</em>回答？</span><span class="en">Gamliel's reply teaches me that <em>even when stung</em>, he kept the precision of the law. When I am attacked, do I slip into emotional retaliation, or can I still answer with <em>the precision of truth</em>?</span></li>
+        <li><span class="zh">罗马书 11:1「神弃绝了他的百姓吗？断乎没有！」——我每年纪念这句话几次？或者，它只是「保罗的一句话」，而不是我祷告中真实持守的信念？</span><span class="en">"Has God rejected his people? By no means!" — How many times a year do I let this verse work on me? Or has it become "a line from Paul" rather than a conviction I actually pray with?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 7  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">拉比们认识哪些基督教材料？</span>
+        <span class="en">Which Christian Materials Did the Rabbis Know?</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一堂不是直接对应一个章节，而是把西格尔在<em>整本书</em>中的方法论与发现汇总起来。基本问题是：<strong>巴比伦的拉比们到底接触过多少基督教的传统？</strong>过去学界倾向于一个保守答案：「不多——也许有些松散的口头传闻。」西格尔的研究把这个答案<em>大幅推开</em>。她在「反思」(Reflections) 章节中列出一份令人震撼的清单——通过她在本书所做的对照阅读，可以推断拉比们至少知道：（1）基督教内部关于<strong>圣灵本质</strong>的争论；（2）阿摩司书 4:13 在这场争论里的关键地位；（3）这节经文的<em>七十士译本</em>版本（与马所拉版不同）；（4）<strong>耶稣的「三天复活」</strong>叙事；（5）希腊语 <em>euangelion</em>（福音／好消息）这个词；（6）这个词专门指<em>耶稣的事</em>；（7）诗篇 69:22「他们拿苦胆给我当食物」在受难叙事中的核心地位；（8）复活节前的<em>三日斋戒</em>习俗；（9）一段「耶稣从屋顶跌下」的反基督教传统；（10）<strong>「主站在门口」</strong>这个母题（启 3:20 / 路 12:36）；（11）<strong>圣餐的「祝福之杯」</strong>(林前 10:16) 的术语；（12）弥迦书 7:4 的七十士译本版本（与马所拉版本不同的<em>蛀虫</em>意象）；（13）这节经文在基督徒反犹论战中的角色；（14）「<em>蛀虫</em>」的母题；（15）「<em>积财在天</em>」的基督教概念（太 6:19-20）；（16）保罗在加 4 引用以赛亚书 54:1 的整套解经；（17）<strong>童贞女生子</strong>的概念；（18）何西阿书 5:6 在基督徒反犹论战中的角色；（19）<em>Ḥaliṣah</em>「脱鞋」母题在基督教反犹论战中的位置；（20）基督徒对路得记的解读（用作 <em>Ḥaliṣah</em> 论证）。</span>
+        <span class="en">This lesson is not tied to a single chapter; it gathers Bar-Asher Siegal's method and findings across the whole book. The basic question: <strong>how much Christianity did the Babylonian rabbis actually know?</strong> The older scholarly answer leaned conservative: "not much — perhaps loose oral rumors." Bar-Asher Siegal pushes this answer significantly. In her "Reflections" chapter she compiles a striking inventory of what these four short stories presuppose. By her reckoning, the Talmud's authors were aware of: (1) the intra-Christian controversy over the <strong>nature of the Holy Spirit</strong>; (2) the central role of Amos 4:13 in that controversy; (3) the <em>Septuagint</em> version of that verse (different from the Masoretic); (4) <strong>Jesus' three-day resurrection</strong> narrative; (5) the Greek term <em>euangelion</em> ("good tidings"); (6) its specific use in reference to <em>Jesus</em>; (7) the centrality of Psalm 69:22 in the passion narrative; (8) possibly the custom of a <strong>three-day fast</strong> before Easter; (9) a tradition involving <em>Jesus falling off a roof</em>; (10) the motif of Jesus <strong>standing at the door</strong> (Rev 3:20 / Luke 12:36); (11) the language of the <strong>"cup of blessing"</strong> (1 Cor 10:16); (12) the Septuagint version of Micah 7:4 (with its <em>moth</em> imagery); (13) the use of that verse in Christian anti-Jewish polemic; (14) the motif of the <em>moth</em>; (15) the Christian idea of <strong>treasures in heaven</strong> (Matt 6:19–20); (16) Paul's allegorical use of Isaiah 54:1 in Galatians 4; (17) the doctrine of the <strong>virgin birth</strong>; (18) the use of Hosea 5:6 in Christian polemic; (19) the <em>Ḥaliṣah</em> topos in Christian anti-Jewish rhetoric; (20) the Christian reading of the book of Ruth for the same purpose.</span>
+      </p>
+      <p>
+        <span class="zh">这份清单让人喘不过气。<strong>二十条</strong>——在<em>四个</em>短短的故事里。如果这只是冰山的一角，那么<em>拉比们对基督教传统的熟悉程度，远超过我们之前的想象</em>。西格尔接下来要问：<em>他们怎么知道的？</em> 她说：<strong>不需要假设具体的传播路径</strong>——可能是与基督徒邻居交谈，可能是听过基督教礼仪游行中朗读新约，可能是与犹太基督徒接触，可能是通过被东方拜占庭文化散播过来的口头传统。关键的洞察是：<strong>口头文化的活力让传统在两个社区间灵活流动</strong>。「次生口语性」(secondary orality)——<em>书面文本生成新的口头形式</em>——意味着即使巴比伦拉比从未读过亚他那修，也可能从邻居口中知道「『造风』(<em>creator spiritus</em>) 是基督徒最近的辩论焦点」。然后他们写下一个故事，让 min 因这节经文跳楼自杀。</span>
+        <span class="en">The list is staggering. <strong>Twenty entries</strong> from <em>four short stories</em>. If this is the tip of the iceberg, then <em>the rabbis knew the Christian tradition far better than we have given them credit for</em>. Bar-Asher Siegal then asks: <em>how did they know?</em> Her answer: <strong>we do not need to pin down a single channel</strong>. They may have talked with Christian neighbors; they may have overheard the public reading of New Testament passages during Christian liturgical processions; they may have learned from Jewish Christians; oral material may have drifted in from the Eastern Byzantine world. The deeper point is that <strong>oral culture made traditions flow freely between communities</strong>. "Secondary orality" — <em>written texts generating fresh oral forms</em> — means that even if a Babylonian rabbi had never read Athanasius, he might have heard from his neighbor that "<em>creator spiritus</em> is the hot debate among the Christians right now." And then he wrote a story in which a <em>min</em> falls off a roof reading that very verse.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你看，我们也大有这许多的见证人，如同云彩围着我们，就当放下各样的重担，脱去容易缠累我们的罪，存心忍耐，奔那摆在我们前头的路程。」</span>
+        <span class="en">"Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and let us run with endurance the race that is set before us."</span>
+        <cite>《希伯来书》12:1 · Hebrews 12:1 — for the long, listening centuries</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שֶׁמַע · shema</strong> (倾听) 与 <strong>הִתְבַּדְּלוּת · hitbadlut</strong> (分别) ——这两个词在这一章里彼此映照。<em>Shema</em>「听」是犹太教最深的信仰呼召（申 6:4「以色列啊，你要<em>听</em>」），但<em>hitbadlut</em>「<em>分别开来</em>」则是塔木德制造异端故事时的另一种动作——分别「我们」与「他们」。西格尔的整个论证可以化为一句话：<strong>这两个动作在拉比文学里同时发生</strong>。「<em>shema</em>」是听见对方（基督徒）；「<em>hitbadlut</em>」是把对方推到外面。拉比们的确<strong>听见</strong>了——这正是他们的故事所证明的；但他们听见之后<em>不</em>是为了走近，而是为了画一条更清晰的边界。这是晚期古代两个社区<em>同时听见对方而又彼此分离</em>的奇怪现实。</span>
+        <span class="en"><strong>שֶׁמַע · shema</strong> ("listen") and <strong>הִתְבַּדְּלוּת · hitbadlut</strong> ("separation") — these two Hebrew words mirror each other in this chapter. <em>Shema</em> is Judaism's deepest call (Deut 6:4: "Hear, O Israel"). But <em>hitbadlut</em> — "to separate oneself" — is the other motion at work when the Talmud writes its heretic stories: separating "us" from "them." Bar-Asher Siegal's whole case can be compressed into one paradox: <strong>both motions happen at once in rabbinic literature</strong>. <em>Shema</em> = the rabbis heard the Christians (the stories themselves are the proof); <em>hitbadlut</em> = they listened in order to draw a sharper line. This is the strange late-antique reality of two communities <em>hearing each other and separating from each other simultaneously</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读这一章应该感到深深的<em>惊讶</em>——也许还有一点<em>羞愧</em>。<strong>多少基督教徒能列出二十件他们的犹太邻居所相信的事？</strong> 拉比们做到了——而且是在<strong>对手</strong>的角度上。基督徒在过去两千年中（除了少数学者）几乎从不<em>认真</em>关心犹太传统在<em>同时代</em>怎样发展。这种「<em>单向收听</em>」（我们以为我们继承了希伯来圣经就够了，而无需<em>当代</em>犹太人的解读）是<strong>基督教神学最大的盲点之一</strong>。西格尔的研究是一份温柔的邀请：<strong>开始听</strong>。听塔木德。听拉比们怎么读以赛亚书 53。听他们对弥赛亚的盼望。听他们的米德拉什。不一定同意——但要<em>听见</em>。因为，正如拉比们听见了我们，<strong>我们也欠对方一次倾听</strong>——欠了两千年了。</span>
+        <span class="en">A Christian reading this chapter should feel a deep <em>shock</em> — and perhaps a touch of <em>shame</em>. <strong>How many Christians could list twenty things their Jewish neighbors believe?</strong> The rabbis did — from the <strong>opposing</strong> position, no less. For most of two thousand years, Christians (a few scholars aside) have rarely paid serious attention to how Jewish tradition <em>continued to develop in our own time</em>. This <em>one-way deafness</em> — the assumption that inheriting the Hebrew Bible was enough, with no need to listen to <em>contemporary</em> Jewish readers — is <strong>one of Christian theology's largest blind spots</strong>. Bar-Asher Siegal's research is a gentle invitation: <strong>begin to listen</strong>. Listen to the Talmud. Listen to how the rabbis read Isaiah 53. Listen to their messianic hopes. Listen to their midrash. We need not agree — but we need to <em>hear</em>. The rabbis heard us. <strong>We owe them a hearing</strong> — two thousand years overdue.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我能列出五件我的犹太邻居所相信的事吗——不是教会告诉我「他们相信什么」，而是他们<em>自己</em>所相信的？如果不能，下个月我可以做什么开始学习？</span><span class="en">Can I name five things my Jewish neighbors actually believe — not what the Church says they believe, but what they <em>themselves</em> believe? If not, what can I do this next month to begin learning?</span></li>
+        <li><span class="zh">如果犹太拉比们在四世纪就用故事「悄悄回应」了基督徒的论辩——那么<em>今天</em>的犹太教是否依然在「<em>听</em>」我们？我们的言行——我们的礼拜、我们的网络讲道、我们的政治姿态——他们<em>怎么听见</em>？</span><span class="en">If the fourth-century rabbis were "quietly answering" the Christians through stories, are <em>today's</em> Jews still "<em>listening</em>" to us? How does our worship, our online preaching, our political posture <em>sound to them</em>?</span></li>
+        <li><span class="zh">「<em>次生口语性</em>」(secondary orality) 的概念让我看到：传统的流动远比我们以为的灵活。今天我们的教会—犹太对话，能否也从「正式神学会议」之外，进入<em>邻里、共享餐、共同读经</em>这种更朴素的形态？</span><span class="en">The idea of <em>secondary orality</em> shows me that traditions flow far more freely than I assumed. Could our church-Jewish dialogue today, in addition to "formal theological councils," also live in the more humble form of <em>neighborly meals and shared reading of scripture</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 8  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">这对今天意味着什么——边界、敌意、与重新坐下</span>
+        <span class="en">What This Means for Today</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">西格尔在「反思」最后写道：「这些故事是<strong>边界塑造的话语</strong>的一部分——它们把<em>差异</em>转化为<em>排除</em>。」但她加了一句关键的话：「<em>讽刺</em>的功能不仅是攻击，也是<strong>教育</strong>。」研究表明，讽刺在传递知识方面与新闻同样有效——这意味着，<em>塔木德的异端故事一边嘲笑一边教导</em>。它教导拉比的学生：基督徒读经文是<em>这样</em>读的；这样读是<em>错</em>的；正确的读法是<em>这样</em>。换句话说，<strong>塔木德的异端故事是一份「同时代基督徒思想的速记教材」</strong>——它训练拉比们的学生<strong>听得出</strong>对方在说什么，<strong>看得见</strong>对方的解经路径，从而<strong>更好地维护</strong>自己的传统。这是个迷人的洞察：边界不是<em>无知</em>建造的；边界是<em>知道</em>之后才能精确地建造的。</span>
+        <span class="en">Bar-Asher Siegal closes her "Reflections" chapter with this: "These stories are part of <strong>boundary-creating discourse</strong> — they convert <em>difference</em> into <em>exclusion</em>." But she adds a crucial line: "<em>Satire</em> functions not only as attack, but also as <strong>education</strong>." Studies show that satire can transmit knowledge as effectively as straight news — meaning the Talmud's heretic stories <em>mock and teach simultaneously</em>. They train the rabbinic student: Christians read this verse <em>this way</em>; <em>that</em> way is wrong; <em>this</em> is how we read it. In other words, <strong>the Talmud's heretic stories are a shorthand textbook of contemporary Christian thought</strong> — they trained rabbinic students <strong>to recognize</strong> what the other side was saying and <strong>see</strong> their exegetical moves, so the student could <strong>defend</strong> his own tradition with precision. A fascinating insight: boundaries are not built out of <em>ignorance</em>; they are built — when built well — only after you <em>know</em>.</span>
+      </p>
+      <p>
+        <span class="zh">对今天的犹太-基督徒对话而言，这本书把<strong>整盘棋的复杂度</strong>展示出来。简单的「<em>我们曾经分道扬镳</em>」叙事不再够用了。事实是：两个传统在<em>晚期古代</em>仍然在<em>同一个空间</em>里听着、争着、互相画着边界。每一次基督徒说「以色列是橄榄树的根」，拉比们听见了；每一次拉比们说「基督徒读经只读半节」，基督徒听见了——通过下一代的回应。这是一种<strong>悲伤的亲密</strong>。两千年的距离没有真正分开我们。今天，我们仍然是同一棵橄榄树上的两枝（罗 11）——但这一次，我们不必再用讽刺彼此画边界。我们可以选择：<strong>在保持各自神圣界线的同时，重新坐下来同读一节经文</strong>。当犹太拉比和基督徒学者在大学里共同研究塔木德——像西格尔与她耶鲁的同事所做的——这就是<em>边界塑造的话语之后</em>的下一步：<strong>共读</strong>。</span>
+        <span class="en">For today's Jewish-Christian dialogue, this book lays bare the <strong>full complexity of the board</strong>. The simple "<em>we parted ways</em>" story is no longer enough. The truth is: the two traditions were still in <em>one shared space</em> in late antiquity — listening to each other, contesting each other, drawing each other's borders. Every time Christians said "Israel is the root of the olive tree," the rabbis heard. Every time the rabbis said "the Christians only read half a verse," the Christians heard — through the next generation's response. This is a <strong>sorrowful intimacy</strong>. Two millennia have not actually separated us. We remain two branches of one olive tree (Rom 11). But now, we no longer need to use satire to mark each other's edges. We can choose: <strong>while keeping our own sacred lines, we can sit back down and read a verse together</strong>. When Jewish rabbis and Christian scholars study Talmud together in universities — as Bar-Asher Siegal does with her Yale colleagues — that is the next step <em>after the discourse of boundaries</em>: <strong>shared reading</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「弟兄们，我不愿意你们不知道这奥秘（恐怕你们自以为聪明）——就是以色列人有几分是硬心的，等到外邦人的数目添满了，于是以色列全家都要得救。」</span>
+        <span class="en">"Lest you be wise in your own conceits, I want you to understand this mystery, brothers: a partial hardening has come upon Israel, until the fullness of the Gentiles has come in. And in this way all Israel will be saved."</span>
+        <cite>《罗马书》11:25-26 · Romans 11:25-26</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>חַבְרוּתָא · ḥavruta</strong>（共读伙伴）。在传统犹太学习中，<em>ḥavruta</em> 不是「<em>同学</em>」也不是「<em>师生</em>」——它是<em>两个人</em>坐在同一本塔木德前，<strong>互相质问、互相挑战、共同摸索意思</strong>。这个词的词根是 <em>ḥaver</em>「朋友」——但它远比英文的「friend」浓烈：<em>ḥavruta</em> 是<em>读经的另一半</em>。西格尔本人在书的「致谢」里说：「我继续被祝福着，与<em>我家中的 ḥavruta</em>——我的丈夫——长久的对话。」她写这本书是与<em>另一个犹太学者</em>的 ḥavruta；但她<strong>这本书的核心论证</strong>——拉比们与基督徒之间的对话——本身就是另一种 ḥavruta 的反讽——一种<em>带着争辩与尊重的共读</em>。今天的犹太-基督徒对话，最深的形式可能就是这个：<strong>愿意成为彼此的 ḥavruta</strong>——同坐在一张桌前，<em>同读一节经文</em>，<em>容许差异</em>，<em>不急于胜出</em>。</span>
+        <span class="en"><strong>חַבְרוּתָא · ḥavruta</strong> (study partner). In traditional Jewish learning, <em>ḥavruta</em> is not "classmate" and not "teacher-and-student" — it is <em>two people</em> sitting in front of one Talmud, <strong>questioning each other, challenging each other, fumbling toward meaning together</strong>. The root is <em>ḥaver</em>, "friend" — but far thicker than the English "friend": <em>ḥavruta</em> is <em>the other half of the text</em>. Bar-Asher Siegal herself acknowledges her husband as her <em>ḥavruta</em> in the book's preface. She wrote this book in <em>ḥavruta</em> with another Jewish scholar; but the book's central argument — the dialogue between rabbis and Christians — is an inverted echo of that same form: <em>study-as-contesting-respect</em>. The deepest form of Jewish-Christian dialogue today may be exactly this: <strong>willing to become each other's ḥavruta</strong> — sitting at the same table, <em>reading one verse together</em>, <em>permitting difference</em>, <em>not rushing to win</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这本学术专著最后给基督徒读者一份意外的礼物：它告诉我们，<strong>真正的对话，从来不是「我说服你」</strong>。拉比们没有说服基督徒；基督徒也没有说服拉比们。但他们彼此<em>听见</em>了——而且这种听见塑造了双方此后的传统。对当代的基督徒，这本书有三层启示：（1）<strong>谦卑</strong>——我们曾以为我们独自继承了希伯来圣经；事实上，拉比们也继承了，并且他们的解读经常比我们更细致。（2）<strong>诚实</strong>——保罗的某些段落，确实带着伤口；我们读它们时应该<em>意识到</em>另一群人怎样听见。（3）<strong>盼望</strong>——罗马书 11 章说「<em>以色列全家都要得救</em>」。如果这是真的，那么我们今天与犹太弟兄姐妹的<em>共读</em>，就不仅是学术活动——它是<strong>末后预备的一部分</strong>。两千年来教会忘了如何与以色列<em>共桌</em>。也许，重新学会的时候到了。</span>
+        <span class="en">This rigorous academic monograph leaves Christian readers with an unexpected gift: it tells us that <strong>real dialogue is never "I convince you"</strong>. The rabbis did not convince the Christians, and the Christians did not convince the rabbis. But they did <em>hear</em> each other — and that hearing shaped both traditions for centuries. For contemporary Christians, the book carries three lessons: (1) <strong>humility</strong> — we thought we had inherited the Hebrew Scriptures alone; in fact, the rabbis inherited them too, and their readings are often more careful than ours. (2) <strong>honesty</strong> — some Pauline passages do carry wounds; when we read them, we ought to be aware of how others hear them. (3) <strong>hope</strong> — Romans 11 promises "<em>all Israel will be saved</em>." If that is true, then our <em>shared reading</em> with Jewish brothers and sisters today is not just academic — it is <strong>part of the preparation of the End</strong>. For two thousand years the Church forgot how to sit at the same table as Israel. Perhaps the time has come to learn again.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">读完这八堂课，我心中对「拉比传统」的图像变了吗？我从前以为他们是「<em>失落的兄弟</em>」，现在我是否能看见他们是「<em>另一边同样认真的解经者</em>」？</span><span class="en">Having walked through these eight lessons, has my picture of the rabbinic tradition shifted? I once may have seen them as "<em>the lost brothers</em>"; can I now see them as "<em>the other side of equally serious exegetes</em>"?</span></li>
+        <li><span class="zh">如果罗马书 11 章是真的——「以色列全家都要得救」——那么我今天为以色列祷告的方式，是<em>带着轻蔑的同情</em>，还是<em>带着敬重的盼望</em>？</span><span class="en">If Romans 11 is true — "all Israel will be saved" — then how do I pray for Israel today: with <em>condescending pity</em>, or with <em>reverent hope</em>?</span></li>
+        <li><span class="zh"><em>Ḥavruta</em>「共读伙伴」这个概念对我有触动吗？我能想到生活中有谁是我的「<em>读圣经的另一半</em>」吗？如果没有——我愿不愿意祷告求神兴起这样的人，最好其中一个是<em>犹太人</em>？</span><span class="en">Does the concept of <em>ḥavruta</em> stir me? Is there anyone in my life I could call "<em>the other half of my reading</em>"? If not — am I willing to pray for God to raise up such a person, perhaps even a <em>Jewish</em> one?</span></li>
+      </ul>
+    </div>
+
+    <hr class="article-rule" />
+
+    <h2>
+      <span class="zh">同行祝福</span>
+      <span class="en">A Blessing for the Road</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华使他的脸光照你，赐恩给你。」<br/><br/>愿你成为一个<em>愿意听</em>的基督徒——<br/>听 minim 故事里那些拉比的笑声，<br/>听他们对我们解经方式的尖锐讽刺，<br/>听他们对以色列被弃绝的论证发出的「<em>傻瓜！请看经文的末尾</em>」。<br/><br/>愿你不再只读一节经文的前半——<br/>而是俯身下来 (<em>shafil</em>)，读到末尾。<br/>愿你不再以「傻瓜」呼唤你的犹太邻居——<br/>而是以 <em>ḥavruta</em>「共读伙伴」的姿态坐在他们旁边。<br/><br/>因为那橄榄树仍是同一棵，<br/>而你和他们是同根所托。<br/>愿主恩待我们，<br/>使全橄榄树在末日见证神的信实。</span>
+      <span class="en">"The LORD make his face shine upon you and be gracious unto you."<br/><br/>May you become a <em>listening</em> Christian —<br/>hearing the laughter of the rabbis in their <em>minim</em> stories,<br/>hearing their pointed satire of our reading,<br/>hearing them say "<em>Fool, look to the end of the verse</em>" to every Christian argument that Israel has been cast off.<br/><br/>May you no longer read just the first half of any verse —<br/>but bend down (<em>shafil</em>) and read to its end.<br/>May you no longer call your Jewish neighbor "fool" —<br/>but sit beside them as <em>ḥavruta</em>, the other half of the reading.<br/><br/>For the olive tree is still one,<br/>and you and they are held by the same root.<br/>May the Lord show favor to us,<br/>that the whole tree may bear witness to His faithfulness at the End.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://www.cambridge.org/9781107195363" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《拉比与异端》原书 · Cambridge University Press</span><span class="en">Get the Book — Jewish-Christian Dialogues on Scripture · Cambridge University Press</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>
