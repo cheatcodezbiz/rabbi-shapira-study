@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>犹太思想与哲学研习指南 · The Journal of Jewish Thought & Philosophy — A Study Guide · 妥拉之光</title>
+  <meta name="description" content="A Christian's study guide to The Journal of Jewish Thought and Philosophy (Brill, Vol. 16 No. 1, 2008) — eight bilingual lessons walking through Lachter on Gikatilla, Urban on Koigen, Levinas on Maimonides, and Fagenblat on ethical negative theology." />
+  <meta name="audio-slug" content="study-jewish-thought-philosophy" />
+  <meta property="og:title" content="The Journal of Jewish Thought & Philosophy — A Christian's Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons through a scholarly Jewish journal — Kabbalah and Christian polemics in 13th-century Castile, Koigen's ethos, and Levinas reading Maimonides for the modern age." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="The Journal of Jewish Thought & Philosophy — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 学术期刊导读 · 2026 · 5 · 23</span>
+        <span class="en">Study Guide · Reading a Scholarly Journal · 2026 · 5 · 23</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">犹太思想与哲学<br/>研习指南</span>
+        <span class="en">The Journal of Jewish<br/>Thought &amp; Philosophy</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，陪你跨过学术门槛，认识十三世纪卡斯蒂利亚的卡巴拉、二十世纪德语犹太伦理学，以及列维纳斯如何重读迈蒙尼德——一卷学者期刊里的整片星空。</span>
+        <span class="en">Eight lessons easing a Christian reader across the academic threshold — into the Kabbalah of 13th-century Castile, the German-Jewish ethos of David Koigen, and Levinas' lifelong, ambivalent return to Maimonides. One scholarly journal, opened slowly.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于《犹太思想与哲学期刊》第十六卷第一期 (Brill, Leiden, 2008)——Lachter · Urban · Levinas · Fagenblat</span>
+        <span class="en">Based on The Journal of Jewish Thought and Philosophy, Volume 16, Number 1 (Brill, Leiden, 2008) — essays by Hartley Lachter, Martina Urban, Emmanuel Levinas, and Michael Fagenblat.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 50 分钟通读</span><span class="en">~50 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://brill.com/view/journals/jjtp/jjtp-overview.xml" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">访问期刊 · Brill</span><span class="en">Visit the Journal · Brill</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">这本期刊不像一本「写给信徒」的书——它是写给学者的。荷兰 Brill 出版社的《犹太思想与哲学期刊》(<em>The Journal of Jewish Thought and Philosophy</em>) 第十六卷第一期（2008 年）里，收录了四篇厚重的研究：哈特利·拉赫特 (Hartley Lachter) 重新评估十三世纪卡斯蒂利亚的卡巴拉学者约瑟·吉卡蒂拉 (Joseph Gikatilla) 的早期作品，揭开它们与基督教传教士搏斗的真相；玛蒂娜·乌尔班 (Martina Urban) 重读乌克兰裔德语犹太哲学家大卫·科伊根 (David Koigen) 的「道德上帝」；列维纳斯 (Emmanuel Levinas) 1935 年那篇短小、几近预言式的《迈蒙尼德的当代意义》（首次英译）；以及迈克尔·法根布拉 (Michael Fagenblat) 追溯列维纳斯一生与迈蒙尼德若即若离的对话——从形而上学走向「伦理的否定神学」。这份指南陪基督徒读者跨过学术的门槛，认真听这些声音说话——因为它们说的，正是关于神、人、伦理与不可言说者的话。</span>
+      <span class="en">This is not a book written for believers — it is a scholarly journal, addressed to specialists. Volume 16 No. 1 (2008) of Brill's <em>Journal of Jewish Thought and Philosophy</em> carries four substantial essays: Hartley Lachter reconsidering the early works of the 13th-century Castilian kabbalist Joseph Gikatilla and his quiet polemic against both Aristotelian philosophy and Christian missionizing; Martina Urban recovering the German-Jewish social philosopher David Koigen and his "moral God"; Emmanuel Levinas' brief, almost prophetic 1935 column "The Contemporary Relevance of Maimonides" (in its first English translation); and Michael Fagenblat tracing Levinas' lifelong, ambivalent conversation with Maimonides — from metaphysics into what he calls <em>ethical negative theology</em>. This guide walks a Christian reader across the academic threshold and listens carefully — because what these scholars are arguing about is God, the human person, ethics, and the One who cannot be named.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，每一堂围绕期刊里的一篇论文（或一个核心问题）展开。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, each centered on one of the journal's essays — or a single, load-bearing question that arises from them. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 作者说什么</strong>—— 用作者自己的语境概述论点；<br/>
+        <strong>② 关键经文 / 关键文本</strong>—— 文章引用或对话的主要文献；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来或阿拉米词；<br/>
+        <strong>④ 基督徒视角</strong>—— 教会传统如何回应这一思想；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 不是反驳，而是更深的追问。
+      </span>
+      <span class="en">
+        <strong>① What the Author Says</strong> — the scholar's argument in their own frame;<br/>
+        <strong>② Key Scripture / Key Text</strong> — the primary text being read;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew or Aramaic word that anchors the discussion;<br/>
+        <strong>④ A Christian Lens</strong> — how the Church tradition might receive or wrestle with the teaching;<br/>
+        <strong>⑤ Honest Questions</strong> — questions to keep asking — not to refute, but to go deeper.
+      </span>
+    </blockquote>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 1  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">为什么要读一本学术期刊？</span>
+        <span class="en">Why Read a Scholarly Journal?</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">这一卷《犹太思想与哲学期刊》的扉页上写得清楚：本刊「为犹太思想、哲学、知识史提供一个国际论坛——主题可以是任何时代」。它接受英文、法文、德文，也接受希伯来文论文的英译。它的核心宗旨是「在解释问题与当代世界之间，保持高水平的学术标准」。换言之——这不是一本教导手册，而是一片学者们彼此争辩、彼此修正的开放场地。第十六卷第一期收录了四篇主要研究，由四位学者执笔——他们之间并不彼此熟悉、也未必同意彼此的结论。这种「不同意而仍然同台」的学术风气本身，就是犹太思想最古老的特质：每一页《塔木德》(<em>Talmud</em>) 的版面布局都让不同时代的拉比围坐辩论。期刊只是把这种辩论延伸到了二十一世纪。</span>
+        <span class="en">The inside cover of this volume is admirably plain: <em>The Journal of Jewish Thought and Philosophy</em> aims "to provide an international forum for Jewish thought, philosophy, and intellectual history from any given period." It publishes in English, French, German, and in English translations from the Hebrew. Its stated commitment is to "high scholarly standards with an interest in issues of interpretation and the contemporary world." In other words — this is not a devotional handbook. It is an open field where scholars argue with one another and revise one another. The four major essays in Volume 16.1 are written by four authors who do not all know each other and do not necessarily agree. That posture of <em>disagreement-on-the-same-page</em> is itself the oldest texture of Jewish thought: every printed page of the <em>Talmud</em> arranges rabbis from different centuries around a single text so they can argue. A journal is only that habit, extended into the twenty-first century.</span>
+      </p>
+      <p>
+        <span class="zh">为什么基督徒读者要费力翻开这种期刊？因为这里讨论的问题——上帝是否可知？律法是教导还是负担？道德源于理性还是源于「他者的脸」？——正是教会两千年来一直在搏斗的问题。只是，犹太学者从「另一边」用希伯来文、用拉比文本、用迈蒙尼德 (<em>Rambam</em>)、用十三世纪卡巴拉来思考它们。听他们辩论，就像偷听邻居家关于你父亲的对话——他们的角度不同，但他们爱的是同一位主、活的、可畏的、不可名状的<em>HaShem</em>。</span>
+        <span class="en">Why should a Christian reader struggle through such a journal? Because the questions on these pages — Can God be known? Is Torah teaching or burden? Is morality founded in reason or in the face of the Other? — are the same questions the Church has wrestled with for two thousand years. Only here Jewish scholars approach them from another door — in Hebrew, through rabbinic texts, through Maimonides (<em>Rambam</em>), through 13th-century Kabbalah. Listening to them argue is a little like overhearing the neighbours speaking about your own Father in their own language. The angle is different, but the One they love is the same living, fearful, unnameable <em>HaShem</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「本刊旨在为犹太思想、哲学与知识史，提供一个跨时代的国际论坛——既保持高水平的学术标准，也对解释问题与当代世界保有兴趣。」</span>
+        <span class="en">"The aim of the journal is to provide an international forum for Jewish thought, philosophy, and intellectual history from any given period. The emphasis is on high scholarly standards with an interest in issues of interpretation and the contemporary world."</span>
+        <cite>《犹太思想与哲学期刊》第十六卷第一期扉页 · JJTP, Vol. 16 No. 1 — Scope</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מַחֲשָׁבָה · machshavah</strong>——「思想、思考、深思」。这个词的字根 <em>חשב</em> (<em>chashav</em>) 意为「计算、估量、编织」——同一字根衍生出 <em>chashuv</em>「重要、被看重」和 <em>cheshbon</em>「账目、估算」。希伯来语里「思想」不是飘渺的抽象——它是「将事物编织进彼此的关系里」。犹太式的<em>machshavah Yehudit</em>（犹太思想）从来不是孤立思辨；它是一群人围着同一段经文、彼此质问、彼此织进真理的网中。这份期刊每一篇文章都在做这件事——他们在为一段古老的文本、一种久违的哲学姿态<em>chashav</em>。基督徒也常说「思想信仰」——但我们的「思想」常常是个体内省式的；犹太的<em>machshavah</em> 是公开的、对话的、可被纠正的。</span>
+        <span class="en"><strong>מַחֲשָׁבָה · machshavah</strong> — "thought, deliberation, considered reflection." The root <em>חשב</em> (<em>chashav</em>) means "to reckon, to estimate, to weave together" — the same root yields <em>chashuv</em>, "important, esteemed," and <em>cheshbon</em>, "an accounting." In Hebrew, "thought" is not a misty abstraction — it is <em>weaving things into right relation with one another</em>. The Jewish discipline of <em>machshavah Yehudit</em> ("Jewish thought") is never a lonely speculation; it is a roomful of people sitting around the same text, questioning each other, weaving themselves into the same fabric. Every essay in this journal is doing exactly that — performing <em>chashav</em> on an old text or a long-quiet philosopher. Christians often say "thinking the faith" — but our "thinking" tends to be solitary and introspective. <em>Machshavah</em> is public, conversational, and gladly corrected.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">对许多福音派基督徒而言，「学术期刊」与「敬虔生命」往往被想像成两条互不交叉的轨道——一条属于教会，一条属于大学。但教会历史本身否定这种分割：奥古斯丁、亚他那修、安瑟伦、阿奎那——他们都同时是牧者和学者，他们最深刻的祷告生命就是在最严谨的论证里。中世纪基督教神学最辉煌的时期，恰恰是它最认真地阅读迈蒙尼德 (<em>Rabbi Moyses</em>) 的时期：本特纳 (Bonaventure) 借用迈蒙尼德捍卫信仰的自主性，阿奎那 (<em>Thomas Aquinas</em>) 借用迈蒙尼德区分「自然神学」与「启示神学」。今天我们若再次愿意听犹太学者讲话——不是为了改宗，而是为了被精炼——我们也许会重新发现：神学的力量，从不来自把对手关在门外，而是来自在公开的桌边一起做<em>chashav</em>。</span>
+        <span class="en">For many evangelical Christians, "academic journal" and "devotional life" live on parallel tracks that never meet — one belongs to the church, the other to the university. But the history of the Church refuses that split. Augustine, Athanasius, Anselm, Aquinas — every one of them was at once a pastor and a scholar, and their deepest prayer life was inside their most rigorous argument. Medieval Christian theology had its most brilliant decades precisely when it read Maimonides (<em>Rabbi Moyses</em>) most carefully: Bonaventure leaned on him to defend the autonomy of faith; Thomas Aquinas leaned on him to distinguish natural from revealed theology. If we are willing again to listen to Jewish scholars — not to convert them, but to be refined by them — we may rediscover that theology has never been strengthened by locking the opponent out. It is strengthened at a shared table, doing <em>chashav</em> together.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我的属灵生活里，「思想」(<em>machshavah</em>) 是孤独的内省，还是与他人共同织出的对话？我上一次因为一段他人的论证而<em>修改</em>了自己的信念，是什么时候？</span><span class="en">In my own spiritual life, is "thinking" a private introspection — or a fabric woven with others? When was the last time I actually <em>revised</em> a conviction because of someone else's argument?</span></li>
+        <li><span class="zh">如果犹太人辩论<em>塔木德</em>时，两位拉比相隔三百年仍可以在同一页争辩——那我读教父、读改教家、读今日的犹太学者时，是否也可以让他们坐在「我的思考桌边」？</span><span class="en">If Jewish tradition prints two rabbis three hundred years apart on the same page of the Talmud and lets them argue — can I read the Church fathers, the Reformers, and today's Jewish scholars as people sitting at my own thinking table?</span></li>
+        <li><span class="zh">为什么一份「学术期刊」会让我感到陌生甚至排斥？这种排斥，是来自对学术语言的不熟悉，还是来自我潜意识里把「学问」和「敬虔」对立起来？</span><span class="en">Why does a "scholarly journal" feel foreign — even off-putting? Is the resistance only unfamiliarity with academic language, or is there a deeper, half-conscious assumption that "learning" and "piety" stand opposed?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 2  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">神智论之前的卡巴拉——吉卡蒂拉的早期作品</span>
+        <span class="en">Kabbalah Before Theosophy — Gikatilla's Early Work</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">哈特利·拉赫特 (Hartley Lachter)——美国 Muhlenberg 学院的犹太研究学者——选了一道学术上长年悬而未决的难题：十三世纪卡斯蒂利亚的卡巴拉学者约瑟·吉卡蒂拉 (Joseph Gikatilla, 1248-c.1325) 的早期作品 (1270 年代) 究竟该如何理解？传统的学术共识——由肖勒姆 (Gershom Scholem) 和高特利布 (Ephraim Gottlieb) 等大家奠定——认为吉卡蒂拉早年「短暂地把哲学与神秘主义融合」，到了后期才完全转向「十<em>sefirot</em>」的神智学卡巴拉。拉赫特挑战这一共识：他主张吉卡蒂拉早期作品（《核桃之园》<em>Ginat Egoz</em>、《对〈迷途者指南〉的批注》<em>Hassagot al ha-Moreh</em> 等）与其后期写作其实是一致的——所谓的「哲学外衣」只是一种<strong>策略性的伪装</strong>。</span>
+        <span class="en">Hartley Lachter (Muhlenberg College) takes on a long-standing puzzle in the study of medieval Jewish mysticism: how to read the early works (1270s) of Joseph Gikatilla (c. 1248–1325), the Castilian kabbalist. The dominant view, championed by Gershom Scholem and Ephraim Gottlieb, holds that the young Gikatilla briefly "fused philosophy and mysticism" before turning, in his later work, to the fully theosophic doctrine of the ten <em>sefirot</em>. Lachter overturns that consensus. He argues that Gikatilla's early compositions — <em>Ginat Egoz</em> ("The Garden of the Nut"), <em>Hassagot al ha-Moreh</em> ("Glosses on Maimonides' Guide"), and others — are in fact <em>continuous</em> with his later kabbalah. The "philosophical surface" is a deliberate disguise.</span>
+      </p>
+      <p>
+        <span class="zh">为什么伪装？因为吉卡蒂拉的预期读者——十三世纪卡斯蒂利亚那群刚刚被亚里士多德式哲学（通过迈蒙尼德的《迷途者指南》<em>Moreh Nevuchim</em>）所吸引的年轻犹太学者——如果一下子被推进「十<em>sefirot</em>从无极<em>Ein Sof</em>流溢」这种放胆神话化的图景，势必无法接受。所以吉卡蒂拉用他们熟悉的哲学术语开场，<em>渐进地</em>把他们引向神秘主义——「以哲学为饵，钓他们进卡巴拉」。拉赫特从《核桃之园》序言里那段标志性的「我建造了一座庄严的房子」直接引证：吉卡蒂拉宣告自己写这本书，是因为「看见以色列群众，在所有这些路径中…依靠亚里士多德的话语…他们说律法不是从天上来的！」</span>
+        <span class="en">Why disguise? Because the audience he wanted to reach — young Castilian Jews who had been drawn to Aristotelian philosophy through Maimonides' <em>Moreh Nevuchim</em> (Guide of the Perplexed) — would not have accepted the bold mythic theosophy of ten <em>sefirot</em> flowing from <em>Ein Sof</em> ("The Infinite") all at once. So Gikatilla opens in their vocabulary — philosophical terminology — and only gradually leads them across the threshold. Philosophy is the bait. Lachter cites the famous opening of <em>Ginat Egoz</em>, where Gikatilla declares he wrote the book because he "saw the masses of Israel… relying on the words of Aristotle… and they say the Torah is not from heaven!" The young Castilian Jews were losing their faith to philosophy — and Gikatilla wrote a book to win them back through their own language.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我建造了一座庄严的房子……当我看见以色列群众，在所有这些路径中——『虽然走在黑暗里，却没有光』（《以赛亚书》50:10）。我看见这地，看哪，是混乱。『他们否认神，说〈祂不在〉』。他们依靠亚里士多德的话语……他们说：律法不是从天上来的！」</span>
+        <span class="en">"I built a stately house… when I saw the masses of the people [of Israel], in all of these paths, 'though he walks in darkness, and has no light' (Isaiah 50:10). I saw the land, and behold, it was chaos. 'They denied God and said: He is not.' And they relied upon the words of Aristotle… And they say that the Torah is not from heaven!"</span>
+        <cite>吉卡蒂拉《核桃之园》序 (Medinaceli, 1274) · Joseph Gikatilla, <em>Ginat Egoz</em>, preface</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>סְפִירוֹת · sefirot</strong>——卡巴拉传统中神性的十个「数目」、十个「层级」或「侧面」(facets)，由<em>Ein Sof</em>（「<em>无极</em>」、那「<strong>没有尽头</strong>」、不可言说、不可知的至高神性）流溢而出。<em>sefirah</em> 的字根 <em>ספר</em> (<em>s-p-r</em>) 同时意味着「数」、「书」、「叙说」——也就是说，<em>sefirot</em> 不只是「编号」，而是神<em>自我述说</em>的十种姿态。十个 <em>sefirot</em> 自上而下：<em>Keter</em>「王冠」、<em>Chochmah</em>「智慧」、<em>Binah</em>「领悟」、<em>Chesed</em>「慈爱」、<em>Gevurah</em>「严厉」、<em>Tiferet</em>「荣美」、<em>Netzach</em>「坚忍」、<em>Hod</em>「尊荣」、<em>Yesod</em>「根基」、<em>Malchut</em>「国度」。吉卡蒂拉早期作品里这套图景隐藏在哲学语言之下——但拉赫特说，它<em>一直在那里</em>。</span>
+        <span class="en"><strong>סְפִירוֹת · sefirot</strong> — in the Kabbalistic tradition, the ten "enumerations," "levels," or "facets" of the divine emanating out from <em>Ein Sof</em> (אֵין סוֹף, "no-end," the unspeakable, unknowable Infinite). The root of <em>sefirah</em>, <em>ספר</em> (<em>s-p-r</em>), simultaneously carries "number," "book," and "telling" — so the <em>sefirot</em> are not bare numerals but the ten ways God <em>narrates</em> God. Top-down they are: <em>Keter</em> (Crown), <em>Chochmah</em> (Wisdom), <em>Binah</em> (Understanding), <em>Chesed</em> (Lovingkindness), <em>Gevurah</em> (Severity), <em>Tiferet</em> (Beauty), <em>Netzach</em> (Endurance), <em>Hod</em> (Majesty), <em>Yesod</em> (Foundation), <em>Malchut</em> (Kingdom). In Gikatilla's early writings this map is hidden under philosophical vocabulary — but, Lachter argues, it is <em>there from the start</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读者听到「卡巴拉」常会本能地警惕——「这是不是邪术？」这是误解。卡巴拉（希伯来文意为「<em>接受</em>下来的传统」）原本只是十三世纪西班牙拉比们对妥拉「内在意义」的一种探索方法——它的目标是<em>更深地敬拜唯一真神</em>，不是召唤灵体。其神秘主义结构（<em>Ein Sof</em>、<em>sefirot</em>）令人惊讶地与基督教神学中「上帝的本质」(divine essence) 与「上帝的能量」(divine energies) 之分有相通之处——东正教神学家帕拉马 (Gregory Palamas) 用这种区分捍卫静修传统，与吉卡蒂拉几乎是同时代人。当然，结构相似不等于内容相同——卡巴拉并不认信三位一体，吉卡蒂拉笔下的<em>Tiferet</em>（「荣美」）并非道成肉身的基督。但拉赫特让我们看见：十三世纪那场内部争论——「上帝能不能被理性认识？」——其实也正是基督教经院神学的中心问题。两个传统在不同的语言里搏斗着同一个奥秘。</span>
+        <span class="en">Christian readers tend to flinch at the word "Kabbalah" — is this occultism? It is not. <em>Kabbalah</em> (Hebrew: "that which is received") was originally the technical name for thirteenth-century Spanish rabbis' inquiry into the inner sense of Torah. Its aim was deeper worship of the One God, not summoning spirits. Its structural vocabulary — <em>Ein Sof</em> and <em>sefirot</em> — is, strikingly, parallel to the Eastern Orthodox distinction between the divine <em>essence</em> (inaccessible) and the divine <em>energies</em> (accessible) — a distinction defended by Gregory Palamas in roughly the same generation as Gikatilla. Structural parallel is not theological identity: Kabbalah is not Trinitarian, and Gikatilla's <em>Tiferet</em> ("Beauty") is not the incarnate Christ. But Lachter makes us see that the inner-Jewish controversy of the 1270s — "Can God be known by reason?" — is exactly the central question of Christian scholasticism in the same century. Two traditions, in two languages, wrestling the same mystery.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">吉卡蒂拉故意把神秘主义包装成哲学，是为了不吓跑年轻读者。耶稣在比喻里隐藏天国奥秘，是否也是同样的<em>教学策略</em>？如果是，「不直说」的教导是诚实的，还是危险的？</span><span class="en">Gikatilla intentionally wrapped mysticism in philosophical language so as not to startle young readers. Did Jesus do something similar in the parables — hiding the mystery of the Kingdom in plain stories? If so, is "not saying it directly" a faithful teaching strategy, or a dangerous one?</span></li>
+        <li><span class="zh">吉卡蒂拉害怕的「年轻人因哲学而失去信仰」——今天是不是依然是教会的现实？我们的回应应是<strong>禁止</strong>哲学，还是<strong>更深地</strong>在自己的传统里回应它？</span><span class="en">Gikatilla's anxiety — "young people losing their faith to philosophy" — is the church's situation today as well. Should our response be to <strong>forbid</strong> philosophy, or to plunge <strong>deeper</strong> into our own tradition and answer it from within?</span></li>
+        <li><span class="zh">如果<em>sefirot</em> 是神「自我述说」的十种姿态，而基督教也信「<em>道</em>住在我们中间」——那「<em>言说</em>」是否本身就是神最深的属性？我对神的祷告，有没有意识到我是在<em>参与祂自我言说的回声</em>？</span><span class="en">If the <em>sefirot</em> are the ten ways God "narrates God," and Christianity confesses the eternal <em>Logos</em> "dwelling among us" — is <em>speech</em> itself one of God's deepest attributes? When I pray, am I aware that I am participating in <em>the echo of God's own self-speaking</em>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 3  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">论战的锋芒——卡巴拉与基督教传教士在卡斯蒂利亚</span>
+        <span class="en">The Polemical Edge — Kabbalah vs. Christian Missionizing in 13th-century Castile</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">拉赫特论文的另一半，讲述吉卡蒂拉真正的对手——<strong>不只是亚里士多德主义</strong>，更是<strong>基督教传教士的攻势</strong>。十三世纪卡斯蒂利亚，是基督教对犹太社群最咄咄逼人的时期：1263 年巴塞罗那大辩论里，多明我会修士帕布罗·克里斯蒂亚尼 (Pablo Christiani) 当着阿拉贡国王的面，要求纳曼尼德 (Ramban) 用<em>犹太人自己的</em>拉比文献证明耶稣是弥赛亚。1267 年纳曼尼德被迫离开西班牙，到了 1270 年代，没有了这位德高望重的人物，年轻一代的卡斯蒂利亚犹太人感到无依——他们既被亚里士多德派哲学吸引，又被基督教传教士论证压迫。罗伯特·察赞 (Robert Chazan) 写道：「南法和北西班牙的犹太人在 1160-1260 年代承受了空前的基督教压力——他们的领袖们被迫成为犹太护教文学的开创者。」吉卡蒂拉就是在这种压力中拿起笔的。</span>
+        <span class="en">The second half of Lachter's essay reveals Gikatilla's real opponent — <strong>not just Aristotelianism</strong> but <strong>the Christian missionizing offensive</strong>. Thirteenth-century Castile was the period of the most aggressive Christian pressure on the Jewish community in medieval history: the 1263 Disputation of Barcelona forced Nahmanides (Ramban) to stand before the King of Aragon while the Dominican friar Pablo Christiani demanded he prove from <em>Jewish</em> rabbinic literature itself that Jesus was the Messiah. In 1267 Nahmanides was driven out of Spain. By the 1270s, with that great voice gone, the young Castilian Jews felt exposed — drawn to philosophy on one side, pressed by Christian apologetic argument on the other. Robert Chazan writes: "From the 1160s through the 1260s, the Jews of southern France and northern Spain were exposed to intense Christian pressures. Their leaders became the trail-blazers of a previously missing Jewish polemical literature." Gikatilla picked up his pen in exactly that pressure.</span>
+      </p>
+      <p>
+        <span class="zh">他的策略很特别：不正面驳斥基督教神学，而是<em>从下面</em>抽走它的根基。他论证：所有真正的智慧都必须建立在<strong>妥拉</strong>这一基础上，而妥拉<strong>只</strong>给了以色列。外邦哲学家（吉卡蒂拉笔下「以东与以实玛利的子孙」——指基督徒与穆斯林）能借着理性观察到「球体的运转」，却永远进不了「内在那一点」。因此基督教传教士的「理性论证」从一开始就是失效的——因为他们没有「妥拉的根基」。拉赫特补充：哈维·哈姆斯 (Harvey Hames) 研究过同时代的兰蒙·路尔 (Ramon Llull) 这位方济各会传教士，<em>路尔后期不得不借用卡巴拉</em>来传福音——因为如果不进入犹太人自己的奥秘语言，根本无法说服他们。这是吉卡蒂拉的策略<em>有效</em>的反证。</span>
+        <span class="en">His strategy is precise: not to refute Christian theology head-on, but to <em>pull the floor out from under</em> it. He argues that all genuine wisdom must be founded on <strong>Torah</strong>, and Torah was given <strong>only</strong> to Israel. Gentile philosophers — Gikatilla's phrase is "the children of Edom and Ishmael" (Christians and Muslims) — can use reason to observe "the motion of the spheres," but they will never penetrate "the inner point." Therefore Christian rational apologetics is structurally bankrupt from the start, because it has no Torah as its ground. Lachter adds a fascinating piece of corroboration: Harvey Hames has shown that the Franciscan missionary Ramon Llull, working in the same generation, <em>found himself forced to learn Kabbalah</em> in order to argue with Jewish audiences. He could not break through unless he entered their own mystical language. That is the negative evidence that Gikatilla's strategy <em>worked</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「过去那些在以东与以实玛利的子孙中间的思辨智慧，原本属于以色列。但当它们被流放到外族手中时，便『像诡诈的弓一样诡诈』（诗78:57），活神的话语就被颠倒了……外族人取了所有信仰的话语，按相反的意图理解……我们以东与以实玛利的孩子被流放，被卖到希腊人那里，使他们的心思远离他们的救赎者。」</span>
+        <span class="en">"The speculative wisdoms found among the children of Edom and Ishmael used to be the possession of Israel. But when they were displaced to a foreign people, 'they played false like a treacherous bow' (Ps. 78:57), and the words of the living God were reversed… A foreign people took all of the words of faith, and understood them in opposition to their intention… the children of Judah and Jerusalem have been sold to the children of the Greeks, in order to distract their thoughts from their Redeemer."</span>
+        <cite>吉卡蒂拉《核桃之园》页 9-10 · Gikatilla, <em>Ginat Egoz</em>, 9-10</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>סוֹד · sod</strong>——「<em>奥秘</em>、隐藏的意思」。拉比传统中圣经有四层意义，用 <em>PaRDeS</em>（「果园」）这个首字母缩略词来记忆：<em>P'shat</em>「字面义」、<em>Remez</em>「暗示义」、<em>D'rash</em>「释经义」、<em>Sod</em>「奥秘义」。吉卡蒂拉的核心论点是：其它宗教（包括基督教）「没有 <em>nistar ve-nigleh</em>——『隐藏的与显露的』并存的结构」；它们「自己消逝，毁灭」。在他看来，犹太教的优越正在于它有 <em>sod</em>——表面的妥拉之下还有<em>更深的妥拉</em>。这个论点对基督徒颇有挑战：因为基督教恰好相信福音是「<em>显明</em>的奥秘」（罗16:25-26）——但「显明」并不等于「肤浅」。耶稣自己常用比喻、又说「奥秘的事是属耶和华我们神的」（申29:29）。也许「<em>显明的奥秘</em>」与「<em>隐藏的奥秘</em>」并不互斥——它们是同一段乐曲的两个声部。</span>
+        <span class="en"><strong>סוֹד · sod</strong> — "<em>mystery</em>, hidden meaning." Rabbinic tradition reads Scripture on four levels, memorised by the acronym <em>PaRDeS</em> ("orchard"): <em>P'shat</em> (literal), <em>Remez</em> (hinted), <em>D'rash</em> (homiletic), <em>Sod</em> (mystical). Gikatilla's central polemical claim is that the other religions (Christianity included) "lack <em>nistar ve-nigleh</em> — the combination of hidden and revealed; they cease and perish of themselves." For him Judaism's superiority lies in having <em>sod</em> — beneath the surface of Torah, a <em>deeper Torah</em>. This is a serious challenge to Christian readers, because the New Testament gospel is, precisely, a "<em>revealed mystery</em>" (Rom 16:25-26). But "revealed" does not mean "shallow." Jesus himself taught in parables, and Moses said "the secret things belong to the LORD our God" (Deut 29:29). Perhaps the <em>revealed</em> mystery and the <em>hidden</em> mystery are not opposites — they are two voices in the same composition.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">十三世纪的<em>巴塞罗那大辩论</em>、<em>巴黎的塔木德焚书</em>（1242 年）、<em>多明我会的强制讲道</em>——这一切是基督徒不愿正视、但拉赫特让我们必须正视的历史。基督徒读到这一段时容易反驳：「那是中世纪天主教的错，不是我的错。」但耶稣说：「不喜悦穿戴罪人之父之衣的，必得救」——而<em>历史</em>就是那件衣服。我们今天爱犹太人弟兄姊妹的方式之一，就是<em>知道</em>这段历史，并且承认它。同时，我们也必须诚实地说：吉卡蒂拉的论点——「外邦人没有可能进入真理」——若拿到福音书面前是无法成立的。耶稣亲自<em>赞许</em>外邦百夫长的信心（太8:10），祂亲自把救恩带到撒玛利亚、推罗、加利利的外邦地区。基督徒不应该用论战的姿态回应吉卡蒂拉，而应该用<strong>哀悼的眼泪</strong>读他——为他描述的那种压力，为他需要建造「保护性的篱笆」来抵御教会的传教士。</span>
+        <span class="en">The Disputation of Barcelona (1263), the burning of the Talmud in Paris (1242), the compulsory sermons in Dominican churches — this is the history Christians prefer not to face but Lachter forces us to face. It is tempting to reply, "That was medieval Catholicism — not me." But the body of Christ extends across time. One way we love Jewish brothers and sisters today is to <em>know</em> this history and own it. At the same time, we must say honestly: Gikatilla's claim that "the gentiles cannot possibly enter the truth" does not stand at the foot of the Gospels. Jesus himself praises a gentile centurion's faith (Matt 8:10) and personally carries salvation to Samaria, to Tyre, to the Decapolis. We should not answer Gikatilla in polemic mode — we should read him with <strong>tears in our eyes</strong>, for the pressure that drove him, for the fact that he needed to build "a protective hedge" against the Church's missionaries.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">中世纪基督教对犹太人的论战、强制讲道、与驱逐——是否已经成为我教会传统的一部分？我是否愿意承认它，并为它哀悼，作为爱犹太人的第一步？</span><span class="en">Medieval Christian polemics, forced sermons, and expulsions of Jews — are these part of my own church's inheritance? Am I willing to name them and grieve them as a first step in loving Jewish neighbours?</span></li>
+        <li><span class="zh">吉卡蒂拉建造卡巴拉作为「防御性的篱笆」——这让我想到使徒保罗也用「<em>从前敌基督的</em>都成了基督的器皿」的逻辑。<strong>防御性的信仰</strong>与<strong>宣教性的信仰</strong>——两者如何区分？我自己更偏向哪一方？</span><span class="en">Gikatilla built Kabbalah as a "defensive hedge." Paul, by contrast, took former enemies and made them vessels of Christ. <strong>Defensive faith</strong> and <strong>missional faith</strong> — how do they differ? Which way am I leaning today?</span></li>
+        <li><span class="zh">「显露的奥秘」与「隐藏的奥秘」——这两者在我读圣经时是否都存在？我是否倾向于只读 <em>P'shat</em>「字面义」，而忽略了 <em>Sod</em>「奥秘义」？</span><span class="en">"The revealed mystery" and "the hidden mystery" — do both exist when I read Scripture? Do I tend to stay only on the <em>p'shat</em> (literal) layer and miss the <em>sod</em> (hidden, mystical) altogether?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 4  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">理性的修订——科伊根的犹太伦理风范</span>
+        <span class="en">Reason Revised — Koigen's Jewish Ethos</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">玛蒂娜·乌尔班 (Martina Urban)，范德堡大学学者，把我们带到第一次世界大战之后的德语犹太学界——文化危机的时代，西梅尔 (Simmel)、特勒尔奇 (Troeltsch)、维伯 (Weber) 都在追问：宗教在现代社会还能扮演什么角色？大多数熟悉这个时代的人，记得的是赫尔曼·科恩 (Hermann Cohen, 1842-1918) 那本《从犹太教源泉出发的理性宗教》——把犹太教解释为最理性的宗教。乌尔班想为我们恢复一位<em>几乎被遗忘</em>的对话者：乌克兰出生、流亡德国的犹太社会哲学家<strong>大卫·科伊根 (David Koigen, 1877-1933)</strong>。科伊根 1922 年出版《道德上帝：论文化与宗教之关系》<em>Der moralische Gott</em>，提出对科恩「理性宗教」的<strong>修正</strong>——不是抛弃理性，而是把理性放回它在伦理风范 (<em>Ethos</em>) 中的位置。</span>
+        <span class="en">Martina Urban (Vanderbilt) walks us into the post-WWI German-Jewish intellectual world — a culture in crisis, with Simmel, Troeltsch, and Weber all asking what role religion could still play in modernity. Most readers of that period remember Hermann Cohen (1842-1918) and his <em>Religion of Reason out of the Sources of Judaism</em> — Judaism as the most rational religion. Urban brings back an almost-forgotten interlocutor: the Ukrainian-born, German-trained Jewish social philosopher <strong>David Koigen (1877-1933)</strong>. In 1922 Koigen published <em>Der moralische Gott</em> ("The Moral God: An Essay on the Relations Between Culture and Religion"), offering a <strong>revision</strong>, not a rejection, of Cohen's religion of reason — keeping reason but restoring it to its proper place within an <em>Ethos</em>.</span>
+      </p>
+      <p>
+        <span class="zh">科伊根的关键术语是<strong><em>Kulturreligion</em></strong>——「文化宗教」。他主张：犹太教从来不只是个体内在的「信」，它是一种<em>塑造文化的宗教</em> (culture-forming religion)，「植根于一种整合了理性意志、伦理与情感的宗教伦理风范之中」。他反对韦伯把犹太教分类为<em>Weltanpassung</em>「与世界妥协」——更不是新教那种<em>Weltbeherrschung</em>「征服世界」。犹太教是 <em>Weltveränderung</em>——「<strong>积极改变世界</strong>」的姿态。所以他批评科恩把宗教简化为伦理学（「宗教必须被翻译为伦理」），这等于让宗教消失。科伊根说：「<em>宗教与伦理风范彼此相属，它们不能没有彼此。</em>」——这是这篇论文的题词。一种「<em>怜爱的公义</em>」和「<em>公义的爱</em>」的融合，正是犹太一神教的本质。</span>
+        <span class="en">Koigen's key term is <strong><em>Kulturreligion</em></strong> — "culture-religion." He argues that Judaism is never just inward private faith; it is a <em>culture-forming religion</em>, "grounded in a religious ethos which integrates rational will, ethics, and emotion." He rejects Weber's typology of Judaism as <em>Weltanpassung</em> (pragmatic adaptation), and disagrees that Protestant <em>Weltbeherrschung</em> (mastery of the world) is the highest religious form. Judaism, he says, is <em>Weltveränderung</em> — "<strong>the active transformation of the world</strong>." He therefore criticises Cohen's reduction of religion to ethics ("religion must be translated into ethics") as effectively dissolving religion itself. Koigen's epigraph reads: "<em>Religion and ethos belong together; they cannot do without each other.</em>" A fusion of "<em>compassionate justice</em>" and "<em>just love</em>" — that, he says, is the heart of Jewish monotheism.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「宗教与伦理风范彼此相属，它们不能没有彼此。真实的爱与活泼的公义，是这两者的标记——它们在『怜爱的公义』与『公义的爱』的奥秘里彼此融合。」</span>
+        <span class="en">"Religion and ethos belong together, they cannot do without each other. Real love and living justice are the symbols of both — they consummate their fusion in the mystery of <em>loving justice</em> and <em>just love</em>."</span>
+        <cite>科伊根《道德上帝》页 209 · David Koigen, <em>Der moralische Gott</em>, 209</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>צֶדֶק וְחֶסֶד · tzedek v'chesed</strong>——「<em>公义与慈爱</em>」。这两个词在希伯来圣经里像织布机上的经纬：<em>tzedek</em>（公义）涉及制度、法律、客观秩序；<em>chesed</em>（慈爱、信实之爱）涉及关系、契约、忠贞。先知米迦的总结句「<em>世人哪，耶和华已指示你何为善。祂向你所要的是什么呢？只要你行公义，好怜悯（<em>chesed</em>），存谦卑的心，与你的神同行</em>」（弥6:8）正是科伊根的<em>Ethos</em>背后的希伯来神学。<em>tzedek</em> 单独存在容易变成冷酷的法律主义；<em>chesed</em> 单独存在容易变成无原则的感伤主义。两者的「融合」就是科伊根所说的<em>「怜爱的公义」与「公义的爱」</em>。这也是基督徒读《诗篇》85:10 时最感动的一节：<strong>「慈爱和诚实彼此相遇，公义和平安彼此相亲。」</strong></span>
+        <span class="en"><strong>צֶדֶק וְחֶסֶד · tzedek v'chesed</strong> — "<em>justice and lovingkindness</em>." In the Hebrew Bible these two words run together like warp and weft. <em>Tzedek</em> (justice) concerns law, institutions, objective order; <em>chesed</em> (covenant love, faithfulness) concerns relationship, fidelity. The prophet Micah's summary line — "<em>He has told you, O man, what is good: to do justice (<em>tzedek</em>), to love kindness (<em>chesed</em>), and to walk humbly with your God</em>" (Mic 6:8) — is the Hebrew theology behind Koigen's <em>Ethos</em>. <em>Tzedek</em> alone becomes cold legalism; <em>chesed</em> alone collapses into sentimentality. Their fusion is exactly Koigen's "loving justice and just love." Christians know the same line from Psalm 85:10: <strong>"Steadfast love and faithfulness meet; righteousness and peace kiss each other."</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">科伊根的「<em>Kulturreligion</em>」对今天的基督徒提出一个尖锐的诊断：我们的信仰<em>是否</em>已经被简化为「<em>个人的灵魂得救加上私人的道德选择</em>」，而失去了塑造文化、塑造公共生活的能力？这是潘霍华 (Bonhoeffer) 后来发出的同样诊断——他说今天的教会需要的是一种「<em>世俗化的基督信仰</em>」，让信仰真实地参与塑造世界，而不是在私人虔诚中隐居。福音派常对「文化使命」一词警觉，但科伊根（与潘霍华、克莱普 (Kuyper) 等）让我们看见：神的子民如果只关心「<em>我会上天堂</em>」而不关心「<em>这世界正在变成什么</em>」，那我们错过了亚伯拉罕之约的另一半——「<em>地上的万族都要因你得福</em>」。同时，科伊根对韦伯把犹太教打为「<em>低一等</em>」的回应，提醒基督徒：我们在使用「<em>新约 vs. 旧约</em>」这种修辞时，是不是也潜在地说「<em>犹太教是基督教的低一等版本</em>」？乌尔班的论文邀请我们承认：犹太教的<em>ethos</em>从未需要基督教来「<em>完成</em>」它——它有自己内在的丰满与张力。</span>
+        <span class="en">Koigen's <em>Kulturreligion</em> places a sharp diagnostic question on the Christian table: has our faith been reduced to "<em>personal soul-salvation plus private moral choices</em>," losing the power to shape culture and public life? This is exactly the diagnosis Bonhoeffer would later make — calling for a "<em>this-worldly Christianity</em>" that actually participates in shaping the world rather than hiding in private piety. Evangelicals often flinch at the phrase "cultural mandate," but Koigen (with Bonhoeffer, Kuyper, and others) helps us see that a people of God who care only about "<em>I'll go to heaven</em>" and not about "<em>what is this world becoming</em>" have lost the second half of the Abrahamic covenant: "<em>all the families of the earth shall be blessed in you</em>." At the same time, Koigen's response to Weber — who classified Judaism as a "<em>lower</em>" form of religion — should make Christians ask: when we use the rhetoric of "New Testament <em>vs.</em> Old Testament," are we unconsciously saying "<em>Judaism is the inferior earlier version of Christianity</em>"? Urban's essay invites us to acknowledge that Jewish <em>ethos</em> has never needed Christianity to "<em>complete</em>" it — it has its own inner fullness and tension.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果我的信仰真的是一种 <em>Weltveränderung</em>「<em>积极改变世界</em>」的姿态——那么在我的日常生活里，哪一个具体的、看得见的「<em>世界</em>」是我正在被神呼召去改变的？</span><span class="en">If my faith truly is a posture of <em>Weltveränderung</em> — "<em>active transformation of the world</em>" — what specific, visible "<em>world</em>" is God calling me to change in my own daily life?</span></li>
+        <li><span class="zh">「<em>怜爱的公义</em>」与「<em>公义的爱</em>」——在我自己的人际关系里（家庭、教会、工作），<em>tzedek</em> 与 <em>chesed</em> 哪一个被我忽略了？</span><span class="en">"Loving justice" and "just love" — in my own relationships (family, church, workplace), which side of the pair am I currently neglecting: <em>tzedek</em> (justice/structure) or <em>chesed</em> (mercy/loyalty)?</span></li>
+        <li><span class="zh">韦伯把犹太教视为「低一等」的宗教——我自己是否在心底也保留了一种「<em>基督教完成了犹太教</em>」的优越感？这优越感与「<em>神拣选以色列至今未变</em>」（罗11:29）是否相容？</span><span class="en">Weber treated Judaism as a "lower" religion. Do I, deep down, retain a subtle "<em>Christianity completes Judaism</em>" superiority? Is that compatible with Romans 11:29 — "<em>the gifts and the calling of God are irrevocable</em>"?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 5  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">迈蒙尼德对现代的意义——列维纳斯 1935</span>
+        <span class="en">Maimonides for the Modern Age — Levinas, 1935</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">1935 年——纳粹政权刚刚立稳，欧洲的犹太人开始预感未来——年仅 28 岁、未来将成为二十世纪最重要哲学家之一的<strong>伊曼努尔·列维纳斯 (Emmanuel Levinas)</strong> 在《和平与权利》<em>(Paix et Droit)</em> 杂志上发表了一篇短小的专栏：「<em>迈蒙尼德的当代意义</em>」 (<em>L'actualité de Maimonide</em>)。这三页文字头一次以英文出现在这卷期刊里，由迈克尔·法根布拉 (Michael Fagenblat) 翻译。列维纳斯开篇一句惊人：「<em>真正哲学的价值，不在于安然栖息于非个人的永恒。它的容颜转向我们这些时间中存在者。</em>」他要问的是：迈蒙尼德 (Rambam, 1138-1204) 这位八百年前的拉比，<em>今天对我们</em>说什么？</span>
+        <span class="en">In 1935 — Nazi power newly consolidated, Europe's Jews beginning to sense the future — a 28-year-old Emmanuel Levinas, who would become one of the twentieth century's most important philosophers, published a brief column in <em>Paix et Droit</em>, the journal of the Alliance Israélite Universelle: "<em>L'actualité de Maimonide</em>." Those three pages appear in English for the first time in this volume of <em>JJTP</em>, translated by Michael Fagenblat. Levinas opens with a striking sentence: "<em>The value of true philosophy does not situate itself in an impersonal eternity. Its luminous face is turned toward the temporal beings that we are.</em>" His question: what does Maimonides (Rambam, 1138-1204), an eight-hundred-year-old rabbi, have to say <em>to us today</em>?</span>
+      </p>
+      <p>
+        <span class="zh">列维纳斯的诊断令人不寒而栗：「<em>从未有任何时代像今天这样，迷惑的群众如此众多。</em>」「一种傲慢的野蛮在欧洲的中心扬起了头，颠倒一切价值，混淆基本分野，抹去神圣与世俗的界限。」面对纳粹的兴起，列维纳斯认为犹太人——以及整个犹太-基督教文明——需要回到迈蒙尼德的核心洞见：<strong>世界是被创造的，不是永恒的</strong>。这看起来像神学上一个不重要的小辩论，但列维纳斯说它是<em>生死攸关</em>的：如果世界是永恒的（亚里士多德所主张的），那么这个世界——包括它所有的强权秩序、它现在出现的纳粹意识形态——就是<em>不可超越的终极现实</em>，人在其中无路可逃。但如果世界是被创造的（迈蒙尼德所坚持的），那么<em>世界之上还有另一个秩序</em>——这正是<strong>自由的可能性</strong>。列维纳斯说，迈蒙尼德的这一分辨——「<em>世界之内的逻辑</em>」与「<em>世界之外的逻辑</em>」——「<strong>提前六百年瞥见了康德『纯粹理性的批判』</strong>」。</span>
+        <span class="en">Levinas' diagnosis is chilling: "<em>Never before has the crowd of the perplexed been so numerous.</em>" "An arrogant barbarism has reared its head in the heart of Europe, reversing values, confounding elementary distinctions, effacing the limits of the profane and the sacred." Against this background Levinas calls Jews — and the whole Judeo-Christian civilization — back to Maimonides' central insight: <strong>the world is created, not eternal</strong>. This looks like a small theological dispute, but Levinas insists it is a <em>life-and-death</em> claim. If the world is eternal (Aristotle's view), then <em>this</em> world — including all its current orderings of power and the Nazi ideology just rising — is the ultimate, unsurpassable reality, and there is no exit. But if the world is created (as Maimonides insists), then <em>there is another order beyond the world</em> — and that is precisely <strong>the possibility of freedom</strong>. Levinas claims that Maimonides' distinction — between "<em>the logic operating inside the world</em>" and "<em>the logic of the world's coming-to-be</em>" — "<strong>glimpsed, six centuries in advance, the critique of pure reason</strong>."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「迈蒙尼德所提出的解答，或许就是他整部著作的核心：他区分了那<em>已经被创造的</em>宇宙——它服从亚里士多德无可反驳的逻辑——与<em>这个宇宙的被创造</em>，这一行动逃出他的逻辑。整个世界的<em>条件</em>，不可与世界<em>内部</em>调节诸事的<em>法则</em>混为一谈。工匠需要原料，但神不是工匠，祂是创造者。让我们摆脱被囚禁在『已成之世界』中的智识习惯吧，那时我们便能领会何为创造。」</span>
+        <span class="en">"The solution proposed by Maimonides is perhaps the essence of his work. It consists in distinguishing between the universe that is already created, submitting it to the irrefutable logic of Aristotle, and the very creation of that universe, which eludes him… The conditions for the world as a whole should not be confounded with the laws regulating things inside the world. The worker needs matter. But God does not work. He is a creator. Let us be liberated from our intellectual habits imprisoned in a world already made and we shall understand creation."</span>
+        <cite>列维纳斯《迈蒙尼德的当代意义》(1935) · Levinas, "The Contemporary Relevance of Maimonides" (1935)</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>בְּרֵאשִׁית · B'reishit</strong>——希伯来圣经的第一个词：「<em>起初</em>」、或更精确地说「<em>在起头时</em>」。整部妥拉以这个词开篇，整部犹太教以这个词为根。它声明：<em>世界有起头</em>——意思是世界<strong>不</strong>是永恒的，<strong>不</strong>是必然的，<strong>不</strong>是封闭的。它从那超越它的<em>HaShem</em>（「<em>那名</em>」、不可言说的真神）口中被说出。「<em>神说，要有光，就有了光。</em>」对列维纳斯而言，这一句话不只是创世记的开头——它是整个犹太-基督教伦理学的<strong>根基</strong>。如果世界是被创造的，那么<em>世界不等于神</em>；如果世界不等于神，那么<em>任何世界内部的权力</em>（凯撒、希特勒、市场、国家）<strong>就都不是终极的</strong>。<em>B'reishit</em> 是「自由」之所以可能的存在论前提。</span>
+        <span class="en"><strong>בְּרֵאשִׁית · B'reishit</strong> — the first word of the Hebrew Bible, "<em>In the beginning</em>" — or more precisely "<em>At the head of</em>." All of Torah opens with this word; all of Judaism rests on it. It declares: <em>the world has a beginning</em> — therefore the world is <strong>not</strong> eternal, <strong>not</strong> necessary, <strong>not</strong> closed. It was spoken from the mouth of <em>HaShem</em> ("The Name," the unspeakable One) who transcends it. "And God said, let there be light, and there was light." For Levinas this one line is not merely the opening of Genesis — it is the <strong>foundation</strong> of all Judeo-Christian ethics. If the world is created, then <em>the world is not God</em>; if the world is not God, then <em>no power inside the world</em> (Caesar, Hitler, the market, the state) is <strong>ultimate</strong>. <em>B'reishit</em> is the ontological precondition for the very possibility of freedom.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">使徒约翰在他的福音书开篇也用了同样的话：「<em>太初有道</em>」（约1:1）——希腊文 <em>en arche</em> 直接译自希伯来 <em>b'reishit</em>。基督徒不应该把列维纳斯的诊断只当作哲学论辩——它是<em>1935 年</em>欧洲一位犹太青年对他眼前正在升起的极权主义的回应。「<em>异教</em>」（paganism）在列维纳斯的笔下不是「<em>多神崇拜</em>」——而是「<em>无法从这个世界中跳出来</em>」的心智。基督徒在 1933 年也面对同样的考验：当全德意志基督徒联盟把希特勒的国家社会主义与基督教信仰绑定时，潘霍华、巴特、尼莫拉等人起来反对——他们的根基也是同一个：<em>这个世界不是神</em>，凯撒不是基督。今天，福音派最容易掉入的陷阱也正是「<em>异教</em>」——把我们文化、我们国家、我们的政治派别<em>当作不可超越的</em>。列维纳斯让我们重新听见迈蒙尼德、也重新听见<em>B'reishit</em>——这就是抵抗任何形式的极权主义的最深根基。</span>
+        <span class="en">The Gospel of John opens with the same phrase — "<em>In the beginning was the Word</em>" (John 1:1), the Greek <em>en arche</em> translating Hebrew <em>b'reishit</em> directly. Christians should not read Levinas' essay as cold philosophical argument — it is the 1935 cry of a young Jew responding to the totalitarianism rising in front of him. "<em>Paganism</em>," in Levinas, is not "<em>polytheism</em>" — it is "<em>the mind unable to step out of the world</em>." Christians faced exactly the same test in 1933: when the German Christians' movement tried to bind National Socialism to Christian faith, it was Bonhoeffer, Barth, and Niemöller who stood up. Their foundation was the same: <em>this world is not God; Caesar is not Christ</em>. Today the trap evangelicals most easily fall into is, again, "<em>paganism</em>" in Levinas' sense — treating <em>our</em> culture, <em>our</em> nation, <em>our</em> political tribe as ultimate. Levinas makes us hear Maimonides again, and through him hear <em>B'reishit</em> again — and that is the deepest foundation of resistance to any totalitarianism.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">列维纳斯 1935 年说「迷惑的群众从未如此众多」——今天我所属的文化里，哪一类「<em>无法从这世界中跳出来</em>」的思维正在<em>诱惑</em>教会？</span><span class="en">In 1935 Levinas said "never before has the crowd of the perplexed been so numerous." In my own culture today, what kind of "<em>cannot step outside the world</em>" thinking is currently <em>tempting</em> the church?</span></li>
+        <li><span class="zh">「<em>世界是被创造的</em>」——这句话对我不只是教义，也是一种<em>自由</em>。我在哪些事上活得好像「<em>这个世界就是终极现实</em>」？</span><span class="en">"<em>The world is created</em>" — is not just doctrine but a <em>freedom</em>. In what areas of my life do I live as if "<em>this world is the ultimate reality</em>"?</span></li>
+        <li><span class="zh">迈蒙尼德虽然不是基督徒，但他坚持的「<em>世界有起头、世界之外有神</em>」的真理，与基督徒的信仰是同一颗钉子。我能否接受：<strong>我们与犹太弟兄共享同一根基</strong>？</span><span class="en">Maimonides was not a Christian, but the truth he defended — "<em>the world has a beginning; God is beyond the world</em>" — is the same nail Christian faith hangs on. Can I accept that <strong>we share a foundation with our Jewish brothers</strong>?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 6  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">从形而上学到伦理学——列维纳斯读迈蒙尼德</span>
+        <span class="en">From Metaphysics to Ethics — Levinas Reading Maimonides</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">迈克尔·法根布拉 (Michael Fagenblat) 是这卷期刊中最长、也最具雄心的一篇。他追问一个表面上的悖论：列维纳斯 1935 年那么热情地推崇迈蒙尼德——为什么在此后六十年的写作生涯里，迈蒙尼德几乎从他的著作中<strong>消失了</strong>？法根布拉的答案分两层：(1) 1935 年那篇短文的核心论点——「<em>世界是被创造的，因此自由可能</em>」——其实贯穿了列维纳斯一生的哲学，<strong>只是被翻译成了另一种语言</strong>。在他的代表作《整全与无限》<em>Totality and Infinity</em> (1961) 中，迈蒙尼德式的「创造 vs. 永恒」之争被改写成「<em>无限</em> vs. <em>整全</em>」——海德格尔成了那位<em>新的亚里士多德</em>，主张「世界永恒、世内日常的优先」；列维纳斯成了那位<em>新的迈蒙尼德</em>，捍卫「自由、个体、对他者的回应」。(2) 但列维纳斯<em>不</em>追随迈蒙尼德到最后一步——他不接受迈蒙尼德的「<em>智识神秘主义</em>」——那种以「<em>与主动智性合一</em>」为人生最高目的的传统。列维纳斯把迈蒙尼德的「<em>否定神学</em>」(<em>negative theology</em>) 从形而上学的方向，<strong>翻转</strong>到伦理学的方向——这就是法根布拉所命名的「<strong>伦理的否定神学</strong>」(<em>ethical negative theology</em>)。</span>
+        <span class="en">Michael Fagenblat's essay is the longest and most ambitious in the volume. He asks a surface-level puzzle: if Levinas was so taken with Maimonides in 1935, why does the Great Eagle nearly <strong>disappear</strong> from his work for the next sixty years? Fagenblat's answer has two parts. (1) The core thesis of that 1935 piece — "<em>the world is created, therefore freedom is possible</em>" — runs through every major book of Levinas' career, only <strong>translated into another vocabulary</strong>. In Levinas' masterwork <em>Totality and Infinity</em> (1961), the Maimonidean dispute "creation vs. eternity" is rewritten as "<em>Infinity</em> vs. <em>Totality</em>." Heidegger becomes the <em>new Aristotle</em> defending "the eternity of the world, the primacy of the everyday"; Levinas becomes the <em>new Maimonides</em> defending "freedom, particularity, the response to the Other." (2) But Levinas does <em>not</em> follow Maimonides all the way — he refuses Maimonides' "<em>intellectualist mysticism</em>," the medieval tradition of "union with the Active Intellect" as the highest human goal. Instead Levinas takes Maimonides' "<em>negative theology</em>" and <strong>turns</strong> it from the metaphysical to the ethical — this is what Fagenblat calls "<strong>ethical negative theology</strong>."</span>
+      </p>
+      <p>
+        <span class="zh">什么是「<em>否定神学</em>」？迈蒙尼德在《迷途者指南》中坚持：对神我们不能说出任何<em>正面属性</em>——我们只能说神<em>不是什么</em>。因为人的任何语言都是从受造世界来的，把它们套在创造主头上只会让神<em>变小</em>。列维纳斯接过这一遗产，但加了一个革命性的转折：<em>对「他者」(<em>the Other</em>)，我们同样只能用否定来说话</em>。眼前那位与我相遇的人——他的脸 (<em>le visage</em>)、他的呼吸、他的眼神——超出我所有的概念范畴。我若把他纳入我的范畴里，就「<em>谋杀</em>」了他。<strong>真正的伦理是：承认他者不可被我归纳，然后回应他。</strong>「<em>不可杀人</em>」——这正是迈蒙尼德的「神不可被概念化」翻转到了人际伦理上。法根布拉的结论很美：「<em>列维纳斯与迈蒙尼德，在他们犹太式的新柏拉图式的否定神学里，可能走到了人类心智所能走到的最远的地方</em>。」</span>
+        <span class="en">What is "<em>negative theology</em>"? Maimonides in the <em>Guide of the Perplexed</em> insists that we cannot say <em>positive attributes</em> of God — we can only say what God <em>is not</em>. Every human word is borrowed from the created world; predicating those words of the Creator only diminishes God. Levinas takes up this inheritance with a revolutionary twist: <em>about "the Other" (the human being who stands before me), I can speak only in the same negative way</em>. The face of the other person (<em>le visage</em>), his breath, his look — exceed every category I have. The moment I subsume him under my categories, I "<em>murder</em>" him. <strong>True ethics begins with acknowledging that the Other cannot be reduced to my concepts — and then responding</strong>. "<em>Thou shalt not kill</em>" is Maimonides' "God cannot be conceptualized" carried over into the encounter with another human face. Fagenblat's conclusion is beautiful: "<em>In their Jewish neoplatonic negative theology, Levinas and Maimonides venture together perhaps as far as it is possible to go.</em>"</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键文本</span>
+        <span class="en">② Key Text</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「言说——<em>amira</em>（先于一切被说之事）——为荣耀作见证。这见证是真的，但其真实性不可化约为『揭示之真』，它<em>不叙述任何显现之物</em>……正如对迈蒙尼德，对列维纳斯也是：对他者的描述性真理是不充分的范畴，因为他者的意义恰恰在于那些<em>使她独一无二</em>的细节，而这些细节脱离一切普遍话语的把握。」</span>
+        <span class="en">"The saying prior to anything said bears witness to glory. This witness is true, but a truth irreducible to the truth of disclosure, and does not narrate anything that shows itself… Like Maimonides, Levinas regards descriptive truth as an insufficient category for bearing witness to the other because the significance of the other lies precisely in those particulars that make her unique and thereby elude the generalities of discourse."</span>
+        <cite>法根布拉《列维纳斯与迈蒙尼德》页 144 · Fagenblat, <em>JJTP</em> 16.1, 144</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>פָּנִים · panim</strong>——「<em>脸</em>」、「<em>面容</em>」，在希伯来文中这个词总是<strong>复数形</strong>（字面是「多面」）。希伯来人感到一张脸不止是一张脸——它是一个多重深度的<em>显现</em>。「神的脸」（<em>panei HaShem</em>）出现在亚伯拉罕的祝福中：「<strong>愿耶和华的脸光照你，赐恩给你；愿耶和华向你仰脸，赐你平安。</strong>」（民6:25-26）人能不能看见神的脸？摩西问过这个问题——神的回答是：「<em>你不能看见我的面，因为人见我的面不能存活。</em>」（出33:20）但奇怪的是：摩西又被记载「<em>耶和华与摩西面对面说话，好像人与朋友说话一般</em>」（出33:11）。这两段经文之间的张力，就是列维纳斯哲学的源头：<em>面容既显现又隐藏</em>。当你真的看见另一个人的脸——不是表层、不是肤色、不是身份——你触到了一种<em>无限</em>。</span>
+        <span class="en"><strong>פָּנִים · panim</strong> — "<em>face</em>." In Hebrew this noun is always <strong>plural</strong> ("the many-sided"). The Hebrew mind senses that a face is more than a face — it is a multi-layered <em>showing</em>. "The face of God" (<em>panei HaShem</em>) is invoked in the Aaronic blessing: "<strong>The LORD make his face shine upon you and be gracious to you; the LORD lift up his face upon you and give you peace</strong>" (Num 6:25-26). Can a person see God's face? Moses asked, and was told, "<em>You cannot see my face, for no one may see me and live</em>" (Ex 33:20). Yet Moses is also described as the one whom "<em>the LORD used to speak face to face, as one speaks to a friend</em>" (Ex 33:11). The tension between these two passages is the well-spring of Levinas' philosophy: <em>the face both reveals and conceals</em>. When you truly see another human face — not the surface, not the skin tone, not the social identity — you touch an <em>infinity</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督教神学其实也长期实践「否定神学」——从尼撒的格列高利 (Gregory of Nyssa) 到伪狄奥尼修斯 (Pseudo-Dionysius) 到艾克哈 (Meister Eckhart)，他们都教导说神「<em>超越所有称号</em>」。所以列维纳斯并不是与基督教传统决裂，而是与它<em>同行更远</em>。同时——并且这是最关键的——基督教并没有<em>停留</em>在否定神学。在基督里，「<em>不可见的神</em>」选择了一张<strong>具体的犹太人面孔</strong>。「<em>神本来没有人看见过；只有在父怀里的独生子将祂表明出来</em>」（约1:18）。这是列维纳斯所不能接受的——他至死都拒绝道成肉身的具体性。但基督徒可以怀着敬意听他说：每一次我面对另一位真实的<em>panim</em>（人脸）——一位贫穷的、一位敌人的、一位陌生人的脸——我都在被那位<em>取了人形的神</em>检视。马太福音 25 章「这些事既做在我这弟兄中一个最小的身上，就是做在我身上了」——这是<strong>福音版的伦理否定神学</strong>。</span>
+        <span class="en">Christian theology has long practised "negative theology" — from Gregory of Nyssa to Pseudo-Dionysius to Meister Eckhart, all teaching that God "<em>exceeds every name</em>." So Levinas is not breaking with the Christian tradition; he is walking further along the same path. But — and this is the crucial point — Christianity does <em>not stop</em> at negative theology. In Christ, the "<em>God whom no one has seen</em>" chose to take on <strong>a specific Jewish face</strong>. "<em>No one has ever seen God; the only Son, who is at the Father's side, has made him known</em>" (John 1:18). This is what Levinas cannot accept — he refused, to the end, the particularity of the Incarnation. But a Christian can listen to him with reverence: every time I face another real <em>panim</em> (face) — a poor person's, an enemy's, a stranger's — I am being looked at by the <em>God who took on a face</em>. Matthew 25:40 — "<em>Whatever you did for one of the least of these brothers of mine, you did for me</em>" — is the <strong>Gospel version of ethical negative theology</strong>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">列维纳斯说：「<em>当我把他者纳入我的范畴时，我谋杀了他。</em>」我是否常常用<em>标签</em>（穷人、富人、左派、右派、基督徒、非信徒）<em>谋杀</em>了我身边的人？</span><span class="en">Levinas says, "<em>The moment I subsume the Other under my categories, I murder him.</em>" Do I routinely <em>murder</em> the people around me by reducing them to <em>labels</em> (poor, rich, liberal, conservative, believer, unbeliever)?</span></li>
+        <li><span class="zh">「<em>面容</em>」(<em>panim</em>) 在希伯来文里是复数——意思是每一张脸都比看起来的<em>多一层</em>。我上次真正<em>看见</em>一张脸（不仅瞥一眼），是什么时候？</span><span class="en">"<em>Face</em>" (<em>panim</em>) is grammatically plural in Hebrew — each face is "<em>more than itself</em>." When was the last time I actually <em>saw</em> a face (rather than glanced at one)?</span></li>
+        <li><span class="zh">基督徒承认神道成肉身——一张<em>具体的犹太人面容</em>。这与列维纳斯所坚持的「<em>神超越一切面容</em>」如何相容？也许两者都对——「<em>无限</em>」选择「<em>有限</em>」作为祂的居所？</span><span class="en">Christians confess that God took on flesh — a <em>specific Jewish face</em>. How is that compatible with Levinas' insistence that "<em>God exceeds every face</em>"? Perhaps both are true — "<em>the Infinite</em>" chose "<em>the finite</em>" as his dwelling?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 7  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">最后的逾越节与第三日的复活</span>
+        <span class="en">The Last Passover, the Third Day</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">第十二章莱曼让安得烈牵着自己的羔羊，走进逾越节那天的圣殿——二十五万人排队等候宰杀，数百位祭司同时工作，利未人合唱「<em>哈利路诗篇</em>」(113-118 篇)。安得烈亲手用刀划开羔羊的喉咙，看着血流入祭司手中的银盘里。当晚他回到楼上的「<em>最后晚餐</em>」（其实是「<em>逾越节家宴</em>」<em>Seder</em>），耶稣<strong>不是按西方画里那样坐在长桌前</strong>——他们斜倚在垫子上。耶稣举起第三杯（「<em>救赎之杯</em>」），说出从未有人说过的话：<strong>「这杯是我用血所立的新约。」</strong> 第十三章则把焦点放在最让基督徒以为「理所当然」、却最不被外邦文化理解的事——<strong>身体的复活</strong>。莱曼引一位<em>正统派</em>犹太学者 Pinchas Lapide 的话——他不信耶稣是弥赛亚，却<strong>承认耶稣的复活是真实历史事件</strong>，因为「<em>除了犹太人，没有一个古代文化相信身体复活</em>」。希腊人信「<em>灵魂解脱</em>」，东方信「<em>轮回</em>」，唯独以色列的圣经说「<em>你的死人要复活，尸首要兴起</em>」（赛26:19）。耶稣的复活只能从希伯来的世界观里被理解。</span>
+        <span class="en">In Chapter 12 Leman walks Andrew up to the Temple at Passover — 250,000 people queued up to slaughter lambs, hundreds of priests at work, Levite choirs chanting the <em>Hallel</em> Psalms (113-118). Andrew slits his lamb's throat with his own hand and watches the blood caught in a silver basin. That evening he reclines (not sits — the Western image of a long table is wrong) at the upper room for the <em>Seder</em>. Jesus lifts the third cup, the <em>Cup of Redemption</em>, and speaks words no Jew had ever said: <strong>"This cup is the new covenant in my blood."</strong> Chapter 13 then turns to what Christians assume is "obvious" but no Gentile culture could have invented — <strong>bodily resurrection</strong>. Leman cites <em>Orthodox</em> Jewish scholar Pinchas Lapide, who does <em>not</em> accept that Jesus is Messiah but <strong>does accept his resurrection as a historical event</strong>, simply because "<em>only Jewish people in the ancient world believed in bodily resurrection</em>." Greeks believed in the soul's escape; Eastern religions in reincarnation; only the Hebrew Bible says "<em>Your dead shall live; their bodies shall rise</em>" (Isa 26:19). The resurrection of Yeshua is intelligible only inside a Jewish worldview.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「饭后也照样拿起杯来，说：『这杯是用我血所立的新约，是为你们流出来的。』」</span>
+        <span class="en">"In the same way, after the supper he took the cup, saying, 'This cup is the new covenant in my blood, which is poured out for you.'"</span>
+        <cite>《路加福音》22:20 · Luke 22:20</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>פֶּסַח · Pesach</strong>——「<em>逾越</em>」，亦是「<em>逾越节</em>」之名。其词根 <em>pasach</em> 意为「跨过、跳过」，回到出埃及的那夜——天使因羔羊之血「<strong>越过</strong>」以色列家。莱曼指出一个常被基督徒忽略的细节：保罗说「<em>基督已经成了我们逾越节的羔羊</em>」（林前5:7），而 Pinchas Lapide 提醒「<em>第三日</em>」在希伯来圣经里反复出现——亚伯拉罕第三日抬眼看见献以撒之处（创22:4）、约瑟第三日释放弟兄（创42:18）、约拿第三日从鱼腹中被吐出来、何西阿应许「第三日<em>他必使我们兴起</em>」（何6:2）。耶稣的复活精准地落在<em>初熟节</em> (Bikkurim) 那一天——大祭司挥摇头一捆大麦的日子。保罗说耶稣是「<strong>睡了之人初熟的果子</strong>」（林前15:20）。每一个细节都嵌在希伯来年历里。</span>
+        <span class="en"><strong>פֶּסַח · Pesach</strong> — "<em>Passover</em>." The root <em>pasach</em> means "to pass over, to skip" — the night the angel "<strong>passed over</strong>" the Israelite homes because of the lamb's blood. Leman highlights a detail Christians often miss: Paul writes "<em>Messiah our Passover lamb has been sacrificed</em>" (1 Cor 5:7), and Pinchas Lapide reminds us that "<em>the third day</em>" runs all through the Hebrew Bible — Abraham lifts his eyes on the third day (Gen 22:4), Joseph releases his brothers on the third day (Gen 42:18), Jonah is delivered on the third day, Hosea promises "<em>on the third day he will raise us up</em>" (Hosea 6:2). Jesus' resurrection falls precisely on <em>Bikkurim</em> — the Feast of Firstfruits, the day the high priest waves the first sheaf of barley. Paul calls Jesus "<strong>the firstfruits of those who have fallen asleep</strong>" (1 Cor 15:20). Every detail is keyed to the Hebrew calendar.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒每次领圣餐时，其实是在<strong>继续耶稣那夜的逾越节家宴</strong>。莱曼提醒：第三杯不是耶稣发明的——它是<em>救赎之杯</em>，犹太人千百年来在此处都念诵神说「<strong>我必救赎你们</strong>」（出6:6）。耶稣举起这一杯说「这是我的血」时，<em>祂在告诉门徒：当神说「我必救赎你们」时，神说的就是这个意思——我自己的血</em>。还有：莱曼悲叹「<em>Easter</em>」（复活节）这名字来源于异教女神 Ishtar/Ashtoreth，而<em>初熟节</em>这个真正的希伯来名字反而被基督徒忽略。建议读者考虑：除了染色蛋和兔子，是否也能让<em>初熟节的大麦穗</em>回到基督教春日庆典的中心？</span>
+        <span class="en">Every time Christians take communion, they are <strong>continuing Jesus' Passover Seder of that night</strong>. Leman notes: the third cup was not Jesus' invention — it is the <em>Cup of Redemption</em>, the cup over which Jews for centuries had recited God's promise "<strong>I will redeem you</strong>" (Ex 6:6). When Jesus lifted it and said "this is my blood," <em>he was telling the disciples: when God said "I will redeem you," this is what he meant — my own blood</em>. Leman also laments that the English name "Easter" derives from the pagan goddess Ishtar / Ashtoreth, while the actual Hebrew name <em>Bikkurim</em> (Firstfruits) has been forgotten. He invites readers to consider letting the <em>sheaf of firstfruits barley</em> return to the heart of Christian spring celebration, alongside (or instead of) eggs and rabbits.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">如果我每次领圣餐时，<em>知道</em>自己正在继续那一夜的逾越节家宴——这会怎样改变我对圣餐的感受？</span><span class="en">If at every communion I <em>knew</em> I was continuing the Passover Seder of that night, how would the bread and cup feel different?</span></li>
+        <li><span class="zh">一位正统派犹太学者 (Lapide) 都承认耶稣复活是真实历史事件，却仍不相信祂是弥赛亚——这让我对「<em>信</em>」与「<em>认知</em>」的关系有何反思？</span><span class="en">An Orthodox Jewish scholar (Lapide) accepts Jesus' resurrection as historical fact yet still does not believe him to be Messiah. What does this tell me about the difference between <em>information</em> and <em>faith</em>?</span></li>
+        <li><span class="zh">我所庆祝的「复活节」与圣经里<em>初熟节</em>的图景，有多大差距？我能不能至少在今年春天，把一束麦穗放在自己的桌上？</span><span class="en">How far is my "Easter" from the biblical picture of <em>Bikkurim</em> — Firstfruits? Could I, this spring, place a single sheaf of grain on my own table?</span></li>
+      </ul>
+    </div>
+
+    <!-- ─────────────  LESSON 8  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">重新听见弥赛亚的话</span>
+        <span class="en">Hearing the Words of Messiah All Over Again</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">最后两章，莱曼把所有线索收拢在一起。他借 N.T. Wright 的归纳，把耶稣时代的犹太人最深的四个问题摆在眼前：「<em>我们是谁？</em>」「<em>我们在哪里？</em>」「<em>哪里出了错？</em>」「<em>出路是什么？</em>」——他们的答案是：「我们是被拣选的子民」、「我们仍然在某种『放逐』中」、「我们的统治者是错的（罗马与妥协的犹太人）」、「神必须再一次行动」。耶稣进入这个语境，开口第一句话便是：「<strong>天国近了，你们要悔改。</strong>」——莱曼说：「<em>当时我读到这句话时，脑海里浮现的是云朵、灯光、天使合唱——而那位站在加利利泥泞地的真耶稣，<em>意思完全不是那个</em></em>。」祂的意思是：「<em>神向亚伯拉罕承诺的所有事，开始今天兑现了。</em>」最后一章莱曼劝勉读者：再读一遍福音书——但这次<strong>用希伯来人的耳朵听</strong>。祂论圣殿、论律法、论圣城、论税吏与妓女、论门徒之路——句句都要在<em>当时的犹太语境</em>里重新发响。他援引那位仅有的明白者——某位无名的法利赛人在耶稣讲论弥赛亚筵席时高呼：「<strong>在神国里吃饭的有福了！</strong>」（路14:15）这是这本书的结语：愿你听见。</span>
+        <span class="en">Leman pulls the threads together in the last two chapters. Drawing on N.T. Wright, he names the four deepest questions of Jesus' Jewish contemporaries: "<em>Who are we?</em>" "<em>Where are we?</em>" "<em>What is wrong?</em>" "<em>What is the solution?</em>" Their answers: "We are the chosen people"; "We are in some kind of ongoing exile"; "The wrong people rule — Rome and compromised Jews"; "God must act again." Jesus stepped into this charged context and opened his ministry with one line: "<strong>The kingdom of heaven is near; repent.</strong>" — and Leman confesses: "<em>When I first read that line, my head filled with clouds and harps and angelic choirs — and the actual Jesus standing in Galilean mud, <em>meant nothing of the kind</em></em>." He meant: "<em>Every promise God ever made to Abraham begins paying out today.</em>" The final chapter is a tender exhortation: read the Gospels again — but this time, <strong>listen with Jewish ears</strong>. His words about the Temple, the Torah, the City, the tax collectors and prostitutes, the road of discipleship — each line must be heard afresh in the <em>Jewish soundscape</em> of his time. Leman ends with the one anonymous Pharisee who actually grasped what Jesus was doing at the Messianic banquets, and shouted out: "<strong>Blessed is the one who will eat at the feast in the kingdom of God!</strong>" (Luke 14:15). May we hear like that man.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「凡劳苦担重担的人，可以到我这里来，我就使你们得安息。我心里柔和谦卑，你们当负我的轭，学我的样式，这样，你们心里就必得享安息。因为我的轭是容易的，我的担子是轻省的。」</span>
+        <span class="en">"Come to me, all who are weary and heavy-laden, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls. For my yoke is easy and my burden is light."</span>
+        <cite>《马太福音》11:28-30 · Matthew 11:28-30</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שְׁמַע · Shema</strong>——「<em>听</em>」。每个犹太孩童从小就背诵的祷文以此开始：「<em>Shema Yisrael Adonai Eloheinu Adonai Echad</em>——以色列啊，你要听，耶和华我们的神是独一的主。」（申6:4）在希伯来语里，<em>shema</em>不只是耳朵的听见，更是<strong>带着回应的听</strong>——「<em>听</em>」与「<em>遵行</em>」是同一个词。耶稣最常的开场白「<em>有耳可听的，就应当听</em>」其实就是回到这条<em>Shema</em>的脊柱上。本书的标题虽是「<em>耶稣不是蓝眼睛</em>」，但它真正的呼召是：<strong>耶稣的耳朵听过 Shema，祂的舌头说过 Shema——你愿不愿意也这样听祂？</strong></span>
+        <span class="en"><strong>שְׁמַע · Shema</strong> — "<em>Hear</em>." Every Jewish child grows up reciting the prayer that opens with this word: "<em>Shema Yisrael Adonai Eloheinu Adonai Echad</em> — Hear, O Israel, the LORD our God, the LORD is one." (Deut 6:4). In Hebrew, <em>shema</em> is not just the ear's reception — it is <strong>listening that obeys</strong>; "to hear" and "to do" share a single semantic field. Jesus' most frequent refrain — "<em>He who has ears to hear, let him hear</em>" — sits squarely on the spine of the <em>Shema</em>. The book's title is "<em>Jesus Didn't Have Blue Eyes</em>" — but the deeper call is this: <strong>Jesus' ears heard the Shema; his tongue spoke the Shema. Will you listen to him in the same way?</strong></span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">读完这本书，许多基督徒会经历两种感觉：第一种是悲伤——「我从前以为自己认识耶稣，现在才发现我认识的只是<em>祂的轮廓</em>。」第二种是兴奋——「但祂还在那里，整本福音书还在那里，我可以重新读、重新听、重新跟随。」莱曼并不要求基督徒守犹太节期、用希伯来文祷告，也不要求改变神学体系。他的请求很温柔：「<em>不要再加一层欧洲滤镜在祂上面。</em>」让那位拿撒勒的犹太人——那位会发怒、会哭泣、会与撒玛利亚妇人对话、会在最后晚餐时洗门徒脚的耶稣——<strong>重新坐在你心中那把椅子上</strong>。这就是「重新听见祂的话」。</span>
+        <span class="en">By the end of this book, many Christians experience two emotions in quick succession. First, sadness: "I thought I knew Jesus, and I have only known an <em>outline</em>." Second, excitement: "But he is still there. The whole Gospel is still there. I can read again, hear again, follow again." Leman does not require Christians to observe the feasts, pray in Hebrew, or overhaul their theology. His request is tender: "<em>Just remove the extra layer of European varnish</em>." Let the Jewish carpenter from Nazareth — the one who got angry, who wept, who sat down with a Samaritan woman, who knelt to wash his disciples' feet — <strong>retake the chair at the center of your heart</strong>. That is what it means to "hear his words all over again."</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">读完这八堂课，我心中的耶稣形象变了吗？变在哪里？如果改变了，我愿意把这个改变带进我下一次的祷告吗？</span><span class="en">Has my mental picture of Jesus changed across these eight lessons? Where? And if so, am I willing to carry that changed picture into my very next prayer?</span></li>
+        <li><span class="zh">如果「<em>Shema</em>」的意思是「听得带着回应」——莱曼整本书说的，我<em>真听见</em>了哪一句？我会带哪一句进入下个月的生活？</span><span class="en">If <em>Shema</em> means "listening that obeys" — which single sentence from Leman's whole book have I <em>actually heard</em>? Which one will I carry into the next month of my life?</span></li>
+        <li><span class="zh">我愿不愿意为我所在的<strong>那间教会</strong>祷告——求神也让她「<em>重新听见</em>」那位犹太弥赛亚？这是否也是为「以色列的丰满」祷告的一种方式？</span><span class="en">Am I willing to pray for <strong>my own local church</strong> — that she too would "<em>hear again</em>" the Jewish Messiah? Could this be one way of praying for "the fullness of Israel"?</span></li>
+      </ul>
+    </div>
+
+    <hr class="article-rule" />
+
+    <h2>
+      <span class="zh">同行祝福</span>
+      <span class="en">A Blessing for the Road</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华向你仰脸，赐你平安。」<br/><br/>愿你听见了 Shema，也行出来；<br/>愿你不再被金发蓝眼的画像所遮蔽——而看见那位真正的拿撒勒人耶稣 (Yeshua)：<br/>祂以人子的身份走过你的尘土，又以神子的荣耀坐在父的右边。<br/><br/>祂第一次以受苦的羔羊来过，<br/>祂第二次必以得胜的君王再来——<br/>愿你两次都预备好。</span>
+      <span class="en">"The LORD lift up his countenance upon you, and give you peace."<br/><br/>May you hear the Shema and walk it out.<br/>May the blond, blue-eyed icons no longer block your sight — and may you see the actual Yeshua of Nazareth:<br/>the Son of Man who walked your dust, the Son of God who sits at the Father's right hand.<br/><br/>He came once as the Suffering Lamb.<br/>He will come again as the Reigning King.<br/>May you be ready for both.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://mtolivepress.com" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《耶稣不是蓝眼睛》原书 · Mt. Olive Press</span><span class="en">Get the Book — Jesus Didn't Have Blue Eyes · Mt. Olive Press</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=5" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>
