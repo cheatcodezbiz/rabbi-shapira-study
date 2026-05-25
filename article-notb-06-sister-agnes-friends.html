@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>門徑與花園：為新娘之夜預備心靈 — 妥拉之光</title>
+  <meta name="description" content="The Gateway and the Garden: Preparing the Heart for the Bride's Night — A pastoral interlude by Sister Agnes (Indonesia) and ministry partners at The Night of the Bride 5786 (Milchemet HaChatunah), Ahavat Ammi Ministries" />
+  <meta name="audio-slug" content="article-notb-06-sister-agnes-friends" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-notb-06-sister-agnes-friends.jpg" alt="Sister Agnes & Friends — Pastoral Interlude at The Night of the Bride 5786" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">艾格尼絲修女與朋友 · 牧養插曲 · 新娘之夜 5786 · 婚禮之戰</span><span class="en">Sister Agnes & Friends · Pastoral Interlude · Night of the Bride 5786 · Milchemet HaChatunah</span></span>
+      <h1 class="article-title">
+        <span class="zh">門徑與花園：為新娘之夜預備心靈</span>
+        <span class="en">The Gateway and the Garden: Preparing the Heart for the Bride's Night</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">在拉比沙皮拉的主要教導之後、在「立禱」(<em>Amida</em>) 那兩個小時神聖等候之前，艾格尼絲修女從印尼連線，帶著「萬國同站」的聲音、「為身分而戰」的話語、與「打開公義之門」的禱告，為全球的新娘預備心靈。<em>這不是一場講道；這是一段牧養的代禱。</em></span>
+        <span class="en">Between Rabbi Shapira's main teaching and the two sacred hours of the <em>Amida</em>, Sister Agnes joins live from Indonesia — bringing the voice of the nations standing together, the word about “the war for identity,” and the prayer that throws open “the gates of righteousness” for the global bride. <em>This is not a sermon; it is a pastoral intercession.</em></span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">艾格尼絲修女與朋友 · 新娘之夜 5786</span>
+        <span class="en">Sister Agnes & Friends · Night of the Bride 5786</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 23</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 18 分钟阅读</span><span class="en">~18 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=OlTpoHwveIM&t=14808s" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">觀看 · 艾格尼絲修女與朋友 (47分鐘)</span><span class="en">Watch · Sister Agnes & Friends (47min)</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">艾格尼絲修女剛剛慶祝完生日。她從印尼的家中連線，臉上仍帶著節日的喜樂，但語氣已經轉為極為認真的牧養語調：「<em>朋友們，聽我說，聖靈在這裡。我們正進入今晚最重要的、最重要的兩個小時。</em>」這段四十七分鐘的牧養插曲，沒有新的神學公式，也沒有複雜的米大示——只有一位修女、一份禱告、一個花園的門徑、與一位即將擁抱祂新婦的神。她點名一個又一個國家——印尼、委內瑞拉、中國、馬達加斯加、台灣、西班牙、加州——把它們一個一個放在主的面前。然後她邀請所有人站起來，一起唸詩篇第118篇的禱告：<strong>「為我打開公義之門，使我可以進去，讚美耶和華。」</strong>(תְּפִלָּה <em>tefillah</em>，禱告) 這正是新娘進入婚禮帳幕之前所做的事——<em>她整理她的妝、她點亮她的燈、她屈膝、她預備</em>。</span>
+      <span class="en">Sister Agnes has just celebrated her birthday. She joins live from her home in Indonesia, the joy of the celebration still on her face, but her voice has shifted into the very serious tone of a pastor: <em>“Friends, listen to me, the Holy Spirit is here. We are entering the most important — the most important two hours right now.”</em> This forty-seven-minute pastoral interlude offers no new theological formula, no elaborate midrash — just one sister, one prayer, one gateway into the garden, and one God about to embrace His bride. She names country after country — Indonesia, Venezuela, China, Madagascar, Taiwan, Spain, California — laying each one before the Lord. Then she invites everyone to stand and pray together the words of Psalm 118: <strong>“Open the gates of righteousness for me, that I may enter through them, and praise the LORD.”</strong> (תְּפִלָּה <em>tefillah</em>, prayer.) This is exactly what the bride does before stepping into the wedding chamber — <em>she adjusts her veil, she lights her lamp, she bends her knee, she makes herself ready.</em></span>
+    </p>
+
+    <h2><span class="zh">一、列國同站 ── 一個全球的家在守望</span><span class="en">I. The Nations Standing Together — A Global Household on Watch</span></h2>
+    <p>
+      <span class="zh">艾格尼絲修女開場的方式並不是「宣告」，而是<em>點名</em>。她像一個母親在大家庭聚會上，逐一叫出每個孩子的名字：「印尼來了。我們今天為印尼這個國家禱告。⋯⋯哎呀，這麼多國家。許多人從委內瑞拉來。⋯⋯中國！我們高興有中國一起。榮耀歸給神。⋯⋯馬達加斯加！這太驚人了，馬達加斯加！⋯⋯佛羅里達⋯⋯加州⋯⋯西班牙⋯⋯台灣，台灣在這裡。榮耀歸給神，我們對台灣非常激動——一個我們心中親愛的國家。」</span>
+      <span class="en">Sister Agnes opens not by “proclaiming” but by <em>naming</em>. She is like a mother at a great family reunion calling out each child's name: <em>“Indonesia is here. We pray for the nation of Indonesia today. … My goodness, so many countries. A lot of people from Venezuela. … China! We are glad to have China with us. Glory to God. … Madagascar! Isn't that amazing — Madagascar! … Florida … California … Spain … Taiwan, Taiwan is in there. Glory to God, we are very excited about Taiwan — a nation that is dear to our heart.”</em></span>
+    </p>
+
+    <p>
+      <span class="zh">這個「點名」並非寒暄。這是一個牧者深知的工作：<em>把分散的肢體一個一個召聚到主的面前</em>。當你的名字被叫出來，你就不再是一個匿名的觀看者；你成了這個身體的一部分，你有了座位，你有了責任。希伯來文中「聚集」這個動詞 <em>kahal</em>（קהל）本身就是「教會、會眾」(<em>kahal</em>) 這個名詞的字根。<strong>新娘不是一個人；新娘是一個被召聚、被點名、被認識的身體。</strong></span>
+      <span class="en">This naming is not small talk. It is the deep work of a pastor: <em>gathering scattered members one by one before the Lord</em>. Once your name is called you are no longer an anonymous viewer — you become part of the body, you have a seat, you carry responsibility. The Hebrew verb “to gather,” <em>kahal</em> (קהל), is the very root of the word for “congregation” or “assembly” (<em>kahal</em>). <strong>The bride is not one person; she is a body that has been gathered, named, and known.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">這對於華人觀眾來說有特別的份量。從中國大陸、台灣、香港、東南亞、北美、歐洲，每一個收看這場聚會的華人信徒，當艾格尼絲修女說出「中國」、「台灣」的時候，<em>都被神親手把座位放在這個全球的婚禮席上</em>。我們不是邊緣的觀看者；我們是被叫進來的家人。</span>
+      <span class="en">This carries special weight for the Chinese audience. From mainland China, Taiwan, Hong Kong, Southeast Asia, North America, Europe — every Chinese believer watching this gathering, when Sister Agnes names “China” and “Taiwan,” <em>has a seat at the global wedding table set personally by God</em>. We are not peripheral viewers. We are family being called in by name.</span>
+    </p>
+
+    <h2><span class="zh">二、「最重要的兩個小時」── 為何「立禱」是中心</span><span class="en">II. “The Most Important Two Hours” — Why the <em>Amida</em> Is the Center</span></h2>
+    <p>
+      <span class="zh">艾格尼絲修女反覆強調一件事：「<em>弟兄姊妹們，我們正進入最重要的、最重要的兩個小時。哈森將會帶我們一直走到 Amida。</em>」「Amida」（עֲמִידָה，「站立」）是猶太傳統中最神聖的時刻——會眾安靜地站立、面向耶路撒冷、低聲與神對話。在新娘之夜的脈絡中，這個 <em>Amida</em> 被擴張為「全球新娘一同站立等候新郎」的兩個小時。</span>
+      <span class="en">Sister Agnes repeats one thing again and again: <em>“Brothers and sisters, we are entering the most important, the most important two hours right now. Hassan is going to take us together with me all the way to Amida.”</em> The <em>Amida</em> (עֲמִידָה, “standing”) is the most sacred moment in Jewish liturgy — the congregation stands in silence, facing Jerusalem, whispering into the ear of God. In the Night of the Bride this <em>Amida</em> is expanded into two hours in which the global bride stands together waiting for her Bridegroom.</span>
+    </p>
+
+    <p>
+      <span class="zh">為什麼這兩個小時這麼重要？因為它是<em>等候</em>的時刻——而等候，在聖經中，是新娘的特徵性動作。詩篇 27:14：「<em>要等候耶和華，當壯膽，堅固你的心，我再說，要等候耶和華。</em>」雅歌 2:9 描寫新郎「站在牆壁後，從窗戶往裡觀看，從窗欞往裡窺視」——新娘的工作不是衝出去，而是<em>站著、預備、等候</em>。艾格尼絲修女的提醒正是這個：<strong>不要在那兩個小時把心思放在其他地方。神就在那個 <em>Amida</em> 裡降臨。</strong></span>
+      <span class="en">Why are these two hours so important? Because they are the hours of <em>waiting</em> — and waiting, in Scripture, is the bride's signature posture. Psalm 27:14: <em>“Wait for the LORD; be strong, and let your heart take courage; wait for the LORD!”</em> Song of Songs 2:9 describes the Bridegroom “standing behind our wall, gazing through the windows, looking through the lattice” — the bride's work is not to run out; it is to <em>stand, prepare, and wait</em>. Sister Agnes's reminder is precisely this: <strong>do not let your attention drift in those two hours. God Himself descends in that <em>Amida</em>.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">她並不掩飾這個時刻的張力：「<em>我要說的是，就在 Amida 裡，我們會停下來。我們會在進入生命之前停下來。</em>」這個「停下來」就是新娘的安息（שַׁבָּת <em>shabbat</em>）——不是無所事事，而是<em>把自己整理好、把自己交給新郎</em>。這是奉獻的最高姿態。</span>
+      <span class="en">She does not disguise the tension of the moment: <em>“What I want to say is — right in the Amida we will stop. And we will stop just before entering into life.”</em> This “stopping” is the bride's own Sabbath rest (שַׁבָּת <em>shabbat</em>) — not idleness, but <em>composing herself, surrendering herself, into the hands of the Bridegroom</em>. It is the highest posture of consecration.</span>
+    </p>
+
+    <h2><span class="zh">三、為身分而戰 ── 「亭拿」的內在</span><span class="en">III. The War for Identity — The Inner <em>Timna</em></span></h2>
+    <p>
+      <span class="zh">在邀請大家站立禱告之前，艾格尼絲修女把那「兩個小時」的核心命題說了出來：「<em>我想快速地說出今晚的話語：你們正處於一場為「亭拿」(Timna) 身分而戰的戰爭，要在你們內心被提升。</em>」</span>
+      <span class="en">Before inviting everyone to stand and pray, Sister Agnes states the central thesis of those two hours: <em>“Let me quickly say the word for this evening: You are in a war for the identity of Timna to be raised inside of you.”</em></span>
+    </p>
+
+    <p>
+      <span class="zh">「亭拿」(תִּמְנָע / תִּמְנָה <em>Timna</em>) 在舊約裡是創世記 36:12 提到的一個女子——以掃的兒子以利法的妾——也是一處與曠野試煉相關的地名。在拉比沙皮拉這次新娘之夜的整體框架中，「亭拿」象徵著<em>那個被忽略、被遺棄、卻被神親手抬起來</em>的盟約身分。她不是名門之後，她不在族譜的中心，但神看見她，神記得她。<strong>新娘在被擁抱之前，必須先重新接受自己被神看見、被神記得的身分。</strong></span>
+      <span class="en">“Timna” (תִּמְנָע / תִּמְנָה <em>Timna</em>) in the Hebrew Bible is the woman mentioned in Genesis 36:12 — concubine of Eliphaz son of Esau — and also a place name associated with wilderness testing. In the larger framework of Rabbi Shapira's Night of the Bride, “Timna” symbolises the <em>overlooked, abandoned, and yet personally lifted up</em> covenant identity. She is no aristocrat. She is not at the centre of any genealogy. But God sees her; God remembers her. <strong>Before the bride can be embraced, she must first re-receive the identity of being seen and remembered by God.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">這是「戰爭」(<em>milchemet</em> מִלְחֶמֶת)——但不是外在的戰爭，而是<em>內在的戰爭</em>。世界用一千種方式告訴你：你不夠好、你不被看見、你的禱告沒有效、你的家庭沒有指望、你的國家被遺忘了。神對新娘說的話是相反的：<em>「我聘你永遠歸我為妻。」</em>(何西阿書 2:19) 艾格尼絲修女這晚的呼籲，就是請每個觀看的人在那「兩個小時」之中，<em>讓神對你的看見，戰勝這世界對你的忽略</em>。</span>
+      <span class="en">This is a “war” (<em>milchemet</em> מִלְחֶמֶת) — but not an outward war; an <em>inward</em> war. The world tells you in a thousand ways: you are not enough, you are not seen, your prayers do not work, your family has no hope, your nation has been forgotten. To the bride, God says the opposite: <em>“I will betroth you to Me forever.”</em> (Hosea 2:19) Sister Agnes's appeal this night is precisely this: in those two hours, <em>let God's seeing of you overcome the world's forgetting of you</em>.</span>
+    </p>
+
+    <h2><span class="zh">四、打開公義的門 ── 詩篇 118 的禱告</span><span class="en">IV. Opening the Gates of Righteousness — The Prayer of Psalm 118</span></h2>
+    <p>
+      <span class="zh">艾格尼絲修女接著邀請所有人站立——「至少站起來，跟我一起唸這段。如果你能跟著自己語言的頁碼最好，如果不能也至少在場。」然後她帶出整個夜晚最重要的一段禱告，就是詩篇 118:19-22 的話：</span>
+      <span class="en">Sister Agnes then invites everyone to stand — “at least stand with me, recite this with me. Follow the page number in your own language if you can; if you can't, at least be present.” Then she leads the most important prayer of the night, the words of Psalm 118:19–22:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「<strong>為我打開公義的門，使我可以進去，讚美耶和華。</strong>這是耶和華的門，義人要進入。我要稱謝你，因為你已經應允我，又成為我的<em>耶書亞</em>（拯救）。匠人所棄的石頭，已成了房角的頭塊石頭。<strong>打開這門，為餘民打開吧。</strong>」<cite>——詩篇 118:19-22（艾格尼絲修女的禱告）</cite></span>
+      <span class="en">“<strong>Open the gates of righteousness for me, that I may enter through them and praise the LORD.</strong> This is the gate of the LORD; the righteous shall enter through it. I praise You, for You have answered me and have become my <em>Yeshua</em> (salvation). The stone that the builders rejected has become the chief cornerstone. <strong>Open the door; open it for the remnant.</strong>”<cite>— Psalm 118:19–22, prayed by Sister Agnes</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這段禱告極其精煉地把<em>三件事</em>放在一起：第一，新娘<em>請求</em>進入的權利——「為我打開公義的門」。新娘不能自己撞門進去；她必須等門被打開。第二，新娘認出<em>那位拯救她的</em>就是耶書亞（「你成為我的 <em>Yeshua</em>」）——她不是憑自己的義進去，而是憑彌賽亞的義。第三，新娘<em>為餘民代求</em>——「打開這門，為餘民打開吧。」她不是只為自己進去；她把整個家、整個國家、整個流亡的肢體都帶在身上。</span>
+      <span class="en">This prayer packs <em>three things</em> tightly together. First, the bride <em>asks</em> for the right to enter — “Open the gates of righteousness for me.” The bride cannot batter down the door herself; she must wait for it to be opened. Second, the bride recognises that the One saving her is Yeshua — “You have become my <em>Yeshua</em>.” She does not enter by her own righteousness but by the righteousness of the Messiah. Third, the bride <em>intercedes for the remnant</em> — “Open the door, open it for the remnant.” She does not enter only for herself; she carries her whole household, her nation, the whole exiled body on her shoulders.</span>
+    </p>
+
+    <p>
+      <span class="zh">這正是新娘真正的姿態：<em>謙卑的請求、清楚的認信、廣闊的代禱</em>。一位修女在四十七分鐘裡能教給我們的，不亞於一場神學講座。</span>
+      <span class="en">This is the true posture of the bride: <em>humble request, clear confession, sweeping intercession</em>. What a sister can teach us in forty-seven minutes is no less than a full theological lecture.</span>
+    </p>
+
+    <h2><span class="zh">五、新郎的歌 ── 雅歌與十件衣裳</span><span class="en">V. The Bridegroom's Song — Song of Songs and the Ten Garments</span></h2>
+    <p>
+      <span class="zh">在禱告之後，艾格尼絲修女邀請會眾與她一起讀雅歌——一段「新娘文學」的精華。她先用希伯來文起句：「<em>V'elbosh asara malbushim, keneged asara pa'amim shekara Yisrael kalah.</em>」中文直譯是：「<em>祂穿戴十件衣裳，正如以色列被稱為新娘的十次。</em>」這是猶太傳統中極美的一個米大示——當神在救贖以色列的時刻穿戴祂的十件「義袍」，每一件對應聖經中神稱以色列為「新婦」的一次。</span>
+      <span class="en">After the prayer, Sister Agnes invites the congregation to read with her from the Song of Songs — the essence of the “bridal literature.” She opens in Hebrew: <em>“V'elbosh asara malbushim, keneged asara pa'amim shekara Yisrael kalah.”</em> Literally: <em>“He wore ten garments — corresponding to the ten times Israel was called a bride to Him.”</em> This is one of the most beautiful midrashim in Jewish tradition — at the moment of redemption God dons His ten “garments of righteousness,” each one matching one of the ten times Scripture calls Israel His bride.</span>
+    </p>
+
+    <p>
+      <span class="zh">然後她讀出雅歌的字句，這位新郎對祂的新娘所唱的歌：</span>
+      <span class="en">Then she reads aloud the words of the Bridegroom to His bride:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我妹子，我新婦，我進了我的園中——⋯⋯我新婦，求你與我一同從黎巴嫩來。⋯⋯我妹子，我新婦，乃是關鎖的園、禁閉的井、封閉的泉源。⋯⋯我新婦，你的愛情何其美！⋯⋯我新婦，你奪了我的心。⋯⋯歡喜和快樂的聲音、新郎和新婦的聲音⋯⋯耶和華如此說。你必使他們如珠寶配戴，如新婦以裝飾自己。新郎怎樣喜悅新婦，你的神也要照樣喜悅你，正像新婦以她的妝飾自己。」<cite>——雅歌 4-5 章 / 耶利米書 33:11 / 以賽亞書 62:5</cite></span>
+      <span class="en">“I have come to my garden, my own, my bride. … From Lebanon come with me, from Lebanon, my bride, with me. … A garden locked is my own, my bride, a fountain locked, a sealed-up spring. … How sweet is your love, my own, my bride. … Sweetness drops from your lips, O bride. … You have captured my heart, my own, my bride. … The sound of mirth and gladness, the voice of the bridegroom and the bride. … Thus declares the LORD: You shall don them all like jewels; deck yourself with them like a bride. As a bridegroom rejoices over the bride, so will your God rejoice over you, like a bride adorned with her jewels.”<cite>— Song of Songs 4–5 / Jeremiah 33:11 / Isaiah 62:5</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這段經文沒有教義可以分析，只有<em>被愛的感覺</em>。神對祂的新娘說：「你奪了我的心。」這位至高者，這位榮耀的神，<em>把祂的心放在祂新娘的手裡</em>。這就是「新娘之夜」這個節期想要在我們裡面恢復的：<strong>被神所愛的覺知。</strong> אַחֲוָה <em>achavah</em>（姊妹之情，sisterhood）——艾格尼絲修女藉著她的聲音、她的點名、她的代禱，讓全球的姐妹們<em>真實地感覺到</em>她們是被新郎呼喚的那位。</span>
+      <span class="en">There is no doctrine to dissect here — only the <em>experience of being loved</em>. God says to His bride: <em>“You have captured my heart.”</em> The Most High, the God of glory, <em>places His heart in the hand of His bride</em>. This is what the Night of the Bride longs to restore in us: <strong>the awareness of being loved by God.</strong> אַחֲוָה <em>achavah</em> — sisterhood. Through her voice, through her naming, through her interceding, Sister Agnes lets the global sisterhood <em>actually feel</em> that she is the one being called by the Bridegroom.</span>
+    </p>
+
+    <h2><span class="zh">六、釋放被擄的 ── 「我使你自由」的見證</span><span class="en">VI. The Captives Set Free — A Testimony of “I Make You Free”</span></h2>
+    <p>
+      <span class="zh">在雅歌之後是<em>Ma'ariv</em>（מַעֲרִיב，傍晚禱告儀式）。艾格尼絲修女與會眾一同唸誦：「<em>耶和華做王，祂披上威嚴；耶和華披上能力，束上腰帶。世界堅立，永不動搖。</em>」（詩篇 93:1-3 改編） 然後她翻譯哈森朗誦的一段話——這段話是這個夜晚裡的<em>福音宣告</em>：</span>
+      <span class="en">After the Song of Songs comes the <em>Ma'ariv</em> (מַעֲרִיב, evening prayer). Sister Agnes and the congregation pray together: <em>“The LORD reigns, He is clothed in majesty; the LORD is clothed, He has girded Himself in strength. The world is established, immovable.”</em> (Psalm 93:1–3, adapted) Then she translates a passage the cantor has just chanted in Hebrew — and this passage carries the <em>gospel proclamation</em> of the night:</span>
+    </p>
+
+    <blockquote class="equation">
+      <span class="zh">「<strong>我就是主，我就是主。我為你行神蹟。我把你從監牢裡領出來。你現在被釋放了——我說，你被釋放了。願一切被擄的，在此刻得到釋放！</strong>」<cite>— 艾格尼絲修女翻譯哈森的希伯來禱告</cite></span>
+      <span class="en">“<strong>I am the LORD, I am the LORD. I am doing miracles for you. I take you out of prison. You are set free right now — I said, you are set free. May all the captives be set free, right now!</strong>”<cite>— Sister Agnes translating the cantor's Hebrew prayer</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這是一段<em>עֵדוּת edut</em>（見證）——不是「將會發生」的應許，而是「現在發生」的宣告。神不是在這個時刻評估你的「資格」；祂正在<em>釋放你</em>。在一場為新娘而設的夜晚裡，被釋放的<em>不是僕人</em>，而是<em>新娘</em>。一個從牢裡走出來的女人，洗淨自己、換上禮服、走向她的新郎——這就是聖經整本書的中心畫面。</span>
+      <span class="en">This is an act of <em>עֵדוּת edut</em> — testimony. Not “it will happen” but “it is happening now.” God is not at this moment evaluating your worthiness; He is <em>setting you free</em>. On a night set apart for the bride, the one being set free is not the servant but the <em>bride</em>. A woman walks out of prison, washes herself, puts on her wedding garment, walks toward her Bridegroom — and that is the central image of the whole Bible.</span>
+    </p>
+
+    <p>
+      <span class="zh">緊接著她邀請會眾與她一同呼喊：「<em>Bo, Yeshua, Bo!</em> 來吧，耶書亞，來吧！」這是用希伯來文向新郎發出的呼喚——「<em>bo</em>」(בּוֹא)，意思是「來」。新娘的最後一句話、整本聖經的最後一句話，都是這一個字。啟示錄 22:17：「<em>聖靈和新婦都說：『來！』</em>」啟示錄 22:20：「<em>主耶穌啊，我願祢來！</em>」</span>
+      <span class="en">She then invites the congregation to cry out with her: <em>“Bo, Yeshua, Bo!”</em> Come, Yeshua, come! It is the Hebrew word for “come” (בּוֹא <em>bo</em>) called out to the Bridegroom. The bride's final word — and the final word of the entire Bible — is precisely this one word. Revelation 22:17: <em>“The Spirit and the bride say, ‘Come!’”</em> Revelation 22:20: <em>“Come, Lord Jesus!”</em></span>
+    </p>
+
+    <h2><span class="zh">七、耶路撒冷的哀歌 ── 一個未完的擁抱</span><span class="en">VII. The Lament for Jerusalem — An Embrace Not Yet Complete</span></h2>
+    <p>
+      <span class="zh">在這段牧養插曲的尾端，艾格尼絲修女用英文、西班牙文與希伯來文，三次朗讀馬太福音 23:37-39 與路加福音 13:34-35 中耶書亞自己的哀歌：</span>
+      <span class="en">Near the end of this pastoral interlude, Sister Agnes reads — in English, Spanish, and Hebrew — Yeshua's own lament from Matthew 23:37–39 and Luke 13:34–35:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「<strong>耶路撒冷啊，耶路撒冷啊，你常殺害先知，又用石頭打死那奉差遣到你這裡來的人！我多次願意聚集你的兒女，好像母雞把小雞聚集在翅膀底下；只是你們不願意。看哪，神將你們的家撇給你們了。我告訴你們，從今以後你們不得再見我，直等到你們說：「奉主名來的，是應當稱頌的。」</strong>」<cite>——馬太福音 23:37-39</cite></span>
+      <span class="en">“<strong>Jerusalem, Jerusalem, you who kill the prophets and stone those sent to you, how often I wanted to gather your children, as a hen gathers her chicks under her wings, but you were not willing. Look, God is leaving your house to you, abandoned. For I tell you, from now on you will not see me again until you say, ‘Blessed is He who comes in the name of the LORD.’</strong>”<cite>— Matthew 23:37–39</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這段經文之所以放在這裡，是因為它把這個「新娘之夜」最深的傷口擺在桌面上：<em>新郎一直想擁抱新娘，但新娘——耶路撒冷——卻一次又一次推開祂</em>。「我多次願意聚集你的兒女，只是你們不願意。」這不是一個被丟棄的故事，而是一個<em>仍未完成的擁抱</em>。新郎還在等。直到那一天，新娘終於開口：「<em>奉主名來的，是應當稱頌的</em>」(<em>Baruch ha'ba b'shem Adonai</em>，בָּרוּךְ הַבָּא בְּשֵׁם יְהוָה)——那一刻，門就會打開，新郎就會回來。</span>
+      <span class="en">This passage stands here because it places the deepest wound of the Night of the Bride on the table: <em>the Bridegroom has longed to gather His bride, but the bride — Jerusalem — has pushed Him away again and again</em>. “How often I wanted to gather your children, but you were not willing.” This is not the story of a discarded bride; it is the story of <em>an embrace not yet complete</em>. The Bridegroom is still waiting. Until that day when the bride finally says: <em>“Blessed is He who comes in the name of the LORD”</em> (<em>Baruch ha'ba b'shem Adonai</em>, בָּרוּךְ הַבָּא בְּשֵׁם יְהוָה) — at that moment, the door will open and the Bridegroom will return.</span>
+    </p>
+
+    <p>
+      <span class="zh">艾格尼絲修女在這裡所做的事情極為勇敢：她<em>讓我們，作為新娘，重新替耶路撒冷說這句話</em>。我們從千萬里之外、從中國、從台灣、從印尼、從委內瑞拉、從馬達加斯加，<em>替她說一遍那句拯救之言</em>。這是新娘之夜真正的代禱：把那個應該由耶路撒冷說的「迎接」之語，先由列國替她說一次，叫她聽見、想起、終於開口。這就是 בְּרָכָה <em>berakhah</em>（祝福）最深的形式——<em>把祝福借給還沒有預備好的人</em>。</span>
+      <span class="en">What Sister Agnes does here is profoundly brave: she lets <em>us, as the bride, say these words on Jerusalem's behalf</em>. From thousands of miles away — from China, Taiwan, Indonesia, Venezuela, Madagascar — <em>we speak that word of welcome for her</em>. This is the deepest intercession of the Night of the Bride: speaking on Jerusalem's behalf the very words she has not yet said herself, so that she may hear them, remember them, and at last speak them with her own lips. This is בְּרָכָה <em>berakhah</em> at its deepest — <em>lending the blessing to one who is not yet ready to say it</em>.</span>
+    </p>
+
+    <h2><span class="zh">八、和平的帳棚 ── 一個禱告，一個遮蔽</span><span class="en">VIII. The Tabernacle of Peace — One Prayer, One Covering</span></h2>
+    <p>
+      <span class="zh">在邀請會眾坐下、進入<em>Shema</em>（שְׁמַע，「以色列啊，你要聽」的禱告）之前，艾格尼絲修女與哈森一同帶領一段我們很少聽到的禱告——「平安帳棚」的禱告(<em>U'fros aleinu sukat shalom yecha</em>，וּפְרֹשׂ עָלֵינוּ סֻכַּת שְׁלוֹמֶךָ)：</span>
+      <span class="en">Before inviting the congregation to be seated and enter into the <em>Shema</em> (שְׁמַע, “Hear, O Israel”), Sister Agnes and the cantor lead a prayer rarely heard outside the synagogue — the prayer of the “Tabernacle of Peace” (<em>U'fros aleinu sukat shalom yecha</em>, וּפְרֹשׂ עָלֵינוּ סֻכַּת שְׁלוֹמֶךָ):</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「求祢除去仇敵、瘟疫、刀劍、饑荒和憂愁，從我們的面前撤去撒但，從我們的身後撤去他，在祢翅膀的蔭下蔭蔽我們——因為祢是我們的看顧者、我們的拯救者，祢是有恩典、有憐憫的王。看顧我們的出入，使我們以平安出，以平安入，從今時直到永遠。<strong>求祢在我們之上展開祢平安的帳棚。</strong>稱頌祢，主啊，祢在我們之上、在祢全體子民以色列之上、在耶路撒冷之上，展開平安的帳棚。」<cite>——《Ma'ariv》「Hashkivenu」禱告</cite></span>
+      <span class="en">“Remove from us the enemy, plague and sword, famine and sorrow; take Satan from before us and from behind us, and shelter us under the shadow of Your wings — for You are our Guardian, our Deliverer, a gracious and merciful King. Guard our going out and our coming in, for life and for peace, now and forever. <strong>Spread over us the tabernacle of Your peace.</strong> Blessed are You, LORD, who spreads the tabernacle of peace over us, over all His people Israel, and over Jerusalem.”<cite>— The <em>Hashkivenu</em> prayer of <em>Ma'ariv</em></cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這段禱告中有一個極美的意象：<em>סֻכַּת שָׁלוֹם sukat shalom</em>，「平安的帳棚」。新娘在這個帳棚之下——在新郎為她張開的婚禮帳棚（<em>chuppah</em> חֻפָּה）之下——找到她的安息。她不必再為自己築防護的牆；新郎自己<em>就是</em>她的牆。詩篇 91:4：「<em>祂必用自己的翎毛遮蔽你，你要投靠在祂的翅膀底下。</em>」</span>
+      <span class="en">The image in this prayer is exquisite: <em>סֻכַּת שָׁלוֹם sukat shalom</em>, “the tabernacle of peace.” Under this tabernacle — under the wedding canopy (<em>chuppah</em> חֻפָּה) the Bridegroom spreads over her — the bride finds her rest. She no longer has to build her own walls of protection; the Bridegroom Himself <em>is</em> her wall. Psalm 91:4: <em>“He will cover you with His feathers, and under His wings you will find refuge.”</em></span>
+    </p>
+
+    <h2><span class="zh">九、給華人新娘的話</span><span class="en">IX. A Word to the Chinese Bride</span></h2>
+    <p>
+      <span class="zh"><strong>第一</strong>，當你聽見「中國」、「台灣」這兩個名字在艾格尼絲修女口中被讀出來時，<em>不要快快略過</em>。停一下。讓那個被命名的事實在你心裡沉澱：神親自把這個名字放在這場全球婚禮的賓客名單上。你不是「順便」被叫進來的；你是被神親自寫上的。</span>
+      <span class="en"><strong>First</strong>, when you hear the names “China” and “Taiwan” spoken aloud by Sister Agnes, <em>do not rush past them</em>. Pause. Let the fact of being named settle into your heart: God Himself has placed your nation on the guest list of this global wedding. You are not invited “by the way” — you have been written down personally by God.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第二</strong>，「為亭拿身分而戰」這個提醒對華人特別重要。我們生活在被忽略、被輕看、被誤解的文化處境中——無論是大陸的家庭教會、台灣在國際上的孤立、香港的衝擊、海外華人社群的邊緣化。<em>世界對我們的忽略不是神對我們的忽略</em>。神親自看見<em>那位</em>亭拿；祂也看見<em>每一位</em>華人新娘。</span>
+      <span class="en"><strong>Second</strong>, the reminder “war for the identity of Timna” is especially important for Chinese believers. We live in a cultural setting of being overlooked, undervalued, and misunderstood — whether mainland house-church believers, Taiwan's international isolation, Hong Kong's pressures, or diaspora marginalisation. <em>The world's forgetting of us is not God's forgetting of us</em>. God personally saw <em>that</em> Timna; He sees <em>every</em> Chinese bride too.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第三</strong>，學艾格尼絲修女「點名禱告」的方式。在你自己的禱告室裡，把你家庭裡每一個人的名字、你教會裡每一個人的名字、你城市每一條街的名字、你國家每一個省的名字，<em>一個一個</em>放在神面前。這就是 תְּפִלָּה <em>tefillah</em> 的核心——不是「籠統地禱告」，而是<em>把名字、把臉、把故事，一個一個放在神面前</em>。</span>
+      <span class="en"><strong>Third</strong>, learn from Sister Agnes the practice of <em>naming</em> in prayer. In your own prayer room, take the names of every person in your family, every person in your church, every street in your city, every province of your country, and lay them before God <em>one by one</em>. This is the heart of תְּפִלָּה <em>tefillah</em> — not “praying in general” but <em>laying names, faces, and stories before God one at a time</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第四</strong>，學她「替還沒準備好的人說祝福之語」(berakhah)。也許你的父母還沒有信、你的丈夫還沒有歸向主、你的孩子還在叛逆、你的城市還在沉睡。你可以<em>替他們先說那句話</em>——「奉主名來的，是應當稱頌的。」「主啊，求祢來。」「請祢釋放他們。」這就是新娘在新郎面前替家人代求的位分。</span>
+      <span class="en"><strong>Fourth</strong>, learn from her practice of <em>speaking the blessing on behalf of those not yet ready to speak it</em> (berakhah). Perhaps your parents have not yet believed; your husband has not yet turned to the Lord; your child is in rebellion; your city is still asleep. You can <em>say the words for them first</em>: “Blessed is He who comes in the name of the LORD.” “Lord, please come.” “Lord, set them free.” This is the bridal position before the Bridegroom — interceding for one's household.</span>
+    </p>
+
+    <h2><span class="zh">十、結語 ── 讓門打開</span><span class="en">X. Closing — Let the Gate Be Opened</span></h2>
+    <p>
+      <span class="zh">艾格尼絲修女這段四十七分鐘的牧養插曲沒有提供新的教義，也沒有揭開新的奧秘——它做的事情更基本、也更深：<em>它教我們如何站立、如何呼吸、如何等候、如何打開心讓神進來</em>。在這場「新娘之夜」的長夜中，她是那個拿著燈油、輕聲對其他姐妹說「<em>燈快要點不亮了，加油，新郎就要來了</em>」的童女（馬太福音 25）。</span>
+      <span class="en">Sister Agnes's forty-seven-minute pastoral interlude offers no new doctrine and unveils no new mystery — it does something more basic and more profound: <em>it teaches us how to stand, how to breathe, how to wait, how to open the heart so that God may enter</em>. Through the long night of the Bride she is the wise virgin (Matthew 25) with the oil in her lamp, whispering to her sisters: <em>“The flame is almost out — add oil, for the Bridegroom is coming.”</em></span>
+    </p>
+
+    <p>
+      <span class="zh">她最後留下的禱告，是她在開頭就唸過、又在中段反覆唸過的那一句——也是我們應該把它記在心版上的一句：</span>
+      <span class="en">Her closing prayer is the very prayer she opened with and returned to in the middle — a prayer worth writing on our hearts:</span>
+    </p>
+
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「為我打開公義的門，使我可以進去，讚美耶和華。⋯⋯打開這門，為餘民打開吧。⋯⋯願一切被擄的，在此刻得到釋放。⋯⋯<em>Bo, Yeshua, Bo</em>——來吧，耶書亞，來吧。願祢在我們之上展開祢平安的帳棚。」</strong></span>
+      <span class="en"><strong>“Open the gates of righteousness for me, that I may enter and praise the LORD. … Open the door, open it for the remnant. … May all the captives be set free right now. … <em>Bo, Yeshua, Bo</em> — Come, Yeshua, come. Spread over us the tabernacle of Your peace.”</strong></span>
+    </blockquote>
+
+    <p class="article-attribution">
+      <span class="zh">— 艾格尼絲修女與朋友 · 牧養插曲 · 新娘之夜 5786（婚禮之戰），Ahavat Ammi 事工，2026 年 5 月 23 日</span>
+      <span class="en">— Sister Agnes & Friends · Pastoral Interlude · The Night of the Bride 5786 (Milchemet HaChatunah), Ahavat Ammi Ministries, 23 May 2026</span>
+    </p>
+
+    <div class="article-cta-block">
+      <a href="https://www.youtube.com/watch?v=OlTpoHwveIM&t=14808s" target="_blank" rel="noopener" class="cta-watch-video">
+        ▶ <span class="zh">觀看完整影片 · 艾格尼絲修女與朋友 (47 分鐘)</span><span class="en">Watch Full Video · Sister Agnes & Friends (47 min)</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+
+</body>
+</html>
