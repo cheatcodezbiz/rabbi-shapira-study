@@ -1,0 +1,121 @@
+{
+  "slug": "article-shacharit-01-opening",
+  "segments": 25,
+  "zh": {
+    "default": "zh-TW-HsiaoChenNeural",
+    "count": 25,
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "c267469d069b1958",
+          "ea91f40c5f4c8a46",
+          "8b847f665c974e58",
+          "026a6b7b2a029d06",
+          "c5803149fedb73bb",
+          "b8130d0c26d69b9a",
+          "a8d3fec5b101820f",
+          "1f06268e3eb4b0ff",
+          "60f948b3dfba04ea",
+          "f223b54eb3479b97",
+          "28e02fce72aed66a",
+          "51b7f1f0ccc0634a",
+          "1c6dd1c494a93366",
+          "9cd389ac0e8bc287",
+          "a1d74d9ea5e148e8",
+          "246612f79c2b5b45",
+          "5f6e81c1705c61af",
+          "e322718dcfe78c8f",
+          "2659bbd10ab42b75",
+          "71350e6f1af86e81",
+          "35c9c24888f2f335",
+          "06fec4ddc875a50b",
+          "f6464650793fe029",
+          "a38d827fc5758102",
+          "cb2ed84da2c9e124"
+        ],
+        "withTimings": false
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "f88784c94ec57316",
+          "b64aac06eda65068",
+          "5f3acf6c044694ef",
+          "7a622e279bb34f4a",
+          "d51d9c38305ca89a",
+          "0c15bbbde9cef5aa",
+          "11bdfc18aa09dbe2",
+          "9bd6fd6126cb6136",
+          "08975fe25325aa74",
+          "01d48aecf9421431",
+          "7dc0aa873c0701e5",
+          "f42715be7a98a5d1",
+          "0bac74cc74c70664",
+          "389edccff827aa5c",
+          "0664873806206d6f",
+          "f15b6760317cba37",
+          "b9e0873303b2241c",
+          "5e2ecdb6ce6695c7",
+          "5dead37f7c6da64e",
+          "f9bb4200e2055a67",
+          "48920945345f5582",
+          "44778002db87b770",
+          "ac3446fe00e84a90",
+          "06b290a4d0bc07f3",
+          "52203b1847ee817b"
+        ],
+        "withTimings": false
+      }
+    ]
+  },
+  "en": {
+    "default": "en-US-AriaNeural",
+    "count": 25,
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "73bfbbc801000c10",
+          "f56f09656eb29da7",
+          "47b6a1cd7bc8b308",
+          "1a5ffd802605c433",
+          "17f30c145694135d",
+          "ce4017ea4cfdd307",
+          "19ba4311386b6d45",
+          "b4b3a2df5cb0f460",
+          "c925db77a08dc314",
+          "403f4281d7994a1e",
+          "e537c54ac396f6cd",
+          "f585013799845119",
+          "110ec0729ba81d22",
+          "e95bb6add1d40eb3",
+          "a6a5edd87ba29a67",
+          "8bd43a6cf8b8c1c4",
+          "877257ac833f6b3b",
+          "a13fe321904d455c",
+          "0f4c5b1339250f12",
+          "2527b4753084bc20",
+          "63ceef32b554e52f",
+          "033e95f164683943",
+          "1ef6d36ae2d9569d",
+          "98fab7b51d95d644",
+          "5fcce74ee16d4c6e"
+        ],
+        "withTimings": false
+      }
+    ]
+  }
+}

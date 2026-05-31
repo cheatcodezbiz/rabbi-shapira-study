@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>器皿與陳酒 ── 妥拉的本質是什麼？ — 妥拉之光</title>
+  <meta name="description" content="The Vessel and the Wine — What Is the Essence of Torah? The central drash of a worldwide Shacharit &amp; Torah service for Shabbat Naso, opening the Book of Numbers (Bamidbar). Ahavat Ammi Ministries." />
+  <meta name="audio-slug" content="article-shacharit-02-vessel-and-wine" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-shacharit-02-vessel-and-wine.jpg" alt="The Vessel and the Wine — What Is the Essence of Torah? · Parashat Naso · Book of Numbers / 器皿與陳酒 ── 妥拉的本質是什麼？" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">晨禱與妥拉崇拜 · 拿索篇</span><span class="en">Shacharit &amp; Torah Service · Naso</span></span>
+      <h1 class="article-title">
+        <span class="zh">器皿與陳酒 ── 妥拉的本質是什麼？</span>
+        <span class="en">The Vessel and the Wine — What Is the Essence of Torah?</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">在《民數記》（בְּמִדְבַּר Bamidbar）與《拿索篇》（נָשֹׂא Naso）的開端，這場全球安息日晨禱崇拜的中心講道問了一個顛覆性的問題：「新器皿裝著陳酒——你知道你裡面裝了什麼嗎？」如何實踐妥拉而不失去它的本質？<em>¿Usted sabe cuál es la esencia de esta Torah?</em></span>
+        <span class="en">Opening the Book of Numbers (בְּמִדְבַּר Bamidbar) and Parashat Naso (נָשֹׂא), the central drash of this worldwide Shabbat Shacharit service asks an unsettling question: “new vessels filled with old wine — do you know what you contain?” How do you practise the Torah without losing its essence? <em>¿Usted sabe cuál es la esencia de esta Torah?</em></span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">Ahavat Ammi 事工 · 全球安息日晨禱崇拜</span>
+        <span class="en">Ahavat Ammi Ministries · Worldwide Shabbat Shacharit Service</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 24</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 20 分钟阅读</span><span class="en">~20 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=Q_TribwpefQ&t=780s" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">觀看 · 器皿與陳酒</span><span class="en">Watch · The Vessel and the Wine</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">教師舉起一個問題，像舉起一個容器：「<em>你知道你裡面裝了什麼嗎？</em>」當我們翻開《民數記》（בְּמִדְבַּר Bamidbar）、進入《拿索篇》（נָשֹׂא Naso）時，他從《先賢錄》（Pirkei Avot）引出拉比梅爾（Rabbi Meir）的一句話：<strong>「不要看容器，而要看它裝了什麼。有新的容器裝著陳酒，也有舊的容器，連新酒都沒有。」</strong>整本《民數記》——他提出一個論點——就是來回答這個問題：器皿裡裝了什麼？我該如何在不失去其本質的前提下，實踐這部妥拉？</span>
+      <span class="en">The teacher lifts a question the way one lifts a jar: “<em>Do you know what you contain?</em>” As we open the Book of Numbers (בְּמִדְבַּר Bamidbar) and enter Parashat Naso (נָשֹׂא), he draws from Pirkei Avot a line of Rabbi Meir's: <strong>“Do not look at the vessel, but at what it contains. There are new vessels filled with old wine, and old vessels that hold not even new wine.”</strong> The whole Book of Numbers — this is his thesis — exists to answer that one question: what is inside the vessel? And how do I practise this Torah without losing its essence?</span>
+    </p>
+
+    <h2><span class="zh">一、收到的問候，與一個更大的問題</span><span class="en">I. A Greeting, and a Larger Question</span></h2>
+    <p>
+      <span class="zh">講道的開場是溫暖的。教師滿懷喜悅地談到「Operation Israel」收到的眾多好消息，談到十多年前在哥倫比亞開始的那份寶貴工作，並代表 Rebetzin、他自己與 Noah，向全球的社群表達深深的愛：「<em>我們從不把這些視為理所當然。</em>」這份問候不是客套——它本身就是這場教導的縮影：一個社群，分散在世界各地，卻在同一部妥拉裡同心。</span>
+      <span class="en">The teaching opens warmly. With evident joy the teacher speaks of the good reports pouring in for Operation Israel, of the precious work begun in Colombia more than ten years ago, and — on behalf of the Rebetzin, himself, and Noah — voices a deep love for the worldwide community: “<em>We do not take any of this for granted.</em>” The greeting is no formality. It is the teaching in miniature: one community, scattered across the earth, of one heart in one Torah.</span>
+    </p>
+
+    <p>
+      <span class="zh">然後，他把語氣轉向核心。今天他要談的，是《拿索篇》裡的一個問題——<em>你的罐子裡裝了什麼？</em>這是一場特別的教學，用英文、希伯來文與西班牙文同時對全球的會眾說話。「罐子裡裝了什麼？」他說，「<em>我們開始吧。</em>」</span>
+      <span class="en">Then he turns to the heart of it. Today, in Parashat Naso, he wants to speak about one thing — <em>what is inside your jar?</em> This is a special teaching, delivered at once in English, Hebrew, and Spanish, to a congregation gathered from across the world. “What's in your jar?” he says. “<em>Let's go.</em>”</span>
+    </p>
+
+    <p>
+      <span class="zh">他把這個問題帶到智者們的層面：「<em>Quiero llevarlos a un pasaje que nos han dado los sabios</em>」（我想帶你們到智者們給我們的一段經文。）因為「這對我意味著什麼？我該如何從這裡繼續？」是關鍵的問題。而若再深入一步——它對<strong>我們這個社群</strong>意味著什麼？「<em>Que significa para nosotros como comunidad</em>」——它對我們這個 Keilat Yovel（禧年社群）意味著什麼？</span>
+      <span class="en">He raises the question to the level of the sages: “<em>Quiero llevarlos a un pasaje que nos han dado los sabios</em>” — I want to take you to a passage given to us by the sages. Because “what does this mean to me, and how do I proceed from here?” is the critical question. And one step further — what does it mean to <strong>us as a community</strong>? “<em>Que significa para nosotros como comunidad</em>” — what does this mean to us as <em>Keilat Yovel</em>, the community of the Jubilee?</span>
+    </p>
+
+    <h2><span class="zh">二、拉比梅爾的器皿 ── 看裡面，不看外表</span><span class="en">II. Rabbi Meir's Vessel — Look Inside, Not at the Surface</span></h2>
+    <p>
+      <span class="zh">他請會眾打開《先賢錄》（Pirkei Avot，《列祖的倫理》），並請人用西班牙文誦讀那句話：「<em>Y dice el Rabbi Meir, no mires a la vasija, sino lo que contiene. Hay vasijas nuevas que están llenas de vino viejo, y hay vasijos viejos que ni siquiera contienen vino nuevo.</em>」——拉比梅爾說：不要看容器，而要看它裝了什麼。有新的容器裝滿了陳酒，也有舊的容器，連新酒都沒有。</span>
+      <span class="en">He asks the congregation to open Pirkei Avot — the Ethics of the Fathers — and to read the line aloud in Spanish: “<em>Y dice el Rabbi Meir, no mires a la vasija, sino lo que contiene. Hay vasijas nuevas que están llenas de vino viejo, y hay vasijos viejos que ni siquiera contienen vino nuevo.</em>” Rabbi Meir says: do not look at the vessel, but at what it contains. There are new vessels filled with old wine, and old vessels that hold not even new wine.</span>
+    </p>
+
+    <p>
+      <span class="zh">這幅圖像故意打破我們的直覺。我們以為新的容器配新酒、舊的容器盛陳釀——但拉比梅爾把它打亂：一個外表光鮮、嶄新的器皿，裡面可能裝著陳年的、真實的、寶貴的東西；而一個看似古老、可敬的器皿，裡面可能空空如也，連一點新意都沒有。<strong>器皿不能告訴你裡面的內容。</strong></span>
+      <span class="en">The image deliberately breaks our intuition. We assume the new vessel holds new wine and the old vessel the vintage — but Rabbi Meir scrambles it: a vessel that looks fresh and new may hold something aged, real, and precious; a vessel that looks ancient and venerable may hold nothing at all, not even something new. <strong>The vessel cannot tell you its contents.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">於是教師把這幅圖像鋒利地對準會眾：「這是你今天必須問自己的重要問題：<em>我知道它裝了什麼嗎？¿Usted sabe qué contengo?</em> 我知道這部妥拉（תּוֹרָה Torah）的本質是什麼嗎？<em>¿Usted sabe cuál es la esencia de esta Torah?</em>」這不是一個學術問題，而是一個生存問題：你手中捧著的這部妥拉，你是否認得它的內容？</span>
+      <span class="en">Then the teacher turns the image sharply toward the congregation: “This is the important question you must ask yourself today: <em>Do I know what it contains? ¿Usted sabe qué contengo?</em> Do I know what the essence of this Torah (תּוֹרָה Torah) is about? <em>¿Usted sabe cuál es la esencia de esta Torah?</em>” This is not an academic question but an existential one: the Torah you cradle in your hands — do you recognise its contents?</span>
+    </p>
+
+    <h2><span class="zh">三、整本《民數記》的論點 ── 器皿裡裝了什麼？</span><span class="en">III. The Thesis of Numbers — What Is in the Vessel?</span></h2>
+    <p>
+      <span class="zh">「當我們開始《民數記》這本書時，」他說，「<em>cuando empezamos el libro de los números, Bamidbar</em>，我今早想向你們提出一個論點。」這個論點是：<strong>整本《民數記》（בְּמִדְבַּר Bamidbar），都是為了回答「器皿裡裝了什麼？誰是這個器皿？」</strong>——特別是：我該如何辨認裡面有什麼，又該如何實踐它？「<em>¿Cómo reconozco qué hay y cómo practicar?</em>」</span>
+      <span class="en">“As we begin the Book of Numbers,” he says, “<em>cuando empezamos el libro de los números, Bamidbar</em>, I would like to present a thesis to you this morning.” The thesis: <strong>the entire Book of Numbers (בְּמִדְבַּר Bamidbar) exists to answer the question — what is inside the vessels? Who is the vessel?</strong> And specifically: how do I recognise what is in it, and how do I practise it? “<em>¿Cómo reconozco qué hay y cómo practicar?</em>”</span>
+    </p>
+
+    <p>
+      <span class="zh">他請會眾退後一步：因為你<em>今天</em>就領受了這部妥拉，你必須問自己一個問題——我該如何實踐這部妥拉，<strong>而不失去手中的目標、不失去它的本質</strong>？「<em>sin perder la esencia</em>」（不失去本質）。整部《民數記》的曠野旅程，正是這個問題的答案：一個被數點、被組織、背負著重擔的民，要學習如何攜帶妥拉穿越曠野，而不在路上把酒灑掉。</span>
+      <span class="en">He asks the congregation to step back: because you received the Torah <em>today</em>, you must ask yourself — how do I practise this Torah <strong>without losing the goal in hand, without losing its essence</strong>? “<em>Sin perder la esencia</em>” — without losing the essence. The whole wilderness journey of Numbers is the answer to that question: a people counted, organised, and laden with a burden, learning how to carry the Torah across the desert without spilling the wine along the way.</span>
+    </p>
+
+    <h2><span class="zh">四、《塔尼特》論述 ── 生命之樹，或是毒藥</span><span class="en">IV. The Tractate Taanit — An Elixir of Life, or a Poison</span></h2>
+    <p>
+      <span class="zh">為了回答這個問題，他帶會眾到《塔木德》（Talmud）的一部論述——《塔尼特》（תַּעֲנִית Taanit）7a。「<em>quiero llevarlos a un tratado en el Talmud</em>」（我想帶你們到《塔木德》裡的一部論述。）他說明：我們不會逐字讀完，只作轉述（「<em>solo lo parafraseamos</em>」）。</span>
+      <span class="en">To answer the question, he takes the congregation into a tractate of the Talmud — Taanit (תַּעֲנִית) 7a. “<em>Quiero llevarlos a un tratado en el Talmud</em>” — I want to take you to a tractate in the Talmud. He is careful to note: we will not read all of it, only paraphrase (“<em>solo lo parafraseamos</em>”).</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">凡全然投入妥拉、<strong>為它自身的緣故</strong>（לִשְׁמָהּ lishmah）而學習的人——這份學習，必成為他的<strong>生命的良藥</strong>，如同<strong>生命之樹</strong>（עֵץ חַיִּים etz chayim）。然而，凡不為妥拉的本質、只為器皿而學習的人——它不但於他無益，反而要成為他的<strong>毒藥</strong>。<cite>——《塔尼特》7a（轉述）</cite></span>
+      <span class="en">Whoever occupies himself in Torah <strong>for its own sake</strong> (לִשְׁמָהּ lishmah) — this practice will become for him <strong>an elixir of life</strong>, like a <strong>tree of life</strong> (עֵץ חַיִּים etz chayim). But whoever does not, who is fixed on the vessel and not on what is inside it — it will not only fail to benefit him; it will become his <strong>poison</strong>.<cite>— Taanit 7a (paraphrased)</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">他停在這個雙面性上，不讓我們太快越過。同一部妥拉，可以是生命之樹，也可以是毒藥。智者們（Hazal）甚至用了一個尖銳的詞作結論：「<em>Arifa</em>」——意指被砍頭、致死。教師壓低聲音：「你們聽我在對你們說什麼嗎？你們必須小心裡面裝的是什麼。因為在一端，它是一棵生命之樹；而在另一端，<strong>如果你靠得太近</strong>，它也能導致你的毀滅。」</span>
+      <span class="en">He lingers on the double edge, refusing to let us pass too quickly. The same Torah can be a tree of life or a poison. The sages (Hazal) conclude with a sharp word: “<em>Arifa</em>” — the chopping of the head, death. The teacher lowers his voice: “Do you hear what I am saying to you? You must be careful what is inside there. Because at one end it is a tree of life; and at the other end, <strong>if you come too close to it</strong>, it can lead to your destruction.”</span>
+    </p>
+
+    <h2><span class="zh">五、「為它自身的緣故」 ── 內容，不是器皿</span><span class="en">V. “For Its Own Sake” — the Content, Not the Vessel</span></h2>
+    <p>
+      <span class="zh">那麼，當智者們說「為它自身的緣故」（לִשְׁמָהּ lishmah）時，究竟是什麼意思？教師給了一個提示：所謂「為它自身的緣故」，是<strong>為了內容、為了妥拉裡面所裝的</strong>——而不是為了妥拉的<em>器皿</em>。lishmah 不是為了一個抽象的「妥拉本身」這個外殼，而是為了那葡萄酒、那本質、那活著的內裡。</span>
+      <span class="en">So what do the sages mean by “for its own sake” (לִשְׁמָהּ lishmah)? The teacher offers a hint: <em>for its own sake</em> means <strong>for the content, for what is inside the Torah</strong> — not for the Torah's <em>vessel</em>. Lishmah is not devotion to the outer shell of an abstract “Torah-as-such”; it is devotion to the wine, the essence, the living interior.</span>
+    </p>
+
+    <p>
+      <span class="zh">接著他說了一句出自自身經歷的話。作為一個「從生命之初就一直被猶太教養育和撫養」的人，他發出一個警告：<strong>「要小心，不要被所有外在的表象所迷惑。」</strong>因為人很容易掉進那個陷阱——「<em>usted puede caer fácilmente en la trampa</em>」——把心思放在外部、放在器皿、放在外表上（「<em>en lo externo, en la vasija, en lo de afuera</em>」），而不是放在裡面應當有的內容上。</span>
+      <span class="en">Then he speaks from his own life. As one “raised and brought up in Judaism all my life,” he issues a warning: <strong>“Be careful not to be enamoured with all the externalities.”</strong> Because it is easy to fall into the trap — “<em>usted puede caer fácilmente en la trampa</em>” — to set your heart on the outside, on the vessel, on the surface (“<em>en lo externo, en la vasija, en lo de afuera</em>”), instead of on what ought to be within.</span>
+    </p>
+
+    <p>
+      <span class="zh">這正是拉比梅爾的器皿與《塔尼特》的毒藥彼此交會之處。一個只迷戀器皿的人——華麗的儀式、可敬的形式、外在的虔誠——可能正捧著一個空瓶；而那同一部妥拉，本可以是他的生命之樹，卻因為他從未飲下裡面的酒，反而成了他的審判。<strong>外在主義不只是膚淺；它是危險的。</strong></span>
+      <span class="en">This is exactly where Rabbi Meir's vessel meets Taanit's poison. A person captivated only by the vessel — the splendid ritual, the venerable form, the outward piety — may be holding an empty bottle; and that same Torah, which could have been his tree of life, becomes his judgement, because he never drank the wine inside. <strong>Externalism is not merely shallow; it is dangerous.</strong></span>
+    </p>
+
+    <h2><span class="zh">六、兩個問題 ── 如何，以及為什麼</span><span class="en">VI. Two Questions — the How, and the Why</span></h2>
+    <p>
+      <span class="zh">「所以今天早上，」教師說，「我想簡要地給你們一些原則。」（「<em>Entonces esta mañana quiero darles brevemente los principios</em>。」）他要試圖回答兩個問題。<strong>第一個問題：我如何確保我專注於妥拉的內在？</strong>——也就是「如何」。</span>
+      <span class="en">“So this morning,” the teacher says, “I want to give you, briefly, some principles.” (“<em>Entonces esta mañana quiero darles brevemente los principios.</em>”) He will try to answer two questions. <strong>The first: how do I make sure I focus on the inside of the Torah?</strong> — the <em>how</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh"><strong>第二個問題，也是更宏大的問題：為什麼？</strong>我為什麼要這樣做？難道只是為了不被毀滅嗎？教師立刻把這個答案排除掉：「我想告訴你們，<strong>那不是答案。</strong>」（「<em>Y quiero decirle que esa no es la respuesta.</em>」）僅僅出於恐懼、為了躲避毒藥而專注於內在——這還不夠。一定有一個更深的「為什麼」，而那個「為什麼」，他說，從《民數記》第一章就開始浮現。</span>
+      <span class="en"><strong>The second, and larger, question: why?</strong> Why should I do this? Is it simply so that I will not be destroyed? The teacher rules that answer out at once: “I want to tell you, <strong>that is not the answer.</strong>” (“<em>Y quiero decirle que esa no es la respuesta.</em>”) To focus on the interior merely out of fear, merely to dodge the poison, is not enough. There must be a deeper <em>why</em> — and that why, he says, begins to surface from Numbers chapter one.</span>
+    </p>
+
+    <p>
+      <span class="zh">於是他給出一條閱讀的法則：<strong>「當你閱讀妥拉時，你必須像心跳一樣去讀。」</strong>（「<em>usted cuando lee la Torah debe leerla con el corazón palpitante</em>」——你讀妥拉時，必須帶著跳動的心去讀。）妥拉不是一份要被歸檔的文件；它是有脈搏的。要讀進它的內容，就要讓那段經文與當下、與這個活著、呼吸著的社群連在一起跳動。他相信《民數記》的前四章正是為此而設——它們設下前提，來回答這「如何」與「為什麼」這兩個問題。</span>
+      <span class="en">So he gives a rule for reading: <strong>“When you read the Torah, you must read it like a heartbeat.”</strong> (“<em>usted cuando lee la Torah debe leerla con el corazón palpitante</em>” — read the Torah with a beating heart.) The Torah is not a document to be filed; it has a pulse. To read into its content is to let the text beat in time with the present moment, with this living, breathing community. He believes the first four chapters of Numbers are set there precisely for this — they lay the prefix that answers both the <em>how</em> and the <em>why</em>.</span>
+    </p>
+
+    <h2><span class="zh">七、《民數記》第一章 ── 人、時間、地點</span><span class="en">VII. Numbers Chapter One — Person, Time, Place</span></h2>
+    <p>
+      <span class="zh">他帶會眾看《民數記》第一章第一節，不逐字讀，只指出幾個細節。第一節裡有三樣東西：<strong>一個神對之說話的人</strong>——摩西（Moshe）；<strong>一個地點</strong>——西奈（Sinai）；<strong>一個時間</strong>。而這三樣——人、時間、地點——都在神的掌管之下。「不要忘記這點，」他說，「<em>人、時間、地點，都是神所掌管的。</em>」這已經是「器皿」問題的一部分答案：你裝什麼，總是在某個被神掌管的人、某個被神掌管的時刻、某個被神掌管的地方裡發生。</span>
+      <span class="en">He takes the congregation to Numbers 1:1, not to read it whole but to point out a few details. The first verse holds three things: <strong>a person to whom God speaks</strong> — Moshe; <strong>a place</strong> — Sinai; and <strong>a time</strong>. And all three — person, time, place — are under God's control. “Do not forget this,” he says: “<em>the people, the time, and the place — God controls all of those things.</em>” This is already part of the answer to the vessel question: what you contain is always carried by some God-appointed person, in some God-appointed hour, in some God-appointed place.</span>
+    </p>
+
+    <p>
+      <span class="zh">他要會眾在心裡記下神給以色列子民的<strong>第一條誡命</strong>：清點所有的人。順帶一問——什麼時候清點人數？什麼時候進行人口統計？「<em>當你準備去打仗的時候。</em>」這個數點不是行政手續，而是動員：一個民正被預備好，去攜帶某種重大的東西穿越曠野。</span>
+      <span class="en">He asks the congregation to make a mental note of the <strong>first commandment</strong> God gives the children of Israel: take the sum of all the people. And in passing — when do you take a census? When do you make an accounting? “<em>When you are getting ready to go to war.</em>” This counting is not paperwork but mobilisation: a people being made ready to carry something weighty across the wilderness.</span>
+    </p>
+
+    <h2><span class="zh">八、Se'u 與 Edat ── 承擔弟兄的重擔，作為見證</span><span class="en">VIII. Se'u and Edat — Bearing Your Brother's Burden as Testimony</span></h2>
+    <p>
+      <span class="zh">這裡有兩個希伯來詞值得細看。第一個是哈謝姆（Hashem）所用的詞：<strong><em>Se'u</em></strong>（שְׂאוּ）。它不只是「清點」。如果你說 <em>Sifru</em>（סִפְרוּ），那才是「數數、計數」。但神為什麼說 <em>Se'u</em>？「<em>Y porque el Señor dice Sehu</em>」——因為 <em>Se'u</em> 在談一件更深的事：<strong>承載、背負重量、背負重擔。</strong>正如教師先前所說的，妥拉是一份重擔，它有重量。</span>
+      <span class="en">Two Hebrew words here repay attention. The first is the word Hashem uses: <strong><em>Se'u</em></strong> (שְׂאוּ). It does not merely mean “count.” Had He said <em>Sifru</em> (סִפְרוּ), that would mean “to number, to tally.” But why does God say <em>Se'u</em>? “<em>Y porque el Señor dice Sehu</em>” — because <em>Se'u</em> speaks of something far deeper: <strong>to carry, to bear the weight, to bear the burden.</strong> As the teacher said earlier, the Torah is a burden; it has weight.</span>
+    </p>
+
+    <p>
+      <span class="zh">「現在你有了這份重量，」他說，「而這是一份<strong>社群的</strong>重量。它不是牧者一個人的重量；它是整個社群的重量。」（「<em>El camino del pastor es el camino de la responsabilidad de toda la comunidad.</em>」——牧者的道路，是對整個社群負責的道路。）數點這個民，就是要每一個人去<em>承擔</em>彼此：「你們明白我在說什麼嗎？」</span>
+      <span class="en">“Now you have this weight,” he says, “and it is a <strong>community</strong> weight. It is not the pastor's weight; it is the community's weight.” (“<em>El camino del pastor es el camino de la responsabilidad de toda la comunidad.</em>” — the pastor's way is the way of responsibility for the whole community.) To count this people is to call each one to <em>bear</em> the others: “Do you understand what I am saying?”</span>
+    </p>
+
+    <p>
+      <span class="zh">第二個詞同樣關鍵。神對摩西說的時候，用了 <strong><em>Edat Bnei Israel</em></strong>（עֲדַת בְּנֵי יִשְׂרָאֵל，「以色列子民的會眾」）。為什麼神選擇 <em>Edat</em> 這個詞，而不說 <em>Kahal</em>（קָהָל，「會眾、集會」）？這正是教師要我們注意的「妥拉裡的小細節」。<em>Edat</em> 與 <strong>עֵדוּת Edut</strong>（「見證」）同根——一個被數點、彼此背負重擔的民，不只是一群人，更是一個<strong>見證的群體</strong>。你怎麼承擔你弟兄的重擔，本身就是一份 Edut——向世界作的見證，證明你器皿裡裝的是什麼酒。</span>
+      <span class="en">The second word matters just as much. When God speaks to Moshe, He uses <strong><em>Edat Bnei Israel</em></strong> (עֲדַת בְּנֵי יִשְׂרָאֵל, “the congregation of the children of Israel”). Why does God choose <em>Edat</em> rather than <em>Kahal</em> (קָהָל, “assembly”)? This is exactly the “small detail in the Torah” the teacher wants us to notice. <em>Edat</em> shares a root with <strong>עֵדוּת Edut</strong> — “testimony.” A people counted and bearing one another's burdens is not merely a crowd; it is a <strong>community of witness</strong>. How you carry your brother's burden is itself an Edut — a testimony to the world of which wine your vessel contains.</span>
+    </p>
+
+    <p>
+      <span class="zh">講道在此處轉向接下來的步驟——神揭示「第三步」，宣告凡年滿二十歲的人都要被數點、都要承擔——把整個社群引向《民數記》其餘篇章所要展開的安排。但開場的中心論點已經立穩：<strong>器皿問題的答案，不在外表的華美，而在你是否願意為它自身的緣故飲下那酒，並承擔你弟兄的重擔作為見證。</strong></span>
+      <span class="en">Here the teaching turns toward the next step — God revealing “step three,” declaring that everyone twenty years and older is to be counted, is to bear the load — drawing the whole community toward the arrangement the rest of Numbers will unfold. But the central claim of the opening is already secure: <strong>the answer to the vessel question lies not in the splendour of the surface, but in whether you will drink the wine for its own sake and carry your brother's burden as testimony.</strong></span>
+    </p>
+
+    <hr class="article-rule" />
+    <p class="article-attribution">
+      <span class="zh">本文整理自「全球安息日晨禱與妥拉崇拜 · 拿索篇」中的中心講道〈器皿與陳酒——妥拉的本質是什麼？〉，由 Ahavat Ammi 事工提供，原講道以英文、希伯來文與西班牙文同時進行。經文引用採意譯，《塔尼特》7a 段落為轉述。</span>
+      <span class="en">Adapted from the central drash, “The Vessel and the Wine — What Is the Essence of Torah?”, given in the Worldwide Shabbat Shacharit &amp; Torah Service for Parashat Naso (Ahavat Ammi Ministries). The teaching was delivered bilingually in English, Hebrew, and Spanish; Scripture is paraphrased, and the Taanit 7a passage is given in paraphrase.</span>
+    </p>
+
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「不要看容器，而要看它裝了什麼。為它自身的緣故（לִשְׁמָהּ lishmah）而行妥拉，它就成為你的生命之樹（עֵץ חַיִּים）；只為器皿而行，它就成為毒藥。所以要問：<em>我知道我裡面裝了什麼嗎？</em>然後像心跳一樣去讀妥拉——承擔你弟兄的重擔，作為見證（עֵדוּת Edut）。」</strong></span>
+      <span class="en"><strong>“Do not look at the vessel, but at what it contains. Do the Torah for its own sake (לִשְׁמָהּ lishmah) and it becomes your tree of life (עֵץ חַיִּים); do it for the vessel alone and it becomes poison. So ask: <em>do I know what I contain?</em> Then read the Torah like a heartbeat — and bear your brother's burden as testimony (עֵדוּת Edut).”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+
+</body>
+</html>
