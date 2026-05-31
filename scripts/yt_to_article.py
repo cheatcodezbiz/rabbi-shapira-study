@@ -188,24 +188,38 @@ def whisper_transcribe(audio_path: Path) -> str:
     """
     model = get_whisper_model()
     print(f"  [whisper] transcribing {audio_path.name}…")
+    # condition_on_previous_text=False is critical: with the default (True),
+    # faster-whisper feeds each segment's text as the prompt for the next,
+    # which on repetitive / musical / multilingual audio collapses into an
+    # infinite hallucination loop ("Welcome to the community" x100). Turning
+    # it off + no_repeat_ngram_size breaks the loop. We also DON'T force
+    # language="zh" anymore — these teachings mix English/Mandarin/Hebrew, so
+    # we let Whisper auto-detect per the audio (it picks the dominant lang).
     segments, info = model.transcribe(
         str(audio_path),
-        language="zh",
         task="transcribe",
         beam_size=5,
-        vad_filter=True,            # skip silence
-        initial_prompt="請轉錄這段普通話音頻。說話者是猶太教拉比，講解聖經和彌賽亞主題。",
+        vad_filter=True,                    # skip silence
+        condition_on_previous_text=False,   # break repetition loops
+        no_repeat_ngram_size=3,             # forbid 3-gram immediate repeats
+        compression_ratio_threshold=2.4,    # discard hallucinated runs
+        initial_prompt="A teaching by a Messianic Jewish rabbi on the Torah, the Bible, and Messiah. 一位彌賽亞猶太拉比講解妥拉、聖經與彌賽亞的教導。",
     )
     lines: list[str] = []
     prev_end = 0.0
+    last_line = None
     for seg in segments:
-        # Insert a blank line when there's a pause > 2 s (natural paragraph break)
+        t = seg.text.strip()
+        # Drop consecutive identical lines (residual loop artifacts)
+        if t and t == last_line:
+            continue
         if seg.start - prev_end > 2.0 and lines:
             lines.append("")
-        lines.append(seg.text.strip())
+        lines.append(t)
+        last_line = t
         prev_end = seg.end
     text = "\n".join(lines).strip()
-    print(f"  [whisper] transcribed {len(text)} chars, {info.duration:.0f}s audio")
+    print(f"  [whisper] transcribed {len(text)} chars, {info.duration:.0f}s audio, lang={info.language}")
     return text
 
 

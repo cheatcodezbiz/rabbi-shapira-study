@@ -191,8 +191,14 @@ def transcribe_full(audio_path: Path, transcript_path: Path) -> list[dict]:
         str(audio_path),
         beam_size=5,
         vad_filter=True,
-        # Don't force language — the event has English, Mandarin, Spanish
-        # Let whisper auto-detect per-segment
+        # Don't force language — the event has English, Mandarin, Spanish.
+        # condition_on_previous_text=False prevents the hallucination loop
+        # where whisper repeats one phrase for minutes on music/repetitive
+        # audio (critical on multi-hour livestreams). no_repeat_ngram_size +
+        # compression_ratio_threshold are belt-and-suspenders against it.
+        condition_on_previous_text=False,
+        no_repeat_ngram_size=3,
+        compression_ratio_threshold=2.4,
     )
 
     segments: list[dict] = []
