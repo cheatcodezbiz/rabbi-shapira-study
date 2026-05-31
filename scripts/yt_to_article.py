@@ -521,6 +521,7 @@ def process_video(video_id: str, env: dict[str, str], skip_download: bool = Fals
 
 
 def main() -> None:
+    global WHISPER_MODEL, OLLAMA_MODEL
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("inputs", nargs="*", help="YouTube URLs or 11-char video IDs")
     p.add_argument("--channel", help="@handle to enumerate latest videos from")
@@ -537,7 +538,6 @@ def main() -> None:
     env = load_env()
 
     # Allow CLI overrides of model names
-    global WHISPER_MODEL, OLLAMA_MODEL
     if args.whisper_model:
         WHISPER_MODEL = args.whisper_model
     if args.ollama_model:
