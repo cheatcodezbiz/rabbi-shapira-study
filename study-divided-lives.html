@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《分裂的人生》研习指南 · Divided Lives — Study Guide · 妥拉之光</title>
+  <meta name="description" content="A Christian study guide to Cynthia Crane's Divided Lives — eight bilingual lessons on the Jewish-Christian “Mischlinge” women of Nazi Germany, on divided identity, the law of blood, baptism that could not protect, faith under fire, and the duty to remember." />
+  <meta name="audio-slug" content="study-divided-lives" />
+  <meta property="og:title" content="Divided Lives — A Christian Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons walking through Cynthia Crane's Divided Lives: the untold stories of Jewish-Christian women in Nazi Germany, read with Hebrew eyes." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="Divided Lives — The Untold Stories of Jewish-Christian Women — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 见证与记念 · 2026 · 5 · 31</span>
+        <span class="en">Study Guide · Testimony &amp; Remembrance · 2026 · 5 · 31</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">《分裂的人生》<br/>研习指南</span>
+        <span class="en">Divided Lives<br/>A Christian Study Guide</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，倾听十位「混血儿」(Mischlinge) 女性的口述——她们受洗为基督徒，却被纳粹按血统判为犹太人。在被撕裂的身份里，我们听见一个关于余民、苦难与记念的故事。</span>
+        <span class="en">Eight lessons listening to ten “Mischlinge” women — baptized as Christians, yet branded Jews by Nazi blood-law. In their torn identities we hear a story about the remnant, about suffering, and about the duty to remember.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于辛西娅·克兰 (Cynthia Crane)《分裂的人生——纳粹德国犹太裔基督徒女性不为人知的故事》(St. Martin's Press, 2000)</span>
+        <span class="en">Based on Divided Lives: The Untold Stories of Jewish-Christian Women in Nazi Germany by Cynthia Crane (St. Martin's Press, 2000)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 50 分钟通读</span><span class="en">~50 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://us.macmillan.com/books/9780312219536/dividedlives" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书</span><span class="en">Get the Book</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">这份指南不是要替你「读完」辛西娅·克兰 (Cynthia Crane) 的《分裂的人生》，而是陪你慢慢地、带着敬畏地读它。克兰是一位美国学者，她的祖父费利克斯·科恩 (Felix Cohn) 是汉堡的监狱医生，因「犹太血统」在 1938 年被吊销行医执照、逃往美国。多年后，克兰带着富布赖特奖学金回到汉堡，在档案馆里翻出祖母为了保住祖父的听诊器而写给盖世太保的信——那一刻，她意识到自己身份里「缺失的那一块」。于是她访谈了十位「混血儿」(Mischlinge) 女性：她们大多在路德宗或天主教里长大、受过洗，却在某一天被告知自己「是犹太人」。这本书写的，是那些「夹在所有椅子之间 (zwischen allen Stühlen)」的人。</span>
+      <span class="en">This guide is not a shortcut around Cynthia Crane's <em>Divided Lives</em> — it is a companion for reading it slowly, with reverence. Crane is an American scholar whose grandfather, Felix Cohn, was a prison doctor in Hamburg until his medical license was revoked in 1938 for “Jewish blood” and he fled to the United States. Years later, on a Fulbright in Hamburg, Crane sat in the state archives reading the letters her grandmother had to write to the Gestapo just to keep her husband's stethoscope — and felt the size of what had been missing from her own identity. So she interviewed ten <em>Mischlinge</em> women: most raised and baptized Lutheran or Catholic, who one day were told they “were Jewish.” This is a book about people left <em>zwischen allen Stühlen</em> — straddling every chair, belonging to none.</span>
+    </p>
+
+    <p>
+      <span class="zh">克兰用「混血儿」(Mischlinge)——希特勒用来称呼「半犹太人」的贬义词，意为「杂种」「混种」——来命名这群人。在纳粹的种族法里，一个人若有三位犹太祖父母便是「完全的犹太人」；有两位是「一级混血」，一位是「二级混血」。历史学家估计，除犹太人本身之外，约有近四十万人因为是犹太人的配偶、子女或孙辈而受迫害。这本书，就是写给这群「被遗忘的受害者」的。</span>
+      <span class="en">Crane uses Hitler's own derogatory word — <em>Mischlinge</em>, “half-breeds,” “hybrids” — to name these people. Under the racial laws, a person with three Jewish grandparents was a “full Jew”; two made you a “first-degree” Mischling, one a “second-degree.” Historians estimate that, apart from Jews themselves, nearly 400,000 people were persecuted simply for being the spouses, children, or grandchildren of Jews. This is a book for those forgotten victims.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，沿着书的两篇导论（「灵」与「法」）和女性们的故事推进。每一堂都包含五个部分：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, following the book's two framing essays (“The Spirit” and “The Law”) and the women's stories. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 作者说什么</strong>—— 用克兰自己的笔触概述这一章的见证；<br/>
+        <strong>② 关键经文</strong>—— 一处与之共鸣的圣经；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，照亮这段历史；<br/>
+        <strong>④ 基督徒视角</strong>—— 教会该如何聆听、如何悔改、如何记念；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 留给你与小组继续追问的问题。
+      </span>
+      <span class="en">
+        <strong>① What the Author Says</strong> — the chapter's testimony in Crane's own frame;<br/>
+        <strong>② Key Scripture</strong> — one biblical text that resonates with it;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that lights up the history;<br/>
+        <strong>④ A Christian Lens</strong> — how the Church should listen, repent, and remember;<br/>
+        <strong>⑤ Honest Questions</strong> — questions to keep asking, alone or in a group.
+      </span>
+    </blockquote>
+
+    <p>
+      <span class="zh">一句提醒：这是一本关于大屠杀 (Shoah) 边缘地带的书。请慢慢读，常常停下来祷告。聆听本身，就是一种敬意。</span>
+      <span class="en">A word of caution: this is a book about the edges of the Shoah. Read slowly, and stop often to pray. To listen carefully is itself an act of honor.</span>
+    </p>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 01  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">局外人——一段缺失的身份</span>
+        <span class="en">The Outsider — A Missing Identity</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">克兰以自己开篇。她说：「我不记得自己曾经感觉像别的、而不是一个『局外人』。」她的姓氏与祖母不同，父亲一被问起家族就脸色发白。直到祖母终于从地下室取出那本藏起来的回忆录，克兰才开始把自己「原本的针脚重新缝回去」。她的祖父科恩在一战中是战壕里的军医，得过两枚铁十字勋章，自认是德国人、是汉堡财政参议员的儿子——「他不认为自己是犹太人」。然而希特勒的法律不在乎他怎么认为。身份，被别人从外面强行接管了。</span>
+        <span class="en">Crane opens with herself: “I do not remember ever feeling like anything but an outsider.” Her surname differed from her grandmother's; her father's face paled whenever the family was mentioned. Only when her grandmother finally retrieved a hidden memoir from the basement did Crane begin to “put back the original stitches” of her life. Her grandfather Cohn had been a front-line army doctor in WWI, decorated with two Iron Crosses, the son of a Hamburg finance senator — “he did not think of himself as a Jew.” But Hitler's law did not care what he thought. Identity was taken over from the outside.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我在母腹中，你已认识我……我未成形的体质，你的眼早已看见了。」</span>
+        <span class="en">“Your eyes saw my unformed body; all the days ordained for me were written in your book before one of them came to be.”</span>
+        <cite>《诗篇》139:15-16 · Psalm 139:15-16</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>גֵּר · ger</strong>——「寄居者」「外人」。《妥拉》三十六次命令以色列要爱<em>ger</em>，理由总是同一个：「因为你们在埃及地也作过寄居的」(《利未记》19:34)。圣经里的「局外人」从来不是一个要被消灭的范畴，而是一个要被<em>记念、被款待、被爱</em>的人。希特勒制造「局外人」是为了铲除他们；耶和华谈论「局外人」是为了保护他们。这两种「外人观」的距离，正是这本书全部的张力所在。</span>
+        <span class="en"><strong>גֵּר · ger</strong> — “sojourner,” “stranger.” Thirty-six times the Torah commands Israel to love the <em>ger</em>, always with the same reason: “for you were strangers in the land of Egypt” (Leviticus 19:34). In Scripture the outsider is never a category to be eliminated but a person to be <em>remembered, welcomed, loved</em>. Hitler manufactured outsiders in order to erase them; the LORD speaks of the outsider in order to protect him. The distance between those two visions of the stranger is the whole tension of this book.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读到这里应当心头一震：教会自己的历史里，也曾把犹太人当作「神学上的局外人」。克兰的家族受洗、上主日学、自认基督徒——可这一切都未能改变别人给他们贴的标签。当一个社会能够单凭「血统」就重写一个人的身份，我们看见的不只是政治之恶，更是一种属灵的僭越：人篡夺了唯有神才有的权柄——命名、认识、定义一个灵魂。</span>
+        <span class="en">A Christian should feel a jolt here: the Church's own history once cast Jews as “theological outsiders.” Crane's family was baptized, attended Sunday school, considered themselves Christian — and none of it changed the label others fixed on them. When a society can rewrite a person's identity by “blood” alone, we are watching more than political evil; we are watching a spiritual usurpation — humans seizing a prerogative that belongs to God alone: to name, to know, and to define a soul.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我的身份感，建立在什么之上？是别人的目光，还是神在我母腹中对我的认识？</span><span class="en">On what is my sense of identity built — on the gaze of others, or on the God who knew me in the womb?</span></li>
+        <li><span class="zh">我所在的群体里，谁是『局外人』？我对待他们的方式，更像希特勒的法律，还是更像《利未记》的命令？</span><span class="en">Who is the “outsider” in my community? Do I treat them more like Hitler's law, or more like the command of Leviticus?</span></li>
+        <li><span class="zh">克兰说她身份里『缺了一块』。我的属灵身份里，是否也有一块——犹太根源——长久缺失而我未曾察觉？</span><span class="en">Crane felt a “missing piece” in her identity. Is there a piece — the Jewish root of my faith — long missing from mine, that I never noticed?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 02  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">那条把你判成犹太人的法律</span>
+        <span class="en">The Law That Named You a Jew</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">在题为「法」(The Law) 的第二篇导论里，克兰讲述 1935 年 9 月 15 日的《纽伦堡法》：它剥夺了「非德意志或亲缘血统」者的公民权，禁止犹太人与「纯种德国人」通婚或有性关系——违者即犯「种族玷污罪 (Rassenschande)」。一个人是「完全犹太人」若有三位犹太祖父母；「一级混血」有两位，「二级混血」有一位。被洗礼为基督徒的混血儿，数量是「自认犹太人 (Geltungsjuden)」的九倍。克兰写道，对这些女性而言，最深的创伤是「身份被接管」：突然被告知自己属于一个「犹太种族」，却「几乎不知道做犹太人意味着什么」。这是一场背叛。</span>
+        <span class="en">In the second framing essay, “The Law,” Crane recounts the Nuremberg Laws of 15 September 1935: they stripped citizenship from anyone not of “German or related blood” and forbade Jews to marry or have relations with “pure Germans” — a crime of <em>Rassenschande</em>, “racial defilement.” Three Jewish grandparents made you a “full Jew”; two a “first-degree,” one a “second-degree” Mischling. Baptized-Christian Mischlinge outnumbered self-declared Jews nine to one. The deepest wound, Crane writes, was the <em>takeover of identity</em>: suddenly told they belonged to a “Jewish race” while having “little or no idea what being Jewish meant.” It was a betrayal.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「人是看外貌；耶和华是看内心。」</span>
+        <span class="en">“The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.”</span>
+        <cite>《撒母耳记上》16:7 · 1 Samuel 16:7</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>זֶרַע · zera</strong>——「种子」「后裔」「血脉」。纳粹用「血」(Blut) 来定义人，制造了一套伪科学的「种族」。圣经也常说「亚伯拉罕的<em>后裔 (zera)</em>」，但那是一条<em>应许</em>的血脉，不是一条<em>仇恨</em>的血脉。保罗甚至说：「那从肉身生的儿女不算神的儿女，惟独那应许的儿女才算是后裔 (zera)」(《罗马书》9:8)。纳粹把『血统』变成死刑判决；神却用『后裔』指向那位要赐福万族的弥赛亚。同一个概念，一个用来咒诅，一个用来祝福。</span>
+        <span class="en"><strong>זֶרַע · zera</strong> — “seed,” “offspring,” “bloodline.” The Nazis defined people by <em>Blut</em>, inventing a pseudo-scientific “race.” Scripture, too, speaks often of “the <em>seed (zera)</em> of Abraham” — but it is a line of <em>promise</em>, not of hatred. Paul even says, “it is not the children by physical descent who are God's children, but the children of the promise who are regarded as the seed” (Romans 9:8). The Nazis turned bloodline into a death sentence; God uses “seed” to point to the Messiah who blesses all nations. The same idea — wielded by one to curse, by the other to bless.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">教会不能假装这套「血统神学」与自己无关。几个世纪以来，基督教世界用「该隐的记号」「神弃绝的民族」等说法，为「血」的偏见铺了路；西班牙的「血统纯净 (limpieza de sangre)」法令，甚至追查皈依者祖上是否有犹太血——这是纳粹种族法的中世纪先声。当我们读《纽伦堡法》，我们不是在读一段「别人的」历史；我们是在读一棵毒树结出的果子，而那棵树的根，有一部分扎在教会的土壤里。承认这一点，是悔改的开始。</span>
+        <span class="en">The Church cannot pretend this “theology of blood” had nothing to do with it. For centuries Christendom paved the way for blood-prejudice with talk of “the mark of Cain” and “a people rejected by God”; Spain's <em>limpieza de sangre</em> statutes even hunted for Jewish ancestry among converts — a medieval forerunner of the Nazi race laws. Reading the Nuremberg Laws is not reading someone else's history; it is reading the fruit of a poisoned tree whose roots reach, in part, into Church soil. To admit this is where repentance begins.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我是否曾不假思索地以『血统』『民族』来评断一个人的价值或属灵地位？</span><span class="en">Have I ever, without thinking, judged a person's worth or spiritual standing by “blood” or “ethnicity”?</span></li>
+        <li><span class="zh">『神看内心』——如果这是真的，那么任何以外在身份给人定罪的体系，从根上就是反对神的。我所默许的体系里，有这样的成分吗？</span><span class="en">If “God looks at the heart” is true, then any system that condemns by outward identity is, at its root, against God. Are there such elements in systems I quietly accept?</span></li>
+        <li><span class="zh">从亚伯拉罕的『后裔』到弥赛亚——我能否把『血脉』重新理解为应许与祝福，而不是排斥与恐惧？</span><span class="en">From the “seed” of Abraham to the Messiah — can I relearn “bloodline” as promise and blessing rather than exclusion and fear?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 03  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">受了洗，却被烙印</span>
+        <span class="en">Baptized, and Branded</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">克兰的祖父在离开德国前，坚持立刻为孩子施洗「以保护他们」——他们本已在路德宗教会上主日学。书中大多数女性也是如此：父母虔诚地把她们养成基督徒。然而洗礼救不了她们。在纳粹眼中，水洗改变不了「血」。这是「混血儿」处境最尖锐的悖论：在教会里，她们是基督徒；在街上、在学校、在政府档案里，她们是犹太人。她们「同时是受害者与（被指为）加害者，是犹太人又是基督徒，是局外人又是局内人」。她们的人生，从此被劈成两半。</span>
+        <span class="en">Before leaving Germany, Crane's grandfather insisted the children be baptized at once “to protect them” — they were already in Lutheran Sunday school. So with most of the women in the book: devout parents raised them as Christians. Yet baptism could not save them. In Nazi eyes, water could not wash away “blood.” This is the sharpest paradox of the Mischling condition: in church, Christians; on the street, in school, in the state files, Jews. They were at once “victim and (accused) victimizer, Jew and Christian, outsider and insider.” Their lives were split in two.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他们逼迫了我，也要逼迫你们……只因我的名。」</span>
+        <span class="en">“If they persecuted me, they will persecute you also... they will treat you this way because of my name.”</span>
+        <cite>《约翰福音》15:20-21 · John 15:20-21</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מָשִׁיחַ · Mashiach</strong>——「受膏者」「弥赛亚」。这些女性受洗归入的那一位，本身就是一个犹太人，一个在罗马权势下被自己的世界判为「外人」的拿撒勒人。基督教若忘记自己的主是犹太人，就会荒谬地用「基督」的名去逼迫祂骨肉之亲的同胞。受洗的混血儿正活在这荒谬的夹缝中：她们被领进一位犹太弥赛亚的羊圈，却因为与这位弥赛亚同族的血，而被世界追杀。她们的苦难，奇异地贴近了她们所信之主的苦难。</span>
+        <span class="en"><strong>מָשִׁיחַ · Mashiach</strong> — “the Anointed One,” the Messiah. The One into whom these women were baptized was himself a Jew, a Nazarene declared an “outsider” by his own world under Roman power. When Christianity forgets that its Lord is Jewish, it absurdly uses the name of “Christ” to persecute his own flesh and blood. The baptized Mischlinge lived in exactly that absurd gap: led into the fold of a Jewish Messiah, yet hunted by the world for sharing that Messiah's blood. Their suffering came strangely close to the suffering of the Lord they believed in.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课向教会提出一个灼人的问题：洗礼到底意味着什么？对纳粹来说，洗礼是一张作废的票。但对神来说，洗礼从不是为了「洗去犹太性」、把人变成「安全的外邦人」。早期教会的许多殉道者正是犹太信徒。当教会把『成为基督徒』暗暗等同于『不再是犹太人』，它就背叛了自己最初的样子——那个由犹太门徒组成、敬拜一位犹太弥赛亚的教会。这些受洗却被烙印的女性，无声地见证：在基督里，犹太人不必停止做犹太人。</span>
+        <span class="en">This lesson puts a burning question to the Church: what does baptism actually mean? To the Nazis it was a voided ticket. But to God, baptism was never meant to “wash away Jewishness” and turn a person into a “safe Gentile.” Many of the early Church's martyrs were Jewish believers. When the Church quietly equates “becoming Christian” with “no longer being Jewish,” it betrays its own beginning — a Church of Jewish disciples worshiping a Jewish Messiah. These baptized-yet-branded women bear silent witness: in the Messiah, a Jew need not stop being a Jew.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我心里是否暗暗觉得，一个犹太人信了耶稣，就该『不再像犹太人』？这个想法从何而来？</span><span class="en">Do I secretly feel that a Jew who believes in Jesus should “stop being so Jewish”? Where did that feeling come from?</span></li>
+        <li><span class="zh">如果我的信仰使我与基督的苦难相连，我准备好像这些女性一样,『因祂的名』被人误解、被边缘化吗？</span><span class="en">If my faith joins me to the Messiah's suffering, am I ready, as these women were, to be misread and marginalized “because of his name”?</span></li>
+        <li><span class="zh">洗礼把我领进的，是一个怎样的家?——是一个抹去差异的家，还是一个让犹太人与外邦人都做回真正自己的家？</span><span class="en">What kind of family did baptism bring me into — one that erases difference, or one where Jew and Gentile both become truly themselves?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 04  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">「德国人和纳粹，于我不是同义词」——英格博格·赫希特</span>
+        <span class="en">“The Germans and the Nazis Were Not Synonyms” — Ingeborg Hecht</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">第一位女性英格博格·赫希特 (Ingeborg Hecht) 的故事，标题是她的一句话：「德国人和纳粹，于我从来不是同义词。」她的父亲是犹太人，被剥夺一切、最终遇害；她自己作为「一级混血」在恐惧中长大。但她拒绝用对纳粹的恨，去恨整个德意志民族——她记得那些冒险帮助过她的普通德国人。这是一种艰难的、刀刃上的恩典：在自己受害最深的地方，仍坚持区分『一个民族』与『一种意识形态』，拒绝以暴制暴的简化。</span>
+        <span class="en">The first woman, Ingeborg Hecht, gives the book one of its titles: “The Germans and the Nazis were never synonyms for me.” Her father was Jewish, stripped of everything and ultimately killed; she grew up a terrified “first-degree” Mischling. Yet she refused to let her hatred of the Nazis become hatred of the German people — she remembered the ordinary Germans who risked themselves to help her. It is a hard, knife-edge grace: at the very place of her deepest wound, she insists on distinguishing <em>a people</em> from <em>an ideology</em>, refusing the easy arithmetic of returning evil for evil.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「不要为恶所胜，反要以善胜恶。」</span>
+        <span class="en">“Do not be overcome by evil, but overcome evil with good.”</span>
+        <cite>《罗马书》12:21 · Romans 12:21</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>סְלִיחָה · slichah</strong>——「赦免」，是赎罪日 (Yom Kippur) 的核心词之一。犹太传统里的赦免不是廉价的遗忘，而是一种清醒的拒绝——拒绝让仇恨拥有最后的话语权。赫希特不是说『纳粹无罪』；她是说『罪不该被株连到全族』。这正合乎先知的心肠：以西结说，「儿子必不担当父亲的罪孽」(《以西结书》18:20)。把一个人的恶扩大成一整个民族的本质——纳粹对犹太人这样做，而赫希特拒绝对德国人这样做。</span>
+        <span class="en"><strong>סְלִיחָה · slichah</strong> — “forgiveness,” a central word of Yom Kippur. In Jewish tradition forgiveness is not cheap forgetting but a clear-eyed refusal — a refusal to give hatred the last word. Hecht is not saying “the Nazis were innocent”; she is saying “guilt must not be charged to a whole people.” That is the heart of the prophets: “the son shall not bear the iniquity of the father” (Ezekiel 18:20). To inflate one person's evil into the essence of an entire people — the Nazis did this to the Jews, and Hecht refuses to do it to the Germans.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">赫希特的拒绝，对今天的教会是一面镜子。基督徒在面对反犹历史时，容易掉进两个陷阱：要么否认（『那不是真正的基督教』），要么用集体的羞耻把今天的某一群人重新妖魔化。赫希特指出第三条路：诚实地说出恶，却拒绝株连。我们可以、也应当为基督教世界两千年的『轻蔑的教导』(teaching of contempt) 悔改，同时不把任何一个今天活着的人，简化成他祖先之恶的化身。爱，既要看清真相，又要拒绝仇恨。</span>
+        <span class="en">Hecht's refusal is a mirror for the Church today. Facing the history of antisemitism, Christians fall into two traps: denial (“that wasn't real Christianity”) or a collective shame that re-demonizes some group in the present. Hecht points to a third road: name the evil honestly, yet refuse collective guilt. We can and should repent of Christendom's two-thousand-year “teaching of contempt,” while refusing to reduce any living person to the embodiment of an ancestor's sin. Love both sees the truth and refuses hatred.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">在我受过最深伤害的地方，我能否仍然区分『伤我的那个人』与『他所属的群体』？</span><span class="en">At the place of my deepest wound, can I still distinguish “the person who hurt me” from “the group he belonged to”?</span></li>
+        <li><span class="zh">『以善胜恶』在赫希特身上是什么样子？在我身上，它会要求我放下什么？</span><span class="en">What did “overcoming evil with good” look like in Hecht? What would it require me to lay down?</span></li>
+        <li><span class="zh">我是否曾把一整个民族、宗派或国家，简化为它最坏成员的样子？</span><span class="en">Have I ever reduced a whole people, denomination, or nation to the image of its worst members?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 05  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">「我是浪与浪之间的漂泊者」——英格丽德·韦克尔</span>
+        <span class="en">“A Wanderer Between the Waves” — Ingrid Wecker</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">英格丽德·韦克尔 (Ingrid Wecker) 用一句诗概括了混血儿的存在：「我是浪与浪之间的漂泊者，不属于任何人。」对德国人而言她太『犹太』，对犹太人而言她太『德国』；战后，那段身份要么成了耻辱，要么成了护身符。克兰反复用一个德语短语形容她们：<em>zwischen allen Stühlen</em>——『夹在所有椅子之间』，哪一把都坐不下。这是一种没有归属的孤独：不是被某一个群体放逐，而是被所有群体同时悬置。</span>
+        <span class="en">Ingrid Wecker captured the Mischling existence in a single line: “I was a wanderer between the waves, belonging to no one.” Too “Jewish” for the Germans, too “German” for the Jews; after the war that identity became either a shame or a shield. Crane keeps reaching for one German phrase to describe these women: <em>zwischen allen Stühlen</em> — “between all the chairs,” unable to sit on any. It is a loneliness without belonging: not exiled by one group, but suspended by all of them at once.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我作了寄居的，在外邦……我成了我弟兄的外人，是我母亲儿女眼中的外邦人。」</span>
+        <span class="en">“I am a foreigner to my own family, a stranger to my own mother's children... I dwell as an alien.”</span>
+        <cite>《诗篇》69:8 · Psalm 69:8</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>גָּלוּת · galut</strong>——「流亡」「离散」。这是犹太历史最深的词之一：不只是地理上的离开故土，更是一种『身在此处、心无归处』的生存状态。韦克尔的漂泊，正是 galut 的一个微缩版本。然而犹太信仰从未让流亡成为终点——它总是与『回归 (shuv)』、与弥赛亚的盼望连在一起。诗篇 69 篇这位『成了弟兄外人』的诗人，传统上被基督徒读作指向受苦的弥赛亚：那位连自己的同胞都不接纳的『漂泊者』。</span>
+        <span class="en"><strong>גָּלוּת · galut</strong> — “exile,” “diaspora.” It is one of the deepest words in Jewish history: not merely geographic displacement, but a way of being “here in body, homeless in heart.” Wecker's wandering is galut in miniature. Yet Jewish faith never lets exile be the end — it is always bound up with <em>shuv</em>, “return,” and with messianic hope. The psalmist of Psalm 69, “a stranger to his own brothers,” has long been read by Christians as pointing to the suffering Messiah: the very Wanderer his own people would not receive.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">教会本该是那张『为漂泊者预留的椅子』。新约说基督徒『在世为客旅、是寄居的』(《彼得前书》2:11)——我们本就该懂得无家可归的滋味，因此理应特别善待真正无处归属的人。可悲的是，历史上教会常常成了又一张把人推开的椅子。这一课邀请我们悔改并转向：让我们的群体成为一处真正的款待之地，让每一个『浪与浪之间的漂泊者』，能在弥赛亚里找到一个家——不是被抹去差异的家，而是连差异也被珍惜的家。</span>
+        <span class="en">The Church was meant to be the one chair kept open for the wanderer. The New Testament calls believers “foreigners and exiles” in this world (1 Peter 2:11) — we, of all people, should know what homelessness tastes like, and so should be tender toward those who truly belong nowhere. Tragically, the Church has often been just one more chair that pushes people away. This lesson calls us to repent and turn: to make our communities a place of real hospitality, where every “wanderer between the waves” can find a home in the Messiah — not a home that erases difference, but one where even the differences are cherished.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『夹在所有椅子之间』——我生命中有没有这样无处归属的经历？它教了我什么？</span><span class="en">“Between all the chairs” — have I ever known that homelessness? What did it teach me?</span></li>
+        <li><span class="zh">我所在的教会或群体，是『又一把推开人的椅子』，还是『为漂泊者预留的椅子』？</span><span class="en">Is my church or community “one more chair that pushes people away,” or “a chair kept open for the wanderer”?</span></li>
+        <li><span class="zh">如果基督徒本是『客旅与寄居的』，这身份该如何改变我对待陌生人、移民、边缘人的方式？</span><span class="en">If believers are “foreigners and exiles,” how should that identity change the way I treat strangers, immigrants, the marginalized?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 06  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">「神把我的生命握在祂手中」——信心与「神在哪里」</span>
+        <span class="en">“God Took My Life Into His Hands” — Faith and “Where Was God?”</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">书中并存着两种声音，克兰都忠实地记录下来。一边是格蕾特尔·洛伦岑 (Gretel Lorenzen)：「神把我的生命握在祂手中，我永远为此感恩。」另一边，是克兰在「法」一章里转述的另一位女性的低语：「神在哪里？」(Where was God?) 这不是一本给出廉价答案的书。它把『坚定的感恩』与『撕裂的质问』放在同一张桌上，不调和、不评判——因为真实的苦难里，信心与控诉常常住在同一颗心里。</span>
+        <span class="en">Two voices live side by side in this book, and Crane records both faithfully. On one side, Gretel Lorenzen: “God took my life into his hands, and I am forever grateful for that.” On the other, the whispered question Crane relays in “The Law” from another woman: “Where was God?” This is not a book that hands out cheap answers. It sets steadfast gratitude and torn protest on the same table, unreconciled and unjudged — because in real suffering, faith and accusation often live in the same heart.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我的神，我的神！为什么离弃我?……但你是圣洁的，是用以色列的赞美为宝座的。」</span>
+        <span class="en">“My God, my God, why have you forsaken me?... Yet you are enthroned as the Holy One; you are the one Israel praises.”</span>
+        <cite>《诗篇》22:1-3 · Psalm 22:1-3</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אֵיכָה · Eichah</strong>——「怎会如此？」这是《耶利米哀歌》的开篇词，也是希伯来圣经为大灾难保留的发问方式。圣经从不禁止人向神发出『神在哪里』的呼喊；恰恰相反，它把这呼喊收进了正典——《诗篇》《约伯记》《哀歌》里满是这样的声音。犹太传统甚至有一个惊人的观念：<em>Shekhinah</em>（神的临在）与祂的子民一同流亡，一同受苦。神不在苦难『之外』冷眼旁观；按这一传统，祂在苦难『之中』与受苦者同在。</span>
+        <span class="en"><strong>אֵיכָה · Eichah</strong> — “How can this be?” It is the opening word of the book of Lamentations, the way the Hebrew Bible holds space for catastrophe. Scripture never forbids the cry “Where is God?”; on the contrary, it canonizes it — the Psalms, Job, and Lamentations are full of that voice. Jewish tradition even holds a staggering idea: the <em>Shekhinah</em>, God's Presence, goes into exile with his people and suffers alongside them. God does not watch suffering coldly from outside; in this tradition, he is <em>within</em> it, with those who suffer.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒在十字架上看见这个奥秘的顶点。耶稣在十字架上喊出的，正是《诗篇》22 篇——『我的神，我的神，为什么离弃我？』神并没有回避『神在哪里』的问题；在弥赛亚里，神亲自走进了那个问题的中心。这并不『解释』了大屠杀的恶——没有任何神学能轻巧地解释它。但它意味着：当那些女性低声问『神在哪里』时，基督徒至少不能用居高临下的答案打发她们。我们只能与哀哭的人同哭，并指向那位同样被弃绝、同样呼喊过的受苦弥赛亚。</span>
+        <span class="en">Christians see the summit of this mystery at the cross. The cry Jesus utters there is Psalm 22 — “My God, my God, why have you forsaken me?” God did not dodge the question “Where is God?”; in the Messiah, God walked into the center of it. This does not “explain” the evil of the Shoah — no theology explains it lightly. But it means that when these women whisper “Where was God?” a Christian cannot answer from above. We can only weep with those who weep, and point to the suffering Messiah who was likewise forsaken, who likewise cried out.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我能否同时容纳『感恩』与『质问』，像这本书那样，不急着把它们调和？</span><span class="en">Can I hold both gratitude and protest at once, as this book does, without rushing to reconcile them?</span></li>
+        <li><span class="zh">面对别人深重的苦难,我是更倾向于给『答案』，还是愿意先安静地同哭？</span><span class="en">Facing another's deep suffering, do I reach for “answers,” or am I willing first to weep in silence alongside them?</span></li>
+        <li><span class="zh">『神与受苦者同在』——这对我祷告、读经、安慰人的方式,意味着什么？</span><span class="en">“God is present within the suffering” — what does that mean for how I pray, read Scripture, and comfort others?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 07  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">「大象皮」与余民的坚韧——露丝·维尔姆申</span>
+        <span class="en">“Elephant Skin” and the Endurance of the Remnant — Ruth Wilmschen</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">露丝·维尔姆申 (Ruth Wilmschen) 说：「在纳粹岁月里，我练就了一身大象皮，什么样的对待都能扛得住。」这句话里有创伤，也有惊人的生命力。这些女性活了下来——不是因为她们『更坚强所以活该受苦』（克兰明确驳斥这种说法），而是因为人的灵魂在被碾压时，会长出意想不到的韧性。克兰注意到一个细节：在『混合婚姻』里，犹太一方往往比『雅利安』配偶活得更久。仿佛那承受最多的人，反而被苦难磨出了某种不肯熄灭的生命。</span>
+        <span class="en">Ruth Wilmschen said: “In the Nazi years, I acquired an elephant skin and could handle any kind of treatment.” There is trauma in that line, and astonishing vitality. These women survived — not because they were “stronger and therefore deserved the suffering” (Crane flatly rejects that logic) — but because the human soul, when crushed, grows unexpected resilience. Crane notes a striking detail: in “mixed marriages,” the Jewish partner often outlived the “Aryan” spouse. As if the one who bore the most was ground by suffering into a life that would not go out.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我们四面受敌，却不被困住；心里作难，却不至失望……身上常带着耶稣的死，使耶稣的生也显明在我们身上。」</span>
+        <span class="en">“We are hard pressed on every side, but not crushed; perplexed, but not in despair... always carrying in the body the death of Jesus, so that the life of Jesus may also be revealed in our body.”</span>
+        <cite>《哥林多后书》4:8-10 · 2 Corinthians 4:8-10</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שְׁאֵרִית · she'erit</strong>——「余民」「剩下的人」。这是先知书反复出现的盼望：审判与灾难过后，神总会保守『一小群剩下的』，从他们重新开始。以赛亚给儿子起名『施亚雅述』(Shear-jashub)，意思就是『余民必归回』(《以赛亚书》7:3)。这些幸存的女性，正是二十世纪的一支『余民』——不是因为她们伟大，而是因为她们『剩下了』，并且开口说话了。余民的意义从不在数量，而在于：只要还有一个人活着作见证，那段历史就没有被彻底抹去。</span>
+        <span class="en"><strong>שְׁאֵרִית · she'erit</strong> — “remnant,” “those who remain.” It is the recurring hope of the prophets: after judgment and catastrophe, God always preserves “a small number left,” and begins again from them. Isaiah named his son Shear-jashub, “a remnant shall return” (Isaiah 7:3). These surviving women are a twentieth-century remnant — not because they were great, but because they <em>remained</em>, and spoke. The meaning of the remnant is never in numbers; it is this: as long as one survivor lives to testify, that history has not been wholly erased.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">『大象皮』提醒基督徒不要浪漫化苦难。圣经从不歌颂痛苦本身——它歌颂的是那位在痛苦中托住人的神。保罗说『四面受敌却不被困住』，关键不在于他的坚强，而在于那托住他的『莫大的能力是出于神，不是出于我们』(《哥林多后书》4:7)。当我们聆听余民的见证，我们的任务不是赞叹他们的坚韧、然后翻篇；而是接过他们的见证，成为『记念的人』，让他们承受的一切，结出悔改与守护的果子。</span>
+        <span class="en">The “elephant skin” warns Christians not to romanticize suffering. Scripture never praises pain itself — it praises the God who upholds people within pain. Paul says he is “hard pressed but not crushed,” and the point is not his strength but that “this all-surpassing power is from God and not from us” (2 Cor 4:7). When we listen to the remnant's testimony, our task is not to admire their resilience and move on; it is to receive their witness, become people who remember, and let all they endured bear fruit in repentance and in vigilant protection of others.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我是否曾把别人的『幸存』当作『他们本来就够坚强』的证据，从而免去自己的责任？</span><span class="en">Have I ever treated another's survival as proof that “they were strong enough,” quietly excusing myself from responsibility?</span></li>
+        <li><span class="zh">『余民必归回』——在我自己的灰烬里，神是否也保守了某些『剩下的』，等我从那里重新开始？</span><span class="en">“A remnant shall return” — in my own ashes, has God preserved something “left over” from which to begin again?</span></li>
+        <li><span class="zh">听完幸存者的故事，我会做什么？只是感动，还是成为一个『记念的人』？</span><span class="en">After hearing a survivor's story, what will I do — merely be moved, or become someone who remembers?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 08  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">记念——把不为人知的故事讲出来</span>
+        <span class="en">Remembrance — Telling the Untold Story</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 作者说什么</span>
+        <span class="en">① What the Author Says</span>
+      </h3>
+      <p>
+        <span class="zh">克兰花了近十年完成这本书，因为这些故事差点就永远沉默了。许多女性战后重获了德国身份与匿名，她们害怕『再次引人注目、再去翻动过去』。这本书的存在本身，就是一场与遗忘的搏斗。克兰引用一句话：『你播下种子，然后等待。常常你以为种子坏了，因为它们毫无动静……然后突然，子叶冒了出来。』讲述，就是播种；记念，就是不让那片土壤被永远封死。书名《分裂的人生》，最终指向一个合一的盼望：被讲出来的故事，能让分裂的人重新被缝合。</span>
+        <span class="en">Crane spent nearly a decade on this book, because these stories nearly fell silent forever. Many of the women had regained German identity and anonymity after the war, and feared “drawing attention to themselves again, dabbling in the past.” The book's very existence is a struggle against forgetting. Crane quotes a friend: “you plant seeds and wait. Often you think the seeds are no good because they do nothing... then suddenly the cotyledons appear.” To tell is to sow; to remember is to refuse to let that soil be sealed forever. The title <em>Divided Lives</em> finally points toward a hope of wholeness: a story told can re-stitch a divided life.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你要记念你在埃及地作过奴仆……所以耶和华你的神吩咐你守这日。」</span>
+        <span class="en">“Remember that you were slaves in Egypt... therefore the LORD your God has commanded you to keep this day.”</span>
+        <cite>《申命记》5:15 · Deuteronomy 5:15</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>זָכוֹר · zachor</strong>——「记念!」这是整本希伯来圣经最重的命令之一。对犹太信仰而言，记念不是怀旧，而是一种道德行动：逾越节的家宴 (Seder) 要让每一代人『仿佛自己亲身从埃及出来』。忘记，等于让压迫者第二次得胜。这正是克兰所做的：她把口述变成文字，让这些『不为人知的故事』进入集体的记忆，成为后人无法绕过的见证。<em>Zachor</em> 与它的反面 <em>shikchah</em>（遗忘）之间，隔着整个民族的命运。</span>
+        <span class="en"><strong>זָכוֹר · zachor</strong> — “Remember!” It is among the weightiest commands in the whole Hebrew Bible. For Jewish faith, remembering is not nostalgia but a moral act: the Passover Seder makes every generation recount the Exodus “as if they themselves came out of Egypt.” To forget is to let the oppressor win a second time. This is exactly what Crane does: she turns oral testimony into text, so these “untold stories” enter collective memory as a witness no one can bypass. Between <em>zachor</em> and its opposite, <em>shikchah</em> (forgetting), hangs the fate of a whole people.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">教会的圣餐，本身就是一场『记念 (anamnesis)』——『你们应当如此行,为的是记念我』(《路加福音》22:19)。基督徒是被『记念』塑造的子民。那么，记念主的我们，岂能对祂骨肉之亲所受的苦视而不见、听而不闻？读《分裂的人生》，是一种属灵的操练：练习记念那些差点被历史遗忘的人，练习哀哭，练习悔改，练习守望——好让『永不重演』不只是口号，而是一个记念之民用生命守护的承诺。愿这八堂课，使我们成为这样的人。</span>
+        <span class="en">The Church's Communion is itself an act of remembrance — <em>anamnesis</em>: “do this in remembrance of me” (Luke 22:19). Christians are a people shaped by remembering. How then can we, who remember the Lord, be blind and deaf to the suffering of his own flesh and blood? Reading <em>Divided Lives</em> is a spiritual discipline: practicing remembrance of those history nearly forgot, practicing lament, repentance, and watchfulness — so that “never again” is not a slogan but a promise a remembering people guards with their lives. May these eight lessons make us such people.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『忘记等于让压迫者第二次得胜』——我生活中有哪些『不为人知的故事』，是我有责任记住、并说出来的？</span><span class="en">“To forget is to let the oppressor win twice” — what “untold stories” in my world am I responsible to remember and to tell?</span></li>
+        <li><span class="zh">作为一个被『记念』塑造的子民（圣餐），我对犹太民族的历史苦难，负有怎样的记念责任？</span><span class="en">As a people shaped by remembrance (Communion), what duty of memory do I bear toward the historic suffering of the Jewish people?</span></li>
+        <li><span class="zh">读完这份指南，我会以什么具体的行动，去『记念』而不是『翻篇』？</span><span class="en">Having finished this guide, what concrete action will I take to <em>remember</em> rather than simply move on?</span></li>
+      </ul>
+
+    </div>
+
+    <h2 class="lesson-title" style="text-align:center;border:none;">
+      <span class="zh">记念之民的祝祷</span>
+      <span class="en">A Blessing for a People Who Remember</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华赐福给你，保护你；愿耶和华使祂的脸光照你，赐恩给你。」<br/><br/>愿你听见了那十个声音，也记住了她们；<br/>愿你不再把『犹太人』与『基督徒』当作彼此对立的两半——<br/>而看见在弥赛亚里，那道被历史劈开的裂缝，正在被缝合。<br/><br/>愿你成为一个记念的人：<br/>为轻蔑的教导悔改，<br/>与哀哭的人同哭，<br/>并守望，使那暗夜永不重临。</span>
+      <span class="en">“The LORD bless you and keep you; the LORD make his face shine upon you and be gracious to you.”<br/><br/>May you have heard those ten voices, and may you remember them.<br/>May you no longer hold “Jew” and “Christian” as two opposing halves —<br/>but see, in the Messiah, the seam that history tore open being stitched whole again.<br/><br/>May you become a person who remembers:<br/>repenting of the teaching of contempt,<br/>weeping with those who weep,<br/>and keeping watch, that the long night never come again.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://us.macmillan.com/books/9780312219536/dividedlives" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《分裂的人生》原书 · St. Martin's Press</span><span class="en">Get the Book — Divided Lives · St. Martin's Press</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>

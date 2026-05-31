@@ -98,7 +98,7 @@
           "c29693c4f5ec189f",
           "ce70bd18a434176c"
         ],
-        "withTimings": true
+        "withTimings": false
       },
       {
         "id": "zh-CN-XiaoxiaoNeural",
@@ -193,7 +193,7 @@
           "8b1a19f63b5f3096",
           "8cb2467b0480fa2b"
         ],
-        "withTimings": true
+        "withTimings": false
       }
     ]
   },
@@ -294,7 +294,7 @@
           "2e245a2a411bbad1",
           "2b2b8648cae81802"
         ],
-        "withTimings": true
+        "withTimings": false
       },
       {
         "id": "en-GB-SoniaNeural",
@@ -389,7 +389,7 @@
           "a9900d19f12162cd",
           "4be94e712c07a986"
         ],
-        "withTimings": true
+        "withTimings": false
       }
     ]
   }
