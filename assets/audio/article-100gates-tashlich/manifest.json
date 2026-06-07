@@ -1,0 +1,100 @@
+{
+  "slug": "article-100gates-tashlich",
+  "segments": 18,
+  "zh": {
+    "default": "zh-TW-HsiaoChenNeural",
+    "count": 18,
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "8c423dd00e99bce0",
+          "87022bde71f3cd45",
+          "68e37b33b9a4ddf8",
+          "59b8d45b6019efab",
+          "6c8feb6e8e096433",
+          "9462e0372db3ccd3",
+          "348f5c523892c955",
+          "883afa69e677a81f",
+          "6037b5d8196d3545",
+          "f155fd05159c5679",
+          "7bafaf145d4ceaf5",
+          "89499489110e9b67",
+          "f2a4ef2b64d4b915",
+          "c7bd743bb6819b0d",
+          "b4ae6d83208f052e",
+          "11f3ea246a2cefb9",
+          "6f9ad33bd83899c0",
+          "bf3509d27206e0ba"
+        ],
+        "withTimings": false
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "f46bd2307580e4ec",
+          "4090bd6c3c8de6f2",
+          "4e15215c017587d1",
+          "72a308f4b82036f1",
+          "0269e65f03061d4f",
+          "9f8fef2c0bef5c8d",
+          "e90b8076ad1e1928",
+          "a10377b05b96704a",
+          "2d5aa05f55e25350",
+          "d27a3acb971d99f2",
+          "dd43e15e3bb6d253",
+          "faeffc6530e4c49e",
+          "7682cef4ff733388",
+          "7bb8c59c9b39c4fc",
+          "2276f7507d6574d6",
+          "7745f4c7c221a50e",
+          "278c13c57d41d9c3",
+          "01f8653f739658ed"
+        ],
+        "withTimings": false
+      }
+    ]
+  },
+  "en": {
+    "default": "en-US-AriaNeural",
+    "count": 18,
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "d8bf352da29bc02c",
+          "59c3792d249c64ac",
+          "08f11e34b450bf56",
+          "87a02f4ef589828a",
+          "0dcc257f9e0ec611",
+          "e4852013bda66ee9",
+          "dc73cda5a345c051",
+          "cef3bbb9221a8025",
+          "ae4d8a565c6bb7d8",
+          "bd4e75576d2ca650",
+          "7e25ce6195562fa1",
+          "5859fb82f4da5f5a",
+          "b3f80669ef372d11",
+          "d035802fc22d0736",
+          "64109c4cdffa6a4b",
+          "79b67b291ac1a5ee",
+          "01023f0d892f9e09",
+          "4264b59bf726fb39"
+        ],
+        "withTimings": false
+      }
+    ]
+  }
+}

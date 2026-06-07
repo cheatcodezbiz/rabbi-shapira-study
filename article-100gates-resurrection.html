@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>死人復活 — 末後的號角與審判之日 · 100 道門 · 100 羊角號 — 妥拉之光</title>
+  <meta name="description" content="Resurrection of the Dead — A High Holy Days teaching in the “100 Gates · 100 Shofarot” series by Pastor Joseph John (Ahavat Ammi Ministries)" />
+  <meta name="audio-slug" content="article-100gates-resurrection" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-100gates-resurrection.jpg" alt="Resurrection of the Dead — 100 Gates · 100 Shofarot" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">100 道門 · 100 羊角號</span><span class="en">100 Gates · 100 Shofarot</span></span>
+      <h1 class="article-title">
+        <span class="zh">死人復活</span>
+        <span class="en">Resurrection of the Dead</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">這是吹角節（Rosh Hashanah）整個系列中最深、最豐富的一篇教導。約翰牧師帶我們從「綁綁以撒」(<em>Akedah</em>) 一路走到「末後的號角」——羊角號的吹響不僅是一個節期的儀式，更是一聲呼召：呼召我們悔改，警告我們審判之日將到，並向我們宣告那從創世以來就埋藏在妥拉裡的盼望——<strong>死人復活</strong>(<em>Techiyat HaMetim</em>)。</span>
+        <span class="en">This is the deepest and richest teaching in the whole High Holy Days set. Pastor Joseph John walks us from the binding of Isaac (the <em>Akedah</em>) all the way to the last shofar — the blast of the ram's horn is not merely a festival ritual but a summons: a call to repent, a warning that the day of judgment is coming, and a proclamation of the hope buried in the Torah since creation — <strong>the resurrection of the dead</strong> (<em>Techiyat HaMetim</em>).</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">約瑟·約翰牧師 · Ahavat Ammi 事工</span>
+        <span class="en">Pastor Joseph John · Ahavat Ammi Ministries</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 25</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">約 22 分鐘閱讀</span><span class="en">~22 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=9ywVMKuhWwk" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">觀看 · 死人復活</span><span class="en">Watch · Resurrection of the Dead</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">羅什哈沙拿（Rosh Hashanah，吹角節）有許多名字，其中一個是「<em>Yom HaZikaron</em>」——「記念日」。約翰牧師問：這一天我們究竟要<em>記念</em>什麼？答案藏在號角聲裡。聖賢說，吹角是要叫神「記念」<strong>綁綁以撒</strong>(<em>Akedat Yitzchak</em>)；而希伯來書告訴我們，以撒的故事「超越了獻祭」——它是一個<em>預表</em>，預表那將要來的<strong>死人復活</strong>(תְּחִיַּת הַמֵּתִים，<em>Techiyat HaMetim</em>)。換句話說，這一聲角響，把記念、悔改、審判與復活全部串在一起。</span>
+      <span class="en">Rosh Hashanah carries many names — one of them is <em>Yom HaZikaron</em>, “the Day of Remembrance.” Pastor Joseph John asks: what exactly are we to <em>remember</em> on this day? The answer is hidden in the sound of the shofar. The sages say we blow the ram's horn so that God will “remember” the <strong>binding of Isaac</strong> (<em>Akedat Yitzchak</em>); and the book of Hebrews tells us Isaac's story reaches “beyond sacrifice” — it is a <em>pattern</em>, a foretelling of the coming <strong>resurrection of the dead</strong> (תְּחִיַּת הַמֵּתִים, <em>Techiyat HaMetim</em>). One blast of the horn binds together remembrance, repentance, judgment, and resurrection.</span>
+    </p>
+
+    <h2><span class="zh">一、記念日 ── 我們究竟要記念什麼？</span><span class="en">I. The Day of Remembrance — What Are We to Remember?</span></h2>
+    <p>
+      <span class="zh">約翰牧師從伯利恆會堂（<em>Kehillat Bethlehem</em>）向印度、亞洲與亞太地區問安，向全世界宣告耶書亞是「萬王之王、萬主之主」。他祝願每一位都被<em>記在生命冊上</em>，新的一年甜美而豐盛。但他立刻把目光轉向當下：世界各處都有逼迫、黑暗、屬靈爭戰。這不是偶然——<strong>這是末世的預兆，是給彌賽亞身體的記號：余民當興起，當在黑暗中發光</strong>。黑暗越深，光當越亮。</span>
+      <span class="en">Pastor Joseph John brings greetings from <em>Kehillat Bethlehem</em> to India, Asia, and the Asia-Pacific, proclaiming Yeshua as “King of kings and Lord of lords.” He prays that each of us would be <em>inscribed in the Book of Life</em> for a sweet and fruitful year. But he turns at once to the present moment: everywhere there is persecution, darkness, spiritual war. This is no accident — <strong>it is a prophetic sign for the last days, a sign to the body of Mashiach: the remnant must arise and shine in the darkness</strong>. The deeper the darkness, the brighter we must burn.</span>
+    </p>
+
+    <p>
+      <span class="zh">他用大衛 (<em>David HaMelech</em>) 面對歌利亞的故事作比喻：許多人說「他太大了，我們打不過」；少年大衛卻說「他這麼大，我絕不會射偏」。同一件事——巨大的威脅——對信心的人卻成了機會。所以這個節期不是叫我們躲藏，而是叫我們<em>興起、發光、擴展神的國度</em>。</span>
+      <span class="en">He illustrates with David (<em>David HaMelech</em>) facing Goliath: many said, “He is too big — we cannot defeat him.” The young David said, “He is so big — I cannot miss.” The very same thing — an overwhelming threat — becomes, to the person of faith, an opportunity. So this season is not a summons to hide but to <em>arise, shine, and expand the kingdom of God</em>.</span>
+    </p>
+
+    <p>
+      <span class="zh">羅什哈沙拿的另一個名字是 <em>Yom HaZikaron</em>（記念日），又稱 <em>Teruah Zikron</em>（記念那聲音）。聖賢說，這聲音叫人想起<strong>綁綁以撒</strong>，因為它<em>代表死人復活</em>。於是約翰牧師提出全篇的核心問題：我們為什麼要吹羊角號？我們要<em>記念</em>的，到底是什麼？</span>
+      <span class="en">Another name for Rosh Hashanah is <em>Yom HaZikaron</em> (the Day of Remembrance), also called <em>Teruah Zikron</em> — “the remembrance of the sound.” The sages say this sound recalls the <strong>binding of Isaac</strong>, because it <em>represents the resurrection of the dead</em>. And so Pastor John frames the whole teaching's central question: why do we blow the ram's horn? What is it, exactly, that we are to <em>remember</em>?</span>
+    </p>
+
+    <h2><span class="zh">二、綁綁以撒 ── 超越獻祭的預表</span><span class="en">II. The Binding of Isaac — A Pattern Beyond Sacrifice</span></h2>
+    <p>
+      <span class="zh">聖賢這樣解釋吹角：「至聖者，當受稱頌的那位說：在我面前吹羊角，好叫我為你們的緣故記念綁綁以撒——亞伯拉罕之子的捆綁——並把這事算在你們身上，如同你們甘願把自己當作祭物獻給我。」這是約翰牧師強調的第一層：羊角號叫神「記念」亞伯拉罕的順服與以撒的甘願。</span>
+      <span class="en">The sages explain the blast this way: “The Holy One, blessed be He, says: Blow a ram's horn before Me, so that I will remember in your favour the <em>Akedah</em> — the binding of Isaac, the son of Abraham — and credit the act to you, as though you bound yourself to Me willingly to offer yourself as a sacrifice.” This is the first layer Pastor John stresses: the shofar calls God to “remember” Abraham's obedience and Isaac's willingness.</span>
+    </p>
+
+    <p>
+      <span class="zh">但這裡面有<em>超越獻祭</em>的東西。希伯來書 11:19 告訴我們：「<em>他以為神還能叫人從死裡復活；他也彷彿從死中得回他的兒子來。</em>」亞伯拉罕「彷彿從死中得回以撒」——這意味著以撒是一個<strong>預表 (type / pattern)</strong>，預表那將要來的一位。許多猶太註釋甚至辯論：以撒是否真的死了，神再叫他復活？有人說是，有人說神只是供應了公羊。但希伯來書的作者把這事看得很清楚——<strong>以撒的故事預先講論了一個關於死人復活的模式</strong>。</span>
+      <span class="en">But there is something here <em>beyond sacrifice</em>. Hebrews 11:19 tells us: <em>“Abraham considered that God was able to raise him even from the dead — from which, figuratively speaking, he did receive him back.”</em> Abraham received Isaac back “as from the dead” — meaning Isaac is a <strong>type, a pattern</strong> of the One yet to come. Some Jewish commentaries even debate whether Isaac actually died and was raised, or whether God simply supplied the ram. But the writer of Hebrews sees it clearly — <strong>Isaac's story foretells a pattern about the resurrection of the dead</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh">那隻被神供應的<em>公羊</em>，象徵著彌賽亞 (<em>Mashiach</em>)。神不會讓亞伯拉罕白白上山——祂早已預備了「替代」，那替代就是供應，供應帶來拯救。以撒身上「彷彿從死中得回」的模式，正是彌賽亞「死而復活」之模式的影子。</span>
+      <span class="en">The <em>ram</em> God supplied is a symbol of the Messiah (<em>Mashiach</em>). God did not send Abraham up the mountain for nothing — He had already prepared a substitute, and that substitute was provision, and provision brings salvation. The pattern of Isaac “received back as from the dead” is the very shadow of Messiah's own death and resurrection.</span>
+    </p>
+
+    <h2><span class="zh">三、用 Kavanah 聆聽 ── 號角是審判之日的呼召</span><span class="en">III. Listening with Kavanah — The Shofar as a Call to Judgment</span></h2>
+    <p>
+      <span class="zh">在羅什哈沙拿聽見號角時，人被要求帶著完全的 <strong>Kavanah</strong>（כַּוָּנָה，「專注、意向」）來聽。Kavanah 是一種心思的狀態。約翰牧師對比：人禱告時可以只是「口頭功夫」，嘴唇動而心不到——這樣的禱告毫無意義；但若我們把每一個字都<em>內化到靈魂深處</em>，那就是 Kavanah，那就是真正的意向。</span>
+      <span class="en">When the shofar sounds on Rosh Hashanah, one is required to listen with full <strong>Kavanah</strong> (כַּוָּנָה, “intention, focus”). Kavanah is a state of mind, a posture of the heart. Pastor John contrasts it: a person can pray with mere “lip service,” the lips moving but the heart absent — and such prayer has no meaning; but if we <em>internalise every word in the depths of the soul</em>, that is Kavanah, that is true intention.</span>
+    </p>
+
+    <p>
+      <span class="zh">帶著 Kavanah 聆聽，意味著我們意識到：號角提醒我們<strong>那將要來的審判之日</strong>——<em>Yom HaDin</em>（יוֹם הַדִּין，「審判之日」）。聖賢說，至聖者那日坐在寶座上，像牧人查驗每一隻經過窄門的羊，決定哪一隻存活、哪一隻死亡。同樣，全人類——無論列國是否察覺——都在羅什哈沙拿像羊一樣經過神面前。我們一切的行為都被記錄，神每年都察看。</span>
+      <span class="en">To listen with Kavanah is to be aware that the shofar reminds us of <strong>the coming day of judgment</strong> — <em>Yom HaDin</em> (יוֹם הַדִּין, “the day of judgment”). The sages say the Holy One sits on the throne on that day like a shepherd inspecting each sheep as it passes through the narrow gate, deciding which lives and which dies. In the same way all humanity — whether the nations are aware of it or not — passes before God on Rosh Hashanah like sheep. All our deeds are recorded, and God reviews them every year.</span>
+    </p>
+
+    <p>
+      <span class="zh">約翰牧師提出一個牧養的洞見：有些人生命中經歷種種事，卻怎麼也想不通「為什麼會這樣、為什麼這樣發生」。我們需要明白——<strong>我們生命中沒有一件事是偶然的</strong>。一切都由神的「神聖護理」(<em>divine providence</em>) 管理。人承不承認、信不信，都不改變這個事實。神是王，祂監管一切。所以號角是一聲<em>嚴肅的呼召</em>，提醒我們那無人能逃避的審判。</span>
+      <span class="en">Pastor John offers a pastoral insight: some people go through things in life and cannot figure out “why is this happening, and why like this?” We need to realise — <strong>nothing in our life is a coincidence</strong>. Everything is governed by <em>divine providence</em>. Whether a person acknowledges it or believes it does not change the fact. God is King, and He oversees everything. So the shofar is a <em>solemn call</em>, reminding us of a judgment no one can escape.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「因為他們忿怒的大日到了，<strong>誰能站得住呢？</strong>」<cite>——啟示錄 6:17</cite></span>
+      <span class="en">“For the great day of their wrath has come, and <strong>who is able to stand?</strong>”<cite>— Revelation 6:17</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">你可以躲、可以跑，但你逃不掉。所以我們要帶著真正的 Kavanah 聆聽號角——因為吹角是要提醒我們<strong>趁還來得及，當悔改、當行 Teshuvah</strong>（תְּשׁוּבָה，「回轉」）。如此行，神在祂的憐憫中，必在審判之日 <em>Yom HaDin</em> 救我們脫離祂的忿怒。</span>
+      <span class="en">You can hide, you can run, but you cannot escape. So we listen to the shofar with true Kavanah — because the blowing is to remind us to <strong>repent, to do Teshuvah</strong> (תְּשׁוּבָה, “turning, return”) before it is too late. And in doing so, God in His mercy will save us from His wrath on the day of judgment, on <em>Yom HaDin</em>.</span>
+    </p>
+
+    <h2><span class="zh">四、復活 ── 賜給義人的供應</span><span class="en">IV. Resurrection — The Provision for the Righteous</span></h2>
+    <p>
+      <span class="zh">既然號角連於綁綁以撒，而綁綁以撒（按希伯來書 11）關乎死人復活，因為它是彌賽亞的影子——這意味著「記念日」<em>Yom HaZikaron</em> 是在向我們述說神為我們所預備的<strong>供應</strong>，這供應通向救恩。神不會無故吩咐亞伯拉罕做那事；那裡有預備好的供應，供應通向救恩，救恩帶來拯救。正如神為以撒供應了公羊，那公羊象徵彌賽亞。</span>
+      <span class="en">Since the shofar is bound to the binding of Isaac, and the Akedah (per Hebrews 11) deals with the resurrection of the dead because it is a shadow of the Messiah — this means the Day of Remembrance, <em>Yom HaZikaron</em>, is telling us about the <strong>provision</strong> God has made for us, a provision that leads to salvation. God would not have commanded Abraham to do what he did unless there was a provision set up; the provision leads to salvation, and salvation brings deliverance. Just as God provided Isaac with a ram, that ram is a symbol of the Messiah.</span>
+    </p>
+
+    <p>
+      <span class="zh">約翰牧師指出歷史的一個側面：按理說，以色列在第一世紀本該從地圖上被抹去——當時有無端的仇恨、各樣的荒謬。但神預備了一隻「公羊」，那公羊就是彌賽亞。對那些<em>不信靠這公羊</em>的人，審判臨到；許多拉比與聖賢知道神的憐憫已不再停留在那時的以色列。那些不肯行 Teshuvah 的、悖逆的，面對苦澀的死亡；但耶書亞的門徒卻被保守，脫離了那忿怒。</span>
+      <span class="en">Pastor John points to a side of history: by all accounts Israel should have been erased from the map in the first century — there was baseless hatred, every kind of nonsense. But God prepared a “ram,” and that ram was the Messiah. For those who <em>did not trust the ram</em>, judgment came; many of the rabbis and sages knew God's mercy was no longer resting on Israel of that hour. Those who would not do Teshuvah, the rebellious, met a bitter death; but Yeshua's disciples were preserved from that wrath.</span>
+    </p>
+
+    <p>
+      <span class="zh">所以復活是一個<strong>供應</strong>——賜給那些在彌賽亞裡持守信心、與祂同行、在信實中正直生活的人。如果我們是配得的，「<em>恐懼戰兢做成得救的工夫</em>」（腓 2:12），我們就必在彌賽亞來臨時，脫離那將到的忿怒。</span>
+      <span class="en">So the resurrection is a <strong>provision</strong> — for those who maintain faith in the Messiah, walk uprightly with Him, and live in faithfulness. If we are worthy, <em>“working out our salvation with fear and trembling”</em> (Phil 2:12), we will be saved from the coming wrath when Messiah comes.</span>
+    </p>
+
+    <h2><span class="zh">五、末後的號角 ── 在眨眼之間</span><span class="en">V. The Last Shofar — In the Twinkling of an Eye</span></h2>
+    <p>
+      <span class="zh">拉比掃羅——使徒保羅——在哥林多前書 15:51-52 教導我們這復活。他說：「<em>הִנֵּה</em>（<em>Hineh</em>，看哪），我如今把一件奧祕的事告訴你們：我們不是都要睡覺（死亡之睡），乃是都要改變。」這是何等奇妙！然後第 52 節接著說：「就在一<em>剎那</em>(<em>rega</em>)，眨眼之間，<strong>末次號角吹響</strong>的時候——因號角要響，死人要復活成為不朽壞的，我們也要改變。」</span>
+      <span class="en">Rabbi Shaul — the Apostle Paul — teaches us about this resurrection in 1 Corinthians 15:51–52. He says: <em>“Hineh”</em> (הִנֵּה, “Behold”), I tell you a mystery: we will not all sleep the sleep of the dead, but we will all be changed. And then verse 52 continues: in a <em>rega</em> — “in a moment, in the twinkling of an eye, at the <strong>last shofar blast</strong> — for the shofar will sound, and the dead will be raised imperishable, and we will be changed.”</span>
+    </p>
+
+    <p>
+      <span class="zh">當死人復活發生時，<strong>罪與死再也沒有權勢</strong>。從我們在這世界出生的那一刻起，我們的身體就走在一個生物時鐘上——倒數，倒數到我們死亡的那一天。沒有人能逃避它。而在這時鐘的框架裡，我們又與「罪的傾向」掙扎——這罪欲奪取我們的身體（保羅在羅馬書 7:5 講論這事）。<strong>於是死亡的果子產生得更快，罪加速了那時鐘。</strong></span>
+      <span class="en">When the resurrection of the dead occurs, <strong>sin and death no longer have power</strong>. From the moment we are born into this world our bodies are on a biological clock — a countdown to the day of our death. None of us can escape it. And within that framework we wrestle with the inclination of sin, which seeks to take over the body (Shaul speaks of this in Romans 7:5). <strong>So the fruit of death is produced faster — sin speeds up the clock.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">保羅在羅馬書 6:23 也暗示這一點：「罪的工價乃是死。」罪加速生物時鐘，使死亡提前到來。所以拉比掃羅在羅馬書 6:12 勸我們：「<em>不要容罪在你們必死的身上作王。</em>」耶書亞在約翰福音 5（醫好病人後）也警告他所醫治的人「<em>不要再犯罪，恐怕有更嚴重的事臨到你</em>」——那「更嚴重的事」就是死亡。<strong>罪加速死亡的過程。</strong></span>
+      <span class="en">Paul alludes to this also in Romans 6:23 — “the wages of sin is death.” Sin speeds up the biological clock, causing death to arrive prematurely. So Rabbi Shaul advises us in Romans 6:12: <em>“Do not let sin reign in your mortal bodies.”</em> Yeshua, in John 5, warns the man He healed <em>“to sin no more, lest something more tragic befall you”</em> — and that more tragic thing is death. <strong>Sin speeds up the dying process.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">復活是神賜給<em>持守妥拉、不犯罪的義人</em>的供應。大衛王在詩篇 1:1-2 暗示了這點：那些持守妥拉、忠於神的，神保守他們脫離毀滅。當妥拉——神的訓誨——在我們裡面時，裡面就沒有違背妥拉的空間；而違背妥拉產生死亡。所以這供應究竟是什麼？<strong>是一個新的、得榮耀的身體。</strong>罪與死無法存在於這身體之中。哥林多前書 15 講論「不朽壞的身體」——罪與死無法滲入，因為我們在復活時所得的身體<em>不是為這世代的，乃是為神的國度</em>，在那裡罪與死絕不能存在。</span>
+      <span class="en">The resurrection is God's provision to the righteous <em>who keep His Torah and sin not</em>. King David alludes to this in Psalm 1:1–2: those who stay faithful to the Torah, God preserves from destruction. When the Torah — God's instruction — is within us, there is no room within us to violate it; and violating the Torah produces death. So what is this provision? <strong>A new, glorified body.</strong> Sin and death cannot exist in it. 1 Corinthians 15 speaks of imperishable bodies — no sin or death can permeate them, because the body we receive at resurrection is <em>not for this age but for the kingdom of God</em>, where sin and death can never exist.</span>
+    </p>
+
+    <h2><span class="zh">六、三本書 ── 義人、惡人、與中間人 (Beinonim)</span><span class="en">VI. The Three Books — Righteous, Wicked, and the In-Between (Beinonim)</span></h2>
+    <p>
+      <span class="zh">聖賢說，死人復活會發生在羅什哈沙拿——我們不知是哪一年，但知道是在這個時節。掃羅與聖賢同思路：在羅什哈沙拿，<strong>有三本書被打開</strong>。第一本是給<em>惡人</em>的，第二本是給<em>義人</em>的，第三本是給<em>中間人</em>的——稱為 <strong>Beinonim</strong>（בֵּינוֹנִים，「中間者、不偏不倚者」）。義人被寫上並印記得生，惡人被寫上並印記入死，中間人則從羅什哈沙拿被留到贖罪日 (<em>Yom Kippur</em>)。</span>
+      <span class="en">The sages say the resurrection of the dead will happen on Rosh Hashanah — we do not know which year, but we know it is around this season. Shaul shares the sages' line of thought: on Rosh Hashanah, <strong>three books are opened</strong>. The first is for the <em>wicked</em>, the second for the <em>righteous</em>, and the third for the <em>in-between</em> — known as the <strong>Beinonim</strong> (בֵּינוֹנִים, “the intermediate ones”). The righteous are inscribed and sealed for life, the wicked inscribed and sealed for death, and the middle ones are left from Rosh Hashanah until Yom Kippur.</span>
+    </p>
+
+    <p>
+      <span class="zh">聖賢問：這教導的經文根據在哪裡？他們引詩篇 69:28：「<em>願他們從生命冊上被塗抹，不得記錄在義人之中。</em>」「冊」指惡人的書；「生命冊」指義人的書；「不得記錄在義人之中」指中間人。約翰牧師強調：這正是聖賢與拉比理解聖經的方法——而<strong>使徒保羅用的也是同一種方法</strong>。當我們讀妥拉時，表面上看不見「字面的天堂、字面的地獄、字面的彌賽亞」；但用猶太、拉比式的詮釋學去讀，我們就在妥拉與塔納赫 (<em>Tanakh</em>) 中看見了 <em>Olam HaBa</em>（עוֹלָם הַבָּא，「將來的世界」）、看見死亡、看見復活、看見彌賽亞。<strong>它全都在妥拉裡。</strong></span>
+      <span class="en">The sages asked: what is the scriptural foundation for this teaching? They answered by quoting Psalm 69:28 — <em>“Let them be blotted out of the book of the living, and let them not be inscribed among the righteous.”</em> “The book” refers to the book of the wicked; “the living” to the book of the righteous; “not inscribed among the righteous” to the middle people. Pastor John stresses: this is the very method by which the sages and rabbis read Scripture — and <strong>the Apostle Paul uses the same method</strong>. When we read the Torah, on the surface we see no “literal heaven, literal hell, literal Messiah”; but through Jewish, rabbinic hermeneutics we see <em>Olam HaBa</em> (עוֹלָם הַבָּא, “the world to come”), we see death, we see resurrection, we see the Messiah. <strong>It is all in the Torah.</strong></span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「你們不要把這事看作希奇。時候要到，凡在墳墓裡的，都要聽見<em>人子的聲音</em>（就是聽見<strong>號角</strong>），就出來：行善的復活得生，作惡的復活定罪。」<cite>——約翰福音 5:28-29</cite></span>
+      <span class="en">“Do not marvel at this, for the hour is coming when all who are in the graves will hear the voice of the Son of Man (they will hear the <strong>shofar</strong>) and come out — those who have done good to the resurrection of life, and those who have done evil to the resurrection of judgment.”<cite>— John 5:28-29</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這建基於但以理書 12:2：「<em>睡在塵埃中的，必有多人復醒；其中有得永生的，有受羞辱永遠被憎惡的。</em>」「永遠被憎惡」即毀滅、地獄之火 (<em>Gehinnom</em>)。聖賢從耶書亞的話與但以理書中得到的真理是：<strong>義人與惡人都有復活</strong>——一個復活得生，一個復活定罪。</span>
+      <span class="en">This is grounded in Daniel 12:2: <em>“And many of those who sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.”</em> “Everlasting contempt” means destruction, the fires of hell (<em>Gehinnom</em>). What the sages drew from Yeshua's words and from Daniel is this: <strong>there is a resurrection for both the righteous and the wicked</strong> — one to life, one to judgment.</span>
+    </p>
+
+    <h2><span class="zh">七、中間人是誰？ ── 經過火的精煉</span><span class="en">VII. Who Are the Middle People? — Refined Through Fire</span></h2>
+    <p>
+      <span class="zh">那麼，誰是這「第三群、中間的人」？彌賽亞說，將有綿羊與山羊的分別、麥子與稗子的分別（馬太福音 25:31-46）。聖賢解釋：惡人被寫上並印記入<em>永死</em>——直接下地獄；義人被印記入<em>永生</em>（但以理書 12:2 所暗示）。但中間人呢？聖賢說，他們<strong>會「經過」地獄</strong>——這裡有一個重要的希伯來文字遊戲：惡人「<em>進入</em>」地獄（命運已定），中間人卻是「<em>經過</em>」地獄（一場精煉、一場大患難）。</span>
+      <span class="en">So who are these “third, middle people”? The Messiah says there will be a separation of sheep and goats, wheat and tares (Matthew 25:31–46). The sages explain: the wicked are inscribed and sealed for <em>eternal death</em> — they go straight to hell; the righteous are sealed for <em>eternal life</em> (as alluded in Daniel 12:2). But the middle ones? The sages say they <strong>will “go through” hell</strong> — and here lies an important Hebrew play on words: the wicked “<em>go into</em>” hell (their fate is sealed), while the middle ones “<em>go through</em>” hell (a refining, a tribulation).</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我要使這<strong>三分之一</strong>經火，熬煉他們，如熬煉銀子；試煉他們，如試煉金子。他們必求告我的名，我必應允他們。我要說：『這是我的子民。』他們也要說：『耶和華是我們的神。』」<cite>——撒迦利亞書 13:9</cite></span>
+      <span class="en">“I will bring this <strong>third part</strong> through the fire, and refine them as silver is refined, and test them as gold is tested. They will call on My name, and I will answer them. I will say, ‘This is My people,’ and they will say, ‘The LORD is my God.’”<cite>— Zechariah 13:9</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">這「三分之一」指的正是中間人 (<em>Beinonim</em>)——那些需要精煉、需要潔淨的人。約翰牧師特別澄清：<strong>聖賢並不是在教導天主教所說的「煉獄」(<em>purgatory</em>) 那種暫時狀態。</strong>天主教其實是從聖賢那裡取了這概念，卻誤解了希伯來文中的字詞之分——惡人「進入」地獄（命運已封），第三群「經過」地獄（指一場患難），因為義人早已被印記得生。想想聖經中的眾先知、列祖、列母，所有死於對神之信心的人——他們的信心早已被印記；而那些不悔改的、不肯確認自己信心的，他們的命運也照樣被封定。</span>
+      <span class="en">This “third part” refers precisely to the Beinonim — those who require refinement and cleansing. Pastor John is careful to clarify: <strong>the sages are not teaching the Catholic notion of a temporary “purgatory.”</strong> The Catholics actually got the concept from the sages but misunderstood the Hebrew wordplay — the wicked “go into” hell (their fate sealed), the third group “goes through” hell (indicating a tribulation), because the righteous are already sealed for life. Think of the prophets, the patriarchs, the matriarchs — all who died in faith in God: their faith is already sealed; while those who were unrepentant, who never confirmed their faith, are sealed as well.</span>
+    </p>
+
+    <p>
+      <span class="zh">所以——<strong>中間人，就是我們</strong>。我們是仍活在這世上的人，被夾在兩個極端（已印記得生的義人、已印記入死的惡人）之間的縫隙裡。因此我們仍活在這世界，我們的命運<em>尚未被決定</em>，直到我們交出最後的氣息為止。</span>
+      <span class="en">And so — <strong>the middle people are us</strong>. We are those still alive in this world, caught in the gap between the two extremes (the righteous already sealed for life, the wicked already sealed for death). Therefore we still live in this world, and our fate is <em>not yet determined</em> — until we give up our final breath.</span>
+    </p>
+
+    <h2><span class="zh">八、雅各的患難 ── 中間人必經之路</span><span class="en">VIII. Jacob's Trouble — The Road the Middle People Must Walk</span></h2>
+    <p>
+      <span class="zh">撒迦利亞的話又指向耶利米書 30:7：「<em>哀哉！那日為大，無日可比；這是雅各遭難的時候，但他必被救出來。</em>」希伯來原文是「<em>雅各的掙扎 (struggle)</em>」——這「雅各的患難」正是聖賢用來指那第三群中間人的。許多人誤解了這點。耶書亞自己在馬太福音 24:22 也暗指雅各的患難：「<em>若不減少那日子，凡有血氣的，總沒有一個得救的；只是為選民（即以色列），那日子必減少了。</em>」</span>
+      <span class="en">Zechariah's words point back to Jeremiah 30:7: <em>“Alas! That day is great, so that none is like it; it is even the time of Jacob's trouble — but he shall be saved out of it.”</em> The Hebrew reads “the time of Jacob's <em>struggle</em>” — and this “Jacob's trouble” is exactly what the sages mean by the third, middle group. Many misunderstand this. Yeshua Himself alludes to Jacob's trouble in Matthew 24:22: <em>“Unless those days were shortened, no flesh would be saved; but for the elect's sake (that is, Israel) those days will be shortened.”</em></span>
+    </p>
+
+    <p>
+      <span class="zh">注意耶利米書沒有說雅各的患難「以滅亡告終」——它說「<em>但我必拯救他們</em>」。意思是：他們必須<em>忍耐到底</em>，必須<em>經過火</em>，正如聖賢引撒迦利亞書 13 所說：他們如金子經火、如銀子被煉。我們這些身體裡有缺陷的人——裡面有罪、有死——為要配得義人的復活，<strong>我們必須經過火</strong>。所以我們這中間人，要經過大患難、雅各的患難，但我們不會被毀滅。</span>
+      <span class="en">Notice Jeremiah does not say Jacob's trouble “meets its end” — it says <em>“yet I will save them.”</em> Meaning: they must <em>endure</em>, they must <em>go through fire</em>, just as the sages say by quoting Zechariah 13: they go through fire as gold and silver are refined. We who have flaws in these bodies — with sin and death in them — must, in order to be worthy of the resurrection of the righteous, <strong>go through the fire</strong>. So we, the middle people, pass through the great tribulation, Jacob's trouble, but we will not be destroyed.</span>
+    </p>
+
+    <p>
+      <span class="zh">約翰牧師發出懇切的呼籲：在那一刻，你我<em>不在天堂，也不在地獄</em>；我們是夾在兩個世界之間的中間人，只有神知道我們的心。那些按神旨意死於信心的，已被印記為義，沒有商量餘地；那些離棄信心、退後、死在罪中的，他們的命運同樣被封定。所以——<strong>「若你正走在通往地獄的路上，求神使你的心與神和好。」</strong></span>
+      <span class="en">Pastor John makes an earnest appeal: in that moment, you and I are <em>neither in heaven nor in hell</em>; we are the middle people caught between two worlds, and only God knows our hearts. Those who died in faith according to God's will are sealed for righteousness, no negotiations; those who fell away, backslid, and died in their sins — their fate is sealed as well. So — <strong>“if you are on the path of hell, get your heart right with Hashem.”</strong></span>
+    </p>
+
+    <h2><span class="zh">九、三聲號角與「被提」 ── 一個猶太的觀念</span><span class="en">IX. Three Shofar Blasts and the “Rapture” — A Jewish Idea</span></h2>
+    <p>
+      <span class="zh">聖賢說有<strong>三次明確的號角吹響</strong>。<em>第一聲號角</em>連於五旬節 (<em>Shavuot</em>)——妥拉被賜下的日子（出埃及記 19）；那時神在西奈山把自己許配給以色列，山上響起極大的號角聲，以色列人受不住，求摩西獨自與神說話。<em>末次號角</em>（保羅在哥林多前書所提的）連於羅什哈沙拿（利未記 23:24；民數記 29:1），它在聖經的脈絡中宣告那<em>最後、最大的果子收割</em>——象徵<strong>死人復活</strong>。而<strong>大號角</strong>(<em>Shofar Gadol</em>，שׁוֹפָר גָּדוֹל) 代表贖罪日 (<em>Yom Kippur</em>，利未記 25:9)，關乎彌賽亞的來臨與審判之日，那時義人與惡人都被帶到神的寶座前受判決。</span>
+      <span class="en">The sages say there are <strong>three distinct shofar blasts</strong>. The <em>first shofar</em> is connected to Shavuot (Pentecost) — the day the Torah was given (Exodus 19); there God betrothed Himself to Israel, the shofar sounded loud on the mountain, and the children of Israel could not bear it and asked Moses to speak to God alone. The <em>last shofar</em> (the one Paul speaks of in 1 Corinthians) is connected to Rosh Hashanah (Leviticus 23:24; Numbers 29:1), and in its biblical context it announces the <em>final and largest harvest of fruits</em> — symbolic of the <strong>resurrection of the dead</strong>. And the <strong>Great Shofar</strong> (<em>Shofar Gadol</em>, שׁוֹפָר גָּדוֹל) represents Yom Kippur (Leviticus 25:9), dealing with the coming of Mashiach and the day of judgment, when both righteous and wicked are brought before the throne of God to be sentenced.</span>
+    </p>
+
+    <p>
+      <span class="zh">拉比掃羅在帖撒羅尼迦前書 4:15-17 講論這號角：「<em>我們現在照主的話告訴你們</em>」——他的啟示是建基於<em>已經寫好的神的話</em>。保羅是在擴展早已在妥拉中的真理。「<em>我們這活著的人（中間人，那些活在地上、還沒有被撇下的人）……斷不能在那已經睡了的人之先。</em>」那些已死的義人在墳墓裡，在死人復活的次序上<em>先得復活</em>，然後才輪到我們。</span>
+      <span class="en">Rabbi Shaul speaks of this shofar in 1 Thessalonians 4:15–17: <em>“We say to you by the written word of the Lord”</em> — his revelation rests on what was <em>already in the word</em>. Paul is expanding a truth already in the Torah. <em>“We who are alive (the middle people, those alive on the earth and not left behind) … will in no way precede those who have fallen asleep.”</em> The righteous dead, in their graves, have seniority in the resurrection — they rise first, and then it is our turn.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「因為主必親自從天降臨，有<em>呼叫的聲音</em>，和<em>天使長的聲音</em>，又有<strong>神的號角</strong>吹響；那在彌賽亞裡死了的人必先復活。以後我們這活著還存留的人，必和他們一同被提到雲裡，在空中與主相遇；這樣，我們就要和主永遠同在。」<cite>——帖撒羅尼迦前書 4:16-17</cite></span>
+      <span class="en">“For the Lord Himself will descend from heaven with a cry of command, with the voice of the prince angel, and with the <strong>shofar of God</strong>; and the dead in Messiah will rise first. Then we who are alive, who are left, will be caught up together with them in the clouds to meet the Master in the air — and so we will always be with the Lord.”<cite>— 1 Thessalonians 4:16-17</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">約翰牧師指出：那些「被搶上去」(snatched up) 的人，就是配得脫離神忿怒的人——有人稱之為「<em>被提</em>」(rapture)。但他鄭重澄清：<strong>「被提」其實就是死人復活的那一日，它是一個<em>猶太的觀念</em></strong>，由身為拉比學者的掃羅在第一世紀引入。它不是一個與猶太根源無關的西方發明，而是深深紮根於羅什哈沙拿、末次號角、與雅各患難的應許之中。</span>
+      <span class="en">Pastor John notes: those who are “snatched up” are the ones worthy to be saved from God's wrath — some call it the “<em>rapture</em>.” But he is emphatic: <strong>the “rapture” is really the day of the resurrection of the dead, and it is a <em>Jewish idea</em></strong>, introduced in the first century by Shaul the rabbinic scholar. It is not a Western invention cut off from its Jewish roots, but something rooted deeply in Rosh Hashanah, the last shofar, and the promise concerning Jacob's trouble.</span>
+    </p>
+
+    <h2><span class="zh">十、隱藏之日、君王的歸回、與新耶路撒冷</span><span class="en">X. The Hidden Day, the King's Return, and the New Jerusalem</span></h2>
+    <p>
+      <span class="zh">羅什哈沙拿為什麼落在提斯利月 (<em>Tishri</em>)？經文根據在哪？約翰牧師指向詩篇 81:3：「<em>當在月朔並月望——我們過節的日期吹角。</em>」這一天是「<em>隱藏之日 / 隱密之日</em>」——月亮隱藏不見。在希伯來曆中，唯獨羅什哈沙拿這一天，月亮被視為「隱藏的」。這正是為什麼兩天被算為一整天：若第一天看不見新月，就延到第二天。聖賢說，這「隱藏之日」要教導一個更大的功課——關於<strong>那無人知道的將來之日</strong>。</span>
+      <span class="en">Why does Rosh Hashanah fall in Tishri? Where is the proof text? Pastor John points to Psalm 81:3: <em>“Sound the shofar at the new moon, when the moon is hidden, on our festival day.”</em> This day is the “<em>hidden, concealed day</em>” — the moon is hidden from view. In the Hebrew calendar, only on Rosh Hashanah is the moon considered “hidden.” This is exactly why two days are counted as one whole day: if the new moon is not seen on the first day, it carries to the second. The sages say this “hidden day” teaches a greater lesson — about <strong>the coming day that no one knows</strong>.</span>
+    </p>
+
+    <p>
+      <span class="zh">一段米大示（早於耶書亞的時代）記載：天使問神，為什麼以色列在羅什哈沙拿不向神唱讚美（<em>Hallel</em>）？因為<em>連天使也不知道羅什哈沙拿何時臨到</em>。耶書亞正是這樣說：「<em>那日子、那時辰，沒有人知道，連天上的使者也不知道，惟獨父知道。</em>」（馬太福音 24:36）這就是為什麼羅什哈沙拿被連於審判之日、連於十天後的贖罪日——也是為什麼在所有不反映審判的「月朔詩篇」中，唯獨詩篇 81:3 反映了審判。</span>
+      <span class="en">A midrash (predating Yeshua's day) records the angels asking God why Israel does not sing praise (<em>Hallel</em>) on Rosh Hashanah. Because <em>even the angels did not know when Rosh Hashanah falls</em>. Yeshua says exactly this: <em>“Of that day and hour no one knows, not even the angels of heaven, but the Father alone”</em> (Matthew 24:36). This is why Rosh Hashanah is bound to the day of judgment, to Yom Kippur ten days later — and why, of all the “new-moon Psalms” that do not reflect judgment, Psalm 81:3 alone does.</span>
+    </p>
+
+    <p>
+      <span class="zh">耶書亞在馬太福音 24:30-31 描繪祂的再來：人子帶著能力與大榮耀駕雲降臨，地上萬族都要哀哭；祂要差遣使者，用<em>號角的大聲</em>，將祂的選民從四方、從天這邊到天那邊招聚了來。約翰牧師指出一個細節：保羅說「<em>末次</em>號角」，耶書亞說「<em>大聲</em>的號角」——這是<strong>兩種不同的號角</strong>。「大號角」(<em>Shofar Gadol</em>) 指贖罪日，是實際審判的日子；而連於雅各患難、連於死人復活、由那位「君王天使」(<em>Sar HaPanim</em>) 之聲所引介的，是另一聲號角。</span>
+      <span class="en">In Matthew 24:30–31 Yeshua portrays His return: the Son of Man comes on the clouds with power and great glory, and all the tribes of the earth mourn; He sends His angels with a <em>great sound of the shofar</em> to gather His elect from the four winds, from one end of heaven to the other. Pastor John flags a detail: Paul speaks of the “<em>last</em> shofar,” while Yeshua speaks of the “<em>great sound</em>” of the shofar — these are <strong>two different shofars</strong>. The “Great Shofar” (<em>Shofar Gadol</em>) refers to Yom Kippur, the day of actual judgment; while the one tied to Jacob's trouble, to the resurrection of the dead, and heralded by the voice of the “prince angel” (<em>Sar HaPanim</em>) is another blast.</span>
+    </p>
+
+    <p>
+      <span class="zh">耶書亞在這裡回指妥拉——申命記 30:3-4：神應許要把以色列從被擄之地領回、施憐憫，甚至「<em>從天這邊招聚你回來</em>」。所以<strong>以色列的復興，繫於彌賽亞的歸回</strong>，而這也關乎羅什哈沙拿。以西結書 37 的枯骨之谷異象也是如此——當猶太人 1948 年從奧斯威辛與死亡集中營走出、歸回故土時，他們真的像「行走的枯骨」站在以色列地上。若這在較淺的層面已是真的，在更大的層面更是如此。</span>
+      <span class="en">Here Yeshua points back to the Torah — Deuteronomy 30:3–4: God promises to bring Israel back from exile, to have compassion, even to “gather you back from the ends of the heavens.” So <strong>the restoration of Israel is bound to the return of the Messiah</strong>, and this too concerns Rosh Hashanah. Ezekiel 37's valley of dry bones is the same — when the Jewish people came out of Auschwitz and the death camps and returned to the land in 1948, they literally looked like dead bones walking in the land of Israel. If it was true in a lesser sense, it is true in a far greater one.</span>
+    </p>
+
+    <p>
+      <span class="zh">當君王彌賽亞在祂歸回的日子來臨時，<strong>死人復活與審判將同時發生</strong>。那些活在地上、配得脫離忿怒的人，要被搶上去；那些不配的，則不被搶上。義人的信心已被印記為義，惡人的信心已被印記為惡——當神的忿怒傾倒、潔淨這地時，配得的人要進入新耶路撒冷的同在。</span>
+      <span class="en">When King Messiah comes on the day of His return, <strong>the resurrection of the dead and judgment will happen simultaneously</strong>. Those alive on the earth who are worthy to be saved from the wrath will be snatched away; those not worthy will not. The faith of the righteous is sealed for righteousness, the faith of the wicked sealed for wickedness — and as God's wrath is poured out and purges the earth, the worthy enter the presence of the New Jerusalem.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「我又看見聖城新耶路撒冷由神那裡從天而降，預備好了，就如新婦妝飾整齊，等候丈夫。」<cite>——啟示錄 21:2</cite></span>
+      <span class="en">“I saw the holy city, the New Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband.”<cite>— Revelation 21:2</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">當末次號角吹響，我們將從這必死的身體<em>轉變為不朽的身體</em>；當神的忿怒在那日傾倒、潔淨惡人時，我們要進入祂的同在、進入新耶路撒冷。然後，<strong>一個新的人類</strong>將要展開——沒有男女之分（指那超越今世限制的新身分）、沒有罪、沒有死的新人類。神要把以色列從被擄之地全然招聚回來；在「大號角」之下，完全的修復 (<em>Tikkun</em>，תִּקּוּן) 要成就。</span>
+      <span class="en">When the last shofar sounds, we will be <em>changed from these mortal bodies into immortal ones</em>; and as God's wrath is poured out on that day, purging the wicked, we will enter His presence, into the New Jerusalem. Then <strong>a new humanity</strong> will begin — no male or female (in the sense of an identity beyond this age's limits), no sin, no death. God will gather all Israel back from the exiles; and under the “Great Shofar,” full restoration (<em>Tikkun</em>, תִּקּוּן) will take place.</span>
+    </p>
+
+    <p>
+      <span class="zh">約翰牧師以一句懇切的話收束：所以對我們而言，這一天不該只是一場宗教聚會——<strong>它該像我們呼吸的氣息一樣，是生與死的大事</strong>。若我們把一切放在上下文中看——保羅的話、耶書亞的話、甚至聖賢的話——這一天，弟兄姊妹們，真正是<em>死人復活之日</em>。願我們都配得、都得著這日；當彌賽亞來臨、號角吹響，願我們不被撇下。<em>Am Yisrael Chai</em>。</span>
+      <span class="en">Pastor John closes with an earnest word: so for us, this day should not be a mere religious meeting — <strong>it should be a matter of life and death, as near to us as the breath we breathe</strong>. If we take everything in context — Paul's words, Yeshua's words, even the sages' words — this day, friends, is truly <em>the day of the resurrection of the dead</em>. May we be worthy and merit this day; when the Messiah comes and the shofar blasts, may we not be left behind. <em>Am Yisrael Chai</em>.</span>
+    </p>
+
+    <h2><span class="zh">結語 ── 末次號角吹響之時</span><span class="en">Closing — When the Last Shofar Sounds</span></h2>
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「就在一剎那，眨眼之間，末次號角吹響的時候——死人要復活成為不朽壞的，我們也要改變。預備好你自己，因為這一天無人知道何時臨到。當號角吹響，願你不在地獄、不被撇下，乃在那被搶上去、與彌賽亞永遠同在的人中間。」</strong></span>
+      <span class="en"><strong>“In a moment, in the twinkling of an eye, at the last shofar blast — the dead will be raised imperishable, and we will be changed. Prepare yourself, for no one knows the day. And when the shofar sounds, may you not be in hell, nor left behind, but among those snatched up to be with the Messiah forever.”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+
+</body>
+</html>
