@@ -1,0 +1,121 @@
+{
+  "slug": "article-redemption-03-galut-geulah",
+  "segments": 25,
+  "zh": {
+    "default": "zh-TW-HsiaoChenNeural",
+    "count": 25,
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "36c3bf62cf60cd44",
+          "5f21b6da8fe69377",
+          "e8f953e7935f00c1",
+          "b64a2f57f14a40f9",
+          "326d7d0d6d0d77f4",
+          "3a91de7d8cabc634",
+          "f5fc461dfba1c47a",
+          "21151f55ce8401d2",
+          "fbbdebb3cff0a390",
+          "ac71f01b4c5b65f0",
+          "541f16c31a6cec1a",
+          "0d301c0909288bb0",
+          "793da5ddd793ede1",
+          "966b718e797e7933",
+          "79a76c596624ae39",
+          "b81a74e8f0cf4399",
+          "6882c68c4f0a63b8",
+          "ad1d0e9566f47e00",
+          "808d12fc35d2ec77",
+          "2d9a34bf3064f5d2",
+          "acaa2f165ac34d1a",
+          "2ff094b49cb39b0b",
+          "5ba859366fd064f3",
+          "13d7547ba159616a",
+          "335b11d7d59596e7"
+        ],
+        "withTimings": false
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "71da3d88c4fd1c3c",
+          "f5f74d5e81e425c4",
+          "419805c184053257",
+          "4bd5bcccb2524e93",
+          "760dec2f56686d02",
+          "05b262a8e678ddc7",
+          "471069048308b39e",
+          "4fecd896c82f71bf",
+          "bec439e876156af6",
+          "90a4de068f19e11c",
+          "cb6dbb9aeacec76a",
+          "e3308f797e03d155",
+          "5a45d910740b3276",
+          "1849b8c668f1e212",
+          "816b26e175de7e46",
+          "70e2a33b59397a7a",
+          "fe7c0551bef1eeea",
+          "806473399a857e28",
+          "3e57026e5c492af2",
+          "e01c89687bb4b80d",
+          "3b866f407d491581",
+          "c4b57373a374132b",
+          "684c0a3d56e10357",
+          "ed6b28eeca57cae0",
+          "5144f303fa3f92e4"
+        ],
+        "withTimings": false
+      }
+    ]
+  },
+  "en": {
+    "default": "en-US-AriaNeural",
+    "count": 25,
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "0012e4b6f81fbd1f",
+          "6126435144489d68",
+          "9e64f448bde64d57",
+          "b17f7ee91475974e",
+          "a240f8c801a58606",
+          "7489298a5c8c5811",
+          "6c8be384bdc06ac2",
+          "146516b4cb4a2ebb",
+          "97479dcc5c91cf6d",
+          "32558cb1b73cfb5d",
+          "acf62f954b6c126a",
+          "c5815e5638579cc2",
+          "80969bfeaad8ef72",
+          "45e8242b1803712f",
+          "ae4dc8bfc7c3f19b",
+          "d9b3a9fbceba6543",
+          "0ca9f44aafc2e029",
+          "63f89ac724f9c686",
+          "cbf04464dd6781f7",
+          "c8cdbe63053e56da",
+          "e65b611c6631bd4a",
+          "ccae2e0322351952",
+          "e5bcf26f43bd294f",
+          "7bba611be8288c18",
+          "63264724bee290fe"
+        ],
+        "withTimings": false
+      }
+    ]
+  }
+}
