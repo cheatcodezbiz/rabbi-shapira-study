@@ -180,11 +180,13 @@ def get_whisper_model():
     return _whisper_model_cache
 
 
-def whisper_transcribe(audio_path: Path) -> str:
-    """Transcribe Mandarin audio → raw Chinese text using faster-whisper.
+def whisper_transcribe(audio_path: Path) -> tuple[str, str]:
+    """Transcribe audio → (verbatim text, detected language) via faster-whisper.
 
-    Returns a single string of the transcript with paragraph breaks.
-    Output may be simplified Chinese — Ollama cleans it up to traditional.
+    Auto-detects language (these teachings are English, Mandarin, Spanish, or a
+    mix). Returns the VERBATIM transcript in whatever language was spoken plus
+    the ISO code, so the caller can route English-source vs Chinese-source
+    audio correctly instead of forcing everything through a zh round-trip.
     """
     model = get_whisper_model()
     print(f"  [whisper] transcribing {audio_path.name}…")
@@ -220,7 +222,7 @@ def whisper_transcribe(audio_path: Path) -> str:
         prev_end = seg.end
     text = "\n".join(lines).strip()
     print(f"  [whisper] transcribed {len(text)} chars, {info.duration:.0f}s audio, lang={info.language}")
-    return text
+    return text, info.language
 
 
 def whisper_translate(audio_path: Path) -> str:
@@ -290,6 +292,27 @@ def ollama_translate(zh_text: str) -> str:
         "Match the rabbi's tone — scholarly but accessible. "
         "Return only the translation, preserving paragraph breaks.\n\n"
         "Transcript:\n\n" + zh_text
+    )
+    return ollama_generate(prompt)
+
+
+def ollama_en_to_traditional(en_text: str) -> str:
+    """Translate an English transcript into Traditional Chinese (Taiwan standard).
+
+    Used for English-source teachings: whisper gives verbatim English, and we
+    translate that to zh-TW for the bilingual article. Explicit direction so
+    Ollama never mistakes an already-English input for 'nothing to translate'.
+    """
+    print("  [ollama] translating English → Traditional Chinese…")
+    prompt = (
+        "請將以下這位彌賽亞猶太拉比的英文講道，翻譯成流暢、神學上精準的繁體中文"
+        "（台灣標準）。\n"
+        "規則：\n"
+        "1. 保留所有聖經、塔木德、希伯來文的引用（希伯來文可音譯）。\n"
+        "2. 保持講者的語氣——學術但平易近人。\n"
+        "3. 保持原有的段落結構。\n"
+        "4. 只輸出繁體中文譯文，不要任何前言或說明。\n\n"
+        "英文講道：\n\n" + en_text
     )
     return ollama_generate(prompt)
 
@@ -438,8 +461,13 @@ def process_video(video_id: str, env: dict[str, str], skip_download: bool = Fals
         raise RuntimeError("yt-dlp produced no audio file")
     print(f"  audio: {audio.name} ({audio.stat().st_size // 1024} KB)")
 
-    # 2. Transcription ─────────────────────────────────────────────────────────
-    if not (out / "transcript.zh.txt").exists():
+    # 2 + 3. Transcription & translation ───────────────────────────────────────
+    # Language-aware: keep whisper's VERBATIM output as the primary-language
+    # transcript, then translate to the other language. English-source teachings
+    # must NOT be round-tripped through Chinese (that corrupted earlier runs:
+    # Ollama either left the "zh" file in English or refused to translate an
+    # already-English input). We branch on whisper's detected language.
+    if not ((out / "transcript.zh.txt").exists() and (out / "transcript.en.txt").exists()):
         if use_gemini:
             api_key = env.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
             if not api_key:
@@ -455,43 +483,36 @@ def process_video(video_id: str, env: dict[str, str], skip_download: bool = Fals
                 {"file_data": {"file_uri": file_uri, "mime_type": mime}},
                 {"text": (
                     "請將這段普通話/中文音頻完整轉錄成繁體中文文字。\n"
-                    "規則：\n"
-                    "1. 逐字轉錄，不要總結。\n"
-                    "2. 使用繁體中文（台灣標準）。\n"
+                    "規則：\n1. 逐字轉錄，不要總結。\n2. 使用繁體中文（台灣標準）。\n"
                     "3. 保留說話人原本的句子結構。\n"
                     "4. 引用聖經、塔木德或希伯來文時，盡量保留原文用字。\n"
-                    "5. 自然分段，每個論點或段落換一段。\n"
-                    "只輸出轉錄文字，不要加任何前言或後記。"
+                    "5. 自然分段。只輸出轉錄文字。"
                 )},
             ])
-        else:
-            # Local path: faster-whisper → Ollama cleanup
-            raw_zh = whisper_transcribe(audio)
-            print(f"  [ollama] cleaning up to traditional Chinese…")
-            zh = ollama_to_traditional(raw_zh)
-        (out / "transcript.zh.txt").write_text(zh.strip() + "\n", encoding="utf-8")
-        print(f"  zh transcript: {len(zh)} chars")
-
-    # 3. English translation ───────────────────────────────────────────────────
-    if not (out / "transcript.en.txt").exists():
-        zh = (out / "transcript.zh.txt").read_text(encoding="utf-8")
-        if use_gemini:
-            api_key = env.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
-            print("  translating to English…")
             en = gemini_generate(api_key, GEMINI_MODEL_TEXT, [
-                {"text": (
-                    "Translate the following Mandarin transcript of a Messianic Jewish "
-                    "rabbi's teaching into clear, theologically-precise English. Preserve "
-                    "all biblical / Talmudic / Hebrew references verbatim (transliterate "
-                    "Hebrew where the original gives it). Match the rabbi's tone — "
-                    "scholarly but accessible. Return only the translation.\n\n"
-                    "Transcript:\n\n" + zh
-                )},
+                {"text": "Translate this Mandarin Messianic-Jewish teaching into clear, "
+                         "theologically-precise English. Preserve all biblical/Hebrew "
+                         "references. Return only the translation.\n\n" + zh},
             ])
         else:
-            en = ollama_translate(zh)
+            # Local path: faster-whisper (verbatim) → translate the OTHER direction.
+            raw, lang = whisper_transcribe(audio)
+            # Save the verbatim transcript for debugging / re-use.
+            (out / "transcript.raw.txt").write_text(raw.strip() + "\n", encoding="utf-8")
+            if str(lang).lower().startswith("zh"):
+                # Mandarin-source: clean to traditional zh, then translate to en.
+                print(f"  [lang={lang}] Chinese-source → clean zh, translate to en")
+                zh = ollama_to_traditional(raw)
+                en = ollama_translate(zh)
+            else:
+                # English- (or other-) source: verbatim text IS the en transcript;
+                # translate it into Traditional Chinese for the bilingual article.
+                print(f"  [lang={lang}] non-Chinese source → en is verbatim, translate to zh")
+                en = raw
+                zh = ollama_en_to_traditional(en)
+        (out / "transcript.zh.txt").write_text(zh.strip() + "\n", encoding="utf-8")
         (out / "transcript.en.txt").write_text(en.strip() + "\n", encoding="utf-8")
-        print(f"  en translation: {len(en)} chars")
+        print(f"  transcripts: zh={len(zh)} chars, en={len(en)} chars")
 
     # 4. Theological analysis ──────────────────────────────────────────────────
     if not (out / "analysis.md").exists():
