@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《流亡中的史家》研习指南 · A Historian in Exile — Study Guide · 妥拉之光</title>
+  <meta name="description" content="A study guide to Jeremy Cohen's A Historian in Exile — eight bilingual lessons on Solomon ibn Verga's Shevet Yehudah, the disputations, libels, martyrs, and conversos of Jewish suffering under Christendom, read with repentance and messianic hope." />
+  <meta name="audio-slug" content="study-historian-exile" />
+  <meta property="og:title" content="A Historian in Exile — A Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons through Jeremy Cohen's study of Solomon ibn Verga's Shevet Yehudah — the Jewish-Christian encounter in an age of expulsion, read with repentance and Hebrew eyes." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="A Historian in Exile: Solomon ibn Verga, Shevet Yehudah — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 流亡、记念与盼望 · 2026 · 5 · 31</span>
+        <span class="en">Study Guide · Exile, Remembrance &amp; Hope · 2026 · 5 · 31</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">流亡中的史家<br/>研习指南</span>
+        <span class="en">A Historian in Exile<br/>A Study Guide</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，跟随杰里米·科恩 (Jeremy Cohen)，进入十六世纪犹太史家所罗门·伊本·维尔加 (Solomon ibn Verga) 的《犹大之杖》(Shevet Yehudah)——一部从西班牙驱逐与被迫受洗的创伤中写成的书，记下了犹太民族在基督教世界中所受的辩论、诬告、殉道与被迫归信。带着悔改与盼望，直面这段沉重的历史。</span>
+        <span class="en">Eight lessons following Jeremy Cohen into the sixteenth-century Jewish historian Solomon ibn Verga's Shevet Yehudah (The Scepter of Judah) — a book written out of the trauma of the Spanish expulsion and forced baptism, recording the disputations, libels, martyrdoms, and forced conversions the Jewish people endured under Christendom. Facing this heavy history with repentance and hope.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于杰里米·科恩 (Jeremy Cohen)《流亡中的史家——所罗门·伊本·维尔加、《犹大之杖》与犹太-基督相遇》(University of Pennsylvania Press, 2017)</span>
+        <span class="en">Based on A Historian in Exile: Solomon ibn Verga, Shevet Yehudah, and the Jewish-Christian Encounter by Jeremy Cohen (University of Pennsylvania Press, 2017)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 55 分钟通读</span><span class="en">~55 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.pennpress.org/9780812248586/a-historian-in-exile/" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书 · Penn Press</span><span class="en">Get the Book · Penn Press</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">为什么爱犹太民族的我们,要读一本关于犹太人在基督教世界中受苦的书?因为爱必须从真相开始,「爱我民」(Ahavat Ammi) 不能建立在遗忘之上。科恩 (Jeremy Cohen) 这部研究,带我们走近所罗门·伊本·维尔加——一位卡斯蒂利亚的犹太医师、贵族、犹太社群在当局前的代言人。1492 年,他随着整个西班牙犹太族群被逐;逃到葡萄牙后,极可能被强迫受洗。正是从这样的创伤里,他写下(或编纂)了《犹大之杖》(Shevet Yehudah):六十多个关于犹太人「在外邦人之地」所受苦难的故事——血祭诬告、强制辩论、阴谋、恶法、驱逐。这本书四百年来一版再版,因为它不只是史料,更是一个受伤民族的灵魂自述。</span>
+      <span class="en">Why should we who love the Jewish people read a book about Jewish suffering under Christendom? Because love must begin with truth, and <em>Ahavat Ammi</em> cannot be built on forgetting. Jeremy Cohen's study brings us close to Solomon ibn Verga — a Castilian Jewish physician, nobleman, and spokesman for his community before the authorities. In 1492 he was expelled with the whole of Spanish Jewry; fleeing to Portugal, he was most likely baptized against his will. Out of exactly such trauma he wrote (or compiled) <em>Shevet Yehudah</em> (The Scepter of Judah): more than sixty stories of Jewish suffering “in the lands of non-Jewish peoples” — blood libels, forced disputations, conspiracies, evil decrees, expulsions. The book has been reprinted for four centuries, because it is not merely a record but the soul's self-account of a wounded people.</span>
+    </p>
+
+    <p>
+      <span class="zh">科恩指出,《犹大之杖》既是历史,也是神学:伊本·维尔加不只记录灾难,他在苦苦追问——为什么?神在哪里?他甚至大胆地借书中人物之口,反省犹太人自身、也批判基督徒的逼迫。对今天读这本书的基督徒而言,这是一面镜子:它逼我们看见,我们的信仰传统在历史上,曾如何成为别人苦难的来源。读它,不是为了自责瘫痪,而是为了悔改、记念,并带着盼望,学习以全新的方式去爱这个民族。</span>
+      <span class="en">Cohen shows that <em>Shevet Yehudah</em> is both history and theology: ibn Verga not only records catastrophe but agonizes over it — why? Where is God? He even dares, through his characters, both to examine the Jews themselves and to indict Christian persecution. For a Christian reading this book today, it is a mirror: it forces us to see how our own faith tradition was, in history, a source of others' suffering. We read it not for paralyzed self-reproach, but for repentance, remembrance, and learning — with hope — to love this people in a wholly new way.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，循着书与科恩研究的主要主题展开。每一堂遵循同样的五部分节奏：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, following the major themes of the book and Cohen's study. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 学者说什么</strong>—— 用科恩的研究，呈现伊本·维尔加这部书的世界；<br/>
+        <strong>② 关键经文</strong>—— 一处与之相关、需重新聆听的圣经；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，照亮这段苦难史；<br/>
+        <strong>④ 基督徒视角</strong>—— 我们该如何聆听、悔改、记念、盼望；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 留给你与小组省察的问题。
+      </span>
+      <span class="en">
+        <strong>① What the Scholar Says</strong> — the world of ibn Verga's book, in Cohen's research;<br/>
+        <strong>② Key Scripture</strong> — a related text we must hear again;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that lights up this history of suffering;<br/>
+        <strong>④ A Christian Lens</strong> — how we should listen, repent, remember, and hope;<br/>
+        <strong>⑤ Honest Questions</strong> — questions for you and your group to examine.
+      </span>
+    </blockquote>
+
+    <p>
+      <span class="zh">一句郑重的提醒:这堂课会让人不舒服。请不要带着自义去读「中世纪的他们」,而要带着省察去读「今天的我们」。同样的逼迫之灵,今天仍可能以新的形式回来。</span>
+      <span class="en">A solemn caution: this study will be uncomfortable. Do not read it with self-righteousness about “those medievals,” but with self-examination about “us, today.” The same spirit of persecution can return in new forms.</span>
+    </p>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 01  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">《犹大之杖》——从伤口里写成的历史</span>
+        <span class="en">The Scepter of Judah — History Written from the Wound</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">科恩首先让我们认识这本书与它的作者。伊本·维尔加不是一位安坐书斋的旁观者;他是 1492 年大驱逐的<em>亲历者与受害者</em>,书写的是自己民族、也是自己的伤口。《犹大之杖》收录了从晚期古代直到伊比利亚犹太人毁灭的六十多个苦难故事,但它绝非冷冰冰的编年。科恩强调,这是一部带着强烈个人视角与神学焦虑的作品:作者一面记下灾难,一面苦苦追问灾难的意义。这本书之所以四百年间深深打动一代代犹太读者(甚至有拉比禁止在安息日读它,因为太催人泪下),正因为它是从一个民族最深的伤口里流出来的。</span>
+        <span class="en">Cohen first introduces the book and its author. Ibn Verga is no detached observer in a study; he is a <em>survivor and victim</em> of the great expulsion of 1492, writing the wound of his own people and his own. <em>Shevet Yehudah</em> gathers more than sixty stories of suffering from late antiquity to the destruction of Iberian Jewry — yet it is no cold chronicle. Cohen stresses it is a work of intense personal perspective and theological anxiety: the author records catastrophe while agonizing over its meaning. The book moved generations of Jewish readers so deeply for four centuries (some rabbis forbade reading it on the Sabbath because it was too tear-inducing) precisely because it flows from the deepest wound of a people.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我们的竖琴挂在那里的柳树上……我们怎能在外邦唱耶和华的歌呢?耶路撒冷啊,我若忘记你,情愿我的右手忘记技巧。」</span>
+        <span class="en">“There on the poplars we hung our harps... How can we sing the songs of the LORD while in a foreign land? If I forget you, Jerusalem, may my right hand forget its skill.”</span>
+        <cite>《诗篇》137:2, 4-5 · Psalm 137:2, 4-5</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שֵׁבֶט · shevet</strong>——这个书名里的词,一身三义,意味深长:它既是「权杖、君王的权柄」,又是「支派、宗族」(如「犹大支派」),还是「击打的棍杖」。伊本·维尔加选这个词作书名,几乎是一首浓缩的诗:它同时诉说着犹大民族(shevet)所承受的击打(shevet),以及那从未真正失落的君王盼望(shevet)。一个被驱逐、被鞭打的民族,却给自己受苦的记录,起了一个带着「王权」的名字。这本身就是信心的宣告:鞭杖之下,犹大的杖——那应许的王权——并未折断。</span>
+        <span class="en"><strong>שֵׁבֶט · shevet</strong> — the word in the title carries three meanings at once, full of significance: “scepter, royal authority”; “tribe, clan” (as in “the tribe of Judah”); and “the rod that strikes.” Ibn Verga's choice of this word as his title is almost a compressed poem: it speaks at once of the blows (<em>shevet</em>) the people of Judah (<em>shevet</em>) endured, and of the kingly hope (<em>shevet</em>) never truly lost. A people expelled and beaten gave its record of suffering a name carrying “kingship.” That itself is a confession of faith: under the rod, the scepter of Judah — the promised royal authority — was not broken.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">对基督徒而言,翻开这本书的第一课,是学会<em>聆听</em>。太久以来,「犹太人的历史」在基督教的叙事里被消音、被简化、甚至被扭曲。伊本·维尔加的书逼我们坐下来,听一个受害的民族,用自己的声音,讲自己的苦难——而其中许多苦难,正是以「基督」之名加给他们的。聆听本身,就是一种悔改的开始;它把我们从「历史的旁观者」,变成「邻舍的痛苦的见证人」。诗篇 137 那挂起的竖琴、那「怎能在外邦唱歌」的哀号,值得我们安静地、久久地聆听。</span>
+        <span class="en">For Christians, the first lesson of opening this book is to learn to <em>listen</em>. For far too long, “Jewish history” was silenced, simplified, even distorted within the Christian narrative. Ibn Verga's book forces us to sit down and hear a victimized people tell their own suffering in their own voice — much of it inflicted in the name of “Christ.” Listening itself is a beginning of repentance; it turns us from “spectators of history” into “witnesses of a neighbor's pain.” The hung-up harps of Psalm 137, the cry “how can we sing in a foreign land,” deserve our quiet and long attention.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『聆听本身就是悔改的开始』。我是否真的听过犹太民族用自己的声音讲述他们的苦难？</span><span class="en">“Listening itself is a beginning of repentance.” Have I truly heard the Jewish people tell their own suffering in their own voice?</span></li>
+        <li><span class="zh">书名 shevet 同时意味着『鞭杖、支派、权杖』。一个受苦的民族给苦难记录起了『王权』之名——这是怎样的信心？</span><span class="en">The title <em>shevet</em> means “rod, tribe, scepter” at once. A suffering people named their record of suffering with “kingship” — what kind of faith is that?</span></li>
+        <li><span class="zh">诗篇137的挂起竖琴,描绘流亡中的哀恸。我能否安静下来,真正与哀哭的人同哭？</span><span class="en">The hung harps of Psalm 137 depict grief in exile. Can I be still and truly weep with those who weep?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 02  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">强制的辩论——托尔托萨与「被安排好的失败」</span>
+        <span class="en">The Forced Disputation — Tortosa and a “Rigged Defeat”</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">科恩用专章讨论书中反复出现的「宗教辩论」(disputation),尤其是 1413–1414 年的托尔托萨大辩论——中世纪规模最大、最具毁灭性的强制性犹太-基督辩论。表面上,这是「学术对话」;实质上,它是由教廷主导、结局早已注定的政治施压:拉比们被强迫出席,在敌对的环境中为自己的信仰辩护,而辩论的真正目的,是迫使犹太人归信、瓦解他们的士气。伊本·维尔加记下这类场景,既是控诉这种「被安排好的失败」,也借笔下人物之口,呈现犹太人在巨大压力下的智慧、尊严与挣扎。</span>
+        <span class="en">Cohen devotes a chapter to the recurring “disputation” in the book, especially the great Disputation of Tortosa (1413–1414) — the largest and most devastating forced Jewish-Christian debate of the Middle Ages. On the surface, “scholarly dialogue”; in substance, political pressure orchestrated by the papacy with a foregone conclusion: rabbis compelled to attend, defending their faith in a hostile setting, the real aim being to force Jewish conversion and break their morale. Ibn Verga records such scenes both to indict this “rigged defeat” and, through his characters, to portray the wisdom, dignity, and struggle of Jews under immense pressure.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「先听的似乎有理;但邻舍来到,就察出实情。」</span>
+        <span class="en">“In a lawsuit the first to speak seems right, until someone comes forward and cross-examines.”</span>
+        <cite>《箴言》18:17 · Proverbs 18:17</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>וִכּוּחַ · vikuach</strong>——「辩论、争辩」。这是希伯来传统里指称这类「宗教论战」的词。但《箴言》提醒我们,一场公正的辩论,必须让「另一方到场对质」。托尔托萨辩论之所以是不义的,恰恰因为它从根本上违背了这一点:它不是一场两方平等、真诚求真的 <em>vikuach</em>,而是一方手握权力、刀架在脖子上的施压。当『辩论』的一方可以决定另一方的生死、财产与去留,真理便无从产生——产生的只有恐惧与屈服。圣经所爱的 <em>emet</em>(真理),只能在自由与平等中生长,绝不能从强迫中长出。</span>
+        <span class="en"><strong>וִכּוּחַ · vikuach</strong> — “disputation, debate.” This is the Hebrew tradition's word for such “religious polemics.” But Proverbs reminds us that a just debate must let “the other party come and be cross-examined.” The Tortosa disputation was unjust precisely because it violated this at the root: it was not a <em>vikuach</em> of two equal parties sincerely seeking truth, but pressure from one side holding power, a blade at the throat. When one “debating” party can decide the other's life, property, and place, truth cannot be born — only fear and submission. The <em>emet</em> (truth) Scripture loves can grow only in freedom and equality, never out of coercion.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课对基督徒是一记沉重的提醒:用权力施压所「赢」来的,从来不是真信仰。耶书亚从不强迫人;祂总是邀请——「你们愿意也走吗?」(约 6:67) 当中世纪的教会用国家的权力,把犹太人逼上辩论的舞台、再逼他们「认输归信」,它彻底背离了它所传之主的样式。真正的见证,如彼得前书所说,是「有人问你们……就以温柔敬畏的心回答」——是回应真诚的发问,而非赢得一场对方无法退场的辩论。这一课呼召我们悔改,并立志:我们绝不用任何形式的强迫,去「赢得」一个灵魂。</span>
+        <span class="en">This lesson is a heavy reminder for Christians: what is “won” by the pressure of power is never true faith. Yeshua never coerced; he always invited — “You do not want to leave too, do you?” (John 6:67). When the medieval Church used the power of the state to drag Jews onto the stage of debate and then force them to “concede and convert,” it utterly betrayed the pattern of the Lord it preached. True witness, as 1 Peter says, is “answering... with gentleness and respect” those who ask — responding to a sincere question, not winning a debate the other cannot walk out of. This lesson calls us to repent and resolve: we will never use any form of coercion to “win” a soul.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『用权力施压赢来的,从来不是真信仰』。我分享信仰时,有没有不自觉地用关系、地位或情绪去施压？</span><span class="en">“What is won by the pressure of power is never true faith.” When I share my faith, do I unconsciously pressure others through relationship, status, or emotion?</span></li>
+        <li><span class="zh">耶书亚总是邀请,从不强迫(『你们愿意也走吗?』)。我的见证,更像邀请,还是更像强迫的辩论？</span><span class="en">Yeshua always invited, never coerced (“Do you also want to leave?”). Is my witness more like invitation, or like a coerced debate?</span></li>
+        <li><span class="zh">真理只能在自由与平等中生长。这如何重塑我对『成功传福音』的理解？</span><span class="en">Truth can grow only in freedom and equality. How does that reshape what I count as “successful” evangelism?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 03  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">受审的塔木德——当一个民族的灵魂被定罪</span>
+        <span class="en">The Talmud on Trial — When a People's Soul Is Condemned</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">科恩讨论书中关于「塔木德与塔木德学者」的主题。中世纪基督教世界对犹太人的攻击,在十三世纪发生了一个危险的转向:从「指控犹太人拒绝圣经里的弥赛亚」,变为「指控犹太人离弃了真正的(圣经的)犹太教,转而信奉拉比所编造的、亵渎的塔木德」。塔木德本身于 1240 年在巴黎被「审判」、被定罪、被公开焚烧。这意味着:被攻击的,不再只是犹太人的「错误」,而是他们整个赖以为生、世代相传的信仰生命与学术传统。伊本·维尔加的书,见证了一个民族眼睁睁看着自己的灵魂被架在火上的痛。</span>
+        <span class="en">Cohen discusses the book's theme of “the Talmud and Talmudists.” The medieval Christian attack on the Jews took a dangerous turn in the thirteenth century: from “charging the Jews with rejecting the Messiah of Scripture” to “charging them with abandoning true (biblical) Judaism for the rabbis' fabricated, blasphemous Talmud.” The Talmud itself was “put on trial,” condemned, and publicly burned in Paris in 1240. This meant that what was attacked was no longer merely the Jews' “error,” but the whole faith-life and scholarly tradition by which they lived and which they handed down across generations. Ibn Verga's book witnesses the agony of a people watching its very soul set ablaze.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这些话……你也要殷勤教训你的儿女。无论你坐在家里,行在路上,躺下,起来,都要谈论。」</span>
+        <span class="en">“These commandments... Impress them on your children. Talk about them when you sit at home and when you walk along the road, when you lie down and when you get up.”</span>
+        <cite>《申命记》6:6-7 · Deuteronomy 6:6-7</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>תַּלְמוּד · talmud</strong>——「学习、研读」。这个被审判、被焚烧的庞大文本,它的名字本身就是「学习」。它是犹太民族两千年来「殷勤教训儿女」(申 6:7) 的果实——一代代拉比围绕神的话语,日夜「谈论、研读」所积累的浩瀚对话。焚烧塔木德,在象征意义上,是想焚烧一个民族「学习神话语」这一行为本身。然而圣经早已应许,神的话「必不徒然返回」(赛 55:11);而事实证明,塔木德烧不尽——因为「学习」深植在这个民族的骨血里。一个把「研读」奉为至高敬拜的民族,是无法靠火被消灭的。</span>
+        <span class="en"><strong>תַּלְמוּד · talmud</strong> — “study, learning.” The vast text put on trial and burned bears, as its name, the word “learning.” It is the fruit of the Jewish people's two-thousand-year practice of “impressing God's words on their children” (Deut 6:7) — the immense conversation accumulated by generation after generation of rabbis “discussing and studying” God's word day and night. To burn the Talmud was, symbolically, an attempt to burn the very act of a people “studying God's word.” Yet Scripture long promised that God's word “will not return empty” (Isa 55:11); and the fact is, the Talmud could not be burned away — because “study” is woven into this people's very blood. A people that holds “study” as its highest worship cannot be destroyed by fire.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒读这一课,当心生敬畏与惭愧。敬畏,是因为犹太民族对神话语那种刻骨的爱——「殷勤教训儿女」「昼夜思想」——本是我们当效法的;惭愧,是因为我们的传统曾试图把这份对学习的热爱付之一炬。这一课也邀请我们以谦卑的「学习者」姿态,重新看待犹太的解经传统:其中有许多智慧、深度与对每一个字的认真,能丰富、校正我们读经的方式。「爱我民」,不只是为过去的焚烧悔改,更是带着尊重,向这个仍在 talmud(研读) 神话语的民族,谦卑领受。</span>
+        <span class="en">Reading this lesson, Christians should feel awe and shame. Awe, because the Jewish people's bone-deep love for God's word — “impress it on your children,” “meditate on it day and night” — is exactly what we should imitate; shame, because our tradition once tried to set that love of study to the flames. This lesson also invites us into the humble posture of a “learner,” to reconsider the Jewish interpretive tradition: it holds much wisdom, depth, and seriousness about every word that can enrich and correct how we read Scripture. <em>Ahavat Ammi</em> is not only repenting of past burnings, but humbly receiving, with respect, from a people still engaged in <em>talmud</em> — the study of God's word.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">焚烧塔木德,象征着要焚烧一个民族『学习神话语』的行为本身。这让我对犹太人对神话语的爱,生出怎样的敬畏？</span><span class="en">Burning the Talmud symbolized burning a people's very act of “studying God's word.” What awe does that stir in me toward the Jewish love of Scripture?</span></li>
+        <li><span class="zh">犹太传统把『研读』奉为至高敬拜。我对神的话,有这样昼夜思想、殷勤教训儿女的热爱吗？</span><span class="en">The Jewish tradition holds “study” as the highest worship. Do I have that day-and-night love for God's word, impressing it on my children?</span></li>
+        <li><span class="zh">以『学习者』的谦卑看待犹太解经传统——其中有哪些能丰富、校正我读经的方式？</span><span class="en">Approaching the Jewish interpretive tradition as a humble “learner” — what in it might enrich and correct how I read Scripture?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 04  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">诬告——当谎言点燃火刑</span>
+        <span class="en">The Libels — When Lies Light the Pyre</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">《犹大之杖》里反复出现的,是「反犹诬告」(anti-Jewish libels)——尤其是「血祭诬告」:诬告犹太人为宗教仪式而杀害基督徒儿童取血,以及「亵渎圣体」「投毒水井」等。科恩指出,伊本·维尔加对这些诬告有着痛切的关注,因为正是这些凭空捏造的谎言,一次次点燃了对整个犹太社群的屠杀与驱逐。书中既呈现这些诬告的荒谬与残酷,有时也透过笔下较为「开明」的君王或学者之口,揭穿它们的虚假——仿佛在废墟之上,微弱地呼求一点理性与公义。</span>
+        <span class="en">Recurring throughout <em>Shevet Yehudah</em> are the “anti-Jewish libels” — above all the “blood libel”: the false charge that Jews murdered Christian children for blood in their rituals, along with “host desecration” and “well-poisoning.” Cohen notes ibn Verga's anguished attention to these libels, because it was precisely these fabricated lies that again and again ignited massacres and expulsions of whole Jewish communities. The book both portrays the absurdity and cruelty of these libels and, at times through its more “enlightened” kings or scholars, exposes their falsehood — as if, amid the ruins, faintly pleading for a little reason and justice.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这些事都为耶和华所恨恶……就是吐谎言的假见证,并弟兄中布散纷争的人。」</span>
+        <span class="en">“There are things the LORD hates... a false witness who pours out lies and a person who stirs up conflict in the community.”</span>
+        <cite>《箴言》6:16-19 · Proverbs 6:16-19</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>דַּם · dam</strong>——「血」。「血祭诬告」是何等黑暗的讽刺:它诬告犹太人取血,而希伯来圣经恰恰最严厉地禁止「吃血」、禁止流无辜人的血——「流人血的,他的血也必被人所流」(创 9:6)。把一项犹太律法本身最严禁的罪,反过来栽赃给守这律法的民族,是「假见证」(<em>edut sheker</em>) 的极致。圣经说,无辜者的 <em>dam</em>(血) 会「从地里向我哀告」(创 4:10)。从中世纪的火刑到后世的大屠杀,那从地里发出的、犹太人无辜的血的哀声,至今仍在向教会的良心发问。</span>
+        <span class="en"><strong>דַּם · dam</strong> — “blood.” The “blood libel” is the darkest irony: it accuses Jews of taking blood, while the Hebrew Bible most strictly forbids “eating blood” and shedding innocent blood — “whoever sheds human blood, by humans shall their blood be shed” (Gen 9:6). To pin onto a people the very sin their own Law most forbids is false witness (<em>edut sheker</em>) at its extreme. Scripture says the <em>dam</em> (blood) of the innocent “cries out from the ground” (Gen 4:10). From the medieval pyres to the later Shoah, the cry of innocent Jewish blood rising from the ground still questions the conscience of the Church.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课不容许任何「话语是无害的」的幻想。《箴言》把神所恨恶的并列:「吐谎言的假见证」与「布散纷争的人」——因为前者必然导向后者。讲台上、谣言里的诬告,从不会停在耳朵里;它会走到街上,拿起石头与火把。对今天的我们,这是一记重锤:我们任凭在心里、教会里、网络上流传的关于犹太人(或任何群体)的「故事」,绝不是中立的。每一个未经查证就接受、转述的偏见,都是在为某一处的暴力添柴。悔改,从拒绝传播谎言、从拒绝相信关于邻舍的虚构版本开始。</span>
+        <span class="en">This lesson permits no illusion that “words are harmless.” Proverbs lists side by side what God hates: “a false witness who pours out lies” and “one who stirs up conflict” — because the first inevitably leads to the second. Libel on the pulpit and in rumor never stops in the ear; it walks into the street and takes up stones and torches. For us today this is a hammer blow: the “stories” about Jews (or any group) we allow to circulate in our hearts, churches, and feeds are never neutral. Every prejudice accepted and passed on unverified adds fuel to violence somewhere. Repentance begins with refusing to spread lies — refusing to believe the fictional version of one's neighbor.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我是否曾在未经查证的情况下,相信并转述关于某个群体的负面『故事』？</span><span class="en">Have I ever believed and passed on a negative “story” about a group without verifying it?</span></li>
+        <li><span class="zh">血祭诬告把犹太律法最严禁的罪,栽赃给守这律法的民族。这种『假见证』的荒谬,如何警醒我？</span><span class="en">The blood libel pinned the sin Jewish law most forbids onto the people who keep that law. How does the absurdity of such “false witness” warn me?</span></li>
+        <li><span class="zh">无辜者的血『从地里哀告』。教会该如何面对从中世纪火刑到大屠杀所流的犹太人的血？</span><span class="en">Innocent blood “cries out from the ground.” How should the Church face the Jewish blood shed from medieval pyres to the Shoah?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 05  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">殉道者——为神的名而死</span>
+        <span class="en">The Martyrs — Dying for the Name of God</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">科恩讨论书中「殉道与殉道者」的主题。在《犹大之杖》里,一次次出现这样的场景:面对「归信或赴死」的逼迫,无数犹太人选择了死——他们宁可在火中、在刀下失去生命,也不肯否认自己的信仰与他们的神。中世纪犹太传统把这种为信仰而死的行为,称为 <em>Kiddush HaShem</em>(「使神的名成圣」)。伊本·维尔加既以敬畏之心记下这些殉道者的坚贞,有时也透过书中人物,流露出对如此惨烈之苦难的困惑与哀痛。这是全书最沉重、也最圣洁的一页。</span>
+        <span class="en">Cohen discusses the book's theme of “martyrdom and martyrs.” Again and again in <em>Shevet Yehudah</em>, the scene recurs: facing the demand to “convert or die,” countless Jews chose death — losing their lives in fire and by the sword rather than deny their faith and their God. The medieval Jewish tradition called this dying for one's faith <em>Kiddush HaShem</em> (“the sanctification of the Name”). Ibn Verga records the steadfastness of these martyrs with reverence, and at times, through his characters, lets show his bewilderment and grief at such terrible suffering. This is the book's heaviest and most holy page.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我们为你的缘故终日被杀;人看我们如将宰的羊……求你兴起帮助我们,凭你的慈爱救赎我们。」</span>
+        <span class="en">“Yet for your sake we face death all day long; we are considered as sheep to be slaughtered... Rise up and help us; rescue us because of your unfailing love.”</span>
+        <cite>《诗篇》44:22, 26 · Psalm 44:22, 26</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>קִדּוּשׁ הַשֵּׁם · Kiddush HaShem</strong>——「使神的名成圣」。这个词出自《利未记》22:32:「我在以色列人中,要被尊为圣 (v'nikdashti)。」对犹太传统而言,宁死不否认神,是对神之名最高的尊荣。耐人寻味的是,新约也用了完全相同的逻辑:主祷文第一句就是「愿人都尊你的名为圣」(太 6:9);而耶书亚自己,正是那位以顺服至死、来「荣耀父的名」的那一位(约 12:28; 17:1)。这些为不肯否认神而死的犹太殉道者,以他们的血,活出了犹太与基督信仰共有的、最深的渴望:神的名,在万有之上被尊为圣。</span>
+        <span class="en"><strong>קִדּוּשׁ הַשֵּׁם · Kiddush HaShem</strong> — “the sanctification of the Name.” The phrase comes from Leviticus 22:32: “I will be hallowed (<em>v'nikdashti</em>) among the children of Israel.” For the Jewish tradition, to die rather than deny God is the highest honor given to God's name. Strikingly, the New Testament uses exactly the same logic: the first line of the Lord's Prayer is “hallowed be your name” (Matt 6:9); and Yeshua himself is the One who “glorified the Father's name” by obedience unto death (John 12:28; 17:1). These Jewish martyrs who died rather than deny God lived out, in their blood, the deepest longing shared by Jewish and Christian faith: that God's name be hallowed above all things.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒站在这些犹太殉道者面前,当俯首。我们必须诚实地承认那令人战栗的事实:许多时候,逼他们「归信或赴死」的,正是举着十字架的人。这是历史最深的悖论与罪:以那位为爱舍命的弥赛亚之名,去逼祂的骨肉之亲为不肯背教而死。这一课呼召我们为这血债深深悔改。同时,它也让我们以全新的敬意,看待犹太人对神之名的忠贞——那份「宁死不否认神」的信,与初代教会众多犹太殉道者的信,本是同一道火。愿我们既为过去哀恸,也被这份至死忠诚的信所激励。</span>
+        <span class="en">Before these Jewish martyrs, Christians must bow their heads. We must honestly admit the shuddering fact: many times, those who forced them to “convert or die” were the very people holding up the cross. This is history's deepest paradox and sin: in the name of the Messiah who gave his life for love, to force his own flesh and blood to die rather than apostatize. This lesson calls us to deep repentance for this debt of blood. At the same time, it lets us look with new reverence at the Jewish people's faithfulness to God's name — that faith of “dying rather than denying God” is the same fire as that of the many Jewish martyrs of the early Church. May we both grieve the past and be stirred by this faith, faithful unto death.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">犹太殉道者宁死不否认神。我的信仰,经得起『归信或赴死』这样的考验吗？</span><span class="en">The Jewish martyrs died rather than deny God. Would my faith withstand a test of “convert or die”?</span></li>
+        <li><span class="zh">逼他们赴死的,常是举着十字架的人。这历史最深的悖论,要求我作出怎样的悔改？</span><span class="en">Those who forced them to die often held up the cross. What repentance does this deepest paradox of history require of me?</span></li>
+        <li><span class="zh">『使神的名成圣』是犹太与基督信仰共有的渴望。我的生命,是在使神的名成圣,还是使它蒙羞？</span><span class="en">“Sanctifying the Name” is a longing shared by Jewish and Christian faith. Does my life hallow God's name, or profane it?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 06  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">被迫归信者——藏在面具下的信</span>
+        <span class="en">The Conversos — Faith Hidden Behind a Mask</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">科恩用专章讨论「被迫归信者与归信」(conversos and conversion)——这也是伊本·维尔加自己最切身的伤口:他极可能就是一位被强迫受洗的犹太人。在西班牙与葡萄牙,成千上万的犹太人在「受洗或被逐/被杀」的逼迫下,表面成了基督徒(conversos / New Christians),许多人却在暗中坚守犹太信仰(被称为 anusim「被强迫者」,或贬称 marranos)。他们活在一个撕裂的处境里:在教堂里画十字,回家却点安息日的灯;永远活在宗教裁判所的猜疑之下,既不被基督徒真正接纳,又与犹太群体被迫分离。伊本·维尔加的书,正是从这个「夹在两个世界之间」的破碎身份里写成的。</span>
+        <span class="en">Cohen devotes a chapter to “conversos and conversion” — also ibn Verga's most personal wound, for he was most likely a forcibly baptized Jew himself. In Spain and Portugal, tens of thousands of Jews, under the demand “be baptized or be expelled/killed,” outwardly became Christians (<em>conversos</em> / New Christians), while many secretly kept the Jewish faith (called <em>anusim</em>, “the coerced,” or the slur <em>marranos</em>). They lived torn: crossing themselves in church, lighting Sabbath lamps at home; forever under the suspicion of the Inquisition, never truly accepted by Christians, yet forcibly cut off from the Jewish community. Ibn Verga's book is written precisely out of this broken identity, “caught between two worlds.”</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「人是看外貌;耶和华是看内心。」</span>
+        <span class="en">“The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.”</span>
+        <cite>《撒母耳记上》16:7 · 1 Samuel 16:7</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אֲנוּסִים · anusim</strong>——「被强迫者」。犹太传统用这个充满怜悯的词,称呼那些<em>在强迫之下</em>外表归信、内心仍忠于神的人——刻意与「自愿背教者」区分开来。这个词背后,是一种深刻而温柔的属灵分辨:神看的不是被刀架在脖子上时口里说了什么,而是内心向谁。《撒母耳记上》16:7「耶和华是看内心」,正是 anusim 全部的盼望所在。当一个体制只凭外在的「受洗记录」就给人贴上「基督徒」的标签,圣经却宣告:那位看透人心的神,认得每一盏在暗中点燃的安息日的灯。</span>
+        <span class="en"><strong>אֲנוּסִים · anusim</strong> — “the coerced.” The Jewish tradition uses this compassion-filled word for those who, <em>under coercion</em>, converted outwardly while remaining inwardly faithful to God — deliberately distinguished from “willing apostates.” Behind the word is a deep, tender spiritual discernment: God looks not at what the mouth says with a blade at the throat, but at where the heart turns. 1 Samuel 16:7, “the LORD looks at the heart,” is the entire hope of the <em>anusim</em>. When a system labels a person “Christian” by an outward “baptismal record” alone, Scripture proclaims that the God who sees through the heart recognizes every Sabbath lamp lit in secret.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">被迫归信者的悲剧,向基督徒提出一个直击核心的问题:信仰,到底是什么?对宗教裁判所而言,「成为基督徒」是一纸受洗证明、一套外在合规。但圣经清楚地宣告,真信仰是「内心」的归向,绝不能被强迫,也无法被强迫——一颗被刀逼出来的「信」,根本不是信。这一课呼召我们悔改:为教会曾把『得人归主』变成『强迫受洗』而悔改。它也提醒我们,真正的福音,永远尊重人心的自由,永远等候那出于自愿的回应。神不要面具下勉强的口头承认;祂要的,是一颗自由地、真实地爱祂的心。</span>
+        <span class="en">The tragedy of the conversos puts a question to Christians that strikes the core: what, in fact, is faith? To the Inquisition, “becoming a Christian” was a baptismal certificate, an outward compliance. But Scripture plainly declares that true faith is the “heart's” turning, which cannot be — and must not be — coerced; a “faith” forced out at knifepoint is no faith at all. This lesson calls us to repent: for the Church's turning of “winning people to the Lord” into “forced baptism.” It also reminds us that the true Gospel always honors the freedom of the heart and always waits for a freely given response. God does not want a reluctant verbal confession behind a mask; he wants a heart that freely and truly loves him.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">对宗教裁判所,信仰是『一纸证明』;对圣经,信仰是『内心的归向』。我心中的『信』,更接近哪一个？</span><span class="en">To the Inquisition, faith was “a certificate”; to Scripture, faith is “the heart's turning.” Which is my own “faith” closer to?</span></li>
+        <li><span class="zh">『耶和华是看内心』是 anusim 全部的盼望。神看得见每一盏暗中点燃的灯——这给我怎样的安慰与提醒？</span><span class="en">“The LORD looks at the heart” was the whole hope of the <em>anusim</em>. God sees every lamp lit in secret — what comfort and warning does that give me?</span></li>
+        <li><span class="zh">真信仰永远尊重人心的自由。教会把『得人归主』变成『强迫受洗』,我该为此作怎样的悔改？</span><span class="en">True faith always honors the heart's freedom. How should I repent of the Church's turning “winning people” into “forced baptism”?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 07  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">神在哪里?——流亡中的信</span>
+        <span class="en">Where Is God? — Faith in Exile</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">科恩强调,《犹大之杖》最深之处,是一部苦难的神学。伊本·维尔加不满足于记录灾难,他像约伯一样,把灾难举到神面前发问:为什么?你的选民,为何承受这无尽的鞭打?他借书中人物之口,探索各种可能的答案——是因以色列自己的罪?是神隐藏的护理?是基督教世界的残暴?他没有给出一个整齐的答案,但他拒绝放弃两样东西:既不放弃对神的信,也不放弃那灼人的发问。这种「在伤口中仍紧抓着神」的信,正是希伯来信仰最深、最诚实的传统。</span>
+        <span class="en">Cohen stresses that at its deepest, <em>Shevet Yehudah</em> is a theology of suffering. Ibn Verga is not content to record catastrophe; like Job, he lifts it before God and asks: why? Your chosen people — why do they bear this endless beating? Through his characters he explores various possible answers — is it Israel's own sin? God's hidden providence? the cruelty of Christendom? He gives no tidy answer, but refuses to give up two things: neither his faith in God nor his burning question. This faith that “still clutches God within the wound” is the deepest and most honest tradition of Hebrew faith.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「耶和华啊,你为什么站在远处?在患难的时候为什么隐藏?……耶和华啊,求你起来!神啊,求你举手,不要忘记困苦人。」</span>
+        <span class="en">“Why, LORD, do you stand far off? Why do you hide yourself in times of trouble?... Arise, LORD! Lift up your hand, O God. Do not forget the helpless.”</span>
+        <cite>《诗篇》10:1, 12 · Psalm 10:1, 12</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>הֶסְתֵּר פָּנִים · hester panim</strong>——「神的隐藏之面」。这是犹太传统用来理解苦难的核心概念之一,出自《申命记》31:17-18:「我必……掩面不顾他们。」它指神在苦难中暂时「隐藏祂的脸」——神并未离开,但祂似乎沉默、似乎遥远。伊本·维尔加的整本书,都活在 <em>hester panim</em> 的张力里:神在哪里?然而,希伯来信仰从不让「隐藏」成为终局。它总与盼望相连:那隐藏的脸,终必再次「向你仰脸」。诗篇里一次次的「你为什么隐藏?」,从来不是无神论的控诉,而是有信者向他确信仍在的神所发的、撕心裂肺的呼求。</span>
+        <span class="en"><strong>הֶסְתֵּר פָּנִים · hester panim</strong> — “the hiding of God's face.” One of the Jewish tradition's core concepts for understanding suffering, from Deuteronomy 31:17-18: “I will hide my face from them.” It names God's temporary “hiding of his face” in suffering — God has not left, but he seems silent, seems far. Ibn Verga's whole book lives in the tension of <em>hester panim</em>: where is God? Yet Hebrew faith never lets “hiding” be the end. It is always bound to hope: that hidden face will surely “turn toward you” again. The Psalms' repeated “why do you hide?” is never an atheist's accusation but the heart-rending cry of a believer to the God he is sure is still there.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">基督徒在十字架上看见这个奥秘的顶点。耶书亚在十字架上喊出的,正是一句希伯来的哀歌——「我的神,我的神,为什么离弃我?」(太 27:46; 诗 22:1) 神并没有回避「神在哪里」的问题;在弥赛亚里,神<em>亲自走进了</em>那「隐藏之面」的黑暗中心。这并不「解释」掉犹太民族所受的苦难——没有任何神学能轻巧地解释它。但它意味着:当伊本·维尔加和无数受苦的犹太人低声问「神在哪里」时,基督徒至少不能用居高临下的答案打发他们。我们只能与哀哭的人同哭,并指向那位同样被弃绝、同样在黑暗中呼喊、却最终带来复活之光的弥赛亚。</span>
+        <span class="en">Christians see the summit of this mystery at the cross. The cry Yeshua utters there is a Hebrew lament — “My God, my God, why have you forsaken me?” (Matt 27:46; Ps 22:1). God did not dodge the question “where is God?”; in the Messiah, God <em>walked himself</em> into the dark center of that “hidden face.” This does not “explain away” the suffering of the Jewish people — no theology explains it lightly. But it means that when ibn Verga and countless suffering Jews whisper “where is God?” a Christian cannot answer from above. We can only weep with those who weep, and point to the Messiah who was likewise forsaken, who likewise cried in the darkness, and who finally brought the light of resurrection.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">伊本·维尔加在伤口中『既不放弃信,也不放弃发问』。我能否同时容纳坚定的信与撕心的质问？</span><span class="en">In his wound, ibn Verga “gave up neither faith nor question.” Can I hold both steadfast faith and heart-rending protest at once?</span></li>
+        <li><span class="zh">『神的隐藏之面』不是终局,总与盼望相连。当神似乎沉默时,我如何持守这份盼望？</span><span class="en">The “hiding of God's face” is not the end; it is always bound to hope. When God seems silent, how do I hold that hope?</span></li>
+        <li><span class="zh">耶书亚在十字架上也喊出『为什么离弃我』。这如何改变我安慰受苦者的方式——从给答案,到同哭？</span><span class="en">Yeshua too cried “why have you forsaken me?” on the cross. How does that change how I comfort the suffering — from giving answers to weeping with them?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 08  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">圭必不离犹大——那未曾折断的杖</span>
+        <span class="en">The Scepter Shall Not Depart — The Rod That Was Not Broken</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholar Says</span>
+      </h3>
+      <p>
+        <span class="zh">走到全书的尽头,我们终于可以回到那个意味深长的书名:《犹大之杖》(Shevet Yehudah)。科恩指出,这书名几乎必然在向《创世记》49:10 致意——雅各对犹大的祝福:「<em>圭必不离犹大</em>,杖必不离他两脚之间,直等细罗 (Shiloh) 来到,万民都必归顺。」一个被驱逐、被鞭打、被迫受洗的民族,给自己满载苦难的书,起了一个出自弥赛亚应许的名字。这是何等的信心:即使在 1492 年最深的黑暗里,这个民族仍在宣告——犹大的「杖」(那应许的王权与弥赛亚)没有、也绝不会折断。</span>
+        <span class="en">Reaching the book's end, we can finally return to its significant title: <em>Shevet Yehudah</em> (The Scepter of Judah). Cohen notes the title almost surely alludes to Genesis 49:10 — Jacob's blessing of Judah: “<em>The scepter shall not depart from Judah</em>, nor the ruler's staff from between his feet, until Shiloh comes, and the obedience of the nations shall be his.” A people expelled, beaten, and forcibly baptized gave their book laden with suffering a name drawn from the messianic promise. What faith: even in the deepest darkness of 1492, this people still proclaimed that the “scepter” of Judah — the promised royal authority and the Messiah — had not, and never would, depart.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「圭必不离犹大,杖必不离他两脚之间,直等细罗(Shiloh)来到,万民都必归顺。」</span>
+        <span class="en">“The scepter will not depart from Judah, nor the ruler's staff from between his feet, until he to whom it belongs shall come and the obedience of the nations shall be his.”</span>
+        <cite>《创世记》49:10 · Genesis 49:10</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>שִׁילֹה · Shiloh</strong>——「细罗」「那应许归属之人」。这个古老而神秘的词,历世历代的犹太与基督教解经者,都把它读作对<em>弥赛亚</em>的指称——那位犹大支派要兴起的、万民要归顺的王。《犹大之杖》的全部张力,都收束在这一个词的盼望里:无论流亡多么漫长、鞭杖多么沉重,犹大的杖之所以「必不离」,是因为它在等候 <em>Shiloh</em> 的来到。对相信耶书亚的我们而言,这正是那从马槽、十字架、空坟墓里向全地敞开的好消息:那位「万民要归顺」的细罗,已经来了;而祂还要再来,使犹大的杖,在荣耀中永不折断。</span>
+        <span class="en"><strong>שִׁילֹה · Shiloh</strong> — “Shiloh,” “the one to whom it belongs.” This ancient, mysterious word, Jewish and Christian interpreters across the ages have read as a reference to the <em>Messiah</em> — the king to rise from the tribe of Judah, to whom the nations will turn. The whole tension of <em>Shevet Yehudah</em> gathers into the hope of this one word: however long the exile, however heavy the rod, the scepter of Judah “shall not depart” because it awaits the coming of <em>Shiloh</em>. For those of us who believe in Yeshua, this is the very good news opened to all the earth from the manger, the cross, the empty tomb: the Shiloh “to whom the nations will turn” has come; and he will come again, that the scepter of Judah may, in glory, never be broken.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这是整份指南的终点,也是它出人意料的盼望。我们走过了驱逐、辩论、焚书、诬告、火刑、被迫归信、与「神在哪里」的呼号——这一切的重量,几乎要把人压垮。然而,这一切苦难的记录,竟以一个弥赛亚的盼望为名。愿这八堂课塑造我们:成为既深深为教会的过去悔改、又满怀「爱我民」之心的人;与那受苦却不折断的犹太民族同站,既诚实地哀恸历史的血债,又满怀盼望地与他们一同等候——等候那一日,犹大的「杖」所盼望的细罗,向以色列全家显明祂自己,万民都在祂里面,弟兄和睦同居,蒙耶和华命定永远的福。</span>
+        <span class="en">This is the end of the whole guide, and its unexpected hope. We have journeyed through expulsion, disputation, the burning of books, libel, the pyre, forced conversion, and the cry “where is God?” — a weight that nearly crushes. And yet this whole record of suffering bears the name of a messianic hope. May these eight lessons shape us into people who deeply repent of the Church's past and are full of <em>Ahavat Ammi</em>; who stand with the Jewish people, beaten yet unbroken, honestly grieving history's debt of blood while waiting in hope alongside them — for the day when the Shiloh whom the scepter of Judah awaited reveals himself to all Israel, and the nations are gathered in him, living together in unity, and the LORD bestows his blessing forevermore.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">一个被驱逐的民族,给苦难之书起了一个出自弥赛亚应许的名字。这是怎样不可摧毁的盼望？</span><span class="en">An expelled people named their book of suffering after a messianic promise. What kind of unbreakable hope is that?</span></li>
+        <li><span class="zh">『圭必不离犹大,直等细罗来到』。对相信耶书亚的我,这节经文如何成为向以色列述说的好消息？</span><span class="en">“The scepter shall not depart from Judah, until Shiloh comes.” For me who believes in Yeshua, how is this verse good news to tell Israel?</span></li>
+        <li><span class="zh">走完这段沉重的历史,我会以什么具体的行动,去『记念』、悔改,并带着盼望去爱犹太民族？</span><span class="en">Having finished this heavy history, what concrete action will I take to remember, repent, and love the Jewish people in hope?</span></li>
+      </ul>
+
+    </div>
+
+    <h2 class="lesson-title" style="text-align:center;border:none;">
+      <span class="zh">为那未曾折断的杖、为合一的盼望祝祷</span>
+      <span class="en">A Blessing for the Unbroken Scepter, and the Hope of Unity</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华使祂的脸光照你,赐恩给你。」<br/><br/>愿你听见了《犹大之杖》里那些受苦的声音,也记住了他们;<br/>愿你为那以『基督』之名所流的无辜之血,哀恸、悔改;<br/>愿你与那受苦却不折断的犹太民族同站,<br/>既诚实地记念,又满怀盼望。<br/><br/>因为圭必不离犹大,<br/>直等那位细罗(Shiloh)来到——<br/>愿你认得祂:就是那位为以色列、也为万民,<br/>使犹大的杖在荣耀中永不折断的弥赛亚,耶书亚。</span>
+      <span class="en">“The LORD make his face shine upon you and be gracious to you.”<br/><br/>May you have heard the suffering voices in the Scepter of Judah, and may you remember them.<br/>May you grieve and repent of the innocent blood shed in the name of “Christ.”<br/>May you stand with the Jewish people, beaten yet unbroken,<br/>remembering honestly, and full of hope.<br/><br/>For the scepter shall not depart from Judah,<br/>until Shiloh comes —<br/>may you know him: the Messiah who, for Israel and for all nations,<br/>keeps the scepter of Judah unbroken in glory: Yeshua.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://www.pennpress.org/9780812248586/a-historian-in-exile/" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《流亡中的史家》原书 · University of Pennsylvania Press</span><span class="en">Get the Book — A Historian in Exile · University of Pennsylvania Press</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>

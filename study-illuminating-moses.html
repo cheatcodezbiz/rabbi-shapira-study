@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《照亮摩西》研习指南 · Illuminating Moses — Study Guide · 妥拉之光</title>
+  <meta name="description" content="A study guide to Jane Beal's Illuminating Moses — eight bilingual lessons tracing the figure of Moses across Jewish and Christian reception from Exodus to the Renaissance, and how the prophet, lawgiver, and mediator points to the Messiah." />
+  <meta name="audio-slug" content="study-illuminating-moses" />
+  <meta property="og:title" content="Illuminating Moses — A Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons through Jane Beal's Illuminating Moses: the reception of Moses across Torah, Prophets, the New Testament, the Fathers, Maimonides, and the contemplative tradition — read with Hebrew eyes." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="Illuminating Moses: A History of Reception from Exodus to the Renaissance — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 摩西的接受史 · 2026 · 5 · 31</span>
+        <span class="en">Study Guide · The Reception of Moses · 2026 · 5 · 31</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">照亮摩西<br/>研习指南</span>
+        <span class="en">Illuminating Moses<br/>A Study Guide</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，跟随简·比尔 (Jane Beal) 主编的这部学术文集，追踪「摩西」这一形象如何被一代代犹太人与基督徒不断「接收」、诠释、效法——从《出埃及记》，经众先知、新约、教父、迈蒙尼德，直到文艺复兴；并看见这位先知、立法者与中保，如何处处指向那位「像摩西的先知」——弥赛亚。</span>
+        <span class="en">Eight lessons following Jane Beal's scholarly volume, tracing how the figure of Moses was received, interpreted, and imitated by generations of Jews and Christians — from Exodus through the Prophets, the New Testament, the Fathers, Maimonides, and on to the Renaissance — and seeing how this prophet, lawgiver, and mediator points to the “prophet like Moses,” the Messiah.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于简·比尔 (Jane Beal) 主编《照亮摩西——从《出埃及记》到文艺复兴的接受史》(Brill, Leiden, 2014)</span>
+        <span class="en">Based on Illuminating Moses: A History of Reception from Exodus to the Renaissance, edited by Jane Beal (Brill, Leiden, 2014)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 55 分钟通读</span><span class="en">~55 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://brill.com/display/title/20771" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书 · Brill</span><span class="en">Get the Book · Brill</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">这份指南陪你读比尔 (Jane Beal) 主编的《照亮摩西》——一部由众多学者合写、追踪摩西「接受史」的文集。它的核心问题朴素却深刻：为什么摩西如此重要？为什么一千多年来，地域、族裔、信仰各异的群体，都不约而同地回到这一个人身上，从他身上汲取律法、解经与教育的典范？比尔指出，摩西的形象「激发了极不相同、甚至彼此冲突的回应」。这本书像一面多棱镜，让我们看见同一位摩西，如何在犹太与基督教的不同传统里，折射出不同却彼此呼应的光。</span>
+      <span class="en">This guide walks you through Jane Beal's <em>Illuminating Moses</em> — a multi-author volume tracing the “reception history” of Moses. Its central question is plain yet profound: why was Moses so important? Why, for over a thousand years, did groups differing widely in geography, ethnicity, and faith all return to this one man, drawing from him a model of law, interpretation, and education? Beal notes that the figure of Moses “inspired very different, even conflicting, responses.” The book is a prism, letting us see how one Moses refracts different yet echoing light across the Jewish and Christian traditions.</span>
+    </p>
+
+    <p>
+      <span class="zh">对相信耶书亚的我们而言，这本书有一份特别的价值。耶稣自己说：「摩西……是指着我写的。」(约 5:46) 整本新约都浸透着摩西——逾越节的羔羊、旷野的铜蛇、西奈的约、那位「像摩西的先知」。要更深地认识弥赛亚，我们就不能绕过摩西。追踪摩西如何被一代代人「照亮」，我们其实是在追踪一束光，它最终聚焦在那位比摩西更大者身上。</span>
+      <span class="en">For those of us who believe in Yeshua, this book holds a special value. Jesus himself said, “Moses... wrote about me” (John 5:46). The whole New Testament is steeped in Moses — the Passover lamb, the bronze serpent in the wilderness, the covenant at Sinai, the “prophet like Moses.” To know the Messiah more deeply, we cannot bypass Moses. Tracing how Moses was “illuminated” by generation after generation, we are in fact tracing a beam of light that finally focuses on the One greater than Moses.</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，沿着摩西被「接收」的历程展开。每一堂遵循同样的五部分节奏：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, following the journey of Moses' reception. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 学者说什么</strong>—— 用书中学者的研究，呈现某一传统如何「接收」摩西；<br/>
+        <strong>② 关键经文</strong>—— 这一接收所扎根的圣经；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，照亮摩西的形象；<br/>
+        <strong>④ 基督徒视角</strong>—— 这位摩西如何指向弥赛亚；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 留给你与小组默想的问题。
+      </span>
+      <span class="en">
+        <strong>① What the Scholars Say</strong> — how a tradition “received” Moses, in the book's research;<br/>
+        <strong>② Key Scripture</strong> — the biblical ground of that reception;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that lights up the figure of Moses;<br/>
+        <strong>④ A Christian Lens</strong> — how this Moses points to the Messiah;<br/>
+        <strong>⑤ Honest Questions</strong> — questions for you and your group to contemplate.
+      </span>
+    </blockquote>
+
+    <p>
+      <span class="zh">一句提醒：这是一段跨越千年的旅程。你不必记住每一位学者、每一个时代。只要带着一个问题往前走就够了——「这位摩西，在向我指着谁？」</span>
+      <span class="en">A word of note: this is a journey across a thousand years. You need not remember every scholar or every era. It is enough to carry one question forward — “to whom is this Moses pointing me?”</span>
+    </p>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 01  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">妥拉中的摩西——先知、立法者、中保</span>
+        <span class="en">Moses in the Torah — Prophet, Lawgiver, Mediator</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">书的第一篇（米勒 Robert Miller）追溯摩西在五经里的多重身份。后世一切对摩西的「接收」，都源于此处那个层次极其丰富的原型：他是被从尼罗河水中救起的婴孩，是在荆棘火中蒙召的牧人，是站在法老面前的解放者，是在西奈领受妥拉的中保，是为悖逆的百姓代求、甚至愿被「从神的册上涂抹」的牧者。学者们指出，正是这种「集多重角色于一身」的丰满，使摩西成为后世取之不尽的典范——立法者效法他、解经者引用他、神秘家默想他。</span>
+        <span class="en">The book's first essay (Robert Miller) traces Moses' many roles across the Pentateuch. Every later “reception” of Moses springs from the richly layered original here: the infant drawn from the Nile, the shepherd called in the burning bush, the liberator standing before Pharaoh, the mediator who receives the Torah at Sinai, the shepherd who intercedes for a rebellious people — willing even to be “blotted out of God's book.” Scholars note that it is exactly this fullness — many roles in one person — that made Moses an inexhaustible model for later ages: lawgivers imitated him, interpreters cited him, mystics contemplated him.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「以后以色列中再没有兴起先知像摩西的;他是耶和华面对面所认识的。」</span>
+        <span class="en">“Since then, no prophet has risen in Israel like Moses, whom the LORD knew face to face.”</span>
+        <cite>《申命记》34:10 · Deuteronomy 34:10</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מֹשֶׁה · Moshe</strong>——「摩西」。法老的女儿给他起这名，说「因我把他从水里拉出来」（出 2:10，<em>mashah</em>「拉出」）。这名字本身就是一则预言：那从水中被「拉出」的孩子，长大后要把整个民族从红海的水中「拉出来」、得拯救。希伯来圣经常常用一个人名字的意思，预示他一生的使命。摩西——「被拉出来的人」「拉人出来的人」——他的名字,已经在低声诉说出埃及与救赎的故事。</span>
+        <span class="en"><strong>מֹשֶׁה · Moshe</strong> — “Moses.” Pharaoh's daughter names him, saying “I drew him out of the water” (Exod 2:10, from <em>mashah</em>, “to draw out”). The name is itself a prophecy: the child “drawn out” of the water would grow up to “draw out” an entire nation through the waters of the Red Sea, to salvation. The Hebrew Bible often uses the meaning of a person's name to foreshadow their life's mission. Moses — “the drawn-out one,” “the one who draws out” — his very name already whispers the story of Exodus and redemption.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">摩西的三重身份——先知、立法者、中保——正是新约用来描绘耶书亚的三个核心镜头，只是每一样都被「成全」到更大。耶稣是那位比摩西更大的<em>先知</em>（祂不只传神的话,祂就是「道」）；是妥拉的<em>成全者</em>（「我来不是要废掉,乃是要成全」）；是那唯一的<em>中保</em>，「在神和人中间,只有一位中保,乃是降世为人的基督耶稣」(提前 2:5)。摩西愿意为百姓被「涂抹」，耶书亚则真的为我们被「涂抹」——担当了我们的罪。看懂了妥拉里的摩西，我们就握住了读懂耶书亚的第一把钥匙。</span>
+        <span class="en">Moses' threefold identity — prophet, lawgiver, mediator — is precisely the three lenses the New Testament uses to portray Yeshua, each one “fulfilled” to something greater. Jesus is the <em>prophet</em> greater than Moses (he does not merely speak God's word; he <em>is</em> the Word); the <em>fulfiller</em> of Torah (“I have not come to abolish but to fulfill”); and the one <em>mediator</em>, “for there is one God and one mediator between God and mankind, the man Christ Jesus” (1 Tim 2:5). Moses was willing to be “blotted out” for the people; Yeshua truly was “blotted out” for us — bearing our sin. To grasp the Moses of the Torah is to hold the first key to reading Yeshua.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">摩西集先知、立法者、中保于一身。这三重角色,如何帮我更立体地认识耶书亚？</span><span class="en">Moses unites prophet, lawgiver, and mediator. How do these three roles help me know Yeshua more fully?</span></li>
+        <li><span class="zh">摩西愿为百姓被『从神册上涂抹』。这种舍己的代求,如何预表了十字架？</span><span class="en">Moses was willing to be “blotted out of God's book” for the people. How does that self-giving intercession foreshadow the cross?</span></li>
+        <li><span class="zh">一个名字('摩西'='被拉出来')就预示了一生的使命。这如何让我更细心地读圣经的细节？</span><span class="en">A single name (“Moses” = “drawn out”) foreshadows a whole mission. How does that make me read Scripture's details more attentively?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 02  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">先知书与圣卷中的摩西——那不灭的标准</span>
+        <span class="en">Moses in the Prophets and Writings — The Enduring Standard</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">第二篇（霍尔姆 Tawny Holm）追踪摩西在希伯来圣经其余部分的「回声」。摩西虽在《申命记》末了去世，他的身影却贯穿整部圣经:先知们以「摩西的律法」为审判与盼望的标准;诗篇记念他在裂口中代求(诗 106:23);玛拉基书在旧约最后呼吁:「你们当记念我仆人摩西的律法」(玛 4:4)。学者指出,摩西成了以色列的「试金石」——衡量君王、先知、百姓的那把尺。整本希伯来圣经,几乎都活在摩西所立之约的张力里:守约则蒙福,背约则受咒。</span>
+        <span class="en">The second essay (Tawny Holm) traces the “echoes” of Moses across the rest of the Hebrew Bible. Though Moses dies at the end of Deuteronomy, his presence runs through the whole Bible: the prophets take “the law of Moses” as the standard of both judgment and hope; the Psalms remember him interceding “in the breach” (Ps 106:23); Malachi closes the Old Testament with the call, “Remember the law of my servant Moses” (Mal 4:4). Scholars note that Moses became Israel's “touchstone” — the measure of kings, prophets, and people. Nearly the whole Hebrew Bible lives within the tension of the covenant Moses mediated: keep it and be blessed, break it and be cursed.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你们当记念我仆人摩西的律法,就是我在何烈山为以色列众人所吩咐他的律例典章。」</span>
+        <span class="en">“Remember the law of my servant Moses, the decrees and laws I gave him at Horeb for all Israel.”</span>
+        <cite>《玛拉基书》4:4 · Malachi 4:4</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>עֶבֶד · eved</strong>——「仆人」。圣经一次次称摩西为「<em>耶和华的仆人 (eved Adonai)</em>」——这是希伯来圣经里最高的尊荣之一。但「仆人」这条线并未停在摩西身上:它流向以赛亚书里那位「受苦的仆人」,最终汇聚在那位「取了奴仆的形像」、「存心顺服以至于死」的弥赛亚身上(腓 2:7-8)。摩西是「耶和华的仆人」,他预表着那位终极的「仆人」。在圣经里,真正的伟大,从来都穿着仆人的衣裳。</span>
+        <span class="en"><strong>עֶבֶד · eved</strong> — “servant.” Scripture repeatedly calls Moses “the <em>servant of the LORD (eved Adonai)</em>” — one of the highest honors in the Hebrew Bible. But the thread of “servant” does not stop at Moses: it flows toward the “suffering servant” of Isaiah, and finally converges on the Messiah who “took the form of a servant” and “humbled himself, becoming obedient to death” (Phil 2:7-8). Moses is “the servant of the LORD,” foreshadowing the ultimate “Servant.” In Scripture, true greatness always wears the clothing of a servant.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">玛拉基书把旧约的最后一页,定格在两个名字上:「记念<em>摩西</em>的律法」,以及「我必差遣先知<em>以利亚</em>到你们那里去」(玛 4:4-5)。而新约的山顶——登山变像——恰恰让<em>摩西与以利亚</em>一同显现在耶稣身边,与祂谈论祂将要在耶路撒冷成就的「出去」(exodos,路 9:31)！整本旧约结束时翘首以待的律法与先知,在那座山上,围绕着耶书亚汇合。摩西指向的那位,终于亲自站在了画面的中央。</span>
+        <span class="en">Malachi freezes the last page of the Old Testament on two names: “Remember the law of <em>Moses</em>,” and “I will send the prophet <em>Elijah</em> to you” (Mal 4:4-5). And the mountaintop of the New Testament — the Transfiguration — has exactly <em>Moses and Elijah</em> appear beside Jesus, speaking with him of the “exodus” (<em>exodos</em>, Luke 9:31) he was about to accomplish at Jerusalem! The Law and the Prophets, on tiptoe at the close of the Old Testament, converge around Yeshua on that mountain. The One Moses pointed to finally stands in the center of the frame himself.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">摩西是衡量以色列的『试金石』。在我的生命里,有没有这样一把来自神话语的、不灭的标准？</span><span class="en">Moses was Israel's “touchstone.” Is there such an enduring standard from God's word in my life?</span></li>
+        <li><span class="zh">『仆人』这条线从摩西流向受苦的仆人弥赛亚。真正的伟大穿着仆人的衣裳——这如何挑战我对『伟大』的定义？</span><span class="en">The “servant” thread runs from Moses to the suffering-servant Messiah. True greatness wears servant's clothing — how does that challenge my definition of greatness?</span></li>
+        <li><span class="zh">登山变像时,摩西与以利亚和耶稣谈论祂的『出去(exodos)』。这如何让我看见旧约与新约的合一？</span><span class="en">At the Transfiguration, Moses and Elijah speak with Jesus of his “exodus.” How does that show me the unity of the Old and New Testaments?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 03  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">「像我的先知」——新约中的摩西</span>
+        <span class="en">“A Prophet Like Me” — Moses in the New Testament</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">第三篇（斯温 Larry Swain）展示摩西如何成为新约的「中心人物」之一。新约处处以摩西为底色:马太福音把耶稣描绘成「新摩西」——同样躲过暴君屠婴、同样从埃及被召出来、同样在山上颁布教导;约翰福音把耶稣比作旷野里被举起的铜蛇(约 3:14);希伯来书则郑重地把耶稣与摩西并列又超越——「他比摩西算是更配多得荣耀……摩西为仆人,基督为儿子」(来 3:3-6)。学者指出,新约作者并非要贬低摩西,恰恰相反,他们是借着这位最受尊崇的先知,来说明耶稣的身份。</span>
+        <span class="en">The third essay (Larry Swain) shows how Moses became a “central figure” of the New Testament. The New Testament is everywhere shaded by Moses: Matthew paints Jesus as a “new Moses” — likewise escaping a tyrant's slaughter of infants, likewise called out of Egypt, likewise delivering teaching on a mountain; John likens Jesus to the bronze serpent lifted up in the wilderness (John 3:14); Hebrews solemnly sets Jesus alongside and above Moses — “Jesus has been found worthy of greater honor than Moses... Moses was faithful as a servant, but Christ as the Son” (Heb 3:3-6). Scholars note the New Testament writers do not belittle Moses; on the contrary, they use this most-revered prophet to explain who Jesus is.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「耶和华你的神要从你们弟兄中间,给你兴起一位先知像我,你们要听从他。」</span>
+        <span class="en">“The LORD your God will raise up for you a prophet like me from among you, from your fellow Israelites. You must listen to him.”</span>
+        <cite>《申命记》18:15 · Deuteronomy 18:15</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>נָבִיא כָּמֹנִי · navi kamoni</strong>——「一位像我的先知」。这是摩西自己留下的、指向未来的应许(申 18:15)。它在以色列中点燃了一个绵延千年的盼望:有一位将要来的、「像摩西」的终极先知。到了耶稣的时代,这盼望已极其炽热——众人追问施洗约翰:「你是那位先知吗?」(约 1:21) 而使徒彼得在圣殿里宣讲时,直接引用这节经文,宣告耶书亚就是摩西所预言的「那位先知」(徒 3:22)。摩西亲手指向了一位要来的、比他更大者——而那位,就是耶书亚。</span>
+        <span class="en"><strong>נָבִיא כָּמֹנִי · navi kamoni</strong> — “a prophet like me.” This is the forward-pointing promise Moses himself left (Deut 18:15). It kindled in Israel a hope spanning a thousand years: a coming, ultimate prophet “like Moses.” By Jesus' day the hope burned hot — people pressed John the Baptist, “Are you the Prophet?” (John 1:21). And when the apostle Peter preached in the Temple, he quoted this very verse, declaring Yeshua to be the “Prophet” Moses foretold (Acts 3:22). Moses himself pointed to a coming One greater than himself — and that One is Yeshua.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课揭示了一个美妙的真理:旧约与新约之间,不是「废除与取代」的关系,而是「应许与成全」的关系。摩西不是被耶稣「取消」了,而是亲手把接力棒递了过去——「你们要听从<em>他</em>」。整本新约对摩西的「接收」,可以浓缩成一句话:那位摩西所盼望、所预言、所预表的「像我的先知」,已经来了。读懂这一点,我们就不会再把「摩西的律法」与「基督的恩典」当作敌人,而会看见它们本是同一个故事的开头与高潮。</span>
+        <span class="en">This lesson reveals a beautiful truth: the relationship between Old and New Testaments is not “abolish and replace” but “promise and fulfillment.” Moses is not “cancelled” by Jesus but hands him the baton — “you must listen to <em>him</em>.” The whole New Testament's reception of Moses can be distilled to one sentence: the “prophet like me” whom Moses hoped for, foretold, and foreshadowed has come. Grasp this, and we will no longer treat “the law of Moses” and “the grace of Christ” as enemies, but see them as the opening and the climax of one and the same story.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">摩西亲手指向一位『像我的先知』,并说『你们要听从他』。我是否在听从那位摩西所预言的先知？</span><span class="en">Moses pointed to “a prophet like me” and said “you must listen to him.” Am I listening to the Prophet Moses foretold?</span></li>
+        <li><span class="zh">旧约与新约是『应许与成全』,而非『废除与取代』。这如何改变我读两约的方式？</span><span class="en">Old and New Testaments are “promise and fulfillment,” not “abolish and replace.” How does that change how I read both?</span></li>
+        <li><span class="zh">马太把耶稣描绘成『新摩西』。还有哪些旧约人物或事件,在新约里指向耶稣？</span><span class="en">Matthew paints Jesus as a “new Moses.” What other Old Testament figures or events point to Jesus in the New?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 04  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">教父手中的摩西——预表与影儿</span>
+        <span class="en">Moses in the Hands of the Fathers — Type and Shadow</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">接下来的几篇（霍尔 Christopher Hall 论教父，库波-查基论逾越节礼仪）展示早期教会如何「接收」摩西:主要透过<em>预表论 (typology)</em>。教父们在摩西的一生里,处处看见基督的「影儿」:逾越节的羔羊预表基督的牺牲;过红海预表洗礼;旷野的吗哪预表生命的粮;磐石出水预表那「磐石就是基督」(林前 10:4);铜蛇被举起预表十字架。逾越节礼仪更把出埃及的整个叙事,编织进了复活节的庆典。对教父而言,摩西的故事不是「过去的旧约」,而是一幅处处闪烁着基督之光的活画。</span>
+        <span class="en">The next essays (Christopher Hall on the Fathers, Cuppo-Csaki on the Paschal liturgy) show how the early Church “received” Moses: chiefly through <em>typology</em>. The Fathers saw the “shadow” of Christ everywhere in Moses' life: the Passover lamb foreshadows Christ's sacrifice; the crossing of the Red Sea foreshadows baptism; the manna in the wilderness foreshadows the bread of life; the water from the rock foreshadows the “rock that was Christ” (1 Cor 10:4); the bronze serpent lifted up foreshadows the cross. The Paschal liturgy wove the entire Exodus narrative into the celebration of Easter. For the Fathers, Moses' story was not “the bygone Old Testament” but a living picture shimmering everywhere with the light of Christ.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「这些事都是我们的鉴戒……他们都从一块磐石喝了灵水,所喝的是出于跟随他们的灵磐石;那磐石就是基督。」</span>
+        <span class="en">“These things occurred as examples for us... they drank from the spiritual rock that accompanied them, and that rock was Christ.”</span>
+        <cite>《哥林多前书》10:6, 4 · 1 Corinthians 10:6, 4</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>צֵל · tzel</strong>——「影子」。希伯来书说,旧约的礼仪「是将来美事的<em>影儿 (skia / tzel)</em>,不是本物的真像」(来 10:1)。这个意象极其精准:影子是真实的,它确实由那物投下;但影子也指向那投影者本身。教父的预表论,本质上就是在「读影子」——他们透过摩西所投下的影子,辨认出那投下影子的实体:基督。这并不贬低旧约;恰恰相反,一个影子越是清晰、越是有形,越说明那投影的实体何等真实、何等荣美。</span>
+        <span class="en"><strong>צֵל · tzel</strong> — “shadow.” Hebrews says the Old Testament rites are “a <em>shadow (skia / tzel)</em> of the good things to come, not the realities themselves” (Heb 10:1). The image is exact: a shadow is real — it is genuinely cast by the object; yet a shadow also points to the one casting it. The Fathers' typology is, at heart, “reading the shadow” — through the shadow Moses casts, discerning the substance that casts it: Christ. This does not diminish the Old Testament; on the contrary, the clearer and more defined a shadow, the more it shows how real and glorious the casting substance is.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">教父的预表论提醒今天的基督徒:整本旧约,都在向耶稣「下沉」。但这里也需要分辨与谦卑。健康的预表论,是顺着新约作者已经划出的线（保罗明说「磐石就是基督」）去看;而不是任凭想象,把每一个细节都强行寓意化。比尔的书把教父这一传统呈现出来,既让我们领受其中的丰盛——旧约处处有基督——也提醒我们,这种读法在历史上有时也滑向了对犹太人「字面之约」的轻看。带着「爱我民」的心读预表,我们既看见影子所指向的基督,也尊重那投下影子的、真实而美好的妥拉本身。</span>
+        <span class="en">The Fathers' typology reminds Christians today that the whole Old Testament “leans toward” Jesus. But discernment and humility are needed here too. Healthy typology follows the lines the New Testament writers already drew (Paul plainly says “the rock was Christ”), rather than allegorizing every detail at will. Beal's book presents this patristic tradition so that we both receive its richness — Christ is everywhere in the Old Testament — and are reminded that this way of reading sometimes slid, historically, into contempt for the Jews' “literal” covenant. Reading typology with a heart of <em>Ahavat Ammi</em>, we see the Christ the shadow points to, while honoring the real and good Torah that casts it.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">逾越节羔羊、过红海、旷野吗哪——这些『影儿』如何加深我对基督的认识？</span><span class="en">The Passover lamb, the Red Sea crossing, the wilderness manna — how do these “shadows” deepen my knowledge of Christ?</span></li>
+        <li><span class="zh">健康的预表论顺着新约的线,而非任凭想象。我如何在『丰盛』与『过度寓意』之间保持分辨？</span><span class="en">Healthy typology follows the New Testament's lines, not free imagination. How do I keep discernment between “richness” and “over-allegorizing”?</span></li>
+        <li><span class="zh">一个清晰的影子,反而证明实体的真实。这如何让我更珍惜、而非轻看旧约？</span><span class="en">A clear shadow proves the reality of the substance. How does that make me treasure, rather than belittle, the Old Testament?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 05  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">至高的先知——迈蒙尼德与中世纪犹太哲学中的摩西</span>
+        <span class="en">The Supreme Prophet — Moses in Medieval Jewish Philosophy</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">克莱塞尔 (Howard Kreisel) 那一篇,带我们进入中世纪犹太哲学如何「接收」摩西,尤其是迈蒙尼德 (Maimonides)。在迈蒙尼德的体系里,摩西被置于一个独一无二的高度:他是「先知中的先知」,是唯一「面对面」、「不用谜语」与神说话的人(民 12:8)。其他先知藉异象、异梦领受,摩西却以最清明、最直接的方式领受;因此唯有摩西所传的妥拉,具有永恒、不可更改的权威。对迈蒙尼德而言,摩西的预言是人类心智所能达到的、与神契合的最高峰。</span>
+        <span class="en">Howard Kreisel's essay leads us into how medieval Jewish philosophy “received” Moses, especially Maimonides. In Maimonides' system, Moses is placed at a unique height: he is “the prophet of prophets,” the only one to speak with God “face to face,” “not in riddles” (Num 12:8). Other prophets received through vision and dream, but Moses received in the clearest, most direct way; therefore only the Torah Moses transmitted carries eternal, unalterable authority. For Maimonides, Moses' prophecy is the highest peak of communion with God the human mind can reach.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我要与他面对面说话,乃是明说,不用谜语,并且他必见我的形像。」</span>
+        <span class="en">“With him I speak face to face, clearly and not in riddles; he sees the form of the LORD.”</span>
+        <cite>《民数记》12:8 · Numbers 12:8</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>פָּנִים אֶל פָּנִים · panim el panim</strong>——「面对面」。这是希伯来圣经形容摩西与神之亲密的核心短语,也是迈蒙尼德推崇摩西的根据。然而,这里藏着一个动人的张力:《出埃及记》33 章里,摩西恳求「求你显出你的荣耀给我看」,神却说「你不能看见我的面,因为人见我的面不能存活」——摩西所能见的,只是神「背后」的荣耀。「面对面」是真实的亲密,却仍隔着一层。这层「未得见的面」,正是整本圣经悬而未决的渴望:几时,人能真正看见神的面？</span>
+        <span class="en"><strong>פָּנִים אֶל פָּנִים · panim el panim</strong> — “face to face.” This is the core phrase for Moses' intimacy with God, and the ground of Maimonides' exaltation of him. Yet here lies a moving tension: in Exodus 33, Moses pleads “show me your glory,” but God says “you cannot see my face, for no one may see me and live” — what Moses could see was only the glory of God's “back.” “Face to face” is real intimacy, yet still through a veil. That “unseen face” is the unresolved longing of the whole Bible: when will a person truly see the face of God?</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">迈蒙尼德把摩西高举为「不可超越的至高先知」——这恰恰让新约的宣告显得格外大胆。希伯来书开篇说:「神既在古时藉着众先知多次多方地晓谕列祖,就在这末世,藉着<em>他儿子</em>晓谕我们。」(来 1:1-2) 摩西是「面对面」却仍隔着帕子的先知;而约翰福音宣告:「从来没有人看见神,只有在父怀里的独生子将他表明出来。」(约 1:18) 摩西渴望却未能得见的「神的面」,在耶书亚里向我们显明了——「人看见了我,就是看见了父」(约 14:9)。那位至高的先知所翘首以待的,正是道成肉身的弥赛亚。</span>
+        <span class="en">Maimonides exalts Moses as “the unsurpassable supreme prophet” — which makes the New Testament's claim all the bolder. Hebrews opens: “In the past God spoke to our ancestors through the prophets at many times and in various ways, but in these last days he has spoken to us by <em>his Son</em>” (Heb 1:1-2). Moses was the “face to face” prophet, yet still behind a veil; and John's Gospel declares, “No one has ever seen God, but the one and only Son... has made him known” (John 1:18). The “face of God” Moses longed for but could not see is shown to us in Yeshua — “whoever has seen me has seen the Father” (John 14:9). The One the supreme prophet awaited is the incarnate Messiah.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">摩西『面对面』却仍只见神的『背后』。这层『未得见的面』,如何成为指向道成肉身的渴望？</span><span class="en">Moses was “face to face” yet saw only God's “back.” How does that “unseen face” become a longing pointing to the Incarnation?</span></li>
+        <li><span class="zh">迈蒙尼德把摩西高举为至高先知。希伯来书却说神『藉着他儿子』说话。这两者如何并存又有别？</span><span class="en">Maimonides exalts Moses as supreme prophet; Hebrews says God speaks “through his Son.” How do these coexist yet differ?</span></li>
+        <li><span class="zh">『人看见了我,就是看见了父』。我是否真的透过耶书亚,认识那位摩西渴望得见的神的面？</span><span class="en">“Whoever has seen me has seen the Father.” Do I truly come to know, through Yeshua, the face of God that Moses longed to see?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 06  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">摩西之死——一个被反复默想的奥秘</span>
+        <span class="en">The Death of Moses — A Mystery Long Contemplated</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">米克瓦 (Rachel Mikva) 与舍恩费尔德 (Devorah Schoenfeld) 的两篇,探讨拉比与中世纪传统如何「接收」摩西之死这一沉重的奥秘。摩西领百姓走了四十年,却因在米利巴水边的过犯,不得进入应许之地,只能从尼波山远远眺望,然后死在摩押地,「葬在……谷中,只是到今日没有人知道他的坟墓」(申 34:6)。这个结局让历世历代的犹太释经者既困惑又着迷:神为何不让祂最忠心的仆人进入安息?拉比们写下大量动人的米大示,想象摩西如何与死亡「讨价还价」、如何不舍、如何最终在神的亲吻中安息。</span>
+        <span class="en">The essays by Rachel Mikva and Devorah Schoenfeld explore how rabbinic and medieval traditions “received” the heavy mystery of Moses' death. Moses led the people for forty years, yet because of his transgression at the waters of Meribah, he was not allowed to enter the Promised Land — only to gaze from afar atop Mount Nebo, then die in Moab, “buried... in the valley, but to this day no one knows where his grave is” (Deut 34:6). This ending both troubled and fascinated Jewish interpreters across the centuries: why would God not let his most faithful servant enter the rest? The rabbis wrote vast and moving midrashim, imagining how Moses “bargained” with death, how he grieved, how at last he was taken in the kiss of God.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「摩西……死在摩押地,正如耶和华所说的。耶和华将他埋葬在……谷中,只是到今日没有人知道他的坟墓。」</span>
+        <span class="en">“And Moses... died there in Moab, as the LORD had said. He buried him in Moab, in the valley... but to this day no one knows where his grave is.”</span>
+        <cite>《申命记》34:5-6 · Deuteronomy 34:5-6</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מְנוּחָה · menuchah</strong>——「安息」。摩西一生都在寻求那「安息之地」,却未能亲身进入。希伯来书拾起了这个主题:摩西所给的「安息」(进入迦南)只是预表,真正的、终极的「安息」尚在前头——「这样看来,必另有一安息日的安息,为神的子民存留」(来 4:9)。摩西的故事因此变成一个深刻的盼望:连最伟大的先知,也需要一位<em>带来真安息</em>的人。约书亚(Yehoshua,与「耶书亚」同名)领百姓进了那地的影子;而真正的约书亚——耶书亚——要领神所有的子民,进入那永远的安息。</span>
+        <span class="en"><strong>מְנוּחָה · menuchah</strong> — “rest.” All his life Moses sought that “place of rest,” yet could not enter it himself. Hebrews takes up the theme: the “rest” Moses gave (entering Canaan) was only a foreshadowing; the true, ultimate “rest” still lies ahead — “there remains, then, a Sabbath-rest for the people of God” (Heb 4:9). Moses' story thus becomes a profound hope: even the greatest prophet needed One who would <em>bring the true rest</em>. Joshua (<em>Yehoshua</em>, the same name as “Yeshua”) led the people into the shadow of that land; and the true Joshua — Yeshua — would lead all God's people into the eternal rest.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">摩西在尼波山的眺望,是整本圣经最令人心碎也最有盼望的画面之一。心碎,是因为他望得见、却进不去;有盼望,是因为这恰恰说明:旧约本身,无法把人领进那最终的应许。律法是美善的引路人,却不能成为终点。它把我们带到约旦河边,然后郑重地把接力棒,交给那位与摩西同站在变像山上、要成就更大「出去」的耶书亚。摩西未葬之地无人知晓,但那位为我们死、又复活的弥赛亚,祂空的坟墓,全世界都知道。</span>
+        <span class="en">Moses' gaze from Mount Nebo is among the most heartbreaking yet hope-filled images in all of Scripture. Heartbreaking, because he could see but not enter; hope-filled, because it shows precisely this: the Old Testament itself cannot bring people into the final promise. The Law is a good guide, but it cannot be the destination. It brings us to the bank of the Jordan, then solemnly hands the baton to the Yeshua who stood with Moses on the mount of Transfiguration and would accomplish the greater “exodus.” No one knows the place of Moses' grave; but the empty tomb of the Messiah who died and rose for us — the whole world knows.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">摩西望得见应许之地,却进不去。这如何说明律法是『引路人』而非『终点』？</span><span class="en">Moses could see the Promised Land but not enter it. How does that show the Law is a “guide,” not the “destination”?</span></li>
+        <li><span class="zh">约书亚(Yehoshua)与耶书亚同名,都『领人进入安息』。这个名字的呼应,对我意味着什么？</span><span class="en">Joshua (Yehoshua) shares the name Yeshua, and both “lead into rest.” What does that echo of names mean to me?</span></li>
+        <li><span class="zh">摩西的坟墓无人知晓,弥赛亚的空坟全世界都知道。这个对比,给了我怎样的盼望？</span><span class="en">No one knows Moses' grave; the whole world knows the Messiah's empty tomb. What hope does that contrast give me?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 07  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">发光的脸与帕子——西奈与默观的攀登</span>
+        <span class="en">The Shining Face and the Veil — Sinai and the Contemplative Ascent</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">比尔自己那一篇（论基督教默观传统）展示:摩西攀登西奈、进入云中与神相会、脸面因此发光——成为后世神秘家与默观者眼中,「与神联合」的至高典范。从尼撒的贵格利,到中世纪的神秘家,再到亚维拉的德兰,他们一次次回到摩西的「黑暗中的攀登」(进入西奈山顶那遮蔽的密云),把它读作灵魂向神攀升、最终在「神圣的黑暗」中与神相遇、相爱的图像。摩西在这里不再只是立法者,而是「默观的先驱」——那位敢于进入神临在之云的人。</span>
+        <span class="en">Beal's own essay (on the Christian contemplative tradition) shows how Moses' ascent of Sinai — entering the cloud to meet God, his face shining as a result — became, for later mystics and contemplatives, the supreme model of “union with God.” From Gregory of Nyssa, through the medieval mystics, to Teresa of Avila, they returned again and again to Moses' “ascent into the darkness” (entering the thick cloud at Sinai's summit), reading it as an image of the soul climbing toward God and meeting — and loving — him at last in the “divine darkness.” Here Moses is no longer merely the lawgiver but the “pioneer of contemplation” — the one who dared enter the cloud of God's presence.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「摩西手里拿着两块法版下西奈山的时候,不知道自己的面皮因耶和华和他说话就发了光。」</span>
+        <span class="en">“When Moses came down from Mount Sinai with the two tablets... he was not aware that his face was radiant because he had spoken with the LORD.”</span>
+        <cite>《出埃及记》34:29 · Exodus 34:29</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>קָרַן · qaran</strong>——「发光 / 放射光芒」。摩西的脸「发光」,以致他不得不蒙上帕子(出 34:33)。保罗在《哥林多后书》3 章,正是以这个「帕子」为核心,作了一篇精彩的解读:摩西脸上那渐渐褪去的荣光,需要帕子遮盖;但在基督里,帕子被除去了——「我们众人既然敞着脸得以看见主的荣光,好像从镜子里返照,就变成主的形状,荣上加荣」(林后 3:18)。摩西的荣光是借来的、会褪的、要遮盖的;基督里的荣光是内住的、长存的、且要把我们也改变成祂的样式。</span>
+        <span class="en"><strong>קָרַן · qaran</strong> — “to shine / send out rays.” Moses' face “shone,” so that he had to cover it with a veil (Exod 34:33). In 2 Corinthians 3, Paul makes a brilliant interpretation centered on that very “veil”: the fading glory on Moses' face needed a veil to cover it; but in the Messiah, the veil is removed — “we all, with unveiled faces, contemplating the Lord's glory, are being transformed into his image with ever-increasing glory” (2 Cor 3:18). Moses' glory was borrowed, fading, and to be covered; the glory in the Messiah is indwelling, lasting, and transforms us, too, into his likeness.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课把我们从「读关于神的知识」,带向「被神的荣光改变」。默观传统提醒我们:认识神,终极而言不是头脑的攀登,而是脸面的转变——是「敞着脸」,让那位曾向摩西显现、又在耶书亚里完全彰显的荣光,一点一点地把我们「变成主的形状」。摩西从山上下来,脸上带着神的光;而藉着内住的圣灵,每一个仰望基督的人,也都在领受这同一道光,直到那荣光不再需要任何帕子,因为我们要「面对面」地见祂(林前 13:12)——成全摩西一生最深的渴望。</span>
+        <span class="en">This lesson carries us from “reading knowledge about God” to “being changed by God's glory.” The contemplative tradition reminds us that, ultimately, knowing God is not an ascent of the mind but a transformation of the face — “with unveiled faces,” letting the glory that appeared to Moses and is fully revealed in Yeshua change us, little by little, “into his image.” Moses came down the mountain with God's light on his face; and through the indwelling Spirit, everyone who gazes on Christ receives that same light, until the glory needs no veil at all, for we will see him “face to face” (1 Cor 13:12) — fulfilling Moses' deepest lifelong longing.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">摩西的荣光会褪、需遮盖;基督里的荣光长存、要改变我。我的脸,正被什么光所照亮？</span><span class="en">Moses' glory faded and was veiled; the glory in Christ lasts and changes me. By what light is my face being illumined?</span></li>
+        <li><span class="zh">认识神是『脸面的转变』,而非只是『头脑的攀登』。我的属灵生活,更偏重哪一边？</span><span class="en">Knowing God is a “transformation of the face,” not merely an “ascent of the mind.” Which does my spiritual life lean toward?</span></li>
+        <li><span class="zh">『敞着脸得以看见主的荣光』——我愿意除去哪些『帕子』,好让基督的荣光改变我？</span><span class="en">“With unveiled faces contemplating the Lord's glory” — what “veils” am I willing to remove so Christ's glory can change me?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 08  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">比摩西更大者——一束光的归宿</span>
+        <span class="en">One Greater Than Moses — Where the Light Comes Home</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">从中世纪的经院神学（阿奎那把摩西尊为「犹太人的首席教师」）,到中古英语的神秘剧,再到文艺复兴诗人、政治家、艺术家以摩西为「典范或刻板印象」的种种运用——比尔的书,在终章把这条千年长河汇拢。摩西的形象,如此丰富、如此有弹性,以致每一个时代、每一个群体,都能在他身上照见自己的需要与盼望。但贯穿这一切「接收」的,始终有一条隐秘的主线:几乎每一个认真对待摩西的人,最终都被他引向一个「超越他」的盼望——盼望一位更大的先知、更真的中保、更终极的安息、更不褪的荣光。</span>
+        <span class="en">From medieval scholasticism (Aquinas honoring Moses as “the chief teacher of the Jews”), through the Middle English mystery plays, to the Renaissance poets, politicians, and artists who used Moses as “type or stereotype” — Beal's book, in its final chapters, gathers this thousand-year river. The figure of Moses is so rich and so elastic that every age and group could see its own needs and hopes reflected in him. Yet through all this “reception” runs one hidden main line: nearly everyone who took Moses seriously was finally led by him to a hope that “surpassed him” — the hope of a greater prophet, a truer mediator, a more ultimate rest, a more unfading glory.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「律法本是藉着摩西传的;恩典和真理都是由耶稣基督来的。」</span>
+        <span class="en">“For the law was given through Moses; grace and truth came through Jesus Christ.”</span>
+        <cite>《约翰福音》1:17 · John 1:17</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>גֹּאֵל · go'el</strong>——「救赎主、至近的亲属」。摩西是以色列伟大的<em>解放者</em>,把百姓从为奴之地领出来;但希伯来圣经盼望的,是一位更终极的 <em>go'el</em>——一位以血缘之亲的身份,付上代价,把人从死亡与罪的捆绑中赎回的救赎主。整本《照亮摩西》所追踪的那束光,最终聚焦于此:摩西所是、所行、所预表的一切——先知、立法者、中保、解放者——都在那位「比摩西更大者」身上得了成全。律法藉摩西<em>传</em>来,恩典和真理藉耶书亚<em>来到</em>。摩西是那根指向太阳的手指;耶书亚是太阳本身。</span>
+        <span class="en"><strong>גֹּאֵל · go'el</strong> — “redeemer, near kinsman.” Moses is Israel's great <em>liberator</em>, leading the people out of the land of slavery; but what the Hebrew Bible hopes for is a more ultimate <em>go'el</em> — a Redeemer who, as a blood-kinsman, pays the price to ransom people from the bondage of death and sin. The beam of light traced through all of <em>Illuminating Moses</em> finally focuses here: all that Moses was, did, and foreshadowed — prophet, lawgiver, mediator, liberator — is fulfilled in the One “greater than Moses.” The law was <em>given</em> through Moses; grace and truth <em>came</em> through Yeshua. Moses is the finger pointing to the sun; Yeshua is the sun itself.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这是整份指南的终点,也是一束光的归宿。我们跟随摩西的形象,走过了妥拉、先知、新约、教父、迈蒙尼德、默观传统与文艺复兴——而在每一站,他都在向前方指。愿这八堂课塑造我们:既深深敬重那位「耶和华面对面所认识」的伟大先知摩西,又清楚地看见,他一生的全部荣光,都是为了把我们引向那位比他更大的弥赛亚耶书亚;并带着「爱我民」之心,与那承载着摩西、承载着妥拉的犹太民族同行,一起翘首等候那一日——当摩西所渴望得见的神的面,向万民完全显明,众人都要面对面地认识祂。</span>
+        <span class="en">This is the end of the whole guide, and where a beam of light comes home. Following the figure of Moses, we have journeyed through Torah, Prophets, the New Testament, the Fathers, Maimonides, the contemplative tradition, and the Renaissance — and at every station he points ahead. May these eight lessons shape us to deeply honor the great prophet Moses, “whom the LORD knew face to face,” and to see clearly that all his lifelong glory was to lead us to the Messiah greater than himself, Yeshua; and, with a heart of <em>Ahavat Ammi</em>, to walk alongside the Jewish people who carry Moses and the Torah, awaiting together the day when the face of God that Moses longed to see is fully revealed to all peoples, and all will know him face to face.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『律法藉摩西传,恩典真理藉耶稣来』——这节经文如何总括了整本书的旅程？</span><span class="en">“The law was given through Moses; grace and truth came through Jesus” — how does this verse sum up the whole book's journey?</span></li>
+        <li><span class="zh">几乎每个认真对待摩西的人,都被他引向一个『超越他』的盼望。摩西把我引向了谁？</span><span class="en">Nearly everyone who took Moses seriously was led to a hope “beyond him.” To whom does Moses lead me?</span></li>
+        <li><span class="zh">『摩西是指向太阳的手指,耶书亚是太阳本身』。我是否有时停在了手指上,而忘了仰望太阳？</span><span class="en">“Moses is the finger pointing to the sun; Yeshua is the sun.” Do I sometimes stop at the finger and forget to look up at the sun?</span></li>
+      </ul>
+
+    </div>
+
+    <h2 class="lesson-title" style="text-align:center;border:none;">
+      <span class="zh">为那比摩西更大者祝祷</span>
+      <span class="en">A Blessing for the One Greater Than Moses</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华向你仰脸,赐你平安。」<br/><br/>愿你跟随过摩西被照亮的千年长河,<br/>就更清楚地看见那束光的归宿——<br/>那位比摩西更大的先知、更真的中保、<br/>那位带来真安息、不褪荣光的弥赛亚:<br/>耶书亚 (Yeshua)。<br/><br/>律法藉摩西传来,<br/>恩典和真理藉耶书亚来到;<br/>愿你既敬重那指路的手指,<br/>又敞着脸,被那太阳的荣光,<br/>一点一点改变成主的形状。</span>
+      <span class="en">“The LORD lift up his countenance upon you, and give you peace.”<br/><br/>Having followed the thousand-year river in which Moses was illumined,<br/>may you see more clearly where the light comes home —<br/>the prophet greater than Moses, the truer mediator,<br/>the Messiah who brings the true rest and the unfading glory:<br/>Yeshua.<br/><br/>The law was given through Moses,<br/>grace and truth came through Yeshua;<br/>may you honor the finger that points the way,<br/>and, with unveiled face, be changed into his image,<br/>by the glory of that Sun, from glory to glory.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://brill.com/display/title/20771" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《照亮摩西》原书 · Brill</span><span class="en">Get the Book — Illuminating Moses · Brill</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>

@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《犹太、基督与伊斯兰传统中的慈善》研习指南 · Charity in the Abrahamic Traditions — Study Guide · 妥拉之光</title>
+  <meta name="description" content="A study guide to Charity in Jewish, Christian, and Islamic Traditions — eight bilingual lessons on tzedakah, caritas, and sadaqa, on giving as justice and as worship, read with Hebrew eyes and a Christian lens." />
+  <meta name="audio-slug" content="study-charity-traditions" />
+  <meta property="og:title" content="Charity in Jewish, Christian, and Islamic Traditions — A Study Guide" />
+  <meta property="og:description" content="Eight bilingual lessons on charity across the Abrahamic faiths — tzedakah as justice, caritas as love, sadaqa as sincerity — and the God who gave to us first." />
+  <meta property="og:type" content="article" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    /* ── Study guide lesson modules ─────────────── */
+    .lesson-block {
+      margin: 3.5rem 0;
+      padding: 2rem 2.2rem 2.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 1px 8px rgba(26,39,68,0.05);
+      position: relative;
+    }
+    .lesson-num {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+    }
+    html[data-lang="en"] .lesson-num { font-family: 'EB Garamond', serif; font-size: 0.95rem; letter-spacing: 0.18em; font-style: italic; }
+    .lesson-title {
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem) !important;
+      font-weight: 600;
+      color: var(--navy) !important;
+      letter-spacing: 0.02em;
+      margin: 0.2rem 0 1.6rem !important;
+      padding-bottom: 0.7rem !important;
+      border-bottom: 2px solid var(--gold) !important;
+      line-height: 1.35;
+    }
+    html[data-lang="en"] .lesson-title { font-family: 'EB Garamond', serif; font-size: clamp(1.55rem, 2.6vw, 2rem) !important; }
+    .lesson-step {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin: 1.7rem 0 0.6rem !important;
+      font-weight: 500;
+      text-transform: none;
+    }
+    html[data-lang="en"] .lesson-step { font-family: 'EB Garamond', serif; font-size: 1rem; letter-spacing: 0.06em; font-style: italic; }
+    .lesson-questions {
+      list-style: none;
+      padding: 1.2rem 1.4rem;
+      margin: 0.8rem 0 0;
+      background: var(--parch);
+      border-radius: 8px;
+    }
+    .lesson-questions li {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.6rem;
+      border-bottom: 1px dashed rgba(184,149,42,0.25);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink);
+    }
+    .lesson-questions li:last-child { border-bottom: none; }
+    .lesson-questions li::before {
+      content: '?';
+      position: absolute; left: 0; top: 0.6rem;
+      width: 1.1rem; height: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      line-height: 1;
+    }
+    html[data-lang="en"] .lesson-questions li { font-family: 'EB Garamond', serif; font-size: 1.06rem; }
+
+    @media (max-width: 768px) {
+      .lesson-block { padding: 1.4rem 1.2rem 1.5rem; margin: 2.2rem 0; }
+      .lesson-questions { padding: 0.9rem 1rem; }
+      .lesson-questions li { padding-left: 1.4rem; }
+    }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books" class="active"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/remnant.jpg" alt="Charity in Jewish, Christian, and Islamic Traditions — Study Guide" class="article-cover-img" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <div class="article-tag-line">
+        <span class="zh">研习指南 · 施予的灵性 · 2026 · 5 · 31</span>
+        <span class="en">Study Guide · The Spirituality of Giving · 2026 · 5 · 31</span>
+      </div>
+      <h1 class="article-headline">
+        <span class="zh">犹太、基督与伊斯兰<br/>传统中的慈善</span>
+        <span class="en">Charity in the<br/>Abrahamic Traditions</span>
+      </h1>
+      <p class="article-deck">
+        <span class="zh">八堂课程，跟随一部跨学科文集，比较慈善（施予）在犹太、基督、伊斯兰三大传统中的根基与实践——犹太的「公义之施」(tzedakah)、基督的「爱」(caritas)、伊斯兰的「真诚之施」(sadaqa)。透过「施予」这扇窗，我们窥见每一个民族最深的价值，也看见那位先把万有白白赐给我们的神。</span>
+        <span class="en">Eight lessons following an interdisciplinary volume comparing charity (giving) across the Jewish, Christian, and Islamic traditions — Jewish <em>tzedakah</em> (giving as justice), Christian <em>caritas</em> (love), and Islamic <em>sadaqa</em> (giving as sincerity). Through the window of “giving,” we glimpse a people's deepest values — and see the God who first gave us all things freely.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">基于茱莉亚·利伯曼 (Julia R. Lieberman) 等编《犹太、基督与伊斯兰传统中的慈善》(Lexington / Rowman & Littlefield)</span>
+        <span class="en">Based on Charity in Jewish, Christian, and Islamic Traditions, edited by Julia R. Lieberman, Michal Jan Rozbicki, and Thomas Adam (Lexington / Rowman & Littlefield)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span><span class="zh">8 堂课程</span><span class="en">8 Lessons</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">约 55 分钟通读</span><span class="en">~55 min read-through</span></span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">自助 / 小组皆宜</span><span class="en">Self-paced or small group</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://rowman.com/ISBN/9781498560856" target="_blank" rel="noopener" class="meta-watch">
+      📖 <span class="zh">购买原书 · Rowman & Littlefield</span><span class="en">Get the Book · Rowman &amp; Littlefield</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to study guide">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+    <p class="article-lead">
+      <span class="zh">这份指南陪你读一部跨学科的学术文集,它把「慈善」(charity / 施予) 当作一面棱镜,折射出犹太、基督、伊斯兰三大传统最深的价值。编者指出,慈善是一扇罕有的窗:一个民族<em>如何施予、为何施予、施予给谁</em>,几乎透露出它对神、对人、对正义的全部信念。这本书既探讨慈善背后的「理论难题」(施予真的纯粹吗?还是隐藏着权力与「区隔他者」?),也细致地呈现三大传统在历史中真实的施予实践。对相信耶书亚的我们而言,这是一次宝贵的机会:重新发现,「施予」在圣经里,从来不是「行有余力的善举」,而是信仰的心跳本身。</span>
+      <span class="en">This guide walks you through an interdisciplinary scholarly volume that treats “charity” (giving) as a prism, refracting the deepest values of the Jewish, Christian, and Islamic traditions. The editors note that charity is a rare window: <em>how a people gives, why it gives, and to whom</em> reveals almost the whole of its convictions about God, humanity, and justice. The book explores both the “theoretical puzzles” behind charity (is giving ever pure? or does it hide power and the “othering” of the recipient?) and the real historical practices of giving across the three traditions. For those of us who believe in Yeshua, this is a precious chance to rediscover that “giving,” in Scripture, was never an “optional good deed for the well-off,” but the very heartbeat of faith.</span>
+    </p>
+
+    <p>
+      <span class="zh">这本书有一个对基督徒尤其宝贵的发现:在希伯来语里,「慈善」这个词是 <em>tzedakah</em>——而它的字根意思是「公义、公正」。也就是说,在犹太传统里,接济穷人根本不是「可做可不做的好心」,而是「公义的本分」——是把<em>本就属于穷人的</em>那一份还给他们。这个洞见,会彻底改变我们对「施予」的理解。更奇妙的是:阿拉伯语的「施予」<em>sadaqa</em>,与希伯来语的 <em>tzedakah</em>,来自同一个闪族语字根。三大信仰对「施予」的理解,在最深处,共享着同一条「公义」的根。</span>
+      <span class="en">This book holds a discovery especially precious for Christians: in Hebrew, the word for “charity” is <em>tzedakah</em> — and its root means “righteousness, justice.” That is, in the Jewish tradition, helping the poor is not “optional kindness” but “an obligation of justice” — returning to the poor the portion that <em>already belongs</em> to them. This insight transforms our whole understanding of “giving.” More remarkably still: the Arabic word for giving, <em>sadaqa</em>, comes from the same Semitic root as Hebrew <em>tzedakah</em>. At their deepest, the three faiths' understanding of “giving” shares one and the same root of “justice.”</span>
+    </p>
+
+    <p>
+      <span class="zh">本指南共 <strong>八堂课</strong>，循着书中的理论与实践展开。每一堂遵循同样的五部分节奏：</span>
+      <span class="en">The guide is structured as <strong>eight lessons</strong>, following the book's theory and practice. Every lesson follows the same five-part rhythm:</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">
+        <strong>① 学者说什么</strong>—— 用书中学者的研究，呈现某一传统的施予；<br/>
+        <strong>② 关键经文</strong>—— 与之相关的圣经；<br/>
+        <strong>③ 希伯来语之眼</strong>—— 一个关键的希伯来词，照亮「施予」的真义；<br/>
+        <strong>④ 基督徒视角</strong>—— 这如何指向那位先施予我们的神；<br/>
+        <strong>⑤ 诚实的提问</strong>—— 留给你与小组省察的问题。
+      </span>
+      <span class="en">
+        <strong>① What the Scholars Say</strong> — a tradition's giving, in the book's research;<br/>
+        <strong>② Key Scripture</strong> — the related biblical text;<br/>
+        <strong>③ Through Hebrew Eyes</strong> — one Hebrew word that lights up the true sense of “giving”;<br/>
+        <strong>④ A Christian Lens</strong> — how this points to the God who gave to us first;<br/>
+        <strong>⑤ Honest Questions</strong> — questions for you and your group to examine.
+      </span>
+    </blockquote>
+
+    <p>
+      <span class="zh">一句提醒:这本书会挑战我们,把「慈善」从「有余力时的施舍」,重新理解为「信仰的核心要求」。愿这八堂课不只更新你的头脑,更松开你的手与心。</span>
+      <span class="en">A word of note: this book will challenge us to relearn “charity” from “almsgiving when we have a surplus” into “a central demand of faith.” May these eight lessons renew not only your mind but loosen your hands and heart.</span>
+    </p>
+
+    <hr class="article-rule" />
+
+    <!-- ─────────────  LESSON 01  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">א &nbsp;·&nbsp; 01</div>
+      <h2 class="lesson-title">
+        <span class="zh">施予——窥见一个民族灵魂的窗</span>
+        <span class="en">Giving — A Window into a People's Soul</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">编者在导论中提出本书的核心方法:把「慈善」当作一面棱镜。他们写道,慈善的种种观念,「是窥见一个民族共有价值模型的窗口」;一个社会<em>如何</em>对待它最软弱的成员,几乎暴露出它关于神、人、正义的全部信念。比较三大传统的施予,不是为了评判高下,而是为了在彼此的映照中,更深地理解每一个传统——以及理解「施予」这一人类行为本身,何以承载着如此沉重的神圣意义。</span>
+        <span class="en">In the introduction, the editors propose the book's core method: treating “charity” as a prism. They write that concepts of charity “serve as a window into a people's shared models of cultural value”; how a society treats its weakest members lays bare almost the whole of its convictions about God, humanity, and justice. Comparing the giving of the three traditions is not to rank them but, in mutual reflection, to understand each more deeply — and to grasp why the human act of “giving” itself carries such weighty sacred meaning.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「在神我们的父面前,那清洁没有玷污的虔诚,就是看顾在患难中的孤儿寡妇。」</span>
+        <span class="en">“Religion that God our Father accepts as pure and faultless is this: to look after orphans and widows in their distress.”</span>
+        <cite>《雅各书》1:27 · James 1:27</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>צְדָקָה · tzedakah</strong>——「公义 / 慈善」。这是整本书、也是整个犹太施予观的钥匙词。同一个 <em>tzedakah</em>,既指「公义、公正」,又指「接济穷人」。这绝非巧合:在希伯来思想里,帮助穷人<em>就是</em>行公义。把多余的施舍给人,不是慷慨的恩赐,而是归还公义的亏欠——因为大地与其上的丰盛本属于神,而神早已命定其中有一份是留给穷人的。当「慈善」与「公义」共用一个词,整个施予的逻辑就被翻转了:施予不是「我大方」,而是「我守义」。</span>
+        <span class="en"><strong>צְדָקָה · tzedakah</strong> — “righteousness / charity.” This is the key word of the whole book and of the entire Jewish view of giving. The one word <em>tzedakah</em> means both “righteousness, justice” and “helping the poor.” This is no coincidence: in Hebrew thought, to help the poor <em>is</em> to do justice. Giving away one's surplus is not a generous gift but the repayment of a debt of justice — for the earth and its fullness belong to God, who long ago decreed that a portion within it is set aside for the poor. When “charity” and “justice” share one word, the whole logic of giving is overturned: giving is not “I am generous,” but “I am keeping justice.”</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这个犹太式的洞见,深深扎根于整本圣经,也直接塑造了新约的信仰。雅各书说,「清洁没有玷污的虔诚」不是某种属灵的高言大智,而是「看顾在患难中的孤儿寡妇」——这正是先知阿摩司、以赛亚的一贯呼声:神厌恶那有敬拜之名、却无公义之实的宗教。耶书亚也宣告,末日万民受审,凭据竟是「我饿了,你们给我吃……这些事你们既作在我这弟兄中一个最小的身上,就是作在我身上了」(太 25:35-40)。对神而言,我们如何对待最软弱的人,就是我们如何对待祂。</span>
+        <span class="en">This Jewish insight is rooted deep in all of Scripture and directly shaped the faith of the New Testament. James says that “pure and faultless religion” is not some lofty spiritual wisdom but “looking after orphans and widows in their distress” — the constant cry of the prophets Amos and Isaiah: God loathes a religion that bears the name of worship but lacks the substance of justice. Yeshua declares that at the final judgment of all nations, the evidence is “I was hungry and you gave me something to eat... whatever you did for one of the least of these brothers of mine, you did for me” (Matt 25:35-40). To God, how we treat the weakest is how we treat him.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『慈善』与『公义』共用一个词。这如何翻转我对施予的理解——从『我大方』到『我守义』？</span><span class="en">“Charity” and “justice” share one word. How does that overturn my view of giving — from “I am generous” to “I am keeping justice”?</span></li>
+        <li><span class="zh">雅各说『清洁的虔诚』就是看顾孤儿寡妇。我的『虔诚』,有没有这清洁的实质？</span><span class="en">James says “pure religion” is caring for orphans and widows. Does my “devotion” have that pure substance?</span></li>
+        <li><span class="zh">『作在最小的身上,就是作在我身上』。这如何改变我看待身边最软弱之人的眼光？</span><span class="en">“Whatever you did for the least, you did for me.” How does that change how I see the weakest people around me?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 02  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ב &nbsp;·&nbsp; 02</div>
+      <h2 class="lesson-title">
+        <span class="zh">公义之施——犹太传统的 Tzedakah</span>
+        <span class="en">Giving as Justice — The Jewish Tzedakah</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">书中关于犹太慈善的篇章（如论伦敦的西班牙葡萄牙犹太社群的 sedaca,以及从「慈善」到「慈善事业」的转变）展现了一个高度发达、组织严密的施予体系。犹太社群把 <em>tzedakah</em> 制度化为一种集体责任:有专门的基金、专职的管理者、细致的分配规则。迈蒙尼德更列出著名的「施予的八个层级」,从最低的「不情愿地给」,到最高的「帮一个穷人自立、使他不再需要施予」。这套体系背后的信念是:接济穷人不是个人随心的善举,而是整个信仰群体必须共同承担的、神圣的义务。</span>
+        <span class="en">The book's chapters on Jewish charity (such as the <em>sedaca</em> of London's Spanish-Portuguese Jewish community, and the shift “from charity to philanthropy”) reveal a highly developed, tightly organized system of giving. Jewish communities institutionalized <em>tzedakah</em> as a collective responsibility: dedicated funds, professional administrators, detailed rules of distribution. Maimonides famously listed the “eight levels of giving,” from the lowest — “giving grudgingly” — to the highest — “helping a poor person become self-sufficient so that he no longer needs charity.” The conviction behind this system: helping the poor is not an individual's whim of kindness, but a sacred obligation the whole community of faith must bear together.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「在你弟兄中,若有一个穷人……你总要向他松开手,照他所缺乏的借给他。」</span>
+        <span class="en">“If anyone is poor among your fellow Israelites... do not be hardhearted or tightfisted toward them. Rather, be openhanded and freely lend them whatever they need.”</span>
+        <cite>《申命记》15:7-8 · Deuteronomy 15:7-8</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>מַעֲשֵׂר · ma'aser</strong>——「十分之一、什一奉献」。妥拉规定以色列要拿出土产的十分之一,其中特别有一份是给「寄居的、孤儿、寡妇」的(申 14:28-29)。此外还有「拾遗」的律法:收割时不可割尽田角,掉落的不可拾取,要留给穷人(利 19:9-10)。这些律法启示出一个深刻的经济神学:在神的世界里,穷人对你的产业,拥有一种<em>合法的份额</em>。施予,因此是把神早已留给他们的那一份,亲手送达。<em>ma'aser</em> 不是「我的钱我捐出去」,而是「神的钱,我转交」。</span>
+        <span class="en"><strong>מַעֲשֵׂר · ma'aser</strong> — “a tenth, the tithe.” The Torah requires Israel to set aside a tenth of the produce, with a portion specifically for “the foreigner, the fatherless, and the widow” (Deut 14:28-29). There are also the gleaning laws: at harvest, do not reap the corners of the field or pick up what falls — leave it for the poor (Lev 19:9-10). These laws reveal a profound economic theology: in God's world, the poor hold a <em>lawful share</em> in your produce. Giving, therefore, is the hand-delivery of the portion God already set aside for them. <em>Ma'aser</em> is not “my money, which I donate,” but “God's money, which I pass along.”</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">犹太传统这种「制度化、共同承担」的施予,对今天的教会是一面校正的镜子。我们容易把奉献理解为「个人的、情绪驱动的、临时起意的」——心情好就多给,手头紧就少给。但圣经的视野更宏大:神要建立一个<em>整全的怜悯的群体</em>,在其中,照顾软弱者是有结构、有规律、有委身的集体生命。初代教会正是如此——「凡物公用」,「照各人所需用的分给各人」,以致「内中没有一个缺乏的」(徒 4:32-35)。这不是乌托邦,而是一个把 <em>tzedakah</em> 活出来的群体的样式。</span>
+        <span class="en">The Jewish tradition's “institutionalized, shared” giving is a corrective mirror for the Church today. We easily understand giving as “individual, emotion-driven, and impulsive” — give more in a good mood, less when money is tight. But Scripture's vision is grander: God means to build a <em>whole community of mercy</em>, in which caring for the weak is a structured, regular, committed collective life. The early Church was just so — “they shared everything,” “distributed to anyone who had need,” so that “there were no needy persons among them” (Acts 4:32-35). This is no utopia but the pattern of a community living out <em>tzedakah</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">迈蒙尼德的最高施予,是帮穷人自立。我的施予,是让人更有尊严、更能自立,还是只让人更依赖？</span><span class="en">Maimonides' highest giving helps the poor become self-sufficient. Does my giving restore dignity and independence, or only deepen dependence?</span></li>
+        <li><span class="zh">『穷人对你的产业拥有合法的份额』。这如何改变我对『我的钱』的认识？</span><span class="en">“The poor hold a lawful share in your produce.” How does that change how I think about “my money”?</span></li>
+        <li><span class="zh">圣经要建立的是『整全的怜悯群体』,而非『个人临时的善举』。我的群体,在结构上关心软弱者吗？</span><span class="en">Scripture builds “a whole community of mercy,” not “individual impulse.” Does my community care for the weak structurally?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 03  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ג &nbsp;·&nbsp; 03</div>
+      <h2 class="lesson-title">
+        <span class="zh">爱——基督传统的 Caritas</span>
+        <span class="en">Love — The Christian Caritas</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">书中关于基督教慈善的篇章（如论意大利慈善、罗马天主教的「领受性」）追溯了「caritas」——这个拉丁词,既是「慈善」,也是「爱」。在基督教传统里,施予的根基不是律法的义务,而是<em>爱</em>:因着神先在基督里爱了我们,我们便以爱回流向人。早期教会和中世纪修道院发展出医院、济贫院、收容所等大量的慈善机构;「七项慈悲的善工」(给饥饿者食物、给口渴者水、收留客旅、给赤身者衣裳、探望病人与监犯、埋葬死者) 成为信徒效法基督的具体操练。caritas 把「施予」从一种交易,提升为一种与神之爱相联的属灵生命。</span>
+        <span class="en">The book's chapters on Christian charity (such as Italian charity and Roman Catholic “receptivity”) trace <em>caritas</em> — the Latin word that means both “charity” and “love.” In the Christian tradition, the ground of giving is not legal obligation but <em>love</em>: because God first loved us in the Messiah, we let love flow back out to people. The early Church and medieval monasteries developed a vast array of charitable institutions — hospitals, almshouses, shelters; the “seven works of mercy” (feed the hungry, give drink to the thirsty, shelter the stranger, clothe the naked, visit the sick and the imprisoned, bury the dead) became a concrete discipline of imitating Christ. <em>Caritas</em> lifts “giving” from a transaction into a spiritual life joined to the love of God.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「我们爱,因为神先爱我们……人若说我爱神,却恨他的弟兄,就是说谎话的。」</span>
+        <span class="en">“We love because he first loved us... Whoever claims to love God yet hates a brother or sister is a liar.”</span>
+        <cite>《约翰一书》4:19-20 · 1 John 4:19-20</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אַהֲבָה · ahavah</strong>——「爱」。拉丁的 caritas、希腊的 agape,在希伯来圣经里的根,是 <em>ahavah</em>。妥拉早已把这爱的命令并立为两条:「你要尽心、尽性、尽力<em>爱</em>耶和华你的神」(申 6:5),与「要<em>爱</em>人如己」(利 19:18)。耶书亚把这两条并为「律法和先知一切道理的总纲」(太 22:40)。基督教的 caritas 因此不是凭空的发明,而是这条古老 <em>ahavah</em> 命令的延续与成全:对神的爱,必然外溢为对人的爱;爱神而不爱弟兄,约翰说,是「说谎话的」。施予,是 <em>ahavah</em> 看得见的身体。</span>
+        <span class="en"><strong>אַהֲבָה · ahavah</strong> — “love.” The root of Latin <em>caritas</em> and Greek <em>agape</em> in the Hebrew Bible is <em>ahavah</em>. The Torah already set the command of love as two: “<em>Love</em> the LORD your God with all your heart, soul, and strength” (Deut 6:5), and “<em>Love</em> your neighbor as yourself” (Lev 19:18). Yeshua joined these two as the summary on which “all the Law and the Prophets hang” (Matt 22:40). Christian <em>caritas</em> is thus no invention from nowhere but the continuation and fulfillment of this ancient command of <em>ahavah</em>: love for God necessarily overflows into love for people; to love God and not one's brother, John says, is to be “a liar.” Giving is the visible body of <em>ahavah</em>.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课把基督徒的施予,带回它真正的源头与动力。我们施予,不是为了「赚取」神的喜悦或自己的功德(那会让施予沦为另一种交易),而是因为我们自己<em>先被白白地爱了、白白地施予了</em>。「你们白白地得来,也要白白地舍去」(太 10:8)。十字架是史上最伟大的施予——「神爱世人,甚至将他的独生子赐给他们」(约 3:16)。当我们真的领受了这份白白的爱,施予就不再是勉强的责任,而成了一种<em>满溢</em>:被爱充满的器皿,自然地向外倾倒。caritas 的奥秘是:我们最先,是领受者。</span>
+        <span class="en">This lesson carries Christian giving back to its true source and power. We give not to “earn” God's favor or our own merit (which would make giving just another transaction), but because we ourselves were <em>first freely loved and freely given to</em>. “Freely you have received; freely give” (Matt 10:8). The cross is the greatest gift in history — “For God so loved the world that he gave his one and only Son” (John 3:16). When we truly receive this free love, giving is no longer a reluctant duty but an <em>overflow</em>: a vessel filled with love pours out naturally. The mystery of <em>caritas</em>: we are, first of all, receivers.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我施予,是为了『赚取』神的喜悦或功德,还是因为我『先被白白地爱了』？</span><span class="en">Do I give to “earn” God's favor or merit, or because I was “first freely loved”?</span></li>
+        <li><span class="zh">『爱神却恨弟兄,就是说谎话的』。我对神的爱,是否真的外溢为对身边人具体的施予？</span><span class="en">“To love God yet hate a brother is to be a liar.” Does my love for God truly overflow into concrete giving to those around me?</span></li>
+        <li><span class="zh">caritas 的奥秘是『我们最先是领受者』。我是否常常忘了自己先领受了多少,以致施予时心生勉强？</span><span class="en">The mystery of <em>caritas</em> is “we are first receivers.” Do I forget how much I first received, so that giving feels reluctant?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 04  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ד &nbsp;·&nbsp; 04</div>
+      <h2 class="lesson-title">
+        <span class="zh">真诚之施——伊斯兰传统的 Sadaqa 与 Zakat</span>
+        <span class="en">Giving as Sincerity — The Islamic Sadaqa and Zakat</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">书中关于伊斯兰慈善的篇章（如「sadaqa 作为真诚的标记」、奥斯曼帝国的犹太与穆斯林慈善）介绍了伊斯兰施予的两大支柱:<em>zakat</em>(天课)——一种规定比例、带有义务性质的济贫税,是伊斯兰「五功」之一;以及 <em>sadaqa</em>——更广义的、自愿的善行施予。学者指出,在伊斯兰传统里,施予被理解为一种「净化」:既净化财富,也净化施予者的心;<em>sadaqa</em>(其字面与「真诚 sidq」相关)更被视为信仰真诚的外在标志——一个人是否真信,看他是否愿意为神而施予。</span>
+        <span class="en">The book's chapters on Islamic charity (such as “<em>sadaqa</em> as a sign of sincerity” and Jewish and Muslim charity in the Ottoman Empire) introduce the two pillars of Islamic giving: <em>zakat</em> (the obligatory alms) — a fixed-proportion, obligatory levy for the poor, one of Islam's “five pillars”; and <em>sadaqa</em> — the broader, voluntary giving of good works. Scholars note that in the Islamic tradition, giving is understood as a “purification”: purifying both wealth and the giver's heart; <em>sadaqa</em> (whose word is related to <em>sidq</em>, “sincerity”) is seen as the outward sign of true faith — whether a person truly believes is shown by whether they are willing to give for God's sake.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你手若有行善的力量,不可推辞,就当向那应得的人施行。」</span>
+        <span class="en">“Do not withhold good from those to whom it is due, when it is in your power to act.”</span>
+        <cite>《箴言》3:27 · Proverbs 3:27</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>צֶדֶק · tzedek</strong>——「公义」。这里藏着一个令人惊叹的事实:阿拉伯语的 <em>sadaqa</em>(施予) 与希伯来语的 <em>tzedakah</em>(慈善/公义),来自<em>同一个</em>闪族语字根 ṣ-d-q,本义都是「公义、真实、可靠」。换言之,在希伯来与阿拉伯这两种姊妹语言里,「施予穷人」与「公义、真诚」共享着同一条最深的语言之根。这绝非偶然,它指向一个三大亚伯拉罕信仰所共有的、深植的直觉:对穷人的施予,本质上是一件关乎<em>公义与真诚</em>的事——它是真信仰的试金石,是把内心对神的敬畏,翻译成对人具体的善行。</span>
+        <span class="en"><strong>צֶדֶק · tzedek</strong> — “righteousness, justice.” Here lies an astonishing fact: the Arabic <em>sadaqa</em> (giving) and the Hebrew <em>tzedakah</em> (charity/justice) come from the <em>same</em> Semitic root ṣ-d-q, both originally meaning “righteousness, truth, reliability.” In other words, in these two sister languages, Hebrew and Arabic, “giving to the poor” and “justice, sincerity” share the same deepest linguistic root. This is no accident; it points to a deep-seated intuition shared by all three Abrahamic faiths: that giving to the poor is essentially a matter of <em>justice and sincerity</em> — the touchstone of true faith, translating the heart's reverence for God into concrete good toward people.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课邀请基督徒在「施予是信仰真诚的标记」这一点上,与犹太、穆斯林邻舍一同站立——并把它推向新约的深度。雅各书几乎说了与「sadaqa 是信仰真诚之标志」一模一样的话:「信心若没有行为就是死的……若是弟兄或姐妹赤身露体,又缺了日用的饮食,你们中间有人……不给他们身体所需用的,这有什么益处呢?」(雅 2:14-17) 真信心,从来不是嘴上的承认,而是会动手、会松手的爱。施予,因此是检验我们信仰之真伪的、最诚实的一面镜子。一个不肯施予的「信」,圣经说,是死的。</span>
+        <span class="en">This lesson invites Christians to stand with their Jewish and Muslim neighbors on the point that “giving is a sign of sincere faith” — and to press it to New Testament depth. James says almost exactly what “<em>sadaqa</em> is the mark of sincere faith” says: “Faith without deeds is dead... Suppose a brother or sister is without clothes and daily food. If one of you... does nothing about their physical needs, what good is it?” (James 2:14-17). True faith is never a verbal confession but a love that acts and lets go. Giving is therefore the most honest mirror testing whether our faith is real or false. A “faith” unwilling to give, Scripture says, is dead.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">阿拉伯语 sadaqa 与希伯来语 tzedakah 同根。三大信仰共享『施予 = 公义与真诚』的直觉——这给我怎样的启发？</span><span class="en">Arabic <em>sadaqa</em> and Hebrew <em>tzedakah</em> share a root. The three faiths share the intuition “giving = justice and sincerity” — what does that teach me?</span></li>
+        <li><span class="zh">施予被视为信仰真诚的标志。如果有人凭我的施予来判断我信仰的真伪,他会看见什么？</span><span class="en">Giving is seen as a sign of sincere faith. If someone judged the reality of my faith by my giving, what would they see?</span></li>
+        <li><span class="zh">雅各说『信心没有行为就是死的』。我的信心,是会动手、会松手的爱,还是只停在口里的承认？</span><span class="en">James says “faith without deeds is dead.” Is my faith a love that acts and lets go, or only a verbal confession?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 05  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ה &nbsp;·&nbsp; 05</div>
+      <h2 class="lesson-title">
+        <span class="zh">礼物的两张脸——施予会「区隔」他者吗?</span>
+        <span class="en">The Two Faces of the Gift — Does Giving “Other” the Receiver?</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">本书理论部分提出一个尖锐的问题:慈善是不是一个「两面神」(Janus)?学者们(借用人类学对「礼物」的研究)指出,施予从来不是纯粹的:它在帮助人的同时,也可能在<em>制造等级</em>——把人区分为「施予者」(高、有能力、慷慨) 与「领受者」(低、有缺乏、亏欠)。一份带着优越感的施舍,可能羞辱了它本想帮助的人,把对方「区隔」为低人一等的「他者」。这是对一切行善者的一记警钟:施予若不伴随尊重,就可能在给出面包的同时,夺走尊严。</span>
+        <span class="en">The book's theoretical section raises a sharp question: is charity a two-faced “Janus”? Drawing on anthropological studies of “the gift,” scholars note that giving is never pure: while helping, it can also <em>create hierarchy</em> — dividing people into “givers” (high, capable, generous) and “receivers” (low, lacking, indebted). A handout carrying superiority can humiliate the very person it means to help, “othering” them as inferior. This is an alarm bell for every doer of good: giving without respect may, in handing over bread, rob a person of dignity.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「怜悯贫穷的,就是借给耶和华;他的善行,耶和华必偿还。」</span>
+        <span class="en">“Whoever is kind to the poor lends to the LORD, and he will reward them for what they have done.”</span>
+        <cite>《箴言》19:17 · Proverbs 19:17</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>גֵּר · ger</strong>——「寄居者、外人」。圣经处理「他者」的方式,恰恰是这个问题的解药。妥拉三十六次命令以色列要爱 <em>ger</em>(外人),理由总是同一句:「<em>因为你们在埃及地也作过寄居的</em>」(利 19:34)。这句话拆掉了施予者的优越感:你今天能施予,只因神先怜悯了曾经一无所有、为奴为客的你。在神面前,施予者与领受者,本是同一类人——都是蒙了怜悯的乞丐。记住「你也曾作过寄居的」,就再不能居高临下地施舍,只能带着同理与尊重,彼此守望。</span>
+        <span class="en"><strong>גֵּר · ger</strong> — “sojourner, stranger.” Scripture's way of handling “the other” is precisely the antidote to this problem. The Torah commands Israel thirty-six times to love the <em>ger</em> (stranger), always with the same reason: “<em>for you were strangers in the land of Egypt</em>” (Lev 19:34). That sentence dismantles the giver's superiority: you can give today only because God first had mercy on you, who were once with nothing, a slave and a sojourner. Before God, giver and receiver are the same kind — both beggars who have received mercy. To remember “you too were a sojourner” is to be unable to give from above, but only to watch over one another with empathy and respect.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课为基督徒的善行注入了至关重要的谦卑。福音彻底瓦解了「施予者高、领受者低」的等级,因为它宣告:在神面前,我们<em>所有人</em>都是赤贫的领受者。我们手里能给出去的一切,没有一样不是先白白领受来的(林前 4:7:「你有什么不是领受的呢?」)。因此,基督徒的施予,绝不能带着「我比你高」的姿态;它必须带着「我们都是同样蒙恩的乞丐,我只是把白白得来的,分给你」的弟兄之情。《箴言》说得最美:怜悯穷人,是「借给耶和华」——领受我们施予的,首先是那位与穷人认同的主自己。这哪里还有半点优越的余地?</span>
+        <span class="en">This lesson injects vital humility into Christian good works. The Gospel utterly dismantles the hierarchy of “high giver, low receiver,” because it proclaims that before God, <em>all</em> of us are destitute receivers. Everything we can give was first freely received (1 Cor 4:7: “What do you have that you did not receive?”). So Christian giving must never carry the posture of “I am above you”; it must carry the brotherhood of “we are all beggars under the same grace, and I am simply sharing with you what I freely received.” Proverbs says it most beautifully: to be kind to the poor is to “lend to the LORD” — the One who receives our giving is, first of all, the Lord himself, who identifies with the poor. Where is there any room left for superiority?</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">我的施予,有没有带着优越感,在给出帮助的同时,夺走了对方的尊严？</span><span class="en">Does my giving carry superiority, robbing the receiver of dignity even as it offers help?</span></li>
+        <li><span class="zh">『因为你也曾作过寄居的』。记住自己曾经的缺乏与蒙恩,如何拆掉我的优越感？</span><span class="en">“For you too were a sojourner.” How does remembering my own former lack and mercy dismantle my superiority?</span></li>
+        <li><span class="zh">『在神面前我们都是领受者』。这如何把我的施予,从『施舍』变成『弟兄间的分享』？</span><span class="en">“Before God we are all receivers.” How does that turn my giving from a “handout” into “sharing among kin”?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 06  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ו &nbsp;·&nbsp; 06</div>
+      <h2 class="lesson-title">
+        <span class="zh">从慈善到慈善事业——制度、动机与权力</span>
+        <span class="en">From Charity to Philanthropy — Institution, Motive, and Power</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">书中的历史篇章追踪了一个重要的转变:从中世纪以救灵、尽义务为核心的「慈善」(charity),到近代以社会改良、文化资本为特征的「慈善事业」(philanthropy)。学者们诚实地揭示,施予从来不只是「纯粹的善」:富裕的犹太精英、基督教的兄弟会、穆斯林的宗教基金 (waqf),它们的施予往往也夹杂着社会地位的彰显、群体认同的维系、乃至权力的运作。这并非要否定施予的价值,而是提醒我们:人心是复杂的,即使是最高尚的善行,也总掺杂着不纯的动机。诚实地面对这一点,是迈向更纯粹之爱的第一步。</span>
+        <span class="en">The book's historical chapters trace an important shift: from medieval “charity,” centered on saving souls and fulfilling obligation, to modern “philanthropy,” marked by social reform and cultural capital. Scholars honestly reveal that giving was never merely “pure good”: the giving of wealthy Jewish elites, Christian confraternities, and Muslim religious endowments (<em>waqf</em>) was often mixed with the display of social standing, the maintenance of group identity, even the workings of power. This is not to deny the value of giving but to remind us that the human heart is complex; even the noblest good works are always laced with impure motives. To face this honestly is the first step toward a purer love.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「你施舍的时候,不要在你前面吹号……要叫你施舍的事行在暗中;你父在暗中察看,必然报答你。」</span>
+        <span class="en">“When you give to the needy, do not announce it with trumpets... so that your giving may be in secret. Then your Father, who sees what is done in secret, will reward you.”</span>
+        <cite>《马太福音》6:2-4 · Matthew 6:2-4</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>בַּסֵּתֶר · ba-seter</strong>——「在隐密中」。犹太传统极其推崇「隐密的施予」(<em>matan ba-seter</em>)——迈蒙尼德甚至把「施予者与领受者彼此都不知道对方是谁」列为极高的层级,因为这样最能保全领受者的尊严,也最能除去施予者求名的私心。耶书亚的教导与此完全一致:「要叫你施舍的事行在暗中」(太 6:4)。<em>ba-seter</em> 这个属灵操练,直击上一课所揭示的两个危险:它既防止施予沦为彰显地位的表演,又保护了领受者不被「区隔」为低人一等。在隐密中施予,是让施予回归它纯粹本质的良方。</span>
+        <span class="en"><strong>בַּסֵּתֶר · ba-seter</strong> — “in secret.” The Jewish tradition highly prizes “secret giving” (<em>matan ba-seter</em>) — Maimonides even ranks “the giver and receiver not knowing each other's identity” as a very high level, because it best preserves the receiver's dignity and best removes the giver's craving for recognition. Yeshua's teaching is exactly aligned: “so that your giving may be in secret” (Matt 6:4). This spiritual discipline of <em>ba-seter</em> strikes directly at the two dangers of the previous lesson: it keeps giving from becoming a performance of status, and protects the receiver from being “othered” as inferior. To give in secret is the remedy that returns giving to its pure essence.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课呼召基督徒诚实地省察自己施予的动机。耶书亚毫不留情地点破那种「在前面吹号」的施予——为要「得人的荣耀」。祂的诊断极深:同一个善行,可以出于纯粹的爱,也可以出于隐秘的骄傲;而真正蒙神悦纳的,是那「行在暗中」、不为人知、不求回报的施予。这不是要我们因动机不纯就停止行善(若等动机全然纯洁才施予,我们将永不施予);而是邀请我们,一边施予,一边求神洁净我们的心——让左手不知道右手所做的,让施予越来越少是为了「我」,越来越多是单单为了神和那需要的人。</span>
+        <span class="en">This lesson calls Christians to honestly examine the motives of their giving. Yeshua mercilessly exposes the giving that “announces it with trumpets” — in order to be “honored by others.” His diagnosis is deep: the same good deed can flow from pure love or from secret pride; and what God truly accepts is the giving “done in secret,” unknown and unrewarded. This is not to make us stop doing good because our motives are impure (if we waited for wholly pure motives, we would never give); it is to invite us, while giving, to ask God to cleanse our hearts — to let the left hand not know what the right is doing, so that giving is less and less for “me,” and more and more for God and the one in need alone.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『同一个善行,可以出于纯粹的爱,也可以出于隐秘的骄傲』。我施予时,内心真实的动机是什么？</span><span class="en">“The same good deed can flow from pure love or from secret pride.” What is the true motive of my heart when I give?</span></li>
+        <li><span class="zh">犹太传统推崇『隐密的施予』。我愿意行多少不为人知、不求回报、不被点赞的善吗？</span><span class="en">The Jewish tradition prizes “secret giving.” How much good am I willing to do unseen, unrewarded, un-liked?</span></li>
+        <li><span class="zh">耶稣说『不要在前面吹号』。在一个鼓励『晒善行』的时代,这如何挑战我？</span><span class="en">Jesus says “do not announce it with trumpets.” In an age that rewards “displaying good deeds,” how does that challenge me?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 07  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ז &nbsp;·&nbsp; 07</div>
+      <h2 class="lesson-title">
+        <span class="zh">穷人坐在中央——神隐藏的所在</span>
+        <span class="en">The Poor at the Center — Where God Is Hidden</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">把全书汇拢,一个共同的、深刻的主题浮现出来:在三大亚伯拉罕信仰里,穷人都不是处在社会的边缘,而是被置于<em>属灵的中央</em>。施予穷人之所以被赋予如此崇高的地位,是因为三家都相信,在那有缺乏的人身上,神以某种特殊的方式临在、受感动、并垂顾。无论是犹太的「神听见穷人的哀声」,基督教的「我饿了,你们给我吃」,还是伊斯兰的「为神而施予」,它们都指向同一个颠覆性的真理:你怎样对待那最微小、最软弱、最被忽视的人,你就怎样对待神自己。</span>
+        <span class="en">Gathering the whole book, a shared and profound theme emerges: in all three Abrahamic faiths, the poor are not at the margins of society but placed at the <em>spiritual center</em>. Giving to the poor is granted such exalted standing because all three believe that in the person who lacks, God is present, moved, and attentive in some special way. Whether the Jewish “God hears the cry of the poor,” the Christian “I was hungry and you gave me food,” or the Islamic “giving for God's sake,” they point to the same subversive truth: how you treat the smallest, weakest, most overlooked person is how you treat God himself.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「他为困苦人伸冤,为穷乏人辨屈,这不是认识我吗?这是耶和华说的。」</span>
+        <span class="en">“He defended the cause of the poor and needy, and so all went well. Is that not what it means to know me? declares the LORD.”</span>
+        <cite>《耶利米书》22:16 · Jeremiah 22:16</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אֶבְיוֹן · evyon</strong>(穷乏人) 与 <strong>עָנִי · ani</strong>(困苦人)。希伯来圣经反复用这两个词,而且每一次都把神放在他们这一边:「神是<em>穷人 (ani)</em> 的避难所」(诗 14:6);压制 <em>evyon</em> 的,就是「辱没造他的主」(箴 14:31)。最震撼的是《耶利米书》22:16 那句:「为穷乏人辨屈,这不是<em>认识我</em>吗?」——神竟把「认识祂」与「为穷人伸冤」等同起来!在圣经里,你无法绕过穷人去单独地「认识神」;关心 <em>evyon</em> 与 <em>ani</em>,不是认识神之后的副产品,而是认识神本身的一部分。</span>
+        <span class="en"><strong>אֶבְיוֹן · evyon</strong> (the needy) and <strong>עָנִי · ani</strong> (the afflicted). The Hebrew Bible uses these two words again and again, and every time puts God on their side: “God is the refuge of the <em>poor (ani)</em>” (Ps 14:6); whoever oppresses the <em>evyon</em> “shows contempt for their Maker” (Prov 14:31). Most striking is Jeremiah 22:16: “He defended the cause of the needy — is that not what it means to <em>know me</em>?” God equates “knowing him” with “defending the poor”! In Scripture, you cannot bypass the poor to “know God” in isolation; caring for the <em>evyon</em> and the <em>ani</em> is not a by-product of knowing God but part of knowing God himself.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这一课触及福音的一个奥秘的核心:那位创造宇宙的神,选择把自己<em>藏在穷人里</em>。耶书亚的话语惊心动魄——「这些事你们既作在我这弟兄中一个最小的身上,就是作在我身上了」(太 25:40)。这意味着,每一次我们向饥饿者递上食物、向孤独者送去探望、向赤身者披上衣裳,我们都在不知不觉中,服侍了那位道成肉身、与最小者认同的主。施予因此被提升为一种<em>圣事</em>:在那需要帮助的脸上,我们与基督相遇。一个忽视穷人的信仰,无论多么属灵、多么火热,圣经说,根本还没有真正「认识」神。</span>
+        <span class="en">This lesson touches a mysterious core of the Gospel: the God who created the universe chose to hide himself <em>in the poor</em>. Yeshua's words are staggering — “whatever you did for one of the least of these brothers of mine, you did for me” (Matt 25:40). This means that every time we hand food to the hungry, visit the lonely, clothe the naked, we are, unawares, serving the incarnate Lord who identifies with the least. Giving is thereby lifted into a kind of <em>sacrament</em>: in the face of the one who needs help, we meet Christ. A faith that ignores the poor, however spiritual or fervent, Scripture says, has not yet truly “known” God.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">神把『认识祂』与『为穷人伸冤』等同。我『认识神』的功课里,有这一部分吗？</span><span class="en">God equates “knowing him” with “defending the poor.” Does my pursuit of “knowing God” include this part?</span></li>
+        <li><span class="zh">神选择把自己藏在穷人里。我上一次在一个有需要的人脸上,与基督相遇,是什么时候？</span><span class="en">God chose to hide himself in the poor. When did I last meet Christ in the face of someone in need?</span></li>
+        <li><span class="zh">『一个忽视穷人的信仰,还没真正认识神』。这句话,如何审视我自己的信仰？</span><span class="en">“A faith that ignores the poor has not truly known God.” How does that sentence examine my own faith?</span></li>
+      </ul>
+
+    </div>
+
+    <!-- ─────────────  LESSON 08  ───────────── -->
+    <div class="lesson-block">
+      <div class="lesson-num">ח &nbsp;·&nbsp; 08</div>
+      <h2 class="lesson-title">
+        <span class="zh">其中最大的是爱——施予的成全</span>
+        <span class="en">The Greatest of These Is Love — The Fulfillment of Giving</span>
+      </h2>
+
+      <h3 class="lesson-step">
+        <span class="zh">① 学者说什么</span>
+        <span class="en">① What the Scholars Say</span>
+      </h3>
+      <p>
+        <span class="zh">走到全书的尽头,我们看见三大传统对「施予」的理解,在最深处奇妙地交汇,又各有其独特。犹太的 <em>tzedakah</em> 教我们:施予是公义的本分;伊斯兰的 <em>sadaqa</em> 教我们:施予是信仰真诚的标记;基督的 <em>caritas</em> 则把这一切的根基,指向<em>爱</em>——一种因「神先爱了我们」而生的、白白倾倒的爱。这本比较之书的最大馈赠,是让我们既看见与邻舍共有的、深植的施予之根(公义、真诚、怜悯),又更清楚地认出,基督信仰把施予最终安放在何处:不是律法,不是回报,而是那位在十字架上把自己完全舍出的、爱的神。</span>
+        <span class="en">Reaching the book's end, we see the three traditions' understanding of “giving” converge wondrously at the deepest level, each with its own distinctiveness. Jewish <em>tzedakah</em> teaches us that giving is an obligation of justice; Islamic <em>sadaqa</em> teaches that giving is the mark of sincere faith; and Christian <em>caritas</em> points the ground of it all to <em>love</em> — a freely poured-out love born because “God first loved us.” The great gift of this comparative book is to let us see both the deep-rooted ground of giving we share with our neighbors (justice, sincerity, mercy) and, more clearly, where the Christian faith finally rests giving: not on law, not on reward, but on the God of love who gave himself completely on the cross.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">② 关键经文</span>
+        <span class="en">② Key Scripture</span>
+      </h3>
+      <blockquote>
+        <span class="zh">「如今常存的有信,有望,有爱这三样,其中最大的是爱……我若将所有的周济穷人……却没有爱,仍然与我无益。」</span>
+        <span class="en">“And now these three remain: faith, hope and love. But the greatest of these is love... If I give all I possess to the poor... but do not have love, I gain nothing.”</span>
+        <cite>《哥林多前书》13:13, 3 · 1 Corinthians 13:13, 3</cite>
+      </blockquote>
+
+      <h3 class="lesson-step">
+        <span class="zh">③ 希伯来语之眼</span>
+        <span class="en">③ Through Hebrew Eyes</span>
+      </h3>
+      <p>
+        <span class="zh"><strong>אַהֲבָה · ahavah</strong>——「爱」。我们的旅程,从「公义之施」(tzedakah) 出发,如今回到了「爱」(ahavah)——而这两者,在圣经里从不矛盾。保罗在哥林多前书 13 章说出那句最令人战栗的话:「我若将所有的周济穷人……却没有爱,仍然与我无益。」原来,施予可以没有爱;最慷慨的善行,也可能空有其表。施予的<em>形式</em>(公义、真诚)固然不可或缺,但它的<em>灵魂</em>,是 <em>ahavah</em>。最高的施予,不是给出最多的钱,而是连同那笔钱,给出一颗真正爱人的心——一颗因被神白白地爱、便也学会白白地爱的心。</span>
+        <span class="en"><strong>אַהֲבָה · ahavah</strong> — “love.” Our journey set out from “giving as justice” (<em>tzedakah</em>), and now returns to “love” (<em>ahavah</em>) — and the two never contradict in Scripture. Paul says the most arresting thing in 1 Corinthians 13: “If I give all I possess to the poor... but do not have love, I gain nothing.” So it turns out giving can be without love; the most generous good deed can be empty within. The <em>form</em> of giving (justice, sincerity) is indispensable, but its <em>soul</em> is <em>ahavah</em>. The highest giving is not handing over the most money, but giving, along with the money, a heart that truly loves — a heart that, having been freely loved by God, has learned to love freely.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">④ 基督徒视角</span>
+        <span class="en">④ A Christian Lens</span>
+      </h3>
+      <p>
+        <span class="zh">这是整份指南的终点,也是一个邀请。我们透过「施予」这扇窗,望见了犹太、基督、伊斯兰三大传统最深的价值,也更清楚地认出基督信仰的心跳:我们爱,因为神先爱了我们;我们施予,因为我们先白白领受。愿这八堂课塑造我们:成为既松开手、又敞开心的人;以 <em>tzedakah</em> 的公义、<em>sadaqa</em> 的真诚、<em>caritas</em> 的爱,去服侍那藏在穷人里的主;并带着「爱我民」之心,与每一位亚伯拉罕的后裔为邻、为友、彼此守望。因为到了末了,信、望、爱常存,而其中最大的,是爱——那把万有白白赐给我们、又呼召我们白白施予的神,祂自己就是爱。</span>
+        <span class="en">This is the end of the whole guide, and an invitation. Through the window of “giving” we have glimpsed the deepest values of the Jewish, Christian, and Islamic traditions, and seen more clearly the heartbeat of the Christian faith: we love because God first loved us; we give because we first freely received. May these eight lessons shape us into people both open-handed and open-hearted; serving, with the justice of <em>tzedakah</em>, the sincerity of <em>sadaqa</em>, and the love of <em>caritas</em>, the Lord hidden in the poor; and, with a heart of <em>Ahavat Ammi</em>, being neighbor, friend, and keeper to every child of Abraham. For in the end, faith, hope, and love remain — and the greatest of these is love; for the God who freely gave us all things and calls us to give freely is himself love.</span>
+      </p>
+
+      <h3 class="lesson-step">
+        <span class="zh">⑤ 诚实的提问</span>
+        <span class="en">⑤ Honest Questions</span>
+      </h3>
+      <ul class="lesson-questions">
+        <li><span class="zh">『我若将所有的周济穷人,却没有爱,仍然与我无益』。我的施予,有爱作它的灵魂吗？</span><span class="en">“If I give all I possess to the poor but have not love, I gain nothing.” Does my giving have love as its soul?</span></li>
+        <li><span class="zh">tzedakah(公义)、sadaqa(真诚)、caritas(爱)——这三样如何在我的施予中合一？</span><span class="en"><em>Tzedakah</em> (justice), <em>sadaqa</em> (sincerity), <em>caritas</em> (love) — how do these three unite in my giving?</span></li>
+        <li><span class="zh">走完全书,我会以什么具体的一步,松开我的手,也敞开我的心？</span><span class="en">Having finished the book, what one concrete step will I take to open my hand, and open my heart?</span></li>
+      </ul>
+
+    </div>
+
+    <h2 class="lesson-title" style="text-align:center;border:none;">
+      <span class="zh">为一双松开的手、一颗敞开的心祝祷</span>
+      <span class="en">A Blessing for an Open Hand and an Open Heart</span>
+    </h2>
+
+    <blockquote class="closing-quote">
+      <span class="zh">「愿耶和华赐福给你,保护你。」<br/><br/>愿你看过三大传统里施予的根,<br/>就更深地领受那共有的真理:<br/>施予是公义 (tzedakah),是真诚 (sadaqa),是爱 (caritas)。<br/><br/>愿你记得,你手里能给的一切,<br/>没有一样不是先白白领受来的;<br/>愿你在那藏于穷人里的主面前,<br/>松开你的手,也敞开你的心——<br/>因为信、望、爱常存,<br/>其中最大的,是爱。</span>
+      <span class="en">“The LORD bless you and keep you.”<br/><br/>Having seen the root of giving in the three traditions,<br/>may you receive more deeply the truth they share:<br/>that giving is justice (tzedakah), sincerity (sadaqa), and love (caritas).<br/><br/>May you remember that all you can give<br/>was first freely received;<br/>and before the Lord hidden in the poor,<br/>may you open your hand, and open your heart —<br/>for faith, hope, and love remain,<br/>and the greatest of these is love.</span>
+    </blockquote>
+
+    <div class="article-cta-block">
+      <a href="https://rowman.com/ISBN/9781498560856" target="_blank" rel="noopener" class="cta-watch-video" style="background: var(--gold);">
+        📖 <span class="zh">购买《犹太、基督与伊斯兰传统中的慈善》原书</span><span class="en">Get the Book — Charity in Jewish, Christian, and Islamic Traditions</span>
+      </a>
+    </div>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+<!-- ── Chat: RAG study-partner widget ── -->
+<script defer src="/assets/chat.js?v=2"></script>
+
+</body>
+</html>
