@@ -1,0 +1,109 @@
+{
+  "slug": "article-rh-seder-01-opening",
+  "segments": 21,
+  "zh": {
+    "default": "zh-TW-HsiaoChenNeural",
+    "count": 21,
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "0297858e3f39676f",
+          "33562dda9581ff80",
+          "c69ad0eadb7351bf",
+          "6a14deb881fa5a04",
+          "829b3f15a3766813",
+          "b2fe9312864395b0",
+          "3f037916332567bc",
+          "2d458ff78d6b94e9",
+          "c27676c7476a1a65",
+          "3effb6873a30d273",
+          "163202813e7498de",
+          "766df481a515ec67",
+          "bafd52d4a56f2093",
+          "0941f4fd09c3c09f",
+          "4190a30d18165249",
+          "7ea81c6eacbbdc1b",
+          "463c91d9377cff5a",
+          "e50c9bc9630baff1",
+          "3b2859da16febf8e",
+          "5b8bb1a59077b6e0",
+          "a3ff3a3eb96a35eb"
+        ],
+        "withTimings": false
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "f21edd69ef7f1940",
+          "570500007d18da29",
+          "4e509a0f0f6c12d9",
+          "53d663dcffd7b3a3",
+          "2b22c21012bb6a6a",
+          "efaf36a67b20346e",
+          "4d2c58beb4ddf49e",
+          "a88b3d2b04755eab",
+          "7f4efae9b648eed6",
+          "ad99517fec07b5ee",
+          "007bf3c99494a416",
+          "4c579ee02220371e",
+          "56c2ba3c2271fd6d",
+          "e341f444fcdc1dcb",
+          "72cc93f297757bf2",
+          "c48e550922ac585d",
+          "7b899246670d8481",
+          "a224fe899ef238d7",
+          "d6fe4ad2cbbe40eb",
+          "a4cb3adcf1130e3f",
+          "0d706f9cdbe70a7a"
+        ],
+        "withTimings": false
+      }
+    ]
+  },
+  "en": {
+    "default": "en-US-AriaNeural",
+    "count": 21,
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "63261d71e74fc04a",
+          "a63eeb332dcc108d",
+          "7256ac28b2103857",
+          "87c8256beac3db6e",
+          "ff8fd471a54a0581",
+          "a1c324032e06de33",
+          "243a241bd0904201",
+          "fcc719855228463d",
+          "696dae79df34b877",
+          "b7b8fad174c07d6e",
+          "91fd534a8c5a7050",
+          "210814f06fef7e1d",
+          "6f1efd0b7855f0da",
+          "f7672f7772fdb0c3",
+          "766f0d050807e1cc",
+          "5f19b90fe08cb2d5",
+          "d6adeb4e43e87e70",
+          "889ccf11975fbf52",
+          "2052f02f91bfa6af",
+          "6e478b8fa2c6fc41",
+          "5f3cb40ebfe9d94c"
+        ],
+        "withTimings": false
+      }
+    ]
+  }
+}

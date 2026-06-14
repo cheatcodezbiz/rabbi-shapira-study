@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>列國與這日 ── 韓國、萬民與當日的 Halacha — 妥拉之光</title>
+  <meta name="description" content="The Nations and the Day — Korea, the Peoples, and the Halacha. The teaching heart of the Worldwide Rosh HaShanah Seder 5786 · 100 Gates · 100 Shofarot, a Korean-language service from Ahavat Ammi / Kol HaShofar." />
+  <meta name="audio-slug" content="article-rh-seder-03-nations" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2744;
+      --navy-dk: #0d1729;
+      --gold:    #b8952a;
+      --gold-lt: #d4af5a;
+      --cream:   #faf7f0;
+      --parch:   #f2ece0;
+      --ink:     #2a2218;
+      --muted:   #6b5f4e;
+      --border:  #e0d8c8;
+      --white:   #ffffff;
+      --shadow:  0 2px 16px rgba(26,39,68,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif SC', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    html[data-lang="en"] body { font-family: 'EB Garamond', 'Noto Serif SC', serif; }
+
+    /* ── Language toggle ───────────────────────────── */
+    html[data-lang="zh"] .en { display: none !important; }
+    html[data-lang="en"] .zh { display: none !important; }
+
+    /* ── Top Bar ───────────────────────────────────── */
+    .topbar {
+      background: var(--navy-dk);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topbar-verse { opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      padding: 0.28rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--gold); color: var(--white); }
+    .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ── Navigation ────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 1px 10px rgba(26,39,68,0.07);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none; color: var(--navy);
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--navy); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-lt); font-size: 1.1rem; font-weight: 700;
+    }
+    .logo-name {
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; display: block; line-height: 1.2;
+    }
+    html[data-lang="en"] .logo-name { font-family: 'EB Garamond', serif; font-size: 1.05rem; }
+    .logo-sub {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.62rem; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.08em; display: block;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; gap: 0.1rem; align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--ink);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.83rem; letter-spacing: 0.04em;
+      padding: 0.38rem 0.8rem; border-radius: 4px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--parch); color: var(--navy); }
+    .nav-links a.active { color: var(--gold); font-weight: 500; }
+    .nav-yt {
+      background: #ff0000 !important; color: white !important;
+      border-radius: 5px; display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.76rem !important;
+    }
+    .nav-yt:hover { background: #cc0000 !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 0.5rem; border-radius: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 560px;
+      background: var(--navy-dk);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left — text panel */
+    .hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem max(1.5rem, calc((100vw - 1160px) / 2 + 1.5rem));
+      z-index: 2;
+    }
+
+    /* Subtle geometric pattern behind text */
+    .hero-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='28'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Cline x1='40' y1='12' x2='40' y2='68'/%3E%3Cline x1='12' y1='40' x2='68' y2='40'/%3E%3Cline x1='20' y1='20' x2='60' y2='60'/%3E%3Cline x1='60' y1='20' x2='20' y2='60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* Gold bar at bottom */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    html[data-lang="en"] .hero-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.5rem);
+    }
+    .hero-title .gold { color: var(--gold-lt); }
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.95;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+    }
+    .hero-divider {
+      display: flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem; opacity: 0.5;
+    }
+    .hero-divider span { width: 48px; height: 1px; background: var(--gold); display: block; }
+    .hero-divider .heb { font-size: 1rem; color: var(--gold-lt); letter-spacing: 0.14em; }
+    .hero-verse {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .hero-verse { font-family: 'EB Garamond', serif; font-size: 0.95rem; }
+
+    /* Right — photo panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+    }
+
+    /* Gradient: strong navy from left, fades to transparent on right */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,
+          var(--navy-dk) 0%,
+          rgba(13,23,41,0.92) 12%,
+          rgba(13,23,41,0.55) 32%,
+          rgba(13,23,41,0.18) 55%,
+          transparent 75%
+        ),
+        linear-gradient(to bottom,
+          rgba(13,23,41,0.3) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(13,23,41,0.5) 100%
+        );
+    }
+
+    /* Decorative ✡ watermark top-right */
+    .hero-right::after {
+      content: '✡';
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(212,175,90,0.25);
+      z-index: 2;
+      line-height: 1;
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .section-hd { text-align: center; padding: 3.5rem 0 2rem; }
+    .section-hd .label {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .section-hd h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+    html[data-lang="en"] .section-hd h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+    .section-hd p { color: var(--muted); font-size: 0.9rem; font-weight: 300; max-width: 500px; margin: 0.5rem auto 0; }
+    .rule { width: 42px; height: 2px; background: var(--gold); margin: 0.9rem auto 0; border-radius: 2px; }
+
+    /* ── Featured article ──────────────────────────── */
+    .featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+    .feat-img {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 55%, #1a3a5c 100%);
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 3rem; position: relative; overflow: hidden;
+    }
+    .feat-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(184,149,42,0.18) 0%, transparent 65%);
+    }
+    .feat-hebrew {
+      position: relative; z-index: 1;
+      font-size: 4rem; color: rgba(212,175,90,0.28);
+      line-height: 1; margin-bottom: 0.8rem; letter-spacing: 0.08em;
+    }
+    .feat-badge {
+      position: relative; z-index: 1;
+      background: rgba(184,149,42,0.2);
+      border: 1px solid rgba(184,149,42,0.45);
+      color: var(--gold-lt);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      padding: 0.32rem 1rem; border-radius: 20px;
+    }
+    .feat-body {
+      padding: 2.8rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tag {
+      display: inline-block;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.14em;
+      background: rgba(184,149,42,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.23rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.9rem;
+    }
+    .feat-body h3 {
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.4; letter-spacing: 0.02em;
+      margin-bottom: 0.85rem;
+    }
+    html[data-lang="en"] .feat-body h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+    .feat-body p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; margin-bottom: 1.4rem; font-weight: 300;
+    }
+    .feat-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .feat-meta .dot { color: var(--border); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--navy); color: var(--white);
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; letter-spacing: 0.08em;
+      padding: 0.62rem 1.35rem; border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+
+    /* ── Series strip ──────────────────────────────── */
+    .series-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .strip-label {
+      text-align: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.67rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.65rem;
+    }
+    .series-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem 0.5rem;
+      text-align: center; text-decoration: none;
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.03em;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.35rem;
+    }
+    .series-item:hover {
+      background: var(--navy); color: var(--white);
+      border-color: var(--navy); transform: translateY(-2px);
+    }
+    .series-item .sicon { font-size: 1.2rem; opacity: 0.8; }
+    .series-item .scount { font-size: 0.6rem; opacity: 0.5; }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2.5rem;
+      padding-bottom: 4rem;
+      align-items: start;
+    }
+
+    /* ── Article cards ─────────────────────────────── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .card {
+      background: var(--white); border-radius: 10px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .c1 { background: linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%); }
+    .c2 { background: linear-gradient(135deg, #2d1a0e 0%, #5c3620 100%); }
+    .c3 { background: linear-gradient(135deg, #0e2d1a 0%, #1a5c34 100%); }
+    .c4 { background: linear-gradient(135deg, #2d2419 0%, #5c4a2a 100%); }
+    .c5 { background: linear-gradient(135deg, #1a1a2d 0%, #2a2a5c 100%); }
+    .c6 { background: linear-gradient(135deg, #2d0e2d 0%, #5c1a5c 100%); }
+    .card-glyph {
+      color: rgba(255,255,255,0.13);
+      font-size: 4rem; font-weight: 700;
+      letter-spacing: 0.04em; line-height: 1;
+    }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .card-body h4 {
+      font-size: 0.94rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.02em;
+      line-height: 1.5; margin-bottom: 0.55rem;
+    }
+    html[data-lang="en"] .card-body h4 { font-family: 'EB Garamond', serif; font-size: 1.08rem; }
+    .card-body p {
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 1.85; font-weight: 300;
+      flex: 1; margin-bottom: 0.85rem;
+    }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.7rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .card-foot a { color: var(--gold); text-decoration: none; font-weight: 500; }
+    .card-foot a:hover { text-decoration: underline; }
+    .load-more-wrap { text-align: center; padding: 0.5rem 0 1rem; }
+
+    /* ── Sidebar ───────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
+    .widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.35rem;
+      box-shadow: 0 1px 6px rgba(26,39,68,0.05);
+    }
+    .widget-title {
+      font-size: 0.76rem; font-weight: 600;
+      letter-spacing: 0.14em; color: var(--navy);
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem; margin-bottom: 0.9rem;
+    }
+    .widget-list { list-style: none; }
+    .widget-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.83rem;
+    }
+    .widget-list li:last-child { border-bottom: none; }
+    .widget-list a { text-decoration: none; color: var(--ink); transition: color 0.15s; }
+    .widget-list a:hover { color: var(--gold); }
+    .widget-list .meta {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: var(--muted); margin-top: 0.15rem;
+    }
+    .widget-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.65rem; font-weight: 300; }
+    .nl-form { display: flex; flex-direction: column; gap: 0.5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.79rem; color: var(--ink);
+      background: var(--cream); outline: none;
+      transition: border-color 0.15s;
+    }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--navy); color: var(--white); border: none;
+      border-radius: 5px; padding: 0.55rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .nl-form button:hover { background: #2a3d6b; }
+    .yt-widget {
+      background: linear-gradient(135deg, #0f1e3a 0%, #1a2744 100%);
+      border-color: rgba(184,149,42,0.3);
+    }
+    .yt-widget .widget-title { color: var(--gold-lt); border-color: rgba(184,149,42,0.4); }
+    .yt-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .yt-stat {
+      background: rgba(255,255,255,0.06); border-radius: 6px;
+      padding: 0.55rem; text-align: center;
+    }
+    .yt-stat .num { font-size: 1rem; font-weight: 600; color: var(--gold-lt); display: block; }
+    .yt-stat .lbl { font-family: 'Noto Sans SC', sans-serif; font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+    .yt-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      background: #ff0000; color: white; text-decoration: none;
+      border-radius: 6px; padding: 0.58rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.77rem; letter-spacing: 0.06em;
+      transition: background 0.18s;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* ── Quote strip ───────────────────────────────── */
+    .quote-strip {
+      background: var(--navy); padding: 3rem 0;
+      position: relative; overflow: hidden;
+    }
+    .quote-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 120% at 50% 50%, rgba(184,149,42,0.07) 0%, transparent 70%);
+    }
+    .quote-inner {
+      position: relative; z-index: 1; text-align: center;
+      max-width: 660px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .q-mark { font-size: 5rem; color: rgba(212,175,90,0.15); line-height: 0.6; display: block; margin-bottom: 0.5rem; font-family: Georgia, serif; }
+    .q-text {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    html[data-lang="en"] .q-text { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+    .q-source {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--gold-lt); opacity: 0.75;
+    }
+
+    /* ── Rabbi section ─────────────────────────────── */
+    .rabbi-section {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+    .rabbi-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem; align-items: center;
+    }
+    .rabbi-portrait {
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .rabbi-photo-wrap {
+      width: 180px; height: 220px;
+      border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(26,39,68,0.2);
+    }
+    .rabbi-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+      display: block;
+    }
+    .rabbi-name-heb {
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); letter-spacing: 0.04em;
+      display: block; text-align: center;
+    }
+    .rabbi-name-en {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; color: var(--muted);
+      display: block; text-align: center; margin-top: 0.2rem;
+    }
+    .rabbi-title-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.13em;
+      background: rgba(184,149,42,0.11);
+      color: var(--gold);
+      border: 1px solid rgba(184,149,42,0.3);
+      padding: 0.28rem 0.85rem; border-radius: 20px;
+      display: inline-block; text-align: center;
+    }
+    .rabbi-bio .ministry-tag {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.16em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem; display: block;
+    }
+    .rabbi-bio h3 {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 0.3rem; letter-spacing: 0.03em;
+    }
+    html[data-lang="en"] .rabbi-bio h3 { font-family: 'EB Garamond', serif; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+    .rabbi-bio p {
+      color: var(--muted); font-size: 0.88rem;
+      line-height: 1.95; font-weight: 300; margin-bottom: 0.85rem;
+    }
+    .rabbi-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .rabbi-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.06em;
+      text-decoration: none; padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .rl-primary { background: var(--navy); color: white; }
+    .rl-primary:hover { background: #2a3d6b; transform: translateY(-1px); }
+    .rl-secondary { background: white; color: var(--navy); border: 1px solid var(--border); }
+    .rl-secondary:hover { background: var(--parch); transform: translateY(-1px); }
+
+    /* ── Books ─────────────────────────────────────── */
+    .books-section { padding: 4rem 0; }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .book-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .book-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,39,68,0.13); }
+    .book-cover {
+      height: 190px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bc1 { background: linear-gradient(135deg, #1a2744 0%, #2a4a7a 100%); }
+    .bc2 { background: linear-gradient(135deg, #2d1a0e 0%, #6b3a1f 100%); }
+    .bc3 { background: linear-gradient(135deg, #0e2d1a 0%, #235c35 100%); }
+    .book-spine {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 7px; background: var(--gold);
+    }
+    .book-title-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 1.5rem; text-align: center;
+    }
+    .btitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.05rem; font-weight: 600;
+      letter-spacing: 0.04em; line-height: 1.35;
+      margin-bottom: 0.4rem; display: block;
+    }
+    html[data-lang="en"] .btitle { font-family: 'EB Garamond', serif; font-size: 1.2rem; }
+    .bauthor { font-family: 'Noto Sans SC', sans-serif; font-size: 0.67rem; color: var(--gold-lt); letter-spacing: 0.12em; opacity: 0.8; }
+    .book-body { padding: 1.1rem 1.2rem 1.2rem; }
+    .book-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 0.85rem; }
+    .book-cta {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(184,149,42,0.4);
+      padding: 0.38rem 0.85rem; border-radius: 5px;
+      transition: background 0.18s, color 0.18s;
+    }
+    .book-cta:hover { background: var(--gold); color: white; }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      background: #0d1a35; color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 2.5rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      font-size: 0.98rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    html[data-lang="en"] .footer-brand h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; }
+    .footer-brand p { font-size: 0.78rem; line-height: 1.75; font-weight: 300; max-width: 300px; }
+    .footer-ministry {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.12em;
+      color: var(--gold-lt); opacity: 0.65;
+      margin-top: 0.75rem; display: block;
+    }
+    .footer-col h4 {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.48rem; }
+    .footer-col a { text-decoration: none; color: rgba(255,255,255,0.42); font-size: 0.79rem; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.66rem; color: rgba(255,255,255,0.27);
+    }
+    .footer-heb { font-size: 0.82rem; color: rgba(212,175,90,0.27); letter-spacing: 0.06em; }
+
+    /* ══════════════════════════════════════════════
+       ARTICLE — FEATURED EDITORIAL
+    ══════════════════════════════════════════════ */
+    .article-feature {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-cover {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      background: var(--navy-dk);
+    }
+    .article-cover-img {
+      width: 100%; height: 100%;
+      object-fit: contain; object-position: center;
+      display: block;
+    }
+    .article-cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,23,41,0.96) 0%, rgba(13,23,41,0.7) 50%, rgba(13,23,41,0.35) 100%);
+    }
+    /* Mobile-only prev/next article buttons on the cover */
+    .article-cover-nav {
+      display: none;
+      position: absolute;
+      top: 0.85rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(13,23,41,0.55);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.95);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .article-cover-nav.prev { left: 0.85rem; }
+    .article-cover-nav.next { right: 0.85rem; }
+    .article-cover-nav:active {
+      transform: scale(0.92);
+      background: rgba(184,149,42,0.85);
+    }
+    @media (max-width: 768px) {
+      .article-cover-nav { display: flex; }
+    }
+    .article-cover-text {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 2.8rem 2rem 2.4rem;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .article-tag-line {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 0.85rem; opacity: 0.9;
+    }
+    .article-headline {
+      font-size: clamp(1.7rem, 3.8vw, 2.9rem);
+      font-weight: 700; line-height: 1.18;
+      letter-spacing: 0.03em; margin-bottom: 0.85rem;
+      text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+    }
+    html[data-lang="en"] .article-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.95rem, 3.8vw, 3.2rem);
+    }
+    .article-deck {
+      font-size: clamp(0.88rem, 1.55vw, 1.05rem);
+      font-weight: 300; color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em; max-width: 600px;
+      margin: 0 auto 0.95rem; line-height: 1.55;
+    }
+    .article-byline {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.74rem; letter-spacing: 0.13em;
+      color: var(--gold-lt); opacity: 0.8;
+    }
+
+    .article-meta-strip {
+      background: var(--parch);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .meta-dot { color: var(--border); }
+    .meta-watch {
+      color: var(--gold); text-decoration: none;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .meta-watch:hover { color: var(--navy); }
+
+    .article-prose {
+      max-width: 720px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .article-prose p {
+      font-size: 1.02rem; line-height: 1.95;
+      margin-bottom: 1.5rem; color: var(--ink);
+      font-weight: 400;
+    }
+    html[data-lang="en"] .article-prose p {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem; line-height: 1.7;
+    }
+    .article-lead {
+      font-size: 1.12rem !important; line-height: 1.85 !important;
+      color: var(--ink) !important; font-weight: 400;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.4rem; margin-bottom: 2rem !important;
+    }
+    html[data-lang="en"] .article-lead {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.32rem !important; line-height: 1.65 !important;
+    }
+    .article-prose h2 {
+      font-size: clamp(1.18rem, 2.3vw, 1.5rem);
+      font-weight: 600; color: var(--navy);
+      letter-spacing: 0.02em;
+      margin: 2.8rem 0 1.1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    html[data-lang="en"] .article-prose h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.78rem);
+    }
+    .article-prose blockquote {
+      margin: 1.7rem 0;
+      padding: 1.3rem 1.5rem;
+      background: var(--parch);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--ink);
+      font-size: 1rem; line-height: 1.8;
+    }
+    html[data-lang="en"] .article-prose blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+    }
+    .article-prose blockquote cite {
+      display: block; font-style: normal;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem; color: var(--muted);
+      letter-spacing: 0.08em; margin-top: 0.55rem;
+    }
+    .article-prose blockquote.equation {
+      font-style: normal; text-align: center;
+      font-weight: 500;
+      background: var(--navy); color: var(--gold-lt);
+      border-left-color: var(--gold);
+      padding: 1.3rem;
+    }
+    .article-prose blockquote.closing-quote {
+      font-size: 1.08rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #2d4a7a 100%);
+      color: white; border-left-color: var(--gold);
+      padding: 1.9rem 1.7rem;
+      margin: 2rem 0;
+    }
+    html[data-lang="en"] .article-prose blockquote.closing-quote {
+      font-size: 1.28rem;
+    }
+    .article-prose strong { color: var(--navy); font-weight: 600; }
+    .article-prose em { color: var(--ink); }
+
+    .article-rule {
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 3rem 0 2rem;
+    }
+    .article-attribution {
+      font-size: 0.84rem !important;
+      color: var(--muted) !important;
+      text-align: center; font-style: italic;
+    }
+    html[data-lang="en"] .article-attribution {
+      font-size: 0.98rem !important;
+    }
+    .article-cta-block {
+      text-align: center; margin-top: 2.5rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .cta-watch-video {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #ff0000; color: white;
+      text-decoration: none;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      transition: background 0.18s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(255,0,0,0.25);
+    }
+    .cta-watch-video:hover { background: #cc0000; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════
+       TEXT-TO-SPEECH (Web Speech API)
+    ══════════════════════════════════════════════ */
+    .tts-launch {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--gold); color: white;
+      border: none; cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.06em;
+      padding: 0.5rem 1rem; border-radius: 20px;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .tts-launch:hover { background: #9b7d20; transform: translateY(-1px); }
+    .tts-launch:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tts-launch .tts-ico { font-size: 0.95rem; }
+
+    /* Highlighted segment while reading */
+    .tts-current-segment {
+      background: linear-gradient(90deg, rgba(212,175,90,0.18) 0%, rgba(212,175,90,0.08) 100%);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.9rem !important;
+      margin-left: -1.1rem !important;
+      transition: background 0.3s, border-color 0.3s;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-prose blockquote.tts-current-segment {
+      background: linear-gradient(135deg, rgba(212,175,90,0.18), var(--parch));
+    }
+
+    /* Floating player */
+    #tts-player {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--navy);
+      color: white;
+      border: 1px solid rgba(212,175,90,0.45);
+      border-radius: 50px;
+      padding: 0.45rem 0.5rem 0.45rem 1.1rem;
+      display: flex; align-items: center; gap: 0.45rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.32);
+      z-index: 998;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    #tts-player.tts-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .tts-status {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.7);
+      padding: 0 0.3rem;
+      min-width: 60px;
+      text-align: center;
+    }
+    .tts-btn-icon {
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: white;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.95rem;
+      transition: background 0.18s;
+    }
+    .tts-btn-icon:hover { background: var(--gold); color: white; }
+    .tts-btn-icon.tts-main {
+      background: var(--gold);
+      width: 38px; height: 38px;
+      font-size: 1rem;
+    }
+    .tts-btn-icon.tts-main:hover { background: #d4af5a; }
+    .tts-btn-icon.tts-stop:hover { background: #b03030; }
+
+    /* Selection popup */
+    #tts-selection-popup {
+      position: absolute;
+      background: var(--navy);
+      color: white;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 0.35rem 0.4rem;
+      display: flex; align-items: center; gap: 0.35rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      z-index: 999;
+      font-family: 'Noto Sans SC', sans-serif;
+      transform: translateY(-4px);
+      opacity: 0;
+      transition: transform 0.18s, opacity 0.18s;
+      pointer-events: none;
+    }
+    #tts-selection-popup.tts-popup-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #tts-selection-popup::before {
+      content: '';
+      position: absolute;
+      top: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid var(--gold);
+    }
+    .tts-popup-btn {
+      background: var(--gold);
+      color: white;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .tts-popup-btn:hover { background: #9b7d20; }
+
+    /* Mobile player */
+    @media (max-width: 768px) {
+      #tts-player {
+        bottom: 0.8rem;
+        right: 0.8rem;
+        left: 0.8rem;
+        justify-content: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET  (max 1024px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .series-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .main-layout { grid-template-columns: 1fr 260px; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE  (max 768px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* Top bar */
+      .topbar { padding: 0.38rem 1rem; }
+      .topbar-verse { display: none; }
+
+      /* Nav */
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-sub { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.6rem 1rem;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 199;
+        gap: 0.1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.65rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
+      .nav-yt { justify-content: center; margin-top: 0.3rem; }
+
+      /* Hero: stack vertically — photo top, text below */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+        min-height: auto;
+      }
+      .hero-right {
+        grid-row: 1;
+        height: 300px;
+      }
+      /* On mobile the gradient fades photo from top (visible) to bottom (navy) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(13,23,41,0.7) 70%,
+            var(--navy-dk) 100%
+          );
+      }
+      .hero-left {
+        grid-row: 2;
+        padding: 2rem 1.25rem 2.5rem;
+        background: var(--navy-dk);
+      }
+      .hero-left::before { opacity: 0.025; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-subtitle { font-size: 0.9rem; max-width: 100%; }
+      .hero-verse { font-size: 0.8rem; }
+
+      /* Featured */
+      .featured { grid-template-columns: 1fr; }
+      .feat-img { min-height: 200px; padding: 2rem; }
+      .feat-body { padding: 1.75rem; }
+
+      /* Series */
+      .series-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+
+      /* Main layout */
+      .main-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+
+      /* Sidebar reorder: show after articles */
+      .sidebar { order: 2; }
+
+      /* Rabbi section */
+      .rabbi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .rabbi-portrait { flex-direction: row; align-items: center; gap: 1.25rem; }
+      .rabbi-photo-wrap { width: 110px; height: 135px; flex-shrink: 0; }
+      .rabbi-name-block { text-align: left; }
+      .rabbi-name-heb, .rabbi-name-en { text-align: left; }
+      .rabbi-title-tag { text-align: left; }
+
+      /* Books */
+      .books-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .book-cover { height: 160px; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-heb { display: none; }
+
+      /* Wrap padding */
+      .wrap { padding: 0 1rem; }
+      .section-hd { padding: 2.5rem 0 1.5rem; }
+      .rabbi-section, .books-section { padding: 2.5rem 0; }
+
+      /* Featured article */
+      .article-cover { height: 380px; }
+      .article-cover-text { padding: 2rem 1rem 1.5rem; }
+      .article-prose { padding: 2.5rem 1.25rem 3rem; }
+      .article-lead { padding-left: 1rem !important; }
+      .article-prose blockquote { padding: 1.1rem 1.2rem; }
+      .article-meta-strip { padding: 0.75rem 1rem; gap: 0.6rem; font-size: 0.72rem; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE  (max 480px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero-right { height: 260px; }
+      .series-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-body { padding: 1.25rem; }
+      .rabbi-portrait { flex-direction: column; align-items: flex-start; }
+      .rabbi-photo-wrap { width: 140px; height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ─────────────────────────────────────── -->
+<div class="topbar">
+  <span class="topbar-verse">
+    <span class="zh">✦ 以妥拉之光，照亮福音的奥秘 · 爱我民事工 · Ahavat Ammi Ministries</span>
+    <span class="en">✦ Illuminating the Gospel through the Light of Torah · Ahavat Ammi Ministries · For the Love of My People</span>
+  </span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">简中</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">光</div>
+      <div>
+        <span class="logo-name">
+          <span class="zh">妥拉之光</span>
+          <span class="en">Light of Torah</span>
+        </span>
+        <span class="logo-sub">
+          <span class="zh">沙皮拉拉比教导研习 · Ahavat Ammi</span>
+          <span class="en">Rabbi Shapira Teachings · Ahavat Ammi</span>
+        </span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a></li>
+      <li><a href="index.html#articles" class="active"><span class="zh">教导文章</span><span class="en">Teachings</span></a></li>
+      <!-- <li><a href="index.html#series"><span class="zh">系列课程</span><span class="en">Series</span></a></li> -->
+      <li><a href="index.html#rabbi"><span class="zh">关于拉比</span><span class="en">The Rabbi</span></a></li>
+      <li><a href="index.html#books"><span class="zh">著作</span><span class="en">Books</span></a></li>
+      <li>
+        <a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener" class="nav-yt">
+          ▶ <span class="zh">YouTube</span><span class="en">YouTube</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Featured Article (Editorial) ─────────────────── -->
+<article class="article-feature" id="featured-article">
+
+  <div class="article-cover">
+    <img src="assets/images/article-rh-seder-03-nations.jpg" alt="The Nations and the Day — Korea, the Peoples, and the Halacha · Worldwide Rosh HaShanah Seder 5786" />
+    <div class="article-cover-overlay"></div>
+    <div class="article-cover-text">
+      <span class="article-chip"><span class="zh">羅什哈沙拿之夜 · Seder · 100 道門 100 羊角號</span><span class="en">Rosh HaShanah Seder · 100 Gates · 100 Shofarot</span></span>
+      <h1 class="article-title">
+        <span class="zh">列國與這日 ── 韓國、萬民與當日的 Halacha</span>
+        <span class="en">The Nations and the Day — Korea, the Peoples, and the Halacha</span>
+      </h1>
+      <p class="article-subtitle">
+        <span class="zh">在一場以韓語舉行的全球羅什哈沙拿 Seder 中段，一則關於北韓的突發消息打斷了會場。拉比由此帶出這晚教導的核心：韓國、中國、列國（goyim）在神計劃裡的位置，以及這日的 <em>halacha</em> ── 新年究竟要求我們做什麼？</span>
+        <span class="en">Mid-way through a Korean-language Worldwide Rosh HaShanah Seder, a sudden report about North Korea breaks into the room. From there the teacher opens the heart of the night: the place of Korea, China, and the nations (<em>goyim</em>) in God's purposes, and the <em>halacha</em> of the day — what the New Year actually requires of us.</span>
+      </p>
+      <div class="article-byline">
+        <span class="zh">Ahavat Ammi · Kol HaShofar 全球事工 · 韓語場次</span>
+        <span class="en">Ahavat Ammi · Kol HaShofar Worldwide · Korean-Language Service</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-meta-strip">
+    <span>2026 · 5 · 26</span>
+    <span class="meta-dot">·</span>
+    <span><span class="zh">約 14 分鐘閱讀</span><span class="en">~14 min read</span></span>
+    <span class="meta-dot">·</span>
+    <a href="https://www.youtube.com/watch?v=Rr1nPbVT2l8&t=6960s" target="_blank" rel="noopener" class="meta-watch">
+      ▶ <span class="zh">觀看 · 列國與這日</span><span class="en">Watch · The Nations and the Day</span>
+    </a>
+    <span class="meta-dot">·</span>
+    <button id="tts-launch" class="tts-launch" aria-label="Listen to article">
+      <span class="tts-ico">🔊</span>
+      <span class="zh">聆听全文</span>
+      <span class="en">Listen</span>
+    </button>
+  </div>
+
+  <div class="article-prose">
+
+    <p class="article-lead">
+      <span class="zh">這是這場全球 Seder 的「教導心臟」。會場在韓國，桌上擺著為羅什哈沙拿（<em>Rosh Hashanah</em>，新年）預備的食物；線上同時連著中國、以及世界各地的人。就在祝福、舉杯、洗手、蘸蜜的歡樂之間，一則關於北韓、關於金正恩的突發消息傳進來。拉比沒有把它當作政治插曲帶過，而是停下來問：<strong>韓國、中國、北韓、整個列國（goyim），在神今夜所開的「書」裡，站在哪裡？</strong>接著他把整晚的教導收攏成一件事 ── 這日的 <em>halacha</em>（哈拉哈，實踐的教導）：新年不是看煙火，而是<em>加冕君王、回轉、被寫進生命冊</em>。</span>
+      <span class="en">This is the teaching heart of the worldwide Seder. The room is in Korea; the table is laid for <em>Rosh Hashanah</em>, the New Year; and online, China and the rest of the world are watching live. In the middle of the blessings, the cups, the hand-washing and the honey-dipped bread, a sudden report about North Korea — about Kim Jong-un — breaks into the room. The teacher does not wave it off as a political aside. He stops and asks: <strong>Korea, China, North Korea, the whole company of nations (<em>goyim</em>) — where do they stand inside the “book” God is opening tonight?</strong> Then he gathers the whole evening into one thing — the <em>halacha</em> of the day, the practical teaching: the New Year is not about fireworks but about <em>crowning the King, returning to Him, and being written into the Book of Life</em>.</span>
+    </p>
+
+    <h2><span class="zh">一、突發消息闖進會場 ── 北韓、金正恩，與「這日」</span><span class="en">I. A Breaking Report Enters the Room — North Korea, Kim Jong-un, and “This Day”</span></h2>
+    <p>
+      <span class="zh">教導正在進行，會場滿了喜樂。就在這時，一則關於北韓、關於金正恩的突發消息傳了進來。對在韓國敬拜的人來說，這不是遙遠的新聞 ── 它就在邊界的另一邊。但帶領者沒有讓恐懼接管。他先把眾人帶回那句最古老的祝福：<strong>Baruch atah Adonai, Eloheinu melech ha'olam, shehecheyanu v'kiyemanu v'higiyanu lazman hazeh</strong> ──「<em>主、我們的神、宇宙的王，是應當稱頌的；祢使我們存活、扶持我們、領我們到了這個時刻。</em>」</span>
+      <span class="en">The teaching is underway and the room is full of joy. At that moment a sudden report about North Korea — about Kim Jong-un — comes in. For people worshipping in Korea this is not distant news; it is right across the border. But the leader does not let fear take over. He brings everyone back to the oldest blessing first: <strong>Baruch atah Adonai, Eloheinu melech ha'olam, shehecheyanu v'kiyemanu v'higiyanu lazman hazeh</strong> — “<em>Blessed are You, LORD our God, King of the universe, who has kept us alive, sustained us, and brought us to this season.</em>”</span>
+    </p>
+
+    <p>
+      <span class="zh">這句 <em>שֶׁהֶחֱיָנוּ</em> shehecheyanu 的根意是「<em>使我們存活</em>」。在一則關於核武鄰邦的消息正壓在心頭時，帶領者選擇先宣告：我們<em>還活著</em>，我們<em>被扶持</em>，我們<em>被領到了今天</em>。會場裡、線上的中國、世界各地的人，一同被邀請祈求「復活」── 身體的、心思的、靈的復活。<strong>新聞報的是死亡的陰影；這日宣告的是生命的王。</strong></span>
+      <span class="en">The root of <em>שֶׁהֶחֱיָנוּ</em> shehecheyanu is “He has kept us alive.” With a report about a nuclear-armed neighbour pressing on every heart, the leader chooses to declare first: we are <em>still alive</em>, we are <em>sustained</em>, we have been <em>brought to this day</em>. The room, the believers online in China, people everywhere, are all invited to ask for “resurrection” — of body, of mind, of spirit. <strong>The news speaks of the shadow of death; this day proclaims the King of life.</strong></span>
+    </p>
+
+    <h2><span class="zh">二、這日的 Halacha ── 加冕君王</span><span class="en">II. The Halacha of the Day — Crown the King</span></h2>
+    <p>
+      <span class="zh">帶領者直接點出這日的 <em>הֲלָכָה</em> halachah（哈拉哈，實踐的教導）：<strong>羅什哈沙拿（<em>רֹאשׁ הַשָּׁנָה</em> Rosh Hashanah，新年）最大的 mitzvah（誡命），就是承認祂為王。</strong>每一樣擺在桌上的東西，都是一個 <em>siman</em>（記號），指向同一件事 ── 君王。有王，就有國度。先承認誰是王，其餘一切才有了次序。</span>
+      <span class="en">The leader names the <em>הֲלָכָה</em> halachah of the day plainly: <strong>the greatest mitzvah of <em>רֹאשׁ הַשָּׁנָה</em> Rosh Hashanah is to acknowledge Him as King.</strong> Every item on the table is a <em>siman</em>, a sign, pointing to one thing — the King. Where there is a King, there is a Kingdom. Acknowledge who is King first, and everything else falls into order.</span>
+    </p>
+
+    <p>
+      <span class="zh">猶太傳統教導：羅什哈沙拿若不<em>誦讀</em>那句宣告王權的話，就不算正確地守了這日。於是會眾一同呼喊：<strong>「Adonai melech, Adonai malach, Adonai yimloch l'olam va'ed」</strong> ──「<em>主作王、主已經作王、主必作王，直到永永遠遠。</em>」這不是一句口號，而是把心的次序重新排正：在金正恩之上、在列國的領袖之上、在每一則新聞之上，<strong>主作王</strong>。</span>
+      <span class="en">Jewish tradition teaches that if one does not <em>recite</em> the proclamation of God's kingship, one has not properly kept Rosh Hashanah. So the congregation cries out together: <strong>“Adonai melech, Adonai malach, Adonai yimloch l'olam va'ed”</strong> — “<em>The LORD is King, the LORD was King, the LORD shall reign forever and ever.</em>” It is not a slogan but a reordering of the heart: above Kim Jong-un, above the rulers of the nations, above every headline — <strong>the LORD reigns</strong>.</span>
+    </p>
+
+    <h2><span class="zh">三、三本書打開了 ── 你被寫在哪一本？</span><span class="en">III. Three Books Are Opened — In Which One Are You Written?</span></h2>
+    <p>
+      <span class="zh">傳統說，羅什哈沙拿這日，天上有三本書被打開：<strong>義人之書</strong>（<em>Sefer haTzadikim</em>）、<strong>惡人之書</strong>（<em>Sefer haResha'im</em>）、以及<strong>中間之人之書</strong>。在這黑暗的時刻，帶領者邀請眾人彼此對望、彼此祝願：願你被寫進生命冊，被寫進義人之書。</span>
+      <span class="en">Tradition says that on Rosh Hashanah three books are opened in heaven: the <strong>Book of the Righteous</strong> (<em>Sefer haTzadikim</em>), the <strong>Book of the Wicked</strong> (<em>Sefer haResha'im</em>), and the <strong>Book of those in between</strong>. In this dark hour, the leader invites everyone to look into one another's eyes and bless one another: may you be written into the Book of Life, into the Book of the Righteous.</span>
+    </p>
+
+    <blockquote>
+      <span class="zh">「<strong>L'shanah tovah tikatevu v'tichatemu — b'Yeshua haMashiach</strong>。」<cite>──願你被記下、被印上，在彌賽亞耶書亞裡，得著美好的一年。</cite></span>
+      <span class="en">“<strong>L'shanah tovah tikatevu v'tichatemu — b'Yeshua haMashiach</strong>.”<cite>— May you be inscribed and sealed for a good year, in Yeshua the Messiah.</cite></span>
+    </blockquote>
+
+    <p>
+      <span class="zh">帶領者強調：人<em>怎樣</em>被寫進義人之書？是藉著彌賽亞的靈。今天連你的<em>行動</em>都能使你被記在生命冊上 ── 但有一個行動是不能少的，傳統把它公正地定義為 <em>teshuvah</em>。線上同看的每一個人，也都被包進這份祝願裡：<strong>願所有的人都被記在生命冊上。</strong></span>
+      <span class="en">The leader stresses: <em>how</em> is one written into the Book of the Righteous? Through the spirit of the Messiah. Today even your <em>deeds</em> can write you into the Book of Life — but there is one act that cannot be missing, the one tradition defines squarely as <em>teshuvah</em>. Everyone watching online is folded into the same blessing: <strong>may all be written into the Book of Life.</strong></span>
+    </p>
+
+    <h2><span class="zh">四、Teshuvah ── 回轉的日子，永不嫌晚</span><span class="en">IV. Teshuvah — A Day of Return, Never Too Late</span></h2>
+    <p>
+      <span class="zh">這日要求的那一個行動，就是 <em>תְּשׁוּבָה</em> teshuvah ── <strong>回轉、歸向祂</strong>。傳統把三件事放在禱告裡：<em>teshuvah</em>（回轉）、<em>tefillah</em>（禱告）、<em>tzedakah</em>（施捨／公義）。帶領者當場呼籲眾人 ── 包括線上的人 ── 向以色列獻上 tzedakah，因為這是今天得「功德」（<em>zechut</em>）的途徑之一。</span>
+      <span class="en">The one act this day demands is <em>תְּשׁוּבָה</em> teshuvah — <strong>to turn, to return to Him</strong>. Tradition sets three things into the prayer: <em>teshuvah</em> (return), <em>tefillah</em> (prayer), and <em>tzedakah</em> (charity / righteousness). The leader calls on everyone there — and online — to send tzedakah to Israel, because it is one of the ways one acquires <em>zechut</em>, merit, today.</span>
+    </p>
+
+    <p>
+      <span class="zh">然後是這晚最溫柔的一段。帶領者引用雅歌的話：「<em>我屬我的良人，我的良人也屬我</em>」── 希伯來文「<em>Ani l'dodi v'dodi li</em>」，傳統說 <em>Elul</em>（以祿月）四字正是這句話的縮寫。他對每一個覺得「我太遲了、我陷得太深、我走得太遠回不來了」的人說：<strong>不。回轉永遠不嫌晚。</strong>撒但會謊稱「你完了」，但這日宣告的是 ── <em>歸回你的良人</em>。</span>
+      <span class="en">Then comes the tenderest moment of the night. The leader cites the Song of Songs: “<em>I am my Beloved's and my Beloved is mine</em>” — the Hebrew <em>Ani l'dodi v'dodi li</em>, whose initial letters, tradition says, spell <em>Elul</em>. To everyone who feels “I am too late, I am in too deep, I have wandered too far to return,” he says: <strong>No. It is never too late to return.</strong> The satan whispers “you are finished,” but this day declares — <em>return to your Beloved.</em></span>
+    </p>
+
+    <h2><span class="zh">五、Simcha ── 喜樂是被命令的，神也親自供應</span><span class="en">V. Simcha — Joy Is Commanded, and God Provides</span></h2>
+    <p>
+      <span class="zh">進入 <em>Yom</em>（審判之日）本是嚴肅的；但按塞法迪傳統會讀民數記 10:10，把這日也守為 <em>simchat</em>（喜樂）。帶領者點出一個美麗的字謎：<em>שִׂמְחָה</em> simcha（喜樂）的字根是 <em>sameach</em>；把這幾個字母重組，就拼出 <em>Mashiach</em>（彌賽亞）。<strong>在彌賽亞裡的人，理當成為「喜樂的人」（sameach）。</strong>沒有進入喜樂，就不算真正守了這節期。</span>
+      <span class="en">Entering <em>Yom</em>, the day of judgment, is solemn; yet the Sephardic tradition reads Numbers 10:10 and keeps the day also as <em>simchat</em>, joy. The leader points to a beautiful wordplay: the root of <em>שִׂמְחָה</em> simcha (joy) is <em>sameach</em>; rearrange the letters and you spell <em>Mashiach</em>, Messiah. <strong>Those in the Messiah are meant to be people of joy (sameach).</strong> Without entering joy, one has not truly kept the feast.</span>
+    </p>
+
+    <p>
+      <span class="zh">他要眾人看一看眼前 ── 這美好的場地，是神所供應的；中國的群體此刻聚在一間猶太餐廳裡，也是神的供應；線上敬拜的人「<em>非常安全，因為神在保護你們</em>」。神不只釋放喜樂，祂也供應一切。所以「快快喝杯酒吧！因為這是神為我們預備的」。連韓國人的「<em>效率</em>」、韓國的水、韓國的不知火（醬料）與美食，都被收進這份對供應者的感恩。</span>
+      <span class="en">He has everyone look around — this beautiful venue is God's provision; the community in China gathered tonight in a Jewish restaurant is God's provision; those worshipping online are “<em>very safe, because God is protecting you</em>.” God does not only release joy, He provides everything. So, “drink your wine quickly! — because God has provided it for us.” Even Korean “<em>efficiency</em>,” Korean water, the Korean food and sauces are gathered into thanksgiving to the Provider.</span>
+    </p>
+
+    <h2><span class="zh">六、Kiddush 與洗手 ── 進入五檔，攻擊撒但</span><span class="en">VI. Kiddush and the Washing — Shift Into Fifth Gear, Attack the Satan</span></h2>
+    <p>
+      <span class="zh">舉杯 <em>Kiddush</em>（祝聖）時要站著。帶領者把酒杯舉在右手裡，連線到耶書亞的話：「<em>我是真葡萄樹，你們是枝子。</em>」神給了我們葡萄樹 ── 不要忘記祂在你生命中所賜下的。接著是 <em>netilat yadayim</em>（洗手禮）。帶領者把它解釋為一個屬靈的圖畫：<strong>羅什哈沙拿是你攻擊撒但的日子，不是撒但攻擊你的日子。</strong></span>
+      <span class="en">For <em>Kiddush</em> one stands. The leader lifts the cup in his right hand and connects it to Yeshua's words: “<em>I am the true vine; you are the branches.</em>” God has given us the vine — do not forget what He has given in your life. Then comes <em>netilat yadayim</em>, the washing of hands. The leader reads it as a spiritual picture: <strong>Rosh Hashanah is the day you attack the satan, not the day the satan attacks you.</strong></span>
+    </p>
+
+    <p>
+      <span class="zh">他用一個在首爾開車的比喻：神造你是「五檔」的，但前方交通堵塞，<em>yetzer hara</em>（惡的傾向）設下障礙、繞你的路、攪亂你，逼你只能掛三檔慢爬。洗手代表我們的渴望（<em>ratzon</em>，意志）：求神把前面的路清乾淨，「<em>我要掛五檔走</em>」。當撒但聽見羊角號（<em>shofar</em>）的聲音 ── 那聲音提醒他彌賽亞的號角 ── 他就逃跑。<strong>所以這日，我們主動攻擊撒但。</strong></span>
+      <span class="en">He uses a driving-in-Seoul image: God made you for “fifth gear,” but the road ahead is jammed; <em>yetzer hara</em> (the evil inclination) sets obstacles, reroutes you, confuses you, forcing you to crawl in third. The washing represents our desire (<em>ratzon</em>, the will): asking God to clear the road ahead — “<em>I want to go in fifth gear.</em>” When the satan hears the <em>shofar</em> — reminded of the Messiah's trumpet — he flees. <strong>So on this day, we go on the offensive against the satan.</strong></span>
+    </p>
+
+    <h2><span class="zh">七、桌上的記號 ── 蜜、蘋果、石榴與大蔥</span><span class="en">VII. Signs on the Table — Honey, Apple, Pomegranate, and the Leek</span></h2>
+    <p>
+      <span class="zh">孩子們被請上前 ── 因為這晚的一個目的，是「<em>預備韓國的下一代</em>」。然後是桌上的 <em>simanim</em>（記號）。圓形的 <em>challah</em>（哈拉麵包）是圓的，因為我們相信主必再來；蘸蜜而食，求新的一年甘甜。接著拿起蘋果蘸蜜 ── 帶領者教導，按 Arizal，蘋果代表 <em>Shechinah</em>（神的同在）；蜜的甘甜對應一個特別的禱告：<strong><em>hamtakat halashon</em></strong>，「舌頭的甘甜」。</span>
+      <span class="en">The children are called forward — because one aim of this night is to “<em>prepare the next generation of Korea</em>.” Then come the <em>simanim</em> on the table. The round <em>challah</em> is round because we believe the Lord is returning; dipped in honey, we ask for a sweet year. Then the apple in honey — the leader teaches that, per the Arizal, the apple represents the <em>Shechinah</em>, God's presence; and the sweetness of honey answers a particular prayer: <strong><em>hamtakat halashon</em></strong>, “the sweetening of the tongue.”</span>
+    </p>
+
+    <p>
+      <span class="zh">撒但最常從哪裡攻擊？<strong>從我們的口</strong>。我們所說的話會「成真」── 希伯來文裡「字母」（<em>otiyot</em>）與「事物」（<em>otzar</em>）相連：你的話能拆毀諸天，也能建造諸天。所以這日我們向 Hashem 求戰勝一個罪 ── <em>lashon hara</em>（惡言、毀謗）。把蜜加在舌頭上，意思是：今年只說造就人的話、只說甘甜正面的話。「我天生就是個負面的人，怎麼可能？」── 正因如此，我們才需要蘋果（Shechinah）來改變我們的口。</span>
+      <span class="en">Where does the satan attack most? <strong>At our mouth.</strong> What we say becomes “real” — in Hebrew the “letters” (<em>otiyot</em>) and “things” are linked: your words can tear down heaven or build heaven. So this day we ask Hashem to overcome one sin — <em>lashon hara</em>, evil speech, slander. Putting honey on the tongue means: this year I will speak only words that build, only sweet and positive words. “But I am a negative person by nature — how can I?” — precisely why we need the apple, the Shechinah, to change our mouth.</span>
+    </p>
+
+    <p>
+      <span class="zh">蘋果與石榴有什麼共通點？不是顏色，不是酸甜 ── 是<strong>裡面都有「種子」</strong>。整個 Seder 表面是歡笑，但它的秘密藏在「種子」裡（這個奧秘留待次日展開）。傳統上也會吃<em>酸</em>蘋果，因為生命裡有酸澀；功課是在酸澀之中仍去尋見甘甜。最後，桌上那樣綠色的東西 ── 韓語叫「<em>파</em>」（pa，大蔥／韭蔥）── 是不吃的：它代表我們<em>終極的仇敵</em>（<em>haSatan</em> / <em>yetzer hara</em>），是要被斬斷的。每一樣擺在你面前的食材都有名字；<strong>這是一場屬靈的征戰。</strong></span>
+      <span class="en">What do apple and pomegranate share? Not colour, not sweet or sour — both <strong>have “seeds” inside</strong>. The whole Seder looks like laughter on the surface, but its secret is hidden in the seeds (a mystery left for the next day). Tradition also eats a <em>sour</em> apple, because life has sourness; the lesson is to find sweetness even in the sour. Finally, the green thing on the table — in Korean “<em>파</em>” (pa, leek/scallion) — is <em>not</em> eaten: it represents our <em>ultimate enemy</em> (<em>haSatan</em> / <em>yetzer hara</em>), to be cut off. Every item before you has a name; <strong>this is spiritual warfare.</strong></span>
+    </p>
+
+    <h2><span class="zh">八、Brit Hadashah ── 新的一年，新的心，新的約</span><span class="en">VIII. Brit Hadashah — A New Year, a New Heart, a New Covenant</span></h2>
+    <p>
+      <span class="zh">能真正改變我們嘴唇的，是我們的<em>心</em>。所以我們向主求一顆新心。這日所讀的經文之一是耶利米書 31 ── 它所應許的，正是 <em>Brit Hadashah</em>（新約／新年的約）。帶領者邀請眾人：今天就進入 <em>Brit Hadashah</em>。當你求 <em>hamtakat halashon</em>（舌頭的甘甜），你就會用全新的眼光看世界 ── 看人不再先看缺乏，而先看那份正面與恩典。</span>
+      <span class="en">What can truly change our lips is our <em>heart</em>. So we ask the Lord for a new heart. One of the portions read this day is Jeremiah 31 — and what it promises is the <em>Brit Hadashah</em>, the New Covenant (and the covenant of the new year). The leader invites everyone: enter the <em>Brit Hadashah</em> today. When you ask for <em>hamtakat halashon</em>, the sweetening of the tongue, you will see the world in a new way — looking at others no longer for their lack first, but for the positive and the grace first.</span>
+    </p>
+
+    <p>
+      <span class="zh">蘋果、蜜、甘甜 ── 把「審判」變成「甘甜」。蘸第二口，相信你此刻正進入這新的約。<strong>「神豈不是太良善了嗎？」</strong>帶領者問。能進入這甘甜的唯一途徑，就是進入新約。會眾舉手回應：我們今天就要這新的約。</span>
+      <span class="en">Apple, honey, sweetness — turning “judgment” into “sweetness.” Dip a second time and believe you are entering this new covenant now. <strong>“Is God not too good?”</strong> the leader asks. The only way into this sweetness is to enter the New Covenant. The congregation raises their hands in answer: we want this new covenant today.</span>
+    </p>
+
+    <h2><span class="zh">九、列國與這日 ── 韓國、中國，與下一代</span><span class="en">IX. The Nations and the Day — Korea, China, and the Next Generation</span></h2>
+    <p>
+      <span class="zh">把這晚收攏起來：列國並不在神的計劃之外。會場在韓國，線上連著中國，世界各地的人同守這日。帶領者反覆說的兩件事極其關鍵 ── 第一，這晚是要「<strong>預備韓國的下一代</strong>」，孩子們親手參與哈拉、親口跟著祝福，因為他們就是下一代；第二，線上同看的人「<strong>非常安全，因為神在保護你們</strong>」。當北韓的陰影壓下來時，這日宣告的不是政治分析，而是：<em>神作王、神供應、神保護、神回轉祂的百姓。</em></span>
+      <span class="en">Gathering the night together: the nations are not outside God's plan. The room is in Korea, China is online, people everywhere keep this day. Two things the leader repeats are crucial — first, this night is to “<strong>prepare the next generation of Korea</strong>,” the children taking the challah with their own hands and following the blessings with their own mouths, because they <em>are</em> the next generation; second, those online are “<strong>very safe, because God is protecting you</strong>.” When the shadow of North Korea presses in, this day proclaims not political analysis but: <em>God reigns, God provides, God protects, God restores His people.</em></span>
+    </p>
+
+    <p>
+      <span class="zh">所以韓國、中國、北韓 ── 萬民（<em>גּוֹיִם</em> goyim，「列國」）── 都被擺在同一張桌前，被同一份呼召觸及：加冕君王，回轉，進入喜樂，攻擊撒但，守住舌頭，進入新約，並把這信仰交給下一代。新聞會變；金正恩會起會落；列國會動盪。但這日的 <em>halacha</em> 不變 ── <strong>「Adonai melech, Adonai malach, Adonai yimloch l'olam va'ed」。</strong></span>
+      <span class="en">So Korea, China, North Korea — all the peoples (<em>גּוֹיִם</em> goyim, “the nations”) — are set at the same table, reached by the same call: crown the King, return, enter joy, attack the satan, guard the tongue, enter the New Covenant, and hand this faith to the next generation. The news will change; Kim Jong-un will rise and fall; the nations will shake. But the <em>halacha</em> of this day does not change — <strong>“Adonai melech, Adonai malach, Adonai yimloch l'olam va'ed.”</strong></span>
+    </p>
+
+    <h2><span class="zh">關於分辨</span><span class="en">A Word on Discernment</span></h2>
+    <p>
+      <span class="zh">這場 Seder 帶著濃厚的口傳氣息：字謎、字根的連結（如 <em>simcha</em> 與 <em>Mashiach</em>、<em>Elul</em> 的縮寫）屬於 <em>drash</em>（講解、靈意），而非每處都是 <em>p'shat</em>（字面義）。它們是傳統的記憶手法，幫助人記住教導，<em>不應</em>被讀成嚴格的語源學。同樣，把蘋果定為 <em>Shechinah</em>、把大蔥定為仇敵，是卡巴拉與節期傳統的象徵讀法，是<em>提醒的記號</em>，不是教義的根基。</span>
+      <span class="en">This Seder carries a strong oral-teaching flavour: the wordplays and root-links (such as <em>simcha</em> and <em>Mashiach</em>, or the <em>Elul</em> acronym) belong to <em>drash</em> — homiletic, devotional reading — not in every case to <em>p'shat</em>, the plain sense. They are traditional memory devices to help people hold the teaching, and should <em>not</em> be read as strict etymology. Likewise, assigning the apple to the <em>Shechinah</em> and the leek to the enemy is symbolic, kabbalistic-and-festival reading — a reminder-sign, not a doctrinal foundation.</span>
+    </p>
+
+    <p>
+      <span class="zh">話雖如此，這晚的骨幹卻是穩固的：羅什哈沙拿要加冕君王、要 <em>teshuvah</em> 回轉、求被寫進生命冊、守住舌頭、進入喜樂 ── 這些都是這日 <em>halacha</em> 的核心。而那則北韓的消息所教的，也是最簡單卻最真實的：<em>當列國震動時，神的百姓先回到祂的王權之下。</em></span>
+      <span class="en">That said, the backbone of the night is solid: Rosh Hashanah is to crown the King, to make <em>teshuvah</em>, to ask to be written into the Book of Life, to guard the tongue, to enter joy — these are the heart of the day's <em>halacha</em>. And what the North Korea report teaches is the simplest and truest thing of all: <em>when the nations shake, God's people return first to His kingship.</em></span>
+    </p>
+
+    <h2><span class="zh">結語 ── 從這日到全地</span><span class="en">Closing — From This Day to All the Earth</span></h2>
+    <blockquote class="closing-quote">
+      <span class="zh"><strong>「主、我們的神、宇宙的王，是應當稱頌的；祢使我們存活、扶持我們、領我們到了這個時刻。今夜，韓國、中國、列國同坐一桌：我們加冕君王，我們回轉，我們進入新的約。願所有的人 ── 在會場的、在線上的、在每一道門後的 ── 都被寫進生命冊。Adonai melech, Adonai malach, Adonai yimloch l'olam va'ed。」</strong></span>
+      <span class="en"><strong>“Blessed are You, LORD our God, King of the universe, who has kept us alive, sustained us, and brought us to this season. Tonight Korea, China, and the nations sit at one table: we crown the King, we return, we enter the New Covenant. May all — in the room, online, behind every gate — be written into the Book of Life. Adonai melech, Adonai malach, Adonai yimloch l'olam va'ed.”</strong></span>
+    </blockquote>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="zh">妥拉之光 — 沙皮拉拉比教导研习</span><span class="en">Light of Torah — Rabbi Shapira Teachings Study</span></h3>
+        <p><span class="zh">本站为沙皮拉拉比圣经教导的华文研习平台，帮助华人信徒通过犹太妥拉的视角，更深地理解福音书的希伯来根源。</span><span class="en">A Chinese-language study platform for Rabbi Shapira's biblical teachings, helping Chinese believers understand the Hebrew roots of the Gospel through a Torah lens.</span></p>
+        <span class="footer-ministry">Ahavat Ammi Ministries · אהבת עמי · For the Love of My People</span>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">研习系列</span><span class="en">Series</span></h4>
+        <ul>
+          <li><a href="#"><span class="zh">妥拉珍珠</span><span class="en">Pearls of Torah</span></a></li>
+          <li><a href="#"><span class="zh">妥拉宝藏</span><span class="en">Treasures of Torah</span></a></li>
+          <li><a href="#"><span class="zh">以色列直播</span><span class="en">Live from Israel</span></a></li>
+          <li><a href="#"><span class="zh">拉什学习</span><span class="en">Rashi Nosh</span></a></li>
+          <li><a href="#"><span class="zh">问拉比</span><span class="en">Ask the Rabbi</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">著作</span><span class="en">Books</span></h4>
+        <ul>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener"><span class="zh">洁净猪的归来</span><span class="en">The Kosher Pig</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">利百加的余民</span><span class="en">Rivkah Remnant</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">以东的陷落</span><span class="en">Fall of Edom</span></a></li>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener"><span class="zh">王的米大示</span><span class="en">Midrash for the King</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span class="zh">链接</span><span class="en">Links</span></h4>
+        <ul>
+          <li><a href="https://ahavatammi.org" target="_blank" rel="noopener">ahavatammi.org</a></li>
+          <li><a href="https://www.youtube.com/@AhavatAmmi" target="_blank" rel="noopener">YouTube @AhavatAmmi</a></li>
+          <li><a href="https://kosherpig.org" target="_blank" rel="noopener">kosherpig.org</a></li>
+          <li><a href="mailto:info@ahavatammi.org">info@ahavatammi.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 <span class="zh">妥拉之光研习网站 · 版权所有</span><span class="en">Light of Torah Study Website · All Rights Reserved</span></span>
+      <span class="footer-heb">בְּרֵאשִׁית בָּרָא אֱלֹהִים · אהבת עמי</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TTS: Floating Player ──────────────────── -->
+<div id="tts-player" role="region" aria-label="Article audio player">
+  <button id="tts-prev" class="tts-btn-icon" aria-label="Previous section" title="上一段 / Previous">⏮</button>
+  <button id="tts-play-pause" class="tts-btn-icon tts-main" aria-label="Play / Pause">⏸</button>
+  <button id="tts-next" class="tts-btn-icon" aria-label="Next section" title="下一段 / Next">⏭</button>
+  <span class="tts-status" id="tts-status">— / —</span>
+  <button id="tts-stop" class="tts-btn-icon tts-stop" aria-label="Stop">✕</button>
+</div>
+
+<!-- ── TTS: Selection popup ──────────────────── -->
+<div id="tts-selection-popup" role="tooltip">
+  <button id="tts-selection-play" class="tts-popup-btn">
+    ▶ <span class="zh">从这里朗读</span><span class="en">Read from here</span>
+  </button>
+</div>
+
+<script>
+  var YT_CHANNELS = {
+    en: 'https://www.youtube.com/@AhavatAmmi',
+    zh: 'https://www.youtube.com/@AhavatAmmiCHI'
+  };
+
+  function swapYouTubeLinks(lang) {
+    var target = YT_CHANNELS[lang] || YT_CHANNELS.en;
+    document.querySelectorAll('a[href^="https://www.youtube.com/@AhavatAmmi"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var rest = '';
+      if (href.indexOf(YT_CHANNELS.zh) === 0) rest = href.slice(YT_CHANNELS.zh.length);
+      else if (href.indexOf(YT_CHANNELS.en) === 0) rest = href.slice(YT_CHANNELS.en.length);
+      a.setAttribute('href', target + rest);
+    });
+  }
+
+  function setLang(lang) {
+    if (window.__ttsStop) window.__ttsStop();
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('preferred-lang', lang);
+    swapYouTubeLinks(lang);
+    // Close mobile menu on language switch
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  // Restore language preference on load
+  (function() {
+    var saved = localStorage.getItem('preferred-lang');
+    if (saved && saved !== 'zh') {
+      setLang(saved);
+    } else {
+      swapYouTubeLinks(document.documentElement.getAttribute('data-lang') || 'zh');
+    }
+  })();
+</script>
+
+<!-- ── TTS: shared module — bump ?v= when assets/tts.js changes to bust browser cache ── -->
+<script src="/assets/tts.js?v=6" defer></script>
+
+</body>
+</html>
