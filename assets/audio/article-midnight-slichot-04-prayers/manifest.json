@@ -1,0 +1,121 @@
+{
+  "slug": "article-midnight-slichot-04-prayers",
+  "segments": 25,
+  "zh": {
+    "default": "zh-TW-HsiaoChenNeural",
+    "count": 25,
+    "voices": [
+      {
+        "id": "zh-TW-HsiaoChenNeural",
+        "name": "HsiaoChen 曉臻",
+        "gender": "Female",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "54abaf3587cd8d26",
+          "86b58d0039251e24",
+          "331beeaaa8cecc47",
+          "fb77ef8e8eb91c3f",
+          "22f601c6857f0326",
+          "36a0181a7b6f8f17",
+          "00d2a7298a3cbcd9",
+          "6b1c1f15e6fd4026",
+          "186c506bf61912dc",
+          "593ecb5c79aec7dc",
+          "8ae9ce523a2bce20",
+          "0c9c3f1211fe6483",
+          "d8d2c758a84c5216",
+          "f5355ff2765dcd72",
+          "a4c80cba222d82e7",
+          "7c85d9f91f7ceb4c",
+          "8fcc96018fbcf453",
+          "7b8a5fb528659585",
+          "c426901b9c36e843",
+          "43dc22011c150fc8",
+          "898d2251661cc3f4",
+          "e92d456f2284400f",
+          "3301cb9aa65f8615",
+          "5c5d6926aef8886c",
+          "e15ae64e84eb2fdc"
+        ],
+        "withTimings": false
+      },
+      {
+        "id": "zh-TW-YunJheNeural",
+        "name": "YunJhe 雲哲",
+        "gender": "Male",
+        "locale": "zh-TW",
+        "localeLabel": "繁體中文 (台灣)",
+        "hashes": [
+          "80e00ae3d12890de",
+          "cede7b72f0cf9888",
+          "d8b527fe4fa407d0",
+          "519ccc79d3694a05",
+          "f7ee3f3f816e3a9c",
+          "537e1e17ce332e1e",
+          "af0a9f6b1a791d93",
+          "0a32c58cdf1c8074",
+          "fe034cd400cb4eae",
+          "3285b61c43cdffc4",
+          "3fcd5e51fc8145b8",
+          "5b6ff0de833fa752",
+          "eb081db9e4690992",
+          "d9b77af6d7a08301",
+          "adf9e1d685f6c372",
+          "4e0fcb0a6fa3725f",
+          "d8e4a2b5a8c02391",
+          "25aaeab4aeb74969",
+          "e6b851760b327909",
+          "a87e42f7724c4e74",
+          "e032a2229589849d",
+          "d660ed998671c3e8",
+          "a3e3d6ea2ab2b9ca",
+          "17d9a82168d36bd1",
+          "514959a4707f4aea"
+        ],
+        "withTimings": false
+      }
+    ]
+  },
+  "en": {
+    "default": "en-US-AriaNeural",
+    "count": 25,
+    "voices": [
+      {
+        "id": "en-US-AriaNeural",
+        "name": "Aria",
+        "gender": "Female",
+        "locale": "en-US",
+        "localeLabel": "English (US)",
+        "hashes": [
+          "bf086b15a6d196df",
+          "0efb12b0c83f6ce2",
+          "eeea4246171db381",
+          "4f4f8442ade997e8",
+          "268ac9a91ff4e956",
+          "82117c1647f16406",
+          "2860c21e9896ea04",
+          "60d4b2efaba958d6",
+          "046cc1b9063788f8",
+          "0d41114475f54c5f",
+          "24eb26f4a3b14fc0",
+          "1a921e82404e4332",
+          "1b1b86d0f5b7da56",
+          "12b4d629ce4b4b1b",
+          "6eb7800c08759814",
+          "4a63a7903eb34a52",
+          "598178804a41a3b2",
+          "200b0df80791fb17",
+          "88d5b7d2202f890c",
+          "b0176a393593ab39",
+          "bfab501de1e28698",
+          "4053293299b41e79",
+          "9898a2c1478fc241",
+          "c27d0231227501fa",
+          "bb004738ae962173"
+        ],
+        "withTimings": false
+      }
+    ]
+  }
+}
